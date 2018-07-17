@@ -6,7 +6,7 @@ else
 	SDK_ONLY_PKGS=$(shell go list ./... | grep -v "/vendor/")
 endif
 
-all: build
+all: deps build
 
 test:
 	@echo "go(ginkgo) test SDK"
@@ -18,3 +18,7 @@ fmt:
 build:
 	@echo "go build SDK"
 	@go build ${SDK_ONLY_PKGS}
+
+deps:
+	go get golang.org/x/net/context
+	go get golang.org/x/oauth2
