@@ -1,0 +1,22 @@
+language: go
+
+sudo: required
+
+go:
+  - 1.9.x
+  - 1.10.x
+  - master
+
+install: true
+
+script:
+  - make deps
+  - make build
+
+matrix:
+  allow_failures:
+    - go: tip
+
+branches:
+  only:
+    - /.*/

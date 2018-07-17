@@ -1,0 +1,43 @@
+# Go API client for cdn
+
+## Installation
+```
+go get https://github.com/NaverCloudPlatform/ncloud-sdk-go-v2/cdn
+```
+
+## Documentation for API Endpoints
+
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*V2Api* | [**GetCdnPlusInstanceList**](docs/V2Api.md#getcdnplusinstancelist) | **Post** /getCdnPlusInstanceList |
+*V2Api* | [**GetCdnPlusPurgeHistoryList**](docs/V2Api.md#getcdnpluspurgehistorylist) | **Post** /getCdnPlusPurgeHistoryList |
+*V2Api* | [**GetGlobalCdnInstanceList**](docs/V2Api.md#getglobalcdninstancelist) | **Post** /getGlobalCdnInstanceList |
+*V2Api* | [**GetGlobalCdnPurgeHistoryList**](docs/V2Api.md#getglobalcdnpurgehistorylist) | **Post** /getGlobalCdnPurgeHistoryList |
+*V2Api* | [**RequestCdnPlusPurge**](docs/V2Api.md#requestcdnpluspurge) | **Post** /requestCdnPlusPurge |
+*V2Api* | [**RequestGlobalCdnPurge**](docs/V2Api.md#requestglobalcdnpurge) | **Post** /requestGlobalCdnPurge |
+
+
+## Documentation For Models
+
+ - [CdnPlusInstance](docs/CdnPlusInstance.md)
+ - [CdnPlusPurgeHistory](docs/CdnPlusPurgeHistory.md)
+ - [CdnPlusRule](docs/CdnPlusRule.md)
+ - [CdnPlusServiceDomain](docs/CdnPlusServiceDomain.md)
+ - [CommonCode](docs/CommonCode.md)
+ - [GetCdnPlusInstanceListRequest](docs/GetCdnPlusInstanceListRequest.md)
+ - [GetCdnPlusInstanceListResponse](docs/GetCdnPlusInstanceListResponse.md)
+ - [GetCdnPlusPurgeHistoryListRequest](docs/GetCdnPlusPurgeHistoryListRequest.md)
+ - [GetCdnPlusPurgeHistoryListResponse](docs/GetCdnPlusPurgeHistoryListResponse.md)
+ - [GetGlobalCdnInstanceListRequest](docs/GetGlobalCdnInstanceListRequest.md)
+ - [GetGlobalCdnInstanceListResponse](docs/GetGlobalCdnInstanceListResponse.md)
+ - [GetGlobalCdnPurgeHistoryListRequest](docs/GetGlobalCdnPurgeHistoryListRequest.md)
+ - [GetGlobalCdnPurgeHistoryListResponse](docs/GetGlobalCdnPurgeHistoryListResponse.md)
+ - [GlobalCdnInstance](docs/GlobalCdnInstance.md)
+ - [GlobalCdnPurgeHistory](docs/GlobalCdnPurgeHistory.md)
+ - [GlobalCdnRule](docs/GlobalCdnRule.md)
+ - [GlobalCdnServiceDomain](docs/GlobalCdnServiceDomain.md)
+ - [RequestCdnPlusPurgeRequest](docs/RequestCdnPlusPurgeRequest.md)
+ - [RequestCdnPlusPurgeResponse](docs/RequestCdnPlusPurgeResponse.md)
+ - [RequestGlobalCdnPurgeRequest](docs/RequestGlobalCdnPurgeRequest.md)
+ - [RequestGlobalCdnPurgeResponse](docs/RequestGlobalCdnPurgeResponse.md)
+
