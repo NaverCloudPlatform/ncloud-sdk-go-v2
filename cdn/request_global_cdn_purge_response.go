@@ -10,13 +10,14 @@
 package cdn
 
 type RequestGlobalCdnPurgeResponse struct {
-	RequestId *string `json:"requestId,omitempty"`
 
-	ReturnCode *string `json:"returnCode,omitempty"`
+RequestId *string `json:"requestId,omitempty"`
 
-	ReturnMessage *string `json:"returnMessage,omitempty"`
+ReturnCode *string `json:"returnCode,omitempty"`
 
-	TotalRows *int32 `json:"totalRows,omitempty"`
+ReturnMessage *string `json:"returnMessage,omitempty"`
 
-	GlobalCdnPurgeHistoryList *[]GlobalCdnPurgeHistory `json:"globalCdnPurgeHistoryList,omitempty"`
+TotalRows *int32 `json:"totalRows,omitempty"`
+
+GlobalCdnPurgeHistoryList []GlobalCdnPurgeHistory `json:"globalCdnPurgeHistoryList,omitempty"`
 }

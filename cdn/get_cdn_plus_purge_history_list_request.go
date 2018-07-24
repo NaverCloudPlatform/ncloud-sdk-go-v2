@@ -12,8 +12,8 @@ package cdn
 type GetCdnPlusPurgeHistoryListRequest struct {
 
 	// CDN인스턴스번호
-	CdnInstanceNo *string `json:"cdnInstanceNo"`
+CdnInstanceNo *string `json:"cdnInstanceNo"`
 
 	// 퍼지ID리스트
-	PurgeIdList *[]string `json:"purgeIdList,omitempty"`
+PurgeIdList []string `json:"purgeIdList,omitempty"`
 }

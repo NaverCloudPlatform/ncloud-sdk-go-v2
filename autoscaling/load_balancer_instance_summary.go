@@ -12,8 +12,8 @@ package autoscaling
 type LoadBalancerInstanceSummary struct {
 
 	// 로드밸런서인스턴스번호
-	LoadBalancerInstanceNo *string `json:"loadBalancerInstanceNo,omitempty"`
+LoadBalancerInstanceNo *string `json:"loadBalancerInstanceNo,omitempty"`
 
 	// 로드밸런서명
-	LoadBalancerName *string `json:"loadBalancerName,omitempty"`
+LoadBalancerName *string `json:"loadBalancerName,omitempty"`
 }

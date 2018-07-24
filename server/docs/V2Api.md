@@ -10,12 +10,14 @@ Method | HTTP request | Description
 [**ChangeNasVolumeSize**](V2Api.md#ChangeNasVolumeSize) | **Post** /changeNasVolumeSize | 
 [**ChangeServerInstanceSpec**](V2Api.md#ChangeServerInstanceSpec) | **Post** /changeServerInstanceSpec | 
 [**CreateBlockStorageInstance**](V2Api.md#CreateBlockStorageInstance) | **Post** /createBlockStorageInstance | 
+[**CreateBlockStorageSnapshotInstance**](V2Api.md#CreateBlockStorageSnapshotInstance) | **Post** /createBlockStorageSnapshotInstance | 
 [**CreateLoginKey**](V2Api.md#CreateLoginKey) | **Post** /createLoginKey | 
 [**CreateMemberServerImage**](V2Api.md#CreateMemberServerImage) | **Post** /createMemberServerImage | 
 [**CreateNasVolumeInstance**](V2Api.md#CreateNasVolumeInstance) | **Post** /createNasVolumeInstance | 
 [**CreatePublicIpInstance**](V2Api.md#CreatePublicIpInstance) | **Post** /createPublicIpInstance | 
 [**CreateServerInstances**](V2Api.md#CreateServerInstances) | **Post** /createServerInstances | 
 [**DeleteBlockStorageInstances**](V2Api.md#DeleteBlockStorageInstances) | **Post** /deleteBlockStorageInstances | 
+[**DeleteBlockStorageSnapshotInstances**](V2Api.md#DeleteBlockStorageSnapshotInstances) | **Post** /deleteBlockStorageSnapshotInstances | 
 [**DeleteLoginKey**](V2Api.md#DeleteLoginKey) | **Post** /deleteLoginKey | 
 [**DeleteMemberServerImages**](V2Api.md#DeleteMemberServerImages) | **Post** /deleteMemberServerImages | 
 [**DeleteNasVolumeInstance**](V2Api.md#DeleteNasVolumeInstance) | **Post** /deleteNasVolumeInstance | 
@@ -41,6 +43,7 @@ Method | HTTP request | Description
 [**GetServerInstanceList**](V2Api.md#GetServerInstanceList) | **Post** /getServerInstanceList | 
 [**GetServerProductList**](V2Api.md#GetServerProductList) | **Post** /getServerProductList | 
 [**GetZoneList**](V2Api.md#GetZoneList) | **Post** /getZoneList | 
+[**ImportLoginKey**](V2Api.md#ImportLoginKey) | **Post** /importLoginKey | 
 [**RebootServerInstances**](V2Api.md#RebootServerInstances) | **Post** /rebootServerInstances | 
 [**RecreateServerInstance**](V2Api.md#RecreateServerInstance) | **Post** /recreateServerInstance | 
 [**RemoveNasVolumeAccessControl**](V2Api.md#RemoveNasVolumeAccessControl) | **Post** /removeNasVolumeAccessControl | 
@@ -218,6 +221,34 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **CreateBlockStorageSnapshotInstance**
+> CreateBlockStorageSnapshotInstanceResponse CreateBlockStorageSnapshotInstance(ctx, createBlockStorageSnapshotInstanceRequest)
+
+
+블록스토리지스냅샷인스턴스생성
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **createBlockStorageSnapshotInstanceRequest** | [**CreateBlockStorageSnapshotInstanceRequest**](CreateBlockStorageSnapshotInstanceRequest.md)| createBlockStorageSnapshotInstanceRequest | 
+
+### Return type
+
+[**CreateBlockStorageSnapshotInstanceResponse**](createBlockStorageSnapshotInstanceResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **CreateLoginKey**
 > CreateLoginKeyResponse CreateLoginKey(ctx, createLoginKeyRequest)
 
@@ -374,6 +405,34 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DeleteBlockStorageInstancesResponse**](deleteBlockStorageInstancesResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **DeleteBlockStorageSnapshotInstances**
+> DeleteBlockStorageSnapshotInstancesResponse DeleteBlockStorageSnapshotInstances(ctx, deleteBlockStorageSnapshotInstancesRequest)
+
+
+블록스토리지스냅샷인스턴스삭제
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **deleteBlockStorageSnapshotInstancesRequest** | [**DeleteBlockStorageSnapshotInstancesRequest**](DeleteBlockStorageSnapshotInstancesRequest.md)| deleteBlockStorageSnapshotInstancesRequest | 
+
+### Return type
+
+[**DeleteBlockStorageSnapshotInstancesResponse**](deleteBlockStorageSnapshotInstancesResponse.md)
 
 ### Authorization
 
@@ -1074,6 +1133,34 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetZoneListResponse**](getZoneListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ImportLoginKey**
+> ImportLoginKeyResponse ImportLoginKey(ctx, importLoginKeyRequest)
+
+
+로그인키IMPORT
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **importLoginKeyRequest** | [**ImportLoginKeyRequest**](ImportLoginKeyRequest.md)| importLoginKeyRequest | 
+
+### Return type
+
+[**ImportLoginKeyResponse**](importLoginKeyResponse.md)
 
 ### Authorization
 

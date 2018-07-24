@@ -10,13 +10,14 @@
 package cdn
 
 type GetCdnPlusPurgeHistoryListResponse struct {
-	RequestId *string `json:"requestId,omitempty"`
 
-	ReturnCode *string `json:"returnCode,omitempty"`
+RequestId *string `json:"requestId,omitempty"`
 
-	ReturnMessage *string `json:"returnMessage,omitempty"`
+ReturnCode *string `json:"returnCode,omitempty"`
 
-	TotalRows *int32 `json:"totalRows,omitempty"`
+ReturnMessage *string `json:"returnMessage,omitempty"`
 
-	CdnPlusPurgeHistoryList *[]CdnPlusPurgeHistory `json:"cdnPlusPurgeHistoryList,omitempty"`
+TotalRows *int32 `json:"totalRows,omitempty"`
+
+CdnPlusPurgeHistoryList []CdnPlusPurgeHistory `json:"cdnPlusPurgeHistoryList,omitempty"`
 }

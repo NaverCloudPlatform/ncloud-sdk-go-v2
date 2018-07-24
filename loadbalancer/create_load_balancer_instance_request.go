@@ -12,26 +12,26 @@ package loadbalancer
 type CreateLoadBalancerInstanceRequest struct {
 
 	// 로드밸런서명
-	LoadBalancerName *string `json:"loadBalancerName,omitempty"`
+LoadBalancerName *string `json:"loadBalancerName,omitempty"`
 
 	// 로드밸런서알고리즘구분코드
-	LoadBalancerAlgorithmTypeCode *string `json:"loadBalancerAlgorithmTypeCode,omitempty"`
+LoadBalancerAlgorithmTypeCode *string `json:"loadBalancerAlgorithmTypeCode,omitempty"`
 
 	// 로드밸런서설명
-	LoadBalancerDescription *string `json:"loadBalancerDescription,omitempty"`
+LoadBalancerDescription *string `json:"loadBalancerDescription,omitempty"`
 
 	// 로드밸런서RULE리스트
-	LoadBalancerRuleList *[]LoadBalancerRuleParameter `json:"loadBalancerRuleList"`
+LoadBalancerRuleList []LoadBalancerRuleParameter `json:"loadBalancerRuleList"`
 
 	// 서버인스턴스번호리스트
-	ServerInstanceNoList *[]string `json:"serverInstanceNoList,omitempty"`
+ServerInstanceNoList []string `json:"serverInstanceNoList,omitempty"`
 
 	// 인터넷라인구분코드
-	InternetLineTypeCode *string `json:"internetLineTypeCode,omitempty"`
+InternetLineTypeCode *string `json:"internetLineTypeCode,omitempty"`
 
 	// 네트워크용도구분코드
-	NetworkUsageTypeCode *string `json:"networkUsageTypeCode,omitempty"`
+NetworkUsageTypeCode *string `json:"networkUsageTypeCode,omitempty"`
 
 	// 리전번호
-	RegionNo *string `json:"regionNo,omitempty"`
+RegionNo *string `json:"regionNo,omitempty"`
 }

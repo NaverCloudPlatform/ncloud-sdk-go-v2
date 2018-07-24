@@ -12,11 +12,11 @@ package loadbalancer
 type GetLoadBalancerTargetServerInstanceListRequest struct {
 
 	// 인터넷라인구분코드
-	InternetLineTypeCode *string `json:"internetLineTypeCode,omitempty"`
+InternetLineTypeCode *string `json:"internetLineTypeCode,omitempty"`
 
 	// 네트워크용도구분코드
-	NetworkUsageTypeCode *string `json:"networkUsageTypeCode,omitempty"`
+NetworkUsageTypeCode *string `json:"networkUsageTypeCode,omitempty"`
 
 	// 리전번호
-	RegionNo *string `json:"regionNo,omitempty"`
+RegionNo *string `json:"regionNo,omitempty"`
 }

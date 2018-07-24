@@ -10,13 +10,14 @@
 package autoscaling
 
 type GetAdjustmentTypeListResponse struct {
-	RequestId *string `json:"requestId,omitempty"`
 
-	ReturnCode *string `json:"returnCode,omitempty"`
+RequestId *string `json:"requestId,omitempty"`
 
-	ReturnMessage *string `json:"returnMessage,omitempty"`
+ReturnCode *string `json:"returnCode,omitempty"`
 
-	TotalRows *int32 `json:"totalRows,omitempty"`
+ReturnMessage *string `json:"returnMessage,omitempty"`
 
-	AdjustmentTypeList *[]AdjustmentType `json:"adjustmentTypeList,omitempty"`
+TotalRows *int32 `json:"totalRows,omitempty"`
+
+AdjustmentTypeList []AdjustmentType `json:"adjustmentTypeList,omitempty"`
 }

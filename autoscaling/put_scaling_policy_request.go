@@ -12,20 +12,20 @@ package autoscaling
 type PutScalingPolicyRequest struct {
 
 	// 조정유형코드
-	AdjustmentTypeCode *string `json:"adjustmentTypeCode"`
+AdjustmentTypeCode *string `json:"adjustmentTypeCode"`
 
 	// 오토스케일링그룹명
-	AutoScalingGroupName *string `json:"autoScalingGroupName"`
+AutoScalingGroupName *string `json:"autoScalingGroupName"`
 
 	// 쿨다운타임
-	Cooldown *int32 `json:"cooldown,omitempty"`
+Cooldown *int32 `json:"cooldown,omitempty"`
 
 	// 최소조정스텝
-	MinAdjustmentStep *int32 `json:"minAdjustmentStep,omitempty"`
+MinAdjustmentStep *int32 `json:"minAdjustmentStep,omitempty"`
 
 	// 정책명
-	PolicyName *string `json:"policyName"`
+PolicyName *string `json:"policyName"`
 
 	// 스케일링조정값
-	ScalingAdjustment *int32 `json:"scalingAdjustment"`
+ScalingAdjustment *int32 `json:"scalingAdjustment"`
 }

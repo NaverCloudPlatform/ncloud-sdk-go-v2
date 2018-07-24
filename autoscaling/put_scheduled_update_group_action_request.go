@@ -12,26 +12,26 @@ package autoscaling
 type PutScheduledUpdateGroupActionRequest struct {
 
 	// 오토스케일링그룹명
-	AutoScalingGroupName *string `json:"autoScalingGroupName"`
+AutoScalingGroupName *string `json:"autoScalingGroupName"`
 
 	// 기대용량치
-	DesiredCapacity *int32 `json:"desiredCapacity,omitempty"`
+DesiredCapacity *int32 `json:"desiredCapacity,omitempty"`
 
 	// 반복스케쥴종료시간
-	EndTime *string `json:"endTime,omitempty"`
+EndTime *string `json:"endTime,omitempty"`
 
 	// 최대사이즈
-	MaxSize *int32 `json:"maxSize,omitempty"`
+MaxSize *int32 `json:"maxSize,omitempty"`
 
 	// 최소사이즈
-	MinSize *int32 `json:"minSize,omitempty"`
+MinSize *int32 `json:"minSize,omitempty"`
 
 	// 반복스케줄설정
-	RecurrenceInKST *string `json:"recurrenceInKST,omitempty"`
+RecurrenceInKST *string `json:"recurrenceInKST,omitempty"`
 
 	// 스케쥴액션명
-	ScheduledActionName *string `json:"scheduledActionName"`
+ScheduledActionName *string `json:"scheduledActionName"`
 
 	// 스케쥴시작시간
-	StartTime *string `json:"startTime,omitempty"`
+StartTime *string `json:"startTime,omitempty"`
 }

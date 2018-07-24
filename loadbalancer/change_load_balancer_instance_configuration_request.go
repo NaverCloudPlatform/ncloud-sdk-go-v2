@@ -12,14 +12,14 @@ package loadbalancer
 type ChangeLoadBalancerInstanceConfigurationRequest struct {
 
 	// 로드밸런서인스턴스번호
-	LoadBalancerInstanceNo *string `json:"loadBalancerInstanceNo"`
+LoadBalancerInstanceNo *string `json:"loadBalancerInstanceNo"`
 
 	// 로드밸런서알고리즘구분코드
-	LoadBalancerAlgorithmTypeCode *string `json:"loadBalancerAlgorithmTypeCode"`
+LoadBalancerAlgorithmTypeCode *string `json:"loadBalancerAlgorithmTypeCode"`
 
 	// 로드밸런서설명
-	LoadBalancerDescription *string `json:"loadBalancerDescription,omitempty"`
+LoadBalancerDescription *string `json:"loadBalancerDescription,omitempty"`
 
 	// 로드밸런RULE리스트
-	LoadBalancerRuleList *[]LoadBalancerRuleParameter `json:"loadBalancerRuleList"`
+LoadBalancerRuleList []LoadBalancerRuleParameter `json:"loadBalancerRuleList"`
 }

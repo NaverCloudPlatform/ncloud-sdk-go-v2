@@ -12,11 +12,11 @@ package autoscaling
 type ExecutePolicyRequest struct {
 
 	// 오토스케일링그룹명
-	AutoScalingGroupName *string `json:"autoScalingGroupName"`
+AutoScalingGroupName *string `json:"autoScalingGroupName"`
 
 	// 쿨타운타임존중여부
-	HonorCooldown *bool `json:"honorCooldown,omitempty"`
+HonorCooldown *bool `json:"honorCooldown,omitempty"`
 
 	// 정책명
-	PolicyName *string `json:"policyName"`
+PolicyName *string `json:"policyName"`
 }

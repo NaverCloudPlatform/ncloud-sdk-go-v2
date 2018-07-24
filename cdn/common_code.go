@@ -10,7 +10,8 @@
 package cdn
 
 type CommonCode struct {
-	Code *string `json:"code,omitempty"`
 
-	CodeName *string `json:"codeName,omitempty"`
+Code *string `json:"code,omitempty"`
+
+CodeName *string `json:"codeName,omitempty"`
 }

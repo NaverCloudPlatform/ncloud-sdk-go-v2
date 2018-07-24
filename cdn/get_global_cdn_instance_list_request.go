@@ -12,11 +12,11 @@ package cdn
 type GetGlobalCdnInstanceListRequest struct {
 
 	// CDN 인스턴스 번호
-	CdnInstanceNo *string `json:"cdnInstanceNo,omitempty"`
+CdnInstanceNo *string `json:"cdnInstanceNo,omitempty"`
 
 	// 페이지 번호
-	PageNo *int32 `json:"pageNo,omitempty"`
+PageNo *int32 `json:"pageNo,omitempty"`
 
 	// 페이지 사이즈
-	PageSize *int32 `json:"pageSize,omitempty"`
+PageSize *int32 `json:"pageSize,omitempty"`
 }

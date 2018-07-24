@@ -10,13 +10,14 @@
 package loadbalancer
 
 type GetLoadBalancerSslCertificateListResponse struct {
-	RequestId *string `json:"requestId,omitempty"`
 
-	ReturnCode *string `json:"returnCode,omitempty"`
+RequestId *string `json:"requestId,omitempty"`
 
-	ReturnMessage *string `json:"returnMessage,omitempty"`
+ReturnCode *string `json:"returnCode,omitempty"`
 
-	TotalRows *int32 `json:"totalRows,omitempty"`
+ReturnMessage *string `json:"returnMessage,omitempty"`
 
-	SslCertificateList *[]SslCertificate `json:"sslCertificateList,omitempty"`
+TotalRows *int32 `json:"totalRows,omitempty"`
+
+SslCertificateList []SslCertificate `json:"sslCertificateList,omitempty"`
 }

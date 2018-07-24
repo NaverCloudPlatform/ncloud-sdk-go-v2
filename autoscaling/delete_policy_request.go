@@ -12,8 +12,8 @@ package autoscaling
 type DeletePolicyRequest struct {
 
 	// 오토스케일링그룹명
-	AutoScalingGroupName *string `json:"autoScalingGroupName"`
+AutoScalingGroupName *string `json:"autoScalingGroupName"`
 
 	// 정책명
-	PolicyName *string `json:"policyName"`
+PolicyName *string `json:"policyName"`
 }

@@ -12,8 +12,8 @@ package autoscaling
 type DeleteScheduledActionRequest struct {
 
 	// 오토스케일링그룹명
-	AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`
+AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`
 
 	// 스케쥴액션명
-	ScheduledActionName *string `json:"scheduledActionName"`
+ScheduledActionName *string `json:"scheduledActionName"`
 }

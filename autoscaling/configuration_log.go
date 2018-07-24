@@ -12,23 +12,23 @@ package autoscaling
 type ConfigurationLog struct {
 
 	// 설정번호
-	ConfigurationNo *string `json:"configurationNo,omitempty"`
+ConfigurationNo *string `json:"configurationNo,omitempty"`
 
 	// 설정액션명
-	ConfigurationActionName *string `json:"configurationActionName,omitempty"`
+ConfigurationActionName *string `json:"configurationActionName,omitempty"`
 
 	// 파라미터
-	Parameters *string `json:"parameters,omitempty"`
+Parameters *string `json:"parameters,omitempty"`
 
 	// 론치설절명
-	LaunchConfigurationName *string `json:"launchConfigurationName,omitempty"`
+LaunchConfigurationName *string `json:"launchConfigurationName,omitempty"`
 
 	// 오토스케일링그룹명
-	AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`
+AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`
 
 	// 스케쥴액션명
-	ScheduledActionName *string `json:"scheduledActionName,omitempty"`
+ScheduledActionName *string `json:"scheduledActionName,omitempty"`
 
 	// 설정일시
-	SettingTime *string `json:"settingTime,omitempty"`
+SettingTime *string `json:"settingTime,omitempty"`
 }

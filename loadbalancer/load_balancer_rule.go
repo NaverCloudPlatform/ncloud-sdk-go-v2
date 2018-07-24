@@ -12,20 +12,20 @@ package loadbalancer
 type LoadBalancerRule struct {
 
 	// 프로토콜
-	ProtocolType **CommonCode `json:"protocolType,omitempty"`
+ProtocolType **CommonCode `json:"protocolType,omitempty"`
 
 	// 로드밸런서포트
-	LoadBalancerPort *int32 `json:"loadBalancerPort,omitempty"`
+LoadBalancerPort *int32 `json:"loadBalancerPort,omitempty"`
 
 	// 서버포트
-	ServerPort *int32 `json:"serverPort,omitempty"`
+ServerPort *int32 `json:"serverPort,omitempty"`
 
 	// l7헬스체크경로
-	L7HealthCheckPath *string `json:"l7HealthCheckPath,omitempty"`
+L7HealthCheckPath *string `json:"l7HealthCheckPath,omitempty"`
 
 	// 인증서명
-	CertificateName *string `json:"certificateName,omitempty"`
+CertificateName *string `json:"certificateName,omitempty"`
 
 	// 프록시프로토콜 사용여부
-	ProxyProtocolUseYn *string `json:"proxyProtocolUseYn,omitempty"`
+ProxyProtocolUseYn *string `json:"proxyProtocolUseYn,omitempty"`
 }

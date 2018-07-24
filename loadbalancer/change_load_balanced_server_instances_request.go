@@ -12,8 +12,8 @@ package loadbalancer
 type ChangeLoadBalancedServerInstancesRequest struct {
 
 	// 로드밸런서인스턴스번호
-	LoadBalancerInstanceNo *string `json:"loadBalancerInstanceNo"`
+LoadBalancerInstanceNo *string `json:"loadBalancerInstanceNo"`
 
 	// 서버인스턴스번호리스트
-	ServerInstanceNoList *[]string `json:"serverInstanceNoList"`
+ServerInstanceNoList []string `json:"serverInstanceNoList"`
 }

@@ -10,7 +10,6 @@
 package autoscaling
 
 import (
-	"bytes"
 	"encoding/base64"
 	"encoding/json"
 	"io/ioutil"
@@ -18,6 +17,7 @@ import (
 	"net/url"
 	"reflect"
 	"strings"
+	"bytes"
 
 	"golang.org/x/net/context"
 )
@@ -29,18 +29,19 @@ var (
 
 type V2ApiService service
 
-/* V2ApiService
-B.오토스케일링그룹생성
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param createAutoScalingGroupRequest createAutoScalingGroupRequest
-@return CreateAutoScalingGroupResponse*/
-func (a *V2ApiService) CreateAutoScalingGroup(ctx context.Context, createAutoScalingGroupRequest CreateAutoScalingGroupRequest) (CreateAutoScalingGroupResponse, *http.Response, error) {
+
+/* V2ApiService 
+ B.오토스케일링그룹생성
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param createAutoScalingGroupRequest createAutoScalingGroupRequest
+ @return CreateAutoScalingGroupResponse*/
+func (a *V2ApiService) CreateAutoScalingGroup(ctx context.Context, createAutoScalingGroupRequest CreateAutoScalingGroupRequest) (CreateAutoScalingGroupResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     CreateAutoScalingGroupResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  CreateAutoScalingGroupResponse
 	)
 
 	// create path and map variables
@@ -50,8 +51,9 @@ func (a *V2ApiService) CreateAutoScalingGroup(ctx context.Context, createAutoSca
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -60,7 +62,8 @@ func (a *V2ApiService) CreateAutoScalingGroup(ctx context.Context, createAutoSca
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -91,25 +94,26 @@ func (a *V2ApiService) CreateAutoScalingGroup(ctx context.Context, createAutoSca
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-A.론치설정생성
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param createLaunchConfigurationRequest createLaunchConfigurationRequest
-@return CreateLaunchConfigurationResponse*/
-func (a *V2ApiService) CreateLaunchConfiguration(ctx context.Context, createLaunchConfigurationRequest CreateLaunchConfigurationRequest) (CreateLaunchConfigurationResponse, *http.Response, error) {
+/* V2ApiService 
+ A.론치설정생성
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param createLaunchConfigurationRequest createLaunchConfigurationRequest
+ @return CreateLaunchConfigurationResponse*/
+func (a *V2ApiService) CreateLaunchConfiguration(ctx context.Context, createLaunchConfigurationRequest CreateLaunchConfigurationRequest) (CreateLaunchConfigurationResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     CreateLaunchConfigurationResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  CreateLaunchConfigurationResponse
 	)
 
 	// create path and map variables
@@ -119,8 +123,9 @@ func (a *V2ApiService) CreateLaunchConfiguration(ctx context.Context, createLaun
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -129,7 +134,8 @@ func (a *V2ApiService) CreateLaunchConfiguration(ctx context.Context, createLaun
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -160,25 +166,26 @@ func (a *V2ApiService) CreateLaunchConfiguration(ctx context.Context, createLaun
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-B.오토스케일링그룹삭제
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param deleteAutoScalingGroupRequest deleteAutoScalingGroupRequest
-@return DeleteAutoScalingGroupResponse*/
-func (a *V2ApiService) DeleteAutoScalingGroup(ctx context.Context, deleteAutoScalingGroupRequest DeleteAutoScalingGroupRequest) (DeleteAutoScalingGroupResponse, *http.Response, error) {
+/* V2ApiService 
+ B.오토스케일링그룹삭제
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param deleteAutoScalingGroupRequest deleteAutoScalingGroupRequest
+ @return DeleteAutoScalingGroupResponse*/
+func (a *V2ApiService) DeleteAutoScalingGroup(ctx context.Context, deleteAutoScalingGroupRequest DeleteAutoScalingGroupRequest) (DeleteAutoScalingGroupResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     DeleteAutoScalingGroupResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  DeleteAutoScalingGroupResponse
 	)
 
 	// create path and map variables
@@ -188,8 +195,9 @@ func (a *V2ApiService) DeleteAutoScalingGroup(ctx context.Context, deleteAutoSca
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -198,7 +206,8 @@ func (a *V2ApiService) DeleteAutoScalingGroup(ctx context.Context, deleteAutoSca
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -229,25 +238,26 @@ func (a *V2ApiService) DeleteAutoScalingGroup(ctx context.Context, deleteAutoSca
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-A.오토스케일링론치설정삭제
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param deleteAutoScalingLaunchConfigurationRequest deleteAutoScalingLaunchConfigurationRequest
-@return DeleteAutoScalingLaunchConfigurationRequest*/
-func (a *V2ApiService) DeleteAutoScalingLaunchConfiguration(ctx context.Context, deleteAutoScalingLaunchConfigurationRequest DeleteAutoScalingLaunchConfigurationRequest) (DeleteAutoScalingLaunchConfigurationRequest, *http.Response, error) {
+/* V2ApiService 
+ A.오토스케일링론치설정삭제
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param deleteAutoScalingLaunchConfigurationRequest deleteAutoScalingLaunchConfigurationRequest
+ @return DeleteAutoScalingLaunchConfigurationRequest*/
+func (a *V2ApiService) DeleteAutoScalingLaunchConfiguration(ctx context.Context, deleteAutoScalingLaunchConfigurationRequest DeleteAutoScalingLaunchConfigurationRequest) (DeleteAutoScalingLaunchConfigurationRequest,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     DeleteAutoScalingLaunchConfigurationRequest
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  DeleteAutoScalingLaunchConfigurationRequest
 	)
 
 	// create path and map variables
@@ -257,8 +267,9 @@ func (a *V2ApiService) DeleteAutoScalingLaunchConfiguration(ctx context.Context,
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -267,7 +278,8 @@ func (a *V2ApiService) DeleteAutoScalingLaunchConfiguration(ctx context.Context,
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -298,25 +310,26 @@ func (a *V2ApiService) DeleteAutoScalingLaunchConfiguration(ctx context.Context,
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-F.스케일링정책삭제
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param deletePolicyRequest deletePolicyRequest
-@return DeletePolicyResponse*/
-func (a *V2ApiService) DeletePolicy(ctx context.Context, deletePolicyRequest DeletePolicyRequest) (DeletePolicyResponse, *http.Response, error) {
+/* V2ApiService 
+ F.스케일링정책삭제
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param deletePolicyRequest deletePolicyRequest
+ @return DeletePolicyResponse*/
+func (a *V2ApiService) DeletePolicy(ctx context.Context, deletePolicyRequest DeletePolicyRequest) (DeletePolicyResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     DeletePolicyResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  DeletePolicyResponse
 	)
 
 	// create path and map variables
@@ -326,8 +339,9 @@ func (a *V2ApiService) DeletePolicy(ctx context.Context, deletePolicyRequest Del
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -336,7 +350,8 @@ func (a *V2ApiService) DeletePolicy(ctx context.Context, deletePolicyRequest Del
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -367,25 +382,26 @@ func (a *V2ApiService) DeletePolicy(ctx context.Context, deletePolicyRequest Del
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-C.스케쥴액션삭제
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param deleteScheduledActionRequest deleteScheduledActionRequest
-@return DeleteScheduledActionResponse*/
-func (a *V2ApiService) DeleteScheduledAction(ctx context.Context, deleteScheduledActionRequest DeleteScheduledActionRequest) (DeleteScheduledActionResponse, *http.Response, error) {
+/* V2ApiService 
+ C.스케쥴액션삭제
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param deleteScheduledActionRequest deleteScheduledActionRequest
+ @return DeleteScheduledActionResponse*/
+func (a *V2ApiService) DeleteScheduledAction(ctx context.Context, deleteScheduledActionRequest DeleteScheduledActionRequest) (DeleteScheduledActionResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     DeleteScheduledActionResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  DeleteScheduledActionResponse
 	)
 
 	// create path and map variables
@@ -395,8 +411,9 @@ func (a *V2ApiService) DeleteScheduledAction(ctx context.Context, deleteSchedule
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -405,7 +422,8 @@ func (a *V2ApiService) DeleteScheduledAction(ctx context.Context, deleteSchedule
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -436,25 +454,26 @@ func (a *V2ApiService) DeleteScheduledAction(ctx context.Context, deleteSchedule
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-F.스케일링정책수행
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param executePolicyRequest executePolicyRequest
-@return ExecutePolicyResponse*/
-func (a *V2ApiService) ExecutePolicy(ctx context.Context, executePolicyRequest ExecutePolicyRequest) (ExecutePolicyResponse, *http.Response, error) {
+/* V2ApiService 
+ F.스케일링정책수행
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param executePolicyRequest executePolicyRequest
+ @return ExecutePolicyResponse*/
+func (a *V2ApiService) ExecutePolicy(ctx context.Context, executePolicyRequest ExecutePolicyRequest) (ExecutePolicyResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     ExecutePolicyResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  ExecutePolicyResponse
 	)
 
 	// create path and map variables
@@ -464,8 +483,9 @@ func (a *V2ApiService) ExecutePolicy(ctx context.Context, executePolicyRequest E
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -474,7 +494,8 @@ func (a *V2ApiService) ExecutePolicy(ctx context.Context, executePolicyRequest E
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -505,25 +526,26 @@ func (a *V2ApiService) ExecutePolicy(ctx context.Context, executePolicyRequest E
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-F.조정유형리스트조회
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param getAdjustmentTypeListRequest getAdjustmentTypeListRequest
-@return GetAdjustmentTypeListResponse*/
-func (a *V2ApiService) GetAdjustmentTypeList(ctx context.Context, getAdjustmentTypeListRequest GetAdjustmentTypeListRequest) (GetAdjustmentTypeListResponse, *http.Response, error) {
+/* V2ApiService 
+ F.조정유형리스트조회
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param getAdjustmentTypeListRequest getAdjustmentTypeListRequest
+ @return GetAdjustmentTypeListResponse*/
+func (a *V2ApiService) GetAdjustmentTypeList(ctx context.Context, getAdjustmentTypeListRequest GetAdjustmentTypeListRequest) (GetAdjustmentTypeListResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     GetAdjustmentTypeListResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetAdjustmentTypeListResponse
 	)
 
 	// create path and map variables
@@ -533,8 +555,9 @@ func (a *V2ApiService) GetAdjustmentTypeList(ctx context.Context, getAdjustmentT
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -543,7 +566,8 @@ func (a *V2ApiService) GetAdjustmentTypeList(ctx context.Context, getAdjustmentT
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -574,25 +598,26 @@ func (a *V2ApiService) GetAdjustmentTypeList(ctx context.Context, getAdjustmentT
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-E.액티비티로그리스트조회
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param getAutoScalingActivityLogListRequest getAutoScalingActivityLogListRequest
-@return GetAutoScalingActivityLogListResponse*/
-func (a *V2ApiService) GetAutoScalingActivityLogList(ctx context.Context, getAutoScalingActivityLogListRequest GetAutoScalingActivityLogListRequest) (GetAutoScalingActivityLogListResponse, *http.Response, error) {
+/* V2ApiService 
+ E.액티비티로그리스트조회
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param getAutoScalingActivityLogListRequest getAutoScalingActivityLogListRequest
+ @return GetAutoScalingActivityLogListResponse*/
+func (a *V2ApiService) GetAutoScalingActivityLogList(ctx context.Context, getAutoScalingActivityLogListRequest GetAutoScalingActivityLogListRequest) (GetAutoScalingActivityLogListResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     GetAutoScalingActivityLogListResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetAutoScalingActivityLogListResponse
 	)
 
 	// create path and map variables
@@ -602,8 +627,9 @@ func (a *V2ApiService) GetAutoScalingActivityLogList(ctx context.Context, getAut
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -612,7 +638,8 @@ func (a *V2ApiService) GetAutoScalingActivityLogList(ctx context.Context, getAut
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -643,25 +670,26 @@ func (a *V2ApiService) GetAutoScalingActivityLogList(ctx context.Context, getAut
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-E.오토스케일링설정로그리스트조회
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param getAutoScalingConfigurationLogListRequest getAutoScalingConfigurationLogListRequest
-@return GetAutoScalingConfigurationLogListResponse*/
-func (a *V2ApiService) GetAutoScalingConfigurationLogList(ctx context.Context, getAutoScalingConfigurationLogListRequest GetAutoScalingConfigurationLogListRequest) (GetAutoScalingConfigurationLogListResponse, *http.Response, error) {
+/* V2ApiService 
+ E.오토스케일링설정로그리스트조회
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param getAutoScalingConfigurationLogListRequest getAutoScalingConfigurationLogListRequest
+ @return GetAutoScalingConfigurationLogListResponse*/
+func (a *V2ApiService) GetAutoScalingConfigurationLogList(ctx context.Context, getAutoScalingConfigurationLogListRequest GetAutoScalingConfigurationLogListRequest) (GetAutoScalingConfigurationLogListResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     GetAutoScalingConfigurationLogListResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetAutoScalingConfigurationLogListResponse
 	)
 
 	// create path and map variables
@@ -671,8 +699,9 @@ func (a *V2ApiService) GetAutoScalingConfigurationLogList(ctx context.Context, g
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -681,7 +710,8 @@ func (a *V2ApiService) GetAutoScalingConfigurationLogList(ctx context.Context, g
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -712,25 +742,26 @@ func (a *V2ApiService) GetAutoScalingConfigurationLogList(ctx context.Context, g
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-B.오토스케일링그룹리스트조회
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param getAutoScalingGroupListRequest getAutoScalingGroupListRequest
-@return GetAutoScalingGroupListResponse*/
-func (a *V2ApiService) GetAutoScalingGroupList(ctx context.Context, getAutoScalingGroupListRequest GetAutoScalingGroupListRequest) (GetAutoScalingGroupListResponse, *http.Response, error) {
+/* V2ApiService 
+ B.오토스케일링그룹리스트조회
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param getAutoScalingGroupListRequest getAutoScalingGroupListRequest
+ @return GetAutoScalingGroupListResponse*/
+func (a *V2ApiService) GetAutoScalingGroupList(ctx context.Context, getAutoScalingGroupListRequest GetAutoScalingGroupListRequest) (GetAutoScalingGroupListResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     GetAutoScalingGroupListResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetAutoScalingGroupListResponse
 	)
 
 	// create path and map variables
@@ -740,8 +771,9 @@ func (a *V2ApiService) GetAutoScalingGroupList(ctx context.Context, getAutoScali
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -750,7 +782,8 @@ func (a *V2ApiService) GetAutoScalingGroupList(ctx context.Context, getAutoScali
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -781,25 +814,26 @@ func (a *V2ApiService) GetAutoScalingGroupList(ctx context.Context, getAutoScali
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-F.오토스케일링정책리스트조회
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param getAutoScalingPolicyListRequest getAutoScalingPolicyListRequest
-@return GetAutoScalingPolicyListResponse*/
-func (a *V2ApiService) GetAutoScalingPolicyList(ctx context.Context, getAutoScalingPolicyListRequest GetAutoScalingPolicyListRequest) (GetAutoScalingPolicyListResponse, *http.Response, error) {
+/* V2ApiService 
+ F.오토스케일링정책리스트조회
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param getAutoScalingPolicyListRequest getAutoScalingPolicyListRequest
+ @return GetAutoScalingPolicyListResponse*/
+func (a *V2ApiService) GetAutoScalingPolicyList(ctx context.Context, getAutoScalingPolicyListRequest GetAutoScalingPolicyListRequest) (GetAutoScalingPolicyListResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     GetAutoScalingPolicyListResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetAutoScalingPolicyListResponse
 	)
 
 	// create path and map variables
@@ -809,8 +843,9 @@ func (a *V2ApiService) GetAutoScalingPolicyList(ctx context.Context, getAutoScal
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -819,7 +854,8 @@ func (a *V2ApiService) GetAutoScalingPolicyList(ctx context.Context, getAutoScal
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -850,25 +886,26 @@ func (a *V2ApiService) GetAutoScalingPolicyList(ctx context.Context, getAutoScal
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-A.론치설정리스트조회
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param getLaunchConfigurationListRequest getLaunchConfigurationListRequest
-@return GetLaunchConfigurationListResponse*/
-func (a *V2ApiService) GetLaunchConfigurationList(ctx context.Context, getLaunchConfigurationListRequest GetLaunchConfigurationListRequest) (GetLaunchConfigurationListResponse, *http.Response, error) {
+/* V2ApiService 
+ A.론치설정리스트조회
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param getLaunchConfigurationListRequest getLaunchConfigurationListRequest
+ @return GetLaunchConfigurationListResponse*/
+func (a *V2ApiService) GetLaunchConfigurationList(ctx context.Context, getLaunchConfigurationListRequest GetLaunchConfigurationListRequest) (GetLaunchConfigurationListResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     GetLaunchConfigurationListResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetLaunchConfigurationListResponse
 	)
 
 	// create path and map variables
@@ -878,8 +915,9 @@ func (a *V2ApiService) GetLaunchConfigurationList(ctx context.Context, getLaunch
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -888,7 +926,8 @@ func (a *V2ApiService) GetLaunchConfigurationList(ctx context.Context, getLaunch
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -919,25 +958,26 @@ func (a *V2ApiService) GetLaunchConfigurationList(ctx context.Context, getLaunch
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-D.프로세스구분리스트조회
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param getScalingProcessTypeListRequest getScalingProcessTypeListRequest
-@return GetScalingProcessTypeListResponse*/
-func (a *V2ApiService) GetScalingProcessTypeList(ctx context.Context, getScalingProcessTypeListRequest GetScalingProcessTypeListRequest) (GetScalingProcessTypeListResponse, *http.Response, error) {
+/* V2ApiService 
+ D.프로세스구분리스트조회
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param getScalingProcessTypeListRequest getScalingProcessTypeListRequest
+ @return GetScalingProcessTypeListResponse*/
+func (a *V2ApiService) GetScalingProcessTypeList(ctx context.Context, getScalingProcessTypeListRequest GetScalingProcessTypeListRequest) (GetScalingProcessTypeListResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     GetScalingProcessTypeListResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetScalingProcessTypeListResponse
 	)
 
 	// create path and map variables
@@ -947,8 +987,9 @@ func (a *V2ApiService) GetScalingProcessTypeList(ctx context.Context, getScaling
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -957,7 +998,8 @@ func (a *V2ApiService) GetScalingProcessTypeList(ctx context.Context, getScaling
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -988,25 +1030,26 @@ func (a *V2ApiService) GetScalingProcessTypeList(ctx context.Context, getScaling
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-C.스케쥴액션리스트조회
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param getScheduledActionListRequest getScheduledActionListRequest
-@return GetScheduledActionListResponse*/
-func (a *V2ApiService) GetScheduledActionList(ctx context.Context, getScheduledActionListRequest GetScheduledActionListRequest) (GetScheduledActionListResponse, *http.Response, error) {
+/* V2ApiService 
+ C.스케쥴액션리스트조회
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param getScheduledActionListRequest getScheduledActionListRequest
+ @return GetScheduledActionListResponse*/
+func (a *V2ApiService) GetScheduledActionList(ctx context.Context, getScheduledActionListRequest GetScheduledActionListRequest) (GetScheduledActionListResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     GetScheduledActionListResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetScheduledActionListResponse
 	)
 
 	// create path and map variables
@@ -1016,8 +1059,9 @@ func (a *V2ApiService) GetScheduledActionList(ctx context.Context, getScheduledA
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1026,7 +1070,8 @@ func (a *V2ApiService) GetScheduledActionList(ctx context.Context, getScheduledA
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1057,25 +1102,26 @@ func (a *V2ApiService) GetScheduledActionList(ctx context.Context, getScheduledA
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-F.스케일링정책생성/변경
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param putScalingPolicyRequest putScalingPolicyRequest
-@return PutScalingPolicyResponse*/
-func (a *V2ApiService) PutScalingPolicy(ctx context.Context, putScalingPolicyRequest PutScalingPolicyRequest) (PutScalingPolicyResponse, *http.Response, error) {
+/* V2ApiService 
+ F.스케일링정책생성/변경
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param putScalingPolicyRequest putScalingPolicyRequest
+ @return PutScalingPolicyResponse*/
+func (a *V2ApiService) PutScalingPolicy(ctx context.Context, putScalingPolicyRequest PutScalingPolicyRequest) (PutScalingPolicyResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     PutScalingPolicyResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  PutScalingPolicyResponse
 	)
 
 	// create path and map variables
@@ -1085,8 +1131,9 @@ func (a *V2ApiService) PutScalingPolicy(ctx context.Context, putScalingPolicyReq
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1095,7 +1142,8 @@ func (a *V2ApiService) PutScalingPolicy(ctx context.Context, putScalingPolicyReq
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1126,25 +1174,26 @@ func (a *V2ApiService) PutScalingPolicy(ctx context.Context, putScalingPolicyReq
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-C.스케쥴액션생성|수정
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param putScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest
-@return PutScheduledUpdateGroupActionResponse*/
-func (a *V2ApiService) PutScheduledUpdateGroupAction(ctx context.Context, putScheduledUpdateGroupActionRequest PutScheduledUpdateGroupActionRequest) (PutScheduledUpdateGroupActionResponse, *http.Response, error) {
+/* V2ApiService 
+ C.스케쥴액션생성|수정
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param putScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest
+ @return PutScheduledUpdateGroupActionResponse*/
+func (a *V2ApiService) PutScheduledUpdateGroupAction(ctx context.Context, putScheduledUpdateGroupActionRequest PutScheduledUpdateGroupActionRequest) (PutScheduledUpdateGroupActionResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     PutScheduledUpdateGroupActionResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  PutScheduledUpdateGroupActionResponse
 	)
 
 	// create path and map variables
@@ -1154,8 +1203,9 @@ func (a *V2ApiService) PutScheduledUpdateGroupAction(ctx context.Context, putSch
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1164,7 +1214,8 @@ func (a *V2ApiService) PutScheduledUpdateGroupAction(ctx context.Context, putSch
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1195,25 +1246,26 @@ func (a *V2ApiService) PutScheduledUpdateGroupAction(ctx context.Context, putSch
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-D.프로세스재개
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param resumeProcessesRequest resumeProcessesRequest
-@return ResumeProcessesResponse*/
-func (a *V2ApiService) ResumeProcesses(ctx context.Context, resumeProcessesRequest ResumeProcessesRequest) (ResumeProcessesResponse, *http.Response, error) {
+/* V2ApiService 
+ D.프로세스재개
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param resumeProcessesRequest resumeProcessesRequest
+ @return ResumeProcessesResponse*/
+func (a *V2ApiService) ResumeProcesses(ctx context.Context, resumeProcessesRequest ResumeProcessesRequest) (ResumeProcessesResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     ResumeProcessesResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  ResumeProcessesResponse
 	)
 
 	// create path and map variables
@@ -1223,8 +1275,9 @@ func (a *V2ApiService) ResumeProcesses(ctx context.Context, resumeProcessesReque
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1233,7 +1286,8 @@ func (a *V2ApiService) ResumeProcesses(ctx context.Context, resumeProcessesReque
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1264,25 +1318,26 @@ func (a *V2ApiService) ResumeProcesses(ctx context.Context, resumeProcessesReque
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-B.기대용량치갱신
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param setDesiredCapacityRequest setDesiredCapacityRequest
-@return SetDesiredCapacityResponse*/
-func (a *V2ApiService) SetDesiredCapacity(ctx context.Context, setDesiredCapacityRequest SetDesiredCapacityRequest) (SetDesiredCapacityResponse, *http.Response, error) {
+/* V2ApiService 
+ B.기대용량치갱신
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param setDesiredCapacityRequest setDesiredCapacityRequest
+ @return SetDesiredCapacityResponse*/
+func (a *V2ApiService) SetDesiredCapacity(ctx context.Context, setDesiredCapacityRequest SetDesiredCapacityRequest) (SetDesiredCapacityResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     SetDesiredCapacityResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  SetDesiredCapacityResponse
 	)
 
 	// create path and map variables
@@ -1292,8 +1347,9 @@ func (a *V2ApiService) SetDesiredCapacity(ctx context.Context, setDesiredCapacit
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1302,7 +1358,8 @@ func (a *V2ApiService) SetDesiredCapacity(ctx context.Context, setDesiredCapacit
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1333,25 +1390,26 @@ func (a *V2ApiService) SetDesiredCapacity(ctx context.Context, setDesiredCapacit
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-B.서버인스턴스헬스상태갱신
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param setServerInstanceHealthRequest setServerInstanceHealthRequest
-@return SetServerInstanceHealthResponse*/
-func (a *V2ApiService) SetServerInstanceHealth(ctx context.Context, setServerInstanceHealthRequest SetServerInstanceHealthRequest) (SetServerInstanceHealthResponse, *http.Response, error) {
+/* V2ApiService 
+ B.서버인스턴스헬스상태갱신
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param setServerInstanceHealthRequest setServerInstanceHealthRequest
+ @return SetServerInstanceHealthResponse*/
+func (a *V2ApiService) SetServerInstanceHealth(ctx context.Context, setServerInstanceHealthRequest SetServerInstanceHealthRequest) (SetServerInstanceHealthResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     SetServerInstanceHealthResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  SetServerInstanceHealthResponse
 	)
 
 	// create path and map variables
@@ -1361,8 +1419,9 @@ func (a *V2ApiService) SetServerInstanceHealth(ctx context.Context, setServerIns
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1371,7 +1430,8 @@ func (a *V2ApiService) SetServerInstanceHealth(ctx context.Context, setServerIns
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1402,25 +1462,26 @@ func (a *V2ApiService) SetServerInstanceHealth(ctx context.Context, setServerIns
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-D.프로세스보류
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param suspendProcessesRequest suspendProcessesRequest
-@return SuspendProcessesResponse*/
-func (a *V2ApiService) SuspendProcesses(ctx context.Context, suspendProcessesRequest SuspendProcessesRequest) (SuspendProcessesResponse, *http.Response, error) {
+/* V2ApiService 
+ D.프로세스보류
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param suspendProcessesRequest suspendProcessesRequest
+ @return SuspendProcessesResponse*/
+func (a *V2ApiService) SuspendProcesses(ctx context.Context, suspendProcessesRequest SuspendProcessesRequest) (SuspendProcessesResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     SuspendProcessesResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  SuspendProcessesResponse
 	)
 
 	// create path and map variables
@@ -1430,8 +1491,9 @@ func (a *V2ApiService) SuspendProcesses(ctx context.Context, suspendProcessesReq
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1440,7 +1502,8 @@ func (a *V2ApiService) SuspendProcesses(ctx context.Context, suspendProcessesReq
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1471,25 +1534,26 @@ func (a *V2ApiService) SuspendProcesses(ctx context.Context, suspendProcessesReq
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-B.오토스케일링그룹에속한서버인스턴스삭제
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param terminateServerInstanceInAutoScalingGroupRequest terminateServerInstanceInAutoScalingGroupRequest
-@return TerminateServerInstanceInAutoScalingGroupResponse*/
-func (a *V2ApiService) TerminateServerInstanceInAutoScalingGroup(ctx context.Context, terminateServerInstanceInAutoScalingGroupRequest TerminateServerInstanceInAutoScalingGroupRequest) (TerminateServerInstanceInAutoScalingGroupResponse, *http.Response, error) {
+/* V2ApiService 
+ B.오토스케일링그룹에속한서버인스턴스삭제
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param terminateServerInstanceInAutoScalingGroupRequest terminateServerInstanceInAutoScalingGroupRequest
+ @return TerminateServerInstanceInAutoScalingGroupResponse*/
+func (a *V2ApiService) TerminateServerInstanceInAutoScalingGroup(ctx context.Context, terminateServerInstanceInAutoScalingGroupRequest TerminateServerInstanceInAutoScalingGroupRequest) (TerminateServerInstanceInAutoScalingGroupResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     TerminateServerInstanceInAutoScalingGroupResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  TerminateServerInstanceInAutoScalingGroupResponse
 	)
 
 	// create path and map variables
@@ -1499,8 +1563,9 @@ func (a *V2ApiService) TerminateServerInstanceInAutoScalingGroup(ctx context.Con
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1509,7 +1574,8 @@ func (a *V2ApiService) TerminateServerInstanceInAutoScalingGroup(ctx context.Con
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1540,25 +1606,26 @@ func (a *V2ApiService) TerminateServerInstanceInAutoScalingGroup(ctx context.Con
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
+
 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* V2ApiService
-B.오토스케일링그룹수정
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param updateAutoScalingGroupRequest updateAutoScalingGroupRequest
-@return UpdateAutoScalingGroupResponse*/
-func (a *V2ApiService) UpdateAutoScalingGroup(ctx context.Context, updateAutoScalingGroupRequest UpdateAutoScalingGroupRequest) (UpdateAutoScalingGroupResponse, *http.Response, error) {
+/* V2ApiService 
+ B.오토스케일링그룹수정
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @param updateAutoScalingGroupRequest updateAutoScalingGroupRequest
+ @return UpdateAutoScalingGroupResponse*/
+func (a *V2ApiService) UpdateAutoScalingGroup(ctx context.Context, updateAutoScalingGroupRequest UpdateAutoScalingGroupRequest) (UpdateAutoScalingGroupResponse,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     UpdateAutoScalingGroupResponse
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  UpdateAutoScalingGroupResponse
 	)
 
 	// create path and map variables
@@ -1568,8 +1635,9 @@ func (a *V2ApiService) UpdateAutoScalingGroup(ctx context.Context, updateAutoSca
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1578,7 +1646,8 @@ func (a *V2ApiService) UpdateAutoScalingGroup(ctx context.Context, updateAutoSca
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{}
+	localVarHttpHeaderAccepts := []string{
+		}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1609,9 +1678,11 @@ func (a *V2ApiService) UpdateAutoScalingGroup(ctx context.Context, updateAutoSca
 		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
 
+
 	return successPayload, localVarHttpResponse, err
 }
+

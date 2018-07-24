@@ -10,9 +10,10 @@
 package loadbalancer
 
 type Region struct {
-	RegionNo *string `json:"regionNo,omitempty"`
 
-	RegionCode *string `json:"regionCode,omitempty"`
+RegionNo *string `json:"regionNo,omitempty"`
 
-	RegionName *string `json:"regionName,omitempty"`
+RegionCode *string `json:"regionCode,omitempty"`
+
+RegionName *string `json:"regionName,omitempty"`
 }

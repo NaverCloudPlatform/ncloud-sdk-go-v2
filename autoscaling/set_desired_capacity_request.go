@@ -12,8 +12,8 @@ package autoscaling
 type SetDesiredCapacityRequest struct {
 
 	// 오토스케일링그룹명
-	AutoScalingGroupName *string `json:"autoScalingGroupName"`
+AutoScalingGroupName *string `json:"autoScalingGroupName"`
 
 	// 기대용량치
-	DesiredCapacity *int32 `json:"desiredCapacity"`
+DesiredCapacity *int32 `json:"desiredCapacity"`
 }

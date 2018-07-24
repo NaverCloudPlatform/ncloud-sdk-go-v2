@@ -12,11 +12,11 @@ package autoscaling
 type Zone struct {
 
 	// 존(Zone)번호
-	ZoneNo *string `json:"zoneNo,omitempty"`
+ZoneNo *string `json:"zoneNo,omitempty"`
 
 	// 존(Zone)명
-	ZoneName *string `json:"zoneName,omitempty"`
+ZoneName *string `json:"zoneName,omitempty"`
 
 	// 존(Zone)설명
-	ZoneDescription *string `json:"zoneDescription,omitempty"`
+ZoneDescription *string `json:"zoneDescription,omitempty"`
 }

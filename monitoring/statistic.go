@@ -10,7 +10,8 @@
 package monitoring
 
 type Statistic struct {
-	InstanceNo *string `json:"instanceNo,omitempty"`
 
-	DataPointsList *[]DataPoints `json:"dataPointsList,omitempty"`
+InstanceNo *string `json:"instanceNo,omitempty"`
+
+DataPointsList []DataPoints `json:"dataPointsList,omitempty"`
 }

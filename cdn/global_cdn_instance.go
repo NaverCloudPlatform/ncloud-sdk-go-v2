@@ -12,32 +12,32 @@ package cdn
 type GlobalCdnInstance struct {
 
 	// CDN인스턴스번호
-	CdnInstanceNo *string `json:"cdnInstanceNo,omitempty"`
+CdnInstanceNo *string `json:"cdnInstanceNo,omitempty"`
 
 	// CDN인스턴스상태
-	CdnInstanceStatus **CommonCode `json:"cdnInstanceStatus,omitempty"`
+CdnInstanceStatus **CommonCode `json:"cdnInstanceStatus,omitempty"`
 
 	// CDN인스턴스OP
-	CdnInstanceOperation **CommonCode `json:"cdnInstanceOperation,omitempty"`
+CdnInstanceOperation **CommonCode `json:"cdnInstanceOperation,omitempty"`
 
 	// CDN인스턴스상태명
-	CdnInstanceStatusName *string `json:"cdnInstanceStatusName,omitempty"`
+CdnInstanceStatusName *string `json:"cdnInstanceStatusName,omitempty"`
 
 	// 생성일자
-	CreateDate *string `json:"createDate,omitempty"`
+CreateDate *string `json:"createDate,omitempty"`
 
 	// UPTIME
-	LastModifiedDate *string `json:"lastModifiedDate,omitempty"`
+LastModifiedDate *string `json:"lastModifiedDate,omitempty"`
 
 	// CDN인스턴스설명
-	CdnInstanceDescription *string `json:"cdnInstanceDescription,omitempty"`
+CdnInstanceDescription *string `json:"cdnInstanceDescription,omitempty"`
 
 	// 서비스이름
-	ServiceName *string `json:"serviceName,omitempty"`
+ServiceName *string `json:"serviceName,omitempty"`
 
-	IsAvailablePartialDomainPurge *bool `json:"isAvailablePartialDomainPurge,omitempty"`
+IsAvailablePartialDomainPurge *bool `json:"isAvailablePartialDomainPurge,omitempty"`
 
-	GlobalCdnServiceDomainList *[]GlobalCdnServiceDomain `json:"globalCdnServiceDomainList,omitempty"`
+GlobalCdnServiceDomainList []GlobalCdnServiceDomain `json:"globalCdnServiceDomainList,omitempty"`
 
-	GlobalCdnRule **GlobalCdnRule `json:"globalCdnRule,omitempty"`
+GlobalCdnRule **GlobalCdnRule `json:"globalCdnRule,omitempty"`
 }

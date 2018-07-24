@@ -12,26 +12,26 @@ package autoscaling
 type GetScheduledActionListRequest struct {
 
 	// 오토스케일링그룹명
-	AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`
+AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`
 
 	// 스케쥴액션명리스트
-	ScheduledActionNameList *[]string `json:"scheduledActionNameList,omitempty"`
+ScheduledActionNameList []string `json:"scheduledActionNameList,omitempty"`
 
 	// 스케쥴시작일시, format : yyyy-MM-dd'T'HH:mm:ssZ
-	StartTime *string `json:"startTime,omitempty"`
+StartTime *string `json:"startTime,omitempty"`
 
 	// 스케쥴종료일시, format : yyyy-MM-dd'T'HH:mm:ssZ
-	EndTime *string `json:"endTime,omitempty"`
+EndTime *string `json:"endTime,omitempty"`
 
 	// 페이지번호
-	PageNo *int32 `json:"pageNo,omitempty"`
+PageNo *int32 `json:"pageNo,omitempty"`
 
 	// 페이지사이즈
-	PageSize *int32 `json:"pageSize,omitempty"`
+PageSize *int32 `json:"pageSize,omitempty"`
 
 	// 소팅대상
-	SortedBy *string `json:"sortedBy,omitempty"`
+SortedBy *string `json:"sortedBy,omitempty"`
 
 	// 소팅순서
-	SortingOrder *string `json:"sortingOrder,omitempty"`
+SortingOrder *string `json:"sortingOrder,omitempty"`
 }

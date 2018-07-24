@@ -10,17 +10,18 @@
 package loadbalancer
 
 type ServerHealthCheckStatus struct {
-	ProtocolType **CommonCode `json:"protocolType,omitempty"`
 
-	LoadBalancerPort *int32 `json:"loadBalancerPort,omitempty"`
+ProtocolType **CommonCode `json:"protocolType,omitempty"`
+
+LoadBalancerPort *int32 `json:"loadBalancerPort,omitempty"`
 
 	// 서버포트
-	ServerPort *int32 `json:"serverPort,omitempty"`
+ServerPort *int32 `json:"serverPort,omitempty"`
 
-	L7HealthCheckPath *string `json:"l7HealthCheckPath,omitempty"`
+L7HealthCheckPath *string `json:"l7HealthCheckPath,omitempty"`
 
-	ProxyProtocolUseYn *string `json:"proxyProtocolUseYn,omitempty"`
+ProxyProtocolUseYn *string `json:"proxyProtocolUseYn,omitempty"`
 
 	// 서버상태
-	ServerStatus *bool `json:"serverStatus,omitempty"`
+ServerStatus *bool `json:"serverStatus,omitempty"`
 }

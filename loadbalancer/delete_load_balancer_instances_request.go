@@ -12,5 +12,5 @@ package loadbalancer
 type DeleteLoadBalancerInstancesRequest struct {
 
 	// 로드밸런서인스턴스번호리스트
-	LoadBalancerInstanceNoList *[]string `json:"loadBalancerInstanceNoList"`
+LoadBalancerInstanceNoList []string `json:"loadBalancerInstanceNoList"`
 }

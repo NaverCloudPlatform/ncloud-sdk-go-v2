@@ -12,17 +12,17 @@ package monitoring
 type GetMetricStatisticsRequest struct {
 
 	// (서버)인스턴스번호리스트
-	InstanceNoList *[]string `json:"instanceNoList"`
+InstanceNoList []string `json:"instanceNoList"`
 
 	// 메트릭이름리스트
-	MetricName *string `json:"metricName"`
+MetricName *string `json:"metricName"`
 
 	// 조회시작일시
-	StartTime *string `json:"startTime"`
+StartTime *string `json:"startTime"`
 
 	// 조회종료일시
-	EndTime *string `json:"endTime"`
+EndTime *string `json:"endTime"`
 
 	// 조회주기(초)
-	Period *int32 `json:"period"`
+Period *int32 `json:"period"`
 }

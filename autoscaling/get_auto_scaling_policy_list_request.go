@@ -12,14 +12,14 @@ package autoscaling
 type GetAutoScalingPolicyListRequest struct {
 
 	// 정책명리스트
-	PolicyNameList *[]string `json:"policyNameList,omitempty"`
+PolicyNameList []string `json:"policyNameList,omitempty"`
 
 	// 오토스케일링그룹명
-	AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`
+AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`
 
 	// 페이지번호
-	PageNo *int32 `json:"pageNo,omitempty"`
+PageNo *int32 `json:"pageNo,omitempty"`
 
 	// 페이지사이즈
-	PageSize *int32 `json:"pageSize,omitempty"`
+PageSize *int32 `json:"pageSize,omitempty"`
 }

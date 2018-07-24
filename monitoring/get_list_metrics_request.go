@@ -12,8 +12,8 @@ package monitoring
 type GetListMetricsRequest struct {
 
 	// (서버)인스턴스번호
-	InstanceNo *string `json:"instanceNo"`
+InstanceNo *string `json:"instanceNo"`
 
 	// 메트릭이름
-	MetricName *string `json:"metricName,omitempty"`
+MetricName *string `json:"metricName,omitempty"`
 }

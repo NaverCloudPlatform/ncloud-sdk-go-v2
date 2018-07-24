@@ -12,26 +12,26 @@ package autoscaling
 type LaunchConfiguration struct {
 
 	// 론치설정명
-	LaunchConfigurationName *string `json:"launchConfigurationName,omitempty"`
+LaunchConfigurationName *string `json:"launchConfigurationName,omitempty"`
 
 	// 서버이미지상품코드
-	ServerImageProductCode *string `json:"serverImageProductCode,omitempty"`
+ServerImageProductCode *string `json:"serverImageProductCode,omitempty"`
 
 	// 서버상품코드
-	ServerProductCode *string `json:"serverProductCode,omitempty"`
+ServerProductCode *string `json:"serverProductCode,omitempty"`
 
 	// 회원서버이미지번호
-	MemberServerImageNo *string `json:"memberServerImageNo,omitempty"`
+MemberServerImageNo *string `json:"memberServerImageNo,omitempty"`
 
 	// 로그인키명
-	LoginKeyName *string `json:"loginKeyName,omitempty"`
+LoginKeyName *string `json:"loginKeyName,omitempty"`
 
 	// 생성일시
-	CreateDate *string `json:"createDate,omitempty"`
+CreateDate *string `json:"createDate,omitempty"`
 
 	// 사용자데이터
-	UserData *string `json:"userData,omitempty"`
+UserData *string `json:"userData,omitempty"`
 
 	// ACG리스트
-	AccessControlGroupList *[]AccessControlGroup `json:"accessControlGroupList,omitempty"`
+AccessControlGroupList []AccessControlGroup `json:"accessControlGroupList,omitempty"`
 }

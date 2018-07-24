@@ -10,15 +10,16 @@
 package monitoring
 
 type DataPoints struct {
-	Label *string `json:"label,omitempty"`
 
-	Average *float64 `json:"average,omitempty"`
+Label *string `json:"label,omitempty"`
 
-	Maximum *float64 `json:"maximum,omitempty"`
+Average *float64 `json:"average,omitempty"`
 
-	Minimum *float64 `json:"minimum,omitempty"`
+Maximum *float64 `json:"maximum,omitempty"`
 
-	Sum *float64 `json:"sum,omitempty"`
+Minimum *float64 `json:"minimum,omitempty"`
 
-	DataPointList *[]DataPoint `json:"dataPointList,omitempty"`
+Sum *float64 `json:"sum,omitempty"`
+
+DataPointList []DataPoint `json:"dataPointList,omitempty"`
 }

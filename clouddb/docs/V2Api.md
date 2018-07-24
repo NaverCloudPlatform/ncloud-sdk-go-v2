@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateCloudDBInstance**](V2Api.md#CreateCloudDBInstance) | **Post** /createCloudDBInstance | 
 [**DeleteCloudDBServerInstance**](V2Api.md#DeleteCloudDBServerInstance) | **Post** /deleteCloudDBServerInstance | 
+[**FlushCloudDBInstance**](V2Api.md#FlushCloudDBInstance) | **Post** /flushCloudDBInstance | 
 [**GetCloudDBConfigGroupList**](V2Api.md#GetCloudDBConfigGroupList) | **Post** /getCloudDBConfigGroupList | 
 [**GetCloudDBImageProductList**](V2Api.md#GetCloudDBImageProductList) | **Post** /getCloudDBImageProductList | 
 [**GetCloudDBInstanceList**](V2Api.md#GetCloudDBInstanceList) | **Post** /getCloudDBInstanceList | 
@@ -57,6 +58,34 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DeleteCloudDbServerInstanceResponse**](deleteCloudDBServerInstanceResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **FlushCloudDBInstance**
+> FlushCloudDbInstanceResponse FlushCloudDBInstance(ctx, flushCloudDBInstanceRequest)
+
+
+CloudDB Flush
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **flushCloudDBInstanceRequest** | [**FlushCloudDbInstanceRequest**](FlushCloudDbInstanceRequest.md)| flushCloudDBInstanceRequest | 
+
+### Return type
+
+[**FlushCloudDbInstanceResponse**](flushCloudDBInstanceResponse.md)
 
 ### Authorization
 
