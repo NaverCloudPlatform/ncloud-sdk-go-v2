@@ -28,8 +28,8 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/NaverCloudPlatform/ncloud-sdk-go/hmac"
-	"github.com/NaverCloudPlatform/ncloud-sdk-go/ncloud"
+	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/hmac"
+	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/ncloud"
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2"
 )
