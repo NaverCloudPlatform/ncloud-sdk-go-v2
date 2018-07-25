@@ -14,22 +14,20 @@ go get github.com/NaverCloudPlatform/ncloud-sdk-go-v2
 package main
 
 import (
-	"context"
+	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/services/server"
 	"log"
-
 	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/ncloud"
-	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/server"
 )
 
 func main() {
-	client := server.NewAPIClient(server.NewConfiguration())
-	auth := context.WithValue(context.Background(), server.ContextAPIKey, server.APIKey{
+
+	client := server.NewAPIClient(server.NewConfiguration(&server.APIKey{
 		AccessKey: "accessKey",
 		SecretKey: "secretKey",
-	})
+	}))
 
 	// Create server instance
-	args := server.CreateServerInstancesRequest{
+	req := server.CreateServerInstancesRequest{
 		ServerImageProductCode:     ncloud.String("SPSW0LINUX000031"),
 		ServerProductCode:          ncloud.String("SPSVRSTAND000049"),
 		UserData:                   ncloud.String("#!/bin/sh\nyum -y install httpd"),
@@ -37,10 +35,11 @@ func main() {
 		ServerCreateCount:          ncloud.Int32(1),
 	}
 
-	if r, _, err := client.V2Api.CreateServerInstances(auth, args); err != nil {
+
+	if r, err := client.V2Api.CreateServerInstances(&req); err != nil {
 		log.Println(err)
 	} else {
-		sList := *r.ServerInstanceList
+		sList := r.ServerInstanceList
 		log.Println(ncloud.StringValue(r.RequestId))
 		log.Println(ncloud.StringValue(sList[0].ServerInstanceNo))
 		log.Println(ncloud.StringValue(sList[0].ServerName))
