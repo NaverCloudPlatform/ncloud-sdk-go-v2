@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **IsGzipCompressionUse** | **bool** | GZIP압축사용여부 | [optional] [default to null]
 **CachingOptionTypeCode** | **string** | 캐싱옵션구분코드 | [optional] [default to null]
 **IsErrorContentsResponseUse** | **bool** | 오류내용응답사용여부 | [optional] [default to null]
-**CachingTtlTime** | **string** | TTL캐싱 | [optional] [default to null]
+**CachingTtlTime** | **int32** | TTL캐싱 | [optional] [default to null]
 **IsQueryStringIgnoreUse** | **bool** | 쿼리스트링무시여부 | [optional] [default to null]
 **IsRemoveVaryHeaderUse** | **bool** | 헤더제거사용여부 | [optional] [default to null]
 **IsLargeFileOptimizationUse** | **bool** | 대용량파일최적화사용여부 | [optional] [default to null]
