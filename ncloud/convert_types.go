@@ -1,7 +1,24 @@
 package ncloud
 
+import (
+	"strconv"
+	"reflect"
+)
+
 func String(v string) *string {
 	return &v
+}
+
+func IntString(n int) string {
+	return strconv.Itoa(n)
+}
+
+func StringList(input []interface{}) []string {
+	vs := make([]string, 0, len(input))
+	for _, v := range input {
+		vs = append(vs, v.(string))
+	}
+	return vs
 }
 
 func StringValue(v *string) string {
@@ -64,4 +81,16 @@ func Float32Value(v *float32) float32 {
 		return *v
 	}
 	return 0
+}
+
+func NewCommonResponse(resp interface{}) (*CommonResponse) {
+	requestId := reflect.ValueOf(resp).Elem().FieldByName("RequestId").String()
+	returnCode := reflect.ValueOf(resp).Elem().FieldByName("ReturnCode").String()
+	returnMessage := reflect.ValueOf(resp).Elem().FieldByName("ReturnMessage").String()
+
+	return &CommonResponse{
+		RequestId: String(requestId),
+		ReturnCode: String(returnCode),
+		ReturnMessage: String(returnMessage),
+	}
 }
