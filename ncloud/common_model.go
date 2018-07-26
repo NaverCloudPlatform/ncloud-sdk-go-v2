@@ -5,3 +5,8 @@ type CommonResponse struct {
 	ReturnCode    *string `xml:"returnCode"`
 	ReturnMessage *string `xml:"returnMessage"`
 }
+
+type CommonCode struct {
+	Code *string `json:"code,omitempty"`
+	CodeName *string `json:"codeName,omitempty"`
+}
