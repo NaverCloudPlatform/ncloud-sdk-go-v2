@@ -27,6 +27,14 @@ func StringList(input []interface{}) []*string {
 	return vs
 }
 
+func StringListValue(input []*string) []string {
+	vs := make([]string, 0, len(input))
+	for _, v := range input {
+		vs = append(vs, StringValue(v))
+	}
+	return vs
+}
+
 func StringValue(v *string) string {
 	if v != nil {
 		return *v
