@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CertificateName** | **string** | 인증서명 | [optional] [default to null]
-**PrivateKey** | **string** | 비밀키 | [optional] [default to null]
-**PublicKeyCertificate** | **string** | 공개키인증서 | [optional] [default to null]
-**CertificateChain** | **string** | chainca | [optional] [default to null]
+**CertificateName** | ***string** | 인증서명 | [optional] [default to null]
+**PrivateKey** | ***string** | 비밀키 | [optional] [default to null]
+**PublicKeyCertificate** | ***string** | 공개키인증서 | [optional] [default to null]
+**CertificateChain** | ***string** | chainca | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

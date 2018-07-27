@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-MemberServerImageList []MemberServerImage `json:"memberServerImageList,omitempty"`
+MemberServerImageList []*MemberServerImage `json:"memberServerImageList,omitempty"`
 }

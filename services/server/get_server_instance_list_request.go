@@ -12,7 +12,7 @@ package server
 type GetServerInstanceListRequest struct {
 
 	// 서버인스턴스번호리스트
-ServerInstanceNoList []string `json:"serverInstanceNoList,omitempty"`
+ServerInstanceNoList []*string `json:"serverInstanceNoList,omitempty"`
 
 	// 검색필터명
 SearchFilterName *string `json:"searchFilterName,omitempty"`
@@ -51,5 +51,5 @@ SortedBy *string `json:"sortedBy,omitempty"`
 SortingOrder *string `json:"sortingOrder,omitempty"`
 
 	// 서비인스턴스구분코드리스트
-ServerInstanceTypeCodeList []string `json:"serverInstanceTypeCodeList,omitempty"`
+ServerInstanceTypeCodeList []*string `json:"serverInstanceTypeCodeList,omitempty"`
 }

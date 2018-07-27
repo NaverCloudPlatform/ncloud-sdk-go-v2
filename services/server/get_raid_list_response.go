@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-RaidList []Raid `json:"raidList,omitempty"`
+RaidList []*Raid `json:"raidList,omitempty"`
 }

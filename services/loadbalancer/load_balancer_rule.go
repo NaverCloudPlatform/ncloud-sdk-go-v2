@@ -12,7 +12,7 @@ package loadbalancer
 type LoadBalancerRule struct {
 
 	// 프로토콜
-ProtocolType **CommonCode `json:"protocolType,omitempty"`
+ProtocolType *CommonCode `json:"protocolType,omitempty"`
 
 	// 로드밸런서포트
 LoadBalancerPort *int32 `json:"loadBalancerPort,omitempty"`

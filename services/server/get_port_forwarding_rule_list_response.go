@@ -18,12 +18,12 @@ PortForwardingConfigurationNo *string `json:"portForwardingConfigurationNo,omite
 PortForwardingPublicIp *string `json:"portForwardingPublicIp,omitempty"`
 
 	// ZONE객체
-Zone **Zone `json:"zone,omitempty"`
+Zone *Zone `json:"zone,omitempty"`
 
 	// 인터넷라인구분
-InternetLineType **CommonCode `json:"internetLineType,omitempty"`
+InternetLineType *CommonCode `json:"internetLineType,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-PortForwardingRuleList []PortForwardingRule `json:"portForwardingRuleList,omitempty"`
+PortForwardingRuleList []*PortForwardingRule `json:"portForwardingRuleList,omitempty"`
 }

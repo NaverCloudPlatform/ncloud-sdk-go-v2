@@ -12,7 +12,7 @@ package autoscaling
 type GetLaunchConfigurationListRequest struct {
 
 	// 론치설정명리스트
-LaunchConfigurationNameList []string `json:"launchConfigurationNameList,omitempty"`
+LaunchConfigurationNameList []*string `json:"launchConfigurationNameList,omitempty"`
 
 	// 페이지번호
 PageNo *int32 `json:"pageNo,omitempty"`

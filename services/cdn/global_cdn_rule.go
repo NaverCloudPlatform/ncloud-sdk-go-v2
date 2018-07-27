@@ -66,7 +66,7 @@ GzipResponseTypeCode *string `json:"gzipResponseTypeCode,omitempty"`
 IsReferrerDomainUse *bool `json:"isReferrerDomainUse,omitempty"`
 
 	// 레퍼러도메인리스트
-ReferrerDomainList []string `json:"referrerDomainList,omitempty"`
+ReferrerDomainList []*string `json:"referrerDomainList,omitempty"`
 
 	// 레퍼러도메인제한사용여부
 IsReferrerDomainRestrictUse *bool `json:"isReferrerDomainRestrictUse,omitempty"`

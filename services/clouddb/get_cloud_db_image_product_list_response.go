@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-ProductList []Product `json:"productList,omitempty"`
+ProductList []*Product `json:"productList,omitempty"`
 }

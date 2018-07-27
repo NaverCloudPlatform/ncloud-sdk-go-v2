@@ -11,5 +11,5 @@ package autoscaling
 
 type Process struct {
 
-Process **CommonCode `json:"process,omitempty"`
+Process *CommonCode `json:"process,omitempty"`
 }

@@ -18,13 +18,13 @@ ProductCode *string `json:"productCode,omitempty"`
 ProductName *string `json:"productName,omitempty"`
 
 	// 상품유형
-ProductType **CommonCode `json:"productType,omitempty"`
+ProductType *CommonCode `json:"productType,omitempty"`
 
 	// 상품설명
 ProductDescription *string `json:"productDescription,omitempty"`
 
 	// 인프라자원구분
-InfraResourceType **CommonCode `json:"infraResourceType,omitempty"`
+InfraResourceType *CommonCode `json:"infraResourceType,omitempty"`
 
 	// CPU수
 CpuCount *int32 `json:"cpuCount,omitempty"`
@@ -36,13 +36,13 @@ MemorySize *int64 `json:"memorySize,omitempty"`
 BaseBlockStorageSize *int64 `json:"baseBlockStorageSize,omitempty"`
 
 	// 플랫폼구분
-PlatformType **CommonCode `json:"platformType,omitempty"`
+PlatformType *CommonCode `json:"platformType,omitempty"`
 
 	// OS정보
 OsInformation *string `json:"osInformation,omitempty"`
 
 	// 디스크유형
-DiskType **CommonCode `json:"diskType,omitempty"`
+DiskType *CommonCode `json:"diskType,omitempty"`
 
 	// DB유형코드
 DbKindCode *string `json:"dbKindCode,omitempty"`

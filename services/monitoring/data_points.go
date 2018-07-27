@@ -21,5 +21,5 @@ Minimum *float64 `json:"minimum,omitempty"`
 
 Sum *float64 `json:"sum,omitempty"`
 
-DataPointList []DataPoint `json:"dataPointList,omitempty"`
+DataPointList []*DataPoint `json:"dataPointList,omitempty"`
 }

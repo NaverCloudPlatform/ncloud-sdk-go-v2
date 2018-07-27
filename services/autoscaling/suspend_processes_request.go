@@ -15,5 +15,5 @@ type SuspendProcessesRequest struct {
 AutoScalingGroupName *string `json:"autoScalingGroupName"`
 
 	// 분류프로세스코드리스트
-ScalingProcessCodeList []string `json:"scalingProcessCodeList,omitempty"`
+ScalingProcessCodeList []*string `json:"scalingProcessCodeList,omitempty"`
 }

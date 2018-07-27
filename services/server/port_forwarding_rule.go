@@ -18,5 +18,5 @@ PortForwardingExternalPort *int32 `json:"portForwardingExternalPort,omitempty"`
 PortForwardingInternalPort *int32 `json:"portForwardingInternalPort,omitempty"`
 
 	// 서버인스턴스
-ServerInstance **ServerInstance `json:"serverInstance,omitempty"`
+ServerInstance *ServerInstance `json:"serverInstance,omitempty"`
 }

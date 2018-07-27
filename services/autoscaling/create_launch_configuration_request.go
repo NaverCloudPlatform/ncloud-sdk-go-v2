@@ -24,7 +24,7 @@ ServerProductCode *string `json:"serverProductCode,omitempty"`
 MemberServerImageNo *string `json:"memberServerImageNo,omitempty"`
 
 	// ACG설정번호리스트
-AccessControlGroupConfigurationNoList []string `json:"accessControlGroupConfigurationNoList,omitempty"`
+AccessControlGroupConfigurationNoList []*string `json:"accessControlGroupConfigurationNoList,omitempty"`
 
 	// 로그인키명
 LoginKeyName *string `json:"loginKeyName,omitempty"`

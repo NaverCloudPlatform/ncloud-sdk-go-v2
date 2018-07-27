@@ -36,5 +36,5 @@ HealthCheckGracePeriod *int32 `json:"healthCheckGracePeriod,omitempty"`
 HealthCheckTypeCode *string `json:"healthCheckTypeCode,omitempty"`
 
 	// ZONE번호리스트
-ZoneNoList []string `json:"zoneNoList,omitempty"`
+ZoneNoList []*string `json:"zoneNoList,omitempty"`
 }

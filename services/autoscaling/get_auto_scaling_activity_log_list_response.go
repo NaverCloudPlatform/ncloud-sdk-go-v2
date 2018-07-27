@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-ActivityLogList []ActivityLog `json:"activityLogList,omitempty"`
+ActivityLogList []*ActivityLog `json:"activityLogList,omitempty"`
 }

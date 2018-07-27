@@ -18,12 +18,11 @@ B.메트릭 리스트 조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getListMetricsRequest** | [**GetListMetricsRequest**](GetListMetricsRequest.md)| getListMetricsRequest | 
+**getListMetricsRequest** | **[\*GetListMetricsRequest](GetListMetricsRequest.md)** | getListMetricsRequest | 
 
 ### Return type
 
-[**GetListMetricsResponse**](getListMetricsResponse.md)
+*[**GetListMetricsResponse**](getListMetricsResponse.md)
 
 ### Authorization
 
@@ -46,12 +45,11 @@ A.메트릭 통계 조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getMetricStatisticsRequest** | [**GetMetricStatisticsRequest**](GetMetricStatisticsRequest.md)| getMetricStatisticsRequest | 
+**getMetricStatisticsRequest** | **[\*GetMetricStatisticsRequest](GetMetricStatisticsRequest.md)** | getMetricStatisticsRequest | 
 
 ### Return type
 
-[**GetMetricStatisticsResponse**](getMetricStatisticsResponse.md)
+*[**GetMetricStatisticsResponse**](getMetricStatisticsResponse.md)
 
 ### Authorization
 

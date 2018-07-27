@@ -27,10 +27,10 @@ OriginalBlockStorageInstanceNo *string `json:"originalBlockStorageInstanceNo,omi
 OriginalBlockStorageName *string `json:"originalBlockStorageName,omitempty"`
 
 	// 블록스토리지스냅샷인스턴스상태
-BlockStorageSnapshotInstanceStatus **CommonCode `json:"blockStorageSnapshotInstanceStatus,omitempty"`
+BlockStorageSnapshotInstanceStatus *CommonCode `json:"blockStorageSnapshotInstanceStatus,omitempty"`
 
 	// 블록스토리지스냅샷인스턴스OP
-BlockStorageSnapshotInstanceOperation **CommonCode `json:"blockStorageSnapshotInstanceOperation,omitempty"`
+BlockStorageSnapshotInstanceOperation *CommonCode `json:"blockStorageSnapshotInstanceOperation,omitempty"`
 
 BlockStorageSnapshotInstanceStatusName *string `json:"blockStorageSnapshotInstanceStatusName,omitempty"`
 

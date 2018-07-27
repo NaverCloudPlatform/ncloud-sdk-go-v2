@@ -11,7 +11,7 @@ package loadbalancer
 
 type ServerHealthCheckStatus struct {
 
-ProtocolType **CommonCode `json:"protocolType,omitempty"`
+ProtocolType *CommonCode `json:"protocolType,omitempty"`
 
 LoadBalancerPort *int32 `json:"loadBalancerPort,omitempty"`
 

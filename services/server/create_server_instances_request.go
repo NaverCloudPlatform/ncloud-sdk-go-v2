@@ -51,7 +51,7 @@ UserData *string `json:"userData,omitempty"`
 ZoneNo *string `json:"zoneNo,omitempty"`
 
 	// ACG설정번호리스트
-AccessControlGroupConfigurationNoList []string `json:"accessControlGroupConfigurationNoList,omitempty"`
+AccessControlGroupConfigurationNoList []*string `json:"accessControlGroupConfigurationNoList,omitempty"`
 
 	// RAID구분이름
 RaidTypeName *string `json:"raidTypeName,omitempty"`

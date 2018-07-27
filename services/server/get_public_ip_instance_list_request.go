@@ -15,10 +15,10 @@ type GetPublicIpInstanceListRequest struct {
 IsAssociated *bool `json:"isAssociated,omitempty"`
 
 	// 공인IP인스턴스번호리스트
-PublicIpInstanceNoList []string `json:"publicIpInstanceNoList,omitempty"`
+PublicIpInstanceNoList []*string `json:"publicIpInstanceNoList,omitempty"`
 
 	// 공인IP리스트
-PublicIpList []string `json:"publicIpList,omitempty"`
+PublicIpList []*string `json:"publicIpList,omitempty"`
 
 	// 검색할필터명
 SearchFilterName *string `json:"searchFilterName,omitempty"`

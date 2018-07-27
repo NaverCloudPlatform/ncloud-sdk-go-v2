@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-SslCertificateList []SslCertificate `json:"sslCertificateList,omitempty"`
+SslCertificateList []*SslCertificate `json:"sslCertificateList,omitempty"`
 }

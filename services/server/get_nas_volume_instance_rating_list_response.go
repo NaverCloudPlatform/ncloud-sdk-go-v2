@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-NasVolumeInstanceRatingList []NasVolumeInstanceRating `json:"nasVolumeInstanceRatingList,omitempty"`
+NasVolumeInstanceRatingList []*NasVolumeInstanceRating `json:"nasVolumeInstanceRatingList,omitempty"`
 }

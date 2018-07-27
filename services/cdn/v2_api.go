@@ -32,8 +32,8 @@ type V2ApiService service
 /* V2ApiService 
  CDN+인스턴스리스트조회
  @param getCdnPlusInstanceListRequest getCdnPlusInstanceListRequest
- @return GetCdnPlusInstanceListResponse*/
-func (a *V2ApiService) GetCdnPlusInstanceList(getCdnPlusInstanceListRequest *GetCdnPlusInstanceListRequest) (GetCdnPlusInstanceListResponse, error) {
+ @return *GetCdnPlusInstanceListResponse*/
+func (a *V2ApiService) GetCdnPlusInstanceList(getCdnPlusInstanceListRequest *GetCdnPlusInstanceListRequest) (*GetCdnPlusInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -79,32 +79,32 @@ func (a *V2ApiService) GetCdnPlusInstanceList(getCdnPlusInstanceListRequest *Get
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  CDN+퍼지기록조회
  @param getCdnPlusPurgeHistoryListRequest getCdnPlusPurgeHistoryListRequest
- @return GetCdnPlusPurgeHistoryListResponse*/
-func (a *V2ApiService) GetCdnPlusPurgeHistoryList(getCdnPlusPurgeHistoryListRequest *GetCdnPlusPurgeHistoryListRequest) (GetCdnPlusPurgeHistoryListResponse, error) {
+ @return *GetCdnPlusPurgeHistoryListResponse*/
+func (a *V2ApiService) GetCdnPlusPurgeHistoryList(getCdnPlusPurgeHistoryListRequest *GetCdnPlusPurgeHistoryListRequest) (*GetCdnPlusPurgeHistoryListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -150,32 +150,32 @@ func (a *V2ApiService) GetCdnPlusPurgeHistoryList(getCdnPlusPurgeHistoryListRequ
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  Global CDN 인스턴스리스트조회
  @param getGlobalCdnInstanceListRequest getGlobalCdnInstanceListRequest
- @return GetGlobalCdnInstanceListResponse*/
-func (a *V2ApiService) GetGlobalCdnInstanceList(getGlobalCdnInstanceListRequest *GetGlobalCdnInstanceListRequest) (GetGlobalCdnInstanceListResponse, error) {
+ @return *GetGlobalCdnInstanceListResponse*/
+func (a *V2ApiService) GetGlobalCdnInstanceList(getGlobalCdnInstanceListRequest *GetGlobalCdnInstanceListRequest) (*GetGlobalCdnInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -221,32 +221,32 @@ func (a *V2ApiService) GetGlobalCdnInstanceList(getGlobalCdnInstanceListRequest 
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  Global CDN퍼지기록조회
  @param getGlobalCdnPurgeHistoryListRequest getGlobalCdnPurgeHistoryListRequest
- @return GetGlobalCdnPurgeHistoryListResponse*/
-func (a *V2ApiService) GetGlobalCdnPurgeHistoryList(getGlobalCdnPurgeHistoryListRequest *GetGlobalCdnPurgeHistoryListRequest) (GetGlobalCdnPurgeHistoryListResponse, error) {
+ @return *GetGlobalCdnPurgeHistoryListResponse*/
+func (a *V2ApiService) GetGlobalCdnPurgeHistoryList(getGlobalCdnPurgeHistoryListRequest *GetGlobalCdnPurgeHistoryListRequest) (*GetGlobalCdnPurgeHistoryListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -292,32 +292,32 @@ func (a *V2ApiService) GetGlobalCdnPurgeHistoryList(getGlobalCdnPurgeHistoryList
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  CDN+퍼지요청
  @param requestCdnPlusPurgeRequest requestCdnPlusPurgeRequest
- @return RequestCdnPlusPurgeResponse*/
-func (a *V2ApiService) RequestCdnPlusPurge(requestCdnPlusPurgeRequest *RequestCdnPlusPurgeRequest) (RequestCdnPlusPurgeResponse, error) {
+ @return *RequestCdnPlusPurgeResponse*/
+func (a *V2ApiService) RequestCdnPlusPurge(requestCdnPlusPurgeRequest *RequestCdnPlusPurgeRequest) (*RequestCdnPlusPurgeResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -363,32 +363,32 @@ func (a *V2ApiService) RequestCdnPlusPurge(requestCdnPlusPurgeRequest *RequestCd
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  Global CDN퍼지요청
  @param requestGlobalCdnPurgeRequest requestGlobalCdnPurgeRequest
- @return RequestGlobalCdnPurgeResponse*/
-func (a *V2ApiService) RequestGlobalCdnPurge(requestGlobalCdnPurgeRequest *RequestGlobalCdnPurgeRequest) (RequestGlobalCdnPurgeResponse, error) {
+ @return *RequestGlobalCdnPurgeResponse*/
+func (a *V2ApiService) RequestGlobalCdnPurge(requestGlobalCdnPurgeRequest *RequestGlobalCdnPurgeRequest) (*RequestGlobalCdnPurgeResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -434,24 +434,24 @@ func (a *V2ApiService) RequestGlobalCdnPurge(requestGlobalCdnPurgeRequest *Reque
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 

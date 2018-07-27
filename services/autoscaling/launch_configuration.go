@@ -33,5 +33,5 @@ CreateDate *string `json:"createDate,omitempty"`
 UserData *string `json:"userData,omitempty"`
 
 	// ACG리스트
-AccessControlGroupList []AccessControlGroup `json:"accessControlGroupList,omitempty"`
+AccessControlGroupList []*AccessControlGroup `json:"accessControlGroupList,omitempty"`
 }

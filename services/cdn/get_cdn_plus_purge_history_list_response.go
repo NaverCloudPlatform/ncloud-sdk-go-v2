@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-CdnPlusPurgeHistoryList []CdnPlusPurgeHistory `json:"cdnPlusPurgeHistoryList,omitempty"`
+CdnPlusPurgeHistoryList []*CdnPlusPurgeHistory `json:"cdnPlusPurgeHistoryList,omitempty"`
 }

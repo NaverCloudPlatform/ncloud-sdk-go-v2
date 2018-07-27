@@ -12,7 +12,7 @@ package autoscaling
 type GetAutoScalingGroupListRequest struct {
 
 	// 오토스케일링그룹명리스트
-AutoScalingGroupNameList []string `json:"autoScalingGroupNameList,omitempty"`
+AutoScalingGroupNameList []*string `json:"autoScalingGroupNameList,omitempty"`
 
 	// 페이지번호
 PageNo *int32 `json:"pageNo,omitempty"`

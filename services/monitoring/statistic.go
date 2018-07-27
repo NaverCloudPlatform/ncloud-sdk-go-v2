@@ -13,5 +13,5 @@ type Statistic struct {
 
 InstanceNo *string `json:"instanceNo,omitempty"`
 
-DataPointsList []DataPoints `json:"dataPointsList,omitempty"`
+DataPointsList []*DataPoints `json:"dataPointsList,omitempty"`
 }

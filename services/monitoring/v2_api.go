@@ -32,8 +32,8 @@ type V2ApiService service
 /* V2ApiService 
  B.메트릭 리스트 조회
  @param getListMetricsRequest getListMetricsRequest
- @return GetListMetricsResponse*/
-func (a *V2ApiService) GetListMetrics(getListMetricsRequest *GetListMetricsRequest) (GetListMetricsResponse, error) {
+ @return *GetListMetricsResponse*/
+func (a *V2ApiService) GetListMetrics(getListMetricsRequest *GetListMetricsRequest) (*GetListMetricsResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -79,32 +79,32 @@ func (a *V2ApiService) GetListMetrics(getListMetricsRequest *GetListMetricsReque
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  A.메트릭 통계 조회
  @param getMetricStatisticsRequest getMetricStatisticsRequest
- @return GetMetricStatisticsResponse*/
-func (a *V2ApiService) GetMetricStatistics(getMetricStatisticsRequest *GetMetricStatisticsRequest) (GetMetricStatisticsResponse, error) {
+ @return *GetMetricStatisticsResponse*/
+func (a *V2ApiService) GetMetricStatistics(getMetricStatisticsRequest *GetMetricStatisticsRequest) (*GetMetricStatisticsResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -150,24 +150,24 @@ func (a *V2ApiService) GetMetricStatistics(getMetricStatisticsRequest *GetMetric
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 

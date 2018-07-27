@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-AutoScalingGroupList []AutoScalingGroup `json:"autoScalingGroupList,omitempty"`
+AutoScalingGroupList []*AutoScalingGroup `json:"autoScalingGroupList,omitempty"`
 }

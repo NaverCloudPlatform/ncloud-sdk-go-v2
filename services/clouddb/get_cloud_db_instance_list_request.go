@@ -12,7 +12,7 @@ package clouddb
 type GetCloudDbInstanceListRequest struct {
 
 	// CloudDB인스턴스번호리스트
-CloudDBInstanceNoList []string `json:"cloudDBInstanceNoList,omitempty"`
+CloudDBInstanceNoList []*string `json:"cloudDBInstanceNoList,omitempty"`
 
 	// 페이지번호
 PageNo *int32 `json:"pageNo,omitempty"`

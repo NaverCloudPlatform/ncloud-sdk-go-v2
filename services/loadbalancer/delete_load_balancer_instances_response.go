@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-LoadBalancerInstanceList []LoadBalancerInstance `json:"loadBalancerInstanceList,omitempty"`
+LoadBalancerInstanceList []*LoadBalancerInstance `json:"loadBalancerInstanceList,omitempty"`
 }

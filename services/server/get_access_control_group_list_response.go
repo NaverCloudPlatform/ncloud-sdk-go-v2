@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-AccessControlGroupList []AccessControlGroup `json:"accessControlGroupList,omitempty"`
+AccessControlGroupList []*AccessControlGroup `json:"accessControlGroupList,omitempty"`
 }

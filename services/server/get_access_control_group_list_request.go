@@ -12,7 +12,7 @@ package server
 type GetAccessControlGroupListRequest struct {
 
 	// 접근제어그룹설정번호리스트
-AccessControlGroupConfigurationNoList []string `json:"accessControlGroupConfigurationNoList,omitempty"`
+AccessControlGroupConfigurationNoList []*string `json:"accessControlGroupConfigurationNoList,omitempty"`
 
 	// 디폴트여부
 IsDefault *bool `json:"isDefault,omitempty"`

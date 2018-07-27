@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-LoginKeyList []LoginKey `json:"loginKeyList,omitempty"`
+LoginKeyList []*LoginKey `json:"loginKeyList,omitempty"`
 }

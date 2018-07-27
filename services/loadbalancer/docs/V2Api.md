@@ -26,12 +26,11 @@ Method | HTTP request | Description
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **addLoadBalancerSslCertificateRequest** | [**AddLoadBalancerSslCertificateRequest**](AddLoadBalancerSslCertificateRequest.md)| addLoadBalancerSslCertificateRequest | 
+**addLoadBalancerSslCertificateRequest** | **[\*AddLoadBalancerSslCertificateRequest](AddLoadBalancerSslCertificateRequest.md)** | addLoadBalancerSslCertificateRequest | 
 
 ### Return type
 
-[**AddLoadBalancerSslCertificateResponse**](addLoadBalancerSslCertificateResponse.md)
+*[**AddLoadBalancerSslCertificateResponse**](addLoadBalancerSslCertificateResponse.md)
 
 ### Authorization
 
@@ -54,12 +53,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **changeLoadBalancedServerInstancesRequest** | [**ChangeLoadBalancedServerInstancesRequest**](ChangeLoadBalancedServerInstancesRequest.md)| changeLoadBalancedServerInstancesRequest | 
+**changeLoadBalancedServerInstancesRequest** | **[\*ChangeLoadBalancedServerInstancesRequest](ChangeLoadBalancedServerInstancesRequest.md)** | changeLoadBalancedServerInstancesRequest | 
 
 ### Return type
 
-[**ChangeLoadBalancedServerInstancesResponse**](changeLoadBalancedServerInstancesResponse.md)
+*[**ChangeLoadBalancedServerInstancesResponse**](changeLoadBalancedServerInstancesResponse.md)
 
 ### Authorization
 
@@ -82,12 +80,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **changeLoadBalancerInstanceConfigurationRequest** | [**ChangeLoadBalancerInstanceConfigurationRequest**](ChangeLoadBalancerInstanceConfigurationRequest.md)| changeLoadBalancerInstanceConfigurationRequest | 
+**changeLoadBalancerInstanceConfigurationRequest** | **[\*ChangeLoadBalancerInstanceConfigurationRequest](ChangeLoadBalancerInstanceConfigurationRequest.md)** | changeLoadBalancerInstanceConfigurationRequest | 
 
 ### Return type
 
-[**ChangeLoadBalancerInstanceConfigurationResponse**](changeLoadBalancerInstanceConfigurationResponse.md)
+*[**ChangeLoadBalancerInstanceConfigurationResponse**](changeLoadBalancerInstanceConfigurationResponse.md)
 
 ### Authorization
 
@@ -110,12 +107,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **createLoadBalancerInstanceRequest** | [**CreateLoadBalancerInstanceRequest**](CreateLoadBalancerInstanceRequest.md)| createLoadBalancerInstanceRequest | 
+**createLoadBalancerInstanceRequest** | **[\*CreateLoadBalancerInstanceRequest](CreateLoadBalancerInstanceRequest.md)** | createLoadBalancerInstanceRequest | 
 
 ### Return type
 
-[**CreateLoadBalancerInstanceResponse**](createLoadBalancerInstanceResponse.md)
+*[**CreateLoadBalancerInstanceResponse**](createLoadBalancerInstanceResponse.md)
 
 ### Authorization
 
@@ -138,12 +134,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **deleteLoadBalancerInstancesRequest** | [**DeleteLoadBalancerInstancesRequest**](DeleteLoadBalancerInstancesRequest.md)| deleteLoadBalancerInstancesRequest | 
+**deleteLoadBalancerInstancesRequest** | **[\*DeleteLoadBalancerInstancesRequest](DeleteLoadBalancerInstancesRequest.md)** | deleteLoadBalancerInstancesRequest | 
 
 ### Return type
 
-[**DeleteLoadBalancerInstancesResponse**](deleteLoadBalancerInstancesResponse.md)
+*[**DeleteLoadBalancerInstancesResponse**](deleteLoadBalancerInstancesResponse.md)
 
 ### Authorization
 
@@ -166,12 +161,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **deleteLoadBalancerSslCertificateRequest** | [**DeleteLoadBalancerSslCertificateRequest**](DeleteLoadBalancerSslCertificateRequest.md)| deleteLoadBalancerSslCertificateRequest | 
+**deleteLoadBalancerSslCertificateRequest** | **[\*DeleteLoadBalancerSslCertificateRequest](DeleteLoadBalancerSslCertificateRequest.md)** | deleteLoadBalancerSslCertificateRequest | 
 
 ### Return type
 
-[**DeleteLoadBalancerSslCertificateResponse**](deleteLoadBalancerSslCertificateResponse.md)
+*[**DeleteLoadBalancerSslCertificateResponse**](deleteLoadBalancerSslCertificateResponse.md)
 
 ### Authorization
 
@@ -194,12 +188,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getLoadBalancedServerInstanceListRequest** | [**GetLoadBalancedServerInstanceListRequest**](GetLoadBalancedServerInstanceListRequest.md)| getLoadBalancedServerInstanceListRequest | 
+**getLoadBalancedServerInstanceListRequest** | **[\*GetLoadBalancedServerInstanceListRequest](GetLoadBalancedServerInstanceListRequest.md)** | getLoadBalancedServerInstanceListRequest | 
 
 ### Return type
 
-[**GetLoadBalancedServerInstanceListResponse**](getLoadBalancedServerInstanceListResponse.md)
+*[**GetLoadBalancedServerInstanceListResponse**](getLoadBalancedServerInstanceListResponse.md)
 
 ### Authorization
 
@@ -222,12 +215,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getLoadBalancerInstanceListRequest** | [**GetLoadBalancerInstanceListRequest**](GetLoadBalancerInstanceListRequest.md)| getLoadBalancerInstanceListRequest | 
+**getLoadBalancerInstanceListRequest** | **[\*GetLoadBalancerInstanceListRequest](GetLoadBalancerInstanceListRequest.md)** | getLoadBalancerInstanceListRequest | 
 
 ### Return type
 
-[**GetLoadBalancerInstanceListResponse**](getLoadBalancerInstanceListResponse.md)
+*[**GetLoadBalancerInstanceListResponse**](getLoadBalancerInstanceListResponse.md)
 
 ### Authorization
 
@@ -250,12 +242,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getLoadBalancerSslCertificateListRequest** | [**GetLoadBalancerSslCertificateListRequest**](GetLoadBalancerSslCertificateListRequest.md)| getLoadBalancerSslCertificateListRequest | 
+**getLoadBalancerSslCertificateListRequest** | **[\*GetLoadBalancerSslCertificateListRequest](GetLoadBalancerSslCertificateListRequest.md)** | getLoadBalancerSslCertificateListRequest | 
 
 ### Return type
 
-[**GetLoadBalancerSslCertificateListResponse**](getLoadBalancerSslCertificateListResponse.md)
+*[**GetLoadBalancerSslCertificateListResponse**](getLoadBalancerSslCertificateListResponse.md)
 
 ### Authorization
 
@@ -278,12 +269,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getLoadBalancerTargetServerInstanceListRequest** | [**GetLoadBalancerTargetServerInstanceListRequest**](GetLoadBalancerTargetServerInstanceListRequest.md)| getLoadBalancerTargetServerInstanceListRequest | 
+**getLoadBalancerTargetServerInstanceListRequest** | **[\*GetLoadBalancerTargetServerInstanceListRequest](GetLoadBalancerTargetServerInstanceListRequest.md)** | getLoadBalancerTargetServerInstanceListRequest | 
 
 ### Return type
 
-[**GetLoadBalancerTargetServerInstanceListResponse**](getLoadBalancerTargetServerInstanceListResponse.md)
+*[**GetLoadBalancerTargetServerInstanceListResponse**](getLoadBalancerTargetServerInstanceListResponse.md)
 
 ### Authorization
 

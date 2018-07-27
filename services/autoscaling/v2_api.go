@@ -32,8 +32,8 @@ type V2ApiService service
 /* V2ApiService 
  B.오토스케일링그룹생성
  @param createAutoScalingGroupRequest createAutoScalingGroupRequest
- @return CreateAutoScalingGroupResponse*/
-func (a *V2ApiService) CreateAutoScalingGroup(createAutoScalingGroupRequest *CreateAutoScalingGroupRequest) (CreateAutoScalingGroupResponse, error) {
+ @return *CreateAutoScalingGroupResponse*/
+func (a *V2ApiService) CreateAutoScalingGroup(createAutoScalingGroupRequest *CreateAutoScalingGroupRequest) (*CreateAutoScalingGroupResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -79,32 +79,32 @@ func (a *V2ApiService) CreateAutoScalingGroup(createAutoScalingGroupRequest *Cre
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  A.론치설정생성
  @param createLaunchConfigurationRequest createLaunchConfigurationRequest
- @return CreateLaunchConfigurationResponse*/
-func (a *V2ApiService) CreateLaunchConfiguration(createLaunchConfigurationRequest *CreateLaunchConfigurationRequest) (CreateLaunchConfigurationResponse, error) {
+ @return *CreateLaunchConfigurationResponse*/
+func (a *V2ApiService) CreateLaunchConfiguration(createLaunchConfigurationRequest *CreateLaunchConfigurationRequest) (*CreateLaunchConfigurationResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -150,32 +150,32 @@ func (a *V2ApiService) CreateLaunchConfiguration(createLaunchConfigurationReques
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  B.오토스케일링그룹삭제
  @param deleteAutoScalingGroupRequest deleteAutoScalingGroupRequest
- @return DeleteAutoScalingGroupResponse*/
-func (a *V2ApiService) DeleteAutoScalingGroup(deleteAutoScalingGroupRequest *DeleteAutoScalingGroupRequest) (DeleteAutoScalingGroupResponse, error) {
+ @return *DeleteAutoScalingGroupResponse*/
+func (a *V2ApiService) DeleteAutoScalingGroup(deleteAutoScalingGroupRequest *DeleteAutoScalingGroupRequest) (*DeleteAutoScalingGroupResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -221,32 +221,32 @@ func (a *V2ApiService) DeleteAutoScalingGroup(deleteAutoScalingGroupRequest *Del
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  A.오토스케일링론치설정삭제
  @param deleteAutoScalingLaunchConfigurationRequest deleteAutoScalingLaunchConfigurationRequest
- @return DeleteAutoScalingLaunchConfigurationRequest*/
-func (a *V2ApiService) DeleteAutoScalingLaunchConfiguration(deleteAutoScalingLaunchConfigurationRequest *DeleteAutoScalingLaunchConfigurationRequest) (DeleteAutoScalingLaunchConfigurationRequest, error) {
+ @return *DeleteAutoScalingLaunchConfigurationRequest*/
+func (a *V2ApiService) DeleteAutoScalingLaunchConfiguration(deleteAutoScalingLaunchConfigurationRequest *DeleteAutoScalingLaunchConfigurationRequest) (*DeleteAutoScalingLaunchConfigurationRequest, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -292,32 +292,32 @@ func (a *V2ApiService) DeleteAutoScalingLaunchConfiguration(deleteAutoScalingLau
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  F.스케일링정책삭제
  @param deletePolicyRequest deletePolicyRequest
- @return DeletePolicyResponse*/
-func (a *V2ApiService) DeletePolicy(deletePolicyRequest *DeletePolicyRequest) (DeletePolicyResponse, error) {
+ @return *DeletePolicyResponse*/
+func (a *V2ApiService) DeletePolicy(deletePolicyRequest *DeletePolicyRequest) (*DeletePolicyResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -363,32 +363,32 @@ func (a *V2ApiService) DeletePolicy(deletePolicyRequest *DeletePolicyRequest) (D
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  C.스케쥴액션삭제
  @param deleteScheduledActionRequest deleteScheduledActionRequest
- @return DeleteScheduledActionResponse*/
-func (a *V2ApiService) DeleteScheduledAction(deleteScheduledActionRequest *DeleteScheduledActionRequest) (DeleteScheduledActionResponse, error) {
+ @return *DeleteScheduledActionResponse*/
+func (a *V2ApiService) DeleteScheduledAction(deleteScheduledActionRequest *DeleteScheduledActionRequest) (*DeleteScheduledActionResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -434,32 +434,32 @@ func (a *V2ApiService) DeleteScheduledAction(deleteScheduledActionRequest *Delet
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  F.스케일링정책수행
  @param executePolicyRequest executePolicyRequest
- @return ExecutePolicyResponse*/
-func (a *V2ApiService) ExecutePolicy(executePolicyRequest *ExecutePolicyRequest) (ExecutePolicyResponse, error) {
+ @return *ExecutePolicyResponse*/
+func (a *V2ApiService) ExecutePolicy(executePolicyRequest *ExecutePolicyRequest) (*ExecutePolicyResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -505,32 +505,32 @@ func (a *V2ApiService) ExecutePolicy(executePolicyRequest *ExecutePolicyRequest)
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  F.조정유형리스트조회
  @param getAdjustmentTypeListRequest getAdjustmentTypeListRequest
- @return GetAdjustmentTypeListResponse*/
-func (a *V2ApiService) GetAdjustmentTypeList(getAdjustmentTypeListRequest *GetAdjustmentTypeListRequest) (GetAdjustmentTypeListResponse, error) {
+ @return *GetAdjustmentTypeListResponse*/
+func (a *V2ApiService) GetAdjustmentTypeList(getAdjustmentTypeListRequest *GetAdjustmentTypeListRequest) (*GetAdjustmentTypeListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -576,32 +576,32 @@ func (a *V2ApiService) GetAdjustmentTypeList(getAdjustmentTypeListRequest *GetAd
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  E.액티비티로그리스트조회
  @param getAutoScalingActivityLogListRequest getAutoScalingActivityLogListRequest
- @return GetAutoScalingActivityLogListResponse*/
-func (a *V2ApiService) GetAutoScalingActivityLogList(getAutoScalingActivityLogListRequest *GetAutoScalingActivityLogListRequest) (GetAutoScalingActivityLogListResponse, error) {
+ @return *GetAutoScalingActivityLogListResponse*/
+func (a *V2ApiService) GetAutoScalingActivityLogList(getAutoScalingActivityLogListRequest *GetAutoScalingActivityLogListRequest) (*GetAutoScalingActivityLogListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -647,32 +647,32 @@ func (a *V2ApiService) GetAutoScalingActivityLogList(getAutoScalingActivityLogLi
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  E.오토스케일링설정로그리스트조회
  @param getAutoScalingConfigurationLogListRequest getAutoScalingConfigurationLogListRequest
- @return GetAutoScalingConfigurationLogListResponse*/
-func (a *V2ApiService) GetAutoScalingConfigurationLogList(getAutoScalingConfigurationLogListRequest *GetAutoScalingConfigurationLogListRequest) (GetAutoScalingConfigurationLogListResponse, error) {
+ @return *GetAutoScalingConfigurationLogListResponse*/
+func (a *V2ApiService) GetAutoScalingConfigurationLogList(getAutoScalingConfigurationLogListRequest *GetAutoScalingConfigurationLogListRequest) (*GetAutoScalingConfigurationLogListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -718,32 +718,32 @@ func (a *V2ApiService) GetAutoScalingConfigurationLogList(getAutoScalingConfigur
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  B.오토스케일링그룹리스트조회
  @param getAutoScalingGroupListRequest getAutoScalingGroupListRequest
- @return GetAutoScalingGroupListResponse*/
-func (a *V2ApiService) GetAutoScalingGroupList(getAutoScalingGroupListRequest *GetAutoScalingGroupListRequest) (GetAutoScalingGroupListResponse, error) {
+ @return *GetAutoScalingGroupListResponse*/
+func (a *V2ApiService) GetAutoScalingGroupList(getAutoScalingGroupListRequest *GetAutoScalingGroupListRequest) (*GetAutoScalingGroupListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -789,32 +789,32 @@ func (a *V2ApiService) GetAutoScalingGroupList(getAutoScalingGroupListRequest *G
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  F.오토스케일링정책리스트조회
  @param getAutoScalingPolicyListRequest getAutoScalingPolicyListRequest
- @return GetAutoScalingPolicyListResponse*/
-func (a *V2ApiService) GetAutoScalingPolicyList(getAutoScalingPolicyListRequest *GetAutoScalingPolicyListRequest) (GetAutoScalingPolicyListResponse, error) {
+ @return *GetAutoScalingPolicyListResponse*/
+func (a *V2ApiService) GetAutoScalingPolicyList(getAutoScalingPolicyListRequest *GetAutoScalingPolicyListRequest) (*GetAutoScalingPolicyListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -860,32 +860,32 @@ func (a *V2ApiService) GetAutoScalingPolicyList(getAutoScalingPolicyListRequest 
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  A.론치설정리스트조회
  @param getLaunchConfigurationListRequest getLaunchConfigurationListRequest
- @return GetLaunchConfigurationListResponse*/
-func (a *V2ApiService) GetLaunchConfigurationList(getLaunchConfigurationListRequest *GetLaunchConfigurationListRequest) (GetLaunchConfigurationListResponse, error) {
+ @return *GetLaunchConfigurationListResponse*/
+func (a *V2ApiService) GetLaunchConfigurationList(getLaunchConfigurationListRequest *GetLaunchConfigurationListRequest) (*GetLaunchConfigurationListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -931,32 +931,32 @@ func (a *V2ApiService) GetLaunchConfigurationList(getLaunchConfigurationListRequ
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  D.프로세스구분리스트조회
  @param getScalingProcessTypeListRequest getScalingProcessTypeListRequest
- @return GetScalingProcessTypeListResponse*/
-func (a *V2ApiService) GetScalingProcessTypeList(getScalingProcessTypeListRequest *GetScalingProcessTypeListRequest) (GetScalingProcessTypeListResponse, error) {
+ @return *GetScalingProcessTypeListResponse*/
+func (a *V2ApiService) GetScalingProcessTypeList(getScalingProcessTypeListRequest *GetScalingProcessTypeListRequest) (*GetScalingProcessTypeListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1002,32 +1002,32 @@ func (a *V2ApiService) GetScalingProcessTypeList(getScalingProcessTypeListReques
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  C.스케쥴액션리스트조회
  @param getScheduledActionListRequest getScheduledActionListRequest
- @return GetScheduledActionListResponse*/
-func (a *V2ApiService) GetScheduledActionList(getScheduledActionListRequest *GetScheduledActionListRequest) (GetScheduledActionListResponse, error) {
+ @return *GetScheduledActionListResponse*/
+func (a *V2ApiService) GetScheduledActionList(getScheduledActionListRequest *GetScheduledActionListRequest) (*GetScheduledActionListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1073,32 +1073,32 @@ func (a *V2ApiService) GetScheduledActionList(getScheduledActionListRequest *Get
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  F.스케일링정책생성/변경
  @param putScalingPolicyRequest putScalingPolicyRequest
- @return PutScalingPolicyResponse*/
-func (a *V2ApiService) PutScalingPolicy(putScalingPolicyRequest *PutScalingPolicyRequest) (PutScalingPolicyResponse, error) {
+ @return *PutScalingPolicyResponse*/
+func (a *V2ApiService) PutScalingPolicy(putScalingPolicyRequest *PutScalingPolicyRequest) (*PutScalingPolicyResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1144,32 +1144,32 @@ func (a *V2ApiService) PutScalingPolicy(putScalingPolicyRequest *PutScalingPolic
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  C.스케쥴액션생성|수정
  @param putScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest
- @return PutScheduledUpdateGroupActionResponse*/
-func (a *V2ApiService) PutScheduledUpdateGroupAction(putScheduledUpdateGroupActionRequest *PutScheduledUpdateGroupActionRequest) (PutScheduledUpdateGroupActionResponse, error) {
+ @return *PutScheduledUpdateGroupActionResponse*/
+func (a *V2ApiService) PutScheduledUpdateGroupAction(putScheduledUpdateGroupActionRequest *PutScheduledUpdateGroupActionRequest) (*PutScheduledUpdateGroupActionResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1215,32 +1215,32 @@ func (a *V2ApiService) PutScheduledUpdateGroupAction(putScheduledUpdateGroupActi
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  D.프로세스재개
  @param resumeProcessesRequest resumeProcessesRequest
- @return ResumeProcessesResponse*/
-func (a *V2ApiService) ResumeProcesses(resumeProcessesRequest *ResumeProcessesRequest) (ResumeProcessesResponse, error) {
+ @return *ResumeProcessesResponse*/
+func (a *V2ApiService) ResumeProcesses(resumeProcessesRequest *ResumeProcessesRequest) (*ResumeProcessesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1286,32 +1286,32 @@ func (a *V2ApiService) ResumeProcesses(resumeProcessesRequest *ResumeProcessesRe
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  B.기대용량치갱신
  @param setDesiredCapacityRequest setDesiredCapacityRequest
- @return SetDesiredCapacityResponse*/
-func (a *V2ApiService) SetDesiredCapacity(setDesiredCapacityRequest *SetDesiredCapacityRequest) (SetDesiredCapacityResponse, error) {
+ @return *SetDesiredCapacityResponse*/
+func (a *V2ApiService) SetDesiredCapacity(setDesiredCapacityRequest *SetDesiredCapacityRequest) (*SetDesiredCapacityResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1357,32 +1357,32 @@ func (a *V2ApiService) SetDesiredCapacity(setDesiredCapacityRequest *SetDesiredC
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  B.서버인스턴스헬스상태갱신
  @param setServerInstanceHealthRequest setServerInstanceHealthRequest
- @return SetServerInstanceHealthResponse*/
-func (a *V2ApiService) SetServerInstanceHealth(setServerInstanceHealthRequest *SetServerInstanceHealthRequest) (SetServerInstanceHealthResponse, error) {
+ @return *SetServerInstanceHealthResponse*/
+func (a *V2ApiService) SetServerInstanceHealth(setServerInstanceHealthRequest *SetServerInstanceHealthRequest) (*SetServerInstanceHealthResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1428,32 +1428,32 @@ func (a *V2ApiService) SetServerInstanceHealth(setServerInstanceHealthRequest *S
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  D.프로세스보류
  @param suspendProcessesRequest suspendProcessesRequest
- @return SuspendProcessesResponse*/
-func (a *V2ApiService) SuspendProcesses(suspendProcessesRequest *SuspendProcessesRequest) (SuspendProcessesResponse, error) {
+ @return *SuspendProcessesResponse*/
+func (a *V2ApiService) SuspendProcesses(suspendProcessesRequest *SuspendProcessesRequest) (*SuspendProcessesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1499,32 +1499,32 @@ func (a *V2ApiService) SuspendProcesses(suspendProcessesRequest *SuspendProcesse
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  B.오토스케일링그룹에속한서버인스턴스삭제
  @param terminateServerInstanceInAutoScalingGroupRequest terminateServerInstanceInAutoScalingGroupRequest
- @return TerminateServerInstanceInAutoScalingGroupResponse*/
-func (a *V2ApiService) TerminateServerInstanceInAutoScalingGroup(terminateServerInstanceInAutoScalingGroupRequest *TerminateServerInstanceInAutoScalingGroupRequest) (TerminateServerInstanceInAutoScalingGroupResponse, error) {
+ @return *TerminateServerInstanceInAutoScalingGroupResponse*/
+func (a *V2ApiService) TerminateServerInstanceInAutoScalingGroup(terminateServerInstanceInAutoScalingGroupRequest *TerminateServerInstanceInAutoScalingGroupRequest) (*TerminateServerInstanceInAutoScalingGroupResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1570,32 +1570,32 @@ func (a *V2ApiService) TerminateServerInstanceInAutoScalingGroup(terminateServer
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  B.오토스케일링그룹수정
  @param updateAutoScalingGroupRequest updateAutoScalingGroupRequest
- @return UpdateAutoScalingGroupResponse*/
-func (a *V2ApiService) UpdateAutoScalingGroup(updateAutoScalingGroupRequest *UpdateAutoScalingGroupRequest) (UpdateAutoScalingGroupResponse, error) {
+ @return *UpdateAutoScalingGroupResponse*/
+func (a *V2ApiService) UpdateAutoScalingGroup(updateAutoScalingGroupRequest *UpdateAutoScalingGroupRequest) (*UpdateAutoScalingGroupResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1641,24 +1641,24 @@ func (a *V2ApiService) UpdateAutoScalingGroup(updateAutoScalingGroupRequest *Upd
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 

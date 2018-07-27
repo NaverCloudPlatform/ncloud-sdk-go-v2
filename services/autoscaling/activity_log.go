@@ -18,7 +18,7 @@ ActivityNo *string `json:"activityNo,omitempty"`
 AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`
 
 	// 상태
-Status **CommonCode `json:"status,omitempty"`
+Status *CommonCode `json:"status,omitempty"`
 
 	// 상태메세지
 StatusMessage *string `json:"statusMessage,omitempty"`

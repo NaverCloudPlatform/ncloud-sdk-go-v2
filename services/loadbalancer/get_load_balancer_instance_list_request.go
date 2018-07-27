@@ -12,7 +12,7 @@ package loadbalancer
 type GetLoadBalancerInstanceListRequest struct {
 
 	// 로드밸런서인스턴스번호리스트
-LoadBalancerInstanceNoList []string `json:"loadBalancerInstanceNoList,omitempty"`
+LoadBalancerInstanceNoList []*string `json:"loadBalancerInstanceNoList,omitempty"`
 
 	// 인터넷라인구분코드
 InternetLineTypeCode *string `json:"internetLineTypeCode,omitempty"`

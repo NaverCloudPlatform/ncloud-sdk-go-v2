@@ -30,7 +30,7 @@ OriginalServerProductCode *string `json:"originalServerProductCode,omitempty"`
 OriginalServerName *string `json:"originalServerName,omitempty"`
 
 	// 원본서버기본블록스토리지디스크유형
-OriginalBaseBlockStorageDiskType **CommonCode `json:"originalBaseBlockStorageDiskType,omitempty"`
+OriginalBaseBlockStorageDiskType *CommonCode `json:"originalBaseBlockStorageDiskType,omitempty"`
 
 	// 원본서버이미지상품코드
 OriginalServerImageProductCode *string `json:"originalServerImageProductCode,omitempty"`
@@ -45,19 +45,19 @@ OriginalServerImageName *string `json:"originalServerImageName,omitempty"`
 MemberServerImageStatusName *string `json:"memberServerImageStatusName,omitempty"`
 
 	// 원본서버이미지상태
-MemberServerImageStatus **CommonCode `json:"memberServerImageStatus,omitempty"`
+MemberServerImageStatus *CommonCode `json:"memberServerImageStatus,omitempty"`
 
 	// 원본서버이미지OP
-MemberServerImageOperation **CommonCode `json:"memberServerImageOperation,omitempty"`
+MemberServerImageOperation *CommonCode `json:"memberServerImageOperation,omitempty"`
 
 	// 회원서버이미지플랫폼구분
-MemberServerImagePlatformType **CommonCode `json:"memberServerImagePlatformType,omitempty"`
+MemberServerImagePlatformType *CommonCode `json:"memberServerImagePlatformType,omitempty"`
 
 	// 리전
-Region **Region `json:"region,omitempty"`
+Region *Region `json:"region,omitempty"`
 
 	// ZONE
-Zone **Zone `json:"zone,omitempty"`
+Zone *Zone `json:"zone,omitempty"`
 
 	// 생성일시
 CreateDate *string `json:"createDate,omitempty"`

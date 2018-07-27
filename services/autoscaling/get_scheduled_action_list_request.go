@@ -15,7 +15,7 @@ type GetScheduledActionListRequest struct {
 AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`
 
 	// 스케쥴액션명리스트
-ScheduledActionNameList []string `json:"scheduledActionNameList,omitempty"`
+ScheduledActionNameList []*string `json:"scheduledActionNameList,omitempty"`
 
 	// 스케쥴시작일시, format : yyyy-MM-dd'T'HH:mm:ssZ
 StartTime *string `json:"startTime,omitempty"`

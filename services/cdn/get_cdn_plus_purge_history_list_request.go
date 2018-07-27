@@ -15,5 +15,5 @@ type GetCdnPlusPurgeHistoryListRequest struct {
 CdnInstanceNo *string `json:"cdnInstanceNo"`
 
 	// 퍼지ID리스트
-PurgeIdList []string `json:"purgeIdList,omitempty"`
+PurgeIdList []*string `json:"purgeIdList,omitempty"`
 }

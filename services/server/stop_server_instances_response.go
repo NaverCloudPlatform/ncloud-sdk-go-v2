@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-ServerInstanceList []ServerInstance `json:"serverInstanceList,omitempty"`
+ServerInstanceList []*ServerInstance `json:"serverInstanceList,omitempty"`
 }

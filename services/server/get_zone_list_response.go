@@ -17,5 +17,5 @@ ReturnCode *string `json:"returnCode,omitempty"`
 
 ReturnMessage *string `json:"returnMessage,omitempty"`
 
-ZoneList []Zone `json:"zoneList,omitempty"`
+ZoneList []*Zone `json:"zoneList,omitempty"`
 }

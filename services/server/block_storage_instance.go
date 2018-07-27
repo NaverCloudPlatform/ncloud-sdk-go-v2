@@ -21,7 +21,7 @@ ServerInstanceNo *string `json:"serverInstanceNo,omitempty"`
 ServerName *string `json:"serverName,omitempty"`
 
 	// 블록스토리지구분
-BlockStorageType **CommonCode `json:"blockStorageType,omitempty"`
+BlockStorageType *CommonCode `json:"blockStorageType,omitempty"`
 
 	// 블록스토리지명
 BlockStorageName *string `json:"blockStorageName,omitempty"`
@@ -39,10 +39,10 @@ MemberServerImageNo *string `json:"memberServerImageNo,omitempty"`
 BlockStorageProductCode *string `json:"blockStorageProductCode,omitempty"`
 
 	// 블록스토리지인스턴스상태
-BlockStorageInstanceStatus **CommonCode `json:"blockStorageInstanceStatus,omitempty"`
+BlockStorageInstanceStatus *CommonCode `json:"blockStorageInstanceStatus,omitempty"`
 
 	// 블록스토리지인스턴스OP
-BlockStorageInstanceOperation **CommonCode `json:"blockStorageInstanceOperation,omitempty"`
+BlockStorageInstanceOperation *CommonCode `json:"blockStorageInstanceOperation,omitempty"`
 
 	// 블록스토리지인스턴스상태명
 BlockStorageInstanceStatusName *string `json:"blockStorageInstanceStatusName,omitempty"`
@@ -54,17 +54,17 @@ CreateDate *string `json:"createDate,omitempty"`
 BlockStorageInstanceDescription *string `json:"blockStorageInstanceDescription,omitempty"`
 
 	// 디스크유형
-DiskType **CommonCode `json:"diskType,omitempty"`
+DiskType *CommonCode `json:"diskType,omitempty"`
 
 	// 디스크상세유형
-DiskDetailType **CommonCode `json:"diskDetailType,omitempty"`
+DiskDetailType *CommonCode `json:"diskDetailType,omitempty"`
 
 	// 최대 IOPS
 MaxIopsThroughput *int32 `json:"maxIopsThroughput,omitempty"`
 
 	// 
-Region **Region `json:"region,omitempty"`
+Region *Region `json:"region,omitempty"`
 
 	// 
-Zone **Zone `json:"zone,omitempty"`
+Zone *Zone `json:"zone,omitempty"`
 }

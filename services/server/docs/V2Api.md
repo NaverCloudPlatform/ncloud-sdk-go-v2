@@ -63,12 +63,11 @@ NAS볼륨인스턴스접근제어추가
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **addNasVolumeAccessControlRequest** | [**AddNasVolumeAccessControlRequest**](AddNasVolumeAccessControlRequest.md)| addNasVolumeAccessControlRequest | 
+**addNasVolumeAccessControlRequest** | **[\*AddNasVolumeAccessControlRequest](AddNasVolumeAccessControlRequest.md)** | addNasVolumeAccessControlRequest | 
 
 ### Return type
 
-[**AddNasVolumeAccessControlResponse**](addNasVolumeAccessControlResponse.md)
+*[**AddNasVolumeAccessControlResponse**](addNasVolumeAccessControlResponse.md)
 
 ### Authorization
 
@@ -91,12 +90,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **addPortForwardingRulesRequest** | [**AddPortForwardingRulesRequest**](AddPortForwardingRulesRequest.md)| addPortForwardingRulesRequest | 
+**addPortForwardingRulesRequest** | **[\*AddPortForwardingRulesRequest](AddPortForwardingRulesRequest.md)** | addPortForwardingRulesRequest | 
 
 ### Return type
 
-[**AddPortForwardingRulesResponse**](addPortForwardingRulesResponse.md)
+*[**AddPortForwardingRulesResponse**](addPortForwardingRulesResponse.md)
 
 ### Authorization
 
@@ -119,12 +117,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **associatePublicIpWithServerInstanceRequest** | [**AssociatePublicIpWithServerInstanceRequest**](AssociatePublicIpWithServerInstanceRequest.md)| associatePublicIpWithServerInstanceRequest | 
+**associatePublicIpWithServerInstanceRequest** | **[\*AssociatePublicIpWithServerInstanceRequest](AssociatePublicIpWithServerInstanceRequest.md)** | associatePublicIpWithServerInstanceRequest | 
 
 ### Return type
 
-[**AssociatePublicIpWithServerInstanceResponse**](associatePublicIpWithServerInstanceResponse.md)
+*[**AssociatePublicIpWithServerInstanceResponse**](associatePublicIpWithServerInstanceResponse.md)
 
 ### Authorization
 
@@ -147,12 +144,11 @@ NAS볼륨사이즈변경
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **changeNasVolumeSizeRequest** | [**ChangeNasVolumeSizeRequest**](ChangeNasVolumeSizeRequest.md)| changeNasVolumeSizeRequest | 
+**changeNasVolumeSizeRequest** | **[\*ChangeNasVolumeSizeRequest](ChangeNasVolumeSizeRequest.md)** | changeNasVolumeSizeRequest | 
 
 ### Return type
 
-[**ChangeNasVolumeSizeResponse**](changeNasVolumeSizeResponse.md)
+*[**ChangeNasVolumeSizeResponse**](changeNasVolumeSizeResponse.md)
 
 ### Authorization
 
@@ -175,12 +171,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **changeServerInstanceSpecRequest** | [**ChangeServerInstanceSpecRequest**](ChangeServerInstanceSpecRequest.md)| changeServerInstanceSpecRequest | 
+**changeServerInstanceSpecRequest** | **[\*ChangeServerInstanceSpecRequest](ChangeServerInstanceSpecRequest.md)** | changeServerInstanceSpecRequest | 
 
 ### Return type
 
-[**ChangeServerInstanceSpecResponse**](changeServerInstanceSpecResponse.md)
+*[**ChangeServerInstanceSpecResponse**](changeServerInstanceSpecResponse.md)
 
 ### Authorization
 
@@ -203,12 +198,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **createBlockStorageInstanceRequest** | [**CreateBlockStorageInstanceRequest**](CreateBlockStorageInstanceRequest.md)| createBlockStorageInstanceRequest | 
+**createBlockStorageInstanceRequest** | **[\*CreateBlockStorageInstanceRequest](CreateBlockStorageInstanceRequest.md)** | createBlockStorageInstanceRequest | 
 
 ### Return type
 
-[**CreateBlockStorageInstanceResponse**](createBlockStorageInstanceResponse.md)
+*[**CreateBlockStorageInstanceResponse**](createBlockStorageInstanceResponse.md)
 
 ### Authorization
 
@@ -231,12 +225,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **createBlockStorageSnapshotInstanceRequest** | [**CreateBlockStorageSnapshotInstanceRequest**](CreateBlockStorageSnapshotInstanceRequest.md)| createBlockStorageSnapshotInstanceRequest | 
+**createBlockStorageSnapshotInstanceRequest** | **[\*CreateBlockStorageSnapshotInstanceRequest](CreateBlockStorageSnapshotInstanceRequest.md)** | createBlockStorageSnapshotInstanceRequest | 
 
 ### Return type
 
-[**CreateBlockStorageSnapshotInstanceResponse**](createBlockStorageSnapshotInstanceResponse.md)
+*[**CreateBlockStorageSnapshotInstanceResponse**](createBlockStorageSnapshotInstanceResponse.md)
 
 ### Authorization
 
@@ -259,12 +252,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **createLoginKeyRequest** | [**CreateLoginKeyRequest**](CreateLoginKeyRequest.md)| createLoginKeyRequest | 
+**createLoginKeyRequest** | **[\*CreateLoginKeyRequest](CreateLoginKeyRequest.md)** | createLoginKeyRequest | 
 
 ### Return type
 
-[**CreateLoginKeyResponse**](createLoginKeyResponse.md)
+*[**CreateLoginKeyResponse**](createLoginKeyResponse.md)
 
 ### Authorization
 
@@ -287,12 +279,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **createMemberServerImageRequest** | [**CreateMemberServerImageRequest**](CreateMemberServerImageRequest.md)| createMemberServerImageRequest | 
+**createMemberServerImageRequest** | **[\*CreateMemberServerImageRequest](CreateMemberServerImageRequest.md)** | createMemberServerImageRequest | 
 
 ### Return type
 
-[**CreateMemberServerImageResponse**](createMemberServerImageResponse.md)
+*[**CreateMemberServerImageResponse**](createMemberServerImageResponse.md)
 
 ### Authorization
 
@@ -315,12 +306,11 @@ NAS볼륨인스턴스생성
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **createNasVolumeInstanceRequest** | [**CreateNasVolumeInstanceRequest**](CreateNasVolumeInstanceRequest.md)| createNasVolumeInstanceRequest | 
+**createNasVolumeInstanceRequest** | **[\*CreateNasVolumeInstanceRequest](CreateNasVolumeInstanceRequest.md)** | createNasVolumeInstanceRequest | 
 
 ### Return type
 
-[**CreateNasVolumeInstanceResponse**](createNasVolumeInstanceResponse.md)
+*[**CreateNasVolumeInstanceResponse**](createNasVolumeInstanceResponse.md)
 
 ### Authorization
 
@@ -343,12 +333,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **createPublicIpInstanceRequest** | [**CreatePublicIpInstanceRequest**](CreatePublicIpInstanceRequest.md)| createPublicIpInstanceRequest | 
+**createPublicIpInstanceRequest** | **[\*CreatePublicIpInstanceRequest](CreatePublicIpInstanceRequest.md)** | createPublicIpInstanceRequest | 
 
 ### Return type
 
-[**CreatePublicIpInstanceResponse**](createPublicIpInstanceResponse.md)
+*[**CreatePublicIpInstanceResponse**](createPublicIpInstanceResponse.md)
 
 ### Authorization
 
@@ -371,12 +360,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **createServerInstancesRequest** | [**CreateServerInstancesRequest**](CreateServerInstancesRequest.md)| createServerInstancesRequest | 
+**createServerInstancesRequest** | **[\*CreateServerInstancesRequest](CreateServerInstancesRequest.md)** | createServerInstancesRequest | 
 
 ### Return type
 
-[**CreateServerInstancesResponse**](createServerInstancesResponse.md)
+*[**CreateServerInstancesResponse**](createServerInstancesResponse.md)
 
 ### Authorization
 
@@ -399,12 +387,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **deleteBlockStorageInstancesRequest** | [**DeleteBlockStorageInstancesRequest**](DeleteBlockStorageInstancesRequest.md)| deleteBlockStorageInstancesRequest | 
+**deleteBlockStorageInstancesRequest** | **[\*DeleteBlockStorageInstancesRequest](DeleteBlockStorageInstancesRequest.md)** | deleteBlockStorageInstancesRequest | 
 
 ### Return type
 
-[**DeleteBlockStorageInstancesResponse**](deleteBlockStorageInstancesResponse.md)
+*[**DeleteBlockStorageInstancesResponse**](deleteBlockStorageInstancesResponse.md)
 
 ### Authorization
 
@@ -427,12 +414,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **deleteBlockStorageSnapshotInstancesRequest** | [**DeleteBlockStorageSnapshotInstancesRequest**](DeleteBlockStorageSnapshotInstancesRequest.md)| deleteBlockStorageSnapshotInstancesRequest | 
+**deleteBlockStorageSnapshotInstancesRequest** | **[\*DeleteBlockStorageSnapshotInstancesRequest](DeleteBlockStorageSnapshotInstancesRequest.md)** | deleteBlockStorageSnapshotInstancesRequest | 
 
 ### Return type
 
-[**DeleteBlockStorageSnapshotInstancesResponse**](deleteBlockStorageSnapshotInstancesResponse.md)
+*[**DeleteBlockStorageSnapshotInstancesResponse**](deleteBlockStorageSnapshotInstancesResponse.md)
 
 ### Authorization
 
@@ -455,12 +441,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **deleteLoginKeyRequest** | [**DeleteLoginKeyRequest**](DeleteLoginKeyRequest.md)| deleteLoginKeyRequest | 
+**deleteLoginKeyRequest** | **[\*DeleteLoginKeyRequest](DeleteLoginKeyRequest.md)** | deleteLoginKeyRequest | 
 
 ### Return type
 
-[**DeleteLoginKeyResponse**](deleteLoginKeyResponse.md)
+*[**DeleteLoginKeyResponse**](deleteLoginKeyResponse.md)
 
 ### Authorization
 
@@ -483,12 +468,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **deleteMemberServerImagesRequest** | [**DeleteMemberServerImagesRequest**](DeleteMemberServerImagesRequest.md)| deleteMemberServerImagesRequest | 
+**deleteMemberServerImagesRequest** | **[\*DeleteMemberServerImagesRequest](DeleteMemberServerImagesRequest.md)** | deleteMemberServerImagesRequest | 
 
 ### Return type
 
-[**DeleteMemberServerImagesResponse**](deleteMemberServerImagesResponse.md)
+*[**DeleteMemberServerImagesResponse**](deleteMemberServerImagesResponse.md)
 
 ### Authorization
 
@@ -511,12 +495,11 @@ NAS볼륨인스턴스삭제
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **deleteNasVolumeInstanceRequest** | [**DeleteNasVolumeInstanceRequest**](DeleteNasVolumeInstanceRequest.md)| deleteNasVolumeInstanceRequest | 
+**deleteNasVolumeInstanceRequest** | **[\*DeleteNasVolumeInstanceRequest](DeleteNasVolumeInstanceRequest.md)** | deleteNasVolumeInstanceRequest | 
 
 ### Return type
 
-[**DeleteNasVolumeInstanceResponse**](deleteNasVolumeInstanceResponse.md)
+*[**DeleteNasVolumeInstanceResponse**](deleteNasVolumeInstanceResponse.md)
 
 ### Authorization
 
@@ -539,12 +522,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **deletePortForwardingRulesRequest** | [**DeletePortForwardingRulesRequest**](DeletePortForwardingRulesRequest.md)| deletePortForwardingRulesRequest | 
+**deletePortForwardingRulesRequest** | **[\*DeletePortForwardingRulesRequest](DeletePortForwardingRulesRequest.md)** | deletePortForwardingRulesRequest | 
 
 ### Return type
 
-[**DeletePortForwardingRulesResponse**](deletePortForwardingRulesResponse.md)
+*[**DeletePortForwardingRulesResponse**](deletePortForwardingRulesResponse.md)
 
 ### Authorization
 
@@ -567,12 +549,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **deletePublicIpInstancesRequest** | [**DeletePublicIpInstancesRequest**](DeletePublicIpInstancesRequest.md)| deletePublicIpInstancesRequest | 
+**deletePublicIpInstancesRequest** | **[\*DeletePublicIpInstancesRequest](DeletePublicIpInstancesRequest.md)** | deletePublicIpInstancesRequest | 
 
 ### Return type
 
-[**DeletePublicIpInstancesResponse**](deletePublicIpInstancesResponse.md)
+*[**DeletePublicIpInstancesResponse**](deletePublicIpInstancesResponse.md)
 
 ### Authorization
 
@@ -595,12 +576,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **disassociatePublicIpFromServerInstanceRequest** | [**DisassociatePublicIpFromServerInstanceRequest**](DisassociatePublicIpFromServerInstanceRequest.md)| disassociatePublicIpFromServerInstanceRequest | 
+**disassociatePublicIpFromServerInstanceRequest** | **[\*DisassociatePublicIpFromServerInstanceRequest](DisassociatePublicIpFromServerInstanceRequest.md)** | disassociatePublicIpFromServerInstanceRequest | 
 
 ### Return type
 
-[**DisassociatePublicIpFromServerInstanceResponse**](disassociatePublicIpFromServerInstanceResponse.md)
+*[**DisassociatePublicIpFromServerInstanceResponse**](disassociatePublicIpFromServerInstanceResponse.md)
 
 ### Authorization
 
@@ -623,12 +603,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getAccessControlGroupListRequest** | [**GetAccessControlGroupListRequest**](GetAccessControlGroupListRequest.md)| getAccessControlGroupListRequest | 
+**getAccessControlGroupListRequest** | **[\*GetAccessControlGroupListRequest](GetAccessControlGroupListRequest.md)** | getAccessControlGroupListRequest | 
 
 ### Return type
 
-[**GetAccessControlGroupListResponse**](getAccessControlGroupListResponse.md)
+*[**GetAccessControlGroupListResponse**](getAccessControlGroupListResponse.md)
 
 ### Authorization
 
@@ -651,12 +630,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getAccessControlGroupServerInstanceListRequest** | [**GetAccessControlGroupServerInstanceListRequest**](GetAccessControlGroupServerInstanceListRequest.md)| getAccessControlGroupServerInstanceListRequest | 
+**getAccessControlGroupServerInstanceListRequest** | **[\*GetAccessControlGroupServerInstanceListRequest](GetAccessControlGroupServerInstanceListRequest.md)** | getAccessControlGroupServerInstanceListRequest | 
 
 ### Return type
 
-[**GetAccessControlGroupServerInstanceListResponse**](getAccessControlGroupServerInstanceListResponse.md)
+*[**GetAccessControlGroupServerInstanceListResponse**](getAccessControlGroupServerInstanceListResponse.md)
 
 ### Authorization
 
@@ -679,12 +657,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getAccessControlRuleListRequest** | [**GetAccessControlRuleListRequest**](GetAccessControlRuleListRequest.md)| getAccessControlRuleListRequest | 
+**getAccessControlRuleListRequest** | **[\*GetAccessControlRuleListRequest](GetAccessControlRuleListRequest.md)** | getAccessControlRuleListRequest | 
 
 ### Return type
 
-[**GetAccessControlRuleListResponse**](getAccessControlRuleListResponse.md)
+*[**GetAccessControlRuleListResponse**](getAccessControlRuleListResponse.md)
 
 ### Authorization
 
@@ -707,12 +684,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getBlockStorageInstanceListRequest** | [**GetBlockStorageInstanceListRequest**](GetBlockStorageInstanceListRequest.md)| getBlockStorageInstanceListRequest | 
+**getBlockStorageInstanceListRequest** | **[\*GetBlockStorageInstanceListRequest](GetBlockStorageInstanceListRequest.md)** | getBlockStorageInstanceListRequest | 
 
 ### Return type
 
-[**GetBlockStorageInstanceListResponse**](getBlockStorageInstanceListResponse.md)
+*[**GetBlockStorageInstanceListResponse**](getBlockStorageInstanceListResponse.md)
 
 ### Authorization
 
@@ -735,12 +711,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getBlockStorageSnapshotInstanceListRequest** | [**GetBlockStorageSnapshotInstanceListRequest**](GetBlockStorageSnapshotInstanceListRequest.md)| getBlockStorageSnapshotInstanceListRequest | 
+**getBlockStorageSnapshotInstanceListRequest** | **[\*GetBlockStorageSnapshotInstanceListRequest](GetBlockStorageSnapshotInstanceListRequest.md)** | getBlockStorageSnapshotInstanceListRequest | 
 
 ### Return type
 
-[**GetBlockStorageSnapshotInstanceListResponse**](getBlockStorageSnapshotInstanceListResponse.md)
+*[**GetBlockStorageSnapshotInstanceListResponse**](getBlockStorageSnapshotInstanceListResponse.md)
 
 ### Authorization
 
@@ -763,12 +738,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getLoginKeyListRequest** | [**GetLoginKeyListRequest**](GetLoginKeyListRequest.md)| getLoginKeyListRequest | 
+**getLoginKeyListRequest** | **[\*GetLoginKeyListRequest](GetLoginKeyListRequest.md)** | getLoginKeyListRequest | 
 
 ### Return type
 
-[**GetLoginKeyListResponse**](getLoginKeyListResponse.md)
+*[**GetLoginKeyListResponse**](getLoginKeyListResponse.md)
 
 ### Authorization
 
@@ -791,12 +765,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getMemberServerImageListRequest** | [**GetMemberServerImageListRequest**](GetMemberServerImageListRequest.md)| getMemberServerImageListRequest | 
+**getMemberServerImageListRequest** | **[\*GetMemberServerImageListRequest](GetMemberServerImageListRequest.md)** | getMemberServerImageListRequest | 
 
 ### Return type
 
-[**GetMemberServerImageListResponse**](getMemberServerImageListResponse.md)
+*[**GetMemberServerImageListResponse**](getMemberServerImageListResponse.md)
 
 ### Authorization
 
@@ -819,12 +792,11 @@ NAS볼륨인스턴스리스트조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getNasVolumeInstanceListRequest** | [**GetNasVolumeInstanceListRequest**](GetNasVolumeInstanceListRequest.md)| getNasVolumeInstanceListRequest | 
+**getNasVolumeInstanceListRequest** | **[\*GetNasVolumeInstanceListRequest](GetNasVolumeInstanceListRequest.md)** | getNasVolumeInstanceListRequest | 
 
 ### Return type
 
-[**GetNasVolumeInstanceListResponse**](getNasVolumeInstanceListResponse.md)
+*[**GetNasVolumeInstanceListResponse**](getNasVolumeInstanceListResponse.md)
 
 ### Authorization
 
@@ -847,12 +819,11 @@ NAS볼륨인스턴스측정리스트조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getNasVolumeInstanceRatingListRequest** | [**GetNasVolumeInstanceRatingListRequest**](GetNasVolumeInstanceRatingListRequest.md)| getNasVolumeInstanceRatingListRequest | 
+**getNasVolumeInstanceRatingListRequest** | **[\*GetNasVolumeInstanceRatingListRequest](GetNasVolumeInstanceRatingListRequest.md)** | getNasVolumeInstanceRatingListRequest | 
 
 ### Return type
 
-[**GetNasVolumeInstanceRatingListResponse**](getNasVolumeInstanceRatingListResponse.md)
+*[**GetNasVolumeInstanceRatingListResponse**](getNasVolumeInstanceRatingListResponse.md)
 
 ### Authorization
 
@@ -875,12 +846,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getPortForwardingRuleListRequest** | [**GetPortForwardingRuleListRequest**](GetPortForwardingRuleListRequest.md)| getPortForwardingRuleListRequest | 
+**getPortForwardingRuleListRequest** | **[\*GetPortForwardingRuleListRequest](GetPortForwardingRuleListRequest.md)** | getPortForwardingRuleListRequest | 
 
 ### Return type
 
-[**GetPortForwardingRuleListResponse**](getPortForwardingRuleListResponse.md)
+*[**GetPortForwardingRuleListResponse**](getPortForwardingRuleListResponse.md)
 
 ### Authorization
 
@@ -903,12 +873,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getPublicIpInstanceListRequest** | [**GetPublicIpInstanceListRequest**](GetPublicIpInstanceListRequest.md)| getPublicIpInstanceListRequest | 
+**getPublicIpInstanceListRequest** | **[\*GetPublicIpInstanceListRequest](GetPublicIpInstanceListRequest.md)** | getPublicIpInstanceListRequest | 
 
 ### Return type
 
-[**GetPublicIpInstanceListResponse**](getPublicIpInstanceListResponse.md)
+*[**GetPublicIpInstanceListResponse**](getPublicIpInstanceListResponse.md)
 
 ### Authorization
 
@@ -931,12 +900,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getPublicIpTargetServerInstanceListRequest** | [**GetPublicIpTargetServerInstanceListRequest**](GetPublicIpTargetServerInstanceListRequest.md)| getPublicIpTargetServerInstanceListRequest | 
+**getPublicIpTargetServerInstanceListRequest** | **[\*GetPublicIpTargetServerInstanceListRequest](GetPublicIpTargetServerInstanceListRequest.md)** | getPublicIpTargetServerInstanceListRequest | 
 
 ### Return type
 
-[**GetPublicIpTargetServerInstanceListResponse**](getPublicIpTargetServerInstanceListResponse.md)
+*[**GetPublicIpTargetServerInstanceListResponse**](getPublicIpTargetServerInstanceListResponse.md)
 
 ### Authorization
 
@@ -959,12 +927,11 @@ RAID리스트조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getRaidListRequest** | [**GetRaidListRequest**](GetRaidListRequest.md)| getRaidListRequest | 
+**getRaidListRequest** | **[\*GetRaidListRequest](GetRaidListRequest.md)** | getRaidListRequest | 
 
 ### Return type
 
-[**GetRaidListResponse**](getRaidListResponse.md)
+*[**GetRaidListResponse**](getRaidListResponse.md)
 
 ### Authorization
 
@@ -987,12 +954,11 @@ REGION리스트조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getRegionListRequest** | [**GetRegionListRequest**](GetRegionListRequest.md)| getRegionListRequest | 
+**getRegionListRequest** | **[\*GetRegionListRequest](GetRegionListRequest.md)** | getRegionListRequest | 
 
 ### Return type
 
-[**GetRegionListResponse**](getRegionListResponse.md)
+*[**GetRegionListResponse**](getRegionListResponse.md)
 
 ### Authorization
 
@@ -1015,12 +981,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getRootPasswordRequest** | [**GetRootPasswordRequest**](GetRootPasswordRequest.md)| getRootPasswordRequest | 
+**getRootPasswordRequest** | **[\*GetRootPasswordRequest](GetRootPasswordRequest.md)** | getRootPasswordRequest | 
 
 ### Return type
 
-[**GetRootPasswordResponse**](getRootPasswordResponse.md)
+*[**GetRootPasswordResponse**](getRootPasswordResponse.md)
 
 ### Authorization
 
@@ -1043,12 +1008,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getServerImageProductListRequest** | [**GetServerImageProductListRequest**](GetServerImageProductListRequest.md)| getServerImageProductListRequest | 
+**getServerImageProductListRequest** | **[\*GetServerImageProductListRequest](GetServerImageProductListRequest.md)** | getServerImageProductListRequest | 
 
 ### Return type
 
-[**GetServerImageProductListResponse**](getServerImageProductListResponse.md)
+*[**GetServerImageProductListResponse**](getServerImageProductListResponse.md)
 
 ### Authorization
 
@@ -1071,12 +1035,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getServerInstanceListRequest** | [**GetServerInstanceListRequest**](GetServerInstanceListRequest.md)| getServerInstanceListRequest | 
+**getServerInstanceListRequest** | **[\*GetServerInstanceListRequest](GetServerInstanceListRequest.md)** | getServerInstanceListRequest | 
 
 ### Return type
 
-[**GetServerInstanceListResponse**](getServerInstanceListResponse.md)
+*[**GetServerInstanceListResponse**](getServerInstanceListResponse.md)
 
 ### Authorization
 
@@ -1099,12 +1062,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getServerProductListRequest** | [**GetServerProductListRequest**](GetServerProductListRequest.md)| getServerProductListRequest | 
+**getServerProductListRequest** | **[\*GetServerProductListRequest](GetServerProductListRequest.md)** | getServerProductListRequest | 
 
 ### Return type
 
-[**GetServerProductListResponse**](getServerProductListResponse.md)
+*[**GetServerProductListResponse**](getServerProductListResponse.md)
 
 ### Authorization
 
@@ -1127,12 +1089,11 @@ ZONE리스트조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getZoneListRequest** | [**GetZoneListRequest**](GetZoneListRequest.md)| getZoneListRequest | 
+**getZoneListRequest** | **[\*GetZoneListRequest](GetZoneListRequest.md)** | getZoneListRequest | 
 
 ### Return type
 
-[**GetZoneListResponse**](getZoneListResponse.md)
+*[**GetZoneListResponse**](getZoneListResponse.md)
 
 ### Authorization
 
@@ -1155,12 +1116,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **importLoginKeyRequest** | [**ImportLoginKeyRequest**](ImportLoginKeyRequest.md)| importLoginKeyRequest | 
+**importLoginKeyRequest** | **[\*ImportLoginKeyRequest](ImportLoginKeyRequest.md)** | importLoginKeyRequest | 
 
 ### Return type
 
-[**ImportLoginKeyResponse**](importLoginKeyResponse.md)
+*[**ImportLoginKeyResponse**](importLoginKeyResponse.md)
 
 ### Authorization
 
@@ -1183,12 +1143,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **rebootServerInstancesRequest** | [**RebootServerInstancesRequest**](RebootServerInstancesRequest.md)| rebootServerInstancesRequest | 
+**rebootServerInstancesRequest** | **[\*RebootServerInstancesRequest](RebootServerInstancesRequest.md)** | rebootServerInstancesRequest | 
 
 ### Return type
 
-[**RebootServerInstancesResponse**](rebootServerInstancesResponse.md)
+*[**RebootServerInstancesResponse**](rebootServerInstancesResponse.md)
 
 ### Authorization
 
@@ -1211,12 +1170,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **recreateServerInstanceRequest** | [**RecreateServerInstanceRequest**](RecreateServerInstanceRequest.md)| recreateServerInstanceRequest | 
+**recreateServerInstanceRequest** | **[\*RecreateServerInstanceRequest](RecreateServerInstanceRequest.md)** | recreateServerInstanceRequest | 
 
 ### Return type
 
-[**RecreateServerInstanceResponse**](recreateServerInstanceResponse.md)
+*[**RecreateServerInstanceResponse**](recreateServerInstanceResponse.md)
 
 ### Authorization
 
@@ -1239,12 +1197,11 @@ NAS볼륨인스턴스접근제어제거
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **removeNasVolumeAccessControlRequest** | [**RemoveNasVolumeAccessControlRequest**](RemoveNasVolumeAccessControlRequest.md)| removeNasVolumeAccessControlRequest | 
+**removeNasVolumeAccessControlRequest** | **[\*RemoveNasVolumeAccessControlRequest](RemoveNasVolumeAccessControlRequest.md)** | removeNasVolumeAccessControlRequest | 
 
 ### Return type
 
-[**RemoveNasVolumeAccessControlResponse**](removeNasVolumeAccessControlResponse.md)
+*[**RemoveNasVolumeAccessControlResponse**](removeNasVolumeAccessControlResponse.md)
 
 ### Authorization
 
@@ -1267,12 +1224,11 @@ NAS볼륨인스턴스접근제어설정
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **setNasVolumeAccessControlRequest** | [**SetNasVolumeAccessControlRequest**](SetNasVolumeAccessControlRequest.md)| setNasVolumeAccessControlRequest | 
+**setNasVolumeAccessControlRequest** | **[\*SetNasVolumeAccessControlRequest](SetNasVolumeAccessControlRequest.md)** | setNasVolumeAccessControlRequest | 
 
 ### Return type
 
-[**SetNasVolumeAccessControlResponse**](setNasVolumeAccessControlResponse.md)
+*[**SetNasVolumeAccessControlResponse**](setNasVolumeAccessControlResponse.md)
 
 ### Authorization
 
@@ -1295,12 +1251,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **startServerInstancesRequest** | [**StartServerInstancesRequest**](StartServerInstancesRequest.md)| startServerInstancesRequest | 
+**startServerInstancesRequest** | **[\*StartServerInstancesRequest](StartServerInstancesRequest.md)** | startServerInstancesRequest | 
 
 ### Return type
 
-[**StartServerInstancesResponse**](startServerInstancesResponse.md)
+*[**StartServerInstancesResponse**](startServerInstancesResponse.md)
 
 ### Authorization
 
@@ -1323,12 +1278,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **stopServerInstancesRequest** | [**StopServerInstancesRequest**](StopServerInstancesRequest.md)| stopServerInstancesRequest | 
+**stopServerInstancesRequest** | **[\*StopServerInstancesRequest](StopServerInstancesRequest.md)** | stopServerInstancesRequest | 
 
 ### Return type
 
-[**StopServerInstancesResponse**](stopServerInstancesResponse.md)
+*[**StopServerInstancesResponse**](stopServerInstancesResponse.md)
 
 ### Authorization
 
@@ -1351,12 +1305,11 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **terminateServerInstancesRequest** | [**TerminateServerInstancesRequest**](TerminateServerInstancesRequest.md)| terminateServerInstancesRequest | 
+**terminateServerInstancesRequest** | **[\*TerminateServerInstancesRequest](TerminateServerInstancesRequest.md)** | terminateServerInstancesRequest | 
 
 ### Return type
 
-[**TerminateServerInstancesResponse**](terminateServerInstancesResponse.md)
+*[**TerminateServerInstancesResponse**](terminateServerInstancesResponse.md)
 
 ### Authorization
 

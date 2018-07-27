@@ -21,7 +21,7 @@ VirtualIp *string `json:"virtualIp,omitempty"`
 LoadBalancerName *string `json:"loadBalancerName,omitempty"`
 
 	// 로드밸런서알고리즘구분코
-LoadBalancerAlgorithmType **CommonCode `json:"loadBalancerAlgorithmType,omitempty"`
+LoadBalancerAlgorithmType *CommonCode `json:"loadBalancerAlgorithmType,omitempty"`
 
 	// 로드밸런서설명
 LoadBalancerDescription *string `json:"loadBalancerDescription,omitempty"`
@@ -33,19 +33,19 @@ CreateDate *string `json:"createDate,omitempty"`
 DomainName *string `json:"domainName,omitempty"`
 
 	// 인터넷회선구분
-InternetLineType **CommonCode `json:"internetLineType,omitempty"`
+InternetLineType *CommonCode `json:"internetLineType,omitempty"`
 
 	// 로드밸런서인스턴스상태명
 LoadBalancerInstanceStatusName *string `json:"loadBalancerInstanceStatusName,omitempty"`
 
 	// 로드밸런서인스턴스상태
-LoadBalancerInstanceStatus **CommonCode `json:"loadBalancerInstanceStatus,omitempty"`
+LoadBalancerInstanceStatus *CommonCode `json:"loadBalancerInstanceStatus,omitempty"`
 
 	// 로드밸런서인스턴스OP
-LoadBalancerInstanceOperation **CommonCode `json:"loadBalancerInstanceOperation,omitempty"`
+LoadBalancerInstanceOperation *CommonCode `json:"loadBalancerInstanceOperation,omitempty"`
 
 	// 네트워크사용구분
-NetworkUsageType **CommonCode `json:"networkUsageType,omitempty"`
+NetworkUsageType *CommonCode `json:"networkUsageType,omitempty"`
 
 	// httpKeepAlive사용여부
 IsHttpKeepAlive *bool `json:"isHttpKeepAlive,omitempty"`
@@ -56,7 +56,7 @@ ConnectionTimeout *int32 `json:"connectionTimeout,omitempty"`
 	// SSL인증명
 CertificateName *string `json:"certificateName,omitempty"`
 
-LoadBalancerRuleList []LoadBalancerRule `json:"loadBalancerRuleList,omitempty"`
+LoadBalancerRuleList []*LoadBalancerRule `json:"loadBalancerRuleList,omitempty"`
 
-LoadBalancedServerInstanceList []LoadBalancedServerInstance `json:"loadBalancedServerInstanceList,omitempty"`
+LoadBalancedServerInstanceList []*LoadBalancedServerInstance `json:"loadBalancedServerInstanceList,omitempty"`
 }

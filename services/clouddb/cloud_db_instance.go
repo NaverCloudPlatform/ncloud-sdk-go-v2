@@ -30,7 +30,7 @@ CpuCount *int32 `json:"cpuCount,omitempty"`
 MemorySize *int64 `json:"memorySize,omitempty"`
 
 	// 데이터스토리지타입
-DataStorageType **CommonCode `json:"dataStorageType,omitempty"`
+DataStorageType *CommonCode `json:"dataStorageType,omitempty"`
 
 	// 라이센스코드
 LicenseCode *string `json:"licenseCode,omitempty"`
@@ -72,16 +72,16 @@ IsCloudDBConfigNeedReboot *bool `json:"isCloudDBConfigNeedReboot,omitempty"`
 IsCloudDBNeedReboot *bool `json:"isCloudDBNeedReboot,omitempty"`
 
 	// Zone
-Zone **Zone `json:"zone,omitempty"`
+Zone *Zone `json:"zone,omitempty"`
 
 	// 리전
-Region **Region `json:"region,omitempty"`
+Region *Region `json:"region,omitempty"`
 
-CloudDBConfigList []CloudDbConfig `json:"cloudDBConfigList,omitempty"`
+CloudDBConfigList []*CloudDBConfig `json:"cloudDBConfigList,omitempty"`
 
-CloudDBConfigGroupList []CloudDbConfigGroup `json:"cloudDBConfigGroupList,omitempty"`
+CloudDBConfigGroupList []*CloudDBConfigGroup `json:"cloudDBConfigGroupList,omitempty"`
 
-AccessControlGroupList []AccessControlGroup `json:"accessControlGroupList,omitempty"`
+AccessControlGroupList []*AccessControlGroup `json:"accessControlGroupList,omitempty"`
 
-CloudDBServerInstanceList []CloudDbServerInstance `json:"cloudDBServerInstanceList,omitempty"`
+CloudDBServerInstanceList []*CloudDBServerInstance `json:"cloudDBServerInstanceList,omitempty"`
 }

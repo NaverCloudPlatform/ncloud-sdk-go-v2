@@ -22,12 +22,11 @@ CDN+인스턴스리스트조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getCdnPlusInstanceListRequest** | [**GetCdnPlusInstanceListRequest**](GetCdnPlusInstanceListRequest.md)| getCdnPlusInstanceListRequest | 
+**getCdnPlusInstanceListRequest** | **[\*GetCdnPlusInstanceListRequest](GetCdnPlusInstanceListRequest.md)** | getCdnPlusInstanceListRequest | 
 
 ### Return type
 
-[**GetCdnPlusInstanceListResponse**](getCdnPlusInstanceListResponse.md)
+*[**GetCdnPlusInstanceListResponse**](getCdnPlusInstanceListResponse.md)
 
 ### Authorization
 
@@ -50,12 +49,11 @@ CDN+퍼지기록조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getCdnPlusPurgeHistoryListRequest** | [**GetCdnPlusPurgeHistoryListRequest**](GetCdnPlusPurgeHistoryListRequest.md)| getCdnPlusPurgeHistoryListRequest | 
+**getCdnPlusPurgeHistoryListRequest** | **[\*GetCdnPlusPurgeHistoryListRequest](GetCdnPlusPurgeHistoryListRequest.md)** | getCdnPlusPurgeHistoryListRequest | 
 
 ### Return type
 
-[**GetCdnPlusPurgeHistoryListResponse**](getCdnPlusPurgeHistoryListResponse.md)
+*[**GetCdnPlusPurgeHistoryListResponse**](getCdnPlusPurgeHistoryListResponse.md)
 
 ### Authorization
 
@@ -78,12 +76,11 @@ Global CDN 인스턴스리스트조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getGlobalCdnInstanceListRequest** | [**GetGlobalCdnInstanceListRequest**](GetGlobalCdnInstanceListRequest.md)| getGlobalCdnInstanceListRequest | 
+**getGlobalCdnInstanceListRequest** | **[\*GetGlobalCdnInstanceListRequest](GetGlobalCdnInstanceListRequest.md)** | getGlobalCdnInstanceListRequest | 
 
 ### Return type
 
-[**GetGlobalCdnInstanceListResponse**](getGlobalCdnInstanceListResponse.md)
+*[**GetGlobalCdnInstanceListResponse**](getGlobalCdnInstanceListResponse.md)
 
 ### Authorization
 
@@ -106,12 +103,11 @@ Global CDN퍼지기록조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getGlobalCdnPurgeHistoryListRequest** | [**GetGlobalCdnPurgeHistoryListRequest**](GetGlobalCdnPurgeHistoryListRequest.md)| getGlobalCdnPurgeHistoryListRequest | 
+**getGlobalCdnPurgeHistoryListRequest** | **[\*GetGlobalCdnPurgeHistoryListRequest](GetGlobalCdnPurgeHistoryListRequest.md)** | getGlobalCdnPurgeHistoryListRequest | 
 
 ### Return type
 
-[**GetGlobalCdnPurgeHistoryListResponse**](getGlobalCdnPurgeHistoryListResponse.md)
+*[**GetGlobalCdnPurgeHistoryListResponse**](getGlobalCdnPurgeHistoryListResponse.md)
 
 ### Authorization
 
@@ -134,12 +130,11 @@ CDN+퍼지요청
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **requestCdnPlusPurgeRequest** | [**RequestCdnPlusPurgeRequest**](RequestCdnPlusPurgeRequest.md)| requestCdnPlusPurgeRequest | 
+**requestCdnPlusPurgeRequest** | **[\*RequestCdnPlusPurgeRequest](RequestCdnPlusPurgeRequest.md)** | requestCdnPlusPurgeRequest | 
 
 ### Return type
 
-[**RequestCdnPlusPurgeResponse**](requestCdnPlusPurgeResponse.md)
+*[**RequestCdnPlusPurgeResponse**](requestCdnPlusPurgeResponse.md)
 
 ### Authorization
 
@@ -162,12 +157,11 @@ Global CDN퍼지요청
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **requestGlobalCdnPurgeRequest** | [**RequestGlobalCdnPurgeRequest**](RequestGlobalCdnPurgeRequest.md)| requestGlobalCdnPurgeRequest | 
+**requestGlobalCdnPurgeRequest** | **[\*RequestGlobalCdnPurgeRequest](RequestGlobalCdnPurgeRequest.md)** | requestGlobalCdnPurgeRequest | 
 
 ### Return type
 
-[**RequestGlobalCdnPurgeResponse**](requestGlobalCdnPurgeResponse.md)
+*[**RequestGlobalCdnPurgeResponse**](requestGlobalCdnPurgeResponse.md)
 
 ### Authorization
 

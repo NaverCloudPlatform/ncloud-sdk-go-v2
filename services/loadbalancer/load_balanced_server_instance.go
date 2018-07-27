@@ -12,8 +12,8 @@ package loadbalancer
 type LoadBalancedServerInstance struct {
 
 	// 서버인스턴스
-ServerInstance **ServerInstance `json:"serverInstance,omitempty"`
+ServerInstance *ServerInstance `json:"serverInstance,omitempty"`
 
 	// 서버헬스체크상태리스트
-ServerHealthCheckStatusList []ServerHealthCheckStatus `json:"serverHealthCheckStatusList,omitempty"`
+ServerHealthCheckStatusList []*ServerHealthCheckStatus `json:"serverHealthCheckStatusList,omitempty"`
 }

@@ -12,7 +12,7 @@ package monitoring
 type GetMetricStatisticsRequest struct {
 
 	// (서버)인스턴스번호리스트
-InstanceNoList []string `json:"instanceNoList"`
+InstanceNoList []*string `json:"instanceNoList"`
 
 	// 메트릭이름리스트
 MetricName *string `json:"metricName"`

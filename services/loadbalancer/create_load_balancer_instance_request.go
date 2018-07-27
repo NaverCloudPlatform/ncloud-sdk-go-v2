@@ -21,10 +21,10 @@ LoadBalancerAlgorithmTypeCode *string `json:"loadBalancerAlgorithmTypeCode,omite
 LoadBalancerDescription *string `json:"loadBalancerDescription,omitempty"`
 
 	// 로드밸런서RULE리스트
-LoadBalancerRuleList []LoadBalancerRuleParameter `json:"loadBalancerRuleList"`
+LoadBalancerRuleList []*LoadBalancerRuleParameter `json:"loadBalancerRuleList"`
 
 	// 서버인스턴스번호리스트
-ServerInstanceNoList []string `json:"serverInstanceNoList,omitempty"`
+ServerInstanceNoList []*string `json:"serverInstanceNoList,omitempty"`
 
 	// 인터넷라인구분코드
 InternetLineTypeCode *string `json:"internetLineTypeCode,omitempty"`

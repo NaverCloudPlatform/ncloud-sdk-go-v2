@@ -30,7 +30,7 @@ MaxSize *int32 `json:"maxSize"`
 DefaultCooldown *int32 `json:"defaultCooldown,omitempty"`
 
 	// 로드밸런서명리스트
-LoadBalancerNameList []string `json:"loadBalancerNameList,omitempty"`
+LoadBalancerNameList []*string `json:"loadBalancerNameList,omitempty"`
 
 	// 헬스체크보류기간
 HealthCheckGracePeriod *int32 `json:"healthCheckGracePeriod,omitempty"`
@@ -39,5 +39,5 @@ HealthCheckGracePeriod *int32 `json:"healthCheckGracePeriod,omitempty"`
 HealthCheckTypeCode *string `json:"healthCheckTypeCode,omitempty"`
 
 	// ZONE번호리스트
-ZoneNoList []string `json:"zoneNoList"`
+ZoneNoList []*string `json:"zoneNoList"`
 }

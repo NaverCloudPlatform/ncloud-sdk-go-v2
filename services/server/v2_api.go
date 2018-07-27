@@ -32,8 +32,8 @@ type V2ApiService service
 /* V2ApiService 
  NAS볼륨인스턴스접근제어추가
  @param addNasVolumeAccessControlRequest addNasVolumeAccessControlRequest
- @return AddNasVolumeAccessControlResponse*/
-func (a *V2ApiService) AddNasVolumeAccessControl(addNasVolumeAccessControlRequest *AddNasVolumeAccessControlRequest) (AddNasVolumeAccessControlResponse, error) {
+ @return *AddNasVolumeAccessControlResponse*/
+func (a *V2ApiService) AddNasVolumeAccessControl(addNasVolumeAccessControlRequest *AddNasVolumeAccessControlRequest) (*AddNasVolumeAccessControlResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -79,32 +79,32 @@ func (a *V2ApiService) AddNasVolumeAccessControl(addNasVolumeAccessControlReques
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  포트포워딩Rule추가
  @param addPortForwardingRulesRequest addPortForwardingRulesRequest
- @return AddPortForwardingRulesResponse*/
-func (a *V2ApiService) AddPortForwardingRules(addPortForwardingRulesRequest *AddPortForwardingRulesRequest) (AddPortForwardingRulesResponse, error) {
+ @return *AddPortForwardingRulesResponse*/
+func (a *V2ApiService) AddPortForwardingRules(addPortForwardingRulesRequest *AddPortForwardingRulesRequest) (*AddPortForwardingRulesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -150,32 +150,32 @@ func (a *V2ApiService) AddPortForwardingRules(addPortForwardingRulesRequest *Add
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  공인IP를서버인스턴스에할당
  @param associatePublicIpWithServerInstanceRequest associatePublicIpWithServerInstanceRequest
- @return AssociatePublicIpWithServerInstanceResponse*/
-func (a *V2ApiService) AssociatePublicIpWithServerInstance(associatePublicIpWithServerInstanceRequest *AssociatePublicIpWithServerInstanceRequest) (AssociatePublicIpWithServerInstanceResponse, error) {
+ @return *AssociatePublicIpWithServerInstanceResponse*/
+func (a *V2ApiService) AssociatePublicIpWithServerInstance(associatePublicIpWithServerInstanceRequest *AssociatePublicIpWithServerInstanceRequest) (*AssociatePublicIpWithServerInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -221,32 +221,32 @@ func (a *V2ApiService) AssociatePublicIpWithServerInstance(associatePublicIpWith
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  NAS볼륨사이즈변경
  @param changeNasVolumeSizeRequest changeNasVolumeSizeRequest
- @return ChangeNasVolumeSizeResponse*/
-func (a *V2ApiService) ChangeNasVolumeSize(changeNasVolumeSizeRequest *ChangeNasVolumeSizeRequest) (ChangeNasVolumeSizeResponse, error) {
+ @return *ChangeNasVolumeSizeResponse*/
+func (a *V2ApiService) ChangeNasVolumeSize(changeNasVolumeSizeRequest *ChangeNasVolumeSizeRequest) (*ChangeNasVolumeSizeResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -292,32 +292,32 @@ func (a *V2ApiService) ChangeNasVolumeSize(changeNasVolumeSizeRequest *ChangeNas
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  서버인스턴스스팩변경
  @param changeServerInstanceSpecRequest changeServerInstanceSpecRequest
- @return ChangeServerInstanceSpecResponse*/
-func (a *V2ApiService) ChangeServerInstanceSpec(changeServerInstanceSpecRequest *ChangeServerInstanceSpecRequest) (ChangeServerInstanceSpecResponse, error) {
+ @return *ChangeServerInstanceSpecResponse*/
+func (a *V2ApiService) ChangeServerInstanceSpec(changeServerInstanceSpecRequest *ChangeServerInstanceSpecRequest) (*ChangeServerInstanceSpecResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -363,32 +363,32 @@ func (a *V2ApiService) ChangeServerInstanceSpec(changeServerInstanceSpecRequest 
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  블록스토리지인스턴스생성
  @param createBlockStorageInstanceRequest createBlockStorageInstanceRequest
- @return CreateBlockStorageInstanceResponse*/
-func (a *V2ApiService) CreateBlockStorageInstance(createBlockStorageInstanceRequest *CreateBlockStorageInstanceRequest) (CreateBlockStorageInstanceResponse, error) {
+ @return *CreateBlockStorageInstanceResponse*/
+func (a *V2ApiService) CreateBlockStorageInstance(createBlockStorageInstanceRequest *CreateBlockStorageInstanceRequest) (*CreateBlockStorageInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -434,32 +434,32 @@ func (a *V2ApiService) CreateBlockStorageInstance(createBlockStorageInstanceRequ
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  블록스토리지스냅샷인스턴스생성
  @param createBlockStorageSnapshotInstanceRequest createBlockStorageSnapshotInstanceRequest
- @return CreateBlockStorageSnapshotInstanceResponse*/
-func (a *V2ApiService) CreateBlockStorageSnapshotInstance(createBlockStorageSnapshotInstanceRequest *CreateBlockStorageSnapshotInstanceRequest) (CreateBlockStorageSnapshotInstanceResponse, error) {
+ @return *CreateBlockStorageSnapshotInstanceResponse*/
+func (a *V2ApiService) CreateBlockStorageSnapshotInstance(createBlockStorageSnapshotInstanceRequest *CreateBlockStorageSnapshotInstanceRequest) (*CreateBlockStorageSnapshotInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -505,32 +505,32 @@ func (a *V2ApiService) CreateBlockStorageSnapshotInstance(createBlockStorageSnap
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  로그인키생성
  @param createLoginKeyRequest createLoginKeyRequest
- @return CreateLoginKeyResponse*/
-func (a *V2ApiService) CreateLoginKey(createLoginKeyRequest *CreateLoginKeyRequest) (CreateLoginKeyResponse, error) {
+ @return *CreateLoginKeyResponse*/
+func (a *V2ApiService) CreateLoginKey(createLoginKeyRequest *CreateLoginKeyRequest) (*CreateLoginKeyResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -576,32 +576,32 @@ func (a *V2ApiService) CreateLoginKey(createLoginKeyRequest *CreateLoginKeyReque
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  회원서버이미지생성
  @param createMemberServerImageRequest createMemberServerImageRequest
- @return CreateMemberServerImageResponse*/
-func (a *V2ApiService) CreateMemberServerImage(createMemberServerImageRequest *CreateMemberServerImageRequest) (CreateMemberServerImageResponse, error) {
+ @return *CreateMemberServerImageResponse*/
+func (a *V2ApiService) CreateMemberServerImage(createMemberServerImageRequest *CreateMemberServerImageRequest) (*CreateMemberServerImageResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -647,32 +647,32 @@ func (a *V2ApiService) CreateMemberServerImage(createMemberServerImageRequest *C
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  NAS볼륨인스턴스생성
  @param createNasVolumeInstanceRequest createNasVolumeInstanceRequest
- @return CreateNasVolumeInstanceResponse*/
-func (a *V2ApiService) CreateNasVolumeInstance(createNasVolumeInstanceRequest *CreateNasVolumeInstanceRequest) (CreateNasVolumeInstanceResponse, error) {
+ @return *CreateNasVolumeInstanceResponse*/
+func (a *V2ApiService) CreateNasVolumeInstance(createNasVolumeInstanceRequest *CreateNasVolumeInstanceRequest) (*CreateNasVolumeInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -718,32 +718,32 @@ func (a *V2ApiService) CreateNasVolumeInstance(createNasVolumeInstanceRequest *C
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  공인IP인스턴스생성
  @param createPublicIpInstanceRequest createPublicIpInstanceRequest
- @return CreatePublicIpInstanceResponse*/
-func (a *V2ApiService) CreatePublicIpInstance(createPublicIpInstanceRequest *CreatePublicIpInstanceRequest) (CreatePublicIpInstanceResponse, error) {
+ @return *CreatePublicIpInstanceResponse*/
+func (a *V2ApiService) CreatePublicIpInstance(createPublicIpInstanceRequest *CreatePublicIpInstanceRequest) (*CreatePublicIpInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -789,32 +789,32 @@ func (a *V2ApiService) CreatePublicIpInstance(createPublicIpInstanceRequest *Cre
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  서버인스턴스생성
  @param createServerInstancesRequest createServerInstancesRequest
- @return CreateServerInstancesResponse*/
-func (a *V2ApiService) CreateServerInstances(createServerInstancesRequest *CreateServerInstancesRequest) (CreateServerInstancesResponse, error) {
+ @return *CreateServerInstancesResponse*/
+func (a *V2ApiService) CreateServerInstances(createServerInstancesRequest *CreateServerInstancesRequest) (*CreateServerInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -860,32 +860,32 @@ func (a *V2ApiService) CreateServerInstances(createServerInstancesRequest *Creat
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  블록스토리지인스턴스삭제
  @param deleteBlockStorageInstancesRequest deleteBlockStorageInstancesRequest
- @return DeleteBlockStorageInstancesResponse*/
-func (a *V2ApiService) DeleteBlockStorageInstances(deleteBlockStorageInstancesRequest *DeleteBlockStorageInstancesRequest) (DeleteBlockStorageInstancesResponse, error) {
+ @return *DeleteBlockStorageInstancesResponse*/
+func (a *V2ApiService) DeleteBlockStorageInstances(deleteBlockStorageInstancesRequest *DeleteBlockStorageInstancesRequest) (*DeleteBlockStorageInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -931,32 +931,32 @@ func (a *V2ApiService) DeleteBlockStorageInstances(deleteBlockStorageInstancesRe
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  블록스토리지스냅샷인스턴스삭제
  @param deleteBlockStorageSnapshotInstancesRequest deleteBlockStorageSnapshotInstancesRequest
- @return DeleteBlockStorageSnapshotInstancesResponse*/
-func (a *V2ApiService) DeleteBlockStorageSnapshotInstances(deleteBlockStorageSnapshotInstancesRequest *DeleteBlockStorageSnapshotInstancesRequest) (DeleteBlockStorageSnapshotInstancesResponse, error) {
+ @return *DeleteBlockStorageSnapshotInstancesResponse*/
+func (a *V2ApiService) DeleteBlockStorageSnapshotInstances(deleteBlockStorageSnapshotInstancesRequest *DeleteBlockStorageSnapshotInstancesRequest) (*DeleteBlockStorageSnapshotInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1002,32 +1002,32 @@ func (a *V2ApiService) DeleteBlockStorageSnapshotInstances(deleteBlockStorageSna
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  로그인키삭제
  @param deleteLoginKeyRequest deleteLoginKeyRequest
- @return DeleteLoginKeyResponse*/
-func (a *V2ApiService) DeleteLoginKey(deleteLoginKeyRequest *DeleteLoginKeyRequest) (DeleteLoginKeyResponse, error) {
+ @return *DeleteLoginKeyResponse*/
+func (a *V2ApiService) DeleteLoginKey(deleteLoginKeyRequest *DeleteLoginKeyRequest) (*DeleteLoginKeyResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1073,32 +1073,32 @@ func (a *V2ApiService) DeleteLoginKey(deleteLoginKeyRequest *DeleteLoginKeyReque
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  회원서버이미지삭제
  @param deleteMemberServerImagesRequest deleteMemberServerImagesRequest
- @return DeleteMemberServerImagesResponse*/
-func (a *V2ApiService) DeleteMemberServerImages(deleteMemberServerImagesRequest *DeleteMemberServerImagesRequest) (DeleteMemberServerImagesResponse, error) {
+ @return *DeleteMemberServerImagesResponse*/
+func (a *V2ApiService) DeleteMemberServerImages(deleteMemberServerImagesRequest *DeleteMemberServerImagesRequest) (*DeleteMemberServerImagesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1144,32 +1144,32 @@ func (a *V2ApiService) DeleteMemberServerImages(deleteMemberServerImagesRequest 
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  NAS볼륨인스턴스삭제
  @param deleteNasVolumeInstanceRequest deleteNasVolumeInstanceRequest
- @return DeleteNasVolumeInstanceResponse*/
-func (a *V2ApiService) DeleteNasVolumeInstance(deleteNasVolumeInstanceRequest *DeleteNasVolumeInstanceRequest) (DeleteNasVolumeInstanceResponse, error) {
+ @return *DeleteNasVolumeInstanceResponse*/
+func (a *V2ApiService) DeleteNasVolumeInstance(deleteNasVolumeInstanceRequest *DeleteNasVolumeInstanceRequest) (*DeleteNasVolumeInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1215,32 +1215,32 @@ func (a *V2ApiService) DeleteNasVolumeInstance(deleteNasVolumeInstanceRequest *D
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  포트포워딩Rule삭제
  @param deletePortForwardingRulesRequest deletePortForwardingRulesRequest
- @return DeletePortForwardingRulesResponse*/
-func (a *V2ApiService) DeletePortForwardingRules(deletePortForwardingRulesRequest *DeletePortForwardingRulesRequest) (DeletePortForwardingRulesResponse, error) {
+ @return *DeletePortForwardingRulesResponse*/
+func (a *V2ApiService) DeletePortForwardingRules(deletePortForwardingRulesRequest *DeletePortForwardingRulesRequest) (*DeletePortForwardingRulesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1286,32 +1286,32 @@ func (a *V2ApiService) DeletePortForwardingRules(deletePortForwardingRulesReques
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  공인IP인스턴스삭제
  @param deletePublicIpInstancesRequest deletePublicIpInstancesRequest
- @return DeletePublicIpInstancesResponse*/
-func (a *V2ApiService) DeletePublicIpInstances(deletePublicIpInstancesRequest *DeletePublicIpInstancesRequest) (DeletePublicIpInstancesResponse, error) {
+ @return *DeletePublicIpInstancesResponse*/
+func (a *V2ApiService) DeletePublicIpInstances(deletePublicIpInstancesRequest *DeletePublicIpInstancesRequest) (*DeletePublicIpInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1357,32 +1357,32 @@ func (a *V2ApiService) DeletePublicIpInstances(deletePublicIpInstancesRequest *D
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  공인IP를서버인스턴스에할당해제
  @param disassociatePublicIpFromServerInstanceRequest disassociatePublicIpFromServerInstanceRequest
- @return DisassociatePublicIpFromServerInstanceResponse*/
-func (a *V2ApiService) DisassociatePublicIpFromServerInstance(disassociatePublicIpFromServerInstanceRequest *DisassociatePublicIpFromServerInstanceRequest) (DisassociatePublicIpFromServerInstanceResponse, error) {
+ @return *DisassociatePublicIpFromServerInstanceResponse*/
+func (a *V2ApiService) DisassociatePublicIpFromServerInstance(disassociatePublicIpFromServerInstanceRequest *DisassociatePublicIpFromServerInstanceRequest) (*DisassociatePublicIpFromServerInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1428,32 +1428,32 @@ func (a *V2ApiService) DisassociatePublicIpFromServerInstance(disassociatePublic
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  접근제어그룹리스트조회
  @param getAccessControlGroupListRequest getAccessControlGroupListRequest
- @return GetAccessControlGroupListResponse*/
-func (a *V2ApiService) GetAccessControlGroupList(getAccessControlGroupListRequest *GetAccessControlGroupListRequest) (GetAccessControlGroupListResponse, error) {
+ @return *GetAccessControlGroupListResponse*/
+func (a *V2ApiService) GetAccessControlGroupList(getAccessControlGroupListRequest *GetAccessControlGroupListRequest) (*GetAccessControlGroupListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1499,32 +1499,32 @@ func (a *V2ApiService) GetAccessControlGroupList(getAccessControlGroupListReques
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  접근제어그룹적용된서버인스턴스리스트조회
  @param getAccessControlGroupServerInstanceListRequest getAccessControlGroupServerInstanceListRequest
- @return GetAccessControlGroupServerInstanceListResponse*/
-func (a *V2ApiService) GetAccessControlGroupServerInstanceList(getAccessControlGroupServerInstanceListRequest *GetAccessControlGroupServerInstanceListRequest) (GetAccessControlGroupServerInstanceListResponse, error) {
+ @return *GetAccessControlGroupServerInstanceListResponse*/
+func (a *V2ApiService) GetAccessControlGroupServerInstanceList(getAccessControlGroupServerInstanceListRequest *GetAccessControlGroupServerInstanceListRequest) (*GetAccessControlGroupServerInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1570,32 +1570,32 @@ func (a *V2ApiService) GetAccessControlGroupServerInstanceList(getAccessControlG
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  접근제어규칙리스트조회
  @param getAccessControlRuleListRequest getAccessControlRuleListRequest
- @return GetAccessControlRuleListResponse*/
-func (a *V2ApiService) GetAccessControlRuleList(getAccessControlRuleListRequest *GetAccessControlRuleListRequest) (GetAccessControlRuleListResponse, error) {
+ @return *GetAccessControlRuleListResponse*/
+func (a *V2ApiService) GetAccessControlRuleList(getAccessControlRuleListRequest *GetAccessControlRuleListRequest) (*GetAccessControlRuleListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1641,32 +1641,32 @@ func (a *V2ApiService) GetAccessControlRuleList(getAccessControlRuleListRequest 
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  블록스토리지인스턴스리스트조회
  @param getBlockStorageInstanceListRequest getBlockStorageInstanceListRequest
- @return GetBlockStorageInstanceListResponse*/
-func (a *V2ApiService) GetBlockStorageInstanceList(getBlockStorageInstanceListRequest *GetBlockStorageInstanceListRequest) (GetBlockStorageInstanceListResponse, error) {
+ @return *GetBlockStorageInstanceListResponse*/
+func (a *V2ApiService) GetBlockStorageInstanceList(getBlockStorageInstanceListRequest *GetBlockStorageInstanceListRequest) (*GetBlockStorageInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1712,32 +1712,32 @@ func (a *V2ApiService) GetBlockStorageInstanceList(getBlockStorageInstanceListRe
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  블록스토리지스냅샷인스턴스리스트조회
  @param getBlockStorageSnapshotInstanceListRequest getBlockStorageSnapshotInstanceListRequest
- @return GetBlockStorageSnapshotInstanceListResponse*/
-func (a *V2ApiService) GetBlockStorageSnapshotInstanceList(getBlockStorageSnapshotInstanceListRequest *GetBlockStorageSnapshotInstanceListRequest) (GetBlockStorageSnapshotInstanceListResponse, error) {
+ @return *GetBlockStorageSnapshotInstanceListResponse*/
+func (a *V2ApiService) GetBlockStorageSnapshotInstanceList(getBlockStorageSnapshotInstanceListRequest *GetBlockStorageSnapshotInstanceListRequest) (*GetBlockStorageSnapshotInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1783,32 +1783,32 @@ func (a *V2ApiService) GetBlockStorageSnapshotInstanceList(getBlockStorageSnapsh
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  로그인키리스트조회
  @param getLoginKeyListRequest getLoginKeyListRequest
- @return GetLoginKeyListResponse*/
-func (a *V2ApiService) GetLoginKeyList(getLoginKeyListRequest *GetLoginKeyListRequest) (GetLoginKeyListResponse, error) {
+ @return *GetLoginKeyListResponse*/
+func (a *V2ApiService) GetLoginKeyList(getLoginKeyListRequest *GetLoginKeyListRequest) (*GetLoginKeyListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1854,32 +1854,32 @@ func (a *V2ApiService) GetLoginKeyList(getLoginKeyListRequest *GetLoginKeyListRe
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  회원서버이미지리스트조회
  @param getMemberServerImageListRequest getMemberServerImageListRequest
- @return GetMemberServerImageListResponse*/
-func (a *V2ApiService) GetMemberServerImageList(getMemberServerImageListRequest *GetMemberServerImageListRequest) (GetMemberServerImageListResponse, error) {
+ @return *GetMemberServerImageListResponse*/
+func (a *V2ApiService) GetMemberServerImageList(getMemberServerImageListRequest *GetMemberServerImageListRequest) (*GetMemberServerImageListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1925,32 +1925,32 @@ func (a *V2ApiService) GetMemberServerImageList(getMemberServerImageListRequest 
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  NAS볼륨인스턴스리스트조회
  @param getNasVolumeInstanceListRequest getNasVolumeInstanceListRequest
- @return GetNasVolumeInstanceListResponse*/
-func (a *V2ApiService) GetNasVolumeInstanceList(getNasVolumeInstanceListRequest *GetNasVolumeInstanceListRequest) (GetNasVolumeInstanceListResponse, error) {
+ @return *GetNasVolumeInstanceListResponse*/
+func (a *V2ApiService) GetNasVolumeInstanceList(getNasVolumeInstanceListRequest *GetNasVolumeInstanceListRequest) (*GetNasVolumeInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -1996,32 +1996,32 @@ func (a *V2ApiService) GetNasVolumeInstanceList(getNasVolumeInstanceListRequest 
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  NAS볼륨인스턴스측정리스트조회
  @param getNasVolumeInstanceRatingListRequest getNasVolumeInstanceRatingListRequest
- @return GetNasVolumeInstanceRatingListResponse*/
-func (a *V2ApiService) GetNasVolumeInstanceRatingList(getNasVolumeInstanceRatingListRequest *GetNasVolumeInstanceRatingListRequest) (GetNasVolumeInstanceRatingListResponse, error) {
+ @return *GetNasVolumeInstanceRatingListResponse*/
+func (a *V2ApiService) GetNasVolumeInstanceRatingList(getNasVolumeInstanceRatingListRequest *GetNasVolumeInstanceRatingListRequest) (*GetNasVolumeInstanceRatingListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -2067,32 +2067,32 @@ func (a *V2ApiService) GetNasVolumeInstanceRatingList(getNasVolumeInstanceRating
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  포트포워딩Rule리스트조회
  @param getPortForwardingRuleListRequest getPortForwardingRuleListRequest
- @return GetPortForwardingRuleListResponse*/
-func (a *V2ApiService) GetPortForwardingRuleList(getPortForwardingRuleListRequest *GetPortForwardingRuleListRequest) (GetPortForwardingRuleListResponse, error) {
+ @return *GetPortForwardingRuleListResponse*/
+func (a *V2ApiService) GetPortForwardingRuleList(getPortForwardingRuleListRequest *GetPortForwardingRuleListRequest) (*GetPortForwardingRuleListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -2138,32 +2138,32 @@ func (a *V2ApiService) GetPortForwardingRuleList(getPortForwardingRuleListReques
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  공인IP인스턴스리스트조회
  @param getPublicIpInstanceListRequest getPublicIpInstanceListRequest
- @return GetPublicIpInstanceListResponse*/
-func (a *V2ApiService) GetPublicIpInstanceList(getPublicIpInstanceListRequest *GetPublicIpInstanceListRequest) (GetPublicIpInstanceListResponse, error) {
+ @return *GetPublicIpInstanceListResponse*/
+func (a *V2ApiService) GetPublicIpInstanceList(getPublicIpInstanceListRequest *GetPublicIpInstanceListRequest) (*GetPublicIpInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -2209,32 +2209,32 @@ func (a *V2ApiService) GetPublicIpInstanceList(getPublicIpInstanceListRequest *G
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  공인IP할당(가능)서버인스턴스리스트조회
  @param getPublicIpTargetServerInstanceListRequest getPublicIpTargetServerInstanceListRequest
- @return GetPublicIpTargetServerInstanceListResponse*/
-func (a *V2ApiService) GetPublicIpTargetServerInstanceList(getPublicIpTargetServerInstanceListRequest *GetPublicIpTargetServerInstanceListRequest) (GetPublicIpTargetServerInstanceListResponse, error) {
+ @return *GetPublicIpTargetServerInstanceListResponse*/
+func (a *V2ApiService) GetPublicIpTargetServerInstanceList(getPublicIpTargetServerInstanceListRequest *GetPublicIpTargetServerInstanceListRequest) (*GetPublicIpTargetServerInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -2280,32 +2280,32 @@ func (a *V2ApiService) GetPublicIpTargetServerInstanceList(getPublicIpTargetServ
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  RAID리스트조회
  @param getRaidListRequest getRaidListRequest
- @return GetRaidListResponse*/
-func (a *V2ApiService) GetRaidList(getRaidListRequest *GetRaidListRequest) (GetRaidListResponse, error) {
+ @return *GetRaidListResponse*/
+func (a *V2ApiService) GetRaidList(getRaidListRequest *GetRaidListRequest) (*GetRaidListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -2351,32 +2351,32 @@ func (a *V2ApiService) GetRaidList(getRaidListRequest *GetRaidListRequest) (GetR
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  REGION리스트조회
  @param getRegionListRequest getRegionListRequest
- @return GetRegionListResponse*/
-func (a *V2ApiService) GetRegionList(getRegionListRequest *GetRegionListRequest) (GetRegionListResponse, error) {
+ @return *GetRegionListResponse*/
+func (a *V2ApiService) GetRegionList(getRegionListRequest *GetRegionListRequest) (*GetRegionListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -2422,32 +2422,32 @@ func (a *V2ApiService) GetRegionList(getRegionListRequest *GetRegionListRequest)
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  루트패스워드조회
  @param getRootPasswordRequest getRootPasswordRequest
- @return GetRootPasswordResponse*/
-func (a *V2ApiService) GetRootPassword(getRootPasswordRequest *GetRootPasswordRequest) (GetRootPasswordResponse, error) {
+ @return *GetRootPasswordResponse*/
+func (a *V2ApiService) GetRootPassword(getRootPasswordRequest *GetRootPasswordRequest) (*GetRootPasswordResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -2493,32 +2493,32 @@ func (a *V2ApiService) GetRootPassword(getRootPasswordRequest *GetRootPasswordRe
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  서버이미지상품리스트조회
  @param getServerImageProductListRequest getServerImageProductListRequest
- @return GetServerImageProductListResponse*/
-func (a *V2ApiService) GetServerImageProductList(getServerImageProductListRequest *GetServerImageProductListRequest) (GetServerImageProductListResponse, error) {
+ @return *GetServerImageProductListResponse*/
+func (a *V2ApiService) GetServerImageProductList(getServerImageProductListRequest *GetServerImageProductListRequest) (*GetServerImageProductListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -2564,32 +2564,32 @@ func (a *V2ApiService) GetServerImageProductList(getServerImageProductListReques
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  서버인스턴스리스트조회
  @param getServerInstanceListRequest getServerInstanceListRequest
- @return GetServerInstanceListResponse*/
-func (a *V2ApiService) GetServerInstanceList(getServerInstanceListRequest *GetServerInstanceListRequest) (GetServerInstanceListResponse, error) {
+ @return *GetServerInstanceListResponse*/
+func (a *V2ApiService) GetServerInstanceList(getServerInstanceListRequest *GetServerInstanceListRequest) (*GetServerInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -2635,32 +2635,32 @@ func (a *V2ApiService) GetServerInstanceList(getServerInstanceListRequest *GetSe
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  서버상품리스트조회
  @param getServerProductListRequest getServerProductListRequest
- @return GetServerProductListResponse*/
-func (a *V2ApiService) GetServerProductList(getServerProductListRequest *GetServerProductListRequest) (GetServerProductListResponse, error) {
+ @return *GetServerProductListResponse*/
+func (a *V2ApiService) GetServerProductList(getServerProductListRequest *GetServerProductListRequest) (*GetServerProductListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -2706,32 +2706,32 @@ func (a *V2ApiService) GetServerProductList(getServerProductListRequest *GetServ
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  ZONE리스트조회
  @param getZoneListRequest getZoneListRequest
- @return GetZoneListResponse*/
-func (a *V2ApiService) GetZoneList(getZoneListRequest *GetZoneListRequest) (GetZoneListResponse, error) {
+ @return *GetZoneListResponse*/
+func (a *V2ApiService) GetZoneList(getZoneListRequest *GetZoneListRequest) (*GetZoneListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -2777,32 +2777,32 @@ func (a *V2ApiService) GetZoneList(getZoneListRequest *GetZoneListRequest) (GetZ
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  로그인키IMPORT
  @param importLoginKeyRequest importLoginKeyRequest
- @return ImportLoginKeyResponse*/
-func (a *V2ApiService) ImportLoginKey(importLoginKeyRequest *ImportLoginKeyRequest) (ImportLoginKeyResponse, error) {
+ @return *ImportLoginKeyResponse*/
+func (a *V2ApiService) ImportLoginKey(importLoginKeyRequest *ImportLoginKeyRequest) (*ImportLoginKeyResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -2848,32 +2848,32 @@ func (a *V2ApiService) ImportLoginKey(importLoginKeyRequest *ImportLoginKeyReque
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  서버인스턴스재시작
  @param rebootServerInstancesRequest rebootServerInstancesRequest
- @return RebootServerInstancesResponse*/
-func (a *V2ApiService) RebootServerInstances(rebootServerInstancesRequest *RebootServerInstancesRequest) (RebootServerInstancesResponse, error) {
+ @return *RebootServerInstancesResponse*/
+func (a *V2ApiService) RebootServerInstances(rebootServerInstancesRequest *RebootServerInstancesRequest) (*RebootServerInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -2919,32 +2919,32 @@ func (a *V2ApiService) RebootServerInstances(rebootServerInstancesRequest *Reboo
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  서버인스턴스재생성
  @param recreateServerInstanceRequest recreateServerInstanceRequest
- @return RecreateServerInstanceResponse*/
-func (a *V2ApiService) RecreateServerInstance(recreateServerInstanceRequest *RecreateServerInstanceRequest) (RecreateServerInstanceResponse, error) {
+ @return *RecreateServerInstanceResponse*/
+func (a *V2ApiService) RecreateServerInstance(recreateServerInstanceRequest *RecreateServerInstanceRequest) (*RecreateServerInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -2990,32 +2990,32 @@ func (a *V2ApiService) RecreateServerInstance(recreateServerInstanceRequest *Rec
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  NAS볼륨인스턴스접근제어제거
  @param removeNasVolumeAccessControlRequest removeNasVolumeAccessControlRequest
- @return RemoveNasVolumeAccessControlResponse*/
-func (a *V2ApiService) RemoveNasVolumeAccessControl(removeNasVolumeAccessControlRequest *RemoveNasVolumeAccessControlRequest) (RemoveNasVolumeAccessControlResponse, error) {
+ @return *RemoveNasVolumeAccessControlResponse*/
+func (a *V2ApiService) RemoveNasVolumeAccessControl(removeNasVolumeAccessControlRequest *RemoveNasVolumeAccessControlRequest) (*RemoveNasVolumeAccessControlResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -3061,32 +3061,32 @@ func (a *V2ApiService) RemoveNasVolumeAccessControl(removeNasVolumeAccessControl
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  NAS볼륨인스턴스접근제어설정
  @param setNasVolumeAccessControlRequest setNasVolumeAccessControlRequest
- @return SetNasVolumeAccessControlResponse*/
-func (a *V2ApiService) SetNasVolumeAccessControl(setNasVolumeAccessControlRequest *SetNasVolumeAccessControlRequest) (SetNasVolumeAccessControlResponse, error) {
+ @return *SetNasVolumeAccessControlResponse*/
+func (a *V2ApiService) SetNasVolumeAccessControl(setNasVolumeAccessControlRequest *SetNasVolumeAccessControlRequest) (*SetNasVolumeAccessControlResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -3132,32 +3132,32 @@ func (a *V2ApiService) SetNasVolumeAccessControl(setNasVolumeAccessControlReques
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  서버인스턴스시작
  @param startServerInstancesRequest startServerInstancesRequest
- @return StartServerInstancesResponse*/
-func (a *V2ApiService) StartServerInstances(startServerInstancesRequest *StartServerInstancesRequest) (StartServerInstancesResponse, error) {
+ @return *StartServerInstancesResponse*/
+func (a *V2ApiService) StartServerInstances(startServerInstancesRequest *StartServerInstancesRequest) (*StartServerInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -3203,32 +3203,32 @@ func (a *V2ApiService) StartServerInstances(startServerInstancesRequest *StartSe
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  서버인스턴스종료
  @param stopServerInstancesRequest stopServerInstancesRequest
- @return StopServerInstancesResponse*/
-func (a *V2ApiService) StopServerInstances(stopServerInstancesRequest *StopServerInstancesRequest) (StopServerInstancesResponse, error) {
+ @return *StopServerInstancesResponse*/
+func (a *V2ApiService) StopServerInstances(stopServerInstancesRequest *StopServerInstancesRequest) (*StopServerInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -3274,32 +3274,32 @@ func (a *V2ApiService) StopServerInstances(stopServerInstancesRequest *StopServe
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  서버인스턴스반납
  @param terminateServerInstancesRequest terminateServerInstancesRequest
- @return TerminateServerInstancesResponse*/
-func (a *V2ApiService) TerminateServerInstances(terminateServerInstancesRequest *TerminateServerInstancesRequest) (TerminateServerInstancesResponse, error) {
+ @return *TerminateServerInstancesResponse*/
+func (a *V2ApiService) TerminateServerInstances(terminateServerInstancesRequest *TerminateServerInstancesRequest) (*TerminateServerInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -3345,24 +3345,24 @@ func (a *V2ApiService) TerminateServerInstances(terminateServerInstancesRequest 
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 

@@ -12,7 +12,7 @@ package autoscaling
 type GetAutoScalingActivityLogListRequest struct {
 
 	// 액티비티번호리스트
-ActivityNoList []string `json:"activityNoList,omitempty"`
+ActivityNoList []*string `json:"activityNoList,omitempty"`
 
 	// 오토스케일링그룹명
 AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`

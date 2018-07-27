@@ -12,7 +12,7 @@ package autoscaling
 type GetAutoScalingPolicyListRequest struct {
 
 	// 정책명리스트
-PolicyNameList []string `json:"policyNameList,omitempty"`
+PolicyNameList []*string `json:"policyNameList,omitempty"`
 
 	// 오토스케일링그룹명
 AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`

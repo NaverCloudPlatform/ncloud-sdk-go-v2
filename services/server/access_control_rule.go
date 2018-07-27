@@ -15,7 +15,7 @@ type AccessControlRule struct {
 AccessControlRuleConfigurationNo *string `json:"accessControlRuleConfigurationNo,omitempty"`
 
 	// 프로토콜구분
-ProtocolType **CommonCode `json:"protocolType,omitempty"`
+ProtocolType *CommonCode `json:"protocolType,omitempty"`
 
 	// 소스IP
 SourceIp *string `json:"sourceIp,omitempty"`

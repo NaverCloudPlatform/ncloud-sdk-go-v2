@@ -21,7 +21,7 @@ IsEventConfiguration *bool `json:"isEventConfiguration,omitempty"`
 IsSnapshotConfiguration *bool `json:"isSnapshotConfiguration,omitempty"`
 
 	// NAS볼륨인스턴스번호리스트
-NasVolumeInstanceNoList []string `json:"nasVolumeInstanceNoList,omitempty"`
+NasVolumeInstanceNoList []*string `json:"nasVolumeInstanceNoList,omitempty"`
 
 	// 리전번호
 RegionNo *string `json:"regionNo,omitempty"`

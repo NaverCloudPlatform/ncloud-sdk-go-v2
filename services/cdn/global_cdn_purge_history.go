@@ -24,10 +24,10 @@ IsWholePurge *bool `json:"isWholePurge,omitempty"`
 IsWholeDomain *bool `json:"isWholeDomain,omitempty"`
 
 	// Global CDN서비스도메인리스트
-GlobalCdnServiceDomainList []GlobalCdnServiceDomain `json:"globalCdnServiceDomainList,omitempty"`
+GlobalCdnServiceDomainList []*GlobalCdnServiceDomain `json:"globalCdnServiceDomainList,omitempty"`
 
 	// 타겟파일리스트
-TargetFileList []string `json:"targetFileList,omitempty"`
+TargetFileList []*string `json:"targetFileList,omitempty"`
 
 	// 예상완료날짜
 EstimatedCompletionDate *string `json:"estimatedCompletionDate,omitempty"`

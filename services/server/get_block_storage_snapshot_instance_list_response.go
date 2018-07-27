@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-BlockStorageSnapshotInstanceList []BlockStorageSnapshotInstance `json:"blockStorageSnapshotInstanceList,omitempty"`
+BlockStorageSnapshotInstanceList []*BlockStorageSnapshotInstance `json:"blockStorageSnapshotInstanceList,omitempty"`
 }

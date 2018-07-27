@@ -347,7 +347,8 @@ func setBody(body interface{}, contentType string) (bodyBuf *bytes.Buffer, err e
 				for i := 0; i < f.Len(); i++ {
 					item := f.Index(i)
 
-					if item.Kind() == reflect.Struct {
+					if item.Elem().Kind() == reflect.Struct {
+						item := item.Elem()
 						typeOfSubItem := item.Type()
 
 						for j := 0; j < item.NumField(); j++ {
@@ -374,15 +375,23 @@ func setBody(body interface{}, contentType string) (bodyBuf *bytes.Buffer, err e
 							}
 						}
 					} else {
-						switch f.Type().String() {
-                        case "string":
+						switch item.Type().String() {
+						case "*string":
 							if key == "userData" {
-								result += fmt.Sprintf("&%s.%d=%s", key, i+1, base64.StdEncoding.EncodeToString([]byte(item.Interface().(string))))
+								result += fmt.Sprintf("&%s.%d=%s", key, i+1, base64.StdEncoding.EncodeToString([]byte(*item.Interface().(*string))))
 							} else {
-								result += fmt.Sprintf("&%s.%d=%s", key, i+1, url.QueryEscape(item.Interface().(string)))
+								result += fmt.Sprintf("&%s.%d=%s", key, i+1, url.QueryEscape(*item.Interface().(*string)))
 							}
-                        default:
-							result += fmt.Sprintf("&%s.%d=%s", key, i+1, item.Interface())
+						case "*bool":
+							result += fmt.Sprintf("&%s.%d.%s=%t", key, i+1, ncloud.BoolValue(item.Interface().(*bool)))
+						case "*int":
+							result += fmt.Sprintf("&%s.%d.%s=%d", key, i+1, item.Interface().(*int))
+						case "*int32":
+							result += fmt.Sprintf("&%s.%d.%s=%d", key, i+1, item.Interface().(*int32))
+						case "*int64":
+							result += fmt.Sprintf("&%s.%d.%s=%d", key, i+1, item.Interface().(*int64))
+						case "*float32":
+							result += fmt.Sprintf("&%s.%d.%s=%f", key, i+1, item.Interface().(*float32))
 						}
 					}
 				}

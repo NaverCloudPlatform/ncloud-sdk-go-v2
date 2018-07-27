@@ -12,7 +12,7 @@ package autoscaling
 type GetAutoScalingConfigurationLogListRequest struct {
 
 	// 설정번호리스트
-ConfigurationNoList []string `json:"configurationNoList,omitempty"`
+ConfigurationNoList []*string `json:"configurationNoList,omitempty"`
 
 	// 오토스케일링그룹명
 AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`

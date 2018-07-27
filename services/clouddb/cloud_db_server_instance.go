@@ -21,7 +21,7 @@ CloudDBServerInstanceStatusName *string `json:"cloudDBServerInstanceStatusName,o
 CloudDBServerName *string `json:"cloudDBServerName,omitempty"`
 
 	// CloudDB서버역할
-CloudDBServerRole **CommonCode `json:"cloudDBServerRole,omitempty"`
+CloudDBServerRole *CommonCode `json:"cloudDBServerRole,omitempty"`
 
 	// 사설DNS이름
 PrivateDnsName *string `json:"privateDnsName,omitempty"`

@@ -17,5 +17,5 @@ ReturnCode *string `json:"returnCode,omitempty"`
 
 ReturnMessage *string `json:"returnMessage,omitempty"`
 
-Statistics []Statistic `json:"statistics,omitempty"`
+Statistics []*Statistic `json:"statistics,omitempty"`
 }

@@ -21,5 +21,5 @@ LoadBalancerAlgorithmTypeCode *string `json:"loadBalancerAlgorithmTypeCode"`
 LoadBalancerDescription *string `json:"loadBalancerDescription,omitempty"`
 
 	// 로드밸런RULE리스트
-LoadBalancerRuleList []LoadBalancerRuleParameter `json:"loadBalancerRuleList"`
+LoadBalancerRuleList []*LoadBalancerRuleParameter `json:"loadBalancerRuleList"`
 }

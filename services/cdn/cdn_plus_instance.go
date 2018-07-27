@@ -15,10 +15,10 @@ type CdnPlusInstance struct {
 CdnInstanceNo *string `json:"cdnInstanceNo,omitempty"`
 
 	// CDN인스턴스상태
-CdnInstanceStatus **CommonCode `json:"cdnInstanceStatus,omitempty"`
+CdnInstanceStatus *CommonCode `json:"cdnInstanceStatus,omitempty"`
 
 	// CDN인스턴스OP
-CdnInstanceOperation **CommonCode `json:"cdnInstanceOperation,omitempty"`
+CdnInstanceOperation *CommonCode `json:"cdnInstanceOperation,omitempty"`
 
 	// CDN인스턴스상태명
 CdnInstanceStatusName *string `json:"cdnInstanceStatusName,omitempty"`
@@ -39,7 +39,7 @@ ServiceName *string `json:"serviceName,omitempty"`
 IsForLiveTranscoder *bool `json:"isForLiveTranscoder,omitempty"`
 
 	// 라이브트랜스코더인스턴스번호리스트
-LiveTranscoderInstanceNoList []string `json:"liveTranscoderInstanceNoList,omitempty"`
+LiveTranscoderInstanceNoList []*string `json:"liveTranscoderInstanceNoList,omitempty"`
 
 	// Image Optimizer여부
 IsForImageOptimizer *bool `json:"isForImageOptimizer,omitempty"`
@@ -50,7 +50,7 @@ ImageOptimizerInstanceNo *string `json:"imageOptimizerInstanceNo,omitempty"`
 IsAvailablePartialDomainPurge *bool `json:"isAvailablePartialDomainPurge,omitempty"`
 
 	// CDN+서비스도메인리스트
-CdnPlusServiceDomainList []CdnPlusServiceDomain `json:"cdnPlusServiceDomainList,omitempty"`
+CdnPlusServiceDomainList []*CdnPlusServiceDomain `json:"cdnPlusServiceDomainList,omitempty"`
 
-CdnPlusRule **CdnPlusRule `json:"cdnPlusRule,omitempty"`
+CdnPlusRule *CdnPlusRule `json:"cdnPlusRule,omitempty"`
 }

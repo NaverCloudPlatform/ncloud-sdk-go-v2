@@ -15,7 +15,7 @@ PolicyName *string `json:"policyName,omitempty"`
 
 AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`
 
-AdjustmentType **CommonCode `json:"adjustmentType,omitempty"`
+AdjustmentType *CommonCode `json:"adjustmentType,omitempty"`
 
 ScalingAdjustment *int32 `json:"scalingAdjustment,omitempty"`
 

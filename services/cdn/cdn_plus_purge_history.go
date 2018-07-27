@@ -24,13 +24,13 @@ IsWholePurge *bool `json:"isWholePurge,omitempty"`
 IsWholeDomain *bool `json:"isWholeDomain,omitempty"`
 
 	// CDN+서비스도메인리스트
-CdnPlusServiceDomainList []CdnPlusServiceDomain `json:"cdnPlusServiceDomainList,omitempty"`
+CdnPlusServiceDomainList []*CdnPlusServiceDomain `json:"cdnPlusServiceDomainList,omitempty"`
 
 	// 대상디렉토리명
 TargetDirectoryName *string `json:"targetDirectoryName,omitempty"`
 
 	// 타겟파일리스트
-TargetFileList []string `json:"targetFileList,omitempty"`
+TargetFileList []*string `json:"targetFileList,omitempty"`
 
 	// 요청날짜
 RequestDate *string `json:"requestDate,omitempty"`

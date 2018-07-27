@@ -21,10 +21,10 @@ VolumeSize *int32 `json:"volumeSize"`
 VolumeAllotmentProtocolTypeCode *string `json:"volumeAllotmentProtocolTypeCode"`
 
 	// 서버인스턴스번호리스트
-ServerInstanceNoList []string `json:"serverInstanceNoList,omitempty"`
+ServerInstanceNoList []*string `json:"serverInstanceNoList,omitempty"`
 
 	// 커스텀IP리스트
-CustomIpList []string `json:"customIpList,omitempty"`
+CustomIpList []*string `json:"customIpList,omitempty"`
 
 	// CIFS유저이름
 CifsUserName *string `json:"cifsUserName,omitempty"`

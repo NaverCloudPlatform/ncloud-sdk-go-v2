@@ -32,8 +32,8 @@ type V2ApiService service
 /* V2ApiService 
  CloudDB인스턴스생성
  @param createCloudDBInstanceRequest createCloudDBInstanceRequest
- @return CreateCloudDbInstanceResponse*/
-func (a *V2ApiService) CreateCloudDBInstance(createCloudDBInstanceRequest *CreateCloudDbInstanceRequest) (CreateCloudDbInstanceResponse, error) {
+ @return *CreateCloudDbInstanceResponse*/
+func (a *V2ApiService) CreateCloudDBInstance(createCloudDBInstanceRequest *CreateCloudDbInstanceRequest) (*CreateCloudDbInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -79,32 +79,32 @@ func (a *V2ApiService) CreateCloudDBInstance(createCloudDBInstanceRequest *Creat
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  CloudDB서버인스턴스삭제
  @param deleteCloudDBServerInstanceRequest deleteCloudDBServerInstanceRequest
- @return DeleteCloudDbServerInstanceResponse*/
-func (a *V2ApiService) DeleteCloudDBServerInstance(deleteCloudDBServerInstanceRequest *DeleteCloudDbServerInstanceRequest) (DeleteCloudDbServerInstanceResponse, error) {
+ @return *DeleteCloudDbServerInstanceResponse*/
+func (a *V2ApiService) DeleteCloudDBServerInstance(deleteCloudDBServerInstanceRequest *DeleteCloudDbServerInstanceRequest) (*DeleteCloudDbServerInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -150,32 +150,32 @@ func (a *V2ApiService) DeleteCloudDBServerInstance(deleteCloudDBServerInstanceRe
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  CloudDB Flush
  @param flushCloudDBInstanceRequest flushCloudDBInstanceRequest
- @return FlushCloudDbInstanceResponse*/
-func (a *V2ApiService) FlushCloudDBInstance(flushCloudDBInstanceRequest *FlushCloudDbInstanceRequest) (FlushCloudDbInstanceResponse, error) {
+ @return *FlushCloudDbInstanceResponse*/
+func (a *V2ApiService) FlushCloudDBInstance(flushCloudDBInstanceRequest *FlushCloudDbInstanceRequest) (*FlushCloudDbInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -221,32 +221,32 @@ func (a *V2ApiService) FlushCloudDBInstance(flushCloudDBInstanceRequest *FlushCl
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  CloudDB설정그룹리스트조회
  @param getCloudDBConfigGroupListRequest getCloudDBConfigGroupListRequest
- @return GetCloudDbConfigGroupListResponse*/
-func (a *V2ApiService) GetCloudDBConfigGroupList(getCloudDBConfigGroupListRequest *GetCloudDbConfigGroupListRequest) (GetCloudDbConfigGroupListResponse, error) {
+ @return *GetCloudDbConfigGroupListResponse*/
+func (a *V2ApiService) GetCloudDBConfigGroupList(getCloudDBConfigGroupListRequest *GetCloudDbConfigGroupListRequest) (*GetCloudDbConfigGroupListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -292,32 +292,32 @@ func (a *V2ApiService) GetCloudDBConfigGroupList(getCloudDBConfigGroupListReques
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  CloudDB이미지상품리스트
  @param getCloudDBImageProductListRequest getCloudDBImageProductListRequest
- @return GetCloudDbImageProductListResponse*/
-func (a *V2ApiService) GetCloudDBImageProductList(getCloudDBImageProductListRequest *GetCloudDbImageProductListRequest) (GetCloudDbImageProductListResponse, error) {
+ @return *GetCloudDbImageProductListResponse*/
+func (a *V2ApiService) GetCloudDBImageProductList(getCloudDBImageProductListRequest *GetCloudDbImageProductListRequest) (*GetCloudDbImageProductListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -363,32 +363,32 @@ func (a *V2ApiService) GetCloudDBImageProductList(getCloudDBImageProductListRequ
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  CloudDB인스턴스리스트조회
  @param getCloudDBInstanceListRequest getCloudDBInstanceListRequest
- @return GetCloudDbInstanceListResponse*/
-func (a *V2ApiService) GetCloudDBInstanceList(getCloudDBInstanceListRequest *GetCloudDbInstanceListRequest) (GetCloudDbInstanceListResponse, error) {
+ @return *GetCloudDbInstanceListResponse*/
+func (a *V2ApiService) GetCloudDBInstanceList(getCloudDBInstanceListRequest *GetCloudDbInstanceListRequest) (*GetCloudDbInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -434,32 +434,32 @@ func (a *V2ApiService) GetCloudDBInstanceList(getCloudDBInstanceListRequest *Get
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  CloudDB상품리스트조회
  @param getCloudDBProductListRequest getCloudDBProductListRequest
- @return GetCloudDbProductListResponse*/
-func (a *V2ApiService) GetCloudDBProductList(getCloudDBProductListRequest *GetCloudDbProductListRequest) (GetCloudDbProductListResponse, error) {
+ @return *GetCloudDbProductListResponse*/
+func (a *V2ApiService) GetCloudDBProductList(getCloudDBProductListRequest *GetCloudDbProductListRequest) (*GetCloudDbProductListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -505,32 +505,32 @@ func (a *V2ApiService) GetCloudDBProductList(getCloudDBProductListRequest *GetCl
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  CloudDB서버인스턴스재부팅
  @param rebootCloudDBServerInstanceRequest rebootCloudDBServerInstanceRequest
- @return RebootCloudDbServerInstanceResponse*/
-func (a *V2ApiService) RebootCloudDBServerInstance(rebootCloudDBServerInstanceRequest *RebootCloudDbServerInstanceRequest) (RebootCloudDbServerInstanceResponse, error) {
+ @return *RebootCloudDbServerInstanceResponse*/
+func (a *V2ApiService) RebootCloudDBServerInstance(rebootCloudDBServerInstanceRequest *RebootCloudDbServerInstanceRequest) (*RebootCloudDbServerInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -576,24 +576,24 @@ func (a *V2ApiService) RebootCloudDBServerInstance(rebootCloudDBServerInstanceRe
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 

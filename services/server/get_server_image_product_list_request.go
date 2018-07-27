@@ -18,7 +18,7 @@ ExclusionProductCode *string `json:"exclusionProductCode,omitempty"`
 ProductCode *string `json:"productCode,omitempty"`
 
 	// 플랫폼유형코드리스트
-PlatformTypeCodeList []string `json:"platformTypeCodeList,omitempty"`
+PlatformTypeCodeList []*string `json:"platformTypeCodeList,omitempty"`
 
 	// 블록스토리지사이즈
 BlockStorageSize *int32 `json:"blockStorageSize,omitempty"`

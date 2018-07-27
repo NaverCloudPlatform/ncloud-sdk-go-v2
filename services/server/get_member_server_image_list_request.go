@@ -12,10 +12,10 @@ package server
 type GetMemberServerImageListRequest struct {
 
 	// 회원서버이미지번호리스트
-MemberServerImageNoList []string `json:"memberServerImageNoList,omitempty"`
+MemberServerImageNoList []*string `json:"memberServerImageNoList,omitempty"`
 
 	// 플랫폼타입코드리스트
-PlatformTypeCodeList []string `json:"platformTypeCodeList,omitempty"`
+PlatformTypeCodeList []*string `json:"platformTypeCodeList,omitempty"`
 
 	// 페이지번호
 PageNo *int32 `json:"pageNo,omitempty"`

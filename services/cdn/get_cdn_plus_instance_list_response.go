@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-CdnPlusInstanceList []CdnPlusInstance `json:"cdnPlusInstanceList,omitempty"`
+CdnPlusInstanceList []*CdnPlusInstance `json:"cdnPlusInstanceList,omitempty"`
 }

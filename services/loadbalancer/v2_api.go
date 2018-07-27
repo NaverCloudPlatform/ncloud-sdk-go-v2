@@ -32,8 +32,8 @@ type V2ApiService service
 /* V2ApiService 
  로드밸런서SSL인증서추가
  @param addLoadBalancerSslCertificateRequest addLoadBalancerSslCertificateRequest
- @return AddLoadBalancerSslCertificateResponse*/
-func (a *V2ApiService) AddLoadBalancerSslCertificate(addLoadBalancerSslCertificateRequest *AddLoadBalancerSslCertificateRequest) (AddLoadBalancerSslCertificateResponse, error) {
+ @return *AddLoadBalancerSslCertificateResponse*/
+func (a *V2ApiService) AddLoadBalancerSslCertificate(addLoadBalancerSslCertificateRequest *AddLoadBalancerSslCertificateRequest) (*AddLoadBalancerSslCertificateResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -79,32 +79,32 @@ func (a *V2ApiService) AddLoadBalancerSslCertificate(addLoadBalancerSslCertifica
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  로드밸런서에Bind된서버인스턴스변경
  @param changeLoadBalancedServerInstancesRequest changeLoadBalancedServerInstancesRequest
- @return ChangeLoadBalancedServerInstancesResponse*/
-func (a *V2ApiService) ChangeLoadBalancedServerInstances(changeLoadBalancedServerInstancesRequest *ChangeLoadBalancedServerInstancesRequest) (ChangeLoadBalancedServerInstancesResponse, error) {
+ @return *ChangeLoadBalancedServerInstancesResponse*/
+func (a *V2ApiService) ChangeLoadBalancedServerInstances(changeLoadBalancedServerInstancesRequest *ChangeLoadBalancedServerInstancesRequest) (*ChangeLoadBalancedServerInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -150,32 +150,32 @@ func (a *V2ApiService) ChangeLoadBalancedServerInstances(changeLoadBalancedServe
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  로드밸런서인스턴스설정변경
  @param changeLoadBalancerInstanceConfigurationRequest changeLoadBalancerInstanceConfigurationRequest
- @return ChangeLoadBalancerInstanceConfigurationResponse*/
-func (a *V2ApiService) ChangeLoadBalancerInstanceConfiguration(changeLoadBalancerInstanceConfigurationRequest *ChangeLoadBalancerInstanceConfigurationRequest) (ChangeLoadBalancerInstanceConfigurationResponse, error) {
+ @return *ChangeLoadBalancerInstanceConfigurationResponse*/
+func (a *V2ApiService) ChangeLoadBalancerInstanceConfiguration(changeLoadBalancerInstanceConfigurationRequest *ChangeLoadBalancerInstanceConfigurationRequest) (*ChangeLoadBalancerInstanceConfigurationResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -221,32 +221,32 @@ func (a *V2ApiService) ChangeLoadBalancerInstanceConfiguration(changeLoadBalance
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  로드밸런서인스턴스생성
  @param createLoadBalancerInstanceRequest createLoadBalancerInstanceRequest
- @return CreateLoadBalancerInstanceResponse*/
-func (a *V2ApiService) CreateLoadBalancerInstance(createLoadBalancerInstanceRequest *CreateLoadBalancerInstanceRequest) (CreateLoadBalancerInstanceResponse, error) {
+ @return *CreateLoadBalancerInstanceResponse*/
+func (a *V2ApiService) CreateLoadBalancerInstance(createLoadBalancerInstanceRequest *CreateLoadBalancerInstanceRequest) (*CreateLoadBalancerInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -292,32 +292,32 @@ func (a *V2ApiService) CreateLoadBalancerInstance(createLoadBalancerInstanceRequ
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  로드밸런서인스턴스삭제
  @param deleteLoadBalancerInstancesRequest deleteLoadBalancerInstancesRequest
- @return DeleteLoadBalancerInstancesResponse*/
-func (a *V2ApiService) DeleteLoadBalancerInstances(deleteLoadBalancerInstancesRequest *DeleteLoadBalancerInstancesRequest) (DeleteLoadBalancerInstancesResponse, error) {
+ @return *DeleteLoadBalancerInstancesResponse*/
+func (a *V2ApiService) DeleteLoadBalancerInstances(deleteLoadBalancerInstancesRequest *DeleteLoadBalancerInstancesRequest) (*DeleteLoadBalancerInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -363,32 +363,32 @@ func (a *V2ApiService) DeleteLoadBalancerInstances(deleteLoadBalancerInstancesRe
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  로드밸런서SSL인증서삭제
  @param deleteLoadBalancerSslCertificateRequest deleteLoadBalancerSslCertificateRequest
- @return DeleteLoadBalancerSslCertificateResponse*/
-func (a *V2ApiService) DeleteLoadBalancerSslCertificate(deleteLoadBalancerSslCertificateRequest *DeleteLoadBalancerSslCertificateRequest) (DeleteLoadBalancerSslCertificateResponse, error) {
+ @return *DeleteLoadBalancerSslCertificateResponse*/
+func (a *V2ApiService) DeleteLoadBalancerSslCertificate(deleteLoadBalancerSslCertificateRequest *DeleteLoadBalancerSslCertificateRequest) (*DeleteLoadBalancerSslCertificateResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -434,32 +434,32 @@ func (a *V2ApiService) DeleteLoadBalancerSslCertificate(deleteLoadBalancerSslCer
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  로드밸런서Bind된서버인스턴스리스트조회
  @param getLoadBalancedServerInstanceListRequest getLoadBalancedServerInstanceListRequest
- @return GetLoadBalancedServerInstanceListResponse*/
-func (a *V2ApiService) GetLoadBalancedServerInstanceList(getLoadBalancedServerInstanceListRequest *GetLoadBalancedServerInstanceListRequest) (GetLoadBalancedServerInstanceListResponse, error) {
+ @return *GetLoadBalancedServerInstanceListResponse*/
+func (a *V2ApiService) GetLoadBalancedServerInstanceList(getLoadBalancedServerInstanceListRequest *GetLoadBalancedServerInstanceListRequest) (*GetLoadBalancedServerInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -505,32 +505,32 @@ func (a *V2ApiService) GetLoadBalancedServerInstanceList(getLoadBalancedServerIn
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  로드밸런서인스턴스리스트조회
  @param getLoadBalancerInstanceListRequest getLoadBalancerInstanceListRequest
- @return GetLoadBalancerInstanceListResponse*/
-func (a *V2ApiService) GetLoadBalancerInstanceList(getLoadBalancerInstanceListRequest *GetLoadBalancerInstanceListRequest) (GetLoadBalancerInstanceListResponse, error) {
+ @return *GetLoadBalancerInstanceListResponse*/
+func (a *V2ApiService) GetLoadBalancerInstanceList(getLoadBalancerInstanceListRequest *GetLoadBalancerInstanceListRequest) (*GetLoadBalancerInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -576,32 +576,32 @@ func (a *V2ApiService) GetLoadBalancerInstanceList(getLoadBalancerInstanceListRe
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  로드밸런서SSL인증서조회
  @param getLoadBalancerSslCertificateListRequest getLoadBalancerSslCertificateListRequest
- @return GetLoadBalancerSslCertificateListResponse*/
-func (a *V2ApiService) GetLoadBalancerSslCertificateList(getLoadBalancerSslCertificateListRequest *GetLoadBalancerSslCertificateListRequest) (GetLoadBalancerSslCertificateListResponse, error) {
+ @return *GetLoadBalancerSslCertificateListResponse*/
+func (a *V2ApiService) GetLoadBalancerSslCertificateList(getLoadBalancerSslCertificateListRequest *GetLoadBalancerSslCertificateListRequest) (*GetLoadBalancerSslCertificateListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -647,32 +647,32 @@ func (a *V2ApiService) GetLoadBalancerSslCertificateList(getLoadBalancerSslCerti
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 
 /* V2ApiService 
  로드밸런서Target서버인스턴스리스트
  @param getLoadBalancerTargetServerInstanceListRequest getLoadBalancerTargetServerInstanceListRequest
- @return GetLoadBalancerTargetServerInstanceListResponse*/
-func (a *V2ApiService) GetLoadBalancerTargetServerInstanceList(getLoadBalancerTargetServerInstanceListRequest *GetLoadBalancerTargetServerInstanceListRequest) (GetLoadBalancerTargetServerInstanceListResponse, error) {
+ @return *GetLoadBalancerTargetServerInstanceListResponse*/
+func (a *V2ApiService) GetLoadBalancerTargetServerInstanceList(getLoadBalancerTargetServerInstanceListRequest *GetLoadBalancerTargetServerInstanceListRequest) (*GetLoadBalancerTargetServerInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody interface{}
@@ -718,24 +718,24 @@ func (a *V2ApiService) GetLoadBalancerTargetServerInstanceList(getLoadBalancerTa
 	}
 	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 	if localVarHttpResponse.StatusCode >= 300 {
-		return successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
     if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return successPayload, err
+		return &successPayload, err
 	}
 
 
-	return successPayload, err
+	return &successPayload, err
 }
 

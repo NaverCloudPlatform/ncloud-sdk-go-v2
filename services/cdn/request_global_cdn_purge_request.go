@@ -15,7 +15,7 @@ type RequestGlobalCdnPurgeRequest struct {
 CdnInstanceNo *string `json:"cdnInstanceNo"`
 
 	// 서비스도메인이름리스트
-ServiceDomainNameList []string `json:"serviceDomainNameList,omitempty"`
+ServiceDomainNameList []*string `json:"serviceDomainNameList,omitempty"`
 
 	// 전체퍼지여부
 IsWholePurge *bool `json:"isWholePurge"`
@@ -24,5 +24,5 @@ IsWholePurge *bool `json:"isWholePurge"`
 IsWholeDomain *bool `json:"isWholeDomain"`
 
 	// 대상파일리스트
-TargetFileList []string `json:"targetFileList,omitempty"`
+TargetFileList []*string `json:"targetFileList,omitempty"`
 }

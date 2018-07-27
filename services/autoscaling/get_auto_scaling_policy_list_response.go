@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-ScalingPolicyList []ScalingPolicy `json:"scalingPolicyList,omitempty"`
+ScalingPolicyList []*ScalingPolicy `json:"scalingPolicyList,omitempty"`
 }

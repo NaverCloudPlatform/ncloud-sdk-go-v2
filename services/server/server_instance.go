@@ -30,7 +30,7 @@ MemorySize *int64 `json:"memorySize,omitempty"`
 BaseBlockStorageSize *int64 `json:"baseBlockStorageSize,omitempty"`
 
 	// 플랫폼구분
-PlatformType **CommonCode `json:"platformType,omitempty"`
+PlatformType *CommonCode `json:"platformType,omitempty"`
 
 	// 로그인키명
 LoginKeyName *string `json:"loginKeyName,omitempty"`
@@ -48,10 +48,10 @@ PrivateIp *string `json:"privateIp,omitempty"`
 ServerImageName *string `json:"serverImageName,omitempty"`
 
 	// 서버인스턴스상태
-ServerInstanceStatus **CommonCode `json:"serverInstanceStatus,omitempty"`
+ServerInstanceStatus *CommonCode `json:"serverInstanceStatus,omitempty"`
 
 	// 서버인스턴스OP
-ServerInstanceOperation **CommonCode `json:"serverInstanceOperation,omitempty"`
+ServerInstanceOperation *CommonCode `json:"serverInstanceOperation,omitempty"`
 
 	// 서버인스턴스상태명
 ServerInstanceStatusName *string `json:"serverInstanceStatusName,omitempty"`
@@ -81,26 +81,26 @@ PortForwardingExternalPort *int32 `json:"portForwardingExternalPort,omitempty"`
 PortForwardingInternalPort *int32 `json:"portForwardingInternalPort,omitempty"`
 
 	// Zone
-Zone **Zone `json:"zone,omitempty"`
+Zone *Zone `json:"zone,omitempty"`
 
 	// 리전
-Region **Region `json:"region,omitempty"`
+Region *Region `json:"region,omitempty"`
 
 	// 기본블록스토리지디스크유형
-BaseBlockStorageDiskType **CommonCode `json:"baseBlockStorageDiskType,omitempty"`
+BaseBlockStorageDiskType *CommonCode `json:"baseBlockStorageDiskType,omitempty"`
 
 	// 기본블록스토리지디스크상세유형
-BaseBlockStroageDiskDetailType **CommonCode `json:"baseBlockStroageDiskDetailType,omitempty"`
+BaseBlockStroageDiskDetailType *CommonCode `json:"baseBlockStroageDiskDetailType,omitempty"`
 
 	// 인터넷라인구분
-InternetLineType **CommonCode `json:"internetLineType,omitempty"`
+InternetLineType *CommonCode `json:"internetLineType,omitempty"`
 
 	// 서버인스턴스구분
-ServerInstanceType **CommonCode `json:"serverInstanceType,omitempty"`
+ServerInstanceType *CommonCode `json:"serverInstanceType,omitempty"`
 
 	// 사용자데이타
 UserData *string `json:"userData,omitempty"`
 
 	// ACG리스트
-AccessControlGroupList []AccessControlGroup `json:"accessControlGroupList,omitempty"`
+AccessControlGroupList []*AccessControlGroup `json:"accessControlGroupList,omitempty"`
 }

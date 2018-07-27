@@ -24,12 +24,11 @@ CloudDB인스턴스생성
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **createCloudDBInstanceRequest** | [**CreateCloudDbInstanceRequest**](CreateCloudDbInstanceRequest.md)| createCloudDBInstanceRequest | 
+**createCloudDBInstanceRequest** | **[\*CreateCloudDbInstanceRequest](CreateCloudDbInstanceRequest.md)** | createCloudDBInstanceRequest | 
 
 ### Return type
 
-[**CreateCloudDbInstanceResponse**](createCloudDBInstanceResponse.md)
+*[**CreateCloudDbInstanceResponse**](createCloudDBInstanceResponse.md)
 
 ### Authorization
 
@@ -52,12 +51,11 @@ CloudDB서버인스턴스삭제
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **deleteCloudDBServerInstanceRequest** | [**DeleteCloudDbServerInstanceRequest**](DeleteCloudDbServerInstanceRequest.md)| deleteCloudDBServerInstanceRequest | 
+**deleteCloudDBServerInstanceRequest** | **[\*DeleteCloudDbServerInstanceRequest](DeleteCloudDbServerInstanceRequest.md)** | deleteCloudDBServerInstanceRequest | 
 
 ### Return type
 
-[**DeleteCloudDbServerInstanceResponse**](deleteCloudDBServerInstanceResponse.md)
+*[**DeleteCloudDbServerInstanceResponse**](deleteCloudDBServerInstanceResponse.md)
 
 ### Authorization
 
@@ -80,12 +78,11 @@ CloudDB Flush
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **flushCloudDBInstanceRequest** | [**FlushCloudDbInstanceRequest**](FlushCloudDbInstanceRequest.md)| flushCloudDBInstanceRequest | 
+**flushCloudDBInstanceRequest** | **[\*FlushCloudDbInstanceRequest](FlushCloudDbInstanceRequest.md)** | flushCloudDBInstanceRequest | 
 
 ### Return type
 
-[**FlushCloudDbInstanceResponse**](flushCloudDBInstanceResponse.md)
+*[**FlushCloudDbInstanceResponse**](flushCloudDBInstanceResponse.md)
 
 ### Authorization
 
@@ -108,12 +105,11 @@ CloudDB설정그룹리스트조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getCloudDBConfigGroupListRequest** | [**GetCloudDbConfigGroupListRequest**](GetCloudDbConfigGroupListRequest.md)| getCloudDBConfigGroupListRequest | 
+**getCloudDBConfigGroupListRequest** | **[\*GetCloudDbConfigGroupListRequest](GetCloudDbConfigGroupListRequest.md)** | getCloudDBConfigGroupListRequest | 
 
 ### Return type
 
-[**GetCloudDbConfigGroupListResponse**](getCloudDBConfigGroupListResponse.md)
+*[**GetCloudDbConfigGroupListResponse**](getCloudDBConfigGroupListResponse.md)
 
 ### Authorization
 
@@ -136,12 +132,11 @@ CloudDB이미지상품리스트
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getCloudDBImageProductListRequest** | [**GetCloudDbImageProductListRequest**](GetCloudDbImageProductListRequest.md)| getCloudDBImageProductListRequest | 
+**getCloudDBImageProductListRequest** | **[\*GetCloudDbImageProductListRequest](GetCloudDbImageProductListRequest.md)** | getCloudDBImageProductListRequest | 
 
 ### Return type
 
-[**GetCloudDbImageProductListResponse**](getCloudDBImageProductListResponse.md)
+*[**GetCloudDbImageProductListResponse**](getCloudDBImageProductListResponse.md)
 
 ### Authorization
 
@@ -164,12 +159,11 @@ CloudDB인스턴스리스트조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getCloudDBInstanceListRequest** | [**GetCloudDbInstanceListRequest**](GetCloudDbInstanceListRequest.md)| getCloudDBInstanceListRequest | 
+**getCloudDBInstanceListRequest** | **[\*GetCloudDbInstanceListRequest](GetCloudDbInstanceListRequest.md)** | getCloudDBInstanceListRequest | 
 
 ### Return type
 
-[**GetCloudDbInstanceListResponse**](getCloudDBInstanceListResponse.md)
+*[**GetCloudDbInstanceListResponse**](getCloudDBInstanceListResponse.md)
 
 ### Authorization
 
@@ -192,12 +186,11 @@ CloudDB상품리스트조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **getCloudDBProductListRequest** | [**GetCloudDbProductListRequest**](GetCloudDbProductListRequest.md)| getCloudDBProductListRequest | 
+**getCloudDBProductListRequest** | **[\*GetCloudDbProductListRequest](GetCloudDbProductListRequest.md)** | getCloudDBProductListRequest | 
 
 ### Return type
 
-[**GetCloudDbProductListResponse**](getCloudDBProductListResponse.md)
+*[**GetCloudDbProductListResponse**](getCloudDBProductListResponse.md)
 
 ### Authorization
 
@@ -220,12 +213,11 @@ CloudDB서버인스턴스재부팅
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- 
-  **rebootCloudDBServerInstanceRequest** | [**RebootCloudDbServerInstanceRequest**](RebootCloudDbServerInstanceRequest.md)| rebootCloudDBServerInstanceRequest | 
+**rebootCloudDBServerInstanceRequest** | **[\*RebootCloudDbServerInstanceRequest](RebootCloudDbServerInstanceRequest.md)** | rebootCloudDBServerInstanceRequest | 
 
 ### Return type
 
-[**RebootCloudDbServerInstanceResponse**](rebootCloudDBServerInstanceResponse.md)
+*[**RebootCloudDbServerInstanceResponse**](rebootCloudDBServerInstanceResponse.md)
 
 ### Authorization
 

@@ -15,5 +15,5 @@ type AddPortForwardingRulesRequest struct {
 PortForwardingConfigurationNo *string `json:"portForwardingConfigurationNo"`
 
 	// 포트포워딩RULE리스트
-PortForwardingRuleList []PortForwardingRuleParameter `json:"portForwardingRuleList"`
+PortForwardingRuleList []*PortForwardingRuleParameter `json:"portForwardingRuleList"`
 }

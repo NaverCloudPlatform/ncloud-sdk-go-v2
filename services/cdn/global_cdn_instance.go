@@ -15,10 +15,10 @@ type GlobalCdnInstance struct {
 CdnInstanceNo *string `json:"cdnInstanceNo,omitempty"`
 
 	// CDN인스턴스상태
-CdnInstanceStatus **CommonCode `json:"cdnInstanceStatus,omitempty"`
+CdnInstanceStatus *CommonCode `json:"cdnInstanceStatus,omitempty"`
 
 	// CDN인스턴스OP
-CdnInstanceOperation **CommonCode `json:"cdnInstanceOperation,omitempty"`
+CdnInstanceOperation *CommonCode `json:"cdnInstanceOperation,omitempty"`
 
 	// CDN인스턴스상태명
 CdnInstanceStatusName *string `json:"cdnInstanceStatusName,omitempty"`
@@ -37,7 +37,7 @@ ServiceName *string `json:"serviceName,omitempty"`
 
 IsAvailablePartialDomainPurge *bool `json:"isAvailablePartialDomainPurge,omitempty"`
 
-GlobalCdnServiceDomainList []GlobalCdnServiceDomain `json:"globalCdnServiceDomainList,omitempty"`
+GlobalCdnServiceDomainList []*GlobalCdnServiceDomain `json:"globalCdnServiceDomainList,omitempty"`
 
-GlobalCdnRule **GlobalCdnRule `json:"globalCdnRule,omitempty"`
+GlobalCdnRule *GlobalCdnRule `json:"globalCdnRule,omitempty"`
 }

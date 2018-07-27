@@ -15,7 +15,7 @@ type GetBlockStorageInstanceListRequest struct {
 ServerInstanceNo *string `json:"serverInstanceNo,omitempty"`
 
 	// 블록스토리지인스턴스번호리스트
-BlockStorageInstanceNoList []string `json:"blockStorageInstanceNoList,omitempty"`
+BlockStorageInstanceNoList []*string `json:"blockStorageInstanceNoList,omitempty"`
 
 	// 검색할필터명
 SearchFilterName *string `json:"searchFilterName,omitempty"`
@@ -24,7 +24,7 @@ SearchFilterName *string `json:"searchFilterName,omitempty"`
 SearchFilterValue *string `json:"searchFilterValue,omitempty"`
 
 	// 블록스토리지구분코드리스트
-BlockStorageTypeCodeList []string `json:"blockStorageTypeCodeList,omitempty"`
+BlockStorageTypeCodeList []*string `json:"blockStorageTypeCodeList,omitempty"`
 
 	// 페이지번호
 PageNo *int32 `json:"pageNo,omitempty"`

@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-PublicIpInstanceList []PublicIpInstance `json:"publicIpInstanceList,omitempty"`
+PublicIpInstanceList []*PublicIpInstance `json:"publicIpInstanceList,omitempty"`
 }
