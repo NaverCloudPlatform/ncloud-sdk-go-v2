@@ -15,7 +15,14 @@ func IntString(n int) *string {
 func StringList(input []interface{}) []*string {
 	vs := make([]*string, 0, len(input))
 	for _, v := range input {
-		vs = append(vs, String(v.(string)))
+
+		switch v.(type) {
+		case string:
+			vs = append(vs, String(v.(string)))
+		case *string:
+			vs = append(vs, v.(*string))
+		}
+
 	}
 	return vs
 }
