@@ -77,11 +77,11 @@ Zone *Zone `json:"zone,omitempty"`
 	// 리전
 Region *Region `json:"region,omitempty"`
 
-CloudDBConfigList []*CloudDBConfig `json:"cloudDBConfigList,omitempty"`
+CloudDBConfigList []*CloudDbConfig `json:"cloudDBConfigList,omitempty"`
 
-CloudDBConfigGroupList []*CloudDBConfigGroup `json:"cloudDBConfigGroupList,omitempty"`
+CloudDBConfigGroupList []*CloudDbConfigGroup `json:"cloudDBConfigGroupList,omitempty"`
 
 AccessControlGroupList []*AccessControlGroup `json:"accessControlGroupList,omitempty"`
 
-CloudDBServerInstanceList []*CloudDBServerInstance `json:"cloudDBServerInstanceList,omitempty"`
+CloudDBServerInstanceList []*CloudDbServerInstance `json:"cloudDBServerInstanceList,omitempty"`
 }

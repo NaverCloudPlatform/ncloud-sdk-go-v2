@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-CloudDBInstanceList []*CloudDBInstance `json:"cloudDBInstanceList,omitempty"`
+CloudDBInstanceList []*CloudDbInstance `json:"cloudDBInstanceList,omitempty"`
 }
