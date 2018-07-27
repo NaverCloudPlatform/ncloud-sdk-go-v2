@@ -2,7 +2,6 @@ package ncloud
 
 import (
 	"strconv"
-	"reflect"
 )
 
 func String(v string) *string {
@@ -81,51 +80,4 @@ func Float32Value(v *float32) float32 {
 		return *v
 	}
 	return 0
-}
-
-
-func StringField(f reflect.Value) *string {
-	if f.Kind() == reflect.Ptr && f.Type().String() == "*string" {
-		return f.Interface().(*string)
-	} else if f.Kind() == reflect.Slice && f.Type().String() == "string" {
-		return String(f.Interface().(string))
-	}
-	return nil
-}
-
-func GetCommonResponse(i interface{}) (*CommonResponse) {
-	var requestId *string
-	var returnCode *string
-	var returnMessage *string
-	if f := reflect.ValueOf(i).Elem().FieldByName("RequestId"); !f.IsNil() && f.IsValid() {
-		requestId = StringField(f)
-	}
-	if f := reflect.ValueOf(i).Elem().FieldByName("ReturnCode"); !f.IsNil() && f.IsValid() {
-		returnCode = StringField(f)
-	}
-	if f := reflect.ValueOf(i).Elem().FieldByName("ReturnMessage"); !f.IsNil() && f.IsValid() {
-		returnMessage = StringField(f)
-	}
-
-	return &CommonResponse{
-		RequestId:     requestId,
-		ReturnCode:    returnCode,
-		ReturnMessage: returnMessage,
-	}
-}
-
-func GetCommonCode(i interface{}) (*CommonCode) {
-	var code *string
-	var codeName *string
-	if f := reflect.ValueOf(i).Elem().FieldByName("Code"); !f.IsNil() && f.IsValid() {
-		code = StringField(f)
-	}
-	if f := reflect.ValueOf(i).Elem().FieldByName("CodeName"); !f.IsNil() && f.IsValid() {
-		codeName = StringField(f)
-	}
-
-	return &CommonCode{
-		Code:    code,
-		CodeName: codeName,
-	}
 }
