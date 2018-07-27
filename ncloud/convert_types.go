@@ -12,10 +12,10 @@ func IntString(n int) *string {
 	return String(strconv.Itoa(n))
 }
 
-func StringList(input []interface{}) []*string {
+func s(input []interface{}) []*string {
 	vs := make([]*string, 0, len(input))
 	for _, v := range input {
-		vs = append(vs, v.(*string))
+		vs = append(vs, String(v.(string)))
 	}
 	return vs
 }
