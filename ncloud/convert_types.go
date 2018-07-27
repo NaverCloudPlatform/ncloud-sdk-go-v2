@@ -12,17 +12,10 @@ func IntString(n int) *string {
 	return String(strconv.Itoa(n))
 }
 
-func StringList(input []interface{}) []*string {
-	vs := make([]*string, 0, len(input))
-	for _, v := range input {
-
-		switch v.(type) {
-		case string:
-			vs = append(vs, String(v.(string)))
-		case *string:
-			vs = append(vs, v.(*string))
-		}
-
+func StringList(s []string) []*string {
+	vs := make([]*string, 0, len(s))
+	for _, v := range s {
+		vs = append(vs, String(v))
 	}
 	return vs
 }
