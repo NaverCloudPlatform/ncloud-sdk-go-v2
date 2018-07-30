@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-CloudDBConfigGroupList []*CloudDBConfigGroup `json:"cloudDBConfigGroupList,omitempty"`
+CloudDBConfigGroupList []*CloudDbConfigGroup `json:"cloudDBConfigGroupList,omitempty"`
 }
