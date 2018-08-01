@@ -11,6 +11,7 @@ package server
 
 import (
 	"net/http"
+	"os"
 )
 
 // contextKeys are used to identify the type of value in the context.
@@ -65,6 +66,9 @@ func NewConfiguration(apiKey *APIKey) *Configuration {
 		DefaultHeader: make(map[string]string),
 		UserAgent:     "server/1.0.0/go",
 		APIKey:        apiKey,
+	}
+	if os.Getenv("NCLOUD_API_GW") != "" {
+		cfg.BasePath = os.Getenv("NCLOUD_API_GW")
 	}
 	return cfg
 }
