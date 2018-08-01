@@ -68,7 +68,7 @@ func NewConfiguration(apiKey *APIKey) *Configuration {
 		APIKey:        apiKey,
 	}
 	if os.Getenv("NCLOUD_API_GW") != "" {
-		cfg.BasePath = os.Getenv("NCLOUD_API_GW")
+		cfg.BasePath = os.Getenv("NCLOUD_API_GW") + "/monitoring/v2"
 	}
 	return cfg
 }
