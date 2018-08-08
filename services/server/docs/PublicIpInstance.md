@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PublicIpInstanceNo** | ***string** | 공인IP인스턴스번호 | [optional] [default to null]
-**Publiclp** | ***string** | 공인IP | [optional] [default to null]
+**PublicIp** | ***string** | 공인IP | [optional] [default to null]
 **PublicIpDescription** | ***string** | 공인IP설명 | [optional] [default to null]
 **CreateDate** | ***string** | 생성일시 | [optional] [default to null]
 **InternetLineType** | **[*CommonCode](CommonCode.md)** | 인터넷라인구분 | [optional] [default to null]
