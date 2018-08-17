@@ -14,17 +14,17 @@ go get github.com/NaverCloudPlatform/ncloud-sdk-go-v2
 package main
 
 import (
-	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/services/server"
 	"log"
+
 	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/ncloud"
+	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/services/server"
 )
 
 func main() {
 
-	client := server.NewAPIClient(server.NewConfiguration(&server.APIKey{
-		AccessKey: "accessKey",
-		SecretKey: "secretKey",
-	}))
+	apiKeys := ncloud.Keys()
+
+	client := server.NewAPIClient(server.NewConfiguration(apiKeys))
 
 	// Create server instance
 	req := server.CreateServerInstancesRequest{
@@ -49,15 +49,14 @@ func main() {
 
 ## Documentation for individual modules
 
-| Services       | Documentation                                                                                                           |
-| -------------- | ------------------------------------------ |
-| _Server_       | [**Server**](server/README.md)             |
-| _Loadbalancer_ | [**Loadbalancer**](loadbalancer/README.md) |
-| _Autoscaling_  | [**Autoscaling**](autoscaling/README.md)   |
-| _Monitoring_   | [**Monitoring**](monitoring/README.md)     |
-| _CDN_          | [**CDN**](cdn/README.md)                   |
-| _CloudDB_      | [**CloudDB**](clouddb/README.md)           |
-
+| Services       | Documentation                                       |
+| -------------- | --------------------------------------------------- |
+| _Server_       | [**Server**](services/server/README.md)             |
+| _Loadbalancer_ | [**Loadbalancer**](services/loadbalancer/README.md) |
+| _Autoscaling_  | [**Autoscaling**](services/autoscaling/README.md)   |
+| _Monitoring_   | [**Monitoring**](services/monitoring/README.md)     |
+| _CDN_          | [**CDN**](services/cdn/README.md)                   |
+| _CloudDB_      | [**CloudDB**](services/clouddb/README.md)           |
 
 ### License
 
