@@ -3,7 +3,7 @@ package ncloud
 import "testing"
 
 func TestStringList(t *testing.T) {
-	test := make([]interface{}, 2)
+	test := make([]string, 2)
 	test[0] = "0"
 	test[1] = "1"
 	result := StringList(test)
