@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **IsProtectServerTermination** | ***bool** | 반납보호여부 | [optional] [default to null]
 **ServerCreateCount** | ***int32** | 서버생성갯수 | [optional] [default to null]
 **ServerCreateStartNo** | ***int32** | 서버생성시작번호 | [optional] [default to null]
-**InternetLineTypeCode** | ***bool** | 인터넷라인구분코드 | [optional] [default to null]
+**InternetLineTypeCode** | ***string** | 인터넷라인구분코드 | [optional] [default to null]
 **FeeSystemTypeCode** | ***string** | 요금제구분코드 | [optional] [default to null]
 **UserData** | ***string** | 사용자데이터 | [optional] [default to null]
 **ZoneNo** | ***string** | ZONE번호 | [optional] [default to null]
