@@ -10,13 +10,13 @@
 package server
 
 import (
+	"bytes"
 	"encoding/base64"
 	"encoding/json"
 	"io/ioutil"
 	"net/url"
 	"reflect"
 	"strings"
-	"bytes"
 
 	"golang.org/x/net/context"
 )
@@ -28,18 +28,17 @@ var (
 
 type V2ApiService service
 
-
-/* V2ApiService 
- NAS볼륨인스턴스접근제어추가
- @param addNasVolumeAccessControlRequest addNasVolumeAccessControlRequest
- @return *AddNasVolumeAccessControlResponse*/
+/* V2ApiService
+NAS볼륨인스턴스접근제어추가
+@param addNasVolumeAccessControlRequest addNasVolumeAccessControlRequest
+@return *AddNasVolumeAccessControlResponse*/
 func (a *V2ApiService) AddNasVolumeAccessControl(addNasVolumeAccessControlRequest *AddNasVolumeAccessControlRequest) (*AddNasVolumeAccessControlResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  AddNasVolumeAccessControlResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     AddNasVolumeAccessControlResponse
 	)
 
 	// create path and map variables
@@ -49,9 +48,8 @@ func (a *V2ApiService) AddNasVolumeAccessControl(addNasVolumeAccessControlReques
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -60,8 +58,7 @@ func (a *V2ApiService) AddNasVolumeAccessControl(addNasVolumeAccessControlReques
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -92,25 +89,24 @@ func (a *V2ApiService) AddNasVolumeAccessControl(addNasVolumeAccessControlReques
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 포트포워딩Rule추가
- @param addPortForwardingRulesRequest addPortForwardingRulesRequest
- @return *AddPortForwardingRulesResponse*/
+/* V2ApiService
+포트포워딩Rule추가
+@param addPortForwardingRulesRequest addPortForwardingRulesRequest
+@return *AddPortForwardingRulesResponse*/
 func (a *V2ApiService) AddPortForwardingRules(addPortForwardingRulesRequest *AddPortForwardingRulesRequest) (*AddPortForwardingRulesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  AddPortForwardingRulesResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     AddPortForwardingRulesResponse
 	)
 
 	// create path and map variables
@@ -120,9 +116,8 @@ func (a *V2ApiService) AddPortForwardingRules(addPortForwardingRulesRequest *Add
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -131,8 +126,7 @@ func (a *V2ApiService) AddPortForwardingRules(addPortForwardingRulesRequest *Add
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -163,25 +157,24 @@ func (a *V2ApiService) AddPortForwardingRules(addPortForwardingRulesRequest *Add
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 공인IP를서버인스턴스에할당
- @param associatePublicIpWithServerInstanceRequest associatePublicIpWithServerInstanceRequest
- @return *AssociatePublicIpWithServerInstanceResponse*/
+/* V2ApiService
+공인IP를서버인스턴스에할당
+@param associatePublicIpWithServerInstanceRequest associatePublicIpWithServerInstanceRequest
+@return *AssociatePublicIpWithServerInstanceResponse*/
 func (a *V2ApiService) AssociatePublicIpWithServerInstance(associatePublicIpWithServerInstanceRequest *AssociatePublicIpWithServerInstanceRequest) (*AssociatePublicIpWithServerInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  AssociatePublicIpWithServerInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     AssociatePublicIpWithServerInstanceResponse
 	)
 
 	// create path and map variables
@@ -191,9 +184,8 @@ func (a *V2ApiService) AssociatePublicIpWithServerInstance(associatePublicIpWith
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -202,8 +194,7 @@ func (a *V2ApiService) AssociatePublicIpWithServerInstance(associatePublicIpWith
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -234,25 +225,24 @@ func (a *V2ApiService) AssociatePublicIpWithServerInstance(associatePublicIpWith
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 블록스토리지인스턴스할당
- @param attachBlockStorageInstanceRequest attachBlockStorageInstanceRequest
- @return *AttachBlockStorageInstanceResponse*/
+/* V2ApiService
+블록스토리지인스턴스할당
+@param attachBlockStorageInstanceRequest attachBlockStorageInstanceRequest
+@return *AttachBlockStorageInstanceResponse*/
 func (a *V2ApiService) AttachBlockStorageInstance(attachBlockStorageInstanceRequest *AttachBlockStorageInstanceRequest) (*AttachBlockStorageInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  AttachBlockStorageInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     AttachBlockStorageInstanceResponse
 	)
 
 	// create path and map variables
@@ -262,9 +252,8 @@ func (a *V2ApiService) AttachBlockStorageInstance(attachBlockStorageInstanceRequ
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -273,8 +262,7 @@ func (a *V2ApiService) AttachBlockStorageInstance(attachBlockStorageInstanceRequ
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -305,25 +293,24 @@ func (a *V2ApiService) AttachBlockStorageInstance(attachBlockStorageInstanceRequ
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- NAS볼륨사이즈변경
- @param changeNasVolumeSizeRequest changeNasVolumeSizeRequest
- @return *ChangeNasVolumeSizeResponse*/
+/* V2ApiService
+NAS볼륨사이즈변경
+@param changeNasVolumeSizeRequest changeNasVolumeSizeRequest
+@return *ChangeNasVolumeSizeResponse*/
 func (a *V2ApiService) ChangeNasVolumeSize(changeNasVolumeSizeRequest *ChangeNasVolumeSizeRequest) (*ChangeNasVolumeSizeResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ChangeNasVolumeSizeResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ChangeNasVolumeSizeResponse
 	)
 
 	// create path and map variables
@@ -333,9 +320,8 @@ func (a *V2ApiService) ChangeNasVolumeSize(changeNasVolumeSizeRequest *ChangeNas
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -344,8 +330,7 @@ func (a *V2ApiService) ChangeNasVolumeSize(changeNasVolumeSizeRequest *ChangeNas
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -376,25 +361,24 @@ func (a *V2ApiService) ChangeNasVolumeSize(changeNasVolumeSizeRequest *ChangeNas
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 서버인스턴스스팩변경
- @param changeServerInstanceSpecRequest changeServerInstanceSpecRequest
- @return *ChangeServerInstanceSpecResponse*/
+/* V2ApiService
+서버인스턴스스팩변경
+@param changeServerInstanceSpecRequest changeServerInstanceSpecRequest
+@return *ChangeServerInstanceSpecResponse*/
 func (a *V2ApiService) ChangeServerInstanceSpec(changeServerInstanceSpecRequest *ChangeServerInstanceSpecRequest) (*ChangeServerInstanceSpecResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ChangeServerInstanceSpecResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ChangeServerInstanceSpecResponse
 	)
 
 	// create path and map variables
@@ -404,9 +388,8 @@ func (a *V2ApiService) ChangeServerInstanceSpec(changeServerInstanceSpecRequest 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -415,8 +398,7 @@ func (a *V2ApiService) ChangeServerInstanceSpec(changeServerInstanceSpecRequest 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -447,25 +429,24 @@ func (a *V2ApiService) ChangeServerInstanceSpec(changeServerInstanceSpecRequest 
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 블록스토리지인스턴스생성
- @param createBlockStorageInstanceRequest createBlockStorageInstanceRequest
- @return *CreateBlockStorageInstanceResponse*/
+/* V2ApiService
+블록스토리지인스턴스생성
+@param createBlockStorageInstanceRequest createBlockStorageInstanceRequest
+@return *CreateBlockStorageInstanceResponse*/
 func (a *V2ApiService) CreateBlockStorageInstance(createBlockStorageInstanceRequest *CreateBlockStorageInstanceRequest) (*CreateBlockStorageInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  CreateBlockStorageInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     CreateBlockStorageInstanceResponse
 	)
 
 	// create path and map variables
@@ -475,9 +456,8 @@ func (a *V2ApiService) CreateBlockStorageInstance(createBlockStorageInstanceRequ
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -486,8 +466,7 @@ func (a *V2ApiService) CreateBlockStorageInstance(createBlockStorageInstanceRequ
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -518,25 +497,24 @@ func (a *V2ApiService) CreateBlockStorageInstance(createBlockStorageInstanceRequ
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 블록스토리지스냅샷인스턴스생성
- @param createBlockStorageSnapshotInstanceRequest createBlockStorageSnapshotInstanceRequest
- @return *CreateBlockStorageSnapshotInstanceResponse*/
+/* V2ApiService
+블록스토리지스냅샷인스턴스생성
+@param createBlockStorageSnapshotInstanceRequest createBlockStorageSnapshotInstanceRequest
+@return *CreateBlockStorageSnapshotInstanceResponse*/
 func (a *V2ApiService) CreateBlockStorageSnapshotInstance(createBlockStorageSnapshotInstanceRequest *CreateBlockStorageSnapshotInstanceRequest) (*CreateBlockStorageSnapshotInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  CreateBlockStorageSnapshotInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     CreateBlockStorageSnapshotInstanceResponse
 	)
 
 	// create path and map variables
@@ -546,9 +524,8 @@ func (a *V2ApiService) CreateBlockStorageSnapshotInstance(createBlockStorageSnap
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -557,8 +534,7 @@ func (a *V2ApiService) CreateBlockStorageSnapshotInstance(createBlockStorageSnap
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -589,25 +565,24 @@ func (a *V2ApiService) CreateBlockStorageSnapshotInstance(createBlockStorageSnap
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 로그인키생성
- @param createLoginKeyRequest createLoginKeyRequest
- @return *CreateLoginKeyResponse*/
+/* V2ApiService
+로그인키생성
+@param createLoginKeyRequest createLoginKeyRequest
+@return *CreateLoginKeyResponse*/
 func (a *V2ApiService) CreateLoginKey(createLoginKeyRequest *CreateLoginKeyRequest) (*CreateLoginKeyResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  CreateLoginKeyResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     CreateLoginKeyResponse
 	)
 
 	// create path and map variables
@@ -617,9 +592,8 @@ func (a *V2ApiService) CreateLoginKey(createLoginKeyRequest *CreateLoginKeyReque
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -628,8 +602,7 @@ func (a *V2ApiService) CreateLoginKey(createLoginKeyRequest *CreateLoginKeyReque
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -660,25 +633,24 @@ func (a *V2ApiService) CreateLoginKey(createLoginKeyRequest *CreateLoginKeyReque
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 회원서버이미지생성
- @param createMemberServerImageRequest createMemberServerImageRequest
- @return *CreateMemberServerImageResponse*/
+/* V2ApiService
+회원서버이미지생성
+@param createMemberServerImageRequest createMemberServerImageRequest
+@return *CreateMemberServerImageResponse*/
 func (a *V2ApiService) CreateMemberServerImage(createMemberServerImageRequest *CreateMemberServerImageRequest) (*CreateMemberServerImageResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  CreateMemberServerImageResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     CreateMemberServerImageResponse
 	)
 
 	// create path and map variables
@@ -688,9 +660,8 @@ func (a *V2ApiService) CreateMemberServerImage(createMemberServerImageRequest *C
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -699,8 +670,7 @@ func (a *V2ApiService) CreateMemberServerImage(createMemberServerImageRequest *C
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -731,25 +701,24 @@ func (a *V2ApiService) CreateMemberServerImage(createMemberServerImageRequest *C
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- NAS볼륨인스턴스생성
- @param createNasVolumeInstanceRequest createNasVolumeInstanceRequest
- @return *CreateNasVolumeInstanceResponse*/
+/* V2ApiService
+NAS볼륨인스턴스생성
+@param createNasVolumeInstanceRequest createNasVolumeInstanceRequest
+@return *CreateNasVolumeInstanceResponse*/
 func (a *V2ApiService) CreateNasVolumeInstance(createNasVolumeInstanceRequest *CreateNasVolumeInstanceRequest) (*CreateNasVolumeInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  CreateNasVolumeInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     CreateNasVolumeInstanceResponse
 	)
 
 	// create path and map variables
@@ -759,9 +728,8 @@ func (a *V2ApiService) CreateNasVolumeInstance(createNasVolumeInstanceRequest *C
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -770,8 +738,7 @@ func (a *V2ApiService) CreateNasVolumeInstance(createNasVolumeInstanceRequest *C
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -802,25 +769,24 @@ func (a *V2ApiService) CreateNasVolumeInstance(createNasVolumeInstanceRequest *C
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 공인IP인스턴스생성
- @param createPublicIpInstanceRequest createPublicIpInstanceRequest
- @return *CreatePublicIpInstanceResponse*/
+/* V2ApiService
+공인IP인스턴스생성
+@param createPublicIpInstanceRequest createPublicIpInstanceRequest
+@return *CreatePublicIpInstanceResponse*/
 func (a *V2ApiService) CreatePublicIpInstance(createPublicIpInstanceRequest *CreatePublicIpInstanceRequest) (*CreatePublicIpInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  CreatePublicIpInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     CreatePublicIpInstanceResponse
 	)
 
 	// create path and map variables
@@ -830,9 +796,8 @@ func (a *V2ApiService) CreatePublicIpInstance(createPublicIpInstanceRequest *Cre
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -841,8 +806,7 @@ func (a *V2ApiService) CreatePublicIpInstance(createPublicIpInstanceRequest *Cre
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -873,25 +837,24 @@ func (a *V2ApiService) CreatePublicIpInstance(createPublicIpInstanceRequest *Cre
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 서버인스턴스생성
- @param createServerInstancesRequest createServerInstancesRequest
- @return *CreateServerInstancesResponse*/
+/* V2ApiService
+서버인스턴스생성
+@param createServerInstancesRequest createServerInstancesRequest
+@return *CreateServerInstancesResponse*/
 func (a *V2ApiService) CreateServerInstances(createServerInstancesRequest *CreateServerInstancesRequest) (*CreateServerInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  CreateServerInstancesResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     CreateServerInstancesResponse
 	)
 
 	// create path and map variables
@@ -901,9 +864,8 @@ func (a *V2ApiService) CreateServerInstances(createServerInstancesRequest *Creat
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -912,8 +874,7 @@ func (a *V2ApiService) CreateServerInstances(createServerInstancesRequest *Creat
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -940,29 +901,29 @@ func (a *V2ApiService) CreateServerInstances(createServerInstancesRequest *Creat
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+		return &successPayload, err
+	}
+
 	if localVarHttpResponse.StatusCode >= 300 {
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return &successPayload, err
-	}
-
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 블록스토리지인스턴스삭제
- @param deleteBlockStorageInstancesRequest deleteBlockStorageInstancesRequest
- @return *DeleteBlockStorageInstancesResponse*/
+/* V2ApiService
+블록스토리지인스턴스삭제
+@param deleteBlockStorageInstancesRequest deleteBlockStorageInstancesRequest
+@return *DeleteBlockStorageInstancesResponse*/
 func (a *V2ApiService) DeleteBlockStorageInstances(deleteBlockStorageInstancesRequest *DeleteBlockStorageInstancesRequest) (*DeleteBlockStorageInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DeleteBlockStorageInstancesResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DeleteBlockStorageInstancesResponse
 	)
 
 	// create path and map variables
@@ -972,9 +933,8 @@ func (a *V2ApiService) DeleteBlockStorageInstances(deleteBlockStorageInstancesRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -983,8 +943,7 @@ func (a *V2ApiService) DeleteBlockStorageInstances(deleteBlockStorageInstancesRe
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1015,25 +974,24 @@ func (a *V2ApiService) DeleteBlockStorageInstances(deleteBlockStorageInstancesRe
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 블록스토리지스냅샷인스턴스삭제
- @param deleteBlockStorageSnapshotInstancesRequest deleteBlockStorageSnapshotInstancesRequest
- @return *DeleteBlockStorageSnapshotInstancesResponse*/
+/* V2ApiService
+블록스토리지스냅샷인스턴스삭제
+@param deleteBlockStorageSnapshotInstancesRequest deleteBlockStorageSnapshotInstancesRequest
+@return *DeleteBlockStorageSnapshotInstancesResponse*/
 func (a *V2ApiService) DeleteBlockStorageSnapshotInstances(deleteBlockStorageSnapshotInstancesRequest *DeleteBlockStorageSnapshotInstancesRequest) (*DeleteBlockStorageSnapshotInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DeleteBlockStorageSnapshotInstancesResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DeleteBlockStorageSnapshotInstancesResponse
 	)
 
 	// create path and map variables
@@ -1043,9 +1001,8 @@ func (a *V2ApiService) DeleteBlockStorageSnapshotInstances(deleteBlockStorageSna
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1054,8 +1011,7 @@ func (a *V2ApiService) DeleteBlockStorageSnapshotInstances(deleteBlockStorageSna
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1086,25 +1042,24 @@ func (a *V2ApiService) DeleteBlockStorageSnapshotInstances(deleteBlockStorageSna
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 로그인키삭제
- @param deleteLoginKeyRequest deleteLoginKeyRequest
- @return *DeleteLoginKeyResponse*/
+/* V2ApiService
+로그인키삭제
+@param deleteLoginKeyRequest deleteLoginKeyRequest
+@return *DeleteLoginKeyResponse*/
 func (a *V2ApiService) DeleteLoginKey(deleteLoginKeyRequest *DeleteLoginKeyRequest) (*DeleteLoginKeyResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DeleteLoginKeyResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DeleteLoginKeyResponse
 	)
 
 	// create path and map variables
@@ -1114,9 +1069,8 @@ func (a *V2ApiService) DeleteLoginKey(deleteLoginKeyRequest *DeleteLoginKeyReque
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1125,8 +1079,7 @@ func (a *V2ApiService) DeleteLoginKey(deleteLoginKeyRequest *DeleteLoginKeyReque
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1157,25 +1110,24 @@ func (a *V2ApiService) DeleteLoginKey(deleteLoginKeyRequest *DeleteLoginKeyReque
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 회원서버이미지삭제
- @param deleteMemberServerImagesRequest deleteMemberServerImagesRequest
- @return *DeleteMemberServerImagesResponse*/
+/* V2ApiService
+회원서버이미지삭제
+@param deleteMemberServerImagesRequest deleteMemberServerImagesRequest
+@return *DeleteMemberServerImagesResponse*/
 func (a *V2ApiService) DeleteMemberServerImages(deleteMemberServerImagesRequest *DeleteMemberServerImagesRequest) (*DeleteMemberServerImagesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DeleteMemberServerImagesResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DeleteMemberServerImagesResponse
 	)
 
 	// create path and map variables
@@ -1185,9 +1137,8 @@ func (a *V2ApiService) DeleteMemberServerImages(deleteMemberServerImagesRequest 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1196,8 +1147,7 @@ func (a *V2ApiService) DeleteMemberServerImages(deleteMemberServerImagesRequest 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1228,25 +1178,24 @@ func (a *V2ApiService) DeleteMemberServerImages(deleteMemberServerImagesRequest 
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- NAS볼륨인스턴스삭제
- @param deleteNasVolumeInstanceRequest deleteNasVolumeInstanceRequest
- @return *DeleteNasVolumeInstanceResponse*/
+/* V2ApiService
+NAS볼륨인스턴스삭제
+@param deleteNasVolumeInstanceRequest deleteNasVolumeInstanceRequest
+@return *DeleteNasVolumeInstanceResponse*/
 func (a *V2ApiService) DeleteNasVolumeInstance(deleteNasVolumeInstanceRequest *DeleteNasVolumeInstanceRequest) (*DeleteNasVolumeInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DeleteNasVolumeInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DeleteNasVolumeInstanceResponse
 	)
 
 	// create path and map variables
@@ -1256,9 +1205,8 @@ func (a *V2ApiService) DeleteNasVolumeInstance(deleteNasVolumeInstanceRequest *D
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1267,8 +1215,7 @@ func (a *V2ApiService) DeleteNasVolumeInstance(deleteNasVolumeInstanceRequest *D
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1299,25 +1246,24 @@ func (a *V2ApiService) DeleteNasVolumeInstance(deleteNasVolumeInstanceRequest *D
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 포트포워딩Rule삭제
- @param deletePortForwardingRulesRequest deletePortForwardingRulesRequest
- @return *DeletePortForwardingRulesResponse*/
+/* V2ApiService
+포트포워딩Rule삭제
+@param deletePortForwardingRulesRequest deletePortForwardingRulesRequest
+@return *DeletePortForwardingRulesResponse*/
 func (a *V2ApiService) DeletePortForwardingRules(deletePortForwardingRulesRequest *DeletePortForwardingRulesRequest) (*DeletePortForwardingRulesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DeletePortForwardingRulesResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DeletePortForwardingRulesResponse
 	)
 
 	// create path and map variables
@@ -1327,9 +1273,8 @@ func (a *V2ApiService) DeletePortForwardingRules(deletePortForwardingRulesReques
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1338,8 +1283,7 @@ func (a *V2ApiService) DeletePortForwardingRules(deletePortForwardingRulesReques
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1370,25 +1314,24 @@ func (a *V2ApiService) DeletePortForwardingRules(deletePortForwardingRulesReques
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 공인IP인스턴스삭제
- @param deletePublicIpInstancesRequest deletePublicIpInstancesRequest
- @return *DeletePublicIpInstancesResponse*/
+/* V2ApiService
+공인IP인스턴스삭제
+@param deletePublicIpInstancesRequest deletePublicIpInstancesRequest
+@return *DeletePublicIpInstancesResponse*/
 func (a *V2ApiService) DeletePublicIpInstances(deletePublicIpInstancesRequest *DeletePublicIpInstancesRequest) (*DeletePublicIpInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DeletePublicIpInstancesResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DeletePublicIpInstancesResponse
 	)
 
 	// create path and map variables
@@ -1398,9 +1341,8 @@ func (a *V2ApiService) DeletePublicIpInstances(deletePublicIpInstancesRequest *D
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1409,8 +1351,7 @@ func (a *V2ApiService) DeletePublicIpInstances(deletePublicIpInstancesRequest *D
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1441,25 +1382,24 @@ func (a *V2ApiService) DeletePublicIpInstances(deletePublicIpInstancesRequest *D
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 블록스토리지인스턴스할당해제
- @param detachBlockStorageInstancesRequest detachBlockStorageInstancesRequest
- @return *DetachBlockStorageInstancesResponse*/
+/* V2ApiService
+블록스토리지인스턴스할당해제
+@param detachBlockStorageInstancesRequest detachBlockStorageInstancesRequest
+@return *DetachBlockStorageInstancesResponse*/
 func (a *V2ApiService) DetachBlockStorageInstances(detachBlockStorageInstancesRequest *DetachBlockStorageInstancesRequest) (*DetachBlockStorageInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DetachBlockStorageInstancesResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DetachBlockStorageInstancesResponse
 	)
 
 	// create path and map variables
@@ -1469,9 +1409,8 @@ func (a *V2ApiService) DetachBlockStorageInstances(detachBlockStorageInstancesRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1480,8 +1419,7 @@ func (a *V2ApiService) DetachBlockStorageInstances(detachBlockStorageInstancesRe
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1512,25 +1450,24 @@ func (a *V2ApiService) DetachBlockStorageInstances(detachBlockStorageInstancesRe
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 공인IP를서버인스턴스에할당해제
- @param disassociatePublicIpFromServerInstanceRequest disassociatePublicIpFromServerInstanceRequest
- @return *DisassociatePublicIpFromServerInstanceResponse*/
+/* V2ApiService
+공인IP를서버인스턴스에할당해제
+@param disassociatePublicIpFromServerInstanceRequest disassociatePublicIpFromServerInstanceRequest
+@return *DisassociatePublicIpFromServerInstanceResponse*/
 func (a *V2ApiService) DisassociatePublicIpFromServerInstance(disassociatePublicIpFromServerInstanceRequest *DisassociatePublicIpFromServerInstanceRequest) (*DisassociatePublicIpFromServerInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DisassociatePublicIpFromServerInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DisassociatePublicIpFromServerInstanceResponse
 	)
 
 	// create path and map variables
@@ -1540,9 +1477,8 @@ func (a *V2ApiService) DisassociatePublicIpFromServerInstance(disassociatePublic
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1551,8 +1487,7 @@ func (a *V2ApiService) DisassociatePublicIpFromServerInstance(disassociatePublic
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1583,25 +1518,24 @@ func (a *V2ApiService) DisassociatePublicIpFromServerInstance(disassociatePublic
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 접근제어그룹리스트조회
- @param getAccessControlGroupListRequest getAccessControlGroupListRequest
- @return *GetAccessControlGroupListResponse*/
+/* V2ApiService
+접근제어그룹리스트조회
+@param getAccessControlGroupListRequest getAccessControlGroupListRequest
+@return *GetAccessControlGroupListResponse*/
 func (a *V2ApiService) GetAccessControlGroupList(getAccessControlGroupListRequest *GetAccessControlGroupListRequest) (*GetAccessControlGroupListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetAccessControlGroupListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetAccessControlGroupListResponse
 	)
 
 	// create path and map variables
@@ -1611,9 +1545,8 @@ func (a *V2ApiService) GetAccessControlGroupList(getAccessControlGroupListReques
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1622,8 +1555,7 @@ func (a *V2ApiService) GetAccessControlGroupList(getAccessControlGroupListReques
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1654,25 +1586,24 @@ func (a *V2ApiService) GetAccessControlGroupList(getAccessControlGroupListReques
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 접근제어그룹적용된서버인스턴스리스트조회
- @param getAccessControlGroupServerInstanceListRequest getAccessControlGroupServerInstanceListRequest
- @return *GetAccessControlGroupServerInstanceListResponse*/
+/* V2ApiService
+접근제어그룹적용된서버인스턴스리스트조회
+@param getAccessControlGroupServerInstanceListRequest getAccessControlGroupServerInstanceListRequest
+@return *GetAccessControlGroupServerInstanceListResponse*/
 func (a *V2ApiService) GetAccessControlGroupServerInstanceList(getAccessControlGroupServerInstanceListRequest *GetAccessControlGroupServerInstanceListRequest) (*GetAccessControlGroupServerInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetAccessControlGroupServerInstanceListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetAccessControlGroupServerInstanceListResponse
 	)
 
 	// create path and map variables
@@ -1682,9 +1613,8 @@ func (a *V2ApiService) GetAccessControlGroupServerInstanceList(getAccessControlG
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1693,8 +1623,7 @@ func (a *V2ApiService) GetAccessControlGroupServerInstanceList(getAccessControlG
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1725,25 +1654,24 @@ func (a *V2ApiService) GetAccessControlGroupServerInstanceList(getAccessControlG
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 접근제어규칙리스트조회
- @param getAccessControlRuleListRequest getAccessControlRuleListRequest
- @return *GetAccessControlRuleListResponse*/
+/* V2ApiService
+접근제어규칙리스트조회
+@param getAccessControlRuleListRequest getAccessControlRuleListRequest
+@return *GetAccessControlRuleListResponse*/
 func (a *V2ApiService) GetAccessControlRuleList(getAccessControlRuleListRequest *GetAccessControlRuleListRequest) (*GetAccessControlRuleListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetAccessControlRuleListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetAccessControlRuleListResponse
 	)
 
 	// create path and map variables
@@ -1753,9 +1681,8 @@ func (a *V2ApiService) GetAccessControlRuleList(getAccessControlRuleListRequest 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1764,8 +1691,7 @@ func (a *V2ApiService) GetAccessControlRuleList(getAccessControlRuleListRequest 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1796,25 +1722,24 @@ func (a *V2ApiService) GetAccessControlRuleList(getAccessControlRuleListRequest 
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 블록스토리지인스턴스리스트조회
- @param getBlockStorageInstanceListRequest getBlockStorageInstanceListRequest
- @return *GetBlockStorageInstanceListResponse*/
+/* V2ApiService
+블록스토리지인스턴스리스트조회
+@param getBlockStorageInstanceListRequest getBlockStorageInstanceListRequest
+@return *GetBlockStorageInstanceListResponse*/
 func (a *V2ApiService) GetBlockStorageInstanceList(getBlockStorageInstanceListRequest *GetBlockStorageInstanceListRequest) (*GetBlockStorageInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetBlockStorageInstanceListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetBlockStorageInstanceListResponse
 	)
 
 	// create path and map variables
@@ -1824,9 +1749,8 @@ func (a *V2ApiService) GetBlockStorageInstanceList(getBlockStorageInstanceListRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1835,8 +1759,7 @@ func (a *V2ApiService) GetBlockStorageInstanceList(getBlockStorageInstanceListRe
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1867,25 +1790,24 @@ func (a *V2ApiService) GetBlockStorageInstanceList(getBlockStorageInstanceListRe
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 블록스토리지스냅샷인스턴스리스트조회
- @param getBlockStorageSnapshotInstanceListRequest getBlockStorageSnapshotInstanceListRequest
- @return *GetBlockStorageSnapshotInstanceListResponse*/
+/* V2ApiService
+블록스토리지스냅샷인스턴스리스트조회
+@param getBlockStorageSnapshotInstanceListRequest getBlockStorageSnapshotInstanceListRequest
+@return *GetBlockStorageSnapshotInstanceListResponse*/
 func (a *V2ApiService) GetBlockStorageSnapshotInstanceList(getBlockStorageSnapshotInstanceListRequest *GetBlockStorageSnapshotInstanceListRequest) (*GetBlockStorageSnapshotInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetBlockStorageSnapshotInstanceListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetBlockStorageSnapshotInstanceListResponse
 	)
 
 	// create path and map variables
@@ -1895,9 +1817,8 @@ func (a *V2ApiService) GetBlockStorageSnapshotInstanceList(getBlockStorageSnapsh
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1906,8 +1827,7 @@ func (a *V2ApiService) GetBlockStorageSnapshotInstanceList(getBlockStorageSnapsh
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1938,25 +1858,24 @@ func (a *V2ApiService) GetBlockStorageSnapshotInstanceList(getBlockStorageSnapsh
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 로그인키리스트조회
- @param getLoginKeyListRequest getLoginKeyListRequest
- @return *GetLoginKeyListResponse*/
+/* V2ApiService
+로그인키리스트조회
+@param getLoginKeyListRequest getLoginKeyListRequest
+@return *GetLoginKeyListResponse*/
 func (a *V2ApiService) GetLoginKeyList(getLoginKeyListRequest *GetLoginKeyListRequest) (*GetLoginKeyListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetLoginKeyListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetLoginKeyListResponse
 	)
 
 	// create path and map variables
@@ -1966,9 +1885,8 @@ func (a *V2ApiService) GetLoginKeyList(getLoginKeyListRequest *GetLoginKeyListRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1977,8 +1895,7 @@ func (a *V2ApiService) GetLoginKeyList(getLoginKeyListRequest *GetLoginKeyListRe
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2009,25 +1926,24 @@ func (a *V2ApiService) GetLoginKeyList(getLoginKeyListRequest *GetLoginKeyListRe
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 회원서버이미지리스트조회
- @param getMemberServerImageListRequest getMemberServerImageListRequest
- @return *GetMemberServerImageListResponse*/
+/* V2ApiService
+회원서버이미지리스트조회
+@param getMemberServerImageListRequest getMemberServerImageListRequest
+@return *GetMemberServerImageListResponse*/
 func (a *V2ApiService) GetMemberServerImageList(getMemberServerImageListRequest *GetMemberServerImageListRequest) (*GetMemberServerImageListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetMemberServerImageListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetMemberServerImageListResponse
 	)
 
 	// create path and map variables
@@ -2037,9 +1953,8 @@ func (a *V2ApiService) GetMemberServerImageList(getMemberServerImageListRequest 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2048,8 +1963,7 @@ func (a *V2ApiService) GetMemberServerImageList(getMemberServerImageListRequest 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2080,25 +1994,24 @@ func (a *V2ApiService) GetMemberServerImageList(getMemberServerImageListRequest 
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- NAS볼륨인스턴스리스트조회
- @param getNasVolumeInstanceListRequest getNasVolumeInstanceListRequest
- @return *GetNasVolumeInstanceListResponse*/
+/* V2ApiService
+NAS볼륨인스턴스리스트조회
+@param getNasVolumeInstanceListRequest getNasVolumeInstanceListRequest
+@return *GetNasVolumeInstanceListResponse*/
 func (a *V2ApiService) GetNasVolumeInstanceList(getNasVolumeInstanceListRequest *GetNasVolumeInstanceListRequest) (*GetNasVolumeInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetNasVolumeInstanceListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetNasVolumeInstanceListResponse
 	)
 
 	// create path and map variables
@@ -2108,9 +2021,8 @@ func (a *V2ApiService) GetNasVolumeInstanceList(getNasVolumeInstanceListRequest 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2119,8 +2031,7 @@ func (a *V2ApiService) GetNasVolumeInstanceList(getNasVolumeInstanceListRequest 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2151,25 +2062,24 @@ func (a *V2ApiService) GetNasVolumeInstanceList(getNasVolumeInstanceListRequest 
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- NAS볼륨인스턴스측정리스트조회
- @param getNasVolumeInstanceRatingListRequest getNasVolumeInstanceRatingListRequest
- @return *GetNasVolumeInstanceRatingListResponse*/
+/* V2ApiService
+NAS볼륨인스턴스측정리스트조회
+@param getNasVolumeInstanceRatingListRequest getNasVolumeInstanceRatingListRequest
+@return *GetNasVolumeInstanceRatingListResponse*/
 func (a *V2ApiService) GetNasVolumeInstanceRatingList(getNasVolumeInstanceRatingListRequest *GetNasVolumeInstanceRatingListRequest) (*GetNasVolumeInstanceRatingListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetNasVolumeInstanceRatingListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetNasVolumeInstanceRatingListResponse
 	)
 
 	// create path and map variables
@@ -2179,9 +2089,8 @@ func (a *V2ApiService) GetNasVolumeInstanceRatingList(getNasVolumeInstanceRating
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2190,8 +2099,7 @@ func (a *V2ApiService) GetNasVolumeInstanceRatingList(getNasVolumeInstanceRating
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2222,25 +2130,24 @@ func (a *V2ApiService) GetNasVolumeInstanceRatingList(getNasVolumeInstanceRating
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 포트포워딩Rule리스트조회
- @param getPortForwardingRuleListRequest getPortForwardingRuleListRequest
- @return *GetPortForwardingRuleListResponse*/
+/* V2ApiService
+포트포워딩Rule리스트조회
+@param getPortForwardingRuleListRequest getPortForwardingRuleListRequest
+@return *GetPortForwardingRuleListResponse*/
 func (a *V2ApiService) GetPortForwardingRuleList(getPortForwardingRuleListRequest *GetPortForwardingRuleListRequest) (*GetPortForwardingRuleListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetPortForwardingRuleListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetPortForwardingRuleListResponse
 	)
 
 	// create path and map variables
@@ -2250,9 +2157,8 @@ func (a *V2ApiService) GetPortForwardingRuleList(getPortForwardingRuleListReques
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2261,8 +2167,7 @@ func (a *V2ApiService) GetPortForwardingRuleList(getPortForwardingRuleListReques
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2293,25 +2198,24 @@ func (a *V2ApiService) GetPortForwardingRuleList(getPortForwardingRuleListReques
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 공인IP인스턴스리스트조회
- @param getPublicIpInstanceListRequest getPublicIpInstanceListRequest
- @return *GetPublicIpInstanceListResponse*/
+/* V2ApiService
+공인IP인스턴스리스트조회
+@param getPublicIpInstanceListRequest getPublicIpInstanceListRequest
+@return *GetPublicIpInstanceListResponse*/
 func (a *V2ApiService) GetPublicIpInstanceList(getPublicIpInstanceListRequest *GetPublicIpInstanceListRequest) (*GetPublicIpInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetPublicIpInstanceListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetPublicIpInstanceListResponse
 	)
 
 	// create path and map variables
@@ -2321,9 +2225,8 @@ func (a *V2ApiService) GetPublicIpInstanceList(getPublicIpInstanceListRequest *G
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2332,8 +2235,7 @@ func (a *V2ApiService) GetPublicIpInstanceList(getPublicIpInstanceListRequest *G
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2364,25 +2266,24 @@ func (a *V2ApiService) GetPublicIpInstanceList(getPublicIpInstanceListRequest *G
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 공인IP할당(가능)서버인스턴스리스트조회
- @param getPublicIpTargetServerInstanceListRequest getPublicIpTargetServerInstanceListRequest
- @return *GetPublicIpTargetServerInstanceListResponse*/
+/* V2ApiService
+공인IP할당(가능)서버인스턴스리스트조회
+@param getPublicIpTargetServerInstanceListRequest getPublicIpTargetServerInstanceListRequest
+@return *GetPublicIpTargetServerInstanceListResponse*/
 func (a *V2ApiService) GetPublicIpTargetServerInstanceList(getPublicIpTargetServerInstanceListRequest *GetPublicIpTargetServerInstanceListRequest) (*GetPublicIpTargetServerInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetPublicIpTargetServerInstanceListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetPublicIpTargetServerInstanceListResponse
 	)
 
 	// create path and map variables
@@ -2392,9 +2293,8 @@ func (a *V2ApiService) GetPublicIpTargetServerInstanceList(getPublicIpTargetServ
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2403,8 +2303,7 @@ func (a *V2ApiService) GetPublicIpTargetServerInstanceList(getPublicIpTargetServ
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2435,25 +2334,24 @@ func (a *V2ApiService) GetPublicIpTargetServerInstanceList(getPublicIpTargetServ
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- RAID리스트조회
- @param getRaidListRequest getRaidListRequest
- @return *GetRaidListResponse*/
+/* V2ApiService
+RAID리스트조회
+@param getRaidListRequest getRaidListRequest
+@return *GetRaidListResponse*/
 func (a *V2ApiService) GetRaidList(getRaidListRequest *GetRaidListRequest) (*GetRaidListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetRaidListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetRaidListResponse
 	)
 
 	// create path and map variables
@@ -2463,9 +2361,8 @@ func (a *V2ApiService) GetRaidList(getRaidListRequest *GetRaidListRequest) (*Get
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2474,8 +2371,7 @@ func (a *V2ApiService) GetRaidList(getRaidListRequest *GetRaidListRequest) (*Get
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2506,25 +2402,24 @@ func (a *V2ApiService) GetRaidList(getRaidListRequest *GetRaidListRequest) (*Get
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- REGION리스트조회
- @param getRegionListRequest getRegionListRequest
- @return *GetRegionListResponse*/
+/* V2ApiService
+REGION리스트조회
+@param getRegionListRequest getRegionListRequest
+@return *GetRegionListResponse*/
 func (a *V2ApiService) GetRegionList(getRegionListRequest *GetRegionListRequest) (*GetRegionListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetRegionListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetRegionListResponse
 	)
 
 	// create path and map variables
@@ -2534,9 +2429,8 @@ func (a *V2ApiService) GetRegionList(getRegionListRequest *GetRegionListRequest)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2545,8 +2439,7 @@ func (a *V2ApiService) GetRegionList(getRegionListRequest *GetRegionListRequest)
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2577,25 +2470,24 @@ func (a *V2ApiService) GetRegionList(getRegionListRequest *GetRegionListRequest)
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 루트패스워드조회
- @param getRootPasswordRequest getRootPasswordRequest
- @return *GetRootPasswordResponse*/
+/* V2ApiService
+루트패스워드조회
+@param getRootPasswordRequest getRootPasswordRequest
+@return *GetRootPasswordResponse*/
 func (a *V2ApiService) GetRootPassword(getRootPasswordRequest *GetRootPasswordRequest) (*GetRootPasswordResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetRootPasswordResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetRootPasswordResponse
 	)
 
 	// create path and map variables
@@ -2605,9 +2497,8 @@ func (a *V2ApiService) GetRootPassword(getRootPasswordRequest *GetRootPasswordRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2616,8 +2507,7 @@ func (a *V2ApiService) GetRootPassword(getRootPasswordRequest *GetRootPasswordRe
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2648,25 +2538,24 @@ func (a *V2ApiService) GetRootPassword(getRootPasswordRequest *GetRootPasswordRe
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 서버이미지상품리스트조회
- @param getServerImageProductListRequest getServerImageProductListRequest
- @return *GetServerImageProductListResponse*/
+/* V2ApiService
+서버이미지상품리스트조회
+@param getServerImageProductListRequest getServerImageProductListRequest
+@return *GetServerImageProductListResponse*/
 func (a *V2ApiService) GetServerImageProductList(getServerImageProductListRequest *GetServerImageProductListRequest) (*GetServerImageProductListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetServerImageProductListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetServerImageProductListResponse
 	)
 
 	// create path and map variables
@@ -2676,9 +2565,8 @@ func (a *V2ApiService) GetServerImageProductList(getServerImageProductListReques
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2687,8 +2575,7 @@ func (a *V2ApiService) GetServerImageProductList(getServerImageProductListReques
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2719,25 +2606,24 @@ func (a *V2ApiService) GetServerImageProductList(getServerImageProductListReques
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 서버인스턴스리스트조회
- @param getServerInstanceListRequest getServerInstanceListRequest
- @return *GetServerInstanceListResponse*/
+/* V2ApiService
+서버인스턴스리스트조회
+@param getServerInstanceListRequest getServerInstanceListRequest
+@return *GetServerInstanceListResponse*/
 func (a *V2ApiService) GetServerInstanceList(getServerInstanceListRequest *GetServerInstanceListRequest) (*GetServerInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetServerInstanceListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetServerInstanceListResponse
 	)
 
 	// create path and map variables
@@ -2747,9 +2633,8 @@ func (a *V2ApiService) GetServerInstanceList(getServerInstanceListRequest *GetSe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2758,8 +2643,7 @@ func (a *V2ApiService) GetServerInstanceList(getServerInstanceListRequest *GetSe
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2790,25 +2674,24 @@ func (a *V2ApiService) GetServerInstanceList(getServerInstanceListRequest *GetSe
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 서버상품리스트조회
- @param getServerProductListRequest getServerProductListRequest
- @return *GetServerProductListResponse*/
+/* V2ApiService
+서버상품리스트조회
+@param getServerProductListRequest getServerProductListRequest
+@return *GetServerProductListResponse*/
 func (a *V2ApiService) GetServerProductList(getServerProductListRequest *GetServerProductListRequest) (*GetServerProductListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetServerProductListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetServerProductListResponse
 	)
 
 	// create path and map variables
@@ -2818,9 +2701,8 @@ func (a *V2ApiService) GetServerProductList(getServerProductListRequest *GetServ
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2829,8 +2711,7 @@ func (a *V2ApiService) GetServerProductList(getServerProductListRequest *GetServ
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2861,25 +2742,24 @@ func (a *V2ApiService) GetServerProductList(getServerProductListRequest *GetServ
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- ZONE리스트조회
- @param getZoneListRequest getZoneListRequest
- @return *GetZoneListResponse*/
+/* V2ApiService
+ZONE리스트조회
+@param getZoneListRequest getZoneListRequest
+@return *GetZoneListResponse*/
 func (a *V2ApiService) GetZoneList(getZoneListRequest *GetZoneListRequest) (*GetZoneListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetZoneListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetZoneListResponse
 	)
 
 	// create path and map variables
@@ -2889,9 +2769,8 @@ func (a *V2ApiService) GetZoneList(getZoneListRequest *GetZoneListRequest) (*Get
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2900,8 +2779,7 @@ func (a *V2ApiService) GetZoneList(getZoneListRequest *GetZoneListRequest) (*Get
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2932,25 +2810,24 @@ func (a *V2ApiService) GetZoneList(getZoneListRequest *GetZoneListRequest) (*Get
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 로그인키IMPORT
- @param importLoginKeyRequest importLoginKeyRequest
- @return *ImportLoginKeyResponse*/
+/* V2ApiService
+로그인키IMPORT
+@param importLoginKeyRequest importLoginKeyRequest
+@return *ImportLoginKeyResponse*/
 func (a *V2ApiService) ImportLoginKey(importLoginKeyRequest *ImportLoginKeyRequest) (*ImportLoginKeyResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ImportLoginKeyResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ImportLoginKeyResponse
 	)
 
 	// create path and map variables
@@ -2960,9 +2837,8 @@ func (a *V2ApiService) ImportLoginKey(importLoginKeyRequest *ImportLoginKeyReque
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2971,8 +2847,7 @@ func (a *V2ApiService) ImportLoginKey(importLoginKeyRequest *ImportLoginKeyReque
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -3003,25 +2878,24 @@ func (a *V2ApiService) ImportLoginKey(importLoginKeyRequest *ImportLoginKeyReque
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 서버인스턴스재시작
- @param rebootServerInstancesRequest rebootServerInstancesRequest
- @return *RebootServerInstancesResponse*/
+/* V2ApiService
+서버인스턴스재시작
+@param rebootServerInstancesRequest rebootServerInstancesRequest
+@return *RebootServerInstancesResponse*/
 func (a *V2ApiService) RebootServerInstances(rebootServerInstancesRequest *RebootServerInstancesRequest) (*RebootServerInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  RebootServerInstancesResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     RebootServerInstancesResponse
 	)
 
 	// create path and map variables
@@ -3031,9 +2905,8 @@ func (a *V2ApiService) RebootServerInstances(rebootServerInstancesRequest *Reboo
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -3042,8 +2915,7 @@ func (a *V2ApiService) RebootServerInstances(rebootServerInstancesRequest *Reboo
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -3074,25 +2946,24 @@ func (a *V2ApiService) RebootServerInstances(rebootServerInstancesRequest *Reboo
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 서버인스턴스재생성
- @param recreateServerInstanceRequest recreateServerInstanceRequest
- @return *RecreateServerInstanceResponse*/
+/* V2ApiService
+서버인스턴스재생성
+@param recreateServerInstanceRequest recreateServerInstanceRequest
+@return *RecreateServerInstanceResponse*/
 func (a *V2ApiService) RecreateServerInstance(recreateServerInstanceRequest *RecreateServerInstanceRequest) (*RecreateServerInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  RecreateServerInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     RecreateServerInstanceResponse
 	)
 
 	// create path and map variables
@@ -3102,9 +2973,8 @@ func (a *V2ApiService) RecreateServerInstance(recreateServerInstanceRequest *Rec
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -3113,8 +2983,7 @@ func (a *V2ApiService) RecreateServerInstance(recreateServerInstanceRequest *Rec
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -3145,25 +3014,24 @@ func (a *V2ApiService) RecreateServerInstance(recreateServerInstanceRequest *Rec
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- NAS볼륨인스턴스접근제어제거
- @param removeNasVolumeAccessControlRequest removeNasVolumeAccessControlRequest
- @return *RemoveNasVolumeAccessControlResponse*/
+/* V2ApiService
+NAS볼륨인스턴스접근제어제거
+@param removeNasVolumeAccessControlRequest removeNasVolumeAccessControlRequest
+@return *RemoveNasVolumeAccessControlResponse*/
 func (a *V2ApiService) RemoveNasVolumeAccessControl(removeNasVolumeAccessControlRequest *RemoveNasVolumeAccessControlRequest) (*RemoveNasVolumeAccessControlResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  RemoveNasVolumeAccessControlResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     RemoveNasVolumeAccessControlResponse
 	)
 
 	// create path and map variables
@@ -3173,9 +3041,8 @@ func (a *V2ApiService) RemoveNasVolumeAccessControl(removeNasVolumeAccessControl
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -3184,8 +3051,7 @@ func (a *V2ApiService) RemoveNasVolumeAccessControl(removeNasVolumeAccessControl
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -3216,25 +3082,24 @@ func (a *V2ApiService) RemoveNasVolumeAccessControl(removeNasVolumeAccessControl
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- NAS볼륨인스턴스접근제어설정
- @param setNasVolumeAccessControlRequest setNasVolumeAccessControlRequest
- @return *SetNasVolumeAccessControlResponse*/
+/* V2ApiService
+NAS볼륨인스턴스접근제어설정
+@param setNasVolumeAccessControlRequest setNasVolumeAccessControlRequest
+@return *SetNasVolumeAccessControlResponse*/
 func (a *V2ApiService) SetNasVolumeAccessControl(setNasVolumeAccessControlRequest *SetNasVolumeAccessControlRequest) (*SetNasVolumeAccessControlResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  SetNasVolumeAccessControlResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     SetNasVolumeAccessControlResponse
 	)
 
 	// create path and map variables
@@ -3244,9 +3109,8 @@ func (a *V2ApiService) SetNasVolumeAccessControl(setNasVolumeAccessControlReques
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -3255,8 +3119,7 @@ func (a *V2ApiService) SetNasVolumeAccessControl(setNasVolumeAccessControlReques
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -3287,25 +3150,24 @@ func (a *V2ApiService) SetNasVolumeAccessControl(setNasVolumeAccessControlReques
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 서버인스턴스시작
- @param startServerInstancesRequest startServerInstancesRequest
- @return *StartServerInstancesResponse*/
+/* V2ApiService
+서버인스턴스시작
+@param startServerInstancesRequest startServerInstancesRequest
+@return *StartServerInstancesResponse*/
 func (a *V2ApiService) StartServerInstances(startServerInstancesRequest *StartServerInstancesRequest) (*StartServerInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  StartServerInstancesResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     StartServerInstancesResponse
 	)
 
 	// create path and map variables
@@ -3315,9 +3177,8 @@ func (a *V2ApiService) StartServerInstances(startServerInstancesRequest *StartSe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -3326,8 +3187,7 @@ func (a *V2ApiService) StartServerInstances(startServerInstancesRequest *StartSe
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -3358,25 +3218,24 @@ func (a *V2ApiService) StartServerInstances(startServerInstancesRequest *StartSe
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 서버인스턴스종료
- @param stopServerInstancesRequest stopServerInstancesRequest
- @return *StopServerInstancesResponse*/
+/* V2ApiService
+서버인스턴스종료
+@param stopServerInstancesRequest stopServerInstancesRequest
+@return *StopServerInstancesResponse*/
 func (a *V2ApiService) StopServerInstances(stopServerInstancesRequest *StopServerInstancesRequest) (*StopServerInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  StopServerInstancesResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     StopServerInstancesResponse
 	)
 
 	// create path and map variables
@@ -3386,9 +3245,8 @@ func (a *V2ApiService) StopServerInstances(stopServerInstancesRequest *StopServe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -3397,8 +3255,7 @@ func (a *V2ApiService) StopServerInstances(stopServerInstancesRequest *StopServe
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -3429,25 +3286,24 @@ func (a *V2ApiService) StopServerInstances(stopServerInstancesRequest *StopServe
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
-
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 서버인스턴스반납
- @param terminateServerInstancesRequest terminateServerInstancesRequest
- @return *TerminateServerInstancesResponse*/
+/* V2ApiService
+서버인스턴스반납
+@param terminateServerInstancesRequest terminateServerInstancesRequest
+@return *TerminateServerInstancesResponse*/
 func (a *V2ApiService) TerminateServerInstances(terminateServerInstancesRequest *TerminateServerInstancesRequest) (*TerminateServerInstancesResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  TerminateServerInstancesResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     TerminateServerInstancesResponse
 	)
 
 	// create path and map variables
@@ -3457,9 +3313,8 @@ func (a *V2ApiService) TerminateServerInstances(terminateServerInstancesRequest 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -3468,8 +3323,7 @@ func (a *V2ApiService) TerminateServerInstances(terminateServerInstancesRequest 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -3500,11 +3354,9 @@ func (a *V2ApiService) TerminateServerInstances(terminateServerInstancesRequest 
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+	if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
 		return &successPayload, err
 	}
 
-
 	return &successPayload, err
 }
-
