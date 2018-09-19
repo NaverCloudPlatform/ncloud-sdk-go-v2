@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**ChangeServerInstanceSpec**](V2Api.md#ChangeServerInstanceSpec) | **Post** /changeServerInstanceSpec | 
 [**CreateBlockStorageInstance**](V2Api.md#CreateBlockStorageInstance) | **Post** /createBlockStorageInstance | 
 [**CreateBlockStorageSnapshotInstance**](V2Api.md#CreateBlockStorageSnapshotInstance) | **Post** /createBlockStorageSnapshotInstance | 
+[**CreateInstanceTags**](V2Api.md#CreateInstanceTags) | **Post** /createInstanceTags | 
 [**CreateLoginKey**](V2Api.md#CreateLoginKey) | **Post** /createLoginKey | 
 [**CreateMemberServerImage**](V2Api.md#CreateMemberServerImage) | **Post** /createMemberServerImage | 
 [**CreateNasVolumeInstance**](V2Api.md#CreateNasVolumeInstance) | **Post** /createNasVolumeInstance | 
@@ -19,6 +20,7 @@ Method | HTTP request | Description
 [**CreateServerInstances**](V2Api.md#CreateServerInstances) | **Post** /createServerInstances | 
 [**DeleteBlockStorageInstances**](V2Api.md#DeleteBlockStorageInstances) | **Post** /deleteBlockStorageInstances | 
 [**DeleteBlockStorageSnapshotInstances**](V2Api.md#DeleteBlockStorageSnapshotInstances) | **Post** /deleteBlockStorageSnapshotInstances | 
+[**DeleteInstanceTags**](V2Api.md#DeleteInstanceTags) | **Post** /deleteInstanceTags | 
 [**DeleteLoginKey**](V2Api.md#DeleteLoginKey) | **Post** /deleteLoginKey | 
 [**DeleteMemberServerImages**](V2Api.md#DeleteMemberServerImages) | **Post** /deleteMemberServerImages | 
 [**DeleteNasVolumeInstance**](V2Api.md#DeleteNasVolumeInstance) | **Post** /deleteNasVolumeInstance | 
@@ -31,6 +33,7 @@ Method | HTTP request | Description
 [**GetAccessControlRuleList**](V2Api.md#GetAccessControlRuleList) | **Post** /getAccessControlRuleList | 
 [**GetBlockStorageInstanceList**](V2Api.md#GetBlockStorageInstanceList) | **Post** /getBlockStorageInstanceList | 
 [**GetBlockStorageSnapshotInstanceList**](V2Api.md#GetBlockStorageSnapshotInstanceList) | **Post** /getBlockStorageSnapshotInstanceList | 
+[**GetInstanceTagList**](V2Api.md#GetInstanceTagList) | **Post** /getInstanceTagList | 
 [**GetLoginKeyList**](V2Api.md#GetLoginKeyList) | **Post** /getLoginKeyList | 
 [**GetMemberServerImageList**](V2Api.md#GetMemberServerImageList) | **Post** /getMemberServerImageList | 
 [**GetNasVolumeInstanceList**](V2Api.md#GetNasVolumeInstanceList) | **Post** /getNasVolumeInstanceList | 
@@ -271,6 +274,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **CreateInstanceTags**
+> CreateInstanceTagsResponse CreateInstanceTags(createInstanceTagsRequest)
+
+
+인스턴스태그생성
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**createInstanceTagsRequest** | **[\*CreateInstanceTagsRequest](CreateInstanceTagsRequest.md)** | createInstanceTagsRequest | 
+
+### Return type
+
+*[**CreateInstanceTagsResponse**](createInstanceTagsResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **CreateLoginKey**
 > CreateLoginKeyResponse CreateLoginKey(createLoginKeyRequest)
 
@@ -448,6 +478,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**DeleteBlockStorageSnapshotInstancesResponse**](deleteBlockStorageSnapshotInstancesResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **DeleteInstanceTags**
+> DeleteInstanceTagsResponse DeleteInstanceTags(deleteInstanceTagsRequest)
+
+
+인스턴스태그삭제
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**deleteInstanceTagsRequest** | **[\*DeleteInstanceTagsRequest](DeleteInstanceTagsRequest.md)** | deleteInstanceTagsRequest | 
+
+### Return type
+
+*[**DeleteInstanceTagsResponse**](deleteInstanceTagsResponse.md)
 
 ### Authorization
 
@@ -772,6 +829,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**GetBlockStorageSnapshotInstanceListResponse**](getBlockStorageSnapshotInstanceListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetInstanceTagList**
+> GetInstanceTagListResponse GetInstanceTagList(getInstanceTagListRequest)
+
+
+인스턴스태그리스트조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getInstanceTagListRequest** | **[\*GetInstanceTagListRequest](GetInstanceTagListRequest.md)** | getInstanceTagListRequest | 
+
+### Return type
+
+*[**GetInstanceTagListResponse**](getInstanceTagListResponse.md)
 
 ### Authorization
 
