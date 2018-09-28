@@ -89,8 +89,10 @@ func (a *V2ApiService) CreateCloudDBInstance(createCloudDBInstanceRequest *Creat
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return &successPayload, err
+	if !strings.Contains(string(bodyBytes), `{"error"`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
@@ -161,8 +163,10 @@ func (a *V2ApiService) DeleteCloudDBServerInstance(deleteCloudDBServerInstanceRe
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return &successPayload, err
+	if !strings.Contains(string(bodyBytes), `{"error"`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
@@ -233,8 +237,10 @@ func (a *V2ApiService) FlushCloudDBInstance(flushCloudDBInstanceRequest *FlushCl
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return &successPayload, err
+	if !strings.Contains(string(bodyBytes), `{"error"`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
@@ -305,8 +311,10 @@ func (a *V2ApiService) GetCloudDBConfigGroupList(getCloudDBConfigGroupListReques
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return &successPayload, err
+	if !strings.Contains(string(bodyBytes), `{"error"`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
@@ -377,8 +385,10 @@ func (a *V2ApiService) GetCloudDBImageProductList(getCloudDBImageProductListRequ
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return &successPayload, err
+	if !strings.Contains(string(bodyBytes), `{"error"`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
@@ -449,8 +459,10 @@ func (a *V2ApiService) GetCloudDBInstanceList(getCloudDBInstanceListRequest *Get
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return &successPayload, err
+	if !strings.Contains(string(bodyBytes), `{"error"`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
@@ -521,8 +533,10 @@ func (a *V2ApiService) GetCloudDBProductList(getCloudDBProductListRequest *GetCl
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return &successPayload, err
+	if !strings.Contains(string(bodyBytes), `{"error"`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
@@ -593,8 +607,10 @@ func (a *V2ApiService) RebootCloudDBServerInstance(rebootCloudDBServerInstanceRe
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-    if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
-		return &successPayload, err
+	if !strings.Contains(string(bodyBytes), `{"error"`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
