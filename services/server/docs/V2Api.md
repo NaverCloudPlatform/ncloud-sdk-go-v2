@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**AddPortForwardingRules**](V2Api.md#AddPortForwardingRules) | **Post** /addPortForwardingRules | 
 [**AssociatePublicIpWithServerInstance**](V2Api.md#AssociatePublicIpWithServerInstance) | **Post** /associatePublicIpWithServerInstance | 
 [**AttachBlockStorageInstance**](V2Api.md#AttachBlockStorageInstance) | **Post** /attachBlockStorageInstance | 
+[**AttachNetworkInterface**](V2Api.md#AttachNetworkInterface) | **Post** /attachNetworkInterface | 
 [**ChangeNasVolumeSize**](V2Api.md#ChangeNasVolumeSize) | **Post** /changeNasVolumeSize | 
 [**ChangeServerInstanceSpec**](V2Api.md#ChangeServerInstanceSpec) | **Post** /changeServerInstanceSpec | 
 [**CreateBlockStorageInstance**](V2Api.md#CreateBlockStorageInstance) | **Post** /createBlockStorageInstance | 
@@ -16,6 +17,7 @@ Method | HTTP request | Description
 [**CreateLoginKey**](V2Api.md#CreateLoginKey) | **Post** /createLoginKey | 
 [**CreateMemberServerImage**](V2Api.md#CreateMemberServerImage) | **Post** /createMemberServerImage | 
 [**CreateNasVolumeInstance**](V2Api.md#CreateNasVolumeInstance) | **Post** /createNasVolumeInstance | 
+[**CreateNetworkInterface**](V2Api.md#CreateNetworkInterface) | **Post** /createNetworkInterface | 
 [**CreatePublicIpInstance**](V2Api.md#CreatePublicIpInstance) | **Post** /createPublicIpInstance | 
 [**CreateServerInstances**](V2Api.md#CreateServerInstances) | **Post** /createServerInstances | 
 [**DeleteBlockStorageInstances**](V2Api.md#DeleteBlockStorageInstances) | **Post** /deleteBlockStorageInstances | 
@@ -24,9 +26,11 @@ Method | HTTP request | Description
 [**DeleteLoginKey**](V2Api.md#DeleteLoginKey) | **Post** /deleteLoginKey | 
 [**DeleteMemberServerImages**](V2Api.md#DeleteMemberServerImages) | **Post** /deleteMemberServerImages | 
 [**DeleteNasVolumeInstance**](V2Api.md#DeleteNasVolumeInstance) | **Post** /deleteNasVolumeInstance | 
+[**DeleteNetworkInterface**](V2Api.md#DeleteNetworkInterface) | **Post** /deleteNetworkInterface | 
 [**DeletePortForwardingRules**](V2Api.md#DeletePortForwardingRules) | **Post** /deletePortForwardingRules | 
 [**DeletePublicIpInstances**](V2Api.md#DeletePublicIpInstances) | **Post** /deletePublicIpInstances | 
 [**DetachBlockStorageInstances**](V2Api.md#DetachBlockStorageInstances) | **Post** /detachBlockStorageInstances | 
+[**DetachNetworkInterface**](V2Api.md#DetachNetworkInterface) | **Post** /detachNetworkInterface | 
 [**DisassociatePublicIpFromServerInstance**](V2Api.md#DisassociatePublicIpFromServerInstance) | **Post** /disassociatePublicIpFromServerInstance | 
 [**GetAccessControlGroupList**](V2Api.md#GetAccessControlGroupList) | **Post** /getAccessControlGroupList | 
 [**GetAccessControlGroupServerInstanceList**](V2Api.md#GetAccessControlGroupServerInstanceList) | **Post** /getAccessControlGroupServerInstanceList | 
@@ -38,7 +42,9 @@ Method | HTTP request | Description
 [**GetMemberServerImageList**](V2Api.md#GetMemberServerImageList) | **Post** /getMemberServerImageList | 
 [**GetNasVolumeInstanceList**](V2Api.md#GetNasVolumeInstanceList) | **Post** /getNasVolumeInstanceList | 
 [**GetNasVolumeInstanceRatingList**](V2Api.md#GetNasVolumeInstanceRatingList) | **Post** /getNasVolumeInstanceRatingList | 
+[**GetNetworkInterfaceList**](V2Api.md#GetNetworkInterfaceList) | **Post** /getNetworkInterfaceList | 
 [**GetPortForwardingRuleList**](V2Api.md#GetPortForwardingRuleList) | **Post** /getPortForwardingRuleList | 
+[**GetPrivateSubnetInstanceList**](V2Api.md#GetPrivateSubnetInstanceList) | **Post** /getPrivateSubnetInstanceList | 
 [**GetPublicIpInstanceList**](V2Api.md#GetPublicIpInstanceList) | **Post** /getPublicIpInstanceList | 
 [**GetPublicIpTargetServerInstanceList**](V2Api.md#GetPublicIpTargetServerInstanceList) | **Post** /getPublicIpTargetServerInstanceList | 
 [**GetRaidList**](V2Api.md#GetRaidList) | **Post** /getRaidList | 
@@ -154,6 +160,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**AttachBlockStorageInstanceResponse**](attachBlockStorageInstanceResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **AttachNetworkInterface**
+> AttachNetworkInterfaceResponse AttachNetworkInterface(attachNetworkInterfaceRequest)
+
+
+Network Interface Attach
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**attachNetworkInterfaceRequest** | **[\*AttachNetworkInterfaceRequest](AttachNetworkInterfaceRequest.md)** | attachNetworkInterfaceRequest | 
+
+### Return type
+
+*[**AttachNetworkInterfaceResponse**](attachNetworkInterfaceResponse.md)
 
 ### Authorization
 
@@ -382,6 +415,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **CreateNetworkInterface**
+> CreateNetworkInterfaceResponse CreateNetworkInterface(createNetworkInterfaceRequest)
+
+
+Network Interface 생성
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**createNetworkInterfaceRequest** | **[\*CreateNetworkInterfaceRequest](CreateNetworkInterfaceRequest.md)** | createNetworkInterfaceRequest | 
+
+### Return type
+
+*[**CreateNetworkInterfaceResponse**](createNetworkInterfaceResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **CreatePublicIpInstance**
 > CreatePublicIpInstanceResponse CreatePublicIpInstance(createPublicIpInstanceRequest)
 
@@ -598,6 +658,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **DeleteNetworkInterface**
+> DeleteNetworkInterfaceResponse DeleteNetworkInterface(deleteNetworkInterfaceRequest)
+
+
+Network Interface 삭제
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**deleteNetworkInterfaceRequest** | **[\*DeleteNetworkInterfaceRequest](DeleteNetworkInterfaceRequest.md)** | deleteNetworkInterfaceRequest | 
+
+### Return type
+
+*[**DeleteNetworkInterfaceResponse**](deleteNetworkInterfaceResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **DeletePortForwardingRules**
 > DeletePortForwardingRulesResponse DeletePortForwardingRules(deletePortForwardingRulesRequest)
 
@@ -667,6 +754,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**DetachBlockStorageInstancesResponse**](detachBlockStorageInstancesResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **DetachNetworkInterface**
+> DetachNetworkInterfaceResponse DetachNetworkInterface(detachNetworkInterfaceRequest)
+
+
+Network Interface Detach
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**detachNetworkInterfaceRequest** | **[\*DetachNetworkInterfaceRequest](DetachNetworkInterfaceRequest.md)** | detachNetworkInterfaceRequest | 
+
+### Return type
+
+*[**DetachNetworkInterfaceResponse**](detachNetworkInterfaceResponse.md)
 
 ### Authorization
 
@@ -976,6 +1090,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetNetworkInterfaceList**
+> GetNetworkInterfaceListResponse GetNetworkInterfaceList(getNetworkInterfaceListRequest)
+
+
+Network Interface 리스트조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getNetworkInterfaceListRequest** | **[\*GetNetworkInterfaceListRequest](GetNetworkInterfaceListRequest.md)** | getNetworkInterfaceListRequest | 
+
+### Return type
+
+*[**GetNetworkInterfaceListResponse**](getNetworkInterfaceListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetPortForwardingRuleList**
 > GetPortForwardingRuleListResponse GetPortForwardingRuleList(getPortForwardingRuleListRequest)
 
@@ -991,6 +1132,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**GetPortForwardingRuleListResponse**](getPortForwardingRuleListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetPrivateSubnetInstanceList**
+> GetPrivateSubnetInstanceListResponse GetPrivateSubnetInstanceList(getPrivateSubnetInstanceListRequest)
+
+
+Private Subnet 인스턴스리스트조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getPrivateSubnetInstanceListRequest** | **[\*GetPrivateSubnetInstanceListRequest](GetPrivateSubnetInstanceListRequest.md)** | getPrivateSubnetInstanceListRequest | 
+
+### Return type
+
+*[**GetPrivateSubnetInstanceListResponse**](getPrivateSubnetInstanceListResponse.md)
 
 ### Authorization
 
