@@ -22,7 +22,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetListMetricsResponse**](getListMetricsResponse.md)
+*[**GetListMetricsResponse**](GetListMetricsResponse.md)
 
 ### Authorization
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetMetricStatisticsResponse**](getMetricStatisticsResponse.md)
+*[**GetMetricStatisticsResponse**](GetMetricStatisticsResponse.md)
 
 ### Authorization
 

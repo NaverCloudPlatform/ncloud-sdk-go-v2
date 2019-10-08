@@ -30,7 +30,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**AddLoadBalancerSslCertificateResponse**](addLoadBalancerSslCertificateResponse.md)
+*[**AddLoadBalancerSslCertificateResponse**](AddLoadBalancerSslCertificateResponse.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**ChangeLoadBalancedServerInstancesResponse**](changeLoadBalancedServerInstancesResponse.md)
+*[**ChangeLoadBalancedServerInstancesResponse**](ChangeLoadBalancedServerInstancesResponse.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**ChangeLoadBalancerInstanceConfigurationResponse**](changeLoadBalancerInstanceConfigurationResponse.md)
+*[**ChangeLoadBalancerInstanceConfigurationResponse**](ChangeLoadBalancerInstanceConfigurationResponse.md)
 
 ### Authorization
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**CreateLoadBalancerInstanceResponse**](createLoadBalancerInstanceResponse.md)
+*[**CreateLoadBalancerInstanceResponse**](CreateLoadBalancerInstanceResponse.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeleteLoadBalancerInstancesResponse**](deleteLoadBalancerInstancesResponse.md)
+*[**DeleteLoadBalancerInstancesResponse**](DeleteLoadBalancerInstancesResponse.md)
 
 ### Authorization
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeleteLoadBalancerSslCertificateResponse**](deleteLoadBalancerSslCertificateResponse.md)
+*[**DeleteLoadBalancerSslCertificateResponse**](DeleteLoadBalancerSslCertificateResponse.md)
 
 ### Authorization
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetLoadBalancedServerInstanceListResponse**](getLoadBalancedServerInstanceListResponse.md)
+*[**GetLoadBalancedServerInstanceListResponse**](GetLoadBalancedServerInstanceListResponse.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetLoadBalancerInstanceListResponse**](getLoadBalancerInstanceListResponse.md)
+*[**GetLoadBalancerInstanceListResponse**](GetLoadBalancerInstanceListResponse.md)
 
 ### Authorization
 
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetLoadBalancerSslCertificateListResponse**](getLoadBalancerSslCertificateListResponse.md)
+*[**GetLoadBalancerSslCertificateListResponse**](GetLoadBalancerSslCertificateListResponse.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetLoadBalancerTargetServerInstanceListResponse**](getLoadBalancerTargetServerInstanceListResponse.md)
+*[**GetLoadBalancerTargetServerInstanceListResponse**](GetLoadBalancerTargetServerInstanceListResponse.md)
 
 ### Authorization
 

@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**AddNasVolumeAccessControlResponse**](addNasVolumeAccessControlResponse.md)
+*[**AddNasVolumeAccessControlResponse**](AddNasVolumeAccessControlResponse.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**AddPortForwardingRulesResponse**](addPortForwardingRulesResponse.md)
+*[**AddPortForwardingRulesResponse**](AddPortForwardingRulesResponse.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**AssociatePublicIpWithServerInstanceResponse**](associatePublicIpWithServerInstanceResponse.md)
+*[**AssociatePublicIpWithServerInstanceResponse**](AssociatePublicIpWithServerInstanceResponse.md)
 
 ### Authorization
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**AttachBlockStorageInstanceResponse**](attachBlockStorageInstanceResponse.md)
+*[**AttachBlockStorageInstanceResponse**](AttachBlockStorageInstanceResponse.md)
 
 ### Authorization
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**AttachNetworkInterfaceResponse**](attachNetworkInterfaceResponse.md)
+*[**AttachNetworkInterfaceResponse**](AttachNetworkInterfaceResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**ChangeNasVolumeSizeResponse**](changeNasVolumeSizeResponse.md)
+*[**ChangeNasVolumeSizeResponse**](ChangeNasVolumeSizeResponse.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**ChangeServerInstanceSpecResponse**](changeServerInstanceSpecResponse.md)
+*[**ChangeServerInstanceSpecResponse**](ChangeServerInstanceSpecResponse.md)
 
 ### Authorization
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**CreateBlockStorageInstanceResponse**](createBlockStorageInstanceResponse.md)
+*[**CreateBlockStorageInstanceResponse**](CreateBlockStorageInstanceResponse.md)
 
 ### Authorization
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**CreateBlockStorageSnapshotInstanceResponse**](createBlockStorageSnapshotInstanceResponse.md)
+*[**CreateBlockStorageSnapshotInstanceResponse**](CreateBlockStorageSnapshotInstanceResponse.md)
 
 ### Authorization
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**CreateInstanceTagsResponse**](createInstanceTagsResponse.md)
+*[**CreateInstanceTagsResponse**](CreateInstanceTagsResponse.md)
 
 ### Authorization
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**CreateLoginKeyResponse**](createLoginKeyResponse.md)
+*[**CreateLoginKeyResponse**](CreateLoginKeyResponse.md)
 
 ### Authorization
 
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**CreateMemberServerImageResponse**](createMemberServerImageResponse.md)
+*[**CreateMemberServerImageResponse**](CreateMemberServerImageResponse.md)
 
 ### Authorization
 
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**CreateNasVolumeInstanceResponse**](createNasVolumeInstanceResponse.md)
+*[**CreateNasVolumeInstanceResponse**](CreateNasVolumeInstanceResponse.md)
 
 ### Authorization
 
@@ -429,7 +429,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**CreateNetworkInterfaceResponse**](createNetworkInterfaceResponse.md)
+*[**CreateNetworkInterfaceResponse**](CreateNetworkInterfaceResponse.md)
 
 ### Authorization
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**CreatePublicIpInstanceResponse**](createPublicIpInstanceResponse.md)
+*[**CreatePublicIpInstanceResponse**](CreatePublicIpInstanceResponse.md)
 
 ### Authorization
 
@@ -483,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**CreateServerInstancesResponse**](createServerInstancesResponse.md)
+*[**CreateServerInstancesResponse**](CreateServerInstancesResponse.md)
 
 ### Authorization
 
@@ -510,7 +510,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeleteBlockStorageInstancesResponse**](deleteBlockStorageInstancesResponse.md)
+*[**DeleteBlockStorageInstancesResponse**](DeleteBlockStorageInstancesResponse.md)
 
 ### Authorization
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeleteBlockStorageSnapshotInstancesResponse**](deleteBlockStorageSnapshotInstancesResponse.md)
+*[**DeleteBlockStorageSnapshotInstancesResponse**](DeleteBlockStorageSnapshotInstancesResponse.md)
 
 ### Authorization
 
@@ -564,7 +564,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeleteInstanceTagsResponse**](deleteInstanceTagsResponse.md)
+*[**DeleteInstanceTagsResponse**](DeleteInstanceTagsResponse.md)
 
 ### Authorization
 
@@ -591,7 +591,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeleteLoginKeyResponse**](deleteLoginKeyResponse.md)
+*[**DeleteLoginKeyResponse**](DeleteLoginKeyResponse.md)
 
 ### Authorization
 
@@ -618,7 +618,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeleteMemberServerImagesResponse**](deleteMemberServerImagesResponse.md)
+*[**DeleteMemberServerImagesResponse**](DeleteMemberServerImagesResponse.md)
 
 ### Authorization
 
@@ -645,7 +645,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeleteNasVolumeInstanceResponse**](deleteNasVolumeInstanceResponse.md)
+*[**DeleteNasVolumeInstanceResponse**](DeleteNasVolumeInstanceResponse.md)
 
 ### Authorization
 
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeleteNetworkInterfaceResponse**](deleteNetworkInterfaceResponse.md)
+*[**DeleteNetworkInterfaceResponse**](DeleteNetworkInterfaceResponse.md)
 
 ### Authorization
 
@@ -699,7 +699,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeletePortForwardingRulesResponse**](deletePortForwardingRulesResponse.md)
+*[**DeletePortForwardingRulesResponse**](DeletePortForwardingRulesResponse.md)
 
 ### Authorization
 
@@ -726,7 +726,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeletePublicIpInstancesResponse**](deletePublicIpInstancesResponse.md)
+*[**DeletePublicIpInstancesResponse**](DeletePublicIpInstancesResponse.md)
 
 ### Authorization
 
@@ -753,7 +753,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DetachBlockStorageInstancesResponse**](detachBlockStorageInstancesResponse.md)
+*[**DetachBlockStorageInstancesResponse**](DetachBlockStorageInstancesResponse.md)
 
 ### Authorization
 
@@ -780,7 +780,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DetachNetworkInterfaceResponse**](detachNetworkInterfaceResponse.md)
+*[**DetachNetworkInterfaceResponse**](DetachNetworkInterfaceResponse.md)
 
 ### Authorization
 
@@ -807,7 +807,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DisassociatePublicIpFromServerInstanceResponse**](disassociatePublicIpFromServerInstanceResponse.md)
+*[**DisassociatePublicIpFromServerInstanceResponse**](DisassociatePublicIpFromServerInstanceResponse.md)
 
 ### Authorization
 
@@ -834,7 +834,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetAccessControlGroupListResponse**](getAccessControlGroupListResponse.md)
+*[**GetAccessControlGroupListResponse**](GetAccessControlGroupListResponse.md)
 
 ### Authorization
 
@@ -861,7 +861,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetAccessControlGroupServerInstanceListResponse**](getAccessControlGroupServerInstanceListResponse.md)
+*[**GetAccessControlGroupServerInstanceListResponse**](GetAccessControlGroupServerInstanceListResponse.md)
 
 ### Authorization
 
@@ -888,7 +888,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetAccessControlRuleListResponse**](getAccessControlRuleListResponse.md)
+*[**GetAccessControlRuleListResponse**](GetAccessControlRuleListResponse.md)
 
 ### Authorization
 
@@ -915,7 +915,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetBlockStorageInstanceListResponse**](getBlockStorageInstanceListResponse.md)
+*[**GetBlockStorageInstanceListResponse**](GetBlockStorageInstanceListResponse.md)
 
 ### Authorization
 
@@ -942,7 +942,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetBlockStorageSnapshotInstanceListResponse**](getBlockStorageSnapshotInstanceListResponse.md)
+*[**GetBlockStorageSnapshotInstanceListResponse**](GetBlockStorageSnapshotInstanceListResponse.md)
 
 ### Authorization
 
@@ -969,7 +969,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetInstanceTagListResponse**](getInstanceTagListResponse.md)
+*[**GetInstanceTagListResponse**](GetInstanceTagListResponse.md)
 
 ### Authorization
 
@@ -996,7 +996,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetLoginKeyListResponse**](getLoginKeyListResponse.md)
+*[**GetLoginKeyListResponse**](GetLoginKeyListResponse.md)
 
 ### Authorization
 
@@ -1023,7 +1023,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetMemberServerImageListResponse**](getMemberServerImageListResponse.md)
+*[**GetMemberServerImageListResponse**](GetMemberServerImageListResponse.md)
 
 ### Authorization
 
@@ -1050,7 +1050,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetNasVolumeInstanceListResponse**](getNasVolumeInstanceListResponse.md)
+*[**GetNasVolumeInstanceListResponse**](GetNasVolumeInstanceListResponse.md)
 
 ### Authorization
 
@@ -1077,7 +1077,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetNasVolumeInstanceRatingListResponse**](getNasVolumeInstanceRatingListResponse.md)
+*[**GetNasVolumeInstanceRatingListResponse**](GetNasVolumeInstanceRatingListResponse.md)
 
 ### Authorization
 
@@ -1104,7 +1104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetNetworkInterfaceListResponse**](getNetworkInterfaceListResponse.md)
+*[**GetNetworkInterfaceListResponse**](GetNetworkInterfaceListResponse.md)
 
 ### Authorization
 
@@ -1131,7 +1131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetPortForwardingRuleListResponse**](getPortForwardingRuleListResponse.md)
+*[**GetPortForwardingRuleListResponse**](GetPortForwardingRuleListResponse.md)
 
 ### Authorization
 
@@ -1158,7 +1158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetPrivateSubnetInstanceListResponse**](getPrivateSubnetInstanceListResponse.md)
+*[**GetPrivateSubnetInstanceListResponse**](GetPrivateSubnetInstanceListResponse.md)
 
 ### Authorization
 
@@ -1185,7 +1185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetPublicIpInstanceListResponse**](getPublicIpInstanceListResponse.md)
+*[**GetPublicIpInstanceListResponse**](GetPublicIpInstanceListResponse.md)
 
 ### Authorization
 
@@ -1212,7 +1212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetPublicIpTargetServerInstanceListResponse**](getPublicIpTargetServerInstanceListResponse.md)
+*[**GetPublicIpTargetServerInstanceListResponse**](GetPublicIpTargetServerInstanceListResponse.md)
 
 ### Authorization
 
@@ -1239,7 +1239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetRaidListResponse**](getRaidListResponse.md)
+*[**GetRaidListResponse**](GetRaidListResponse.md)
 
 ### Authorization
 
@@ -1266,7 +1266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetRegionListResponse**](getRegionListResponse.md)
+*[**GetRegionListResponse**](GetRegionListResponse.md)
 
 ### Authorization
 
@@ -1293,7 +1293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetRootPasswordResponse**](getRootPasswordResponse.md)
+*[**GetRootPasswordResponse**](GetRootPasswordResponse.md)
 
 ### Authorization
 
@@ -1320,7 +1320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetServerImageProductListResponse**](getServerImageProductListResponse.md)
+*[**GetServerImageProductListResponse**](GetServerImageProductListResponse.md)
 
 ### Authorization
 
@@ -1347,7 +1347,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetServerInstanceListResponse**](getServerInstanceListResponse.md)
+*[**GetServerInstanceListResponse**](GetServerInstanceListResponse.md)
 
 ### Authorization
 
@@ -1374,7 +1374,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetServerProductListResponse**](getServerProductListResponse.md)
+*[**GetServerProductListResponse**](GetServerProductListResponse.md)
 
 ### Authorization
 
@@ -1401,7 +1401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetZoneListResponse**](getZoneListResponse.md)
+*[**GetZoneListResponse**](GetZoneListResponse.md)
 
 ### Authorization
 
@@ -1428,7 +1428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**ImportLoginKeyResponse**](importLoginKeyResponse.md)
+*[**ImportLoginKeyResponse**](ImportLoginKeyResponse.md)
 
 ### Authorization
 
@@ -1455,7 +1455,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**RebootServerInstancesResponse**](rebootServerInstancesResponse.md)
+*[**RebootServerInstancesResponse**](RebootServerInstancesResponse.md)
 
 ### Authorization
 
@@ -1482,7 +1482,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**RecreateServerInstanceResponse**](recreateServerInstanceResponse.md)
+*[**RecreateServerInstanceResponse**](RecreateServerInstanceResponse.md)
 
 ### Authorization
 
@@ -1509,7 +1509,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**RemoveNasVolumeAccessControlResponse**](removeNasVolumeAccessControlResponse.md)
+*[**RemoveNasVolumeAccessControlResponse**](RemoveNasVolumeAccessControlResponse.md)
 
 ### Authorization
 
@@ -1536,7 +1536,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**SetNasVolumeAccessControlResponse**](setNasVolumeAccessControlResponse.md)
+*[**SetNasVolumeAccessControlResponse**](SetNasVolumeAccessControlResponse.md)
 
 ### Authorization
 
@@ -1563,7 +1563,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**StartServerInstancesResponse**](startServerInstancesResponse.md)
+*[**StartServerInstancesResponse**](StartServerInstancesResponse.md)
 
 ### Authorization
 
@@ -1590,7 +1590,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**StopServerInstancesResponse**](stopServerInstancesResponse.md)
+*[**StopServerInstancesResponse**](StopServerInstancesResponse.md)
 
 ### Authorization
 
@@ -1617,7 +1617,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**TerminateServerInstancesResponse**](terminateServerInstancesResponse.md)
+*[**TerminateServerInstancesResponse**](TerminateServerInstancesResponse.md)
 
 ### Authorization
 
