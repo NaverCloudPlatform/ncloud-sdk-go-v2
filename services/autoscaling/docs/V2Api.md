@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**CreateAutoScalingGroupResponse**](createAutoScalingGroupResponse.md)
+*[**CreateAutoScalingGroupResponse**](CreateAutoScalingGroupResponse.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**CreateLaunchConfigurationResponse**](createLaunchConfigurationResponse.md)
+*[**CreateLaunchConfigurationResponse**](CreateLaunchConfigurationResponse.md)
 
 ### Authorization
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeleteAutoScalingGroupResponse**](deleteAutoScalingGroupResponse.md)
+*[**DeleteAutoScalingGroupResponse**](DeleteAutoScalingGroupResponse.md)
 
 ### Authorization
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeleteAutoScalingLaunchConfigurationRequest**](deleteAutoScalingLaunchConfigurationRequest.md)
+*[**DeleteAutoScalingLaunchConfigurationRequest**](DeleteAutoScalingLaunchConfigurationRequest.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeletePolicyResponse**](deletePolicyResponse.md)
+*[**DeletePolicyResponse**](DeletePolicyResponse.md)
 
 ### Authorization
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeleteScheduledActionResponse**](deleteScheduledActionResponse.md)
+*[**DeleteScheduledActionResponse**](DeleteScheduledActionResponse.md)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**ExecutePolicyResponse**](executePolicyResponse.md)
+*[**ExecutePolicyResponse**](ExecutePolicyResponse.md)
 
 ### Authorization
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetAdjustmentTypeListResponse**](getAdjustmentTypeListResponse.md)
+*[**GetAdjustmentTypeListResponse**](GetAdjustmentTypeListResponse.md)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetAutoScalingActivityLogListResponse**](getAutoScalingActivityLogListResponse.md)
+*[**GetAutoScalingActivityLogListResponse**](GetAutoScalingActivityLogListResponse.md)
 
 ### Authorization
 
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetAutoScalingConfigurationLogListResponse**](getAutoScalingConfigurationLogListResponse.md)
+*[**GetAutoScalingConfigurationLogListResponse**](GetAutoScalingConfigurationLogListResponse.md)
 
 ### Authorization
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetAutoScalingGroupListResponse**](getAutoScalingGroupListResponse.md)
+*[**GetAutoScalingGroupListResponse**](GetAutoScalingGroupListResponse.md)
 
 ### Authorization
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetAutoScalingPolicyListResponse**](getAutoScalingPolicyListResponse.md)
+*[**GetAutoScalingPolicyListResponse**](GetAutoScalingPolicyListResponse.md)
 
 ### Authorization
 
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetLaunchConfigurationListResponse**](getLaunchConfigurationListResponse.md)
+*[**GetLaunchConfigurationListResponse**](GetLaunchConfigurationListResponse.md)
 
 ### Authorization
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetScalingProcessTypeListResponse**](getScalingProcessTypeListResponse.md)
+*[**GetScalingProcessTypeListResponse**](GetScalingProcessTypeListResponse.md)
 
 ### Authorization
 
@@ -421,7 +421,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetScheduledActionListResponse**](getScheduledActionListResponse.md)
+*[**GetScheduledActionListResponse**](GetScheduledActionListResponse.md)
 
 ### Authorization
 
@@ -448,7 +448,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**PutScalingPolicyResponse**](putScalingPolicyResponse.md)
+*[**PutScalingPolicyResponse**](PutScalingPolicyResponse.md)
 
 ### Authorization
 
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**PutScheduledUpdateGroupActionResponse**](putScheduledUpdateGroupActionResponse.md)
+*[**PutScheduledUpdateGroupActionResponse**](PutScheduledUpdateGroupActionResponse.md)
 
 ### Authorization
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**ResumeProcessesResponse**](resumeProcessesResponse.md)
+*[**ResumeProcessesResponse**](ResumeProcessesResponse.md)
 
 ### Authorization
 
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**SetDesiredCapacityResponse**](setDesiredCapacityResponse.md)
+*[**SetDesiredCapacityResponse**](SetDesiredCapacityResponse.md)
 
 ### Authorization
 
@@ -556,7 +556,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**SetServerInstanceHealthResponse**](setServerInstanceHealthResponse.md)
+*[**SetServerInstanceHealthResponse**](SetServerInstanceHealthResponse.md)
 
 ### Authorization
 
@@ -583,7 +583,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**SuspendProcessesResponse**](suspendProcessesResponse.md)
+*[**SuspendProcessesResponse**](SuspendProcessesResponse.md)
 
 ### Authorization
 
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**TerminateServerInstanceInAutoScalingGroupResponse**](terminateServerInstanceInAutoScalingGroupResponse.md)
+*[**TerminateServerInstanceInAutoScalingGroupResponse**](TerminateServerInstanceInAutoScalingGroupResponse.md)
 
 ### Authorization
 
@@ -637,7 +637,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**UpdateAutoScalingGroupResponse**](updateAutoScalingGroupResponse.md)
+*[**UpdateAutoScalingGroupResponse**](UpdateAutoScalingGroupResponse.md)
 
 ### Authorization
 

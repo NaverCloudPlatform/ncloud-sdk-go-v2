@@ -26,7 +26,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetCdnPlusInstanceListResponse**](getCdnPlusInstanceListResponse.md)
+*[**GetCdnPlusInstanceListResponse**](GetCdnPlusInstanceListResponse.md)
 
 ### Authorization
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetCdnPlusPurgeHistoryListResponse**](getCdnPlusPurgeHistoryListResponse.md)
+*[**GetCdnPlusPurgeHistoryListResponse**](GetCdnPlusPurgeHistoryListResponse.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetGlobalCdnInstanceListResponse**](getGlobalCdnInstanceListResponse.md)
+*[**GetGlobalCdnInstanceListResponse**](GetGlobalCdnInstanceListResponse.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetGlobalCdnPurgeHistoryListResponse**](getGlobalCdnPurgeHistoryListResponse.md)
+*[**GetGlobalCdnPurgeHistoryListResponse**](GetGlobalCdnPurgeHistoryListResponse.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**RequestCdnPlusPurgeResponse**](requestCdnPlusPurgeResponse.md)
+*[**RequestCdnPlusPurgeResponse**](RequestCdnPlusPurgeResponse.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**RequestGlobalCdnPurgeResponse**](requestGlobalCdnPurgeResponse.md)
+*[**RequestGlobalCdnPurgeResponse**](RequestGlobalCdnPurgeResponse.md)
 
 ### Authorization
 

@@ -36,7 +36,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**CreateCloudDbInstanceResponse**](createCloudDBInstanceResponse.md)
+*[**CreateCloudDbInstanceResponse**](CreateCloudDbInstanceResponse.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DeleteCloudDbServerInstanceResponse**](deleteCloudDBServerInstanceResponse.md)
+*[**DeleteCloudDbServerInstanceResponse**](DeleteCloudDbServerInstanceResponse.md)
 
 ### Authorization
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**DownloadDmsFileResponse**](downloadDmsFileResponse.md)
+*[**DownloadDmsFileResponse**](DownloadDmsFileResponse.md)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**FlushCloudDbInstanceResponse**](flushCloudDBInstanceResponse.md)
+*[**FlushCloudDbInstanceResponse**](FlushCloudDbInstanceResponse.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetBackupListResponse**](getBackupListResponse.md)
+*[**GetBackupListResponse**](GetBackupListResponse.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetCloudDbConfigGroupListResponse**](getCloudDBConfigGroupListResponse.md)
+*[**GetCloudDbConfigGroupListResponse**](GetCloudDbConfigGroupListResponse.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetCloudDbImageProductListResponse**](getCloudDBImageProductListResponse.md)
+*[**GetCloudDbImageProductListResponse**](GetCloudDbImageProductListResponse.md)
 
 ### Authorization
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetCloudDbInstanceListResponse**](getCloudDBInstanceListResponse.md)
+*[**GetCloudDbInstanceListResponse**](GetCloudDbInstanceListResponse.md)
 
 ### Authorization
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetCloudDbProductListResponse**](getCloudDBProductListResponse.md)
+*[**GetCloudDbProductListResponse**](GetCloudDbProductListResponse.md)
 
 ### Authorization
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetDmsOperationResponse**](getDmsOperationResponse.md)
+*[**GetDmsOperationResponse**](GetDmsOperationResponse.md)
 
 ### Authorization
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**GetObjectStorageBackupListResponse**](getObjectStorageBackupListResponse.md)
+*[**GetObjectStorageBackupListResponse**](GetObjectStorageBackupListResponse.md)
 
 ### Authorization
 
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**RebootCloudDbServerInstanceResponse**](rebootCloudDBServerInstanceResponse.md)
+*[**RebootCloudDbServerInstanceResponse**](RebootCloudDbServerInstanceResponse.md)
 
 ### Authorization
 
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**RestoreDmsDatabaseResponse**](restoreDmsDatabaseResponse.md)
+*[**RestoreDmsDatabaseResponse**](RestoreDmsDatabaseResponse.md)
 
 ### Authorization
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**RestoreDmsTransactionLogResponse**](restoreDmsTransactionLogResponse.md)
+*[**RestoreDmsTransactionLogResponse**](RestoreDmsTransactionLogResponse.md)
 
 ### Authorization
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**SetObjectStorageInfoResponse**](setObjectStorageInfoResponse.md)
+*[**SetObjectStorageInfoResponse**](SetObjectStorageInfoResponse.md)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-*[**UploadDmsFileResponse**](uploadDmsFileResponse.md)
+*[**UploadDmsFileResponse**](UploadDmsFileResponse.md)
 
 ### Authorization
 
