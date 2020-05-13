@@ -37,6 +37,7 @@ Method | HTTP request | Description
 [**GetAccessControlRuleList**](V2Api.md#GetAccessControlRuleList) | **Post** /getAccessControlRuleList | 
 [**GetBlockStorageInstanceList**](V2Api.md#GetBlockStorageInstanceList) | **Post** /getBlockStorageInstanceList | 
 [**GetBlockStorageSnapshotInstanceList**](V2Api.md#GetBlockStorageSnapshotInstanceList) | **Post** /getBlockStorageSnapshotInstanceList | 
+[**GetInitScriptList**](V2Api.md#GetInitScriptList) | **Post** /getInitScriptList | 
 [**GetInstanceTagList**](V2Api.md#GetInstanceTagList) | **Post** /getInstanceTagList | 
 [**GetLoginKeyList**](V2Api.md#GetLoginKeyList) | **Post** /getLoginKeyList | 
 [**GetMemberServerImageList**](V2Api.md#GetMemberServerImageList) | **Post** /getMemberServerImageList | 
@@ -50,6 +51,7 @@ Method | HTTP request | Description
 [**GetRaidList**](V2Api.md#GetRaidList) | **Post** /getRaidList | 
 [**GetRegionList**](V2Api.md#GetRegionList) | **Post** /getRegionList | 
 [**GetRootPassword**](V2Api.md#GetRootPassword) | **Post** /getRootPassword | 
+[**GetRootPasswordServerInstanceList**](V2Api.md#GetRootPasswordServerInstanceList) | **Post** /getRootPasswordServerInstanceList | 
 [**GetServerImageProductList**](V2Api.md#GetServerImageProductList) | **Post** /getServerImageProductList | 
 [**GetServerInstanceList**](V2Api.md#GetServerInstanceList) | **Post** /getServerInstanceList | 
 [**GetServerProductList**](V2Api.md#GetServerProductList) | **Post** /getServerProductList | 
@@ -58,6 +60,7 @@ Method | HTTP request | Description
 [**RebootServerInstances**](V2Api.md#RebootServerInstances) | **Post** /rebootServerInstances | 
 [**RecreateServerInstance**](V2Api.md#RecreateServerInstance) | **Post** /recreateServerInstance | 
 [**RemoveNasVolumeAccessControl**](V2Api.md#RemoveNasVolumeAccessControl) | **Post** /removeNasVolumeAccessControl | 
+[**ReplaceServerInstanceAssociatedWithPublicIp**](V2Api.md#ReplaceServerInstanceAssociatedWithPublicIp) | **Post** /replaceServerInstanceAssociatedWithPublicIp | 
 [**SetNasVolumeAccessControl**](V2Api.md#SetNasVolumeAccessControl) | **Post** /setNasVolumeAccessControl | 
 [**StartServerInstances**](V2Api.md#StartServerInstances) | **Post** /startServerInstances | 
 [**StopServerInstances**](V2Api.md#StopServerInstances) | **Post** /stopServerInstances | 
@@ -955,6 +958,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetInitScriptList**
+> GetInitScriptListResponse GetInitScriptList(getInitScriptListRqeust)
+
+
+초기화스크립트리스트조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getInitScriptListRqeust** | **[\*GetInitScriptListRequest](GetInitScriptListRequest.md)** | getInitScriptListRqeust | 
+
+### Return type
+
+*[**GetInitScriptListResponse**](GetInitScriptListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetInstanceTagList**
 > GetInstanceTagListResponse GetInstanceTagList(getInstanceTagListRequest)
 
@@ -1306,6 +1336,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetRootPasswordServerInstanceList**
+> GetRootPasswordServerInstanceListResponse GetRootPasswordServerInstanceList(getRootPasswordServerInstanceListRequest)
+
+
+루트패스워드서버인스턴스리스트조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getRootPasswordServerInstanceListRequest** | **[\*GetRootPasswordServerInstanceListRequest](GetRootPasswordServerInstanceListRequest.md)** | getRootPasswordServerInstanceListRequest | 
+
+### Return type
+
+*[**GetRootPasswordServerInstanceListResponse**](GetRootPasswordServerInstanceListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetServerImageProductList**
 > GetServerImageProductListResponse GetServerImageProductList(getServerImageProductListRequest)
 
@@ -1510,6 +1567,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**RemoveNasVolumeAccessControlResponse**](RemoveNasVolumeAccessControlResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ReplaceServerInstanceAssociatedWithPublicIp**
+> ReplaceServerInstanceAssociatedWithPublicIpResponse ReplaceServerInstanceAssociatedWithPublicIp(replaceServerInstanceAssociatedWithPublicIpRequest)
+
+
+공인IP서버인스턴스교체
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**replaceServerInstanceAssociatedWithPublicIpRequest** | **[\*ReplaceServerInstanceAssociatedWithPublicIpRequest](ReplaceServerInstanceAssociatedWithPublicIpRequest.md)** | replaceServerInstanceAssociatedWithPublicIpRequest | 
+
+### Return type
+
+*[**ReplaceServerInstanceAssociatedWithPublicIpResponse**](ReplaceServerInstanceAssociatedWithPublicIpResponse.md)
 
 ### Authorization
 

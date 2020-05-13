@@ -15,10 +15,12 @@ Name | Type | Description | Notes
 **InternetLineTypeCode** | ***string** | 인터넷라인구분코드 | [optional] [default to null]
 **FeeSystemTypeCode** | ***string** | 요금제구분코드 | [optional] [default to null]
 **UserData** | ***string** | 사용자데이터 | [optional] [default to null]
+**InitScriptNo** | ***string** | 초기화스크립트번호 | [optional] [default to null]
 **ZoneNo** | ***string** | ZONE번호 | [optional] [default to null]
 **AccessControlGroupConfigurationNoList** | **[]\*string** | ACG설정번호리스트 | [optional] [default to null]
 **RaidTypeName** | ***string** | RAID구분이름 | [optional] [default to null]
 **InstanceTagList** | **[[]\*InstanceTagParameter](InstanceTagParameter.md)** | 인스턴스태그리스트 | [optional] [default to null]
+**IsVaccineInstall** | ***bool** | 백신설치여부 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
