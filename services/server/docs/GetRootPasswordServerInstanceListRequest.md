@@ -1,0 +1,10 @@
+# GetRootPasswordServerInstanceListRequest
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**RootPasswordServerInstanceList** | **[[]\*RootPasswordServerInstanceParameter](RootPasswordServerInstanceParameter.md)** | 인스턴스태그리스트 | [default to null]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

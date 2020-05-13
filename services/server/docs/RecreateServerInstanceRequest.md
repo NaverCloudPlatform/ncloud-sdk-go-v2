@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ServerImageProductCode** | ***string** | 서버이미지상품코드 | [optional] [default to null]
 **UserData** | ***string** | 사용자데이터 | [optional] [default to null]
 **InstanceTagList** | **[[]\*InstanceTagParameter](InstanceTagParameter.md)** | 인스턴스태그리스트 | [optional] [default to null]
+**IsVaccineInstall** | ***bool** | 백신설치여부 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
