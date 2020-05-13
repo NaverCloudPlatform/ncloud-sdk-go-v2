@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **InstanceNo** | ***string** |  | [optional] [default to null]
-**DataPointsList** | **[[]\*DataPoints](DataPoints.md)** |  | [optional] [default to null]
+**DataPoints** | **[[]\*DataPoints](DataPoints.md)** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
