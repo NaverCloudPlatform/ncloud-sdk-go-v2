@@ -12,7 +12,7 @@ Method | HTTP request | Description
 > GetListMetricsResponse GetListMetrics(getListMetricsRequest)
 
 
-A.메트릭 통계 조회
+B.메트릭 리스트 조회
 
 ### Required Parameters
 
