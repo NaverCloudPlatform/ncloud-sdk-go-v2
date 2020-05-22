@@ -1,4 +1,4 @@
-# GetMetricStatisticsRequest
+# GetMetricStatisticListRequest
 
 ## Properties
 Name | Type | Description | Notes
