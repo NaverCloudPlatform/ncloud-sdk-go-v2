@@ -5,14 +5,14 @@ All URIs are relative to *https://ncloud.apigw.ntruss.com/monitoring/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetListMetrics**](V2Api.md#GetListMetrics) | **Post** /getListMetrics | 
-[**GetMetricStatistics**](V2Api.md#GetMetricStatistics) | **Post** /getMetricStatistics | 
+[**GetMetricStatisticList**](V2Api.md#GetMetricStatisticList) | **Post** /getMetricStatisticList | 
 
 
 # **GetListMetrics**
 > GetListMetricsResponse GetListMetrics(getListMetricsRequest)
 
 
-B.메트릭 리스트 조회
+A.메트릭 통계 조회
 
 ### Required Parameters
 
@@ -35,8 +35,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetMetricStatistics**
-> GetMetricStatisticsResponse GetMetricStatistics(getMetricStatisticsRequest)
+# **GetMetricStatisticList**
+> GetMetricStatisticListResponse GetMetricStatisticList(getMetricStatisticListRequest)
 
 
 A.메트릭 통계 조회
@@ -45,11 +45,11 @@ A.메트릭 통계 조회
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**getMetricStatisticsRequest** | **[\*GetMetricStatisticsRequest](GetMetricStatisticsRequest.md)** | getMetricStatisticsRequest | 
+**getMetricStatisticListRequest** | **[\*GetMetricStatisticListRequest](GetMetricStatisticListRequest.md)** | getMetricStatisticListRequest | 
 
 ### Return type
 
-*[**GetMetricStatisticsResponse**](GetMetricStatisticsResponse.md)
+*[**GetMetricStatisticListResponse**](GetMetricStatisticListResponse.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
