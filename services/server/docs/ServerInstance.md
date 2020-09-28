@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **Zone** | **[*Zone](Zone.md)** | Zone | [optional] [default to null]
 **Region** | **[*Region](Region.md)** | 리전 | [optional] [default to null]
 **BaseBlockStorageDiskType** | **[*CommonCode](CommonCode.md)** | 기본블록스토리지디스크유형 | [optional] [default to null]
-**BaseBlockStroageDiskDetailType** | **[*CommonCode](CommonCode.md)** | 기본블록스토리지디스크상세유형 | [optional] [default to null]
+**BaseBlockStorageDiskDetailType** | **[*CommonCode](CommonCode.md)** | 기본블록스토리지디스크상세유형 | [optional] [default to null]
 **InternetLineType** | **[*CommonCode](CommonCode.md)** | 인터넷라인구분 | [optional] [default to null]
 **ServerInstanceType** | **[*CommonCode](CommonCode.md)** | 서버인스턴스구분 | [optional] [default to null]
 **UserData** | ***string** | 사용자데이타 | [optional] [default to null]
