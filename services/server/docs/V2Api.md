@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**AssociatePublicIpWithServerInstance**](V2Api.md#AssociatePublicIpWithServerInstance) | **Post** /associatePublicIpWithServerInstance | 
 [**AttachBlockStorageInstance**](V2Api.md#AttachBlockStorageInstance) | **Post** /attachBlockStorageInstance | 
 [**AttachNetworkInterface**](V2Api.md#AttachNetworkInterface) | **Post** /attachNetworkInterface | 
+[**ChangeBlockStorageVolumeSize**](V2Api.md#ChangeBlockStorageVolumeSize) | **Post** /changeBlockStorageVolumeSize | 
 [**ChangeNasVolumeSize**](V2Api.md#ChangeNasVolumeSize) | **Post** /changeNasVolumeSize | 
 [**ChangeServerInstanceSpec**](V2Api.md#ChangeServerInstanceSpec) | **Post** /changeServerInstanceSpec | 
 [**CreateBlockStorageInstance**](V2Api.md#CreateBlockStorageInstance) | **Post** /createBlockStorageInstance | 
@@ -190,6 +191,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**AttachNetworkInterfaceResponse**](AttachNetworkInterfaceResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ChangeBlockStorageVolumeSize**
+> ChangeBlockStorageVolumeSizeResponse ChangeBlockStorageVolumeSize(changeBlockStorageVolumeSizeRequest)
+
+
+블록스토리지볼륨사이즈변경
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**changeBlockStorageVolumeSizeRequest** | **[\*ChangeBlockStorageVolumeSizeRequest](ChangeBlockStorageVolumeSizeRequest.md)** | changeBlockStorageVolumeSizeRequest | 
+
+### Return type
+
+*[**ChangeBlockStorageVolumeSizeResponse**](ChangeBlockStorageVolumeSizeResponse.md)
 
 ### Authorization
 
