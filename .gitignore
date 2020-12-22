@@ -27,3 +27,5 @@ _testmain.go
 vendor/github.com
 vendor/golang.org
 vendor/gopkg.in
+
+.idea

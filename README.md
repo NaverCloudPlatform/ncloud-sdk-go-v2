@@ -23,7 +23,6 @@ import (
 func main() {
 
 	apiKeys := ncloud.Keys()
-
 	client := server.NewAPIClient(server.NewConfiguration(apiKeys))
 
 	// Create server instance
@@ -46,6 +45,13 @@ func main() {
 	}
 }
 ```
+
+If credentials (apiKeys) are not specified, the default credential provider chain is used. The default credential provider chain looks for credentials in the following order:
+ 
+1. Environment Variable: Use the NCLOUD_ACCESS_KEY_ID (or NCLOUD_ACCESS_KEY) and NCLOUD_SECRET_KEY (or NCLOUD_SECRET_ACCESS_KEY) environment variables. 
+2. Config file: Use configuration file. The path to the configuration file is .ncloud/configure in the HOME directory.
+3. Server Role: Used on VPC Server instances, and delivered through the ncloud metadata api. Server Role can be set in the NCP Sub Account console.
+
 
 ## Documentation for individual modules
 

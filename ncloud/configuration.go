@@ -2,6 +2,7 @@ package ncloud
 
 import (
 	"bufio"
+	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/ncloud/credentials"
 	"log"
 	"net/http"
 	"os"
@@ -23,8 +24,10 @@ type Configuration struct {
 	UserAgent     string            `json:"userAgent,omitempty"`
 	HTTPClient    *http.Client
 	APIKey        *APIKey
+	Credentials   *credentials.Credentials
 }
 
+// Keys This is for backward compatibility. Will be deprecated soon.
 func Keys() *APIKey {
 	apiKey := &APIKey{
 		AccessKey: "",
@@ -72,4 +75,23 @@ func Keys() *APIKey {
 
 func (c *Configuration) AddDefaultHeader(key string, value string) {
 	c.DefaultHeader[key] = value
+}
+
+func (c *Configuration) GetCredentials() *credentials.Credentials {
+	if c.ValidCredentials() {
+		return c.Credentials.Retrieve()
+	}
+	return nil
+}
+
+func (c *Configuration) ValidCredentials() bool {
+	return c.Credentials != nil && c.Credentials.Valid()
+}
+
+func (c *Configuration) InitCredentials() {
+	if c.APIKey != nil {
+		c.Credentials = credentials.NewValueProviderCreds(c.APIKey.AccessKey, c.APIKey.SecretKey)
+	} else if !c.ValidCredentials() {
+		c.Credentials = credentials.LoadCredentials(credentials.DefaultCredentialsChain())
+	}
 }
