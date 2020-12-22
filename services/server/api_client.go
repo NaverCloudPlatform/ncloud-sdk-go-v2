@@ -59,6 +59,7 @@ func NewAPIClient(cfg *ncloud.Configuration) *APIClient {
 
 	c := &APIClient{}
 	c.cfg = cfg
+	c.cfg.InitCredentials()
 	c.common.client = c
 
 	// API Services
@@ -263,13 +264,13 @@ func (c *APIClient) prepareRequest(
 	localVarRequest.Header.Add("User-Agent", c.cfg.UserAgent)
 
 	// APIKey Authentication
-	if auth := c.cfg.APIKey; auth != nil {
+	if auth := c.cfg.GetCredentials(); auth != nil {
 		timestamp := strconv.FormatInt(time.Now().UnixNano()/int64(time.Millisecond), 10)
-		signer := hmac.NewSigner(auth.SecretKey, crypto.SHA256)
-		signature, _ := signer.Sign(method, path, auth.AccessKey, timestamp)
+		signer := hmac.NewSigner(auth.SecretKey(), crypto.SHA256)
+		signature, _ := signer.Sign(method, path, auth.AccessKey(), timestamp)
 
 		localVarRequest.Header.Add("x-ncp-apigw-timestamp", timestamp)
-		localVarRequest.Header.Add("x-ncp-iam-access-key", auth.AccessKey)
+		localVarRequest.Header.Add("x-ncp-iam-access-key", auth.AccessKey())
 		localVarRequest.Header.Add("x-ncp-apigw-signature-v1", signature)
 	}
 

@@ -24,4 +24,7 @@ ExclusionProductCode *string `json:"exclusionProductCode,omitempty"`
 
 	// 상품코드
 ProductCode *string `json:"productCode,omitempty"`
+
+	// 세대코드
+GenerationCode *string `json:"generationCode,omitempty"`
 }

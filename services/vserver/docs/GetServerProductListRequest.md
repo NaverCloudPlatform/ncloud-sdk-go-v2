@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ServerImageProductCode** | ***string** | 서버이미지상품코드 | [default to null]
 **ExclusionProductCode** | ***string** | 제외할상품코드 | [optional] [default to null]
 **ProductCode** | ***string** | 상품코드 | [optional] [default to null]
+**GenerationCode** | ***string** | 세대코드 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
