@@ -18,5 +18,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-LaunchConfiguration []*LaunchConfiguration `json:"launchConfiguration,omitempty"`
+LaunchConfigurationList []*LaunchConfiguration `json:"LaunchConfigurationList,omitempty"`
 }
