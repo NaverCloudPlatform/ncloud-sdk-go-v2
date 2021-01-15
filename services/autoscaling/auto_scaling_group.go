@@ -11,6 +11,9 @@ package autoscaling
 
 type AutoScalingGroup struct {
 
+	// 오토스케일링그룹번호
+AutoScalingGroupNo *string `json:"autoScalingGroupNo,omitempty"`
+
 	// 오토스케일링그룹명
 AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`
 
