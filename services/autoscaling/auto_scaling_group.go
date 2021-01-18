@@ -20,6 +20,8 @@ AutoScalingGroupName *string `json:"autoScalingGroupName,omitempty"`
 	// 론치설정명
 LaunchConfigurationName *string `json:"launchConfigurationName,omitempty"`
 
+LaunchConfigurationNo *string `json:"launchConfigurationNo,omitempty"`
+
 	// 기대능력치
 DesiredCapacity *int32 `json:"desiredCapacity,omitempty"`
 
