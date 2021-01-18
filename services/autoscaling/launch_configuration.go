@@ -11,6 +11,8 @@ package autoscaling
 
 type LaunchConfiguration struct {
 
+LaunchConfigurationNo *string `json:"launchConfigurationNo,omitempty"`
+
 	// 론치설정명
 LaunchConfigurationName *string `json:"launchConfigurationName,omitempty"`
 
