@@ -23,13 +23,16 @@ func (c contextKey) String() string {
 	return "auth " + string(c)
 }
 
-func NewConfiguration(apiKey *ncloud.APIKey) *ncloud.Configuration {
+func NewConfiguration(apiKeys ...*ncloud.APIKey) *ncloud.Configuration {
 	cfg := &ncloud.Configuration{
 		BasePath:      "https://ncloud.apigw.ntruss.com/vautoscaling/v2",
 		DefaultHeader: make(map[string]string),
 		UserAgent:     "vautoscaling/1.1.1/go",
-		APIKey:        apiKey,
 	}
+	if len(apiKeys) > 0 {
+		cfg.APIKey = apiKeys[0]
+	}
+	cfg.InitCredentials()
 	if os.Getenv("NCLOUD_API_GW") != "" {
 		cfg.BasePath = os.Getenv("NCLOUD_API_GW") + "/vautoscaling/v2"
 	}
