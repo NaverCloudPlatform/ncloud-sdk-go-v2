@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **IsEventConfiguration** | ***bool** | 이벤트설정여부 | [optional] [default to null]
 **Region** | **[*Region](Region.md)** | 리전 | [optional] [default to null]
 **Zone** | **[*Zone](Zone.md)** | ZONE | [optional] [default to null]
+**IsReturnProtection** | ***bool** | 반납보호여부 | [optional] [default to null]
 **NasVolumeInstanceCustomIpList** | **[[]\*NasVolumeInstanceCustomIp](NasVolumeInstanceCustomIp.md)** | NAS볼륨커스텀IP리스트 | [optional] [default to null]
 **NasVolumeServerInstanceList** | **[[]\*ServerInstance](ServerInstance.md)** | NAS볼륨서버인스턴스리스트 | [optional] [default to null]
 

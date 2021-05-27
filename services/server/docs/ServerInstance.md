@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **UserData** | ***string** | 사용자데이타 | [optional] [default to null]
 **AccessControlGroupList** | **[[]\*AccessControlGroup](AccessControlGroup.md)** | ACG리스트 | [optional] [default to null]
 **InstanceTagList** | **[[]\*InstanceTag](InstanceTag.md)** | 인스턴스태그리스트 | [optional] [default to null]
+**BlockDevicePartitionList** | **[[]\*BlockDevicePartition](BlockDevicePartition.md)** | 블록디바이스파티션리스트 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

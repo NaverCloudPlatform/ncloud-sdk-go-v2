@@ -39,4 +39,7 @@ RegionNo *string `json:"regionNo,omitempty"`
 
 	// ZONE번호
 ZoneNo *string `json:"zoneNo,omitempty"`
+
+	// 반납보호여부
+IsReturnProtection *bool `json:"isReturnProtection,omitempty"`
 }

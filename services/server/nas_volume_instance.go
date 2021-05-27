@@ -79,6 +79,9 @@ Region *Region `json:"region,omitempty"`
 	// ZONE
 Zone *Zone `json:"zone,omitempty"`
 
+	// 반납보호여부
+IsReturnProtection *bool `json:"isReturnProtection,omitempty"`
+
 	// NAS볼륨커스텀IP리스트
 NasVolumeInstanceCustomIpList []*NasVolumeInstanceCustomIp `json:"nasVolumeInstanceCustomIpList,omitempty"`
 

@@ -63,4 +63,7 @@ InstanceTagList []*InstanceTagParameter `json:"instanceTagList,omitempty"`
 
 	// 백신설치여부
 IsVaccineInstall *bool `json:"isVaccineInstall,omitempty"`
+
+	// 블록디바이스파티션리스트
+BlockDevicePartitionList []*BlockDevicePartition `json:"blockDevicePartitionList,omitempty"`
 }

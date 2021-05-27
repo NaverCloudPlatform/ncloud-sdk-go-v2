@@ -105,4 +105,7 @@ AccessControlGroupList []*AccessControlGroup `json:"accessControlGroupList,omite
 
 	// 인스턴스태그리스트
 InstanceTagList []*InstanceTag `json:"instanceTagList,omitempty"`
+
+	// 블록디바이스파티션리스트
+BlockDevicePartitionList []*BlockDevicePartition `json:"blockDevicePartitionList,omitempty"`
 }
