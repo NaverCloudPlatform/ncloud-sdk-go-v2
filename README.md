@@ -66,7 +66,7 @@ If credentials (apiKeys) are not specified, the default credential provider chai
 | _Server(VPC)_      | [**Server(VPC)**](services/vserver/README.md)           |
 | _VPC_      | [**VPC**](services/vpc/README.md)           |
 | _Nas(VPC)_      | [**Nas(VPC)**](services/vnas/README.md)           |
-| _Autoscaling(VPC)_      | [**AutoscalingVPC**](services/vautoscaling/README.md)           |
+| _Autoscaling(VPC)_      | [**Autoscaling(VPC)**](services/vautoscaling/README.md)           |
 | _Loadbalancer(VPC)_      | [**Loadbalancer(VPC)**](services/vloadbalancer/README.md)           |
 
 ### License
