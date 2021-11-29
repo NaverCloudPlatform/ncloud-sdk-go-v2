@@ -10,6 +10,9 @@ package autoscaling
 
 type LaunchConfiguration struct {
 
+	// 론치설정번호
+LaunchConfigurationNo *string `json:"launchConfigurationNo,omitempty"`
+
 	// 론치설정명
 LaunchConfigurationName *string `json:"launchConfigurationName,omitempty"`
 
