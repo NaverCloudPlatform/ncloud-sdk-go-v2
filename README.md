@@ -68,6 +68,7 @@ If credentials (apiKeys) are not specified, the default credential provider chai
 | _Nas(VPC)_      | [**Nas(VPC)**](services/vnas/README.md)           |
 | _Autoscaling(VPC)_      | [**Autoscaling(VPC)**](services/vautoscaling/README.md)           |
 | _Loadbalancer(VPC)_      | [**Loadbalancer(VPC)**](services/vloadbalancer/README.md)           |
+| _Kubernetes Service(VPC)_ | [**NKS(VPC)**](services/vnks/README.md) |
 
 ### License
 
