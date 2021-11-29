@@ -17,7 +17,7 @@ RegionCode *string `json:"regionCode,omitempty"`
 TargetGroupPort *int32 `json:"targetGroupPort,omitempty"`
 
 	// 타겟그룹프로토콜유형코드
-TargetGroupProtocolTypeCode *CommonCode `json:"targetGroupProtocolTypeCode"`
+TargetGroupProtocolTypeCode *string `json:"targetGroupProtocolTypeCode"`
 
 	// 타겟그룹설명
 TargetGroupDescription *string `json:"targetGroupDescription,omitempty"`
