@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Status** | ***string** | 클러스터의 상태 | [default to null]
 **SubnetLbName** | ***string** | 로드밸런서 전용 서브넷 이름 | [default to null]
 **SubnetLbNo** | ***int32** | 로드밸런서 전용 서브넷 No | [default to null]
+**LbPublicSubnetNo** | ***int32** | 로드밸런서 전용 Public Subnet No | [optional] [default to null]
 **SubnetName** | ***string** | 서브넷 이름 | [default to null]
 **SubnetNoList** | **[]\*int32** | 서브넷 No 목록 | [default to null]
 **UpdatedAt** | ***string** | 최근 업데이트 일자 | [default to null]
