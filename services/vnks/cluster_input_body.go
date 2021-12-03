@@ -40,6 +40,9 @@ type ClusterInputBody struct {
 	// 로드밸런서 전용 서브넷 No
 	SubnetLbNo *int32 `json:"subnetLbNo"`
 
+	// 로드밸런서 전용 Public Subnet No
+	LbPublicSubnetNo *int32 `json:"lbPublicSubnetNo,omitempty"`
+
 	// log
 	Log *ClusterLogInput `json:"log,omitempty"`
 

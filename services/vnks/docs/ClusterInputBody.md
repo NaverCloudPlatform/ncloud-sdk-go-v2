@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **VpcNo** | ***int32** | vpc의 No | [default to null]
 **SubnetNoList** | **[]\*int32** | 서브넷 No 목록 | [default to null]
 **SubnetLbNo** | ***int32** | 로드밸런서 전용 서브넷 No | [default to null]
+**LbPublicSubnetNo** | ***int32** | 로드밸런서 전용 Public Subnet No | [optional] [default to null]
 **Log** | **[*ClusterLogInput](ClusterLogInput.md)** | log | [optional] [default to null]
 **DefaultNodePool** | **[*DefaultNodePoolParam](DefaultNodePoolParam.md)** | 기본 노드풀 | [optional] [default to null]
 **NodePool** | **[[]\*NodePool](NodePool.md)** | 추가 노드풀 | [optional] [default to null]

@@ -58,6 +58,9 @@ type Cluster struct {
 	// 로드밸런서 전용 서브넷 No
 	SubnetLbNo *int32 `json:"subnetLbNo"`
 
+	// 로드밸런서 전용 Public Subnet No
+	LbPublicSubnetNo *int32 `json:"lbPublicSubnetNo,omitempty"`
+
 	// 서브넷 이름
 	SubnetName *string `json:"subnetName"`
 
