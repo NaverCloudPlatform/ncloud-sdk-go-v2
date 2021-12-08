@@ -39,7 +39,7 @@ func NewConfiguration(region string, apiKeys ...*ncloud.APIKey) *ncloud.Configur
 		cfg.BasePath = os.Getenv("NCLOUD_API_GW") + "/vnks/v2"
 		cfg.BasePath = strings.Replace(cfg.BasePath, "https://ncloud.", "https://nks.", 1)
 		if region != "KR" {
-			cfg.BasePath = strings.Replace(cfg.BasePath, "/vnks/v2", "/vnks/v2-"+strings.ToLower(region), 1)
+			cfg.BasePath = strings.Replace(cfg.BasePath, "/vnks/v2", "/vnks/"+strings.ToLower(region)+"-v2", 1)
 		}
 	}
 	return cfg

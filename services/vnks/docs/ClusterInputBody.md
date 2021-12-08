@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **RegionCode** | ***string** | Region의 코드 | [default to null]
 **ZoneCode** | ***string** | zone 코드 | [optional] [default to null]
 **ZoneNo** | ***int32** | Zone 번호 | [optional] [default to null]
+**KubeNetworkPlugin** | ***string** | CNI Plugin Code (ncloud-vpc-cni or cilium) | [optional] [default to null]
 **VpcNo** | ***int32** | vpc의 No | [default to null]
 **SubnetNoList** | **[]\*int32** | 서브넷 No 목록 | [default to null]
 **SubnetLbNo** | ***int32** | 로드밸런서 전용 서브넷 No | [default to null]

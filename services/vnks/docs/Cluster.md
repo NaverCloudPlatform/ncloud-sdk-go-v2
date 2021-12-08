@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **K8sVersion** | ***string** | 쿠버네티스 버전 | [default to null]
 **RegionCode** | ***string** | region의 코드 | [default to null]
 **Status** | ***string** | 클러스터의 상태 | [default to null]
+**KubeNetworkPlugin** | ***string** | CNI Plugin Code | [default to null]
 **SubnetLbName** | ***string** | 로드밸런서 전용 서브넷 이름 | [default to null]
 **SubnetLbNo** | ***int32** | 로드밸런서 전용 서브넷 No | [default to null]
 **LbPublicSubnetNo** | ***int32** | 로드밸런서 전용 Public Subnet No | [optional] [default to null]
