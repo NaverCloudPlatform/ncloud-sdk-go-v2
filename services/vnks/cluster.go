@@ -52,6 +52,9 @@ type Cluster struct {
 	// 클러스터의 상태
 	Status *string `json:"status"`
 
+	// CNI Plugin Code
+	KubeNetworkPlugin *string `json:"kubeNetworkPlugin"`
+
 	// 로드밸런서 전용 서브넷 이름
 	SubnetLbName *string `json:"subnetLbName"`
 

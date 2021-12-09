@@ -31,6 +31,9 @@ type ClusterInputBody struct {
 	// Zone 번호
 	ZoneNo *int32 `json:"zoneNo,omitempty"`
 
+	// CNI Plugin Code (ncloud-vpc-cni or cilium)
+	KubeNetworkPlugin *string `json:"kubeNetworkPlugin,omitempty"`
+
 	// vpc의 No
 	VpcNo *int32 `json:"vpcNo"`
 
