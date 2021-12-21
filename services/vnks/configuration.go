@@ -9,6 +9,7 @@
 package vnks
 
 import (
+	"fmt"
 	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/ncloud"
 	"os"
 	"strings"
@@ -35,12 +36,24 @@ func NewConfiguration(region string, apiKeys ...*ncloud.APIKey) *ncloud.Configur
 	}
 	cfg.InitCredentials()
 
-	if os.Getenv("NCLOUD_API_GW") != "" {
-		cfg.BasePath = os.Getenv("NCLOUD_API_GW") + "/vnks/v2"
-		cfg.BasePath = strings.Replace(cfg.BasePath, "https://ncloud.", "https://nks.", 1)
-		if region != "KR" {
-			cfg.BasePath = strings.Replace(cfg.BasePath, "/vnks/v2", "/vnks/"+strings.ToLower(region)+"-v2", 1)
-		}
+	var ncloudApiGw string
+	if os.Getenv("NCLOUD_API_GW") == "" {
+		ncloudApiGw = "https://nks.apigw.ntruss.com"
+	} else {
+		ncloudApiGw = os.Getenv("NCLOUD_API_GW")
 	}
+
+	ncloudApiGw = strings.Replace(ncloudApiGw, "https://ncloud.", "https://nks.", 1)
+	ncloudApiGw = strings.Replace(ncloudApiGw, "https://fin-ncloud.", "https://nks.", 1)
+
+	switch region {
+	case "KR":
+		cfg.BasePath = fmt.Sprintf("%s/vnks/v2", ncloudApiGw)
+	case "FKR":
+		cfg.BasePath = fmt.Sprintf("%s/nks/v2", ncloudApiGw)
+	default:
+		cfg.BasePath = fmt.Sprintf("%s/vnks/%s-v2", ncloudApiGw, strings.ToLower(region))
+	}
+
 	return cfg
 }
