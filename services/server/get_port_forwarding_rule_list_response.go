@@ -10,17 +10,11 @@ package server
 
 type GetPortForwardingRuleListResponse struct {
 
-	// 포트포워딩설정번호
-PortForwardingConfigurationNo *string `json:"portForwardingConfigurationNo,omitempty"`
+RequestId *string `json:"requestId,omitempty"`
 
-	// 포트포워딩공인IP
-PortForwardingPublicIp *string `json:"portForwardingPublicIp,omitempty"`
+ReturnCode *string `json:"returnCode,omitempty"`
 
-	// ZONE객체
-Zone *Zone `json:"zone,omitempty"`
-
-	// 인터넷라인구분
-InternetLineType *CommonCode `json:"internetLineType,omitempty"`
+ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 

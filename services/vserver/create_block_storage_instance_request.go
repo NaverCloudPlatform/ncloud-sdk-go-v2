@@ -33,4 +33,7 @@ BlockStorageSnapshotInstanceNo *string `json:"blockStorageSnapshotInstanceNo,omi
 
 	// ZONE코드
 ZoneCode *string `json:"zoneCode,omitempty"`
+
+	// 반납보호여부
+IsReturnProtection *bool `json:"isReturnProtection,omitempty"`
 }

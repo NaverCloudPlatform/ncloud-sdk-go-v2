@@ -42,4 +42,10 @@ MemberServerImageBlockStorageTotalRows *int32 `json:"memberServerImageBlockStora
 
 	// 회원서버이미지블록스토리지총사이즈
 MemberServerImageBlockStorageTotalSize *int64 `json:"memberServerImageBlockStorageTotalSize,omitempty"`
+
+	// 공유상태
+ShareStatus *CommonCode `json:"shareStatus,omitempty"`
+
+	// 공유받는로그인ID리스트
+SharedLoginIdList []*string `json:"sharedLoginIdList,omitempty"`
 }

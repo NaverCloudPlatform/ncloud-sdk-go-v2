@@ -17,5 +17,5 @@ RegionCode *string `json:"regionCode,omitempty"`
 NasVolumeInstanceNo *string `json:"nasVolumeInstanceNo"`
 
 	// 서버인스턴스번호리스트
-ServerInstanceNoList []*string `json:"serverInstanceNoList"`
+ServerInstanceNoList []*string `json:"serverInstanceNoList,omitempty"`
 }

@@ -33,8 +33,6 @@ Method | HTTP request | Description
 > AddTargetResponse AddTarget(addTargetRequest)
 
 
-타겟추가
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -59,8 +57,6 @@ Name | Type | Description  | Notes
 # **ChangeLoadBalancerInstanceConfiguration**
 > ChangeLoadBalancerInstanceConfigurationResponse ChangeLoadBalancerInstanceConfiguration(changeLoadBalancerInstanceConfigurationRequest)
 
-
-로드밸런서인스턴스설정변경
 
 ### Required Parameters
 
@@ -87,8 +83,6 @@ Name | Type | Description  | Notes
 > ChangeLoadBalancerListenerConfigurationResponse ChangeLoadBalancerListenerConfiguration(changeLoadBalancerListenerConfigurationRequest)
 
 
-로드밸런서리스너설정변경
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -113,8 +107,6 @@ Name | Type | Description  | Notes
 # **ChangeTargetGroupConfiguration**
 > ChangeTargetGroupConfigurationResponse ChangeTargetGroupConfiguration(changeTargetGroupConfigurationRequest)
 
-
-타겟그룹설정변경
 
 ### Required Parameters
 
@@ -141,8 +133,6 @@ Name | Type | Description  | Notes
 > ChangeTargetGroupHealthCheckConfigurationResponse ChangeTargetGroupHealthCheckConfiguration(changeTargetGroupHealthCheckConfigurationRequest)
 
 
-타겟그룹헬스체크설정변경
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -167,8 +157,6 @@ Name | Type | Description  | Notes
 # **CreateLoadBalancerInstance**
 > CreateLoadBalancerInstanceResponse CreateLoadBalancerInstance(createLoadBalancerInstanceRequest)
 
-
-로드밸런서인스턴스생성
 
 ### Required Parameters
 
@@ -195,8 +183,6 @@ Name | Type | Description  | Notes
 > CreateLoadBalancerListenerResponse CreateLoadBalancerListener(createLoadBalancerListenerRequest)
 
 
-로드밸런서리스너생성
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -221,8 +207,6 @@ Name | Type | Description  | Notes
 # **CreateTargetGroup**
 > CreateTargetGroupResponse CreateTargetGroup(createTargetGroupRequest)
 
-
-타겟그룹생성
 
 ### Required Parameters
 
@@ -249,8 +233,6 @@ Name | Type | Description  | Notes
 > DeleteLoadBalancerInstancesResponse DeleteLoadBalancerInstances(deleteLoadBalancerInstancesRequest)
 
 
-로드밸런서인스턴스삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -275,8 +257,6 @@ Name | Type | Description  | Notes
 # **DeleteLoadBalancerListeners**
 > DeleteLoadBalancerListenersResponse DeleteLoadBalancerListeners(deleteLoadBalancerListenersRequest)
 
-
-로드밸런서리스너삭제
 
 ### Required Parameters
 
@@ -303,8 +283,6 @@ Name | Type | Description  | Notes
 > DeleteTargetGroupsResponse DeleteTargetGroups(deleteTargetGroupsRequest)
 
 
-타겟그룹삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -329,8 +307,6 @@ Name | Type | Description  | Notes
 # **GetLoadBalancerInstanceDetail**
 > GetLoadBalancerInstanceDetailResponse GetLoadBalancerInstanceDetail(getLoadBalancerInstanceDetailRequest)
 
-
-로드밸런서인스턴스상세조회
 
 ### Required Parameters
 
@@ -357,8 +333,6 @@ Name | Type | Description  | Notes
 > GetLoadBalancerInstanceListResponse GetLoadBalancerInstanceList(getLoadBalancerInstanceListRequest)
 
 
-로드밸런서인스턴스리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -383,8 +357,6 @@ Name | Type | Description  | Notes
 # **GetLoadBalancerListenerList**
 > GetLoadBalancerListenerListResponse GetLoadBalancerListenerList(getLoadBalancerListenerListRequest)
 
-
-로드밸런서리스너리스트조회
 
 ### Required Parameters
 
@@ -411,8 +383,6 @@ Name | Type | Description  | Notes
 > GetLoadBalancerRuleListResponse GetLoadBalancerRuleList(getLoadBalancerRuleListRequest)
 
 
-로드밸런서룰리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -437,8 +407,6 @@ Name | Type | Description  | Notes
 # **GetTargetGroupDetail**
 > GetTargetGroupDetailResponse GetTargetGroupDetail(getTargetGroupDetailRequest)
 
-
-타겟그룹상세조회
 
 ### Required Parameters
 
@@ -465,8 +433,6 @@ Name | Type | Description  | Notes
 > GetTargetGroupListResponse GetTargetGroupList(getTargetGroupListRequest)
 
 
-타겟그룹리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -491,8 +457,6 @@ Name | Type | Description  | Notes
 # **GetTargetList**
 > GetTargetListResponse GetTargetList(getTargetListRequest)
 
-
-타겟리스트조회
 
 ### Required Parameters
 
@@ -519,8 +483,6 @@ Name | Type | Description  | Notes
 > RemoveTargetResponse RemoveTarget(removeTargetRequest)
 
 
-타겟제거
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -545,8 +507,6 @@ Name | Type | Description  | Notes
 # **SetLoadBalancerDescription**
 > SetLoadBalancerDescriptionResponse SetLoadBalancerDescription(setLoadBalancerDescriptionRequest)
 
-
-로드밸런서설명설정
 
 ### Required Parameters
 
@@ -573,8 +533,6 @@ Name | Type | Description  | Notes
 > SetLoadBalancerInstanceSubnetResponse SetLoadBalancerInstanceSubnet(setLoadBalancerInstanceSubnetRequest)
 
 
-로드밸런서인스턴스서브넷설정
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -600,8 +558,6 @@ Name | Type | Description  | Notes
 > SetTargetResponse SetTarget(setTargetRequest)
 
 
-타겟설정
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -626,8 +582,6 @@ Name | Type | Description  | Notes
 # **SetTargetGroupDescription**
 > SetTargetGroupDescriptionResponse SetTargetGroupDescription(setTargetGroupDescriptionRequest)
 
-
-타겟그룹설명설정
 
 ### Required Parameters
 

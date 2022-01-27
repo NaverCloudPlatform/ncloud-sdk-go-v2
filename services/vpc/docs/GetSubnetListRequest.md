@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RegionCode** | ***string** | REGION코드 | [optional] [default to null]
 **SubnetNoList** | **[]\*string** | 서브넷번호리스트 | [optional] [default to null]
+**SubnetName** | ***string** | 서브넷이름 | [optional] [default to null]
 **Subnet** | ***string** | 서브넷 | [optional] [default to null]
 **SubnetTypeCode** | ***string** | 서브넷유형코드 | [optional] [default to null]
 **UsageTypeCode** | ***string** | 용도유형코드 | [optional] [default to null]

@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**AttachNetworkInterface**](V2Api.md#AttachNetworkInterface) | **Post** /attachNetworkInterface | 
 [**ChangeBlockStorageVolumeSize**](V2Api.md#ChangeBlockStorageVolumeSize) | **Post** /changeBlockStorageVolumeSize | 
 [**ChangeNasVolumeSize**](V2Api.md#ChangeNasVolumeSize) | **Post** /changeNasVolumeSize | 
+[**ChangeNasVolumeSnapshotConfiguration**](V2Api.md#ChangeNasVolumeSnapshotConfiguration) | **Post** /changeNasVolumeSnapshotConfiguration | 
 [**ChangeServerInstanceSpec**](V2Api.md#ChangeServerInstanceSpec) | **Post** /changeServerInstanceSpec | 
 [**CreateBlockStorageInstance**](V2Api.md#CreateBlockStorageInstance) | **Post** /createBlockStorageInstance | 
 [**CreateBlockStorageSnapshotInstance**](V2Api.md#CreateBlockStorageSnapshotInstance) | **Post** /createBlockStorageSnapshotInstance | 
@@ -18,6 +19,7 @@ Method | HTTP request | Description
 [**CreateLoginKey**](V2Api.md#CreateLoginKey) | **Post** /createLoginKey | 
 [**CreateMemberServerImage**](V2Api.md#CreateMemberServerImage) | **Post** /createMemberServerImage | 
 [**CreateNasVolumeInstance**](V2Api.md#CreateNasVolumeInstance) | **Post** /createNasVolumeInstance | 
+[**CreateNasVolumeSnapshot**](V2Api.md#CreateNasVolumeSnapshot) | **Post** /createNasVolumeSnapshot | 
 [**CreateNetworkInterface**](V2Api.md#CreateNetworkInterface) | **Post** /createNetworkInterface | 
 [**CreatePublicIpInstance**](V2Api.md#CreatePublicIpInstance) | **Post** /createPublicIpInstance | 
 [**CreateServerInstances**](V2Api.md#CreateServerInstances) | **Post** /createServerInstances | 
@@ -27,6 +29,7 @@ Method | HTTP request | Description
 [**DeleteLoginKey**](V2Api.md#DeleteLoginKey) | **Post** /deleteLoginKey | 
 [**DeleteMemberServerImages**](V2Api.md#DeleteMemberServerImages) | **Post** /deleteMemberServerImages | 
 [**DeleteNasVolumeInstance**](V2Api.md#DeleteNasVolumeInstance) | **Post** /deleteNasVolumeInstance | 
+[**DeleteNasVolumeSnapshot**](V2Api.md#DeleteNasVolumeSnapshot) | **Post** /deleteNasVolumeSnapshot | 
 [**DeleteNetworkInterface**](V2Api.md#DeleteNetworkInterface) | **Post** /deleteNetworkInterface | 
 [**DeletePortForwardingRules**](V2Api.md#DeletePortForwardingRules) | **Post** /deletePortForwardingRules | 
 [**DeletePublicIpInstances**](V2Api.md#DeletePublicIpInstances) | **Post** /deletePublicIpInstances | 
@@ -44,7 +47,10 @@ Method | HTTP request | Description
 [**GetMemberServerImageList**](V2Api.md#GetMemberServerImageList) | **Post** /getMemberServerImageList | 
 [**GetNasVolumeInstanceList**](V2Api.md#GetNasVolumeInstanceList) | **Post** /getNasVolumeInstanceList | 
 [**GetNasVolumeInstanceRatingList**](V2Api.md#GetNasVolumeInstanceRatingList) | **Post** /getNasVolumeInstanceRatingList | 
+[**GetNasVolumeSnapshotConfigurationHistoryList**](V2Api.md#GetNasVolumeSnapshotConfigurationHistoryList) | **Post** /getNasVolumeSnapshotConfigurationHistoryList | 
+[**GetNasVolumeSnapshotList**](V2Api.md#GetNasVolumeSnapshotList) | **Post** /getNasVolumeSnapshotList | 
 [**GetNetworkInterfaceList**](V2Api.md#GetNetworkInterfaceList) | **Post** /getNetworkInterfaceList | 
+[**GetPortForwardingConfigurationList**](V2Api.md#GetPortForwardingConfigurationList) | **Post** /getPortForwardingConfigurationList | 
 [**GetPortForwardingRuleList**](V2Api.md#GetPortForwardingRuleList) | **Post** /getPortForwardingRuleList | 
 [**GetPrivateSubnetInstanceList**](V2Api.md#GetPrivateSubnetInstanceList) | **Post** /getPrivateSubnetInstanceList | 
 [**GetPublicIpInstanceList**](V2Api.md#GetPublicIpInstanceList) | **Post** /getPublicIpInstanceList | 
@@ -62,7 +68,11 @@ Method | HTTP request | Description
 [**RecreateServerInstance**](V2Api.md#RecreateServerInstance) | **Post** /recreateServerInstance | 
 [**RemoveNasVolumeAccessControl**](V2Api.md#RemoveNasVolumeAccessControl) | **Post** /removeNasVolumeAccessControl | 
 [**ReplaceServerInstanceAssociatedWithPublicIp**](V2Api.md#ReplaceServerInstanceAssociatedWithPublicIp) | **Post** /replaceServerInstanceAssociatedWithPublicIp | 
+[**RestoreNasVolumeWithSnapshot**](V2Api.md#RestoreNasVolumeWithSnapshot) | **Post** /restoreNasVolumeWithSnapshot | 
+[**SetMemberServerImageSharingPermission**](V2Api.md#SetMemberServerImageSharingPermission) | **Post** /setMemberServerImageSharingPermission | 
 [**SetNasVolumeAccessControl**](V2Api.md#SetNasVolumeAccessControl) | **Post** /setNasVolumeAccessControl | 
+[**SetNasVolumeReturnProtection**](V2Api.md#SetNasVolumeReturnProtection) | **Post** /setNasVolumeReturnProtection | 
+[**SetProtectServerTermination**](V2Api.md#SetProtectServerTermination) | **Post** /setProtectServerTermination | 
 [**StartServerInstances**](V2Api.md#StartServerInstances) | **Post** /startServerInstances | 
 [**StopServerInstances**](V2Api.md#StopServerInstances) | **Post** /stopServerInstances | 
 [**TerminateServerInstances**](V2Api.md#TerminateServerInstances) | **Post** /terminateServerInstances | 
@@ -71,8 +81,6 @@ Method | HTTP request | Description
 # **AddNasVolumeAccessControl**
 > AddNasVolumeAccessControlResponse AddNasVolumeAccessControl(addNasVolumeAccessControlRequest)
 
-
-NAS볼륨인스턴스접근제어추가
 
 ### Required Parameters
 
@@ -99,8 +107,6 @@ Name | Type | Description  | Notes
 > AddPortForwardingRulesResponse AddPortForwardingRules(addPortForwardingRulesRequest)
 
 
-포트포워딩Rule추가
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -125,8 +131,6 @@ Name | Type | Description  | Notes
 # **AssociatePublicIpWithServerInstance**
 > AssociatePublicIpWithServerInstanceResponse AssociatePublicIpWithServerInstance(associatePublicIpWithServerInstanceRequest)
 
-
-공인IP를서버인스턴스에할당
 
 ### Required Parameters
 
@@ -153,8 +157,6 @@ Name | Type | Description  | Notes
 > AttachBlockStorageInstanceResponse AttachBlockStorageInstance(attachBlockStorageInstanceRequest)
 
 
-블록스토리지인스턴스할당
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -179,8 +181,6 @@ Name | Type | Description  | Notes
 # **AttachNetworkInterface**
 > AttachNetworkInterfaceResponse AttachNetworkInterface(attachNetworkInterfaceRequest)
 
-
-Network Interface Attach
 
 ### Required Parameters
 
@@ -207,8 +207,6 @@ Name | Type | Description  | Notes
 > ChangeBlockStorageVolumeSizeResponse ChangeBlockStorageVolumeSize(changeBlockStorageVolumeSizeRequest)
 
 
-블록스토리지볼륨사이즈변경
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -234,8 +232,6 @@ Name | Type | Description  | Notes
 > ChangeNasVolumeSizeResponse ChangeNasVolumeSize(changeNasVolumeSizeRequest)
 
 
-NAS볼륨사이즈변경
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -257,11 +253,34 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ChangeNasVolumeSnapshotConfiguration**
+> ChangeNasVolumeSnapshotConfigurationResponse ChangeNasVolumeSnapshotConfiguration(changeNasVolumeSnapshotConfigurationRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**changeNasVolumeSnapshotConfigurationRequest** | **[\*ChangeNasVolumeSnapshotConfigurationRequest](ChangeNasVolumeSnapshotConfigurationRequest.md)** | changeNasVolumeSnapshotConfigurationRequest | 
+
+### Return type
+
+*[**ChangeNasVolumeSnapshotConfigurationResponse**](ChangeNasVolumeSnapshotConfigurationResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ChangeServerInstanceSpec**
 > ChangeServerInstanceSpecResponse ChangeServerInstanceSpec(changeServerInstanceSpecRequest)
 
-
-서버인스턴스스팩변경
 
 ### Required Parameters
 
@@ -288,8 +307,6 @@ Name | Type | Description  | Notes
 > CreateBlockStorageInstanceResponse CreateBlockStorageInstance(createBlockStorageInstanceRequest)
 
 
-블록스토리지인스턴스생성
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -314,8 +331,6 @@ Name | Type | Description  | Notes
 # **CreateBlockStorageSnapshotInstance**
 > CreateBlockStorageSnapshotInstanceResponse CreateBlockStorageSnapshotInstance(createBlockStorageSnapshotInstanceRequest)
 
-
-블록스토리지스냅샷인스턴스생성
 
 ### Required Parameters
 
@@ -342,8 +357,6 @@ Name | Type | Description  | Notes
 > CreateInstanceTagsResponse CreateInstanceTags(createInstanceTagsRequest)
 
 
-인스턴스태그생성
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -368,8 +381,6 @@ Name | Type | Description  | Notes
 # **CreateLoginKey**
 > CreateLoginKeyResponse CreateLoginKey(createLoginKeyRequest)
 
-
-로그인키생성
 
 ### Required Parameters
 
@@ -396,8 +407,6 @@ Name | Type | Description  | Notes
 > CreateMemberServerImageResponse CreateMemberServerImage(createMemberServerImageRequest)
 
 
-회원서버이미지생성
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -423,8 +432,6 @@ Name | Type | Description  | Notes
 > CreateNasVolumeInstanceResponse CreateNasVolumeInstance(createNasVolumeInstanceRequest)
 
 
-NAS볼륨인스턴스생성
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -446,11 +453,34 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **CreateNasVolumeSnapshot**
+> CreateNasVolumeSnapshotResponse CreateNasVolumeSnapshot(createNasVolumeSnapshotRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**createNasVolumeSnapshotRequest** | **[\*CreateNasVolumeSnapshotRequest](CreateNasVolumeSnapshotRequest.md)** | createNasVolumeSnapshotRequest | 
+
+### Return type
+
+*[**CreateNasVolumeSnapshotResponse**](CreateNasVolumeSnapshotResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **CreateNetworkInterface**
 > CreateNetworkInterfaceResponse CreateNetworkInterface(createNetworkInterfaceRequest)
 
-
-Network Interface 생성
 
 ### Required Parameters
 
@@ -477,8 +507,6 @@ Name | Type | Description  | Notes
 > CreatePublicIpInstanceResponse CreatePublicIpInstance(createPublicIpInstanceRequest)
 
 
-공인IP인스턴스생성
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -503,8 +531,6 @@ Name | Type | Description  | Notes
 # **CreateServerInstances**
 > CreateServerInstancesResponse CreateServerInstances(createServerInstancesRequest)
 
-
-서버인스턴스생성
 
 ### Required Parameters
 
@@ -531,8 +557,6 @@ Name | Type | Description  | Notes
 > DeleteBlockStorageInstancesResponse DeleteBlockStorageInstances(deleteBlockStorageInstancesRequest)
 
 
-블록스토리지인스턴스삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -557,8 +581,6 @@ Name | Type | Description  | Notes
 # **DeleteBlockStorageSnapshotInstances**
 > DeleteBlockStorageSnapshotInstancesResponse DeleteBlockStorageSnapshotInstances(deleteBlockStorageSnapshotInstancesRequest)
 
-
-블록스토리지스냅샷인스턴스삭제
 
 ### Required Parameters
 
@@ -585,8 +607,6 @@ Name | Type | Description  | Notes
 > DeleteInstanceTagsResponse DeleteInstanceTags(deleteInstanceTagsRequest)
 
 
-인스턴스태그삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -611,8 +631,6 @@ Name | Type | Description  | Notes
 # **DeleteLoginKey**
 > DeleteLoginKeyResponse DeleteLoginKey(deleteLoginKeyRequest)
 
-
-로그인키삭제
 
 ### Required Parameters
 
@@ -639,8 +657,6 @@ Name | Type | Description  | Notes
 > DeleteMemberServerImagesResponse DeleteMemberServerImages(deleteMemberServerImagesRequest)
 
 
-회원서버이미지삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -666,8 +682,6 @@ Name | Type | Description  | Notes
 > DeleteNasVolumeInstanceResponse DeleteNasVolumeInstance(deleteNasVolumeInstanceRequest)
 
 
-NAS볼륨인스턴스삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -689,11 +703,34 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **DeleteNasVolumeSnapshot**
+> DeleteNasVolumeSnapshotResponse DeleteNasVolumeSnapshot(deleteNasVolumeSnapshotRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**deleteNasVolumeSnapshotRequest** | **[\*DeleteNasVolumeSnapshotRequest](DeleteNasVolumeSnapshotRequest.md)** | deleteNasVolumeSnapshotRequest | 
+
+### Return type
+
+*[**DeleteNasVolumeSnapshotResponse**](DeleteNasVolumeSnapshotResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **DeleteNetworkInterface**
 > DeleteNetworkInterfaceResponse DeleteNetworkInterface(deleteNetworkInterfaceRequest)
 
-
-Network Interface 삭제
 
 ### Required Parameters
 
@@ -720,8 +757,6 @@ Name | Type | Description  | Notes
 > DeletePortForwardingRulesResponse DeletePortForwardingRules(deletePortForwardingRulesRequest)
 
 
-포트포워딩Rule삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -746,8 +781,6 @@ Name | Type | Description  | Notes
 # **DeletePublicIpInstances**
 > DeletePublicIpInstancesResponse DeletePublicIpInstances(deletePublicIpInstancesRequest)
 
-
-공인IP인스턴스삭제
 
 ### Required Parameters
 
@@ -774,8 +807,6 @@ Name | Type | Description  | Notes
 > DetachBlockStorageInstancesResponse DetachBlockStorageInstances(detachBlockStorageInstancesRequest)
 
 
-블록스토리지인스턴스할당해제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -800,8 +831,6 @@ Name | Type | Description  | Notes
 # **DetachNetworkInterface**
 > DetachNetworkInterfaceResponse DetachNetworkInterface(detachNetworkInterfaceRequest)
 
-
-Network Interface Detach
 
 ### Required Parameters
 
@@ -828,8 +857,6 @@ Name | Type | Description  | Notes
 > DisassociatePublicIpFromServerInstanceResponse DisassociatePublicIpFromServerInstance(disassociatePublicIpFromServerInstanceRequest)
 
 
-공인IP를서버인스턴스에할당해제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -854,8 +881,6 @@ Name | Type | Description  | Notes
 # **GetAccessControlGroupList**
 > GetAccessControlGroupListResponse GetAccessControlGroupList(getAccessControlGroupListRequest)
 
-
-접근제어그룹리스트조회
 
 ### Required Parameters
 
@@ -882,8 +907,6 @@ Name | Type | Description  | Notes
 > GetAccessControlGroupServerInstanceListResponse GetAccessControlGroupServerInstanceList(getAccessControlGroupServerInstanceListRequest)
 
 
-접근제어그룹적용된서버인스턴스리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -908,8 +931,6 @@ Name | Type | Description  | Notes
 # **GetAccessControlRuleList**
 > GetAccessControlRuleListResponse GetAccessControlRuleList(getAccessControlRuleListRequest)
 
-
-접근제어규칙리스트조회
 
 ### Required Parameters
 
@@ -936,8 +957,6 @@ Name | Type | Description  | Notes
 > GetBlockStorageInstanceListResponse GetBlockStorageInstanceList(getBlockStorageInstanceListRequest)
 
 
-블록스토리지인스턴스리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -962,8 +981,6 @@ Name | Type | Description  | Notes
 # **GetBlockStorageSnapshotInstanceList**
 > GetBlockStorageSnapshotInstanceListResponse GetBlockStorageSnapshotInstanceList(getBlockStorageSnapshotInstanceListRequest)
 
-
-블록스토리지스냅샷인스턴스리스트조회
 
 ### Required Parameters
 
@@ -990,8 +1007,6 @@ Name | Type | Description  | Notes
 > GetInitScriptListResponse GetInitScriptList(getInitScriptListRqeust)
 
 
-초기화스크립트리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1016,8 +1031,6 @@ Name | Type | Description  | Notes
 # **GetInstanceTagList**
 > GetInstanceTagListResponse GetInstanceTagList(getInstanceTagListRequest)
 
-
-인스턴스태그리스트조회
 
 ### Required Parameters
 
@@ -1044,8 +1057,6 @@ Name | Type | Description  | Notes
 > GetLoginKeyListResponse GetLoginKeyList(getLoginKeyListRequest)
 
 
-로그인키리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1070,8 +1081,6 @@ Name | Type | Description  | Notes
 # **GetMemberServerImageList**
 > GetMemberServerImageListResponse GetMemberServerImageList(getMemberServerImageListRequest)
 
-
-회원서버이미지리스트조회
 
 ### Required Parameters
 
@@ -1098,8 +1107,6 @@ Name | Type | Description  | Notes
 > GetNasVolumeInstanceListResponse GetNasVolumeInstanceList(getNasVolumeInstanceListRequest)
 
 
-NAS볼륨인스턴스리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1125,8 +1132,6 @@ Name | Type | Description  | Notes
 > GetNasVolumeInstanceRatingListResponse GetNasVolumeInstanceRatingList(getNasVolumeInstanceRatingListRequest)
 
 
-NAS볼륨인스턴스측정리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1148,11 +1153,59 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetNasVolumeSnapshotConfigurationHistoryList**
+> GetNasVolumeSnapshotConfigurationHistoryListResponse GetNasVolumeSnapshotConfigurationHistoryList(getNasVolumeSnapshotConfigurationHistoryListRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getNasVolumeSnapshotConfigurationHistoryListRequest** | **[\*GetNasVolumeSnapshotConfigurationHistoryListRequest](GetNasVolumeSnapshotConfigurationHistoryListRequest.md)** | getNasVolumeSnapshotConfigurationHistoryListRequest | 
+
+### Return type
+
+*[**GetNasVolumeSnapshotConfigurationHistoryListResponse**](GetNasVolumeSnapshotConfigurationHistoryListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetNasVolumeSnapshotList**
+> GetNasVolumeSnapshotListResponse GetNasVolumeSnapshotList(getNasVolumeSnapshotListRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getNasVolumeSnapshotListRequest** | **[\*GetNasVolumeSnapshotListRequest](GetNasVolumeSnapshotListRequest.md)** | getNasVolumeSnapshotListRequest | 
+
+### Return type
+
+*[**GetNasVolumeSnapshotListResponse**](GetNasVolumeSnapshotListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetNetworkInterfaceList**
 > GetNetworkInterfaceListResponse GetNetworkInterfaceList(getNetworkInterfaceListRequest)
 
-
-Network Interface 리스트조회
 
 ### Required Parameters
 
@@ -1175,11 +1228,34 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetPortForwardingConfigurationList**
+> GetPortForwardingConfigurationListResponse GetPortForwardingConfigurationList(getPortForwardingConfigurationListRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getPortForwardingConfigurationListRequest** | **[\*GetPortForwardingConfigurationListRequest](GetPortForwardingConfigurationListRequest.md)** | getPortForwardingConfigurationListRequest | 
+
+### Return type
+
+*[**GetPortForwardingConfigurationListResponse**](GetPortForwardingConfigurationListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetPortForwardingRuleList**
 > GetPortForwardingRuleListResponse GetPortForwardingRuleList(getPortForwardingRuleListRequest)
 
-
-포트포워딩Rule리스트조회
 
 ### Required Parameters
 
@@ -1206,8 +1282,6 @@ Name | Type | Description  | Notes
 > GetPrivateSubnetInstanceListResponse GetPrivateSubnetInstanceList(getPrivateSubnetInstanceListRequest)
 
 
-Private Subnet 인스턴스리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1232,8 +1306,6 @@ Name | Type | Description  | Notes
 # **GetPublicIpInstanceList**
 > GetPublicIpInstanceListResponse GetPublicIpInstanceList(getPublicIpInstanceListRequest)
 
-
-공인IP인스턴스리스트조회
 
 ### Required Parameters
 
@@ -1260,8 +1332,6 @@ Name | Type | Description  | Notes
 > GetPublicIpTargetServerInstanceListResponse GetPublicIpTargetServerInstanceList(getPublicIpTargetServerInstanceListRequest)
 
 
-공인IP할당(가능)서버인스턴스리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1286,8 +1356,6 @@ Name | Type | Description  | Notes
 # **GetRaidList**
 > GetRaidListResponse GetRaidList(getRaidListRequest)
 
-
-RAID리스트조회
 
 ### Required Parameters
 
@@ -1314,8 +1382,6 @@ Name | Type | Description  | Notes
 > GetRegionListResponse GetRegionList(getRegionListRequest)
 
 
-REGION리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1340,8 +1406,6 @@ Name | Type | Description  | Notes
 # **GetRootPassword**
 > GetRootPasswordResponse GetRootPassword(getRootPasswordRequest)
 
-
-루트패스워드조회
 
 ### Required Parameters
 
@@ -1368,8 +1432,6 @@ Name | Type | Description  | Notes
 > GetRootPasswordServerInstanceListResponse GetRootPasswordServerInstanceList(getRootPasswordServerInstanceListRequest)
 
 
-루트패스워드서버인스턴스리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1394,8 +1456,6 @@ Name | Type | Description  | Notes
 # **GetServerImageProductList**
 > GetServerImageProductListResponse GetServerImageProductList(getServerImageProductListRequest)
 
-
-서버이미지상품리스트조회
 
 ### Required Parameters
 
@@ -1422,8 +1482,6 @@ Name | Type | Description  | Notes
 > GetServerInstanceListResponse GetServerInstanceList(getServerInstanceListRequest)
 
 
-서버인스턴스리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1448,8 +1506,6 @@ Name | Type | Description  | Notes
 # **GetServerProductList**
 > GetServerProductListResponse GetServerProductList(getServerProductListRequest)
 
-
-서버상품리스트조회
 
 ### Required Parameters
 
@@ -1476,8 +1532,6 @@ Name | Type | Description  | Notes
 > GetZoneListResponse GetZoneList(getZoneListRequest)
 
 
-ZONE리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1502,8 +1556,6 @@ Name | Type | Description  | Notes
 # **ImportLoginKey**
 > ImportLoginKeyResponse ImportLoginKey(importLoginKeyRequest)
 
-
-로그인키IMPORT
 
 ### Required Parameters
 
@@ -1530,8 +1582,6 @@ Name | Type | Description  | Notes
 > RebootServerInstancesResponse RebootServerInstances(rebootServerInstancesRequest)
 
 
-서버인스턴스재시작
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1556,8 +1606,6 @@ Name | Type | Description  | Notes
 # **RecreateServerInstance**
 > RecreateServerInstanceResponse RecreateServerInstance(recreateServerInstanceRequest)
 
-
-서버인스턴스재생성
 
 ### Required Parameters
 
@@ -1584,8 +1632,6 @@ Name | Type | Description  | Notes
 > RemoveNasVolumeAccessControlResponse RemoveNasVolumeAccessControl(removeNasVolumeAccessControlRequest)
 
 
-NAS볼륨인스턴스접근제어제거
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1611,8 +1657,6 @@ Name | Type | Description  | Notes
 > ReplaceServerInstanceAssociatedWithPublicIpResponse ReplaceServerInstanceAssociatedWithPublicIp(replaceServerInstanceAssociatedWithPublicIpRequest)
 
 
-공인IP서버인스턴스교체
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1634,11 +1678,59 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **RestoreNasVolumeWithSnapshot**
+> RestoreNasVolumeWithSnapshotResponse RestoreNasVolumeWithSnapshot(restoreNasVolumeWithSnapshotRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**restoreNasVolumeWithSnapshotRequest** | **[\*RestoreNasVolumeWithSnapshotRequest](RestoreNasVolumeWithSnapshotRequest.md)** | restoreNasVolumeWithSnapshotRequest | 
+
+### Return type
+
+*[**RestoreNasVolumeWithSnapshotResponse**](RestoreNasVolumeWithSnapshotResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **SetMemberServerImageSharingPermission**
+> SetMemberServerImageSharingPermissionResponse SetMemberServerImageSharingPermission(setMemberServerImageSharingPermissionRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**setMemberServerImageSharingPermissionRequest** | **[\*SetMemberServerImageSharingPermissionRequest](SetMemberServerImageSharingPermissionRequest.md)** | setMemberServerImageSharingPermissionRequest | 
+
+### Return type
+
+*[**SetMemberServerImageSharingPermissionResponse**](SetMemberServerImageSharingPermissionResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **SetNasVolumeAccessControl**
 > SetNasVolumeAccessControlResponse SetNasVolumeAccessControl(setNasVolumeAccessControlRequest)
 
-
-NAS볼륨인스턴스접근제어설정
 
 ### Required Parameters
 
@@ -1661,11 +1753,59 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **SetNasVolumeReturnProtection**
+> SetNasVolumeReturnProtectionResponse SetNasVolumeReturnProtection(setNasVolumeReturnProtectionRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**setNasVolumeReturnProtectionRequest** | **[\*SetNasVolumeReturnProtectionRequest](SetNasVolumeReturnProtectionRequest.md)** | setNasVolumeReturnProtectionRequest | 
+
+### Return type
+
+*[**SetNasVolumeReturnProtectionResponse**](SetNasVolumeReturnProtectionResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **SetProtectServerTermination**
+> SetProtectServerTerminationResponse SetProtectServerTermination(setProtectServerTerminationRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**setProtectServerTerminationRequest** | **[\*SetProtectServerTerminationRequest](SetProtectServerTerminationRequest.md)** | setProtectServerTerminationRequest | 
+
+### Return type
+
+*[**SetProtectServerTerminationResponse**](SetProtectServerTerminationResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **StartServerInstances**
 > StartServerInstancesResponse StartServerInstances(startServerInstancesRequest)
 
-
-서버인스턴스시작
 
 ### Required Parameters
 
@@ -1692,8 +1832,6 @@ Name | Type | Description  | Notes
 > StopServerInstancesResponse StopServerInstances(stopServerInstancesRequest)
 
 
-서버인스턴스종료
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1718,8 +1856,6 @@ Name | Type | Description  | Notes
 # **TerminateServerInstances**
 > TerminateServerInstancesResponse TerminateServerInstances(terminateServerInstancesRequest)
 
-
-서버인스턴스반납
 
 ### Required Parameters
 

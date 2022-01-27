@@ -28,9 +28,6 @@ PageSize *int32 `json:"pageSize,omitempty"`
 	// 서버인스턴스상태코드
 ServerInstanceStatusCode *string `json:"serverInstanceStatusCode,omitempty"`
 
-	// 인터넷라인구분코드
-InternetLineTypeCode *string `json:"internetLineTypeCode,omitempty"`
-
 	// 리전번호
 RegionNo *string `json:"regionNo,omitempty"`
 

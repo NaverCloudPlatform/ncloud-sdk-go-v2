@@ -33,4 +33,10 @@ ServerInstanceNo *string `json:"serverInstanceNo,omitempty"`
 
 	// IP주소
 Ip *string `json:"ip,omitempty"`
+
+	// 보조IP리스트
+SecondaryIpList []*string `json:"secondaryIpList,omitempty"`
+
+	// 보조IP자동할당개수
+SecondaryIpCount *int32 `json:"secondaryIpCount,omitempty"`
 }

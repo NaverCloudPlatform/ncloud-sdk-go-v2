@@ -58,6 +58,9 @@ RegionCode *string `json:"regionCode,omitempty"`
 	// 서브넷번호리스트
 SubnetNoList []*string `json:"subnetNoList,omitempty"`
 
+	// 로드밸런서서브넷리스트
+LoadBalancerSubnetList []*LoadBalancerSubnet `json:"loadBalancerSubnetList,omitempty"`
+
 	// 로드밸런서리스너번호리스트
 LoadBalancerListenerNoList []*string `json:"loadBalancerListenerNoList,omitempty"`
 }

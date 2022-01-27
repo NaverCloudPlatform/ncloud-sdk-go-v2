@@ -63,4 +63,7 @@ ZoneCode *string `json:"zoneCode,omitempty"`
 
 	// REGION코드
 RegionCode *string `json:"regionCode,omitempty"`
+
+	// 반납보호여부
+IsReturnProtection *bool `json:"isReturnProtection,omitempty"`
 }

@@ -22,9 +22,6 @@ PublicIpDescription *string `json:"publicIpDescription,omitempty"`
 	// 생성일시
 CreateDate *string `json:"createDate,omitempty"`
 
-	// 인터넷라인구분
-InternetLineType *CommonCode `json:"internetLineType,omitempty"`
-
 	// 공인IP인스턴스상태명
 PublicIpInstanceStatusName *string `json:"publicIpInstanceStatusName,omitempty"`
 

@@ -19,7 +19,7 @@ VirtualIp *string `json:"virtualIp,omitempty"`
 	// 로드밸런서명
 LoadBalancerName *string `json:"loadBalancerName,omitempty"`
 
-	// 로드밸런서알고리즘구분코
+	// 로드밸런서알고리즘구분코드
 LoadBalancerAlgorithmType *CommonCode `json:"loadBalancerAlgorithmType,omitempty"`
 
 	// 로드밸런서설명
@@ -30,9 +30,6 @@ CreateDate *string `json:"createDate,omitempty"`
 
 	// 도메인명
 DomainName *string `json:"domainName,omitempty"`
-
-	// 인터넷회선구분
-InternetLineType *CommonCode `json:"internetLineType,omitempty"`
 
 	// 로드밸런서인스턴스상태명
 LoadBalancerInstanceStatusName *string `json:"loadBalancerInstanceStatusName,omitempty"`
@@ -58,4 +55,10 @@ CertificateName *string `json:"certificateName,omitempty"`
 LoadBalancerRuleList []*LoadBalancerRule `json:"loadBalancerRuleList,omitempty"`
 
 LoadBalancedServerInstanceList []*LoadBalancedServerInstance `json:"loadBalancedServerInstanceList,omitempty"`
+
+	// 리전
+Region *Region `json:"region,omitempty"`
+
+	// ZONE
+Zone *Zone `json:"zone,omitempty"`
 }

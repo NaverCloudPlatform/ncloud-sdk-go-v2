@@ -27,4 +27,7 @@ TlsMinVersionTypeCode *string `json:"tlsMinVersionTypeCode,omitempty"`
 
 	// 타겟그룹번호
 TargetGroupNo *string `json:"targetGroupNo"`
+
+	// 암호화스위트리스트
+CipherSuiteList []*string `json:"cipherSuiteList,omitempty"`
 }

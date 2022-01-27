@@ -4,7 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AutoScalingGroupName** | ***string** | 오토스케일링그룹명 | [optional] [default to null]
+**AutoScalingGroupNo** | ***string** | 오토스케일링그룹번호 | [optional] [default to null]
 **LaunchConfigurationName** | ***string** | 론치설정명 | [optional] [default to null]
+**LaunchConfigurationNo** | ***string** | 론치설정번호 | [optional] [default to null]
 **DesiredCapacity** | ***int32** | 기대능력치 | [optional] [default to null]
 **MinSize** | ***int32** | 최소사이즈 | [optional] [default to null]
 **MaxSize** | ***int32** | 최대사이즈 | [optional] [default to null]

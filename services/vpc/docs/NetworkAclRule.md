@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **RuleAction** | **[*CommonCode](CommonCode.md)** | Rule액션 | [optional] [default to null]
 **CreateDate** | ***string** | 생성일시 | [optional] [default to null]
 **IpBlock** | ***string** | IP블록 | [optional] [default to null]
+**DenyAllowGroupNo** | ***string** | 허용차단그룹번호 | [optional] [default to null]
 **NetworkAclRuleType** | **[*CommonCode](CommonCode.md)** | 네트워크ACLRule유형 | [optional] [default to null]
 **NetworkAclRuleDescription** | ***string** | 네트워크ACLRule설명 | [optional] [default to null]
 

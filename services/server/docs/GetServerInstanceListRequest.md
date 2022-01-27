@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **PageNo** | ***int32** | 페이지번호 | [optional] [default to null]
 **PageSize** | ***int32** | 페이지사이즈 | [optional] [default to null]
 **ServerInstanceStatusCode** | ***string** | 서버인스턴스상태코드 | [optional] [default to null]
-**InternetLineTypeCode** | ***string** | 인터넷라인구분코드 | [optional] [default to null]
 **RegionNo** | ***string** | 리전번호 | [optional] [default to null]
 **ZoneNo** | ***string** | zone번호 | [optional] [default to null]
 **BaseBlockStorageDiskTypeCode** | ***string** | 서버디스크유형코드 | [optional] [default to null]

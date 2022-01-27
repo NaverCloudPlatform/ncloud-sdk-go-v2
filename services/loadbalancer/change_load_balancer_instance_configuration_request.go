@@ -21,4 +21,7 @@ LoadBalancerDescription *string `json:"loadBalancerDescription,omitempty"`
 
 	// 로드밸런RULE리스트
 LoadBalancerRuleList []*LoadBalancerRuleParameter `json:"loadBalancerRuleList"`
+
+	// ZONE번호리스트
+ZoneNoList []*string `json:"zoneNoList,omitempty"`
 }

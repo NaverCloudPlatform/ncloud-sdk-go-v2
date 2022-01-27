@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**AddAccessControlGroupOutboundRule**](V2Api.md#AddAccessControlGroupOutboundRule) | **Post** /addAccessControlGroupOutboundRule | 
 [**AddNetworkInterfaceAccessControlGroup**](V2Api.md#AddNetworkInterfaceAccessControlGroup) | **Post** /addNetworkInterfaceAccessControlGroup | 
 [**AddPlacementGroupServerInstance**](V2Api.md#AddPlacementGroupServerInstance) | **Post** /addPlacementGroupServerInstance | 
+[**AssignSecondaryIps**](V2Api.md#AssignSecondaryIps) | **Post** /assignSecondaryIps | 
 [**AssociatePublicIpWithServerInstance**](V2Api.md#AssociatePublicIpWithServerInstance) | **Post** /associatePublicIpWithServerInstance | 
 [**AttachBlockStorageInstance**](V2Api.md#AttachBlockStorageInstance) | **Post** /attachBlockStorageInstance | 
 [**AttachNetworkInterface**](V2Api.md#AttachNetworkInterface) | **Post** /attachNetworkInterface | 
@@ -68,16 +69,18 @@ Method | HTTP request | Description
 [**RemoveAccessControlGroupOutboundRule**](V2Api.md#RemoveAccessControlGroupOutboundRule) | **Post** /removeAccessControlGroupOutboundRule | 
 [**RemoveNetworkInterfaceAccessControlGroup**](V2Api.md#RemoveNetworkInterfaceAccessControlGroup) | **Post** /removeNetworkInterfaceAccessControlGroup | 
 [**RemovePlacementGroupServerInstance**](V2Api.md#RemovePlacementGroupServerInstance) | **Post** /removePlacementGroupServerInstance | 
+[**SetBlockStorageReturnProtection**](V2Api.md#SetBlockStorageReturnProtection) | **Post** /setBlockStorageReturnProtection | 
+[**SetMemberServerImageSharingPermission**](V2Api.md#SetMemberServerImageSharingPermission) | **Post** /setMemberServerImageSharingPermission | 
+[**SetProtectServerTermination**](V2Api.md#SetProtectServerTermination) | **Post** /setProtectServerTermination | 
 [**StartServerInstances**](V2Api.md#StartServerInstances) | **Post** /startServerInstances | 
 [**StopServerInstances**](V2Api.md#StopServerInstances) | **Post** /stopServerInstances | 
 [**TerminateServerInstances**](V2Api.md#TerminateServerInstances) | **Post** /terminateServerInstances | 
+[**UnassignSecondaryIps**](V2Api.md#UnassignSecondaryIps) | **Post** /unassignSecondaryIps | 
 
 
 # **AddAccessControlGroupInboundRule**
 > AddAccessControlGroupInboundRuleResponse AddAccessControlGroupInboundRule(addAccessControlGroupInboundRuleRequest)
 
-
-ACGInboundRule추가
 
 ### Required Parameters
 
@@ -104,8 +107,6 @@ Name | Type | Description  | Notes
 > AddAccessControlGroupOutboundRuleResponse AddAccessControlGroupOutboundRule(addAccessControlGroupOutboundRuleRequest)
 
 
-ACGOutboundRule추가
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -130,8 +131,6 @@ Name | Type | Description  | Notes
 # **AddNetworkInterfaceAccessControlGroup**
 > AddNetworkInterfaceAccessControlGroupResponse AddNetworkInterfaceAccessControlGroup(addNetworkInterfaceAccessControlGroupRequest)
 
-
-네트워크인터페이스의ACG추가
 
 ### Required Parameters
 
@@ -158,8 +157,6 @@ Name | Type | Description  | Notes
 > AddPlacementGroupServerInstanceResponse AddPlacementGroupServerInstance(addPlacementGroupServerInstanceRequest)
 
 
-물리배치그룹에서버인스턴스추가
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -181,11 +178,34 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **AssignSecondaryIps**
+> AssignSecondaryIpsResponse AssignSecondaryIps(assignSecondaryIpsRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**assignSecondaryIpsRequest** | **[\*AssignSecondaryIpsRequest](AssignSecondaryIpsRequest.md)** | assignSecondaryIpsRequest | 
+
+### Return type
+
+*[**AssignSecondaryIpsResponse**](AssignSecondaryIpsResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **AssociatePublicIpWithServerInstance**
 > AssociatePublicIpWithServerInstanceResponse AssociatePublicIpWithServerInstance(associatePublicIpWithServerInstanceRequest)
 
-
-공인IP를서버인스턴스에할당
 
 ### Required Parameters
 
@@ -212,8 +232,6 @@ Name | Type | Description  | Notes
 > AttachBlockStorageInstanceResponse AttachBlockStorageInstance(attachBlockStorageInstanceRequest)
 
 
-블록스토리지인스턴스할당
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -238,8 +256,6 @@ Name | Type | Description  | Notes
 # **AttachNetworkInterface**
 > AttachNetworkInterfaceResponse AttachNetworkInterface(attachNetworkInterfaceRequest)
 
-
-네트워크인터페이스할당
 
 ### Required Parameters
 
@@ -266,8 +282,6 @@ Name | Type | Description  | Notes
 > ChangeBlockStorageVolumeSizeResponse ChangeBlockStorageVolumeSize(changeBlockStorageVolumeSizeRequest)
 
 
-블록스토리지볼륨사이즈변경
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -292,8 +306,6 @@ Name | Type | Description  | Notes
 # **ChangeServerInstanceSpec**
 > ChangeServerInstanceSpecResponse ChangeServerInstanceSpec(changeServerInstanceSpecRequest)
 
-
-서버인스턴스스펙변경
 
 ### Required Parameters
 
@@ -320,8 +332,6 @@ Name | Type | Description  | Notes
 > CreateAccessControlGroupResponse CreateAccessControlGroup(createAccessControlGroupRequest)
 
 
-ACG생성
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -346,8 +356,6 @@ Name | Type | Description  | Notes
 # **CreateBlockStorageInstance**
 > CreateBlockStorageInstanceResponse CreateBlockStorageInstance(createBlockStorageInstanceRequest)
 
-
-블록스토리지인스턴스생성
 
 ### Required Parameters
 
@@ -374,8 +382,6 @@ Name | Type | Description  | Notes
 > CreateBlockStorageSnapshotInstanceResponse CreateBlockStorageSnapshotInstance(createBlockStorageSnapshotInstanceRequest)
 
 
-블록스토리지스냅샷인스턴스생성
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -400,8 +406,6 @@ Name | Type | Description  | Notes
 # **CreateInitScript**
 > CreateInitScriptResponse CreateInitScript(createInitScriptRequest)
 
-
-초기화스크립트생성
 
 ### Required Parameters
 
@@ -428,8 +432,6 @@ Name | Type | Description  | Notes
 > CreateLoginKeyResponse CreateLoginKey(createLoginKeyRequest)
 
 
-로그인키생성
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -454,8 +456,6 @@ Name | Type | Description  | Notes
 # **CreateMemberServerImageInstance**
 > CreateMemberServerImageInstanceResponse CreateMemberServerImageInstance(createMemberServerImageInstanceRequest)
 
-
-회원서버이미지인스턴스생성
 
 ### Required Parameters
 
@@ -482,8 +482,6 @@ Name | Type | Description  | Notes
 > CreateNetworkInterfaceResponse CreateNetworkInterface(createNetworkInterfaceRequest)
 
 
-네트워크인터페이스생성
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -508,8 +506,6 @@ Name | Type | Description  | Notes
 # **CreatePlacementGroup**
 > CreatePlacementGroupResponse CreatePlacementGroup(createPlacementGroupRequest)
 
-
-물리배치그룹생성
 
 ### Required Parameters
 
@@ -536,8 +532,6 @@ Name | Type | Description  | Notes
 > CreatePublicIpInstanceResponse CreatePublicIpInstance(createPublicIpInstanceRequest)
 
 
-공인IP인스턴스생성
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -562,8 +556,6 @@ Name | Type | Description  | Notes
 # **CreateServerInstances**
 > CreateServerInstancesResponse CreateServerInstances(createServerInstancesRequest)
 
-
-서버인스턴스생성
 
 ### Required Parameters
 
@@ -590,8 +582,6 @@ Name | Type | Description  | Notes
 > DeleteAccessControlGroupResponse DeleteAccessControlGroup(deleteAccessControlGroupRequest)
 
 
-ACG삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -616,8 +606,6 @@ Name | Type | Description  | Notes
 # **DeleteBlockStorageInstances**
 > DeleteBlockStorageInstancesResponse DeleteBlockStorageInstances(deleteBlockStorageInstancesRequest)
 
-
-블록스토리지인스턴스삭제
 
 ### Required Parameters
 
@@ -644,8 +632,6 @@ Name | Type | Description  | Notes
 > DeleteBlockStorageSnapshotInstancesResponse DeleteBlockStorageSnapshotInstances(deleteBlockStorageSnapshotInstancesRequest)
 
 
-블록스토리지스냅샷인스턴스삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -670,8 +656,6 @@ Name | Type | Description  | Notes
 # **DeleteInitScripts**
 > DeleteInitScriptsResponse DeleteInitScripts(deleteInitScriptsRequest)
 
-
-초기화스크립트삭제
 
 ### Required Parameters
 
@@ -698,8 +682,6 @@ Name | Type | Description  | Notes
 > DeleteLoginKeysResponse DeleteLoginKeys(deleteLoginKeysRequest)
 
 
-로그인키삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -724,8 +706,6 @@ Name | Type | Description  | Notes
 # **DeleteMemberServerImageInstances**
 > DeleteMemberServerImageInstancesResponse DeleteMemberServerImageInstances(deleteMemberServerImageInstancesRequest)
 
-
-회원서버이미지인스턴스삭제
 
 ### Required Parameters
 
@@ -752,8 +732,6 @@ Name | Type | Description  | Notes
 > DeleteNetworkInterfaceResponse DeleteNetworkInterface(deleteNetworkInterfaceRequest)
 
 
-네트워크인터페이스삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -778,8 +756,6 @@ Name | Type | Description  | Notes
 # **DeletePlacementGroup**
 > DeletePlacementGroupResponse DeletePlacementGroup(deletePlacementGroupRequest)
 
-
-물리배치그룹삭제
 
 ### Required Parameters
 
@@ -806,8 +782,6 @@ Name | Type | Description  | Notes
 > DeletePublicIpInstanceResponse DeletePublicIpInstance(deletePublicIpInstanceRequest)
 
 
-공인IP인스턴스삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -832,8 +806,6 @@ Name | Type | Description  | Notes
 # **DetachBlockStorageInstances**
 > DetachBlockStorageInstancesResponse DetachBlockStorageInstances(detachBlockStorageInstancesRequest)
 
-
-블록스토리지인스턴스할당해제
 
 ### Required Parameters
 
@@ -860,8 +832,6 @@ Name | Type | Description  | Notes
 > DetachNetworkInterfaceResponse DetachNetworkInterface(detachNetworkInterfaceRequest)
 
 
-네트워크인터페이스할당해제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -886,8 +856,6 @@ Name | Type | Description  | Notes
 # **DisassociatePublicIpFromServerInstance**
 > DisassociatePublicIpFromServerInstanceResponse DisassociatePublicIpFromServerInstance(disassociatePublicIpFromServerInstanceRequest)
 
-
-공인IP를서버인스턴스에서할당해제
 
 ### Required Parameters
 
@@ -914,8 +882,6 @@ Name | Type | Description  | Notes
 > GetAccessControlGroupDetailResponse GetAccessControlGroupDetail(getAccessControlGroupDetailRequest)
 
 
-ACG상세조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -940,8 +906,6 @@ Name | Type | Description  | Notes
 # **GetAccessControlGroupList**
 > GetAccessControlGroupListResponse GetAccessControlGroupList(getAccessControlGroupListRequest)
 
-
-ACG리스트조회
 
 ### Required Parameters
 
@@ -968,8 +932,6 @@ Name | Type | Description  | Notes
 > GetAccessControlGroupRuleListResponse GetAccessControlGroupRuleList(getAccessControlGroupRuleListRequest)
 
 
-ACGRule리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -994,8 +956,6 @@ Name | Type | Description  | Notes
 # **GetBlockStorageInstanceDetail**
 > GetBlockStorageInstanceDetailResponse GetBlockStorageInstanceDetail(getBlockStorageInstanceDetailRequest)
 
-
-블록스토리지인스턴스상세조회
 
 ### Required Parameters
 
@@ -1022,8 +982,6 @@ Name | Type | Description  | Notes
 > GetBlockStorageInstanceListResponse GetBlockStorageInstanceList(getBlockStorageInstanceListRequest)
 
 
-블록스토리지인스턴스리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1048,8 +1006,6 @@ Name | Type | Description  | Notes
 # **GetBlockStorageSnapshotInstanceDetail**
 > GetBlockStorageSnapshotInstanceDetailResponse GetBlockStorageSnapshotInstanceDetail(getBlockStorageSnapshotInstanceDetailRequest)
 
-
-블록스토리지스냅샷인스턴스상세조회
 
 ### Required Parameters
 
@@ -1076,8 +1032,6 @@ Name | Type | Description  | Notes
 > GetBlockStorageSnapshotInstanceListResponse GetBlockStorageSnapshotInstanceList(getBlockStorageSnapshotInstanceListRequest)
 
 
-블록스토리지스냅샷인스턴스리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1102,8 +1056,6 @@ Name | Type | Description  | Notes
 # **GetInitScriptDetail**
 > GetInitScriptDetailResponse GetInitScriptDetail(getInitScriptDetailRequest)
 
-
-초기화스크립트상세조회
 
 ### Required Parameters
 
@@ -1130,8 +1082,6 @@ Name | Type | Description  | Notes
 > GetInitScriptListResponse GetInitScriptList(getInitScriptListRequest)
 
 
-초기화스크립트리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1156,8 +1106,6 @@ Name | Type | Description  | Notes
 # **GetLoginKeyList**
 > GetLoginKeyListResponse GetLoginKeyList(getLoginKeyListRequest)
 
-
-로그인키리스트조회
 
 ### Required Parameters
 
@@ -1184,8 +1132,6 @@ Name | Type | Description  | Notes
 > GetMemberServerImageInstanceDetailResponse GetMemberServerImageInstanceDetail(getMemberServerImageInstanceDetailRequest)
 
 
-회원서버이미지인스턴스상세조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1210,8 +1156,6 @@ Name | Type | Description  | Notes
 # **GetMemberServerImageInstanceList**
 > GetMemberServerImageInstanceListResponse GetMemberServerImageInstanceList(getMemberServerImageInstanceListRequest)
 
-
-회원서버이미지인스턴스리스트조회
 
 ### Required Parameters
 
@@ -1238,8 +1182,6 @@ Name | Type | Description  | Notes
 > GetNetworkInterfaceDetailResponse GetNetworkInterfaceDetail(getNetworkInterfaceDetailRequest)
 
 
-네트워크인터페이스상세조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1264,8 +1206,6 @@ Name | Type | Description  | Notes
 # **GetNetworkInterfaceList**
 > GetNetworkInterfaceListResponse GetNetworkInterfaceList(getNetworkInterfaceListRequest)
 
-
-네트워크인터페이스리스트조회
 
 ### Required Parameters
 
@@ -1292,8 +1232,6 @@ Name | Type | Description  | Notes
 > GetPlacementGroupDetailResponse GetPlacementGroupDetail(getPlacementGroupDetailRequest)
 
 
-물리배치그룹상세조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1318,8 +1256,6 @@ Name | Type | Description  | Notes
 # **GetPlacementGroupList**
 > GetPlacementGroupListResponse GetPlacementGroupList(getPlacementGroupListRequest)
 
-
-물리배치그룹리스트조회
 
 ### Required Parameters
 
@@ -1346,8 +1282,6 @@ Name | Type | Description  | Notes
 > GetPublicIpInstanceDetailResponse GetPublicIpInstanceDetail(getPublicIpInstanceDetailRequest)
 
 
-공인IP인스턴스상세조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1372,8 +1306,6 @@ Name | Type | Description  | Notes
 # **GetPublicIpInstanceList**
 > GetPublicIpInstanceListResponse GetPublicIpInstanceList(getPublicIpInstanceListRequest)
 
-
-공인IP인스턴스리스트조회
 
 ### Required Parameters
 
@@ -1400,8 +1332,6 @@ Name | Type | Description  | Notes
 > GetPublicIpTargetServerInstanceListResponse GetPublicIpTargetServerInstanceList(getPublicIpTargetServerInstanceListRequest)
 
 
-공인IP할당가능서버인스턴스리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1426,8 +1356,6 @@ Name | Type | Description  | Notes
 # **GetRegionList**
 > GetRegionListResponse GetRegionList(getRegionListRequest)
 
-
-REGION리스트조회
 
 ### Required Parameters
 
@@ -1454,8 +1382,6 @@ Name | Type | Description  | Notes
 > GetRootPasswordResponse GetRootPassword(getRootPasswordRequest)
 
 
-서버인스턴스의루트패스워드조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1480,8 +1406,6 @@ Name | Type | Description  | Notes
 # **GetRootPasswordServerInstanceList**
 > GetRootPasswordServerInstanceListResponse GetRootPasswordServerInstanceList(getRootPasswordServerInstanceListRequest)
 
-
-서버인스턴스리스트의루트패스워드조회
 
 ### Required Parameters
 
@@ -1508,8 +1432,6 @@ Name | Type | Description  | Notes
 > GetServerImageProductListResponse GetServerImageProductList(getServerImageProductListRequest)
 
 
-서버이미지상품리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1534,8 +1456,6 @@ Name | Type | Description  | Notes
 # **GetServerInstanceDetail**
 > GetServerInstanceDetailResponse GetServerInstanceDetail(getServerInstanceDetailRequest)
 
-
-서버인스턴스상세조회
 
 ### Required Parameters
 
@@ -1562,8 +1482,6 @@ Name | Type | Description  | Notes
 > GetServerInstanceListResponse GetServerInstanceList(getServerInstanceListRequest)
 
 
-서버인스턴스리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1588,8 +1506,6 @@ Name | Type | Description  | Notes
 # **GetServerProductList**
 > GetServerProductListResponse GetServerProductList(getServerProductListRequest)
 
-
-서버상품리스트조회
 
 ### Required Parameters
 
@@ -1616,8 +1532,6 @@ Name | Type | Description  | Notes
 > GetZoneListResponse GetZoneList(getZoneListRequest)
 
 
-ZONE리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1642,8 +1556,6 @@ Name | Type | Description  | Notes
 # **ImportLoginKey**
 > ImportLoginKeyResponse ImportLoginKey(importLoginKeyRequest)
 
-
-사용자가생성한로그인키import
 
 ### Required Parameters
 
@@ -1670,8 +1582,6 @@ Name | Type | Description  | Notes
 > RebootServerInstancesResponse RebootServerInstances(rebootServerInstancesRequest)
 
 
-서버인스턴스재시작
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1696,8 +1606,6 @@ Name | Type | Description  | Notes
 # **RemoveAccessControlGroupInboundRule**
 > RemoveAccessControlGroupInboundRuleResponse RemoveAccessControlGroupInboundRule(removeAccessControlGroupInboundRuleRequest)
 
-
-ACGInboundRule삭제
 
 ### Required Parameters
 
@@ -1724,8 +1632,6 @@ Name | Type | Description  | Notes
 > RemoveAccessControlGroupOutboundRuleResponse RemoveAccessControlGroupOutboundRule(removeAccessControlGroupOutboundRuleRequest)
 
 
-ACGOutboundRule삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1750,8 +1656,6 @@ Name | Type | Description  | Notes
 # **RemoveNetworkInterfaceAccessControlGroup**
 > RemoveNetworkInterfaceAccessControlGroupResponse RemoveNetworkInterfaceAccessControlGroup(removeNetworkInterfaceAccessControlGroupRequest)
 
-
-네트워크인터페이스의ACG제거
 
 ### Required Parameters
 
@@ -1778,8 +1682,6 @@ Name | Type | Description  | Notes
 > RemovePlacementGroupServerInstanceResponse RemovePlacementGroupServerInstance(removePlacementGroupServerInstanceRequest)
 
 
-물리배치그룹에서서버인스턴스제거
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1801,11 +1703,84 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **SetBlockStorageReturnProtection**
+> SetBlockStorageReturnProtectionResponse SetBlockStorageReturnProtection(setBlockStorageReturnProtectionRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**setBlockStorageReturnProtectionRequest** | **[\*SetBlockStorageReturnProtectionRequest](SetBlockStorageReturnProtectionRequest.md)** | setBlockStorageReturnProtectionRequest | 
+
+### Return type
+
+*[**SetBlockStorageReturnProtectionResponse**](SetBlockStorageReturnProtectionResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **SetMemberServerImageSharingPermission**
+> SetMemberServerImageSharingPermissionResponse SetMemberServerImageSharingPermission(setMemberServerImageSharingPermissionRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**setMemberServerImageSharingPermissionRequest** | **[\*SetMemberServerImageSharingPermissionRequest](SetMemberServerImageSharingPermissionRequest.md)** | setMemberServerImageSharingPermissionRequest | 
+
+### Return type
+
+*[**SetMemberServerImageSharingPermissionResponse**](SetMemberServerImageSharingPermissionResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **SetProtectServerTermination**
+> SetProtectServerTerminationResponse SetProtectServerTermination(setProtectServerTerminationRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**setProtectServerTerminationRequest** | **[\*SetProtectServerTerminationRequest](SetProtectServerTerminationRequest.md)** | setProtectServerTerminationRequest | 
+
+### Return type
+
+*[**SetProtectServerTerminationResponse**](SetProtectServerTerminationResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **StartServerInstances**
 > StartServerInstancesResponse StartServerInstances(startServerInstancesRequest)
 
-
-서버인스턴스시작
 
 ### Required Parameters
 
@@ -1832,8 +1807,6 @@ Name | Type | Description  | Notes
 > StopServerInstancesResponse StopServerInstances(stopServerInstancesRequest)
 
 
-서버인스턴스정지
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1859,8 +1832,6 @@ Name | Type | Description  | Notes
 > TerminateServerInstancesResponse TerminateServerInstances(terminateServerInstancesRequest)
 
 
-서버인스턴스반납
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -1870,6 +1841,31 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**TerminateServerInstancesResponse**](TerminateServerInstancesResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **UnassignSecondaryIps**
+> UnassignSecondaryIpsResponse UnassignSecondaryIps(unassignSecondaryIpsRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**unassignSecondaryIpsRequest** | **[\*UnassignSecondaryIpsRequest](UnassignSecondaryIpsRequest.md)** | unassignSecondaryIpsRequest | 
+
+### Return type
+
+*[**UnassignSecondaryIpsResponse**](UnassignSecondaryIpsResponse.md)
 
 ### Authorization
 

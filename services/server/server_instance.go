@@ -91,9 +91,6 @@ BaseBlockStorageDiskType *CommonCode `json:"baseBlockStorageDiskType,omitempty"`
 	// 기본블록스토리지디스크상세유형
 BaseBlockStorageDiskDetailType *CommonCode `json:"baseBlockStorageDiskDetailType,omitempty"`
 
-	// 인터넷라인구분
-InternetLineType *CommonCode `json:"internetLineType,omitempty"`
-
 	// 서버인스턴스구분
 ServerInstanceType *CommonCode `json:"serverInstanceType,omitempty"`
 

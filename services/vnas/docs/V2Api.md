@@ -6,19 +6,25 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddNasVolumeAccessControl**](V2Api.md#AddNasVolumeAccessControl) | **Post** /addNasVolumeAccessControl | 
 [**ChangeNasVolumeSize**](V2Api.md#ChangeNasVolumeSize) | **Post** /changeNasVolumeSize | 
+[**ChangeNasVolumeSnapshotConfiguration**](V2Api.md#ChangeNasVolumeSnapshotConfiguration) | **Post** /changeNasVolumeSnapshotConfiguration | 
 [**CreateNasVolumeInstance**](V2Api.md#CreateNasVolumeInstance) | **Post** /createNasVolumeInstance | 
+[**CreateNasVolumeSnapshot**](V2Api.md#CreateNasVolumeSnapshot) | **Post** /createNasVolumeSnapshot | 
 [**DeleteNasVolumeInstances**](V2Api.md#DeleteNasVolumeInstances) | **Post** /deleteNasVolumeInstances | 
+[**DeleteNasVolumeSnapshot**](V2Api.md#DeleteNasVolumeSnapshot) | **Post** /deleteNasVolumeSnapshot | 
 [**GetNasVolumeInstanceDetail**](V2Api.md#GetNasVolumeInstanceDetail) | **Post** /getNasVolumeInstanceDetail | 
 [**GetNasVolumeInstanceList**](V2Api.md#GetNasVolumeInstanceList) | **Post** /getNasVolumeInstanceList | 
+[**GetNasVolumeInstanceRatingList**](V2Api.md#GetNasVolumeInstanceRatingList) | **Post** /getNasVolumeInstanceRatingList | 
+[**GetNasVolumeSnapshotConfigurationHistoryList**](V2Api.md#GetNasVolumeSnapshotConfigurationHistoryList) | **Post** /getNasVolumeSnapshotConfigurationHistoryList | 
+[**GetNasVolumeSnapshotList**](V2Api.md#GetNasVolumeSnapshotList) | **Post** /getNasVolumeSnapshotList | 
 [**RemoveNasVolumeAccessControl**](V2Api.md#RemoveNasVolumeAccessControl) | **Post** /removeNasVolumeAccessControl | 
+[**RestoreNasVolumeWithSnapshot**](V2Api.md#RestoreNasVolumeWithSnapshot) | **Post** /restoreNasVolumeWithSnapshot | 
 [**SetNasVolumeAccessControl**](V2Api.md#SetNasVolumeAccessControl) | **Post** /setNasVolumeAccessControl | 
+[**SetNasVolumeReturnProtection**](V2Api.md#SetNasVolumeReturnProtection) | **Post** /setNasVolumeReturnProtection | 
 
 
 # **AddNasVolumeAccessControl**
 > AddNasVolumeAccessControlResponse AddNasVolumeAccessControl(addNasVolumeAccessControlRequest)
 
-
-NAS볼륨접근제어추가
 
 ### Required Parameters
 
@@ -45,8 +51,6 @@ Name | Type | Description  | Notes
 > ChangeNasVolumeSizeResponse ChangeNasVolumeSize(changeNasVolumeSizeRequest)
 
 
-NAS볼륨사이즈변경
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -68,11 +72,34 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ChangeNasVolumeSnapshotConfiguration**
+> ChangeNasVolumeSnapshotConfigurationResponse ChangeNasVolumeSnapshotConfiguration(changeNasVolumeSnapshotConfigurationRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**changeNasVolumeSnapshotConfigurationRequest** | **[\*ChangeNasVolumeSnapshotConfigurationRequest](ChangeNasVolumeSnapshotConfigurationRequest.md)** | changeNasVolumeSnapshotConfigurationRequest | 
+
+### Return type
+
+*[**ChangeNasVolumeSnapshotConfigurationResponse**](ChangeNasVolumeSnapshotConfigurationResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **CreateNasVolumeInstance**
 > CreateNasVolumeInstanceResponse CreateNasVolumeInstance(createNasVolumeInstanceRequest)
 
-
-NAS볼륨인스턴스생성
 
 ### Required Parameters
 
@@ -95,11 +122,34 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **CreateNasVolumeSnapshot**
+> CreateNasVolumeSnapshotResponse CreateNasVolumeSnapshot(createNasVolumeSnapshotRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**createNasVolumeSnapshotRequest** | **[\*CreateNasVolumeSnapshotRequest](CreateNasVolumeSnapshotRequest.md)** | createNasVolumeSnapshotRequest | 
+
+### Return type
+
+*[**CreateNasVolumeSnapshotResponse**](CreateNasVolumeSnapshotResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **DeleteNasVolumeInstances**
 > DeleteNasVolumeInstancesResponse DeleteNasVolumeInstances(deleteNasVolumeInstancesRequest)
 
-
-NAS볼륨인스턴스제거
 
 ### Required Parameters
 
@@ -122,11 +172,34 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **DeleteNasVolumeSnapshot**
+> DeleteNasVolumeSnapshotResponse DeleteNasVolumeSnapshot(deleteNasVolumeSnapshotRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**deleteNasVolumeSnapshotRequest** | **[\*DeleteNasVolumeSnapshotRequest](DeleteNasVolumeSnapshotRequest.md)** | deleteNasVolumeSnapshotRequest | 
+
+### Return type
+
+*[**DeleteNasVolumeSnapshotResponse**](DeleteNasVolumeSnapshotResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetNasVolumeInstanceDetail**
 > GetNasVolumeInstanceDetailResponse GetNasVolumeInstanceDetail(getNasVolumeInstanceDetailRequest)
 
-
-NAS볼륨인스턴스상세조회
 
 ### Required Parameters
 
@@ -153,8 +226,6 @@ Name | Type | Description  | Notes
 > GetNasVolumeInstanceListResponse GetNasVolumeInstanceList(getNasVolumeInstanceListRequest)
 
 
-NAS볼륨인스턴스리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -176,11 +247,84 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetNasVolumeInstanceRatingList**
+> GetNasVolumeInstanceRatingListResponse GetNasVolumeInstanceRatingList(getNasVolumeInstanceRatingListRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getNasVolumeInstanceRatingListRequest** | **[\*GetNasVolumeInstanceRatingListRequest](GetNasVolumeInstanceRatingListRequest.md)** | getNasVolumeInstanceRatingListRequest | 
+
+### Return type
+
+*[**GetNasVolumeInstanceRatingListResponse**](GetNasVolumeInstanceRatingListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetNasVolumeSnapshotConfigurationHistoryList**
+> GetNasVolumeSnapshotConfigurationHistoryListResponse GetNasVolumeSnapshotConfigurationHistoryList(getNasVolumeSnapshotConfigurationHistoryListRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getNasVolumeSnapshotConfigurationHistoryListRequest** | **[\*GetNasVolumeSnapshotConfigurationHistoryListRequest](GetNasVolumeSnapshotConfigurationHistoryListRequest.md)** | getNasVolumeSnapshotConfigurationHistoryListRequest | 
+
+### Return type
+
+*[**GetNasVolumeSnapshotConfigurationHistoryListResponse**](GetNasVolumeSnapshotConfigurationHistoryListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetNasVolumeSnapshotList**
+> GetNasVolumeSnapshotListResponse GetNasVolumeSnapshotList(getNasVolumeSnapshotListRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getNasVolumeSnapshotListRequest** | **[\*GetNasVolumeSnapshotListRequest](GetNasVolumeSnapshotListRequest.md)** | getNasVolumeSnapshotListRequest | 
+
+### Return type
+
+*[**GetNasVolumeSnapshotListResponse**](GetNasVolumeSnapshotListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **RemoveNasVolumeAccessControl**
 > RemoveNasVolumeAccessControlResponse RemoveNasVolumeAccessControl(removeNasVolumeAccessControlRequest)
 
-
-NAS볼륨접근제어삭제
 
 ### Required Parameters
 
@@ -203,11 +347,34 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **RestoreNasVolumeWithSnapshot**
+> RestoreNasVolumeWithSnapshotResponse RestoreNasVolumeWithSnapshot(restoreNasVolumeWithSnapshotRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**restoreNasVolumeWithSnapshotRequest** | **[\*RestoreNasVolumeWithSnapshotRequest](RestoreNasVolumeWithSnapshotRequest.md)** | restoreNasVolumeWithSnapshotRequest | 
+
+### Return type
+
+*[**RestoreNasVolumeWithSnapshotResponse**](RestoreNasVolumeWithSnapshotResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **SetNasVolumeAccessControl**
 > SetNasVolumeAccessControlResponse SetNasVolumeAccessControl(setNasVolumeAccessControlRequest)
 
-
-NAS볼륨접근제어설정
 
 ### Required Parameters
 
@@ -218,6 +385,31 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**SetNasVolumeAccessControlResponse**](SetNasVolumeAccessControlResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **SetNasVolumeReturnProtection**
+> SetNasVolumeReturnProtectionResponse SetNasVolumeReturnProtection(setNasVolumeReturnProtectionRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**setNasVolumeReturnProtectionRequest** | **[\*SetNasVolumeReturnProtectionRequest](SetNasVolumeReturnProtectionRequest.md)** | setNasVolumeReturnProtectionRequest | 
+
+### Return type
+
+*[**SetNasVolumeReturnProtectionResponse**](SetNasVolumeReturnProtectionResponse.md)
 
 ### Authorization
 

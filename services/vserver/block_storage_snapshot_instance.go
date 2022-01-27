@@ -39,4 +39,13 @@ IsEncryptedOriginalBlockStorageVolume *bool `json:"isEncryptedOriginalBlockStora
 
 	// 블록스토리지스냅샷설명
 BlockStorageSnapshotDescription *string `json:"blockStorageSnapshotDescription,omitempty"`
+
+	// 스냅샷유형
+SnapshotType *CommonCode `json:"snapshotType,omitempty"`
+
+	// 베이스스냅샷인스턴스번호
+BaseSnapshotInstanceNo *string `json:"baseSnapshotInstanceNo,omitempty"`
+
+	// 스냅샷일련Depth
+SnapshotChainDepth *int32 `json:"snapshotChainDepth,omitempty"`
 }

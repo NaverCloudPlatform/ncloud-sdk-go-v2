@@ -15,4 +15,7 @@ RegionCode *string `json:"regionCode,omitempty"`
 
 	// 로드밸런서인스턴스번호리스트
 LoadBalancerInstanceNoList []*string `json:"loadBalancerInstanceNoList"`
+
+	// 공인IP반납여부
+ReturnPublicIpTogether *bool `json:"returnPublicIpTogether,omitempty"`
 }

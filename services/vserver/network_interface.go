@@ -45,4 +45,7 @@ AccessControlGroupNoList []*string `json:"accessControlGroupNoList,omitempty"`
 
 	// 네트워크인터페이스설명
 NetworkInterfaceDescription *string `json:"networkInterfaceDescription,omitempty"`
+
+	// 보조IP리스트
+SecondaryIpList []*string `json:"secondaryIpList,omitempty"`
 }

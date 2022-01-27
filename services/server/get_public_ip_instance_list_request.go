@@ -25,9 +25,6 @@ SearchFilterName *string `json:"searchFilterName,omitempty"`
 	// 검색할필터값
 SearchFilterValue *string `json:"searchFilterValue,omitempty"`
 
-	// 인터넷라인구분코드
-InternetLineTypeCode *string `json:"internetLineTypeCode,omitempty"`
-
 	// 리전번호
 RegionNo *string `json:"regionNo,omitempty"`
 

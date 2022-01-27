@@ -13,6 +13,9 @@ type RemoveNetworkAclRuleParameter struct {
 	// IP블록
 IpBlock *string `json:"ipBlock"`
 
+	// 허용차단그룹번호
+DenyAllowGroupNo *string `json:"denyAllowGroupNo,omitempty"`
+
 	// Rule액션코드
 RuleActionCode *string `json:"ruleActionCode"`
 

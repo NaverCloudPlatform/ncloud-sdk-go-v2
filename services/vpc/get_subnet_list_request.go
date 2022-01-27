@@ -16,6 +16,9 @@ RegionCode *string `json:"regionCode,omitempty"`
 	// 서브넷번호리스트
 SubnetNoList []*string `json:"subnetNoList,omitempty"`
 
+	// 서브넷이름
+SubnetName *string `json:"subnetName,omitempty"`
+
 	// 서브넷
 Subnet *string `json:"subnet,omitempty"`
 

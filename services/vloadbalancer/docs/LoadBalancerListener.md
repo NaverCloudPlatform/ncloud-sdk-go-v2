@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **SslCertificateNo** | ***string** | SSL인증서번호 | [optional] [default to null]
 **TlsMinVersionType** | **[*CommonCode](CommonCode.md)** | TLS최소지원버전유형 | [optional] [default to null]
 **LoadBalancerRuleNoList** | **[]\*string** | 로드밸런서룰번호리스트 | [optional] [default to null]
+**CipherSuiteList** | **[]\*string** | 암호화스위트리스트 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **CifsUserName** | ***string** | CIFS유저이름 | [optional] [default to null]
 **CifsUserPassword** | ***string** | CIFS유저비밀번호 | [optional] [default to null]
 **IsEncryptedVolume** | ***bool** | 볼륨암호화여부 | [optional] [default to null]
+**IsReturnProtection** | ***bool** | 반납보호여부 | [optional] [default to null]
 **NasVolumeDescription** | ***string** | NAS볼륨설명 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

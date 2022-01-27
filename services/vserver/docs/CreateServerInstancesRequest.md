@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **NetworkInterfaceList** | **[[]\*NetworkInterfaceParameter](NetworkInterfaceParameter.md)** | 네트워크인터페이스리스트 | [default to null]
 **PlacementGroupNo** | ***string** | 물리배치그룹번호 | [optional] [default to null]
 **IsEncryptedBaseBlockStorageVolume** | ***bool** | 기본블록스토리지볼륨암호화여부 | [optional] [default to null]
+**AssociateWithPublicIp** | ***bool** | 서버생성시공인IP할당여부 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

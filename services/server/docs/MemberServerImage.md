@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **CreateDate** | ***string** | 생성일시 | [optional] [default to null]
 **MemberServerImageBlockStorageTotalRows** | ***int32** | 회원서버이미지블록스토리지인스턴스총 개수 | [optional] [default to null]
 **MemberServerImageBlockStorageTotalSize** | ***int64** | 회원서버이미지총사이즈 | [optional] [default to null]
+**ShareStatus** | **[*CommonCode](CommonCode.md)** | 공유상태 | [optional] [default to null]
+**SharedLoginIdList** | **[]\*string** | 공유받는로그인ID리스트 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
