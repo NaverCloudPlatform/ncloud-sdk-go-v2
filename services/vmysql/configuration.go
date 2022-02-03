@@ -27,7 +27,7 @@ func NewConfiguration(apiKeys ...*ncloud.APIKey) *ncloud.Configuration {
 	cfg := &ncloud.Configuration{
 		BasePath:      "https://ncloud.apigw.ntruss.com/vmysql/v2",
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "vmysql//go",
+		UserAgent:     "vmysql/1.0.0/go",
 	}
 	if len(apiKeys) > 0 {
 		cfg.APIKey = apiKeys[0]
