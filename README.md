@@ -69,6 +69,10 @@ If credentials (apiKeys) are not specified, the default credential provider chai
 | _Autoscaling(VPC)_      | [**Autoscaling(VPC)**](services/vautoscaling/README.md)           |
 | _Loadbalancer(VPC)_      | [**Loadbalancer(VPC)**](services/vloadbalancer/README.md)           |
 | _Kubernetes Service(VPC)_ | [**NKS(VPC)**](services/vnks/README.md) |
+| _Cloud DB For MySQL(VPC)_ | [**Cloud DB For MySQL(VPC)**](services/vmysql/README.md) |
+| _Cloud DB For MSSQL(VPC)_ | [**Cloud DB For MSSQL(VPC)**](services/vmssql/README.md) |
+| _Cloud DB For Redis(VPC)_ | [**Cloud DB For Redis(VPC)**](services/vredis/README.md) |
+| _Cloud DB For MongoDB(VPC)_ | [**Cloud DB For MongoDB(VPC)**](services/vmongodb/README.md) |
 
 ### License
 

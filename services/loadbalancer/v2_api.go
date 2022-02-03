@@ -29,7 +29,6 @@ type V2ApiService service
 
 
 /* V2ApiService 
- 로드밸런서SSL인증서추가
  @param addLoadBalancerSslCertificateRequest addLoadBalancerSslCertificateRequest
  @return *AddLoadBalancerSslCertificateResponse*/
 func (a *V2ApiService) AddLoadBalancerSslCertificate(addLoadBalancerSslCertificateRequest *AddLoadBalancerSslCertificateRequest) (*AddLoadBalancerSslCertificateResponse, error) {
@@ -103,7 +102,79 @@ func (a *V2ApiService) AddLoadBalancerSslCertificate(addLoadBalancerSslCertifica
 }
 
 /* V2ApiService 
- 로드밸런서에Bind된서버인스턴스변경
+ @param addServerInstancesToLoadBalancerRequest addServerInstancesToLoadBalancerRequest
+ @return *AddServerInstancesToLoadBalancerResponse*/
+func (a *V2ApiService) AddServerInstancesToLoadBalancer(addServerInstancesToLoadBalancerRequest *AddServerInstancesToLoadBalancerRequest) (*AddServerInstancesToLoadBalancerResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  AddServerInstancesToLoadBalancerResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/addServerInstancesToLoadBalancer"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = addServerInstancesToLoadBalancerRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
  @param changeLoadBalancedServerInstancesRequest changeLoadBalancedServerInstancesRequest
  @return *ChangeLoadBalancedServerInstancesResponse*/
 func (a *V2ApiService) ChangeLoadBalancedServerInstances(changeLoadBalancedServerInstancesRequest *ChangeLoadBalancedServerInstancesRequest) (*ChangeLoadBalancedServerInstancesResponse, error) {
@@ -177,7 +248,6 @@ func (a *V2ApiService) ChangeLoadBalancedServerInstances(changeLoadBalancedServe
 }
 
 /* V2ApiService 
- 로드밸런서인스턴스설정변경
  @param changeLoadBalancerInstanceConfigurationRequest changeLoadBalancerInstanceConfigurationRequest
  @return *ChangeLoadBalancerInstanceConfigurationResponse*/
 func (a *V2ApiService) ChangeLoadBalancerInstanceConfiguration(changeLoadBalancerInstanceConfigurationRequest *ChangeLoadBalancerInstanceConfigurationRequest) (*ChangeLoadBalancerInstanceConfigurationResponse, error) {
@@ -251,7 +321,6 @@ func (a *V2ApiService) ChangeLoadBalancerInstanceConfiguration(changeLoadBalance
 }
 
 /* V2ApiService 
- 로드밸런서인스턴스생성
  @param createLoadBalancerInstanceRequest createLoadBalancerInstanceRequest
  @return *CreateLoadBalancerInstanceResponse*/
 func (a *V2ApiService) CreateLoadBalancerInstance(createLoadBalancerInstanceRequest *CreateLoadBalancerInstanceRequest) (*CreateLoadBalancerInstanceResponse, error) {
@@ -325,7 +394,6 @@ func (a *V2ApiService) CreateLoadBalancerInstance(createLoadBalancerInstanceRequ
 }
 
 /* V2ApiService 
- 로드밸런서인스턴스삭제
  @param deleteLoadBalancerInstancesRequest deleteLoadBalancerInstancesRequest
  @return *DeleteLoadBalancerInstancesResponse*/
 func (a *V2ApiService) DeleteLoadBalancerInstances(deleteLoadBalancerInstancesRequest *DeleteLoadBalancerInstancesRequest) (*DeleteLoadBalancerInstancesResponse, error) {
@@ -399,7 +467,6 @@ func (a *V2ApiService) DeleteLoadBalancerInstances(deleteLoadBalancerInstancesRe
 }
 
 /* V2ApiService 
- 로드밸런서SSL인증서삭제
  @param deleteLoadBalancerSslCertificateRequest deleteLoadBalancerSslCertificateRequest
  @return *DeleteLoadBalancerSslCertificateResponse*/
 func (a *V2ApiService) DeleteLoadBalancerSslCertificate(deleteLoadBalancerSslCertificateRequest *DeleteLoadBalancerSslCertificateRequest) (*DeleteLoadBalancerSslCertificateResponse, error) {
@@ -473,7 +540,79 @@ func (a *V2ApiService) DeleteLoadBalancerSslCertificate(deleteLoadBalancerSslCer
 }
 
 /* V2ApiService 
- 로드밸런서Bind된서버인스턴스리스트조회
+ @param deleteServerInstancesFromLoadBalancerRequest deleteServerInstancesFromLoadBalancerRequest
+ @return *DeleteServerInstancesFromLoadBalancerResponse*/
+func (a *V2ApiService) DeleteServerInstancesFromLoadBalancer(deleteServerInstancesFromLoadBalancerRequest *DeleteServerInstancesFromLoadBalancerRequest) (*DeleteServerInstancesFromLoadBalancerResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  DeleteServerInstancesFromLoadBalancerResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/deleteServerInstancesFromLoadBalancer"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = deleteServerInstancesFromLoadBalancerRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
  @param getLoadBalancedServerInstanceListRequest getLoadBalancedServerInstanceListRequest
  @return *GetLoadBalancedServerInstanceListResponse*/
 func (a *V2ApiService) GetLoadBalancedServerInstanceList(getLoadBalancedServerInstanceListRequest *GetLoadBalancedServerInstanceListRequest) (*GetLoadBalancedServerInstanceListResponse, error) {
@@ -547,7 +686,6 @@ func (a *V2ApiService) GetLoadBalancedServerInstanceList(getLoadBalancedServerIn
 }
 
 /* V2ApiService 
- 로드밸런서인스턴스리스트조회
  @param getLoadBalancerInstanceListRequest getLoadBalancerInstanceListRequest
  @return *GetLoadBalancerInstanceListResponse*/
 func (a *V2ApiService) GetLoadBalancerInstanceList(getLoadBalancerInstanceListRequest *GetLoadBalancerInstanceListRequest) (*GetLoadBalancerInstanceListResponse, error) {
@@ -621,7 +759,6 @@ func (a *V2ApiService) GetLoadBalancerInstanceList(getLoadBalancerInstanceListRe
 }
 
 /* V2ApiService 
- 로드밸런서SSL인증서조회
  @param getLoadBalancerSslCertificateListRequest getLoadBalancerSslCertificateListRequest
  @return *GetLoadBalancerSslCertificateListResponse*/
 func (a *V2ApiService) GetLoadBalancerSslCertificateList(getLoadBalancerSslCertificateListRequest *GetLoadBalancerSslCertificateListRequest) (*GetLoadBalancerSslCertificateListResponse, error) {
@@ -695,7 +832,6 @@ func (a *V2ApiService) GetLoadBalancerSslCertificateList(getLoadBalancerSslCerti
 }
 
 /* V2ApiService 
- 로드밸런서Target서버인스턴스리스트
  @param getLoadBalancerTargetServerInstanceListRequest getLoadBalancerTargetServerInstanceListRequest
  @return *GetLoadBalancerTargetServerInstanceListResponse*/
 func (a *V2ApiService) GetLoadBalancerTargetServerInstanceList(getLoadBalancerTargetServerInstanceListRequest *GetLoadBalancerTargetServerInstanceListRequest) (*GetLoadBalancerTargetServerInstanceListResponse, error) {

@@ -33,4 +33,7 @@ TlsMinVersionType *CommonCode `json:"tlsMinVersionType,omitempty"`
 
 	// 로드밸런서룰번호리스트
 LoadBalancerRuleNoList []*string `json:"loadBalancerRuleNoList,omitempty"`
+
+	// 암호화스위트리스트
+CipherSuiteList []*string `json:"cipherSuiteList,omitempty"`
 }

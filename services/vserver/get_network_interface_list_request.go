@@ -28,6 +28,18 @@ ServerName *string `json:"serverName,omitempty"`
 	// 서브넷이름
 SubnetName *string `json:"subnetName,omitempty"`
 
+	// 보조IP리스트
+SecondaryIpList []*string `json:"secondaryIpList,omitempty"`
+
+	// 인스턴스번호
+InstanceNo *string `json:"instanceNo,omitempty"`
+
+	// Default여부
+IsDefault *bool `json:"isDefault,omitempty"`
+
+	// 디바이스이름
+DeviceName *string `json:"deviceName,omitempty"`
+
 	// 페이지번호
 PageNo *int32 `json:"pageNo,omitempty"`
 

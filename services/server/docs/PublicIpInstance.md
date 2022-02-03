@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **PublicIp** | ***string** | 공인IP | [optional] [default to null]
 **PublicIpDescription** | ***string** | 공인IP설명 | [optional] [default to null]
 **CreateDate** | ***string** | 생성일시 | [optional] [default to null]
-**InternetLineType** | **[*CommonCode](CommonCode.md)** | 인터넷라인구분 | [optional] [default to null]
 **PublicIpInstanceStatusName** | ***string** | 공인IP인스턴스상태명 | [optional] [default to null]
 **PublicIpInstanceStatus** | **[*CommonCode](CommonCode.md)** | 공인IP인스턴스상태 | [optional] [default to null]
 **PublicIpInstanceOperation** | **[*CommonCode](CommonCode.md)** | 공인IP인스턴스OP | [optional] [default to null]

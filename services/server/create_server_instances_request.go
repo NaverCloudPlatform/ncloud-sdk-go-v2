@@ -37,9 +37,6 @@ ServerCreateCount *int32 `json:"serverCreateCount,omitempty"`
 	// 서버생성시작번호
 ServerCreateStartNo *int32 `json:"serverCreateStartNo,omitempty"`
 
-	// 인터넷라인구분코드
-InternetLineTypeCode *string `json:"internetLineTypeCode,omitempty"`
-
 	// 요금제구분코드
 FeeSystemTypeCode *string `json:"feeSystemTypeCode,omitempty"`
 

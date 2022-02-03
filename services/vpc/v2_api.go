@@ -29,7 +29,6 @@ type V2ApiService service
 
 
 /* V2ApiService 
- VPCPeering요청수락거절
  @param acceptOrRejectVpcPeeringRequest acceptOrRejectVpcPeeringRequest
  @return *AcceptOrRejectVpcPeeringResponse*/
 func (a *V2ApiService) AcceptOrRejectVpcPeering(acceptOrRejectVpcPeeringRequest *AcceptOrRejectVpcPeeringRequest) (*AcceptOrRejectVpcPeeringResponse, error) {
@@ -103,7 +102,6 @@ func (a *V2ApiService) AcceptOrRejectVpcPeering(acceptOrRejectVpcPeeringRequest 
 }
 
 /* V2ApiService 
- 네트워크ACLInboundRule추가
  @param addNetworkAclInboundRuleRequest addNetworkAclInboundRuleRequest
  @return *AddNetworkAclInboundRuleResponse*/
 func (a *V2ApiService) AddNetworkAclInboundRule(addNetworkAclInboundRuleRequest *AddNetworkAclInboundRuleRequest) (*AddNetworkAclInboundRuleResponse, error) {
@@ -177,7 +175,6 @@ func (a *V2ApiService) AddNetworkAclInboundRule(addNetworkAclInboundRuleRequest 
 }
 
 /* V2ApiService 
- 네트워크ACLOutboundRule추가
  @param addNetworkAclOutboundRuleRequest addNetworkAclOutboundRuleRequest
  @return *AddNetworkAclOutboundRuleResponse*/
 func (a *V2ApiService) AddNetworkAclOutboundRule(addNetworkAclOutboundRuleRequest *AddNetworkAclOutboundRuleRequest) (*AddNetworkAclOutboundRuleResponse, error) {
@@ -251,7 +248,6 @@ func (a *V2ApiService) AddNetworkAclOutboundRule(addNetworkAclOutboundRuleReques
 }
 
 /* V2ApiService 
- 라우트추가
  @param addRouteRequest addRouteRequest
  @return *AddRouteResponse*/
 func (a *V2ApiService) AddRoute(addRouteRequest *AddRouteRequest) (*AddRouteResponse, error) {
@@ -325,7 +321,6 @@ func (a *V2ApiService) AddRoute(addRouteRequest *AddRouteRequest) (*AddRouteResp
 }
 
 /* V2ApiService 
- 라우트테이블의연관서브넷추가
  @param addRouteTableSubnetRequest addRouteTableSubnetRequest
  @return *AddRouteTableSubnetResponse*/
 func (a *V2ApiService) AddRouteTableSubnet(addRouteTableSubnetRequest *AddRouteTableSubnetRequest) (*AddRouteTableSubnetResponse, error) {
@@ -399,7 +394,6 @@ func (a *V2ApiService) AddRouteTableSubnet(addRouteTableSubnetRequest *AddRouteT
 }
 
 /* V2ApiService 
- NATGateway인스턴스생성
  @param createNatGatewayInstanceRequest createNatGatewayInstanceRequest
  @return *CreateNatGatewayInstanceResponse*/
 func (a *V2ApiService) CreateNatGatewayInstance(createNatGatewayInstanceRequest *CreateNatGatewayInstanceRequest) (*CreateNatGatewayInstanceResponse, error) {
@@ -473,7 +467,6 @@ func (a *V2ApiService) CreateNatGatewayInstance(createNatGatewayInstanceRequest 
 }
 
 /* V2ApiService 
- 네트워크ACL생성
  @param createNetworkAclRequest createNetworkAclRequest
  @return *CreateNetworkAclResponse*/
 func (a *V2ApiService) CreateNetworkAcl(createNetworkAclRequest *CreateNetworkAclRequest) (*CreateNetworkAclResponse, error) {
@@ -547,7 +540,79 @@ func (a *V2ApiService) CreateNetworkAcl(createNetworkAclRequest *CreateNetworkAc
 }
 
 /* V2ApiService 
- 라우트테이블생성
+ @param createNetworkAclDenyAllowGroupRequest createNetworkAclDenyAllowGroupRequest
+ @return *CreateNetworkAclDenyAllowGroupResponse*/
+func (a *V2ApiService) CreateNetworkAclDenyAllowGroup(createNetworkAclDenyAllowGroupRequest *CreateNetworkAclDenyAllowGroupRequest) (*CreateNetworkAclDenyAllowGroupResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  CreateNetworkAclDenyAllowGroupResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/createNetworkAclDenyAllowGroup"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = createNetworkAclDenyAllowGroupRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
  @param createRouteTableRequest createRouteTableRequest
  @return *CreateRouteTableResponse*/
 func (a *V2ApiService) CreateRouteTable(createRouteTableRequest *CreateRouteTableRequest) (*CreateRouteTableResponse, error) {
@@ -621,7 +686,6 @@ func (a *V2ApiService) CreateRouteTable(createRouteTableRequest *CreateRouteTabl
 }
 
 /* V2ApiService 
- 서브넷생성
  @param createSubnetRequest createSubnetRequest
  @return *CreateSubnetResponse*/
 func (a *V2ApiService) CreateSubnet(createSubnetRequest *CreateSubnetRequest) (*CreateSubnetResponse, error) {
@@ -695,7 +759,6 @@ func (a *V2ApiService) CreateSubnet(createSubnetRequest *CreateSubnetRequest) (*
 }
 
 /* V2ApiService 
- VPC생성
  @param createVpcRequest createVpcRequest
  @return *CreateVpcResponse*/
 func (a *V2ApiService) CreateVpc(createVpcRequest *CreateVpcRequest) (*CreateVpcResponse, error) {
@@ -769,7 +832,6 @@ func (a *V2ApiService) CreateVpc(createVpcRequest *CreateVpcRequest) (*CreateVpc
 }
 
 /* V2ApiService 
- VPCPeering인스턴스생성
  @param createVpcPeeringInstanceRequest createVpcPeeringInstanceRequest
  @return *CreateVpcPeeringInstanceResponse*/
 func (a *V2ApiService) CreateVpcPeeringInstance(createVpcPeeringInstanceRequest *CreateVpcPeeringInstanceRequest) (*CreateVpcPeeringInstanceResponse, error) {
@@ -843,7 +905,6 @@ func (a *V2ApiService) CreateVpcPeeringInstance(createVpcPeeringInstanceRequest 
 }
 
 /* V2ApiService 
- NATGateway인스턴스삭제
  @param deleteNatGatewayInstanceRequest deleteNatGatewayInstanceRequest
  @return *DeleteNatGatewayInstanceResponse*/
 func (a *V2ApiService) DeleteNatGatewayInstance(deleteNatGatewayInstanceRequest *DeleteNatGatewayInstanceRequest) (*DeleteNatGatewayInstanceResponse, error) {
@@ -917,7 +978,6 @@ func (a *V2ApiService) DeleteNatGatewayInstance(deleteNatGatewayInstanceRequest 
 }
 
 /* V2ApiService 
- 네트워크ACL삭제
  @param deleteNetworkAclRequest deleteNetworkAclRequest
  @return *DeleteNetworkAclResponse*/
 func (a *V2ApiService) DeleteNetworkAcl(deleteNetworkAclRequest *DeleteNetworkAclRequest) (*DeleteNetworkAclResponse, error) {
@@ -991,7 +1051,79 @@ func (a *V2ApiService) DeleteNetworkAcl(deleteNetworkAclRequest *DeleteNetworkAc
 }
 
 /* V2ApiService 
- 라우트테이블삭제
+ @param deleteNetworkAclDenyAllowGroupRequest deleteNetworkAclDenyAllowGroupRequest
+ @return *DeleteNetworkAclDenyAllowGroupResponse*/
+func (a *V2ApiService) DeleteNetworkAclDenyAllowGroup(deleteNetworkAclDenyAllowGroupRequest *DeleteNetworkAclDenyAllowGroupRequest) (*DeleteNetworkAclDenyAllowGroupResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  DeleteNetworkAclDenyAllowGroupResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/deleteNetworkAclDenyAllowGroup"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = deleteNetworkAclDenyAllowGroupRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
  @param deleteRouteTableRequest deleteRouteTableRequest
  @return *DeleteRouteTableResponse*/
 func (a *V2ApiService) DeleteRouteTable(deleteRouteTableRequest *DeleteRouteTableRequest) (*DeleteRouteTableResponse, error) {
@@ -1065,7 +1197,6 @@ func (a *V2ApiService) DeleteRouteTable(deleteRouteTableRequest *DeleteRouteTabl
 }
 
 /* V2ApiService 
- 서브넷삭제
  @param deleteSubnetRequest deleteSubnetRequest
  @return *DeleteSubnetResponse*/
 func (a *V2ApiService) DeleteSubnet(deleteSubnetRequest *DeleteSubnetRequest) (*DeleteSubnetResponse, error) {
@@ -1139,7 +1270,6 @@ func (a *V2ApiService) DeleteSubnet(deleteSubnetRequest *DeleteSubnetRequest) (*
 }
 
 /* V2ApiService 
- VPC삭제
  @param deleteVpcRequest deleteVpcRequest
  @return *DeleteVpcResponse*/
 func (a *V2ApiService) DeleteVpc(deleteVpcRequest *DeleteVpcRequest) (*DeleteVpcResponse, error) {
@@ -1213,7 +1343,6 @@ func (a *V2ApiService) DeleteVpc(deleteVpcRequest *DeleteVpcRequest) (*DeleteVpc
 }
 
 /* V2ApiService 
- VPCPeering인스턴스삭제
  @param deleteVpcPeeringInstanceRequest deleteVpcPeeringInstanceRequest
  @return *DeleteVpcPeeringInstanceResponse*/
 func (a *V2ApiService) DeleteVpcPeeringInstance(deleteVpcPeeringInstanceRequest *DeleteVpcPeeringInstanceRequest) (*DeleteVpcPeeringInstanceResponse, error) {
@@ -1287,7 +1416,6 @@ func (a *V2ApiService) DeleteVpcPeeringInstance(deleteVpcPeeringInstanceRequest 
 }
 
 /* V2ApiService 
- NATGateway인스턴스상세조회
  @param getNatGatewayInstanceDetailRequest getNatGatewayInstanceDetailRequest
  @return *GetNatGatewayInstanceDetailResponse*/
 func (a *V2ApiService) GetNatGatewayInstanceDetail(getNatGatewayInstanceDetailRequest *GetNatGatewayInstanceDetailRequest) (*GetNatGatewayInstanceDetailResponse, error) {
@@ -1361,7 +1489,6 @@ func (a *V2ApiService) GetNatGatewayInstanceDetail(getNatGatewayInstanceDetailRe
 }
 
 /* V2ApiService 
- NATGateway인스턴스리스트조회
  @param getNatGatewayInstanceListRequest getNatGatewayInstanceListRequest
  @return *GetNatGatewayInstanceListResponse*/
 func (a *V2ApiService) GetNatGatewayInstanceList(getNatGatewayInstanceListRequest *GetNatGatewayInstanceListRequest) (*GetNatGatewayInstanceListResponse, error) {
@@ -1435,7 +1562,152 @@ func (a *V2ApiService) GetNatGatewayInstanceList(getNatGatewayInstanceListReques
 }
 
 /* V2ApiService 
- 네트워크ACL상세조회
+ @param getNetworkAclDenyAllowGroupDetailRequest getNetworkAclDenyAllowGroupDetailRequest
+ @return *GetNetworkAclDenyAllowGroupDetailResponse*/
+func (a *V2ApiService) GetNetworkAclDenyAllowGroupDetail(getNetworkAclDenyAllowGroupDetailRequest *GetNetworkAclDenyAllowGroupDetailRequest) (*GetNetworkAclDenyAllowGroupDetailResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetNetworkAclDenyAllowGroupDetailResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/getNetworkAclDenyAllowGroupDetail"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = getNetworkAclDenyAllowGroupDetailRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
+ @param getNetworkAclDenyAllowGroupListRequest getNetworkAclDenyAllowGroupListRequest
+ @return *GetNetworkAclDenyAllowGroupListResponse*/
+func (a *V2ApiService) GetNetworkAclDenyAllowGroupList(getNetworkAclDenyAllowGroupListRequest *GetNetworkAclDenyAllowGroupListRequest) (*GetNetworkAclDenyAllowGroupListResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetNetworkAclDenyAllowGroupListResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/getNetworkAclDenyAllowGroupList"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = getNetworkAclDenyAllowGroupListRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
  @param getNetworkAclDetailRequest getNetworkAclDetailRequest
  @return *GetNetworkAclDetailResponse*/
 func (a *V2ApiService) GetNetworkAclDetail(getNetworkAclDetailRequest *GetNetworkAclDetailRequest) (*GetNetworkAclDetailResponse, error) {
@@ -1509,7 +1781,6 @@ func (a *V2ApiService) GetNetworkAclDetail(getNetworkAclDetailRequest *GetNetwor
 }
 
 /* V2ApiService 
- 네트워크ACL리스트조회
  @param getNetworkAclListRequest getNetworkAclListRequest
  @return *GetNetworkAclListResponse*/
 func (a *V2ApiService) GetNetworkAclList(getNetworkAclListRequest *GetNetworkAclListRequest) (*GetNetworkAclListResponse, error) {
@@ -1583,7 +1854,6 @@ func (a *V2ApiService) GetNetworkAclList(getNetworkAclListRequest *GetNetworkAcl
 }
 
 /* V2ApiService 
- 네트워크ACLRule리스트조회
  @param getNetworkAclRuleListRequest getNetworkAclRuleListRequest
  @return *GetNetworkAclRuleListResponse*/
 func (a *V2ApiService) GetNetworkAclRuleList(getNetworkAclRuleListRequest *GetNetworkAclRuleListRequest) (*GetNetworkAclRuleListResponse, error) {
@@ -1657,7 +1927,6 @@ func (a *V2ApiService) GetNetworkAclRuleList(getNetworkAclRuleListRequest *GetNe
 }
 
 /* V2ApiService 
- 라우트리스트조회
  @param getRouteListRequest getRouteListRequest
  @return *GetRouteListResponse*/
 func (a *V2ApiService) GetRouteList(getRouteListRequest *GetRouteListRequest) (*GetRouteListResponse, error) {
@@ -1731,7 +2000,6 @@ func (a *V2ApiService) GetRouteList(getRouteListRequest *GetRouteListRequest) (*
 }
 
 /* V2ApiService 
- 라우트테이블상세조회
  @param getRouteTableDetailRequest getRouteTableDetailRequest
  @return *GetRouteTableDetailResponse*/
 func (a *V2ApiService) GetRouteTableDetail(getRouteTableDetailRequest *GetRouteTableDetailRequest) (*GetRouteTableDetailResponse, error) {
@@ -1805,7 +2073,6 @@ func (a *V2ApiService) GetRouteTableDetail(getRouteTableDetailRequest *GetRouteT
 }
 
 /* V2ApiService 
- 라우트테이블리스트조회
  @param getRouteTableListRequest getRouteTableListRequest
  @return *GetRouteTableListResponse*/
 func (a *V2ApiService) GetRouteTableList(getRouteTableListRequest *GetRouteTableListRequest) (*GetRouteTableListResponse, error) {
@@ -1879,7 +2146,6 @@ func (a *V2ApiService) GetRouteTableList(getRouteTableListRequest *GetRouteTable
 }
 
 /* V2ApiService 
- 라우트테이블에연관된서브넷리스트조회
  @param getRouteTableSubnetListRequest getRouteTableSubnetListRequest
  @return *GetRouteTableSubnetListResponse*/
 func (a *V2ApiService) GetRouteTableSubnetList(getRouteTableSubnetListRequest *GetRouteTableSubnetListRequest) (*GetRouteTableSubnetListResponse, error) {
@@ -1953,7 +2219,6 @@ func (a *V2ApiService) GetRouteTableSubnetList(getRouteTableSubnetListRequest *G
 }
 
 /* V2ApiService 
- 서브넷상세조회
  @param getSubnetDetailRequest getSubnetDetailRequest
  @return *GetSubnetDetailResponse*/
 func (a *V2ApiService) GetSubnetDetail(getSubnetDetailRequest *GetSubnetDetailRequest) (*GetSubnetDetailResponse, error) {
@@ -2027,7 +2292,6 @@ func (a *V2ApiService) GetSubnetDetail(getSubnetDetailRequest *GetSubnetDetailRe
 }
 
 /* V2ApiService 
- 서브넷리스트조회
  @param getSubnetListRequest getSubnetListRequest
  @return *GetSubnetListResponse*/
 func (a *V2ApiService) GetSubnetList(getSubnetListRequest *GetSubnetListRequest) (*GetSubnetListResponse, error) {
@@ -2101,7 +2365,6 @@ func (a *V2ApiService) GetSubnetList(getSubnetListRequest *GetSubnetListRequest)
 }
 
 /* V2ApiService 
- VPC상세조회
  @param getVpcDetailRequest getVpcDetailRequest
  @return *GetVpcDetailResponse*/
 func (a *V2ApiService) GetVpcDetail(getVpcDetailRequest *GetVpcDetailRequest) (*GetVpcDetailResponse, error) {
@@ -2175,7 +2438,6 @@ func (a *V2ApiService) GetVpcDetail(getVpcDetailRequest *GetVpcDetailRequest) (*
 }
 
 /* V2ApiService 
- VPC리스트조회
  @param getVpcListRequest getVpcListRequest
  @return *GetVpcListResponse*/
 func (a *V2ApiService) GetVpcList(getVpcListRequest *GetVpcListRequest) (*GetVpcListResponse, error) {
@@ -2249,7 +2511,6 @@ func (a *V2ApiService) GetVpcList(getVpcListRequest *GetVpcListRequest) (*GetVpc
 }
 
 /* V2ApiService 
- VPCPeering인스턴스상세조회
  @param getVpcPeeringInstanceDetailRequest getVpcPeeringInstanceDetailRequest
  @return *GetVpcPeeringInstanceDetailResponse*/
 func (a *V2ApiService) GetVpcPeeringInstanceDetail(getVpcPeeringInstanceDetailRequest *GetVpcPeeringInstanceDetailRequest) (*GetVpcPeeringInstanceDetailResponse, error) {
@@ -2323,7 +2584,6 @@ func (a *V2ApiService) GetVpcPeeringInstanceDetail(getVpcPeeringInstanceDetailRe
 }
 
 /* V2ApiService 
- VPCPeering인스턴스리스트조회
  @param getVpcPeeringInstanceListRequest getVpcPeeringInstanceListRequest
  @return *GetVpcPeeringInstanceListResponse*/
 func (a *V2ApiService) GetVpcPeeringInstanceList(getVpcPeeringInstanceListRequest *GetVpcPeeringInstanceListRequest) (*GetVpcPeeringInstanceListResponse, error) {
@@ -2397,7 +2657,6 @@ func (a *V2ApiService) GetVpcPeeringInstanceList(getVpcPeeringInstanceListReques
 }
 
 /* V2ApiService 
- 네트워크ACLInboundRule제거
  @param removeNetworkAclInboundRuleRequest removeNetworkAclInboundRuleRequest
  @return *RemoveNetworkAclInboundRuleResponse*/
 func (a *V2ApiService) RemoveNetworkAclInboundRule(removeNetworkAclInboundRuleRequest *RemoveNetworkAclInboundRuleRequest) (*RemoveNetworkAclInboundRuleResponse, error) {
@@ -2471,7 +2730,6 @@ func (a *V2ApiService) RemoveNetworkAclInboundRule(removeNetworkAclInboundRuleRe
 }
 
 /* V2ApiService 
- 네트워크ACLOutboundRule제거
  @param removeNetworkAclOutboundRuleRequest removeNetworkAclOutboundRuleRequest
  @return *RemoveNetworkAclOutboundRuleResponse*/
 func (a *V2ApiService) RemoveNetworkAclOutboundRule(removeNetworkAclOutboundRuleRequest *RemoveNetworkAclOutboundRuleRequest) (*RemoveNetworkAclOutboundRuleResponse, error) {
@@ -2545,7 +2803,6 @@ func (a *V2ApiService) RemoveNetworkAclOutboundRule(removeNetworkAclOutboundRule
 }
 
 /* V2ApiService 
- 라우트제거
  @param removeRouteRequest removeRouteRequest
  @return *RemoveRouteResponse*/
 func (a *V2ApiService) RemoveRoute(removeRouteRequest *RemoveRouteRequest) (*RemoveRouteResponse, error) {
@@ -2619,7 +2876,6 @@ func (a *V2ApiService) RemoveRoute(removeRouteRequest *RemoveRouteRequest) (*Rem
 }
 
 /* V2ApiService 
- 라우트테이블의연관서브넷제거
  @param removeRouteTableSubnetRequest removeRouteTableSubnetRequest
  @return *RemoveRouteTableSubnetResponse*/
 func (a *V2ApiService) RemoveRouteTableSubnet(removeRouteTableSubnetRequest *RemoveRouteTableSubnetRequest) (*RemoveRouteTableSubnetResponse, error) {
@@ -2693,7 +2949,6 @@ func (a *V2ApiService) RemoveRouteTableSubnet(removeRouteTableSubnetRequest *Rem
 }
 
 /* V2ApiService 
- NATGateway설명설정
  @param setNatGatewayDescriptionRequest setNatGatewayDescriptionRequest
  @return *SetNatGatewayDescriptionResponse*/
 func (a *V2ApiService) SetNatGatewayDescription(setNatGatewayDescriptionRequest *SetNatGatewayDescriptionRequest) (*SetNatGatewayDescriptionResponse, error) {
@@ -2767,7 +3022,152 @@ func (a *V2ApiService) SetNatGatewayDescription(setNatGatewayDescriptionRequest 
 }
 
 /* V2ApiService 
- 네트워크ACL설명설정
+ @param setNetworkAclDenyAllowGroupDescriptionRequest setNetworkAclDenyAllowGroupDescriptionRequest
+ @return *SetNetworkAclDenyAllowGroupDescriptionResponse*/
+func (a *V2ApiService) SetNetworkAclDenyAllowGroupDescription(setNetworkAclDenyAllowGroupDescriptionRequest *SetNetworkAclDenyAllowGroupDescriptionRequest) (*SetNetworkAclDenyAllowGroupDescriptionResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  SetNetworkAclDenyAllowGroupDescriptionResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/setNetworkAclDenyAllowGroupDescription"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = setNetworkAclDenyAllowGroupDescriptionRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
+ @param setNetworkAclDenyAllowGroupIpListRequest setNetworkAclDenyAllowGroupIpListRequest
+ @return *SetNetworkAclDenyAllowGroupIpListResponse*/
+func (a *V2ApiService) SetNetworkAclDenyAllowGroupIpList(setNetworkAclDenyAllowGroupIpListRequest *SetNetworkAclDenyAllowGroupIpListRequest) (*SetNetworkAclDenyAllowGroupIpListResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  SetNetworkAclDenyAllowGroupIpListResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/setNetworkAclDenyAllowGroupIpList"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = setNetworkAclDenyAllowGroupIpListRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
  @param setNetworkAclDescriptionRequest setNetworkAclDescriptionRequest
  @return *SetNetworkAclDescriptionResponse*/
 func (a *V2ApiService) SetNetworkAclDescription(setNetworkAclDescriptionRequest *SetNetworkAclDescriptionRequest) (*SetNetworkAclDescriptionResponse, error) {
@@ -2841,7 +3241,6 @@ func (a *V2ApiService) SetNetworkAclDescription(setNetworkAclDescriptionRequest 
 }
 
 /* V2ApiService 
- 라우트테이블설명설정
  @param setRouteTableDescriptionRequest setRouteTableDescriptionRequest
  @return *SetRouteTableDescriptionResponse*/
 func (a *V2ApiService) SetRouteTableDescription(setRouteTableDescriptionRequest *SetRouteTableDescriptionRequest) (*SetRouteTableDescriptionResponse, error) {
@@ -2915,7 +3314,6 @@ func (a *V2ApiService) SetRouteTableDescription(setRouteTableDescriptionRequest 
 }
 
 /* V2ApiService 
- 서브넷의네트워크ACL설정
  @param setSubnetNetworkAclRequest setSubnetNetworkAclRequest
  @return *SetSubnetNetworkAclResponse*/
 func (a *V2ApiService) SetSubnetNetworkAcl(setSubnetNetworkAclRequest *SetSubnetNetworkAclRequest) (*SetSubnetNetworkAclResponse, error) {
@@ -2989,7 +3387,6 @@ func (a *V2ApiService) SetSubnetNetworkAcl(setSubnetNetworkAclRequest *SetSubnet
 }
 
 /* V2ApiService 
- VPCPeering설명설정
  @param setVpcPeeringDescriptionRequest setVpcPeeringDescriptionRequest
  @return *SetVpcPeeringDescriptionResponse*/
 func (a *V2ApiService) SetVpcPeeringDescription(setVpcPeeringDescriptionRequest *SetVpcPeeringDescriptionRequest) (*SetVpcPeeringDescriptionResponse, error) {

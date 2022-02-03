@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **PublicIpList** | **[]\*string** | 공인IP리스트 | [optional] [default to null]
 **SearchFilterName** | ***string** | 검색할필터명 | [optional] [default to null]
 **SearchFilterValue** | ***string** | 검색할필터값 | [optional] [default to null]
-**InternetLineTypeCode** | ***string** | 인터넷라인구분코드 | [optional] [default to null]
 **RegionNo** | ***string** | 리전번호 | [optional] [default to null]
 **ZoneNo** | ***string** | ZONE번호 | [optional] [default to null]
 **PageNo** | ***int32** | 페이지번호 | [optional] [default to null]

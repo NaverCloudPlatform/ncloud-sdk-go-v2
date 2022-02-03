@@ -31,6 +31,9 @@ CreateDate *string `json:"createDate,omitempty"`
 	// IP블록
 IpBlock *string `json:"ipBlock,omitempty"`
 
+	// 허용차단그룹번호
+DenyAllowGroupNo *string `json:"denyAllowGroupNo,omitempty"`
+
 	// 네트워크ACLRule유형
 NetworkAclRuleType *CommonCode `json:"networkAclRuleType,omitempty"`
 

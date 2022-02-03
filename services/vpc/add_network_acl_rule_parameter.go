@@ -14,7 +14,10 @@ type AddNetworkAclRuleParameter struct {
 NetworkAclRuleDescription *string `json:"networkAclRuleDescription,omitempty"`
 
 	// IP블록
-IpBlock *string `json:"ipBlock"`
+IpBlock *string `json:"ipBlock,omitempty"`
+
+	// 허용차단그룹번호
+DenyAllowGroupNo *string `json:"denyAllowGroupNo,omitempty"`
 
 	// Rule액션코드
 RuleActionCode *string `json:"ruleActionCode"`

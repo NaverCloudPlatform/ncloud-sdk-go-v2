@@ -10,9 +10,6 @@ package loadbalancer
 
 type GetLoadBalancerTargetServerInstanceListRequest struct {
 
-	// 인터넷라인구분코드
-InternetLineTypeCode *string `json:"internetLineTypeCode,omitempty"`
-
 	// 네트워크용도구분코드
 NetworkUsageTypeCode *string `json:"networkUsageTypeCode,omitempty"`
 

@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ExclusionProductCode** | ***string** | 제외할상품코드 | [optional] [default to null]
-**InternetLineTypeCode** | ***string** | 인터넷라인구분코드 | [optional] [default to null]
 **ProductCode** | ***string** | 조회할상품코드 | [optional] [default to null]
 **GenerationCode** | ***string** | 세대코드 | [optional] [default to null]
 **RegionNo** | ***string** | 리전번호 | [optional] [default to null]

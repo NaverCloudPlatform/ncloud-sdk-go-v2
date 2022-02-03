@@ -27,4 +27,10 @@ CertificateName *string `json:"certificateName,omitempty"`
 
 	// 프록시프로토콜 사용여부
 ProxyProtocolUseYn *string `json:"proxyProtocolUseYn,omitempty"`
+
+	// 세션별접근사용여부
+StickySessionUseYn *string `json:"stickySessionUseYn,omitempty"`
+
+	// HTTP/2프로토콜사용여부
+Http2UseYn *string `json:"http2UseYn,omitempty"`
 }

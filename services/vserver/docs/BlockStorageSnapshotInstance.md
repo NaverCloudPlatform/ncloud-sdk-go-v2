@@ -13,6 +13,9 @@ Name | Type | Description | Notes
 **CreateDate** | ***string** | 생성일시 | [optional] [default to null]
 **IsEncryptedOriginalBlockStorageVolume** | ***bool** | 원본블록스토리지볼륨암호화여부 | [optional] [default to null]
 **BlockStorageSnapshotDescription** | ***string** | 블록스토리지스냅샷설명 | [optional] [default to null]
+**SnapshotType** | **[*CommonCode](CommonCode.md)** | 스냅샷유형 | [optional] [default to null]
+**BaseSnapshotInstanceNo** | ***string** | 베이스스냅샷인스턴스번호 | [optional] [default to null]
+**SnapshotChainDepth** | ***int32** | 스냅샷일련Depth | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

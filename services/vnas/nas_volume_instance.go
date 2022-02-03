@@ -43,29 +43,20 @@ VolumeTotalSize *int64 `json:"volumeTotalSize,omitempty"`
 	// 볼륨사이즈
 VolumeSize *int64 `json:"volumeSize,omitempty"`
 
-	// 볼륨사용사이즈
-VolumeUseSize *int64 `json:"volumeUseSize,omitempty"`
-
-	// 볼륨사용사이즈비율
-VolumeUseRatio *float32 `json:"volumeUseRatio,omitempty"`
-
 	// 스냅샷볼륨설정비율
 SnapshotVolumeConfigurationRatio *float32 `json:"snapshotVolumeConfigurationRatio,omitempty"`
 
 	// 스냅샷볼륨설정기간유형
 SnapshotVolumeConfigPeriodType *CommonCode `json:"snapshotVolumeConfigPeriodType,omitempty"`
 
+	// 스냅샷자동생성주기요일유형
+SnapshotVolumeConfigDayOfWeekType *CommonCode `json:"snapshotVolumeConfigDayOfWeekType,omitempty"`
+
 	// 스냅샷볼륨설정시간
 SnapshotVolumeConfigTime *int32 `json:"snapshotVolumeConfigTime,omitempty"`
 
 	// 스냅샷볼륨사이즈
 SnapshotVolumeSize *int64 `json:"snapshotVolumeSize,omitempty"`
-
-	// 스냅샷볼륨사용사이즈
-SnapshotVolumeUseSize *int64 `json:"snapshotVolumeUseSize,omitempty"`
-
-	// 스냅샷볼륨사용비율
-SnapshotVolumeUseRatio *float32 `json:"snapshotVolumeUseRatio,omitempty"`
 
 	// 스냅샷설정여부
 IsSnapshotConfiguration *bool `json:"isSnapshotConfiguration,omitempty"`
@@ -87,4 +78,9 @@ NasVolumeServerInstanceNoList []*string `json:"nasVolumeServerInstanceNoList,omi
 
 	// 볼륨암호화여부
 IsEncryptedVolume *bool `json:"isEncryptedVolume,omitempty"`
+
+NasVolumeInstanceCustomIpList []*NasVolumeInstanceCustomIp `json:"nasVolumeInstanceCustomIpList,omitempty"`
+
+	// 반납보호여부
+IsReturnProtection *bool `json:"isReturnProtection,omitempty"`
 }

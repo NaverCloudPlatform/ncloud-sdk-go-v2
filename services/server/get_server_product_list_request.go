@@ -13,9 +13,6 @@ type GetServerProductListRequest struct {
 	// 제외할상품코드
 ExclusionProductCode *string `json:"exclusionProductCode,omitempty"`
 
-	// 인터넷라인구분코드
-InternetLineTypeCode *string `json:"internetLineTypeCode,omitempty"`
-
 	// 조회할상품코드
 ProductCode *string `json:"productCode,omitempty"`
 

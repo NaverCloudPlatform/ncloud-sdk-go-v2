@@ -39,4 +39,7 @@ VpcNo *string `json:"vpcNo"`
 
 	// 서브넷번호리스트
 SubnetNoList []*string `json:"subnetNoList"`
+
+	// 로드밸런서서브넷리스트
+LoadBalancerSubnetList []*LoadBalancerSubnetParameter `json:"loadBalancerSubnetList,omitempty"`
 }

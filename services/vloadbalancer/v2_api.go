@@ -29,7 +29,6 @@ type V2ApiService service
 
 
 /* V2ApiService 
- 타겟추가
  @param addTargetRequest addTargetRequest
  @return *AddTargetResponse*/
 func (a *V2ApiService) AddTarget(addTargetRequest *AddTargetRequest) (*AddTargetResponse, error) {
@@ -103,7 +102,6 @@ func (a *V2ApiService) AddTarget(addTargetRequest *AddTargetRequest) (*AddTarget
 }
 
 /* V2ApiService 
- 로드밸런서인스턴스설정변경
  @param changeLoadBalancerInstanceConfigurationRequest changeLoadBalancerInstanceConfigurationRequest
  @return *ChangeLoadBalancerInstanceConfigurationResponse*/
 func (a *V2ApiService) ChangeLoadBalancerInstanceConfiguration(changeLoadBalancerInstanceConfigurationRequest *ChangeLoadBalancerInstanceConfigurationRequest) (*ChangeLoadBalancerInstanceConfigurationResponse, error) {
@@ -177,7 +175,6 @@ func (a *V2ApiService) ChangeLoadBalancerInstanceConfiguration(changeLoadBalance
 }
 
 /* V2ApiService 
- 로드밸런서리스너설정변경
  @param changeLoadBalancerListenerConfigurationRequest changeLoadBalancerListenerConfigurationRequest
  @return *ChangeLoadBalancerListenerConfigurationResponse*/
 func (a *V2ApiService) ChangeLoadBalancerListenerConfiguration(changeLoadBalancerListenerConfigurationRequest *ChangeLoadBalancerListenerConfigurationRequest) (*ChangeLoadBalancerListenerConfigurationResponse, error) {
@@ -251,7 +248,6 @@ func (a *V2ApiService) ChangeLoadBalancerListenerConfiguration(changeLoadBalance
 }
 
 /* V2ApiService 
- 타겟그룹설정변경
  @param changeTargetGroupConfigurationRequest changeTargetGroupConfigurationRequest
  @return *ChangeTargetGroupConfigurationResponse*/
 func (a *V2ApiService) ChangeTargetGroupConfiguration(changeTargetGroupConfigurationRequest *ChangeTargetGroupConfigurationRequest) (*ChangeTargetGroupConfigurationResponse, error) {
@@ -325,7 +321,6 @@ func (a *V2ApiService) ChangeTargetGroupConfiguration(changeTargetGroupConfigura
 }
 
 /* V2ApiService 
- 타겟그룹헬스체크설정변경
  @param changeTargetGroupHealthCheckConfigurationRequest changeTargetGroupHealthCheckConfigurationRequest
  @return *ChangeTargetGroupHealthCheckConfigurationResponse*/
 func (a *V2ApiService) ChangeTargetGroupHealthCheckConfiguration(changeTargetGroupHealthCheckConfigurationRequest *ChangeTargetGroupHealthCheckConfigurationRequest) (*ChangeTargetGroupHealthCheckConfigurationResponse, error) {
@@ -399,7 +394,6 @@ func (a *V2ApiService) ChangeTargetGroupHealthCheckConfiguration(changeTargetGro
 }
 
 /* V2ApiService 
- 로드밸런서인스턴스생성
  @param createLoadBalancerInstanceRequest createLoadBalancerInstanceRequest
  @return *CreateLoadBalancerInstanceResponse*/
 func (a *V2ApiService) CreateLoadBalancerInstance(createLoadBalancerInstanceRequest *CreateLoadBalancerInstanceRequest) (*CreateLoadBalancerInstanceResponse, error) {
@@ -473,7 +467,6 @@ func (a *V2ApiService) CreateLoadBalancerInstance(createLoadBalancerInstanceRequ
 }
 
 /* V2ApiService 
- 로드밸런서리스너생성
  @param createLoadBalancerListenerRequest createLoadBalancerListenerRequest
  @return *CreateLoadBalancerListenerResponse*/
 func (a *V2ApiService) CreateLoadBalancerListener(createLoadBalancerListenerRequest *CreateLoadBalancerListenerRequest) (*CreateLoadBalancerListenerResponse, error) {
@@ -547,7 +540,6 @@ func (a *V2ApiService) CreateLoadBalancerListener(createLoadBalancerListenerRequ
 }
 
 /* V2ApiService 
- 타겟그룹생성
  @param createTargetGroupRequest createTargetGroupRequest
  @return *CreateTargetGroupResponse*/
 func (a *V2ApiService) CreateTargetGroup(createTargetGroupRequest *CreateTargetGroupRequest) (*CreateTargetGroupResponse, error) {
@@ -621,7 +613,6 @@ func (a *V2ApiService) CreateTargetGroup(createTargetGroupRequest *CreateTargetG
 }
 
 /* V2ApiService 
- 로드밸런서인스턴스삭제
  @param deleteLoadBalancerInstancesRequest deleteLoadBalancerInstancesRequest
  @return *DeleteLoadBalancerInstancesResponse*/
 func (a *V2ApiService) DeleteLoadBalancerInstances(deleteLoadBalancerInstancesRequest *DeleteLoadBalancerInstancesRequest) (*DeleteLoadBalancerInstancesResponse, error) {
@@ -695,7 +686,6 @@ func (a *V2ApiService) DeleteLoadBalancerInstances(deleteLoadBalancerInstancesRe
 }
 
 /* V2ApiService 
- 로드밸런서리스너삭제
  @param deleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest
  @return *DeleteLoadBalancerListenersResponse*/
 func (a *V2ApiService) DeleteLoadBalancerListeners(deleteLoadBalancerListenersRequest *DeleteLoadBalancerListenersRequest) (*DeleteLoadBalancerListenersResponse, error) {
@@ -769,7 +759,6 @@ func (a *V2ApiService) DeleteLoadBalancerListeners(deleteLoadBalancerListenersRe
 }
 
 /* V2ApiService 
- 타겟그룹삭제
  @param deleteTargetGroupsRequest deleteTargetGroupsRequest
  @return *DeleteTargetGroupsResponse*/
 func (a *V2ApiService) DeleteTargetGroups(deleteTargetGroupsRequest *DeleteTargetGroupsRequest) (*DeleteTargetGroupsResponse, error) {
@@ -843,7 +832,6 @@ func (a *V2ApiService) DeleteTargetGroups(deleteTargetGroupsRequest *DeleteTarge
 }
 
 /* V2ApiService 
- 로드밸런서인스턴스상세조회
  @param getLoadBalancerInstanceDetailRequest getLoadBalancerInstanceDetailRequest
  @return *GetLoadBalancerInstanceDetailResponse*/
 func (a *V2ApiService) GetLoadBalancerInstanceDetail(getLoadBalancerInstanceDetailRequest *GetLoadBalancerInstanceDetailRequest) (*GetLoadBalancerInstanceDetailResponse, error) {
@@ -917,7 +905,6 @@ func (a *V2ApiService) GetLoadBalancerInstanceDetail(getLoadBalancerInstanceDeta
 }
 
 /* V2ApiService 
- 로드밸런서인스턴스리스트조회
  @param getLoadBalancerInstanceListRequest getLoadBalancerInstanceListRequest
  @return *GetLoadBalancerInstanceListResponse*/
 func (a *V2ApiService) GetLoadBalancerInstanceList(getLoadBalancerInstanceListRequest *GetLoadBalancerInstanceListRequest) (*GetLoadBalancerInstanceListResponse, error) {
@@ -991,7 +978,6 @@ func (a *V2ApiService) GetLoadBalancerInstanceList(getLoadBalancerInstanceListRe
 }
 
 /* V2ApiService 
- 로드밸런서리스너리스트조회
  @param getLoadBalancerListenerListRequest getLoadBalancerListenerListRequest
  @return *GetLoadBalancerListenerListResponse*/
 func (a *V2ApiService) GetLoadBalancerListenerList(getLoadBalancerListenerListRequest *GetLoadBalancerListenerListRequest) (*GetLoadBalancerListenerListResponse, error) {
@@ -1065,7 +1051,6 @@ func (a *V2ApiService) GetLoadBalancerListenerList(getLoadBalancerListenerListRe
 }
 
 /* V2ApiService 
- 로드밸런서룰리스트조회
  @param getLoadBalancerRuleListRequest getLoadBalancerRuleListRequest
  @return *GetLoadBalancerRuleListResponse*/
 func (a *V2ApiService) GetLoadBalancerRuleList(getLoadBalancerRuleListRequest *GetLoadBalancerRuleListRequest) (*GetLoadBalancerRuleListResponse, error) {
@@ -1139,7 +1124,6 @@ func (a *V2ApiService) GetLoadBalancerRuleList(getLoadBalancerRuleListRequest *G
 }
 
 /* V2ApiService 
- 타겟그룹상세조회
  @param getTargetGroupDetailRequest getTargetGroupDetailRequest
  @return *GetTargetGroupDetailResponse*/
 func (a *V2ApiService) GetTargetGroupDetail(getTargetGroupDetailRequest *GetTargetGroupDetailRequest) (*GetTargetGroupDetailResponse, error) {
@@ -1213,7 +1197,6 @@ func (a *V2ApiService) GetTargetGroupDetail(getTargetGroupDetailRequest *GetTarg
 }
 
 /* V2ApiService 
- 타겟그룹리스트조회
  @param getTargetGroupListRequest getTargetGroupListRequest
  @return *GetTargetGroupListResponse*/
 func (a *V2ApiService) GetTargetGroupList(getTargetGroupListRequest *GetTargetGroupListRequest) (*GetTargetGroupListResponse, error) {
@@ -1287,7 +1270,6 @@ func (a *V2ApiService) GetTargetGroupList(getTargetGroupListRequest *GetTargetGr
 }
 
 /* V2ApiService 
- 타겟리스트조회
  @param getTargetListRequest getTargetListRequest
  @return *GetTargetListResponse*/
 func (a *V2ApiService) GetTargetList(getTargetListRequest *GetTargetListRequest) (*GetTargetListResponse, error) {
@@ -1361,7 +1343,6 @@ func (a *V2ApiService) GetTargetList(getTargetListRequest *GetTargetListRequest)
 }
 
 /* V2ApiService 
- 타겟제거
  @param removeTargetRequest removeTargetRequest
  @return *RemoveTargetResponse*/
 func (a *V2ApiService) RemoveTarget(removeTargetRequest *RemoveTargetRequest) (*RemoveTargetResponse, error) {
@@ -1435,7 +1416,6 @@ func (a *V2ApiService) RemoveTarget(removeTargetRequest *RemoveTargetRequest) (*
 }
 
 /* V2ApiService 
- 로드밸런서설명설정
  @param setLoadBalancerDescriptionRequest setLoadBalancerDescriptionRequest
  @return *SetLoadBalancerDescriptionResponse*/
 func (a *V2ApiService) SetLoadBalancerDescription(setLoadBalancerDescriptionRequest *SetLoadBalancerDescriptionRequest) (*SetLoadBalancerDescriptionResponse, error) {
@@ -1509,7 +1489,6 @@ func (a *V2ApiService) SetLoadBalancerDescription(setLoadBalancerDescriptionRequ
 }
 
 /* V2ApiService 
- 로드밸런서인스턴스서브넷설정
  @param setLoadBalancerInstanceSubnetRequest setLoadBalancerInstanceSubnetRequest
  @return *SetLoadBalancerInstanceSubnetResponse*/
 func (a *V2ApiService) SetLoadBalancerInstanceSubnet(setLoadBalancerInstanceSubnetRequest *SetLoadBalancerInstanceSubnetRequest) (*SetLoadBalancerInstanceSubnetResponse, error) {
@@ -1583,7 +1562,6 @@ func (a *V2ApiService) SetLoadBalancerInstanceSubnet(setLoadBalancerInstanceSubn
 }
 
 /* V2ApiService 
- 타겟설정
  @param setTargetRequest setTargetRequest
  @return *SetTargetResponse*/
 func (a *V2ApiService) SetTarget(setTargetRequest *SetTargetRequest) (*SetTargetResponse, error) {
@@ -1657,7 +1635,6 @@ func (a *V2ApiService) SetTarget(setTargetRequest *SetTargetRequest) (*SetTarget
 }
 
 /* V2ApiService 
- 타겟그룹설명설정
  @param setTargetGroupDescriptionRequest setTargetGroupDescriptionRequest
  @return *SetTargetGroupDescriptionResponse*/
 func (a *V2ApiService) SetTargetGroupDescription(setTargetGroupDescriptionRequest *SetTargetGroupDescriptionRequest) (*SetTargetGroupDescriptionResponse, error) {

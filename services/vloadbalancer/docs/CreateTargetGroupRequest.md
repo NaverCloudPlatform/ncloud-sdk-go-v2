@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RegionCode** | ***string** | REGION코드 | [optional] [default to null]
 **TargetGroupPort** | ***int32** | 타겟그룹포트 | [optional] [default to null]
-**TargetGroupProtocolTypeCode** | **[*CommonCode](CommonCode.md)** | 타겟그룹프로토콜유형코드 | [default to null]
+**TargetGroupProtocolTypeCode** | ***string** | 타겟그룹프로토콜유형코드 | [default to null]
 **TargetGroupDescription** | ***string** | 타겟그룹설명 | [optional] [default to null]
 **HealthCheckCycle** | ***int32** | 헬스체크주기 | [optional] [default to null]
 **HealthCheckDownThreshold** | ***int32** | 헬스체크실패임계값 | [optional] [default to null]

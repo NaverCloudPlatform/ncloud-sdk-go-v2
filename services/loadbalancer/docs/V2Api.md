@@ -5,11 +5,13 @@ All URIs are relative to *https://ncloud.apigw.ntruss.com/loadbalancer/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddLoadBalancerSslCertificate**](V2Api.md#AddLoadBalancerSslCertificate) | **Post** /addLoadBalancerSslCertificate | 
+[**AddServerInstancesToLoadBalancer**](V2Api.md#AddServerInstancesToLoadBalancer) | **Post** /addServerInstancesToLoadBalancer | 
 [**ChangeLoadBalancedServerInstances**](V2Api.md#ChangeLoadBalancedServerInstances) | **Post** /changeLoadBalancedServerInstances | 
 [**ChangeLoadBalancerInstanceConfiguration**](V2Api.md#ChangeLoadBalancerInstanceConfiguration) | **Post** /changeLoadBalancerInstanceConfiguration | 
 [**CreateLoadBalancerInstance**](V2Api.md#CreateLoadBalancerInstance) | **Post** /createLoadBalancerInstance | 
 [**DeleteLoadBalancerInstances**](V2Api.md#DeleteLoadBalancerInstances) | **Post** /deleteLoadBalancerInstances | 
 [**DeleteLoadBalancerSslCertificate**](V2Api.md#DeleteLoadBalancerSslCertificate) | **Post** /deleteLoadBalancerSslCertificate | 
+[**DeleteServerInstancesFromLoadBalancer**](V2Api.md#DeleteServerInstancesFromLoadBalancer) | **Post** /deleteServerInstancesFromLoadBalancer | 
 [**GetLoadBalancedServerInstanceList**](V2Api.md#GetLoadBalancedServerInstanceList) | **Post** /getLoadBalancedServerInstanceList | 
 [**GetLoadBalancerInstanceList**](V2Api.md#GetLoadBalancerInstanceList) | **Post** /getLoadBalancerInstanceList | 
 [**GetLoadBalancerSslCertificateList**](V2Api.md#GetLoadBalancerSslCertificateList) | **Post** /getLoadBalancerSslCertificateList | 
@@ -19,8 +21,6 @@ Method | HTTP request | Description
 # **AddLoadBalancerSslCertificate**
 > AddLoadBalancerSslCertificateResponse AddLoadBalancerSslCertificate(addLoadBalancerSslCertificateRequest)
 
-
-로드밸런서SSL인증서추가
 
 ### Required Parameters
 
@@ -43,11 +43,34 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **AddServerInstancesToLoadBalancer**
+> AddServerInstancesToLoadBalancerResponse AddServerInstancesToLoadBalancer(addServerInstancesToLoadBalancerRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**addServerInstancesToLoadBalancerRequest** | **[\*AddServerInstancesToLoadBalancerRequest](AddServerInstancesToLoadBalancerRequest.md)** | addServerInstancesToLoadBalancerRequest | 
+
+### Return type
+
+*[**AddServerInstancesToLoadBalancerResponse**](AddServerInstancesToLoadBalancerResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ChangeLoadBalancedServerInstances**
 > ChangeLoadBalancedServerInstancesResponse ChangeLoadBalancedServerInstances(changeLoadBalancedServerInstancesRequest)
 
-
-로드밸런서에Bind된서버인스턴스변경
 
 ### Required Parameters
 
@@ -74,8 +97,6 @@ Name | Type | Description  | Notes
 > ChangeLoadBalancerInstanceConfigurationResponse ChangeLoadBalancerInstanceConfiguration(changeLoadBalancerInstanceConfigurationRequest)
 
 
-로드밸런서인스턴스설정변경
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -100,8 +121,6 @@ Name | Type | Description  | Notes
 # **CreateLoadBalancerInstance**
 > CreateLoadBalancerInstanceResponse CreateLoadBalancerInstance(createLoadBalancerInstanceRequest)
 
-
-로드밸런서인스턴스생성
 
 ### Required Parameters
 
@@ -128,8 +147,6 @@ Name | Type | Description  | Notes
 > DeleteLoadBalancerInstancesResponse DeleteLoadBalancerInstances(deleteLoadBalancerInstancesRequest)
 
 
-로드밸런서인스턴스삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -155,8 +172,6 @@ Name | Type | Description  | Notes
 > DeleteLoadBalancerSslCertificateResponse DeleteLoadBalancerSslCertificate(deleteLoadBalancerSslCertificateRequest)
 
 
-로드밸런서SSL인증서삭제
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -178,11 +193,34 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **DeleteServerInstancesFromLoadBalancer**
+> DeleteServerInstancesFromLoadBalancerResponse DeleteServerInstancesFromLoadBalancer(deleteServerInstancesFromLoadBalancerRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**deleteServerInstancesFromLoadBalancerRequest** | **[\*DeleteServerInstancesFromLoadBalancerRequest](DeleteServerInstancesFromLoadBalancerRequest.md)** | deleteServerInstancesFromLoadBalancerRequest | 
+
+### Return type
+
+*[**DeleteServerInstancesFromLoadBalancerResponse**](DeleteServerInstancesFromLoadBalancerResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetLoadBalancedServerInstanceList**
 > GetLoadBalancedServerInstanceListResponse GetLoadBalancedServerInstanceList(getLoadBalancedServerInstanceListRequest)
 
-
-로드밸런서Bind된서버인스턴스리스트조회
 
 ### Required Parameters
 
@@ -209,8 +247,6 @@ Name | Type | Description  | Notes
 > GetLoadBalancerInstanceListResponse GetLoadBalancerInstanceList(getLoadBalancerInstanceListRequest)
 
 
-로드밸런서인스턴스리스트조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -236,8 +272,6 @@ Name | Type | Description  | Notes
 > GetLoadBalancerSslCertificateListResponse GetLoadBalancerSslCertificateList(getLoadBalancerSslCertificateListRequest)
 
 
-로드밸런서SSL인증서조회
-
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -262,8 +296,6 @@ Name | Type | Description  | Notes
 # **GetLoadBalancerTargetServerInstanceList**
 > GetLoadBalancerTargetServerInstanceListResponse GetLoadBalancerTargetServerInstanceList(getLoadBalancerTargetServerInstanceListRequest)
 
-
-로드밸런서Target서버인스턴스리스트
 
 ### Required Parameters
 

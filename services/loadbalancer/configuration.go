@@ -27,7 +27,7 @@ func NewConfiguration(apiKeys ...*ncloud.APIKey) *ncloud.Configuration {
 	cfg := &ncloud.Configuration{
 		BasePath:      "https://ncloud.apigw.ntruss.com/loadbalancer/v2",
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "loadbalancer/1.1.1/go",
+		UserAgent:     "loadbalancer/1.1.2/go",
 	}
 	if len(apiKeys) > 0 {
 		cfg.APIKey = apiKeys[0]

@@ -60,4 +60,7 @@ PlacementGroupNo *string `json:"placementGroupNo,omitempty"`
 
 	// 기본블록스토리지볼륨암호화여부
 IsEncryptedBaseBlockStorageVolume *bool `json:"isEncryptedBaseBlockStorageVolume,omitempty"`
+
+	// 서버생성시공인IP할당여부
+AssociateWithPublicIp *bool `json:"associateWithPublicIp,omitempty"`
 }

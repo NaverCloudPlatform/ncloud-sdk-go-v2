@@ -37,6 +37,9 @@ CifsUserPassword *string `json:"cifsUserPassword,omitempty"`
 	// 볼륨암호화여부
 IsEncryptedVolume *bool `json:"isEncryptedVolume,omitempty"`
 
+	// 반납보호여부
+IsReturnProtection *bool `json:"isReturnProtection,omitempty"`
+
 	// NAS볼륨설명
 NasVolumeDescription *string `json:"nasVolumeDescription,omitempty"`
 }

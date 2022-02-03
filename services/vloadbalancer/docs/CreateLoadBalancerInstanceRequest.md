@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **ThroughputTypeCode** | ***string** | 부하처리성능유형코드 | [optional] [default to null]
 **VpcNo** | ***string** | VPC번호 | [default to null]
 **SubnetNoList** | **[]\*string** | 서브넷번호리스트 | [default to null]
+**LoadBalancerSubnetList** | **[[]\*LoadBalancerSubnetParameter](LoadBalancerSubnetParameter.md)** | 로드밸런서서브넷리스트 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

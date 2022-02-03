@@ -21,4 +21,7 @@ BlockStorageSnapshotDescription *string `json:"blockStorageSnapshotDescription,o
 
 	// 원본블록스토리지인스턴스번호
 OriginalBlockStorageInstanceNo *string `json:"originalBlockStorageInstanceNo"`
+
+	// 스냅샷유형코드
+SnapshotTypeCode *string `json:"snapshotTypeCode,omitempty"`
 }

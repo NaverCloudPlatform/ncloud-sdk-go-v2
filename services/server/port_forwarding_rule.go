@@ -10,6 +10,15 @@ package server
 
 type PortForwardingRule struct {
 
+	// 포트포워딩설정번호
+PortForwardingConfigurationNo *string `json:"portForwardingConfigurationNo,omitempty"`
+
+	// 포트포워딩공인IP
+PortForwardingPublicIp *string `json:"portForwardingPublicIp,omitempty"`
+
+	// ZONE
+Zone *Zone `json:"zone,omitempty"`
+
 	// 포트포워딩외부포트
 PortForwardingExternalPort *int32 `json:"portForwardingExternalPort,omitempty"`
 

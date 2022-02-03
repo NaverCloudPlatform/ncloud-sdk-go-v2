@@ -10,17 +10,20 @@ package loadbalancer
 
 type GetLoadBalancerInstanceListRequest struct {
 
+	// 로드밸런서명
+LoadBalancerName *string `json:"loadBalancerName,omitempty"`
+
 	// 로드밸런서인스턴스번호리스트
 LoadBalancerInstanceNoList []*string `json:"loadBalancerInstanceNoList,omitempty"`
-
-	// 인터넷라인구분코드
-InternetLineTypeCode *string `json:"internetLineTypeCode,omitempty"`
 
 	// 네트워크 구분코드
 NetworkUsageTypeCode *string `json:"networkUsageTypeCode,omitempty"`
 
 	// 리전번호
 RegionNo *string `json:"regionNo,omitempty"`
+
+	// ZONE번호
+ZoneNo *string `json:"zoneNo,omitempty"`
 
 	// 페이지번호
 PageNo *int32 `json:"pageNo,omitempty"`

@@ -3,10 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PortForwardingConfigurationNo** | ***string** | 포트포워딩설정번호 | [optional] [default to null]
-**PortForwardingPublicIp** | ***string** | 포트포워딩공인IP | [optional] [default to null]
-**Zone** | **[*Zone](Zone.md)** | ZONE객체 | [optional] [default to null]
-**InternetLineType** | **[*CommonCode](CommonCode.md)** | 인터넷라인구분 | [optional] [default to null]
+**RequestId** | ***string** |  | [optional] [default to null]
+**ReturnCode** | ***string** |  | [optional] [default to null]
+**ReturnMessage** | ***string** |  | [optional] [default to null]
 **TotalRows** | ***int32** |  | [optional] [default to null]
 **PortForwardingRuleList** | **[[]\*PortForwardingRule](PortForwardingRule.md)** |  | [optional] [default to null]
 

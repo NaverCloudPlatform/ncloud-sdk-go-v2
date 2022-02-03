@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Port** | ***int32** | 포트 | [optional] [default to null]
 **ProtocolTypeCode** | ***string** | 프로토콜유형코드 | [optional] [default to null]
 **TlsMinVersionTypeCode** | ***string** | TLS최소지원버전유형코드 | [optional] [default to null]
+**CipherSuiteList** | **[]\*string** | 암호화스위트리스트 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
