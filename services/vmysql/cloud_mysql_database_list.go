@@ -11,5 +11,5 @@ package vmysql
 type CloudMysqlDatabaseList struct {
 
 	// CloudMysqlDatabase리스트
-CloudMysqlDatabaseList []*CloudMysqlDatabase `json:"cloudMysqlDatabaseList,omitempty"`
+	CloudMysqlDatabaseList []*CloudMysqlDatabase `json:"cloudMysqlDatabaseList,omitempty"`
 }

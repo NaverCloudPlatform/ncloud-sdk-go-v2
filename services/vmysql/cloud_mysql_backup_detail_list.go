@@ -11,5 +11,5 @@ package vmysql
 type CloudMysqlBackupDetailList struct {
 
 	// CloudMysql백업상세리스트
-CloudMysqlBackupDetailList []*CloudMysqlBackupDetail `json:"cloudMysqlBackupDetailList,omitempty"`
+	CloudMysqlBackupDetailList []*CloudMysqlBackupDetail `json:"cloudMysqlBackupDetailList,omitempty"`
 }

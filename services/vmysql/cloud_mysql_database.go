@@ -11,5 +11,5 @@ package vmysql
 type CloudMysqlDatabase struct {
 
 	// database이름
-DatabaseName *string `json:"databaseName,omitempty"`
+	DatabaseName *string `json:"databaseName,omitempty"`
 }

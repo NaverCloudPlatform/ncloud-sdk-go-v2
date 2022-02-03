@@ -11,14 +11,14 @@ package vmysql
 type GetCloudMysqlUserListRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// CloudMysql인스턴스번호
-CloudMysqlInstanceNo *string `json:"cloudMysqlInstanceNo"`
+	CloudMysqlInstanceNo *string `json:"cloudMysqlInstanceNo"`
 
 	// 페이지번호
-PageNo *int32 `json:"pageNo"`
+	PageNo *int32 `json:"pageNo"`
 
 	// 페이지사이즈
-PageSize *int32 `json:"pageSize"`
+	PageSize *int32 `json:"pageSize"`
 }

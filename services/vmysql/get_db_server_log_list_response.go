@@ -9,15 +9,14 @@
 package vmysql
 
 type GetDbServerLogListResponse struct {
+	RequestId *string `json:"requestId,omitempty"`
 
-RequestId *string `json:"requestId,omitempty"`
+	ReturnCode *string `json:"returnCode,omitempty"`
 
-ReturnCode *string `json:"returnCode,omitempty"`
+	ReturnMessage *string `json:"returnMessage,omitempty"`
 
-ReturnMessage *string `json:"returnMessage,omitempty"`
-
-TotalRows *int32 `json:"totalRows,omitempty"`
+	TotalRows *int32 `json:"totalRows,omitempty"`
 
 	// CloudMysql데이터베이스서버로그리스트
-CloudMysqlDbServerLogList *CloudMysqlDbServerLogList `json:"cloudMysqlDbServerLogList,omitempty"`
+	CloudMysqlDbServerLogList []*CloudMysqlDbServerLog `json:"cloudMysqlDbServerLogList,omitempty"`
 }

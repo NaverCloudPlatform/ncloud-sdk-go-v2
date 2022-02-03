@@ -11,8 +11,8 @@ package vmysql
 type CloudMysqlUserKeyParameter struct {
 
 	// DBUserID
-Name *string `json:"name"`
+	Name *string `json:"name"`
 
 	// 접근IP
-HostIp *string `json:"hostIp"`
+	HostIp *string `json:"hostIp"`
 }

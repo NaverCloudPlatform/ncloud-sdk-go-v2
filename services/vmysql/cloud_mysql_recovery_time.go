@@ -11,8 +11,8 @@ package vmysql
 type CloudMysqlRecoveryTime struct {
 
 	// 시점복원가능한시작시간
-RecoveryStartTime *string `json:"recoveryStartTime,omitempty"`
+	RecoveryStartTime *string `json:"recoveryStartTime,omitempty"`
 
 	// 시점복원가능한마지막시간
-RecoveryEndTime *string `json:"recoveryEndTime,omitempty"`
+	RecoveryEndTime *string `json:"recoveryEndTime,omitempty"`
 }

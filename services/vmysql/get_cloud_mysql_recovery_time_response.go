@@ -9,15 +9,14 @@
 package vmysql
 
 type GetCloudMysqlRecoveryTimeResponse struct {
+	RequestId *string `json:"requestId,omitempty"`
 
-RequestId *string `json:"requestId,omitempty"`
+	ReturnCode *string `json:"returnCode,omitempty"`
 
-ReturnCode *string `json:"returnCode,omitempty"`
+	ReturnMessage *string `json:"returnMessage,omitempty"`
 
-ReturnMessage *string `json:"returnMessage,omitempty"`
-
-TotalRows *int32 `json:"totalRows,omitempty"`
+	TotalRows *int32 `json:"totalRows,omitempty"`
 
 	// CloudMysql인스턴스리스트
-CloudMysqlInstanceList *CloudMysqlRecoveryTime `json:"cloudMysqlInstanceList,omitempty"`
+	CloudMysqlInstanceList *CloudMysqlRecoveryTime `json:"cloudMysqlInstanceList,omitempty"`
 }

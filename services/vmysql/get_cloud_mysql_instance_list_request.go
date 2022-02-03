@@ -11,32 +11,32 @@ package vmysql
 type GetCloudMysqlInstanceListRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// ZONE코드
-ZoneCode *string `json:"zoneCode,omitempty"`
+	ZoneCode *string `json:"zoneCode,omitempty"`
 
 	// VPC번호
-VpcNo *string `json:"vpcNo,omitempty"`
+	VpcNo *string `json:"vpcNo,omitempty"`
 
 	// Subnet번호
-SubnetNo *string `json:"subnetNo,omitempty"`
+	SubnetNo *string `json:"subnetNo,omitempty"`
 
 	// CloudMysql서비스이름
-CloudMysqlServiceName *string `json:"cloudMysqlServiceName,omitempty"`
+	CloudMysqlServiceName *string `json:"cloudMysqlServiceName,omitempty"`
 
 	// CloudMysql인스턴스번호리스트
-CloudMysqlInstanceNoList []*string `json:"cloudMysqlInstanceNoList,omitempty"`
+	CloudMysqlInstanceNoList []*string `json:"cloudMysqlInstanceNoList,omitempty"`
 
 	// CloudMysql서버이름
-CloudMysqlServerName *string `json:"cloudMysqlServerName,omitempty"`
+	CloudMysqlServerName *string `json:"cloudMysqlServerName,omitempty"`
 
 	// CloudMysql서버인스턴스번호리스트
-CloudMysqlServerInstanceNoList []*string `json:"cloudMysqlServerInstanceNoList,omitempty"`
+	CloudMysqlServerInstanceNoList []*string `json:"cloudMysqlServerInstanceNoList,omitempty"`
 
 	// 페이지번호
-PageNo *int32 `json:"pageNo,omitempty"`
+	PageNo *int32 `json:"pageNo,omitempty"`
 
 	// 페이지사이즈
-PageSize *int32 `json:"pageSize,omitempty"`
+	PageSize *int32 `json:"pageSize,omitempty"`
 }

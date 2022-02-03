@@ -9,13 +9,13 @@
 package vmysql
 
 import (
+	"bytes"
 	"encoding/base64"
 	"encoding/json"
 	"io/ioutil"
 	"net/url"
 	"reflect"
 	"strings"
-	"bytes"
 
 	"golang.org/x/net/context"
 )
@@ -27,17 +27,16 @@ var (
 
 type V2ApiService service
 
-
-/* V2ApiService 
- @param addCloudMysqlDatabaseListRequest addCloudMysqlDatabaseListRequest
- @return *AddCloudMysqlDatabaseListResponse*/
+/* V2ApiService
+@param addCloudMysqlDatabaseListRequest addCloudMysqlDatabaseListRequest
+@return *AddCloudMysqlDatabaseListResponse*/
 func (a *V2ApiService) AddCloudMysqlDatabaseList(addCloudMysqlDatabaseListRequest *AddCloudMysqlDatabaseListRequest) (*AddCloudMysqlDatabaseListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  AddCloudMysqlDatabaseListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     AddCloudMysqlDatabaseListResponse
 	)
 
 	// create path and map variables
@@ -47,9 +46,8 @@ func (a *V2ApiService) AddCloudMysqlDatabaseList(addCloudMysqlDatabaseListReques
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -58,8 +56,7 @@ func (a *V2ApiService) AddCloudMysqlDatabaseList(addCloudMysqlDatabaseListReques
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -97,20 +94,19 @@ func (a *V2ApiService) AddCloudMysqlDatabaseList(addCloudMysqlDatabaseListReques
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param addCloudMysqlUserListRequest addCloudMysqlUserListRequest
- @return *AddCloudMysqlUserListResponse*/
+/* V2ApiService
+@param addCloudMysqlUserListRequest addCloudMysqlUserListRequest
+@return *AddCloudMysqlUserListResponse*/
 func (a *V2ApiService) AddCloudMysqlUserList(addCloudMysqlUserListRequest *AddCloudMysqlUserListRequest) (*AddCloudMysqlUserListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  AddCloudMysqlUserListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     AddCloudMysqlUserListResponse
 	)
 
 	// create path and map variables
@@ -120,9 +116,8 @@ func (a *V2ApiService) AddCloudMysqlUserList(addCloudMysqlUserListRequest *AddCl
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -131,8 +126,7 @@ func (a *V2ApiService) AddCloudMysqlUserList(addCloudMysqlUserListRequest *AddCl
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -170,20 +164,19 @@ func (a *V2ApiService) AddCloudMysqlUserList(addCloudMysqlUserListRequest *AddCl
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param changeCloudMysqlUserListRequest changeCloudMysqlUserListRequest
- @return *ChangeCloudMysqlUserListResponse*/
+/* V2ApiService
+@param changeCloudMysqlUserListRequest changeCloudMysqlUserListRequest
+@return *ChangeCloudMysqlUserListResponse*/
 func (a *V2ApiService) ChangeCloudMysqlUserList(changeCloudMysqlUserListRequest *ChangeCloudMysqlUserListRequest) (*ChangeCloudMysqlUserListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ChangeCloudMysqlUserListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ChangeCloudMysqlUserListResponse
 	)
 
 	// create path and map variables
@@ -193,9 +186,8 @@ func (a *V2ApiService) ChangeCloudMysqlUserList(changeCloudMysqlUserListRequest 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -204,8 +196,7 @@ func (a *V2ApiService) ChangeCloudMysqlUserList(changeCloudMysqlUserListRequest 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -243,20 +234,19 @@ func (a *V2ApiService) ChangeCloudMysqlUserList(changeCloudMysqlUserListRequest 
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param createCloudMysqlInstanceRequest createCloudMysqlInstanceRequest
- @return *CreateCloudMysqlInstanceResponse*/
+/* V2ApiService
+@param createCloudMysqlInstanceRequest createCloudMysqlInstanceRequest
+@return *CreateCloudMysqlInstanceResponse*/
 func (a *V2ApiService) CreateCloudMysqlInstance(createCloudMysqlInstanceRequest *CreateCloudMysqlInstanceRequest) (*CreateCloudMysqlInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  CreateCloudMysqlInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     CreateCloudMysqlInstanceResponse
 	)
 
 	// create path and map variables
@@ -266,9 +256,8 @@ func (a *V2ApiService) CreateCloudMysqlInstance(createCloudMysqlInstanceRequest 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -277,8 +266,7 @@ func (a *V2ApiService) CreateCloudMysqlInstance(createCloudMysqlInstanceRequest 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -316,20 +304,19 @@ func (a *V2ApiService) CreateCloudMysqlInstance(createCloudMysqlInstanceRequest 
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param createCloudMysqlRecoveryInstanceRequest createCloudMysqlRecoveryInstanceRequest
- @return *CreateCloudMysqlRecoveryInstanceResponse*/
+/* V2ApiService
+@param createCloudMysqlRecoveryInstanceRequest createCloudMysqlRecoveryInstanceRequest
+@return *CreateCloudMysqlRecoveryInstanceResponse*/
 func (a *V2ApiService) CreateCloudMysqlRecoveryInstance(createCloudMysqlRecoveryInstanceRequest *CreateCloudMysqlRecoveryInstanceRequest) (*CreateCloudMysqlRecoveryInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  CreateCloudMysqlRecoveryInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     CreateCloudMysqlRecoveryInstanceResponse
 	)
 
 	// create path and map variables
@@ -339,9 +326,8 @@ func (a *V2ApiService) CreateCloudMysqlRecoveryInstance(createCloudMysqlRecovery
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -350,8 +336,7 @@ func (a *V2ApiService) CreateCloudMysqlRecoveryInstance(createCloudMysqlRecovery
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -389,20 +374,19 @@ func (a *V2ApiService) CreateCloudMysqlRecoveryInstance(createCloudMysqlRecovery
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param createCloudMysqlSlaveInstanceRequest createCloudMysqlSlaveInstanceRequest
- @return *CreateCloudMysqlSlaveInstanceResponse*/
+/* V2ApiService
+@param createCloudMysqlSlaveInstanceRequest createCloudMysqlSlaveInstanceRequest
+@return *CreateCloudMysqlSlaveInstanceResponse*/
 func (a *V2ApiService) CreateCloudMysqlSlaveInstance(createCloudMysqlSlaveInstanceRequest *CreateCloudMysqlSlaveInstanceRequest) (*CreateCloudMysqlSlaveInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  CreateCloudMysqlSlaveInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     CreateCloudMysqlSlaveInstanceResponse
 	)
 
 	// create path and map variables
@@ -412,9 +396,8 @@ func (a *V2ApiService) CreateCloudMysqlSlaveInstance(createCloudMysqlSlaveInstan
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -423,8 +406,7 @@ func (a *V2ApiService) CreateCloudMysqlSlaveInstance(createCloudMysqlSlaveInstan
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -462,20 +444,19 @@ func (a *V2ApiService) CreateCloudMysqlSlaveInstance(createCloudMysqlSlaveInstan
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param deleteCloudMysqlDatabaseListRequest deleteCloudMysqlDatabaseListRequest
- @return *DeleteCloudMysqlDatabaseListResponse*/
+/* V2ApiService
+@param deleteCloudMysqlDatabaseListRequest deleteCloudMysqlDatabaseListRequest
+@return *DeleteCloudMysqlDatabaseListResponse*/
 func (a *V2ApiService) DeleteCloudMysqlDatabaseList(deleteCloudMysqlDatabaseListRequest *DeleteCloudMysqlDatabaseListRequest) (*DeleteCloudMysqlDatabaseListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DeleteCloudMysqlDatabaseListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DeleteCloudMysqlDatabaseListResponse
 	)
 
 	// create path and map variables
@@ -485,9 +466,8 @@ func (a *V2ApiService) DeleteCloudMysqlDatabaseList(deleteCloudMysqlDatabaseList
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -496,8 +476,7 @@ func (a *V2ApiService) DeleteCloudMysqlDatabaseList(deleteCloudMysqlDatabaseList
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -535,20 +514,19 @@ func (a *V2ApiService) DeleteCloudMysqlDatabaseList(deleteCloudMysqlDatabaseList
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param deleteCloudMysqlInstanceRequest deleteCloudMysqlInstanceRequest
- @return *DeleteCloudMysqlInstanceResponse*/
+/* V2ApiService
+@param deleteCloudMysqlInstanceRequest deleteCloudMysqlInstanceRequest
+@return *DeleteCloudMysqlInstanceResponse*/
 func (a *V2ApiService) DeleteCloudMysqlInstance(deleteCloudMysqlInstanceRequest *DeleteCloudMysqlInstanceRequest) (*DeleteCloudMysqlInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DeleteCloudMysqlInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DeleteCloudMysqlInstanceResponse
 	)
 
 	// create path and map variables
@@ -558,9 +536,8 @@ func (a *V2ApiService) DeleteCloudMysqlInstance(deleteCloudMysqlInstanceRequest 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -569,8 +546,7 @@ func (a *V2ApiService) DeleteCloudMysqlInstance(deleteCloudMysqlInstanceRequest 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -608,20 +584,19 @@ func (a *V2ApiService) DeleteCloudMysqlInstance(deleteCloudMysqlInstanceRequest 
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param deleteCloudMysqlServerInstanceRequest deleteCloudMysqlServerInstanceRequest
- @return *DeleteCloudMysqlServerInstanceResponse*/
+/* V2ApiService
+@param deleteCloudMysqlServerInstanceRequest deleteCloudMysqlServerInstanceRequest
+@return *DeleteCloudMysqlServerInstanceResponse*/
 func (a *V2ApiService) DeleteCloudMysqlServerInstance(deleteCloudMysqlServerInstanceRequest *DeleteCloudMysqlServerInstanceRequest) (*DeleteCloudMysqlServerInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DeleteCloudMysqlServerInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DeleteCloudMysqlServerInstanceResponse
 	)
 
 	// create path and map variables
@@ -631,9 +606,8 @@ func (a *V2ApiService) DeleteCloudMysqlServerInstance(deleteCloudMysqlServerInst
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -642,8 +616,7 @@ func (a *V2ApiService) DeleteCloudMysqlServerInstance(deleteCloudMysqlServerInst
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -681,20 +654,19 @@ func (a *V2ApiService) DeleteCloudMysqlServerInstance(deleteCloudMysqlServerInst
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param deleteCloudMysqlUserListRequest deleteCloudMysqlUserListRequest
- @return *DeleteCloudMysqlUserListResponse*/
+/* V2ApiService
+@param deleteCloudMysqlUserListRequest deleteCloudMysqlUserListRequest
+@return *DeleteCloudMysqlUserListResponse*/
 func (a *V2ApiService) DeleteCloudMysqlUserList(deleteCloudMysqlUserListRequest *DeleteCloudMysqlUserListRequest) (*DeleteCloudMysqlUserListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DeleteCloudMysqlUserListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DeleteCloudMysqlUserListResponse
 	)
 
 	// create path and map variables
@@ -704,9 +676,8 @@ func (a *V2ApiService) DeleteCloudMysqlUserList(deleteCloudMysqlUserListRequest 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -715,8 +686,7 @@ func (a *V2ApiService) DeleteCloudMysqlUserList(deleteCloudMysqlUserListRequest 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -754,20 +724,19 @@ func (a *V2ApiService) DeleteCloudMysqlUserList(deleteCloudMysqlUserListRequest 
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param exportBackupToObjectStorageRequest exportBackupToObjectStorageRequest
- @return *ExportBackupToObjectStorageResponse*/
+/* V2ApiService
+@param exportBackupToObjectStorageRequest exportBackupToObjectStorageRequest
+@return *ExportBackupToObjectStorageResponse*/
 func (a *V2ApiService) ExportBackupToObjectStorage(exportBackupToObjectStorageRequest *ExportBackupToObjectStorageRequest) (*ExportBackupToObjectStorageResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ExportBackupToObjectStorageResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ExportBackupToObjectStorageResponse
 	)
 
 	// create path and map variables
@@ -777,9 +746,8 @@ func (a *V2ApiService) ExportBackupToObjectStorage(exportBackupToObjectStorageRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -788,8 +756,7 @@ func (a *V2ApiService) ExportBackupToObjectStorage(exportBackupToObjectStorageRe
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -827,20 +794,19 @@ func (a *V2ApiService) ExportBackupToObjectStorage(exportBackupToObjectStorageRe
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param exportDbServerLogToObjectStorageRequest exportDbServerLogToObjectStorageRequest
- @return *ExportDbServerLogToObjectStorageResponse*/
+/* V2ApiService
+@param exportDbServerLogToObjectStorageRequest exportDbServerLogToObjectStorageRequest
+@return *ExportDbServerLogToObjectStorageResponse*/
 func (a *V2ApiService) ExportDbServerLogToObjectStorage(exportDbServerLogToObjectStorageRequest *ExportDbServerLogToObjectStorageRequest) (*ExportDbServerLogToObjectStorageResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ExportDbServerLogToObjectStorageResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ExportDbServerLogToObjectStorageResponse
 	)
 
 	// create path and map variables
@@ -850,9 +816,8 @@ func (a *V2ApiService) ExportDbServerLogToObjectStorage(exportDbServerLogToObjec
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -861,8 +826,7 @@ func (a *V2ApiService) ExportDbServerLogToObjectStorage(exportDbServerLogToObjec
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -900,20 +864,19 @@ func (a *V2ApiService) ExportDbServerLogToObjectStorage(exportDbServerLogToObjec
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param getCloudMysqlBackupDetailListRequest getCloudMysqlBackupDetailListRequest
- @return *GetCloudMysqlBackupDetailListResponse*/
+/* V2ApiService
+@param getCloudMysqlBackupDetailListRequest getCloudMysqlBackupDetailListRequest
+@return *GetCloudMysqlBackupDetailListResponse*/
 func (a *V2ApiService) GetCloudMysqlBackupDetailList(getCloudMysqlBackupDetailListRequest *GetCloudMysqlBackupDetailListRequest) (*GetCloudMysqlBackupDetailListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudMysqlBackupDetailListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudMysqlBackupDetailListResponse
 	)
 
 	// create path and map variables
@@ -923,9 +886,8 @@ func (a *V2ApiService) GetCloudMysqlBackupDetailList(getCloudMysqlBackupDetailLi
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -934,8 +896,7 @@ func (a *V2ApiService) GetCloudMysqlBackupDetailList(getCloudMysqlBackupDetailLi
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -973,20 +934,19 @@ func (a *V2ApiService) GetCloudMysqlBackupDetailList(getCloudMysqlBackupDetailLi
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param getCloudMysqlBackupListRequest getCloudMysqlBackupListRequest
- @return *GetCloudMysqlBackupListResponse*/
+/* V2ApiService
+@param getCloudMysqlBackupListRequest getCloudMysqlBackupListRequest
+@return *GetCloudMysqlBackupListResponse*/
 func (a *V2ApiService) GetCloudMysqlBackupList(getCloudMysqlBackupListRequest *GetCloudMysqlBackupListRequest) (*GetCloudMysqlBackupListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudMysqlBackupListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudMysqlBackupListResponse
 	)
 
 	// create path and map variables
@@ -996,9 +956,8 @@ func (a *V2ApiService) GetCloudMysqlBackupList(getCloudMysqlBackupListRequest *G
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1007,8 +966,7 @@ func (a *V2ApiService) GetCloudMysqlBackupList(getCloudMysqlBackupListRequest *G
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1046,20 +1004,19 @@ func (a *V2ApiService) GetCloudMysqlBackupList(getCloudMysqlBackupListRequest *G
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param getCloudMysqlDatabaseListRequest getCloudMysqlDatabaseListRequest
- @return *GetCloudMysqlDatabaseListResponse*/
+/* V2ApiService
+@param getCloudMysqlDatabaseListRequest getCloudMysqlDatabaseListRequest
+@return *GetCloudMysqlDatabaseListResponse*/
 func (a *V2ApiService) GetCloudMysqlDatabaseList(getCloudMysqlDatabaseListRequest *GetCloudMysqlDatabaseListRequest) (*GetCloudMysqlDatabaseListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudMysqlDatabaseListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudMysqlDatabaseListResponse
 	)
 
 	// create path and map variables
@@ -1069,9 +1026,8 @@ func (a *V2ApiService) GetCloudMysqlDatabaseList(getCloudMysqlDatabaseListReques
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1080,8 +1036,7 @@ func (a *V2ApiService) GetCloudMysqlDatabaseList(getCloudMysqlDatabaseListReques
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1119,20 +1074,19 @@ func (a *V2ApiService) GetCloudMysqlDatabaseList(getCloudMysqlDatabaseListReques
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param getCloudMysqlImageProductListRequest getCloudMysqlImageProductListRequest
- @return *GetCloudMysqlImageProductListResponse*/
+/* V2ApiService
+@param getCloudMysqlImageProductListRequest getCloudMysqlImageProductListRequest
+@return *GetCloudMysqlImageProductListResponse*/
 func (a *V2ApiService) GetCloudMysqlImageProductList(getCloudMysqlImageProductListRequest *GetCloudMysqlImageProductListRequest) (*GetCloudMysqlImageProductListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudMysqlImageProductListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudMysqlImageProductListResponse
 	)
 
 	// create path and map variables
@@ -1142,9 +1096,8 @@ func (a *V2ApiService) GetCloudMysqlImageProductList(getCloudMysqlImageProductLi
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1153,8 +1106,7 @@ func (a *V2ApiService) GetCloudMysqlImageProductList(getCloudMysqlImageProductLi
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1192,20 +1144,19 @@ func (a *V2ApiService) GetCloudMysqlImageProductList(getCloudMysqlImageProductLi
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param getCloudMysqlInstanceDetailRequest getCloudMysqlInstanceDetailRequest
- @return *GetCloudMysqlInstanceDetailResponse*/
+/* V2ApiService
+@param getCloudMysqlInstanceDetailRequest getCloudMysqlInstanceDetailRequest
+@return *GetCloudMysqlInstanceDetailResponse*/
 func (a *V2ApiService) GetCloudMysqlInstanceDetail(getCloudMysqlInstanceDetailRequest *GetCloudMysqlInstanceDetailRequest) (*GetCloudMysqlInstanceDetailResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudMysqlInstanceDetailResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudMysqlInstanceDetailResponse
 	)
 
 	// create path and map variables
@@ -1215,9 +1166,8 @@ func (a *V2ApiService) GetCloudMysqlInstanceDetail(getCloudMysqlInstanceDetailRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1226,8 +1176,7 @@ func (a *V2ApiService) GetCloudMysqlInstanceDetail(getCloudMysqlInstanceDetailRe
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1265,20 +1214,19 @@ func (a *V2ApiService) GetCloudMysqlInstanceDetail(getCloudMysqlInstanceDetailRe
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param getCloudMysqlInstanceListRequest getCloudMysqlInstanceListRequest
- @return *GetCloudMysqlInstanceListResponse*/
+/* V2ApiService
+@param getCloudMysqlInstanceListRequest getCloudMysqlInstanceListRequest
+@return *GetCloudMysqlInstanceListResponse*/
 func (a *V2ApiService) GetCloudMysqlInstanceList(getCloudMysqlInstanceListRequest *GetCloudMysqlInstanceListRequest) (*GetCloudMysqlInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudMysqlInstanceListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudMysqlInstanceListResponse
 	)
 
 	// create path and map variables
@@ -1288,9 +1236,8 @@ func (a *V2ApiService) GetCloudMysqlInstanceList(getCloudMysqlInstanceListReques
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1299,8 +1246,7 @@ func (a *V2ApiService) GetCloudMysqlInstanceList(getCloudMysqlInstanceListReques
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1338,20 +1284,19 @@ func (a *V2ApiService) GetCloudMysqlInstanceList(getCloudMysqlInstanceListReques
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param getCloudMysqlProductListRequest getCloudMysqlProductListRequest
- @return *GetCloudMysqlProductListResponse*/
+/* V2ApiService
+@param getCloudMysqlProductListRequest getCloudMysqlProductListRequest
+@return *GetCloudMysqlProductListResponse*/
 func (a *V2ApiService) GetCloudMysqlProductList(getCloudMysqlProductListRequest *GetCloudMysqlProductListRequest) (*GetCloudMysqlProductListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudMysqlProductListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudMysqlProductListResponse
 	)
 
 	// create path and map variables
@@ -1361,9 +1306,8 @@ func (a *V2ApiService) GetCloudMysqlProductList(getCloudMysqlProductListRequest 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1372,8 +1316,7 @@ func (a *V2ApiService) GetCloudMysqlProductList(getCloudMysqlProductListRequest 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1411,20 +1354,19 @@ func (a *V2ApiService) GetCloudMysqlProductList(getCloudMysqlProductListRequest 
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param getCloudMysqlRecoveryTimeRequest getCloudMysqlRecoveryTimeRequest
- @return *GetCloudMysqlRecoveryTimeResponse*/
+/* V2ApiService
+@param getCloudMysqlRecoveryTimeRequest getCloudMysqlRecoveryTimeRequest
+@return *GetCloudMysqlRecoveryTimeResponse*/
 func (a *V2ApiService) GetCloudMysqlRecoveryTime(getCloudMysqlRecoveryTimeRequest *GetCloudMysqlRecoveryTimeRequest) (*GetCloudMysqlRecoveryTimeResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudMysqlRecoveryTimeResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudMysqlRecoveryTimeResponse
 	)
 
 	// create path and map variables
@@ -1434,9 +1376,8 @@ func (a *V2ApiService) GetCloudMysqlRecoveryTime(getCloudMysqlRecoveryTimeReques
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1445,8 +1386,7 @@ func (a *V2ApiService) GetCloudMysqlRecoveryTime(getCloudMysqlRecoveryTimeReques
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1484,20 +1424,19 @@ func (a *V2ApiService) GetCloudMysqlRecoveryTime(getCloudMysqlRecoveryTimeReques
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param getCloudMysqlUserListRequest getCloudMysqlUserListRequest
- @return *GetCloudMysqlUserListResponse*/
+/* V2ApiService
+@param getCloudMysqlUserListRequest getCloudMysqlUserListRequest
+@return *GetCloudMysqlUserListResponse*/
 func (a *V2ApiService) GetCloudMysqlUserList(getCloudMysqlUserListRequest *GetCloudMysqlUserListRequest) (*GetCloudMysqlUserListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudMysqlUserListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudMysqlUserListResponse
 	)
 
 	// create path and map variables
@@ -1507,9 +1446,8 @@ func (a *V2ApiService) GetCloudMysqlUserList(getCloudMysqlUserListRequest *GetCl
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1518,8 +1456,7 @@ func (a *V2ApiService) GetCloudMysqlUserList(getCloudMysqlUserListRequest *GetCl
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1557,20 +1494,19 @@ func (a *V2ApiService) GetCloudMysqlUserList(getCloudMysqlUserListRequest *GetCl
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param getDbServerLogListRequest getDbServerLogListRequest
- @return *GetDbServerLogListResponse*/
+/* V2ApiService
+@param getDbServerLogListRequest getDbServerLogListRequest
+@return *GetDbServerLogListResponse*/
 func (a *V2ApiService) GetDbServerLogList(getDbServerLogListRequest *GetDbServerLogListRequest) (*GetDbServerLogListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetDbServerLogListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetDbServerLogListResponse
 	)
 
 	// create path and map variables
@@ -1580,9 +1516,8 @@ func (a *V2ApiService) GetDbServerLogList(getDbServerLogListRequest *GetDbServer
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1591,8 +1526,7 @@ func (a *V2ApiService) GetDbServerLogList(getDbServerLogListRequest *GetDbServer
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1630,20 +1564,19 @@ func (a *V2ApiService) GetDbServerLogList(getDbServerLogListRequest *GetDbServer
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- @param rebootCloudMysqlServerInstanceRequest rebootCloudMysqlServerInstanceRequest
- @return *RebootCloudMysqlServerInstanceResponse*/
+/* V2ApiService
+@param rebootCloudMysqlServerInstanceRequest rebootCloudMysqlServerInstanceRequest
+@return *RebootCloudMysqlServerInstanceResponse*/
 func (a *V2ApiService) RebootCloudMysqlServerInstance(rebootCloudMysqlServerInstanceRequest *RebootCloudMysqlServerInstanceRequest) (*RebootCloudMysqlServerInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  RebootCloudMysqlServerInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     RebootCloudMysqlServerInstanceResponse
 	)
 
 	// create path and map variables
@@ -1653,9 +1586,8 @@ func (a *V2ApiService) RebootCloudMysqlServerInstance(rebootCloudMysqlServerInst
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1664,8 +1596,7 @@ func (a *V2ApiService) RebootCloudMysqlServerInstance(rebootCloudMysqlServerInst
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1703,7 +1634,5 @@ func (a *V2ApiService) RebootCloudMysqlServerInstance(rebootCloudMysqlServerInst
 		}
 	}
 
-
 	return &successPayload, err
 }
-

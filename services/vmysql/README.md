@@ -48,7 +48,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [AccessControlGroupNoList](docs/AccessControlGroupNoList.md)
  - [AddCloudMysqlDatabaseListRequest](docs/AddCloudMysqlDatabaseListRequest.md)
  - [AddCloudMysqlDatabaseListResponse](docs/AddCloudMysqlDatabaseListResponse.md)
  - [AddCloudMysqlUserListRequest](docs/AddCloudMysqlUserListRequest.md)
@@ -59,11 +58,9 @@ Class | Method | HTTP request | Description
  - [CloudMysqlBackupDetail](docs/CloudMysqlBackupDetail.md)
  - [CloudMysqlBackupDetailList](docs/CloudMysqlBackupDetailList.md)
  - [CloudMysqlBackupList](docs/CloudMysqlBackupList.md)
- - [CloudMysqlConfigList](docs/CloudMysqlConfigList.md)
  - [CloudMysqlDatabase](docs/CloudMysqlDatabase.md)
  - [CloudMysqlDatabaseList](docs/CloudMysqlDatabaseList.md)
  - [CloudMysqlDbServerLog](docs/CloudMysqlDbServerLog.md)
- - [CloudMysqlDbServerLogList](docs/CloudMysqlDbServerLogList.md)
  - [CloudMysqlInstance](docs/CloudMysqlInstance.md)
  - [CloudMysqlInstanceList](docs/CloudMysqlInstanceList.md)
  - [CloudMysqlRecoveryTime](docs/CloudMysqlRecoveryTime.md)
@@ -112,7 +109,6 @@ Class | Method | HTTP request | Description
  - [GetDbServerLogListRequest](docs/GetDbServerLogListRequest.md)
  - [GetDbServerLogListResponse](docs/GetDbServerLogListResponse.md)
  - [Product](docs/Product.md)
- - [ProductList](docs/ProductList.md)
  - [RebootCloudMysqlServerInstanceRequest](docs/RebootCloudMysqlServerInstanceRequest.md)
  - [RebootCloudMysqlServerInstanceResponse](docs/RebootCloudMysqlServerInstanceResponse.md)
 

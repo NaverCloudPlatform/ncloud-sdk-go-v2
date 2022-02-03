@@ -11,20 +11,20 @@ package vmysql
 type CloudMysqlBackup struct {
 
 	// CloudMysql인스턴스번호
-CloudMysqlInstanceNo *string `json:"cloudMysqlInstanceNo,omitempty"`
+	CloudMysqlInstanceNo *string `json:"cloudMysqlInstanceNo,omitempty"`
 
 	// CloudMysql서비스이름
-CloudMysqlServiceName *string `json:"cloudMysqlServiceName,omitempty"`
+	CloudMysqlServiceName *string `json:"cloudMysqlServiceName,omitempty"`
 
 	// 백업파일보관기간
-BackupFileRetentionPeriod *int32 `json:"backupFileRetentionPeriod,omitempty"`
+	BackupFileRetentionPeriod *int32 `json:"backupFileRetentionPeriod,omitempty"`
 
 	// 백업시간
-BackupTime *string `json:"backupTime,omitempty"`
+	BackupTime *string `json:"backupTime,omitempty"`
 
 	// 백업사이즈
-BackupSize *int64 `json:"backupSize,omitempty"`
+	BackupSize *int64 `json:"backupSize,omitempty"`
 
 	// 마지막백업일시
-LastBackupDate *string `json:"lastBackupDate,omitempty"`
+	LastBackupDate *string `json:"lastBackupDate,omitempty"`
 }

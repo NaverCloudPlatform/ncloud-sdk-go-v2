@@ -11,5 +11,5 @@ package vmysql
 type CloudMysqlUserList struct {
 
 	// CloudMysqlDBUser리스트
-CloudMysqlUserList []*CloudMysqlUser `json:"cloudMysqlUserList,omitempty"`
+	CloudMysqlUserList []*CloudMysqlUser `json:"cloudMysqlUserList,omitempty"`
 }

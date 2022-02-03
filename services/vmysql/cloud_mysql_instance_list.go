@@ -11,5 +11,5 @@ package vmysql
 type CloudMysqlInstanceList struct {
 
 	// CloudMysql인스턴스리스트
-CloudMysqlInstanceList []*CloudMysqlInstance `json:"cloudMysqlInstanceList,omitempty"`
+	CloudMysqlInstanceList []*CloudMysqlInstance `json:"cloudMysqlInstanceList,omitempty"`
 }

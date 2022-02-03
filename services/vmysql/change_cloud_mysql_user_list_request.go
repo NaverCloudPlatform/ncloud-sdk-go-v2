@@ -11,11 +11,11 @@ package vmysql
 type ChangeCloudMysqlUserListRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// CloudMysql인스턴스번호
-CloudMysqlInstanceNo *string `json:"cloudMysqlInstanceNo"`
+	CloudMysqlInstanceNo *string `json:"cloudMysqlInstanceNo"`
 
 	// CloudMysqlDBUser리스트
-CloudMysqlUserList []*CloudMysqlUserParameter `json:"cloudMysqlUserList"`
+	CloudMysqlUserList []*CloudMysqlUserParameter `json:"cloudMysqlUserList"`
 }
