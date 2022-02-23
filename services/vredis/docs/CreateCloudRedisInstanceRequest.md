@@ -20,7 +20,8 @@ Name | Type | Description | Notes
 **CloudRedisPort** | ***string** | CloudRedis포트 | [optional] [default to null]
 **CloudRedisModeCode** | ***string** | CloudRedis구성 | [default to null]
 **SubnetNo** | ***string** | Subnet번호 | [default to null]
-
+**CloudRedisUserName** | ***string** | CloudRedis유저이름 | [default to null] [Only Ncloud Gov]
+**CloudRedisUserPassword** | ***string** | CloudRedis유저패스워드 | [default to null] [Only Ncloud Gov] 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

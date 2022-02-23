@@ -15,7 +15,9 @@ Method | HTTP request | Description
 [**GetCloudRedisInstanceDetail**](V2Api.md#GetCloudRedisInstanceDetail) | **Post** /getCloudRedisInstanceDetail | 
 [**GetCloudRedisInstanceList**](V2Api.md#GetCloudRedisInstanceList) | **Post** /getCloudRedisInstanceList | 
 [**GetCloudRedisProductList**](V2Api.md#GetCloudRedisProductList) | **Post** /getCloudRedisProductList | 
-
+[**AddCloudRedisUserList**](V2Api.md#AddCloudRedisUserList) | **Post** /addCloudRedisUserList | Only Ncloud Gov
+[**DeleteCloudRedisUserList**](V2Api.md#DeleteCloudRedisUserList) | **Post** /deleteCloudRedisUserList | Only Ncloud Gov
+[**GetCloudRedisUserList**](V2Api.md#GetCloudRedisUserList) | **Post** /getCloudRedisUserList | Only Ncloud Gov
 
 # **CreateCloudRedisConfigGroup**
 > CreateCloudRedisConfigGroupResponse CreateCloudRedisConfigGroup(createCloudRedisConfigGroupRequest)
@@ -314,3 +316,86 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+
+
+
+# **AddCloudRedisUserList**
+> AddCloudRedisUserListResponse AddCloudRedisUserList(addCloudRedisUserListRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**addCloudRedisUserListRequest** | **[\*AddCloudRedisUserListRequest](AddCloudRedisUserListRequest.md)** | addCloudRedisUserListRequest | Only Ncloud Gov
+
+### Return type
+
+*[**AddCloudRedisUserListResponse**](AddCloudRedisUserListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+
+
+# **DeleteCloudRedisUserList**
+> DeleteCloudRedisInstanceResponse DeleteCloudRedisInstance(deleteCloudRedisInstanceRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**deleteCloudRedisInstanceRequest** | **[\*DeleteCloudRedisInstanceRequest](DeleteCloudRedisInstanceRequest.md)** | deleteCloudRedisInstanceRequest | Only Ncloud Gov
+
+### Return type
+
+*[**DeleteCloudRedisInstanceResponse**](DeleteCloudRedisInstanceResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+
+
+# **GetCloudRedisUserList**
+> GetCloudRedisUserListResponse GetCloudRedisUserList(getCloudRedisUserListRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getCloudRedisUserListRequest** | **[\*GetCloudRedisUserListRequest](GetCloudRedisUserListRequest.md)** | getCloudRedisUserListRequest | Only Ncloud Gov
+
+### Return type
+
+*[**GetCloudRedisUserListResponse**](GetCloudRedisUserListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

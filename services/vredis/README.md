@@ -19,33 +19,38 @@ Put the package under your project folder and add the following in import:
 
 All URIs are relative to *https://ncloud.apigw.ntruss.com/vredis/v2*
 
-Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
-*V2Api* | [**CreateCloudRedisConfigGroup**](docs/V2Api.md#createcloudredisconfiggroup) | **Post** /createCloudRedisConfigGroup | 
-*V2Api* | [**CreateCloudRedisInstance**](docs/V2Api.md#createcloudredisinstance) | **Post** /createCloudRedisInstance | 
-*V2Api* | [**DeleteCloudRedisConfigGroup**](docs/V2Api.md#deletecloudredisconfiggroup) | **Post** /deleteCloudRedisConfigGroup | 
-*V2Api* | [**DeleteCloudRedisInstance**](docs/V2Api.md#deletecloudredisinstance) | **Post** /deleteCloudRedisInstance | 
+Class | Method                                                                         | HTTP request | Description
+------------ |--------------------------------------------------------------------------------| ------------- | -------------
+*V2Api* | [**CreateCloudRedisConfigGroup**](docs/V2Api.md#createcloudredisconfiggroup)   | **Post** /createCloudRedisConfigGroup | 
+*V2Api* | [**CreateCloudRedisInstance**](docs/V2Api.md#createcloudredisinstance)         | **Post** /createCloudRedisInstance | 
+*V2Api* | [**DeleteCloudRedisConfigGroup**](docs/V2Api.md#deletecloudredisconfiggroup)   | **Post** /deleteCloudRedisConfigGroup | 
+*V2Api* | [**DeleteCloudRedisInstance**](docs/V2Api.md#deletecloudredisinstance)         | **Post** /deleteCloudRedisInstance | 
 *V2Api* | [**GetCloudRedisBackupDetailList**](docs/V2Api.md#getcloudredisbackupdetaillist) | **Post** /getCloudRedisBackupDetailList | 
-*V2Api* | [**GetCloudRedisBackupList**](docs/V2Api.md#getcloudredisbackuplist) | **Post** /getCloudRedisBackupList | 
+*V2Api* | [**GetCloudRedisBackupList**](docs/V2Api.md#getcloudredisbackuplist)           | **Post** /getCloudRedisBackupList | 
 *V2Api* | [**GetCloudRedisConfigGroupList**](docs/V2Api.md#getcloudredisconfiggrouplist) | **Post** /getCloudRedisConfigGroupList | 
 *V2Api* | [**GetCloudRedisImageProductList**](docs/V2Api.md#getcloudredisimageproductlist) | **Post** /getCloudRedisImageProductList | 
-*V2Api* | [**GetCloudRedisInstanceDetail**](docs/V2Api.md#getcloudredisinstancedetail) | **Post** /getCloudRedisInstanceDetail | 
-*V2Api* | [**GetCloudRedisInstanceList**](docs/V2Api.md#getcloudredisinstancelist) | **Post** /getCloudRedisInstanceList | 
-*V2Api* | [**GetCloudRedisProductList**](docs/V2Api.md#getcloudredisproductlist) | **Post** /getCloudRedisProductList | 
+*V2Api* | [**GetCloudRedisInstanceDetail**](docs/V2Api.md#getcloudredisinstancedetail)   | **Post** /getCloudRedisInstanceDetail | 
+*V2Api* | [**GetCloudRedisInstanceList**](docs/V2Api.md#getcloudredisinstancelist)       | **Post** /getCloudRedisInstanceList | 
+*V2Api* | [**GetCloudRedisProductList**](docs/V2Api.md#getcloudredisproductlist)         | **Post** /getCloudRedisProductList |
+*V2Api* | [**AddCloudRedisUserList**](docs/V2Api.md#addcloudredisuserlist)                                     | **Post** /addCloudRedisUserList | Only Ncloud Gov 
+*V2Api* | [**DeleteCloudRedisUserList**](docs/V2Api.md#deletecloudredisuserlist)       | **Post** /deleteCloudRedisUserList | Only Ncloud Gov 
+*V2Api* | [**GetCloudRedisUserList**](docs/V2Api.md#getcloudredisuserlist)         | **Post** /getCloudRedisUserList | Only Ncloud Gov 
 
 
 ## Documentation For Models
 
- - [AccessControlGroupNoList](docs/AccessControlGroupNoList.md)
+ - [AddCloudRedisUserListRequest](docs/AddCloudRedisUserListRequest.md)
+ - [AddCloudRedisUserListResponse](docs/AddCloudRedisUserListResponse.md)
  - [CloudRedisBackup](docs/CloudRedisBackup.md)
  - [CloudRedisBackupDetail](docs/CloudRedisBackupDetail.md)
  - [CloudRedisBackupDetailList](docs/CloudRedisBackupDetailList.md)
  - [CloudRedisBackupList](docs/CloudRedisBackupList.md)
  - [CloudRedisConfigGroup](docs/CloudRedisConfigGroup.md)
- - [CloudRedisConfigGroupList](docs/CloudRedisConfigGroupList.md)
  - [CloudRedisInstance](docs/CloudRedisInstance.md)
- - [CloudRedisInstanceList](docs/CloudRedisInstanceList.md)
  - [CloudRedisServerInstance](docs/CloudRedisServerInstance.md)
+ - [CloudRedisUser](docs/CloudRedisUser.md)
+ - [CloudRedisUserKeyParameter](docs/CloudRedisUserKeyParameter.md)
+ - [CloudRedisUserParameter](docs/CloudRedisUserParameter.md)
  - [CommonCode](docs/CommonCode.md)
  - [CreateCloudRedisConfigGroupRequest](docs/CreateCloudRedisConfigGroupRequest.md)
  - [CreateCloudRedisConfigGroupResponse](docs/CreateCloudRedisConfigGroupResponse.md)
@@ -55,6 +60,8 @@ Class | Method | HTTP request | Description
  - [DeleteCloudRedisConfigGroupResponse](docs/DeleteCloudRedisConfigGroupResponse.md)
  - [DeleteCloudRedisInstanceRequest](docs/DeleteCloudRedisInstanceRequest.md)
  - [DeleteCloudRedisInstanceResponse](docs/DeleteCloudRedisInstanceResponse.md)
+ - [DeleteCloudRedisUserListRequest](docs/DeleteCloudRedisUserListRequest.md)
+ - [DeleteCloudRedisUserListResponse](docs/DeleteCloudRedisUserListResponse.md)
  - [GetCloudRedisBackupDetailListRequest](docs/GetCloudRedisBackupDetailListRequest.md)
  - [GetCloudRedisBackupDetailListResponse](docs/GetCloudRedisBackupDetailListResponse.md)
  - [GetCloudRedisBackupListRequest](docs/GetCloudRedisBackupListRequest.md)
@@ -69,6 +76,8 @@ Class | Method | HTTP request | Description
  - [GetCloudRedisInstanceListResponse](docs/GetCloudRedisInstanceListResponse.md)
  - [GetCloudRedisProductListRequest](docs/GetCloudRedisProductListRequest.md)
  - [GetCloudRedisProductListResponse](docs/GetCloudRedisProductListResponse.md)
+ - [GetCloudRedisUserListRequest](docs/GetCloudRedisUserListRequest.md)
+ - [GetCloudRedisUserListResponse](docs/GetCloudRedisUserListResponse.md)
  - [Product](docs/Product.md)
  - [ProductList](docs/ProductList.md)
 
