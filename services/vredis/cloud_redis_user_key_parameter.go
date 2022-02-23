@@ -8,6 +8,6 @@
 
 package vredis
 
-// ACG번호리스트
-type AccessControlGroupNoList struct {
+type CloudRedisUserKeyParameter struct {
+	Name *string `json:"name"`
 }

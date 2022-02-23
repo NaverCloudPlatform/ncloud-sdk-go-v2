@@ -9,13 +9,13 @@
 package vredis
 
 import (
+	"bytes"
 	"encoding/base64"
 	"encoding/json"
 	"io/ioutil"
 	"net/url"
 	"reflect"
 	"strings"
-	"bytes"
 
 	"golang.org/x/net/context"
 )
@@ -27,18 +27,17 @@ var (
 
 type V2ApiService service
 
+/* V2ApiService
 
-/* V2ApiService 
- 
- @param createCloudRedisConfigGroupRequest createCloudRedisConfigGroupRequest
- @return *CreateCloudRedisConfigGroupResponse*/
+@param createCloudRedisConfigGroupRequest createCloudRedisConfigGroupRequest
+@return *CreateCloudRedisConfigGroupResponse*/
 func (a *V2ApiService) CreateCloudRedisConfigGroup(createCloudRedisConfigGroupRequest *CreateCloudRedisConfigGroupRequest) (*CreateCloudRedisConfigGroupResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  CreateCloudRedisConfigGroupResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     CreateCloudRedisConfigGroupResponse
 	)
 
 	// create path and map variables
@@ -48,9 +47,8 @@ func (a *V2ApiService) CreateCloudRedisConfigGroup(createCloudRedisConfigGroupRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -59,8 +57,7 @@ func (a *V2ApiService) CreateCloudRedisConfigGroup(createCloudRedisConfigGroupRe
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -98,21 +95,230 @@ func (a *V2ApiService) CreateCloudRedisConfigGroup(createCloudRedisConfigGroupRe
 		}
 	}
 
+	return &successPayload, err
+}
+
+/* V2ApiService [Only Ncloud Gov]
+@param addCloudRedisUserListRequest addCloudRedisUserListRequest
+@return *AddCloudRedisUserListResponse*/
+func (a *V2ApiService) AddCloudRedisUserList(addCloudRedisUserListRequest *AddCloudRedisUserListRequest) (*AddCloudRedisUserListResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     AddCloudRedisUserListResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/addCloudRedisUserList"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = addCloudRedisUserListRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
 
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 
- @param createCloudRedisInstanceRequest createCloudRedisInstanceRequest
- @return *CreateCloudRedisInstanceResponse*/
+/* V2ApiService [Only Ncloud Gov]
+@param deleteCloudRedisUserListRequest deleteCloudRedisUserListRequest
+@return *DeleteCloudRedisUserListResponse*/
+func (a *V2ApiService) DeleteCloudRedisUserList(deleteCloudRedisUserListRequest *DeleteCloudRedisUserListRequest) (*DeleteCloudRedisUserListResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DeleteCloudRedisUserListResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/deleteCloudRedisUserList"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = deleteCloudRedisUserListRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/* V2ApiService [Only Ncloud Gov]
+@param getCloudRedisUserListRequest getCloudRedisUserListRequest
+@return *GetCloudRedisUserListResponse*/
+func (a *V2ApiService) GetCloudRedisUserList(getCloudRedisUserListRequest *GetCloudRedisUserListRequest) (*GetCloudRedisUserListResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudRedisUserListResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/getCloudRedisUserList"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = getCloudRedisUserListRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/* V2ApiService
+
+@param createCloudRedisInstanceRequest createCloudRedisInstanceRequest
+@return *CreateCloudRedisInstanceResponse*/
 func (a *V2ApiService) CreateCloudRedisInstance(createCloudRedisInstanceRequest *CreateCloudRedisInstanceRequest) (*CreateCloudRedisInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  CreateCloudRedisInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     CreateCloudRedisInstanceResponse
 	)
 
 	// create path and map variables
@@ -122,9 +328,8 @@ func (a *V2ApiService) CreateCloudRedisInstance(createCloudRedisInstanceRequest 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -133,8 +338,7 @@ func (a *V2ApiService) CreateCloudRedisInstance(createCloudRedisInstanceRequest 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -172,21 +376,20 @@ func (a *V2ApiService) CreateCloudRedisInstance(createCloudRedisInstanceRequest 
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 
- @param deleteCloudRedisConfigGroupRequest deleteCloudRedisConfigGroupRequest
- @return *DeleteCloudRedisConfigGroupResponse*/
+/* V2ApiService
+
+@param deleteCloudRedisConfigGroupRequest deleteCloudRedisConfigGroupRequest
+@return *DeleteCloudRedisConfigGroupResponse*/
 func (a *V2ApiService) DeleteCloudRedisConfigGroup(deleteCloudRedisConfigGroupRequest *DeleteCloudRedisConfigGroupRequest) (*DeleteCloudRedisConfigGroupResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DeleteCloudRedisConfigGroupResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DeleteCloudRedisConfigGroupResponse
 	)
 
 	// create path and map variables
@@ -196,9 +399,8 @@ func (a *V2ApiService) DeleteCloudRedisConfigGroup(deleteCloudRedisConfigGroupRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -207,8 +409,7 @@ func (a *V2ApiService) DeleteCloudRedisConfigGroup(deleteCloudRedisConfigGroupRe
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -246,21 +447,20 @@ func (a *V2ApiService) DeleteCloudRedisConfigGroup(deleteCloudRedisConfigGroupRe
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 
- @param deleteCloudRedisInstanceRequest deleteCloudRedisInstanceRequest
- @return *DeleteCloudRedisInstanceResponse*/
+/* V2ApiService
+
+@param deleteCloudRedisInstanceRequest deleteCloudRedisInstanceRequest
+@return *DeleteCloudRedisInstanceResponse*/
 func (a *V2ApiService) DeleteCloudRedisInstance(deleteCloudRedisInstanceRequest *DeleteCloudRedisInstanceRequest) (*DeleteCloudRedisInstanceResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  DeleteCloudRedisInstanceResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     DeleteCloudRedisInstanceResponse
 	)
 
 	// create path and map variables
@@ -270,9 +470,8 @@ func (a *V2ApiService) DeleteCloudRedisInstance(deleteCloudRedisInstanceRequest 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -281,8 +480,7 @@ func (a *V2ApiService) DeleteCloudRedisInstance(deleteCloudRedisInstanceRequest 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -320,21 +518,20 @@ func (a *V2ApiService) DeleteCloudRedisInstance(deleteCloudRedisInstanceRequest 
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 
- @param getCloudRedisBackupDetailListRequest getCloudRedisBackupDetailListRequest
- @return *GetCloudRedisBackupDetailListResponse*/
+/* V2ApiService
+
+@param getCloudRedisBackupDetailListRequest getCloudRedisBackupDetailListRequest
+@return *GetCloudRedisBackupDetailListResponse*/
 func (a *V2ApiService) GetCloudRedisBackupDetailList(getCloudRedisBackupDetailListRequest *GetCloudRedisBackupDetailListRequest) (*GetCloudRedisBackupDetailListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudRedisBackupDetailListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudRedisBackupDetailListResponse
 	)
 
 	// create path and map variables
@@ -344,9 +541,8 @@ func (a *V2ApiService) GetCloudRedisBackupDetailList(getCloudRedisBackupDetailLi
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -355,8 +551,7 @@ func (a *V2ApiService) GetCloudRedisBackupDetailList(getCloudRedisBackupDetailLi
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -394,21 +589,20 @@ func (a *V2ApiService) GetCloudRedisBackupDetailList(getCloudRedisBackupDetailLi
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 
- @param getCloudRedisBackupListRequest getCloudRedisBackupListRequest
- @return *GetCloudRedisBackupListResponse*/
+/* V2ApiService
+
+@param getCloudRedisBackupListRequest getCloudRedisBackupListRequest
+@return *GetCloudRedisBackupListResponse*/
 func (a *V2ApiService) GetCloudRedisBackupList(getCloudRedisBackupListRequest *GetCloudRedisBackupListRequest) (*GetCloudRedisBackupListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudRedisBackupListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudRedisBackupListResponse
 	)
 
 	// create path and map variables
@@ -418,9 +612,8 @@ func (a *V2ApiService) GetCloudRedisBackupList(getCloudRedisBackupListRequest *G
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -429,8 +622,7 @@ func (a *V2ApiService) GetCloudRedisBackupList(getCloudRedisBackupListRequest *G
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -468,21 +660,20 @@ func (a *V2ApiService) GetCloudRedisBackupList(getCloudRedisBackupListRequest *G
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 
- @param getCloudRedisConfigGroupListRequest getCloudRedisConfigGroupListRequest
- @return *GetCloudRedisConfigGroupListResponse*/
+/* V2ApiService
+
+@param getCloudRedisConfigGroupListRequest getCloudRedisConfigGroupListRequest
+@return *GetCloudRedisConfigGroupListResponse*/
 func (a *V2ApiService) GetCloudRedisConfigGroupList(getCloudRedisConfigGroupListRequest *GetCloudRedisConfigGroupListRequest) (*GetCloudRedisConfigGroupListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudRedisConfigGroupListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudRedisConfigGroupListResponse
 	)
 
 	// create path and map variables
@@ -492,9 +683,8 @@ func (a *V2ApiService) GetCloudRedisConfigGroupList(getCloudRedisConfigGroupList
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -503,8 +693,7 @@ func (a *V2ApiService) GetCloudRedisConfigGroupList(getCloudRedisConfigGroupList
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -542,21 +731,20 @@ func (a *V2ApiService) GetCloudRedisConfigGroupList(getCloudRedisConfigGroupList
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 
- @param getCloudRedisImageProductListRequest getCloudRedisImageProductListRequest
- @return *GetCloudRedisImageProductListResponse*/
+/* V2ApiService
+
+@param getCloudRedisImageProductListRequest getCloudRedisImageProductListRequest
+@return *GetCloudRedisImageProductListResponse*/
 func (a *V2ApiService) GetCloudRedisImageProductList(getCloudRedisImageProductListRequest *GetCloudRedisImageProductListRequest) (*GetCloudRedisImageProductListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudRedisImageProductListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudRedisImageProductListResponse
 	)
 
 	// create path and map variables
@@ -566,9 +754,8 @@ func (a *V2ApiService) GetCloudRedisImageProductList(getCloudRedisImageProductLi
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -577,8 +764,7 @@ func (a *V2ApiService) GetCloudRedisImageProductList(getCloudRedisImageProductLi
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -616,21 +802,20 @@ func (a *V2ApiService) GetCloudRedisImageProductList(getCloudRedisImageProductLi
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 
- @param getCloudRedisInstanceDetailRequest getCloudRedisInstanceDetailRequest
- @return *GetCloudRedisInstanceDetailResponse*/
+/* V2ApiService
+
+@param getCloudRedisInstanceDetailRequest getCloudRedisInstanceDetailRequest
+@return *GetCloudRedisInstanceDetailResponse*/
 func (a *V2ApiService) GetCloudRedisInstanceDetail(getCloudRedisInstanceDetailRequest *GetCloudRedisInstanceDetailRequest) (*GetCloudRedisInstanceDetailResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudRedisInstanceDetailResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudRedisInstanceDetailResponse
 	)
 
 	// create path and map variables
@@ -640,9 +825,8 @@ func (a *V2ApiService) GetCloudRedisInstanceDetail(getCloudRedisInstanceDetailRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -651,8 +835,7 @@ func (a *V2ApiService) GetCloudRedisInstanceDetail(getCloudRedisInstanceDetailRe
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -690,21 +873,20 @@ func (a *V2ApiService) GetCloudRedisInstanceDetail(getCloudRedisInstanceDetailRe
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 
- @param getCloudRedisInstanceListRequest getCloudRedisInstanceListRequest
- @return *GetCloudRedisInstanceListResponse*/
+/* V2ApiService
+
+@param getCloudRedisInstanceListRequest getCloudRedisInstanceListRequest
+@return *GetCloudRedisInstanceListResponse*/
 func (a *V2ApiService) GetCloudRedisInstanceList(getCloudRedisInstanceListRequest *GetCloudRedisInstanceListRequest) (*GetCloudRedisInstanceListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudRedisInstanceListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudRedisInstanceListResponse
 	)
 
 	// create path and map variables
@@ -714,9 +896,8 @@ func (a *V2ApiService) GetCloudRedisInstanceList(getCloudRedisInstanceListReques
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -725,8 +906,7 @@ func (a *V2ApiService) GetCloudRedisInstanceList(getCloudRedisInstanceListReques
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -764,21 +944,20 @@ func (a *V2ApiService) GetCloudRedisInstanceList(getCloudRedisInstanceListReques
 		}
 	}
 
-
 	return &successPayload, err
 }
 
-/* V2ApiService 
- 
- @param getCloudRedisProductListRequest getCloudRedisProductListRequest
- @return *GetCloudRedisProductListResponse*/
+/* V2ApiService
+
+@param getCloudRedisProductListRequest getCloudRedisProductListRequest
+@return *GetCloudRedisProductListResponse*/
 func (a *V2ApiService) GetCloudRedisProductList(getCloudRedisProductListRequest *GetCloudRedisProductListRequest) (*GetCloudRedisProductListResponse, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GetCloudRedisProductListResponse
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GetCloudRedisProductListResponse
 	)
 
 	// create path and map variables
@@ -788,9 +967,8 @@ func (a *V2ApiService) GetCloudRedisProductList(getCloudRedisProductListRequest 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -799,8 +977,7 @@ func (a *V2ApiService) GetCloudRedisProductList(getCloudRedisProductListRequest 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -838,7 +1015,5 @@ func (a *V2ApiService) GetCloudRedisProductList(getCloudRedisProductListRequest 
 		}
 	}
 
-
 	return &successPayload, err
 }
-

@@ -11,71 +11,71 @@ package vredis
 type CloudRedisInstance struct {
 
 	// CloudRedis인스턴스번호
-CloudRedisInstanceNo *string `json:"cloudRedisInstanceNo,omitempty"`
+	CloudRedisInstanceNo *string `json:"cloudRedisInstanceNo,omitempty"`
 
 	// CloudRedis서비스이름
-CloudRedisServiceName *string `json:"cloudRedisServiceName,omitempty"`
+	CloudRedisServiceName *string `json:"cloudRedisServiceName,omitempty"`
 
 	// CloudRedis인스턴스상태이름
-CloudRedisInstanceStatusName *string `json:"cloudRedisInstanceStatusName,omitempty"`
+	CloudRedisInstanceStatusName *string `json:"cloudRedisInstanceStatusName,omitempty"`
 
 	// CloudRedis인스턴스상태
-CloudRedisInstanceStatus *CommonCode `json:"cloudRedisInstanceStatus,omitempty"`
+	CloudRedisInstanceStatus *CommonCode `json:"cloudRedisInstanceStatus,omitempty"`
 
 	// CloudRedis인스턴스OP
-CloudRedisInstanceOperation *CommonCode `json:"cloudRedisInstanceOperation,omitempty"`
+	CloudRedisInstanceOperation *CommonCode `json:"cloudRedisInstanceOperation,omitempty"`
 
 	// CloudRedis이미지상품코드
-CloudRedisImageProductCode *string `json:"cloudRedisImageProductCode,omitempty"`
+	CloudRedisImageProductCode *string `json:"cloudRedisImageProductCode,omitempty"`
 
 	// CloudRedis엔진버전
-EngineVersion *string `json:"engineVersion,omitempty"`
+	EngineVersion *string `json:"engineVersion,omitempty"`
 
 	// CloudRedis라이선스
-License *CommonCode `json:"license,omitempty"`
+	License *CommonCode `json:"license,omitempty"`
 
 	// CloudRedis포트
-CloudRedisPort *string `json:"cloudRedisPort,omitempty"`
+	CloudRedisPort *int32 `json:"cloudRedisPort,omitempty"`
 
 	// 고가용성여부
-IsHa *string `json:"isHa,omitempty"`
+	IsHa *bool `json:"isHa,omitempty"`
 
 	// 백업여부
-IsBackup *string `json:"isBackup,omitempty"`
+	IsBackup *bool `json:"isBackup,omitempty"`
 
 	// 백업파일보관기간
-BackupFileRetentionPeriod *string `json:"backupFileRetentionPeriod,omitempty"`
+	BackupFileRetentionPeriod *int32 `json:"backupFileRetentionPeriod,omitempty"`
 
 	// 백업시간
-BackupTime *string `json:"backupTime,omitempty"`
+	BackupTime *string `json:"backupTime,omitempty"`
 
 	// 백업스케줄
-BackupSchedule *string `json:"backupSchedule,omitempty"`
+	BackupSchedule *string `json:"backupSchedule,omitempty"`
 
 	// 서버이름 Prefix
-CloudRedisServerPrefix *string `json:"cloudRedisServerPrefix,omitempty"`
+	CloudRedisServerPrefix *string `json:"cloudRedisServerPrefix,omitempty"`
 
 	// CloudRedis Role
-Role *CommonCode `json:"role,omitempty"`
+	Role *CommonCode `json:"role,omitempty"`
 
 	// 생성일자
-CreateDate *string `json:"createDate,omitempty"`
+	CreateDate *string `json:"createDate,omitempty"`
 
 	// ACG번호리스트
-AccessControlGroupNoList *AccessControlGroupNoList `json:"accessControlGroupNoList,omitempty"`
+	AccessControlGroupNoList []*string `json:"accessControlGroupNo,omitempty"`
 
 	// 샤드수
-ShardCount *int32 `json:"shardCount,omitempty"`
+	ShardCount *int32 `json:"shardCount,omitempty"`
 
 	// 샤드당복제본
-ShardCopyCount *int32 `json:"shardCopyCount,omitempty"`
+	ShardCopyCount *int32 `json:"shardCopyCount,omitempty"`
 
 	// configGroup번호
-ConfigGroupNo *string `json:"configGroupNo,omitempty"`
+	ConfigGroupNo *string `json:"configGroupNo,omitempty"`
 
 	// configGroup이름
-ConfigGroupName *string `json:"configGroupName,omitempty"`
+	ConfigGroupName *string `json:"configGroupName,omitempty"`
 
 	// CloudRedis서버인스턴스리스트
-CloudRedisServerInstanceList []*CloudRedisServerInstance `json:"CloudRedisServerInstanceList,omitempty"`
+	CloudRedisServerInstanceList []*CloudRedisServerInstance `json:"CloudRedisServerInstanceList,omitempty"`
 }
