@@ -1,4 +1,4 @@
-# AddCloudRedisUserRequest
+# AddCloudRedisUserListRequest
 
 ## Properties
 Name | Type | Description           | Notes

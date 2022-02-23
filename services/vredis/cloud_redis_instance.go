@@ -62,7 +62,7 @@ type CloudRedisInstance struct {
 	CreateDate *string `json:"createDate,omitempty"`
 
 	// ACG번호리스트
-	AccessControlGroupNoList []*string `json:"accessControlGroupNo,omitempty"`
+	AccessControlGroupNoList []*string `json:"accessControlGroupNoList,omitempty"`
 
 	// 샤드수
 	ShardCount *int32 `json:"shardCount,omitempty"`
