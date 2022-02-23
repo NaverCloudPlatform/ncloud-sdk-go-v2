@@ -29,22 +29,22 @@ type CreateCloudRedisInstanceRequest struct {
 	ShardCopyCount *int32 `json:"shardCopyCount,omitempty"`
 
 	// 고가용성여부
-	IsHa *string `json:"isHa,omitempty"`
+	IsHa *bool `json:"isHa,omitempty"`
 
 	// configGroup번호
 	ConfigGroupNo *int32 `json:"configGroupNo"`
 
 	// 백업여부
-	IsBackup *string `json:"isBackup,omitempty"`
+	IsBackup *bool `json:"isBackup,omitempty"`
 
 	// 백업파일보관기간
-	BackupFileRetentionPeriod *string `json:"backupFileRetentionPeriod,omitempty"`
+	BackupFileRetentionPeriod *int32 `json:"backupFileRetentionPeriod,omitempty"`
 
 	// 백업시간
 	BackupTime *string `json:"backupTime,omitempty"`
 
 	// 백업시간자동여부
-	IsAutomaticBackup *string `json:"isAutomaticBackup,omitempty"`
+	IsAutomaticBackup *bool `json:"isAutomaticBackup,omitempty"`
 
 	// CloudRedis서비스이름
 	CloudRedisServiceName *string `json:"cloudRedisServiceName"`
@@ -53,7 +53,7 @@ type CreateCloudRedisInstanceRequest struct {
 	CloudRedisServerNamePrefix *string `json:"cloudRedisServerNamePrefix"`
 
 	// CloudRedis포트
-	CloudRedisPort *string `json:"cloudRedisPort,omitempty"`
+	CloudRedisPort *int32 `json:"cloudRedisPort,omitempty"`
 
 	// CloudRedis구성
 	CloudRedisModeCode *string `json:"cloudRedisModeCode"`
