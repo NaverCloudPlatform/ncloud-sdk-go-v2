@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ConfigGroupName** | ***string** | configGroup이름 | [optional] [default to null]
 **ConfigGroupDescription** | ***string** | configGroup설명 | [optional] [default to null]
 **ConfigGroupStatusName** | ***string** | configGroup상태명 | [optional] [default to null]
-**ConfigGroupStatus** | ***string** | configGroup상태 | [optional] [default to null]
+**ConfigGroupStatus** | **[*CommonCode](CommonCode.md)** | configGroup상태 | [optional] [default to null]
 **CloudRedisVersion** | ***string** | cloudredis버전 | [optional] [default to null]
 **CreateDate** | ***string** | 생성일자 | [optional] [default to null]
 **ModifyDate** | ***string** | 수정일자 | [optional] [default to null]

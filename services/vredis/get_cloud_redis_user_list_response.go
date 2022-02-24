@@ -8,7 +8,7 @@
 
 package vredis
 
-type GetCloudRedisInstanceDetailResponse struct {
+type GetCloudRedisUserListResponse struct {
 	RequestId *string `json:"requestId,omitempty"`
 
 	ReturnCode *string `json:"returnCode,omitempty"`
@@ -17,6 +17,6 @@ type GetCloudRedisInstanceDetailResponse struct {
 
 	TotalRows *int32 `json:"totalRows,omitempty"`
 
-	// CloudRedis인스턴스리스트
-	CloudRedisInstanceList []*CloudRedisInstance `json:"cloudRedisInstanceList,omitempty"`
+	// CloudRedisUser리스트
+	CloudRedisUserList []*CloudRedisUser `json:"cloudRedisUserList,omitempty"`
 }

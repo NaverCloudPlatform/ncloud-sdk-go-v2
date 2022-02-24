@@ -11,53 +11,59 @@ package vredis
 type CreateCloudRedisInstanceRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// VPC번호
-VpcNo *string `json:"vpcNo"`
+	VpcNo *string `json:"vpcNo"`
 
 	// CloudRedis이미지상품코드
-CloudRedisImageProductCode *string `json:"cloudRedisImageProductCode,omitempty"`
+	CloudRedisImageProductCode *string `json:"cloudRedisImageProductCode,omitempty"`
 
 	// CloudRedis상품코드
-CloudRedisProductCode *string `json:"cloudRedisProductCode,omitempty"`
+	CloudRedisProductCode *string `json:"cloudRedisProductCode,omitempty"`
 
 	// 샤드수
-ShardCount *int32 `json:"shardCount,omitempty"`
+	ShardCount *int32 `json:"shardCount,omitempty"`
 
 	// 샤드당복제본
-ShardCopyCount *int32 `json:"shardCopyCount,omitempty"`
+	ShardCopyCount *int32 `json:"shardCopyCount,omitempty"`
 
 	// 고가용성여부
-IsHa *string `json:"isHa,omitempty"`
+	IsHa *bool `json:"isHa,omitempty"`
 
 	// configGroup번호
-ConfigGroupNo *int32 `json:"configGroupNo"`
+	ConfigGroupNo *int32 `json:"configGroupNo"`
 
 	// 백업여부
-IsBackup *string `json:"isBackup,omitempty"`
+	IsBackup *bool `json:"isBackup,omitempty"`
 
 	// 백업파일보관기간
-BackupFileRetentionPeriod *string `json:"backupFileRetentionPeriod,omitempty"`
+	BackupFileRetentionPeriod *int32 `json:"backupFileRetentionPeriod,omitempty"`
 
 	// 백업시간
-BackupTime *string `json:"backupTime,omitempty"`
+	BackupTime *string `json:"backupTime,omitempty"`
 
 	// 백업시간자동여부
-IsAutomaticBackup *string `json:"isAutomaticBackup,omitempty"`
+	IsAutomaticBackup *bool `json:"isAutomaticBackup,omitempty"`
 
 	// CloudRedis서비스이름
-CloudRedisServiceName *string `json:"cloudRedisServiceName"`
+	CloudRedisServiceName *string `json:"cloudRedisServiceName"`
 
 	// CloudRedis서버이름
-CloudRedisServerNamePrefix *string `json:"cloudRedisServerNamePrefix"`
+	CloudRedisServerNamePrefix *string `json:"cloudRedisServerNamePrefix"`
 
 	// CloudRedis포트
-CloudRedisPort *string `json:"cloudRedisPort,omitempty"`
+	CloudRedisPort *int32 `json:"cloudRedisPort,omitempty"`
 
 	// CloudRedis구성
-CloudRedisModeCode *string `json:"cloudRedisModeCode"`
+	CloudRedisModeCode *string `json:"cloudRedisModeCode"`
 
 	// Subnet번호
-SubnetNo *string `json:"subnetNo"`
+	SubnetNo *string `json:"subnetNo"`
+
+	// 공공 Ncloud에만 사용되는 필드
+	CloudRedisUserName *string `json:"cloudRedisUserName"`
+
+	// 공공 Ncloud에만 사용되는 필드
+	CloudRedisUserPassword *string `json:"cloudRedisUserPassword"`
 }
