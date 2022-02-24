@@ -15,7 +15,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/url"
-	"os"
 	"reflect"
 	"strings"
 
@@ -104,9 +103,10 @@ func (a *V2ApiService) CreateCloudRedisConfigGroup(createCloudRedisConfigGroupRe
 @param addCloudRedisUserListRequest addCloudRedisUserListRequest
 @return *AddCloudRedisUserListResponse*/
 func (a *V2ApiService) AddCloudRedisUserList(addCloudRedisUserListRequest *AddCloudRedisUserListRequest) (*AddCloudRedisUserListResponse, error) {
-	if os.Getenv("NCLOUD_API_GW") != "https://ncloud.apigw.gov-ntruss.com" {
+	if !strings.Contains(a.client.cfg.BasePath, "apigw.gov-ntruss.com") {
 		return nil, fmt.Errorf("only Ncloud Gov can use")
 	}
+
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -177,7 +177,7 @@ func (a *V2ApiService) AddCloudRedisUserList(addCloudRedisUserListRequest *AddCl
 @param deleteCloudRedisUserListRequest deleteCloudRedisUserListRequest
 @return *DeleteCloudRedisUserListResponse*/
 func (a *V2ApiService) DeleteCloudRedisUserList(deleteCloudRedisUserListRequest *DeleteCloudRedisUserListRequest) (*DeleteCloudRedisUserListResponse, error) {
-	if os.Getenv("NCLOUD_API_GW") != "https://ncloud.apigw.gov-ntruss.com" {
+	if !strings.Contains(a.client.cfg.BasePath, "apigw.gov-ntruss.com") {
 		return nil, fmt.Errorf("only Ncloud Gov can use")
 	}
 
@@ -251,7 +251,7 @@ func (a *V2ApiService) DeleteCloudRedisUserList(deleteCloudRedisUserListRequest 
 @param getCloudRedisUserListRequest getCloudRedisUserListRequest
 @return *GetCloudRedisUserListResponse*/
 func (a *V2ApiService) GetCloudRedisUserList(getCloudRedisUserListRequest *GetCloudRedisUserListRequest) (*GetCloudRedisUserListResponse, error) {
-	if os.Getenv("NCLOUD_API_GW") != "https://ncloud.apigw.gov-ntruss.com" {
+	if !strings.Contains(a.client.cfg.BasePath, "apigw.gov-ntruss.com") {
 		return nil, fmt.Errorf("only Ncloud Gov can use")
 	}
 
