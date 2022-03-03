@@ -32,7 +32,7 @@ type CreateCloudRedisInstanceRequest struct {
 	IsHa *bool `json:"isHa,omitempty"`
 
 	// configGroup번호
-	ConfigGroupNo *int32 `json:"configGroupNo"`
+	ConfigGroupNo *string `json:"configGroupNo"`
 
 	// 백업여부
 	IsBackup *bool `json:"isBackup,omitempty"`
