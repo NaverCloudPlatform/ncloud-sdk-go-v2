@@ -10,7 +10,7 @@ Name | Type        | Description | Notes
 **ShardCount** | ***int32**  | 샤드수 | [optional] [default to null]
 **ShardCopyCount** | ***int32**  | 샤드당복제본 | [optional] [default to null]
 **IsHa** | ***bool**   | 고가용성여부 | [optional] [default to null]
-**ConfigGroupNo** | ***int32**  | configGroup번호 | [default to null]
+**ConfigGroupNo** | ***string**  | configGroup번호 | [default to null]
 **IsBackup** | ***bool**   | 백업여부 | [optional] [default to null]
 **BackupFileRetentionPeriod** | ***int32**  | 백업파일보관기간 | [optional] [default to null]
 **BackupTime** | ***string** | 백업시간 | [optional] [default to null]
