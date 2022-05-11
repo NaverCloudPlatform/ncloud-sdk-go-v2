@@ -10,6 +10,7 @@
 package vses
 
 import (
+	"fmt"
 	"github.com/NaverCloudPlatform/ncloud-sdk-go-v2/ncloud"
 	"os"
 	"strings"
@@ -44,7 +45,15 @@ func NewConfiguration(region string, apiKeys ...*ncloud.APIKey) *ncloud.Configur
 	}
 
 	ncloudApiGw = strings.Replace(ncloudApiGw, "https://ncloud.", "https://vpcsearchengine.", 1)
-	ncloudApiGw = strings.Replace(ncloudApiGw, "https://fin-ncloud.", "https://vpcsearchengine.", 1)
+	ncloudApiGw = strings.Replace(ncloudApiGw, "https://fin-ncloud.", "https://fin-vpcsearchengine.", 1)
 
+	switch region {
+	case "KR": // 민간, 공공-수도권
+		cfg.BasePath = fmt.Sprintf("%s/api/v1", ncloudApiGw)
+	case "FKR": // 금융
+		cfg.BasePath = fmt.Sprintf("%s/api/v1", ncloudApiGw)
+	default: // 민간-싱가폴, 공공-남부권
+		cfg.BasePath = fmt.Sprintf("%s/api/%s-v1", ncloudApiGw, strings.ToLower(region))
+	}
 	return cfg
 }
