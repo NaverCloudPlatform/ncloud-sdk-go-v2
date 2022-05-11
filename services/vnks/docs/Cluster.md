@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **ZoneNo** | ***int32** | zone 번호 | [optional] [default to null]
 **LoginKeyName** | ***string** | 로그인 키 이름 | [default to null]
 **Log** | **[*ClusterLogInput](ClusterLogInput.md)** | log | [default to null]
+**PublicNetwork** | ***bool** | Public Network | [default to null]
 **NodePool** | **[[]\*NodePoolRes](NodePoolRes.md)** | 노드풀 | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

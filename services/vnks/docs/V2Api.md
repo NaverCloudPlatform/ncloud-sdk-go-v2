@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**ClustersUuidNodePoolInstanceNoPatch**](V2Api.md#ClustersUuidNodePoolInstanceNoPatch) | **Patch** /clusters/{uuid}/node-pool/{instanceNo} | 
 [**ClustersUuidNodePoolPost**](V2Api.md#ClustersUuidNodePoolPost) | **Post** /clusters/{uuid}/node-pool | 
 [**ClustersUuidNodesGet**](V2Api.md#ClustersUuidNodesGet) | **Get** /clusters/{uuid}/nodes | 
+[**ClustersUuidNodesInstanceNoDelete**](V2Api.md#ClustersUuidNodesInstanceNoDelete) | **Delete** /clusters/{uuid}/nodes/{instanceNo} | 
 [**OptionVersionGet**](V2Api.md#OptionVersionGet) | **Get** /option/version | 
 [**RootGet**](V2Api.md#RootGet) | **Get** / | 
 
@@ -279,6 +280,31 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**WorkerNodeRes**](WorkerNodeRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClustersUuidNodesInstanceNoDelete**
+> ClustersUuidNodesInstanceNoDelete(uuid, instanceNo, nodePoolId)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**uuid** | **string** | uuid | **instanceNo** | **string** | instanceNo | **nodePoolId** | **string** | nodePoolId | 
+
+### Return type
+
+ (empty response body)
 
 ### Authorization
 

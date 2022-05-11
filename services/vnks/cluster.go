@@ -91,6 +91,9 @@ type Cluster struct {
 	// log
 	Log *ClusterLogInput `json:"log"`
 
+	// Public Network
+	PublicNetwork *bool `json:"publicNetwork"`
+
 	// 노드풀
 	NodePool []*NodePoolRes `json:"nodePool"`
 }
