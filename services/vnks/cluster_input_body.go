@@ -31,6 +31,9 @@ type ClusterInputBody struct {
 	// Zone 번호
 	ZoneNo *int32 `json:"zoneNo,omitempty"`
 
+	// Public network
+	PublicNetwork *bool `json:"publicNetwork,omitempty"`
+
 	// CNI Plugin Code (ncloud-vpc-cni or cilium)
 	KubeNetworkPlugin *string `json:"kubeNetworkPlugin,omitempty"`
 
