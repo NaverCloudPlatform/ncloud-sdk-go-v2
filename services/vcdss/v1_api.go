@@ -184,6 +184,82 @@ func (a *V1ApiService) ClusterCreateCDSSClusterPost(ctx context.Context, createC
 
 /*
 V1ApiService
+cluster 생성 후 serviceGroupInstanceNo 반환
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param createCluster
+
+@return ResponseVoCreateClusterResponseVo
+*/
+func (a *V1ApiService) ClusterCreateCDSSClusterReturnServiceGroupInstanceNoPost(ctx context.Context, createCluster CreateCluster) (ResponseVoCreateClusterResponseVo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoCreateClusterResponseVo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/cluster/createCDSSClusterReturnServiceGroupInstanceNo"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &createCluster
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
  * @param xNCPREGIONNO Region No
@@ -903,6 +979,81 @@ func (a *V1ApiService) ClusterGetClusterInfoListPost(ctx context.Context, cluste
 
 	// body params
 	localVarPostBody = &clusterInfoRequest
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+V1ApiService
+cluster 단건 조회
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param serviceGroupInstanceNo serviceGroupInstanceNo
+
+@return ResponseVoOpenApiGetClusterInfoResponseVo
+*/
+func (a *V1ApiService) ClusterGetClusterInfoListServiceGroupInstanceNoPost(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoOpenApiGetClusterInfoResponseVo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoOpenApiGetClusterInfoResponseVo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/cluster/getClusterInfoList/{serviceGroupInstanceNo}"
+	localVarPath = strings.Replace(localVarPath, "{"+"serviceGroupInstanceNo"+"}", fmt.Sprintf("%v", serviceGroupInstanceNo), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
