@@ -12,6 +12,10 @@ func IntString(n int) *string {
 	return String(strconv.Itoa(n))
 }
 
+func Int32String(n int32) *string {
+	return String(strconv.FormatInt(int64(n), 10))
+}
+
 func StringInterfaceList(i []interface{}) []*string {
 	vs := make([]*string, 0, len(i))
 	for _, v := range i {

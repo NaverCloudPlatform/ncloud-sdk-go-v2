@@ -73,6 +73,11 @@ If credentials (apiKeys) are not specified, the default credential provider chai
 | _Cloud DB For MSSQL(VPC)_ | [**Cloud DB For MSSQL(VPC)**](services/vmssql/README.md) |
 | _Cloud DB For Redis(VPC)_ | [**Cloud DB For Redis(VPC)**](services/vredis/README.md) |
 | _Cloud DB For MongoDB(VPC)_ | [**Cloud DB For MongoDB(VPC)**](services/vmongodb/README.md) |
+| _SourceCommit_ | [**SourceCommit**](services/sourcecommit/README.md) |
+| _SourceBuild_ | [**SourceBuild**](services/sourcebuild/README.md) |
+| _SourceDeploy(VPC)_ | [**SourceDeploy(VPC)**](services/vsourcedeploy/README.md) |
+| _SourcePipeline_ | [**SourcePipeline**](services/sourcepipeline/README.md) |
+| _SourcePipeline(VPC)_ | [**SourcePipeline(VPC)**](services/vsourcepipeline/README.md) |
 
 ### License
 
