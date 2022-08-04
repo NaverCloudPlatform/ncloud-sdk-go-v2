@@ -55,24 +55,26 @@ If credentials (apiKeys) are not specified, the default credential provider chai
 
 ## Documentation for individual modules
 
-| Services       | Documentation                                       |
-| -------------- | --------------------------------------------------- |
-| _Server_       | [**Server**](services/server/README.md)             |
-| _Loadbalancer_ | [**Loadbalancer**](services/loadbalancer/README.md) |
-| _Autoscaling_  | [**Autoscaling**](services/autoscaling/README.md)   |
-| _Monitoring_   | [**Monitoring**](services/monitoring/README.md)     |
-| _CDN_          | [**CDN**](services/cdn/README.md)                   |
-| _CloudDB_      | [**CloudDB**](services/clouddb/README.md)           |
-| _Server(VPC)_      | [**Server(VPC)**](services/vserver/README.md)           |
-| _VPC_      | [**VPC**](services/vpc/README.md)           |
-| _Nas(VPC)_      | [**Nas(VPC)**](services/vnas/README.md)           |
-| _Autoscaling(VPC)_      | [**Autoscaling(VPC)**](services/vautoscaling/README.md)           |
-| _Loadbalancer(VPC)_      | [**Loadbalancer(VPC)**](services/vloadbalancer/README.md)           |
-| _Kubernetes Service(VPC)_ | [**NKS(VPC)**](services/vnks/README.md) |
-| _Cloud DB For MySQL(VPC)_ | [**Cloud DB For MySQL(VPC)**](services/vmysql/README.md) |
-| _Cloud DB For MSSQL(VPC)_ | [**Cloud DB For MSSQL(VPC)**](services/vmssql/README.md) |
-| _Cloud DB For Redis(VPC)_ | [**Cloud DB For Redis(VPC)**](services/vredis/README.md) |
-| _Cloud DB For MongoDB(VPC)_ | [**Cloud DB For MongoDB(VPC)**](services/vmongodb/README.md) |
+| Services                            | Documentation                                                     |
+|-------------------------------------|-------------------------------------------------------------------|
+| _Server_                            | [**Server**](services/server/README.md)                           |
+| _Loadbalancer_                      | [**Loadbalancer**](services/loadbalancer/README.md)               |
+| _Autoscaling_                       | [**Autoscaling**](services/autoscaling/README.md)                 |
+| _Monitoring_                        | [**Monitoring**](services/monitoring/README.md)                   |
+| _CDN_                               | [**CDN**](services/cdn/README.md)                                 |
+| _CloudDB_                           | [**CloudDB**](services/clouddb/README.md)                         |
+| _Server(VPC)_                       | [**Server(VPC)**](services/vserver/README.md)                     |
+| _VPC_                               | [**VPC**](services/vpc/README.md)                                 |
+| _Nas(VPC)_                          | [**Nas(VPC)**](services/vnas/README.md)                           |
+| _Autoscaling(VPC)_                  | [**Autoscaling(VPC)**](services/vautoscaling/README.md)           |
+| _Loadbalancer(VPC)_                 | [**Loadbalancer(VPC)**](services/vloadbalancer/README.md)         |
+| _Kubernetes Service(VPC)_           | [**NKS(VPC)**](services/vnks/README.md)                           |
+| _Cloud DB For MySQL(VPC)_           | [**Cloud DB For MySQL(VPC)**](services/vmysql/README.md)          |
+| _Cloud DB For MSSQL(VPC)_           | [**Cloud DB For MSSQL(VPC)**](services/vmssql/README.md)          |
+| _Cloud DB For Redis(VPC)_           | [**Cloud DB For Redis(VPC)**](services/vredis/README.md)          |
+| _Cloud DB For MongoDB(VPC)_         | [**Cloud DB For MongoDB(VPC)**](services/vmongodb/README.md)      |
+| _Cloud Data Streaming Service(VPC)_ | [**Cloud Data Streaming Service(VPC)**](services/vcdss/README.md) |
+| _Search Engine Service(VPC)_        | [**Search Engine Service(VPC)**](services/vses/README.md)         |
 
 ### License
 

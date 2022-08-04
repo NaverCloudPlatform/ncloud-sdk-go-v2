@@ -21,32 +21,45 @@ All URIs are relative to *https://clouddatastreamingservice.apigw.ntruss.com/api
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*V1Api* | [**ClusterChangeCountOfBrokerNodeServiceGroupInstanceNoPost**](docs/V1Api.md#clusterchangecountofbrokernodeservicegroupinstancenopost) | **Post** /cluster/changeCountOfBrokerNode/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterCreateCDSSClusterPost**](docs/V1Api.md#clustercreatecdssclusterpost) | **Post** /cluster/createCDSSCluster | 
-*V1Api* | [**ClusterDeleteCDSSClusterServiceGroupInstanceNoDelete**](docs/V1Api.md#clusterdeletecdssclusterservicegroupinstancenodelete) | **Delete** /cluster/deleteCDSSCluster/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterDisableBrokerNodePublicEndpointServiceGroupInstanceNoGet**](docs/V1Api.md#clusterdisablebrokernodepublicendpointservicegroupinstancenoget) | **Get** /cluster/disableBrokerNodePublicEndpoint/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterDisablePublicDomainServiceGroupInstanceNoGet**](docs/V1Api.md#clusterdisablepublicdomainservicegroupinstancenoget) | **Get** /cluster/disablePublicDomain/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterDownloadCertificateServiceGroupInstanceNoGet**](docs/V1Api.md#clusterdownloadcertificateservicegroupinstancenoget) | **Get** /cluster/downloadCertificate/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterEnableBrokerNodePublicEndpointServiceGroupInstanceNoPost**](docs/V1Api.md#clusterenablebrokernodepublicendpointservicegroupinstancenopost) | **Post** /cluster/enableBrokerNodePublicEndpoint/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterEnablePublicDomainServiceGroupInstanceNoGet**](docs/V1Api.md#clusterenablepublicdomainservicegroupinstancenoget) | **Get** /cluster/enablePublicDomain/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterGetAcgInfoListServiceGroupInstanceNoGet**](docs/V1Api.md#clustergetacginfolistservicegroupinstancenoget) | **Get** /cluster/getAcgInfoList/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterGetBrokerInfoServiceGroupInstanceNoGet**](docs/V1Api.md#clustergetbrokerinfoservicegroupinstancenoget) | **Get** /cluster/getBrokerInfo/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterGetCDSSVersionListGet**](docs/V1Api.md#clustergetcdssversionlistget) | **Get** /cluster/getCDSSVersionList | 
-*V1Api* | [**ClusterGetClusterInfoListPost**](docs/V1Api.md#clustergetclusterinfolistpost) | **Post** /cluster/getClusterInfoList | 
-*V1Api* | [**ClusterGetClusterNodeListServiceGroupInstanceNoGet**](docs/V1Api.md#clustergetclusternodelistservicegroupinstancenoget) | **Get** /cluster/getClusterNodeList/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterGetClusterStatusServiceGroupInstanceNoGet**](docs/V1Api.md#clustergetclusterstatusservicegroupinstancenoget) | **Get** /cluster/getClusterStatus/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterGetLoadBalancerInstanceListServiceGroupInstanceNoGet**](docs/V1Api.md#clustergetloadbalancerinstancelistservicegroupinstancenoget) | **Get** /cluster/getLoadBalancerInstanceList/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterGetNodeProductListPost**](docs/V1Api.md#clustergetnodeproductlistpost) | **Post** /cluster/getNodeProductList | 
-*V1Api* | [**ClusterGetOsProductListGet**](docs/V1Api.md#clustergetosproductlistget) | **Get** /cluster/getOsProductList | 
-*V1Api* | [**ClusterGetSubnetListPost**](docs/V1Api.md#clustergetsubnetlistpost) | **Post** /cluster/getSubnetList | 
-*V1Api* | [**ClusterGetVpcListGet**](docs/V1Api.md#clustergetvpclistget) | **Get** /cluster/getVpcList | 
-*V1Api* | [**ClusterResetCMAKPasswordServiceGroupInstanceNoPost**](docs/V1Api.md#clusterresetcmakpasswordservicegroupinstancenopost) | **Post** /cluster/resetCMAKPassword/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterRestartAllServicesServiceGroupInstanceNoGet**](docs/V1Api.md#clusterrestartallservicesservicegroupinstancenoget) | **Get** /cluster/restartAllServices/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterRestartCMAKServiceServiceGroupInstanceNoGet**](docs/V1Api.md#clusterrestartcmakserviceservicegroupinstancenoget) | **Get** /cluster/restartCMAKService/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterRestartKafkaServicePerNodeServiceGroupInstanceNoPost**](docs/V1Api.md#clusterrestartkafkaservicepernodeservicegroupinstancenopost) | **Post** /cluster/restartKafkaServicePerNode/{serviceGroupInstanceNo} | 
-*V1Api* | [**ClusterRestartKafkaServiceServiceGroupInstanceNoGet**](docs/V1Api.md#clusterrestartkafkaserviceservicegroupinstancenoget) | **Get** /cluster/restartKafkaService/{serviceGroupInstanceNo} | 
-*V1Api* | [**MonitoringGetCdssMonitoringDataServiceGroupInstanceNoPost**](docs/V1Api.md#monitoringgetcdssmonitoringdataservicegroupinstancenopost) | **Post** /monitoring/getCdssMonitoringData/{serviceGroupInstanceNo} | 
-*V1Api* | [**MonitoringGetOsMonitoringDataServiceGroupInstanceNoPost**](docs/V1Api.md#monitoringgetosmonitoringdataservicegroupinstancenopost) | **Post** /monitoring/getOsMonitoringData/{serviceGroupInstanceNo} | 
+*V1Api* | [**ClusterChangeCountOfBrokerNodeServiceGroupInstanceNoPost**](docs/V1Api.md#clusterchangecountofbrokernodeservicegroupinstancenopost) | **Post** /cluster/changeCountOfBrokerNode/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterCreateCDSSClusterPost**](docs/V1Api.md#clustercreatecdssclusterpost) | **Post** /cluster/createCDSSCluster |
+*V1Api* | [**ClusterCreateCDSSClusterReturnServiceGroupInstanceNoPost**](docs/V1Api.md#clustercreatecdssclusterreturnservicegroupinstancenopost) | **Post** /cluster/createCDSSClusterReturnServiceGroupInstanceNo |
+*V1Api* | [**ClusterDeleteCDSSClusterServiceGroupInstanceNoDelete**](docs/V1Api.md#clusterdeletecdssclusterservicegroupinstancenodelete) | **Delete** /cluster/deleteCDSSCluster/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterDisableBrokerNodePublicEndpointServiceGroupInstanceNoGet**](docs/V1Api.md#clusterdisablebrokernodepublicendpointservicegroupinstancenoget) | **Get** /cluster/disableBrokerNodePublicEndpoint/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterDisablePublicDomainServiceGroupInstanceNoGet**](docs/V1Api.md#clusterdisablepublicdomainservicegroupinstancenoget) | **Get** /cluster/disablePublicDomain/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterDownloadCertificateServiceGroupInstanceNoGet**](docs/V1Api.md#clusterdownloadcertificateservicegroupinstancenoget) | **Get** /cluster/downloadCertificate/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterEnableBrokerNodePublicEndpointServiceGroupInstanceNoPost**](docs/V1Api.md#clusterenablebrokernodepublicendpointservicegroupinstancenopost) | **Post** /cluster/enableBrokerNodePublicEndpoint/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterEnablePublicDomainServiceGroupInstanceNoGet**](docs/V1Api.md#clusterenablepublicdomainservicegroupinstancenoget) | **Get** /cluster/enablePublicDomain/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterGetAcgInfoListServiceGroupInstanceNoGet**](docs/V1Api.md#clustergetacginfolistservicegroupinstancenoget) | **Get** /cluster/getAcgInfoList/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterGetBrokerInfoServiceGroupInstanceNoGet**](docs/V1Api.md#clustergetbrokerinfoservicegroupinstancenoget) | **Get** /cluster/getBrokerInfo/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterGetCDSSVersionListGet**](docs/V1Api.md#clustergetcdssversionlistget) | **Get** /cluster/getCDSSVersionList |
+*V1Api* | [**ClusterGetClusterInfoListPost**](docs/V1Api.md#clustergetclusterinfolistpost) | **Post** /cluster/getClusterInfoList |
+*V1Api* | [**ClusterGetClusterInfoListServiceGroupInstanceNoPost**](docs/V1Api.md#clustergetclusterinfolistservicegroupinstancenopost) | **Post** /cluster/getClusterInfoList/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterGetClusterNodeListServiceGroupInstanceNoGet**](docs/V1Api.md#clustergetclusternodelistservicegroupinstancenoget) | **Get** /cluster/getClusterNodeList/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterGetClusterStatusServiceGroupInstanceNoGet**](docs/V1Api.md#clustergetclusterstatusservicegroupinstancenoget) | **Get** /cluster/getClusterStatus/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterGetLoadBalancerInstanceListServiceGroupInstanceNoGet**](docs/V1Api.md#clustergetloadbalancerinstancelistservicegroupinstancenoget) | **Get** /cluster/getLoadBalancerInstanceList/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterGetNodeProductListPost**](docs/V1Api.md#clustergetnodeproductlistpost) | **Post** /cluster/getNodeProductList |
+*V1Api* | [**ClusterGetOsProductListGet**](docs/V1Api.md#clustergetosproductlistget) | **Get** /cluster/getOsProductList |
+*V1Api* | [**ClusterGetSubnetListPost**](docs/V1Api.md#clustergetsubnetlistpost) | **Post** /cluster/getSubnetList |
+*V1Api* | [**ClusterGetVpcListGet**](docs/V1Api.md#clustergetvpclistget) | **Get** /cluster/getVpcList |
+*V1Api* | [**ClusterResetCMAKPasswordServiceGroupInstanceNoPost**](docs/V1Api.md#clusterresetcmakpasswordservicegroupinstancenopost) | **Post** /cluster/resetCMAKPassword/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterRestartAllServicesServiceGroupInstanceNoGet**](docs/V1Api.md#clusterrestartallservicesservicegroupinstancenoget) | **Get** /cluster/restartAllServices/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterRestartCMAKServiceServiceGroupInstanceNoGet**](docs/V1Api.md#clusterrestartcmakserviceservicegroupinstancenoget) | **Get** /cluster/restartCMAKService/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterRestartKafkaServicePerNodeServiceGroupInstanceNoPost**](docs/V1Api.md#clusterrestartkafkaservicepernodeservicegroupinstancenopost) | **Post** /cluster/restartKafkaServicePerNode/{serviceGroupInstanceNo} |
+*V1Api* | [**ClusterRestartKafkaServiceServiceGroupInstanceNoGet**](docs/V1Api.md#clusterrestartkafkaserviceservicegroupinstancenoget) | **Get** /cluster/restartKafkaService/{serviceGroupInstanceNo} |
+*V1Api* | [**ConfigGroupCreateConfigGroupPost**](docs/V1Api.md#configgroupcreateconfiggrouppost) | **Post** /configGroup/createConfigGroup |
+*V1Api* | [**ConfigGroupDeleteConfigGroupConfigGroupNoDelete**](docs/V1Api.md#configgroupdeleteconfiggroupconfiggroupnodelete) | **Delete** /configGroup/deleteConfigGroup/{configGroupNo} |
+*V1Api* | [**ConfigGroupGetConfigGroupUsingClusterListConfigGroupNoPost**](docs/V1Api.md#configgroupgetconfiggroupusingclusterlistconfiggroupnopost) | **Post** /configGroup/getConfigGroupUsingClusterList/{configGroupNo} |
+*V1Api* | [**ConfigGroupGetKafkaConfigGroupConfigGroupNoPost**](docs/V1Api.md#configgroupgetkafkaconfiggroupconfiggroupnopost) | **Post** /configGroup/getKafkaConfigGroup/{configGroupNo} |
+*V1Api* | [**ConfigGroupGetKafkaConfigGroupDetailListConfigGroupNoPost**](docs/V1Api.md#configgroupgetkafkaconfiggroupdetaillistconfiggroupnopost) | **Post** /configGroup/getKafkaConfigGroupDetailList/{configGroupNo} |
+*V1Api* | [**ConfigGroupGetKafkaConfigGroupListPost**](docs/V1Api.md#configgroupgetkafkaconfiggrouplistpost) | **Post** /configGroup/getKafkaConfigGroupList |
+*V1Api* | [**ConfigGroupGetKafkaVersionConfigGroupListPost**](docs/V1Api.md#configgroupgetkafkaversionconfiggrouplistpost) | **Post** /configGroup/getKafkaVersionConfigGroupList |
+*V1Api* | [**ConfigGroupSetClusterKafkaConfigGroupConfigGroupNoPost**](docs/V1Api.md#configgroupsetclusterkafkaconfiggroupconfiggroupnopost) | **Post** /configGroup/setClusterKafkaConfigGroup/{configGroupNo} |
+*V1Api* | [**ConfigGroupSetKafkaConfigGroupDetailConfigGroupNoPost**](docs/V1Api.md#configgroupsetkafkaconfiggroupdetailconfiggroupnopost) | **Post** /configGroup/setKafkaConfigGroupDetail/{configGroupNo} |
+*V1Api* | [**ConfigGroupSetKafkaConfigGroupMemoConfigGroupNoPost**](docs/V1Api.md#configgroupsetkafkaconfiggroupmemoconfiggroupnopost) | **Post** /configGroup/setKafkaConfigGroupMemo/{configGroupNo} |
+*V1Api* | [**MonitoringGetCdssMonitoringDataServiceGroupInstanceNoPost**](docs/V1Api.md#monitoringgetcdssmonitoringdataservicegroupinstancenopost) | **Post** /monitoring/getCdssMonitoringData/{serviceGroupInstanceNo} |
+*V1Api* | [**MonitoringGetOsMonitoringDataServiceGroupInstanceNoPost**](docs/V1Api.md#monitoringgetosmonitoringdataservicegroupinstancenopost) | **Post** /monitoring/getOsMonitoringData/{serviceGroupInstanceNo} |
+
 
 
 ## Documentation For Models
@@ -56,8 +69,13 @@ Class | Method | HTTP request | Description
  - [AddNodesInClusterRequestVo](docs/AddNodesInClusterRequestVo.md)
  - [AllowedClusterInfo](docs/AllowedClusterInfo.md)
  - [ClusterInfoListRequestVo](docs/ClusterInfoListRequestVo.md)
+ - [ConfigGroupClusterInfo](docs/ConfigGroupClusterInfo.md)
  - [CreateCluster](docs/CreateCluster.md)
+ - [CreateClusterResponseVo](docs/CreateClusterResponseVo.md)
+ - [CreateConfigGroup](docs/CreateConfigGroup.md)
+ - [CreateConfigGroupResponseVo](docs/CreateConfigGroupResponseVo.md)
  - [DateTimeVo](docs/DateTimeVo.md)
+ - [DeleteConfigGroupResponseVo](docs/DeleteConfigGroupResponseVo.md)
  - [DimensionsVo](docs/DimensionsVo.md)
  - [DisallowedClusterInfo](docs/DisallowedClusterInfo.md)
  - [EnableBrokerNodePublicEndpoint](docs/EnableBrokerNodePublicEndpoint.md)
@@ -69,6 +87,14 @@ Class | Method | HTTP request | Description
  - [GetCertFileResponseVo](docs/GetCertFileResponseVo.md)
  - [GetClusterRequest](docs/GetClusterRequest.md)
  - [GetClusterStatusPerNodeResponseVo](docs/GetClusterStatusPerNodeResponseVo.md)
+ - [GetConfigGroupUsingClusterListRequest](docs/GetConfigGroupUsingClusterListRequest.md)
+ - [GetConfigGroupUsingClusterListResponseVo](docs/GetConfigGroupUsingClusterListResponseVo.md)
+ - [GetKafkaConfigGroupDetailListRequest](docs/GetKafkaConfigGroupDetailListRequest.md)
+ - [GetKafkaConfigGroupDetailListResponseVo](docs/GetKafkaConfigGroupDetailListResponseVo.md)
+ - [GetKafkaConfigGroupListResponseVo](docs/GetKafkaConfigGroupListResponseVo.md)
+ - [GetKafkaConfigGroupRequest](docs/GetKafkaConfigGroupRequest.md)
+ - [GetKafkaConfigGroupResponseVo](docs/GetKafkaConfigGroupResponseVo.md)
+ - [GetKafkaVersionConfigGroupListRequest](docs/GetKafkaVersionConfigGroupListRequest.md)
  - [GetKafkaVersionListResponseVo](docs/GetKafkaVersionListResponseVo.md)
  - [GetLoadBalancerListsResponseVo](docs/GetLoadBalancerListsResponseVo.md)
  - [GetOpenApiAccessControlGroupRuleListResponseVo](docs/GetOpenApiAccessControlGroupRuleListResponseVo.md)
@@ -82,6 +108,8 @@ Class | Method | HTTP request | Description
  - [GetProductListRequestVo](docs/GetProductListRequestVo.md)
  - [GetSubnetList](docs/GetSubnetList.md)
  - [GetVpcSubnetListRequestVo](docs/GetVpcSubnetListRequestVo.md)
+ - [KafkaConfigDetail](docs/KafkaConfigDetail.md)
+ - [KafkaConfigGroup](docs/KafkaConfigGroup.md)
  - [KafkaVersion](docs/KafkaVersion.md)
  - [LoadBalancerInstance](docs/LoadBalancerInstance.md)
  - [MetricInfoResponseVo](docs/MetricInfoResponseVo.md)
@@ -89,12 +117,14 @@ Class | Method | HTTP request | Description
  - [NodeProduct](docs/NodeProduct.md)
  - [OpenApiCreateClusterRequestVo](docs/OpenApiCreateClusterRequestVo.md)
  - [OpenApiGetClusterInfoListResponseVo](docs/OpenApiGetClusterInfoListResponseVo.md)
+ - [OpenApiGetClusterInfoResponseVo](docs/OpenApiGetClusterInfoResponseVo.md)
  - [OpenApiGetComputeInstanceListResponseDetailVo](docs/OpenApiGetComputeInstanceListResponseDetailVo.md)
  - [OpenApiHwProductVo](docs/OpenApiHwProductVo.md)
  - [OpenApiOsProductVo](docs/OpenApiOsProductVo.md)
  - [OpenApiVpcConfigListResponseDetailVo](docs/OpenApiVpcConfigListResponseDetailVo.md)
  - [OpenApiVpcSubnetListResponseDetailVo](docs/OpenApiVpcSubnetListResponseDetailVo.md)
  - [Pageable](docs/Pageable.md)
+ - [Pager](docs/Pager.md)
  - [ProcessStatusVo](docs/ProcessStatusVo.md)
  - [QueryMultipleCdssDataRequestVo](docs/QueryMultipleCdssDataRequestVo.md)
  - [QueryMultipleDataResponseVo](docs/QueryMultipleDataResponseVo.md)
@@ -102,9 +132,16 @@ Class | Method | HTTP request | Description
  - [ResetAdminPasswordRequestVo](docs/ResetAdminPasswordRequestVo.md)
  - [ResetCmakPassword](docs/ResetCmakPassword.md)
  - [ResponseVoBoolean](docs/ResponseVoBoolean.md)
+ - [ResponseVoCreateClusterResponseVo](docs/ResponseVoCreateClusterResponseVo.md)
+ - [ResponseVoCreateConfigGroupResponseVo](docs/ResponseVoCreateConfigGroupResponseVo.md)
+ - [ResponseVoDeleteConfigGroupResponseVo](docs/ResponseVoDeleteConfigGroupResponseVo.md)
  - [ResponseVoGetBrokerNodeListsResponseVo](docs/ResponseVoGetBrokerNodeListsResponseVo.md)
  - [ResponseVoGetCertFileResponseVo](docs/ResponseVoGetCertFileResponseVo.md)
  - [ResponseVoGetClusterStatusPerNodeResponseVo](docs/ResponseVoGetClusterStatusPerNodeResponseVo.md)
+ - [ResponseVoGetConfigGroupUsingClusterListResponseVo](docs/ResponseVoGetConfigGroupUsingClusterListResponseVo.md)
+ - [ResponseVoGetKafkaConfigGroupDetailListResponseVo](docs/ResponseVoGetKafkaConfigGroupDetailListResponseVo.md)
+ - [ResponseVoGetKafkaConfigGroupListResponseVo](docs/ResponseVoGetKafkaConfigGroupListResponseVo.md)
+ - [ResponseVoGetKafkaConfigGroupResponseVo](docs/ResponseVoGetKafkaConfigGroupResponseVo.md)
  - [ResponseVoGetKafkaVersionListResponseVo](docs/ResponseVoGetKafkaVersionListResponseVo.md)
  - [ResponseVoGetLoadBalancerListsResponseVo](docs/ResponseVoGetLoadBalancerListsResponseVo.md)
  - [ResponseVoGetOpenApiAcgInfoList](docs/ResponseVoGetOpenApiAcgInfoList.md)
@@ -114,9 +151,15 @@ Class | Method | HTTP request | Description
  - [ResponseVoGetOpenApiVpcConfigListResponseVo](docs/ResponseVoGetOpenApiVpcConfigListResponseVo.md)
  - [ResponseVoGetOpenApiVpcSubnetListResponseVo](docs/ResponseVoGetOpenApiVpcSubnetListResponseVo.md)
  - [ResponseVoOpenApiGetClusterInfoListResponseVo](docs/ResponseVoOpenApiGetClusterInfoListResponseVo.md)
+ - [ResponseVoOpenApiGetClusterInfoResponseVo](docs/ResponseVoOpenApiGetClusterInfoResponseVo.md)
  - [ResponseVoQueryMultipleDataResponseVo](docs/ResponseVoQueryMultipleDataResponseVo.md)
+ - [ResponseVoSetKafkaConfigGroupDetailResponseVo](docs/ResponseVoSetKafkaConfigGroupDetailResponseVo.md)
  - [RestartKafkaPerNodeRequestVo](docs/RestartKafkaPerNodeRequestVo.md)
  - [RestartKafkaServicePerNode](docs/RestartKafkaServicePerNode.md)
+ - [SetClusterKafkaConfigGroupRequest](docs/SetClusterKafkaConfigGroupRequest.md)
+ - [SetKafkaConfigGroupDetailRequest](docs/SetKafkaConfigGroupDetailRequest.md)
+ - [SetKafkaConfigGroupDetailResponseVo](docs/SetKafkaConfigGroupDetailResponseVo.md)
+ - [SetKafkaConfigGroupMemoRequest](docs/SetKafkaConfigGroupMemoRequest.md)
  - [Sort](docs/Sort.md)
  - [ZoneInfo](docs/ZoneInfo.md)
  
