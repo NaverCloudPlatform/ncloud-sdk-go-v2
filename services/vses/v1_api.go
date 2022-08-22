@@ -1,4 +1,3 @@
-
 /*
  * api
  *
@@ -33,16 +32,15 @@ V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param changeCountOfDataNode 데이터 노드 추가 파라미터
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterChangeCountOfDataNodeServiceGroupInstanceNoPost(ctx context.Context, changeCountOfDataNode AddNodesInCluster, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterChangeCountOfDataNodeServiceGroupInstanceNoPost(ctx context.Context, changeCountOfDataNode AddNodesInCluster, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -71,7 +69,6 @@ func (a *V1ApiService) ClusterChangeCountOfDataNodeServiceGroupInstanceNoPost(ct
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 	// body params
 	localVarPostBody = &changeCountOfDataNode
 
@@ -93,7 +90,7 @@ func (a *V1ApiService) ClusterChangeCountOfDataNodeServiceGroupInstanceNoPost(ct
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -111,16 +108,15 @@ func (a *V1ApiService) ClusterChangeCountOfDataNodeServiceGroupInstanceNoPost(ct
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param createCluster 클러스터 생성 파라미터
- * @param xNCPREGIONNO Region No
 
 @return ResponseVoCreateClusterResponseVo
 */
-func (a *V1ApiService) ClusterCreateElasticsearchClusterPost(ctx context.Context, createCluster CreateCluster, xNCPREGIONNO int32) (ResponseVoCreateClusterResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterCreateElasticsearchClusterPost(ctx context.Context, createCluster *CreateCluster) (ResponseVoCreateClusterResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoCreateClusterResponseVo
 	)
 
@@ -148,7 +144,6 @@ func (a *V1ApiService) ClusterCreateElasticsearchClusterPost(ctx context.Context
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 	// body params
 	localVarPostBody = &createCluster
 
@@ -170,7 +165,7 @@ func (a *V1ApiService) ClusterCreateElasticsearchClusterPost(ctx context.Context
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -188,22 +183,21 @@ func (a *V1ApiService) ClusterCreateElasticsearchClusterPost(ctx context.Context
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterDeleteElasticsearchClusterServiceGroupInstanceNoDelete(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterDeleteElasticsearchClusterServiceGroupInstanceNoDelete(ctx context.Context, serviceGroupInstanceNo *string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Delete")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
 	// create path and map variables
 	localVarPath := a.client.cfg.BasePath + "/cluster/deleteElasticsearchCluster/{serviceGroupInstanceNo}"
-	localVarPath = strings.Replace(localVarPath, "{"+"serviceGroupInstanceNo"+"}", fmt.Sprintf("%v", serviceGroupInstanceNo), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"serviceGroupInstanceNo"+"}", fmt.Sprintf("%v", *serviceGroupInstanceNo), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -226,7 +220,6 @@ func (a *V1ApiService) ClusterDeleteElasticsearchClusterServiceGroupInstanceNoDe
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -246,7 +239,7 @@ func (a *V1ApiService) ClusterDeleteElasticsearchClusterServiceGroupInstanceNoDe
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -264,16 +257,16 @@ func (a *V1ApiService) ClusterDeleteElasticsearchClusterServiceGroupInstanceNoDe
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoGetOpenApiAcgInfoList
 */
-func (a *V1ApiService) ClusterGetAcgInfoListServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoGetOpenApiAcgInfoList, *http.Response, error) {
+func (a *V1ApiService) ClusterGetAcgInfoListServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoGetOpenApiAcgInfoList, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetOpenApiAcgInfoList
 	)
 
@@ -302,7 +295,6 @@ func (a *V1ApiService) ClusterGetAcgInfoListServiceGroupInstanceNoGet(ctx contex
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -322,7 +314,7 @@ func (a *V1ApiService) ClusterGetAcgInfoListServiceGroupInstanceNoGet(ctx contex
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -340,16 +332,16 @@ func (a *V1ApiService) ClusterGetAcgInfoListServiceGroupInstanceNoGet(ctx contex
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoGetOpenApiServiceGroupResponseVo
 */
-func (a *V1ApiService) ClusterGetClusterDataNodeListServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoGetOpenApiServiceGroupResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetClusterDataNodeListServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoGetOpenApiServiceGroupResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetOpenApiServiceGroupResponseVo
 	)
 
@@ -378,7 +370,6 @@ func (a *V1ApiService) ClusterGetClusterDataNodeListServiceGroupInstanceNoGet(ct
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -398,7 +389,82 @@ func (a *V1ApiService) ClusterGetClusterDataNodeListServiceGroupInstanceNoGet(ct
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+V1ApiService
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param serviceGroupInstanceNo serviceGroupInstanceNo
+
+
+@return ResponseVoOpenApiGetClusterInfoResponseVo
+*/
+func (a *V1ApiService) ClusterGetClusterInfoGet(ctx context.Context, serviceGroupInstanceNo *string) (ResponseVoOpenApiGetClusterInfoResponseVo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoOpenApiGetClusterInfoResponseVo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/cluster/getClusterInfo/{serviceGroupInstanceNo}"
+	localVarPath = strings.Replace(localVarPath, "{"+"serviceGroupInstanceNo"+"}", fmt.Sprintf("%v", *serviceGroupInstanceNo), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -416,16 +482,16 @@ func (a *V1ApiService) ClusterGetClusterDataNodeListServiceGroupInstanceNoGet(ct
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param clusterInfoRequest 클러스터 조회 시 사용되는 파라미터
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoOpenApiGetClusterInfoListResponseVo
 */
-func (a *V1ApiService) ClusterGetClusterInfoListPost(ctx context.Context, clusterInfoRequest GetClusterRequest, xNCPREGIONNO int32) (ResponseVoOpenApiGetClusterInfoListResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetClusterInfoListPost(ctx context.Context, clusterInfoRequest *GetClusterRequest) (ResponseVoOpenApiGetClusterInfoListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoOpenApiGetClusterInfoListResponseVo
 	)
 
@@ -453,7 +519,7 @@ func (a *V1ApiService) ClusterGetClusterInfoListPost(ctx context.Context, cluste
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &clusterInfoRequest
 
@@ -475,7 +541,7 @@ func (a *V1ApiService) ClusterGetClusterInfoListPost(ctx context.Context, cluste
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -492,16 +558,16 @@ func (a *V1ApiService) ClusterGetClusterInfoListPost(ctx context.Context, cluste
 /*
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoGetElasticSearchVersionListResponseVo
 */
-func (a *V1ApiService) ClusterGetElasticsearchVersionListGet(ctx context.Context, xNCPREGIONNO int32) (ResponseVoGetElasticSearchVersionListResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetElasticsearchVersionListGet(ctx context.Context) (ResponseVoGetElasticSearchVersionListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetElasticSearchVersionListResponseVo
 	)
 
@@ -529,7 +595,6 @@ func (a *V1ApiService) ClusterGetElasticsearchVersionListGet(ctx context.Context
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -549,7 +614,7 @@ func (a *V1ApiService) ClusterGetElasticsearchVersionListGet(ctx context.Context
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -566,16 +631,16 @@ func (a *V1ApiService) ClusterGetElasticsearchVersionListGet(ctx context.Context
 /*
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoGetOpenApiLoginKeyListResponseVo
 */
-func (a *V1ApiService) ClusterGetLoginKeyListGet(ctx context.Context, xNCPREGIONNO int32) (ResponseVoGetOpenApiLoginKeyListResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetLoginKeyListGet(ctx context.Context) (ResponseVoGetOpenApiLoginKeyListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetOpenApiLoginKeyListResponseVo
 	)
 
@@ -603,7 +668,6 @@ func (a *V1ApiService) ClusterGetLoginKeyListGet(ctx context.Context, xNCPREGION
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -623,7 +687,7 @@ func (a *V1ApiService) ClusterGetLoginKeyListGet(ctx context.Context, xNCPREGION
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -641,16 +705,16 @@ func (a *V1ApiService) ClusterGetLoginKeyListGet(ctx context.Context, xNCPREGION
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param getNodeProductList HW 상품 스펙 조회 파라미터
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoGetOpenApiHwProductListResponseVo
 */
-func (a *V1ApiService) ClusterGetNodeProductListPost(ctx context.Context, getNodeProductList NodeProduct, xNCPREGIONNO int32) (ResponseVoGetOpenApiHwProductListResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetNodeProductListPost(ctx context.Context, getNodeProductList NodeProduct) (ResponseVoGetOpenApiHwProductListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetOpenApiHwProductListResponseVo
 	)
 
@@ -678,7 +742,7 @@ func (a *V1ApiService) ClusterGetNodeProductListPost(ctx context.Context, getNod
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &getNodeProductList
 
@@ -700,7 +764,7 @@ func (a *V1ApiService) ClusterGetNodeProductListPost(ctx context.Context, getNod
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -717,16 +781,16 @@ func (a *V1ApiService) ClusterGetNodeProductListPost(ctx context.Context, getNod
 /*
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoGetOpenApiOsProductListResponseVo
 */
-func (a *V1ApiService) ClusterGetOsProductListGet(ctx context.Context, xNCPREGIONNO int32) (ResponseVoGetOpenApiOsProductListResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetOsProductListGet(ctx context.Context) (ResponseVoGetOpenApiOsProductListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetOpenApiOsProductListResponseVo
 	)
 
@@ -754,7 +818,6 @@ func (a *V1ApiService) ClusterGetOsProductListGet(ctx context.Context, xNCPREGIO
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -774,7 +837,7 @@ func (a *V1ApiService) ClusterGetOsProductListGet(ctx context.Context, xNCPREGIO
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -787,20 +850,21 @@ func (a *V1ApiService) ClusterGetOsProductListGet(ctx context.Context, xNCPREGIO
 
 	return localVarReturnValue, localVarHttpResponse, nil
 }
+
 /*
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param getSubnetList Subnet 목록 조회
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoGetVpcSubnetListResponseVo
 */
-func (a *V1ApiService) ClusterGetSubnetListPost(ctx context.Context, getSubnetList GetSubnetList, xNCPREGIONNO int32) (ResponseVoGetVpcSubnetListResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetSubnetListPost(ctx context.Context, getSubnetList GetSubnetList) (ResponseVoGetVpcSubnetListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetVpcSubnetListResponseVo
 	)
 
@@ -828,7 +892,7 @@ func (a *V1ApiService) ClusterGetSubnetListPost(ctx context.Context, getSubnetLi
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &getSubnetList
 
@@ -850,7 +914,7 @@ func (a *V1ApiService) ClusterGetSubnetListPost(ctx context.Context, getSubnetLi
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -867,16 +931,16 @@ func (a *V1ApiService) ClusterGetSubnetListPost(ctx context.Context, getSubnetLi
 /*
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoGetVpcConfigListResponseVo
 */
-func (a *V1ApiService) ClusterGetVpcListGet(ctx context.Context, xNCPREGIONNO int32) (ResponseVoGetVpcConfigListResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetVpcListGet(ctx context.Context) (ResponseVoGetVpcConfigListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetVpcConfigListResponseVo
 	)
 
@@ -904,7 +968,6 @@ func (a *V1ApiService) ClusterGetVpcListGet(ctx context.Context, xNCPREGIONNO in
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -924,7 +987,7 @@ func (a *V1ApiService) ClusterGetVpcListGet(ctx context.Context, xNCPREGIONNO in
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -943,16 +1006,16 @@ V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param kibanaPassword 키바나 패스워드 변경
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterResetKibanaPasswordServiceGroupInstanceNoPost(ctx context.Context, kibanaPassword ResetKibanaPassword, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterResetKibanaPasswordServiceGroupInstanceNoPost(ctx context.Context, kibanaPassword ResetKibanaPassword, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -981,7 +1044,7 @@ func (a *V1ApiService) ClusterResetKibanaPasswordServiceGroupInstanceNoPost(ctx 
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &kibanaPassword
 
@@ -1003,7 +1066,7 @@ func (a *V1ApiService) ClusterResetKibanaPasswordServiceGroupInstanceNoPost(ctx 
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1021,16 +1084,16 @@ func (a *V1ApiService) ClusterResetKibanaPasswordServiceGroupInstanceNoPost(ctx 
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterRestartElasticsearchClusterServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterRestartElasticsearchClusterServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -1059,7 +1122,6 @@ func (a *V1ApiService) ClusterRestartElasticsearchClusterServiceGroupInstanceNoG
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1079,7 +1141,7 @@ func (a *V1ApiService) ClusterRestartElasticsearchClusterServiceGroupInstanceNoG
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1097,7 +1159,7 @@ func (a *V1ApiService) ClusterRestartElasticsearchClusterServiceGroupInstanceNoG
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
  * @param optional nil or *V1ApiDashboardGetDashboardInformationServiceGroupInstanceNoGetOpts - Optional Parameters:
      * @param "PageNo" (optional.Int32) -  pageNo
      * @param "PageSize" (optional.Int32) -  pageSize
@@ -1105,17 +1167,17 @@ V1ApiService
 @return ResponseVoGetOpenApiDashboardInformationResponseVo
 */
 
-type V1ApiDashboardGetDashboardInformationServiceGroupInstanceNoGetOpts struct { 
-	PageNo optional.Int32
+type V1ApiDashboardGetDashboardInformationServiceGroupInstanceNoGetOpts struct {
+	PageNo   optional.Int32
 	PageSize optional.Int32
 }
 
-func (a *V1ApiService) DashboardGetDashboardInformationServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32, localVarOptionals *V1ApiDashboardGetDashboardInformationServiceGroupInstanceNoGetOpts) (ResponseVoGetOpenApiDashboardInformationResponseVo, *http.Response, error) {
+func (a *V1ApiService) DashboardGetDashboardInformationServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, localVarOptionals *V1ApiDashboardGetDashboardInformationServiceGroupInstanceNoGetOpts) (ResponseVoGetOpenApiDashboardInformationResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetOpenApiDashboardInformationResponseVo
 	)
 
@@ -1150,7 +1212,6 @@ func (a *V1ApiService) DashboardGetDashboardInformationServiceGroupInstanceNoGet
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1170,7 +1231,7 @@ func (a *V1ApiService) DashboardGetDashboardInformationServiceGroupInstanceNoGet
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1189,16 +1250,16 @@ V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param createImportJob Create Import Job 파라미터
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ImportCreateDataImportJobServiceGroupInstanceNoPost(ctx context.Context, createImportJob CreateImportJob, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ImportCreateDataImportJobServiceGroupInstanceNoPost(ctx context.Context, createImportJob CreateImportJob, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -1227,7 +1288,7 @@ func (a *V1ApiService) ImportCreateDataImportJobServiceGroupInstanceNoPost(ctx c
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &createImportJob
 
@@ -1249,7 +1310,7 @@ func (a *V1ApiService) ImportCreateDataImportJobServiceGroupInstanceNoPost(ctx c
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1267,16 +1328,16 @@ func (a *V1ApiService) ImportCreateDataImportJobServiceGroupInstanceNoPost(ctx c
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ImportGetBucketListServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ImportGetBucketListServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -1305,7 +1366,6 @@ func (a *V1ApiService) ImportGetBucketListServiceGroupInstanceNoGet(ctx context.
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1325,7 +1385,7 @@ func (a *V1ApiService) ImportGetBucketListServiceGroupInstanceNoGet(ctx context.
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1343,7 +1403,7 @@ func (a *V1ApiService) ImportGetBucketListServiceGroupInstanceNoGet(ctx context.
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
  * @param optional nil or *V1ApiImportGetDataImportHistoryServiceGroupInstanceNoGetOpts - Optional Parameters:
      * @param "PageNo" (optional.Int32) -  Page No
      * @param "PageSize" (optional.Int32) -  Page Size
@@ -1351,17 +1411,17 @@ V1ApiService
 @return ResponseVoGetImportHistoryListResponseVo
 */
 
-type V1ApiImportGetDataImportHistoryServiceGroupInstanceNoGetOpts struct { 
-	PageNo optional.Int32
+type V1ApiImportGetDataImportHistoryServiceGroupInstanceNoGetOpts struct {
+	PageNo   optional.Int32
 	PageSize optional.Int32
 }
 
-func (a *V1ApiService) ImportGetDataImportHistoryServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32, localVarOptionals *V1ApiImportGetDataImportHistoryServiceGroupInstanceNoGetOpts) (ResponseVoGetImportHistoryListResponseVo, *http.Response, error) {
+func (a *V1ApiService) ImportGetDataImportHistoryServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, localVarOptionals *V1ApiImportGetDataImportHistoryServiceGroupInstanceNoGetOpts) (ResponseVoGetImportHistoryListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetImportHistoryListResponseVo
 	)
 
@@ -1396,7 +1456,6 @@ func (a *V1ApiService) ImportGetDataImportHistoryServiceGroupInstanceNoGet(ctx c
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1416,7 +1475,7 @@ func (a *V1ApiService) ImportGetDataImportHistoryServiceGroupInstanceNoGet(ctx c
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1434,16 +1493,16 @@ func (a *V1ApiService) ImportGetDataImportHistoryServiceGroupInstanceNoGet(ctx c
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ImportStopDataImportJobServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ImportStopDataImportJobServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -1472,7 +1531,6 @@ func (a *V1ApiService) ImportStopDataImportJobServiceGroupInstanceNoGet(ctx cont
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1492,7 +1550,7 @@ func (a *V1ApiService) ImportStopDataImportJobServiceGroupInstanceNoGet(ctx cont
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1511,16 +1569,16 @@ V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param getElasticsearchMonitoringData ES 모니터링 데이터 조회 파라미터
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoQueryMultipleDataResponseVo
 */
-func (a *V1ApiService) MonitoringGetElasticsearchMonitoringDataServiceGroupInstanceNoPost(ctx context.Context, getElasticsearchMonitoringData GetElasticsearchMonitoringData, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoQueryMultipleDataResponseVo, *http.Response, error) {
+func (a *V1ApiService) MonitoringGetElasticsearchMonitoringDataServiceGroupInstanceNoPost(ctx context.Context, getElasticsearchMonitoringData GetElasticsearchMonitoringData, serviceGroupInstanceNo string) (ResponseVoQueryMultipleDataResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoQueryMultipleDataResponseVo
 	)
 
@@ -1549,7 +1607,7 @@ func (a *V1ApiService) MonitoringGetElasticsearchMonitoringDataServiceGroupInsta
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &getElasticsearchMonitoringData
 
@@ -1571,7 +1629,7 @@ func (a *V1ApiService) MonitoringGetElasticsearchMonitoringDataServiceGroupInsta
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1590,16 +1648,16 @@ V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param getOsMonitoringData OS 모니터링 데이터 조회 파라미터
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoQueryMultipleDataResponseVo
 */
-func (a *V1ApiService) MonitoringGetOsMonitoringDataServiceGroupInstanceNoPost(ctx context.Context, getOsMonitoringData GetOsMonitoringData, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoQueryMultipleDataResponseVo, *http.Response, error) {
+func (a *V1ApiService) MonitoringGetOsMonitoringDataServiceGroupInstanceNoPost(ctx context.Context, getOsMonitoringData GetOsMonitoringData, serviceGroupInstanceNo string) (ResponseVoQueryMultipleDataResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoQueryMultipleDataResponseVo
 	)
 
@@ -1628,7 +1686,7 @@ func (a *V1ApiService) MonitoringGetOsMonitoringDataServiceGroupInstanceNoPost(c
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &getOsMonitoringData
 
@@ -1650,7 +1708,7 @@ func (a *V1ApiService) MonitoringGetOsMonitoringDataServiceGroupInstanceNoPost(c
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1669,16 +1727,16 @@ V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param createSnapshot Snapshot 생성 파라미터
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) SnapshotCreateSnapshotServiceGroupInstanceNoPost(ctx context.Context, createSnapshot CreateSnapshot, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) SnapshotCreateSnapshotServiceGroupInstanceNoPost(ctx context.Context, createSnapshot CreateSnapshot, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -1707,7 +1765,7 @@ func (a *V1ApiService) SnapshotCreateSnapshotServiceGroupInstanceNoPost(ctx cont
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &createSnapshot
 
@@ -1729,7 +1787,7 @@ func (a *V1ApiService) SnapshotCreateSnapshotServiceGroupInstanceNoPost(ctx cont
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1747,16 +1805,16 @@ func (a *V1ApiService) SnapshotCreateSnapshotServiceGroupInstanceNoPost(ctx cont
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoGetObjectStorageBucketListResponseVo
 */
-func (a *V1ApiService) SnapshotGetBucketListServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoGetObjectStorageBucketListResponseVo, *http.Response, error) {
+func (a *V1ApiService) SnapshotGetBucketListServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoGetObjectStorageBucketListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetObjectStorageBucketListResponseVo
 	)
 
@@ -1785,7 +1843,6 @@ func (a *V1ApiService) SnapshotGetBucketListServiceGroupInstanceNoGet(ctx contex
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1805,7 +1862,7 @@ func (a *V1ApiService) SnapshotGetBucketListServiceGroupInstanceNoGet(ctx contex
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1823,7 +1880,7 @@ func (a *V1ApiService) SnapshotGetBucketListServiceGroupInstanceNoGet(ctx contex
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
  * @param optional nil or *V1ApiSnapshotGetSnapshotHistoryServiceGroupInstanceNoGetOpts - Optional Parameters:
      * @param "PageNo" (optional.Int32) -  pageNo
      * @param "PageSize" (optional.Int32) -  pageSize
@@ -1831,17 +1888,17 @@ V1ApiService
 @return ResponseVoSnapshotHistoryListResponseVo
 */
 
-type V1ApiSnapshotGetSnapshotHistoryServiceGroupInstanceNoGetOpts struct { 
-	PageNo optional.Int32
+type V1ApiSnapshotGetSnapshotHistoryServiceGroupInstanceNoGetOpts struct {
+	PageNo   optional.Int32
 	PageSize optional.Int32
 }
 
-func (a *V1ApiService) SnapshotGetSnapshotHistoryServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32, localVarOptionals *V1ApiSnapshotGetSnapshotHistoryServiceGroupInstanceNoGetOpts) (ResponseVoSnapshotHistoryListResponseVo, *http.Response, error) {
+func (a *V1ApiService) SnapshotGetSnapshotHistoryServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, localVarOptionals *V1ApiSnapshotGetSnapshotHistoryServiceGroupInstanceNoGetOpts) (ResponseVoSnapshotHistoryListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoSnapshotHistoryListResponseVo
 	)
 
@@ -1876,7 +1933,6 @@ func (a *V1ApiService) SnapshotGetSnapshotHistoryServiceGroupInstanceNoGet(ctx c
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1896,7 +1952,7 @@ func (a *V1ApiService) SnapshotGetSnapshotHistoryServiceGroupInstanceNoGet(ctx c
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1915,16 +1971,16 @@ V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param getSnapshotSchedulingHistory Snapshot Scheduling 이력 조회
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoGetSnapshotSchedulingHistoryResponseVo
 */
-func (a *V1ApiService) SnapshotGetSnapshotSchedulingHistoryServiceGroupInstanceNoPost(ctx context.Context, getSnapshotSchedulingHistory GetSnapshotSchedulingHistory, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoGetSnapshotSchedulingHistoryResponseVo, *http.Response, error) {
+func (a *V1ApiService) SnapshotGetSnapshotSchedulingHistoryServiceGroupInstanceNoPost(ctx context.Context, getSnapshotSchedulingHistory GetSnapshotSchedulingHistory, serviceGroupInstanceNo string) (ResponseVoGetSnapshotSchedulingHistoryResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetSnapshotSchedulingHistoryResponseVo
 	)
 
@@ -1953,7 +2009,7 @@ func (a *V1ApiService) SnapshotGetSnapshotSchedulingHistoryServiceGroupInstanceN
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &getSnapshotSchedulingHistory
 
@@ -1975,7 +2031,7 @@ func (a *V1ApiService) SnapshotGetSnapshotSchedulingHistoryServiceGroupInstanceN
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1993,16 +2049,16 @@ func (a *V1ApiService) SnapshotGetSnapshotSchedulingHistoryServiceGroupInstanceN
 V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) SnapshotReleaseSnapshotSchedulingServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) SnapshotReleaseSnapshotSchedulingServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -2031,7 +2087,6 @@ func (a *V1ApiService) SnapshotReleaseSnapshotSchedulingServiceGroupInstanceNoGe
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -2051,7 +2106,7 @@ func (a *V1ApiService) SnapshotReleaseSnapshotSchedulingServiceGroupInstanceNoGe
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -2070,16 +2125,16 @@ V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param setSnapshotScheduling Snapshot Scheduling 설정
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) SnapshotSetSnapshotSchedulingServiceGroupInstanceNoPost(ctx context.Context, setSnapshotScheduling SetSnapshotScheduling, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) SnapshotSetSnapshotSchedulingServiceGroupInstanceNoPost(ctx context.Context, setSnapshotScheduling SetSnapshotScheduling, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -2108,7 +2163,7 @@ func (a *V1ApiService) SnapshotSetSnapshotSchedulingServiceGroupInstanceNoPost(c
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &setSnapshotScheduling
 
@@ -2130,7 +2185,7 @@ func (a *V1ApiService) SnapshotSetSnapshotSchedulingServiceGroupInstanceNoPost(c
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -2149,16 +2204,16 @@ V1ApiService
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param updateAPIAuthenticationKey API 인증키 설정 파라미터
  * @param serviceGroupInstanceNo serviceGroupInstanceNo
- * @param xNCPREGIONNO Region No
+
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) SnapshotUpdateAPIAuthenticationKeyServiceGroupInstanceNoPost(ctx context.Context, updateAPIAuthenticationKey UpdateApiAuthenticationKey, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) SnapshotUpdateAPIAuthenticationKeyServiceGroupInstanceNoPost(ctx context.Context, updateAPIAuthenticationKey UpdateApiAuthenticationKey, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -2187,7 +2242,7 @@ func (a *V1ApiService) SnapshotUpdateAPIAuthenticationKeyServiceGroupInstanceNoP
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &updateAPIAuthenticationKey
 
@@ -2209,7 +2264,7 @@ func (a *V1ApiService) SnapshotUpdateAPIAuthenticationKeyServiceGroupInstanceNoP
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -2222,4 +2277,3 @@ func (a *V1ApiService) SnapshotUpdateAPIAuthenticationKeyServiceGroupInstanceNoP
 
 	return localVarReturnValue, localVarHttpResponse, nil
 }
-

@@ -11,5 +11,5 @@ package vses
 
 type CreateClusterResponseVo struct {
 	// 서비스 그룹 인스턴스 번호
-	ServiceGroupInstanceNo int32 `json:"serviceGroupInstanceNo"`
+	ServiceGroupInstanceNo *int32 `json:"serviceGroupInstanceNo"`
 }

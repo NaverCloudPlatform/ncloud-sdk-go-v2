@@ -10,12 +10,12 @@
 package vses
 
 type OpenApiGetClusterInfoListResponseVo struct {
-	AllowedClusters []AllowedClusterInfo `json:"allowedClusters,omitempty"`
-	CurrentPage int32 `json:"currentPage,omitempty"`
-	DisallowedClusters []DisallowedClusterInfo `json:"disallowedClusters,omitempty"`
-	IsFirst bool `json:"isFirst,omitempty"`
-	IsLast bool `json:"isLast,omitempty"`
-	PageSize int32 `json:"pageSize,omitempty"`
-	TotalCount int64 `json:"totalCount,omitempty"`
-	TotalPage int32 `json:"totalPage,omitempty"`
+	AllowedClusters    []*AllowedClusterInfo    `json:"allowedClusters,omitempty"`
+	CurrentPage        int32                    `json:"currentPage,omitempty"`
+	DisallowedClusters []*DisallowedClusterInfo `json:"disallowedClusters,omitempty"`
+	IsFirst            bool                     `json:"isFirst,omitempty"`
+	IsLast             bool                     `json:"isLast,omitempty"`
+	PageSize           int32                    `json:"pageSize,omitempty"`
+	TotalCount         int64                    `json:"totalCount,omitempty"`
+	TotalPage          int32                    `json:"totalPage,omitempty"`
 }
