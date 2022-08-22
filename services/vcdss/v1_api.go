@@ -1,4 +1,3 @@
-
 /*
  * api
  *
@@ -36,12 +35,12 @@ V1ApiService
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterChangeCountOfBrokerNodeServiceGroupInstanceNoPost(ctx context.Context, changeCountOfBrokerNode AddNodesInCluster, serviceGroupInstanceNo string, xNcpRegionNo int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterChangeCountOfBrokerNodeServiceGroupInstanceNoPost(ctx context.Context, changeCountOfBrokerNode AddNodesInCluster, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -70,7 +69,7 @@ func (a *V1ApiService) ClusterChangeCountOfBrokerNodeServiceGroupInstanceNoPost(
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["x-ncp-region_no"] = parameterToString(xNcpRegionNo, "")
+
 	// body params
 	localVarPostBody = &changeCountOfBrokerNode
 
@@ -92,7 +91,7 @@ func (a *V1ApiService) ClusterChangeCountOfBrokerNodeServiceGroupInstanceNoPost(
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -114,12 +113,12 @@ V1ApiService
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterCreateCDSSClusterPost(ctx context.Context, createCluster CreateCluster, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterCreateCDSSClusterPost(ctx context.Context, createCluster CreateCluster) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -147,7 +146,7 @@ func (a *V1ApiService) ClusterCreateCDSSClusterPost(ctx context.Context, createC
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &createCluster
 
@@ -169,7 +168,83 @@ func (a *V1ApiService) ClusterCreateCDSSClusterPost(ctx context.Context, createC
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+V1ApiService
+cluster 생성 후 serviceGroupInstanceNo 반환
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param createCluster
+
+@return ResponseVoCreateClusterResponseVo
+*/
+func (a *V1ApiService) ClusterCreateCDSSClusterReturnServiceGroupInstanceNoPost(ctx context.Context, createCluster CreateCluster) (ResponseVoCreateClusterResponseVo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoCreateClusterResponseVo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/cluster/createCDSSClusterReturnServiceGroupInstanceNo"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &createCluster
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -191,12 +266,12 @@ V1ApiService
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterDeleteCDSSClusterServiceGroupInstanceNoDelete(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterDeleteCDSSClusterServiceGroupInstanceNoDelete(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Delete")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -225,7 +300,6 @@ func (a *V1ApiService) ClusterDeleteCDSSClusterServiceGroupInstanceNoDelete(ctx 
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -245,7 +319,7 @@ func (a *V1ApiService) ClusterDeleteCDSSClusterServiceGroupInstanceNoDelete(ctx 
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -267,12 +341,12 @@ V1ApiService
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterDisableBrokerNodePublicEndpointServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterDisableBrokerNodePublicEndpointServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -301,7 +375,6 @@ func (a *V1ApiService) ClusterDisableBrokerNodePublicEndpointServiceGroupInstanc
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -321,7 +394,7 @@ func (a *V1ApiService) ClusterDisableBrokerNodePublicEndpointServiceGroupInstanc
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -343,12 +416,12 @@ V1ApiService
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterDisablePublicDomainServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterDisablePublicDomainServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -377,7 +450,6 @@ func (a *V1ApiService) ClusterDisablePublicDomainServiceGroupInstanceNoGet(ctx c
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -397,7 +469,7 @@ func (a *V1ApiService) ClusterDisablePublicDomainServiceGroupInstanceNoGet(ctx c
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -419,12 +491,12 @@ V1ApiService
 
 @return ResponseVoGetCertFileResponseVo
 */
-func (a *V1ApiService) ClusterDownloadCertificateServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoGetCertFileResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterDownloadCertificateServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoGetCertFileResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetCertFileResponseVo
 	)
 
@@ -453,7 +525,6 @@ func (a *V1ApiService) ClusterDownloadCertificateServiceGroupInstanceNoGet(ctx c
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -473,7 +544,7 @@ func (a *V1ApiService) ClusterDownloadCertificateServiceGroupInstanceNoGet(ctx c
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -496,12 +567,12 @@ V1ApiService
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterEnableBrokerNodePublicEndpointServiceGroupInstanceNoPost(ctx context.Context, enableBrokerNodePublicEndpoint EnableBrokerNodePublicEndpoint, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterEnableBrokerNodePublicEndpointServiceGroupInstanceNoPost(ctx context.Context, enableBrokerNodePublicEndpoint EnableBrokerNodePublicEndpoint, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -530,7 +601,7 @@ func (a *V1ApiService) ClusterEnableBrokerNodePublicEndpointServiceGroupInstance
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &enableBrokerNodePublicEndpoint
 
@@ -552,7 +623,7 @@ func (a *V1ApiService) ClusterEnableBrokerNodePublicEndpointServiceGroupInstance
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -574,12 +645,12 @@ V1ApiService
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterEnablePublicDomainServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterEnablePublicDomainServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -608,7 +679,6 @@ func (a *V1ApiService) ClusterEnablePublicDomainServiceGroupInstanceNoGet(ctx co
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -628,7 +698,7 @@ func (a *V1ApiService) ClusterEnablePublicDomainServiceGroupInstanceNoGet(ctx co
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -650,12 +720,12 @@ V1ApiService
 
 @return ResponseVoGetOpenApiAcgInfoList
 */
-func (a *V1ApiService) ClusterGetAcgInfoListServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoGetOpenApiAcgInfoList, *http.Response, error) {
+func (a *V1ApiService) ClusterGetAcgInfoListServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoGetOpenApiAcgInfoList, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetOpenApiAcgInfoList
 	)
 
@@ -684,7 +754,6 @@ func (a *V1ApiService) ClusterGetAcgInfoListServiceGroupInstanceNoGet(ctx contex
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -704,7 +773,7 @@ func (a *V1ApiService) ClusterGetAcgInfoListServiceGroupInstanceNoGet(ctx contex
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -726,12 +795,12 @@ V1ApiService
 
 @return ResponseVoGetBrokerNodeListsResponseVo
 */
-func (a *V1ApiService) ClusterGetBrokerInfoServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoGetBrokerNodeListsResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetBrokerInfoServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoGetBrokerNodeListsResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetBrokerNodeListsResponseVo
 	)
 
@@ -760,7 +829,6 @@ func (a *V1ApiService) ClusterGetBrokerInfoServiceGroupInstanceNoGet(ctx context
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -780,7 +848,7 @@ func (a *V1ApiService) ClusterGetBrokerInfoServiceGroupInstanceNoGet(ctx context
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -801,12 +869,12 @@ V1ApiService
 
 @return ResponseVoGetKafkaVersionListResponseVo
 */
-func (a *V1ApiService) ClusterGetCDSSVersionListGet(ctx context.Context, xNCPREGIONNO int32) (ResponseVoGetKafkaVersionListResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetCDSSVersionListGet(ctx context.Context) (ResponseVoGetKafkaVersionListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetKafkaVersionListResponseVo
 	)
 
@@ -834,7 +902,6 @@ func (a *V1ApiService) ClusterGetCDSSVersionListGet(ctx context.Context, xNCPREG
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -854,7 +921,7 @@ func (a *V1ApiService) ClusterGetCDSSVersionListGet(ctx context.Context, xNCPREG
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -876,12 +943,12 @@ V1ApiService
 
 @return ResponseVoOpenApiGetClusterInfoListResponseVo
 */
-func (a *V1ApiService) ClusterGetClusterInfoListPost(ctx context.Context, clusterInfoRequest GetClusterRequest, xNCPREGIONNO int32) (ResponseVoOpenApiGetClusterInfoListResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetClusterInfoListPost(ctx context.Context, clusterInfoRequest GetClusterRequest) (ResponseVoOpenApiGetClusterInfoListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoOpenApiGetClusterInfoListResponseVo
 	)
 
@@ -909,7 +976,7 @@ func (a *V1ApiService) ClusterGetClusterInfoListPost(ctx context.Context, cluste
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &clusterInfoRequest
 
@@ -931,7 +998,82 @@ func (a *V1ApiService) ClusterGetClusterInfoListPost(ctx context.Context, cluste
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+V1ApiService
+cluster 단건 조회
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param serviceGroupInstanceNo serviceGroupInstanceNo
+
+@return ResponseVoOpenApiGetClusterInfoResponseVo
+*/
+func (a *V1ApiService) ClusterGetClusterInfoListServiceGroupInstanceNoPost(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoOpenApiGetClusterInfoResponseVo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoOpenApiGetClusterInfoResponseVo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/cluster/getClusterInfoList/{serviceGroupInstanceNo}"
+	localVarPath = strings.Replace(localVarPath, "{"+"serviceGroupInstanceNo"+"}", fmt.Sprintf("%v", serviceGroupInstanceNo), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -953,12 +1095,12 @@ V1ApiService
 
 @return ResponseVoGetOpenApiServiceGroupResponseVo
 */
-func (a *V1ApiService) ClusterGetClusterNodeListServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoGetOpenApiServiceGroupResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetClusterNodeListServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoGetOpenApiServiceGroupResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetOpenApiServiceGroupResponseVo
 	)
 
@@ -987,7 +1129,6 @@ func (a *V1ApiService) ClusterGetClusterNodeListServiceGroupInstanceNoGet(ctx co
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1007,7 +1148,7 @@ func (a *V1ApiService) ClusterGetClusterNodeListServiceGroupInstanceNoGet(ctx co
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1029,12 +1170,12 @@ V1ApiService
 
 @return ResponseVoGetClusterStatusPerNodeResponseVo
 */
-func (a *V1ApiService) ClusterGetClusterStatusServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoGetClusterStatusPerNodeResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetClusterStatusServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoGetClusterStatusPerNodeResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetClusterStatusPerNodeResponseVo
 	)
 
@@ -1063,7 +1204,6 @@ func (a *V1ApiService) ClusterGetClusterStatusServiceGroupInstanceNoGet(ctx cont
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1083,7 +1223,7 @@ func (a *V1ApiService) ClusterGetClusterStatusServiceGroupInstanceNoGet(ctx cont
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1105,12 +1245,12 @@ V1ApiService
 
 @return ResponseVoGetLoadBalancerListsResponseVo
 */
-func (a *V1ApiService) ClusterGetLoadBalancerInstanceListServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoGetLoadBalancerListsResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetLoadBalancerInstanceListServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoGetLoadBalancerListsResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetLoadBalancerListsResponseVo
 	)
 
@@ -1139,7 +1279,6 @@ func (a *V1ApiService) ClusterGetLoadBalancerInstanceListServiceGroupInstanceNoG
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1159,7 +1298,7 @@ func (a *V1ApiService) ClusterGetLoadBalancerInstanceListServiceGroupInstanceNoG
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1181,12 +1320,12 @@ V1ApiService
 
 @return ResponseVoGetOpenApiHwProductListResponseVo
 */
-func (a *V1ApiService) ClusterGetNodeProductListPost(ctx context.Context, getNodeProductList NodeProduct, xNCPREGIONNO int32) (ResponseVoGetOpenApiHwProductListResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetNodeProductListPost(ctx context.Context, getNodeProductList NodeProduct) (ResponseVoGetOpenApiHwProductListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetOpenApiHwProductListResponseVo
 	)
 
@@ -1214,7 +1353,7 @@ func (a *V1ApiService) ClusterGetNodeProductListPost(ctx context.Context, getNod
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &getNodeProductList
 
@@ -1236,7 +1375,7 @@ func (a *V1ApiService) ClusterGetNodeProductListPost(ctx context.Context, getNod
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1257,12 +1396,12 @@ V1ApiService
 
 @return ResponseVoGetOpenApiOsProductListResponseVo
 */
-func (a *V1ApiService) ClusterGetOsProductListGet(ctx context.Context, xNCPREGIONNO int32) (ResponseVoGetOpenApiOsProductListResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetOsProductListGet(ctx context.Context) (ResponseVoGetOpenApiOsProductListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetOpenApiOsProductListResponseVo
 	)
 
@@ -1290,7 +1429,6 @@ func (a *V1ApiService) ClusterGetOsProductListGet(ctx context.Context, xNCPREGIO
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1310,7 +1448,7 @@ func (a *V1ApiService) ClusterGetOsProductListGet(ctx context.Context, xNCPREGIO
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1332,12 +1470,12 @@ V1ApiService
 
 @return ResponseVoGetOpenApiVpcSubnetListResponseVo
 */
-func (a *V1ApiService) ClusterGetSubnetListPost(ctx context.Context, getSubnetList GetSubnetList, xNCPREGIONNO int32) (ResponseVoGetOpenApiVpcSubnetListResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetSubnetListPost(ctx context.Context, getSubnetList GetSubnetList) (ResponseVoGetOpenApiVpcSubnetListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetOpenApiVpcSubnetListResponseVo
 	)
 
@@ -1365,7 +1503,7 @@ func (a *V1ApiService) ClusterGetSubnetListPost(ctx context.Context, getSubnetLi
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &getSubnetList
 
@@ -1387,7 +1525,7 @@ func (a *V1ApiService) ClusterGetSubnetListPost(ctx context.Context, getSubnetLi
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1408,12 +1546,12 @@ V1ApiService
 
 @return ResponseVoGetOpenApiVpcConfigListResponseVo
 */
-func (a *V1ApiService) ClusterGetVpcListGet(ctx context.Context, xNCPREGIONNO int32) (ResponseVoGetOpenApiVpcConfigListResponseVo, *http.Response, error) {
+func (a *V1ApiService) ClusterGetVpcListGet(ctx context.Context) (ResponseVoGetOpenApiVpcConfigListResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoGetOpenApiVpcConfigListResponseVo
 	)
 
@@ -1441,7 +1579,6 @@ func (a *V1ApiService) ClusterGetVpcListGet(ctx context.Context, xNCPREGIONNO in
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1461,7 +1598,7 @@ func (a *V1ApiService) ClusterGetVpcListGet(ctx context.Context, xNCPREGIONNO in
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1484,12 +1621,12 @@ V1ApiService
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterResetCMAKPasswordServiceGroupInstanceNoPost(ctx context.Context, cmakPassword ResetCmakPassword, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterResetCMAKPasswordServiceGroupInstanceNoPost(ctx context.Context, cmakPassword ResetCmakPassword, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -1518,7 +1655,7 @@ func (a *V1ApiService) ClusterResetCMAKPasswordServiceGroupInstanceNoPost(ctx co
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &cmakPassword
 
@@ -1540,7 +1677,7 @@ func (a *V1ApiService) ClusterResetCMAKPasswordServiceGroupInstanceNoPost(ctx co
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1562,12 +1699,12 @@ V1ApiService
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterRestartAllServicesServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterRestartAllServicesServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -1596,7 +1733,6 @@ func (a *V1ApiService) ClusterRestartAllServicesServiceGroupInstanceNoGet(ctx co
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1616,7 +1752,7 @@ func (a *V1ApiService) ClusterRestartAllServicesServiceGroupInstanceNoGet(ctx co
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1638,12 +1774,12 @@ V1ApiService
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterRestartCMAKServiceServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterRestartCMAKServiceServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -1672,7 +1808,6 @@ func (a *V1ApiService) ClusterRestartCMAKServiceServiceGroupInstanceNoGet(ctx co
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1692,7 +1827,7 @@ func (a *V1ApiService) ClusterRestartCMAKServiceServiceGroupInstanceNoGet(ctx co
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1715,12 +1850,12 @@ V1ApiService
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterRestartKafkaServicePerNodeServiceGroupInstanceNoPost(ctx context.Context, restartKafkaServicePerNode RestartKafkaServicePerNode, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterRestartKafkaServicePerNodeServiceGroupInstanceNoPost(ctx context.Context, restartKafkaServicePerNode RestartKafkaServicePerNode, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -1749,7 +1884,7 @@ func (a *V1ApiService) ClusterRestartKafkaServicePerNodeServiceGroupInstanceNoPo
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &restartKafkaServicePerNode
 
@@ -1771,7 +1906,7 @@ func (a *V1ApiService) ClusterRestartKafkaServicePerNodeServiceGroupInstanceNoPo
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1793,12 +1928,12 @@ V1ApiService
 
 @return ResponseVoBoolean
 */
-func (a *V1ApiService) ClusterRestartKafkaServiceServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoBoolean, *http.Response, error) {
+func (a *V1ApiService) ClusterRestartKafkaServiceServiceGroupInstanceNoGet(ctx context.Context, serviceGroupInstanceNo string) (ResponseVoBoolean, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoBoolean
 	)
 
@@ -1827,7 +1962,6 @@ func (a *V1ApiService) ClusterRestartKafkaServiceServiceGroupInstanceNoGet(ctx c
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
 
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -1847,7 +1981,7 @@ func (a *V1ApiService) ClusterRestartKafkaServiceServiceGroupInstanceNoGet(ctx c
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1870,12 +2004,12 @@ V1ApiService
 
 @return ResponseVoQueryMultipleDataResponseVo
 */
-func (a *V1ApiService) MonitoringGetCdssMonitoringDataServiceGroupInstanceNoPost(ctx context.Context, getCdssMonitoringData GetCdssMonitoringData, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoQueryMultipleDataResponseVo, *http.Response, error) {
+func (a *V1ApiService) MonitoringGetCdssMonitoringDataServiceGroupInstanceNoPost(ctx context.Context, getCdssMonitoringData GetCdssMonitoringData, serviceGroupInstanceNo string) (ResponseVoQueryMultipleDataResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoQueryMultipleDataResponseVo
 	)
 
@@ -1904,7 +2038,7 @@ func (a *V1ApiService) MonitoringGetCdssMonitoringDataServiceGroupInstanceNoPost
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &getCdssMonitoringData
 
@@ -1926,7 +2060,7 @@ func (a *V1ApiService) MonitoringGetCdssMonitoringDataServiceGroupInstanceNoPost
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -1949,12 +2083,12 @@ V1ApiService
 
 @return ResponseVoQueryMultipleDataResponseVo
 */
-func (a *V1ApiService) MonitoringGetOsMonitoringDataServiceGroupInstanceNoPost(ctx context.Context, getOsMonitoringData GetOsMonitoringData, serviceGroupInstanceNo string, xNCPREGIONNO int32) (ResponseVoQueryMultipleDataResponseVo, *http.Response, error) {
+func (a *V1ApiService) MonitoringGetOsMonitoringDataServiceGroupInstanceNoPost(ctx context.Context, getOsMonitoringData GetOsMonitoringData, serviceGroupInstanceNo string) (ResponseVoQueryMultipleDataResponseVo, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
 		localVarReturnValue ResponseVoQueryMultipleDataResponseVo
 	)
 
@@ -1983,7 +2117,7 @@ func (a *V1ApiService) MonitoringGetOsMonitoringDataServiceGroupInstanceNoPost(c
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
-	localVarHeaderParams["X-NCP-REGION_NO"] = parameterToString(xNCPREGIONNO, "")
+
 	// body params
 	localVarPostBody = &getOsMonitoringData
 
@@ -2005,7 +2139,7 @@ func (a *V1ApiService) MonitoringGetOsMonitoringDataServiceGroupInstanceNoPost(c
 
 	if localVarHttpResponse.StatusCode >= 300 {
 		newErr := GenericSwaggerError{
-			body: localVarBody,
+			body:  localVarBody,
 			error: localVarHttpResponse.Status,
 		}
 
@@ -2019,3 +2153,782 @@ func (a *V1ApiService) MonitoringGetOsMonitoringDataServiceGroupInstanceNoPost(c
 	return localVarReturnValue, localVarHttpResponse, nil
 }
 
+/*
+V1ApiService
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param createConfigGroup
+ * @param xNCPREGIONNO Region No
+
+@return ResponseVoCreateConfigGroupResponseVo
+*/
+func (a *V1ApiService) ConfigGroupCreateConfigGroupPost(ctx context.Context, createConfigGroup CreateConfigGroup) (ResponseVoCreateConfigGroupResponseVo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoCreateConfigGroupResponseVo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/configGroup/createConfigGroup"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	// body params
+	localVarPostBody = &createConfigGroup
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+V1ApiService
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param configGroupNo configGroupNo
+ * @param xNCPREGIONNO Region No
+
+@return ResponseVoDeleteConfigGroupResponseVo
+*/
+func (a *V1ApiService) ConfigGroupDeleteConfigGroupConfigGroupNoDelete(ctx context.Context, configGroupNo string) (ResponseVoDeleteConfigGroupResponseVo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Delete")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoDeleteConfigGroupResponseVo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/configGroup/deleteConfigGroup/{configGroupNo}"
+	localVarPath = strings.Replace(localVarPath, "{"+"configGroupNo"+"}", fmt.Sprintf("%v", configGroupNo), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+V1ApiService
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param getConfigGroupUsingClusterList
+ * @param configGroupNo configGroupNo
+ * @param xNCPREGIONNO Region No
+
+@return ResponseVoGetConfigGroupUsingClusterListResponseVo
+*/
+func (a *V1ApiService) ConfigGroupGetConfigGroupUsingClusterListConfigGroupNoPost(ctx context.Context, getConfigGroupUsingClusterList GetConfigGroupUsingClusterListRequest, configGroupNo string) (ResponseVoGetConfigGroupUsingClusterListResponseVo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoGetConfigGroupUsingClusterListResponseVo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/configGroup/getConfigGroupUsingClusterList/{configGroupNo}"
+	localVarPath = strings.Replace(localVarPath, "{"+"configGroupNo"+"}", fmt.Sprintf("%v", configGroupNo), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	// body params
+	localVarPostBody = &getConfigGroupUsingClusterList
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+V1ApiService
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param getKafkaConfigGroup
+ * @param configGroupNo configGroupNo
+ * @param xNCPREGIONNO Region No
+
+@return ResponseVoGetKafkaConfigGroupResponseVo
+*/
+func (a *V1ApiService) ConfigGroupGetKafkaConfigGroupConfigGroupNoPost(ctx context.Context, getKafkaConfigGroup GetKafkaConfigGroupRequest, configGroupNo string) (ResponseVoGetKafkaConfigGroupResponseVo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoGetKafkaConfigGroupResponseVo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/configGroup/getKafkaConfigGroup/{configGroupNo}"
+	localVarPath = strings.Replace(localVarPath, "{"+"configGroupNo"+"}", fmt.Sprintf("%v", configGroupNo), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	// body params
+	localVarPostBody = &getKafkaConfigGroup
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+V1ApiService
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param getKafkaConfigGroupDetailList
+ * @param configGroupNo configGroupNo
+ * @param xNCPREGIONNO Region No
+
+@return ResponseVoGetKafkaConfigGroupDetailListResponseVo
+*/
+func (a *V1ApiService) ConfigGroupGetKafkaConfigGroupDetailListConfigGroupNoPost(ctx context.Context, getKafkaConfigGroupDetailList GetKafkaConfigGroupDetailListRequest, configGroupNo string) (ResponseVoGetKafkaConfigGroupDetailListResponseVo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoGetKafkaConfigGroupDetailListResponseVo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/configGroup/getKafkaConfigGroupDetailList/{configGroupNo}"
+	localVarPath = strings.Replace(localVarPath, "{"+"configGroupNo"+"}", fmt.Sprintf("%v", configGroupNo), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	// body params
+	localVarPostBody = &getKafkaConfigGroupDetailList
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+V1ApiService
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param getKafkaConfigGroupList
+ * @param xNCPREGIONNO Region No
+
+@return ResponseVoGetKafkaConfigGroupListResponseVo
+*/
+func (a *V1ApiService) ConfigGroupGetKafkaConfigGroupListPost(ctx context.Context, getKafkaConfigGroupList Pager) (ResponseVoGetKafkaConfigGroupListResponseVo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoGetKafkaConfigGroupListResponseVo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/configGroup/getKafkaConfigGroupList"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	// body params
+	localVarPostBody = &getKafkaConfigGroupList
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+V1ApiService
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param getKafkaVersionConfigGroupList
+ * @param xNCPREGIONNO Region No
+
+@return ResponseVoGetKafkaConfigGroupListResponseVo
+*/
+func (a *V1ApiService) ConfigGroupGetKafkaVersionConfigGroupListPost(ctx context.Context, getKafkaVersionConfigGroupList GetKafkaVersionConfigGroupListRequest) (ResponseVoGetKafkaConfigGroupListResponseVo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoGetKafkaConfigGroupListResponseVo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/configGroup/getKafkaVersionConfigGroupList"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	// body params
+	localVarPostBody = &getKafkaVersionConfigGroupList
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+V1ApiService
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param setClusterKafkaConfigGroup
+ * @param configGroupNo configGroupNo
+ * @param xNCPREGIONNO Region No
+
+@return ResponseVoBoolean
+*/
+func (a *V1ApiService) ConfigGroupSetClusterKafkaConfigGroupConfigGroupNoPost(ctx context.Context, setClusterKafkaConfigGroup SetClusterKafkaConfigGroupRequest, configGroupNo string) (ResponseVoBoolean, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoBoolean
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/configGroup/setClusterKafkaConfigGroup/{configGroupNo}"
+	localVarPath = strings.Replace(localVarPath, "{"+"configGroupNo"+"}", fmt.Sprintf("%v", configGroupNo), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	// body params
+	localVarPostBody = &setClusterKafkaConfigGroup
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+V1ApiService
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param setKafkaConfigGroupDetail
+ * @param configGroupNo configGroupNo
+ * @param xNCPREGIONNO Region No
+
+@return ResponseVoSetKafkaConfigGroupDetailResponseVo
+*/
+func (a *V1ApiService) ConfigGroupSetKafkaConfigGroupDetailConfigGroupNoPost(ctx context.Context, setKafkaConfigGroupDetail SetKafkaConfigGroupDetailRequest, configGroupNo string) (ResponseVoSetKafkaConfigGroupDetailResponseVo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoSetKafkaConfigGroupDetailResponseVo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/configGroup/setKafkaConfigGroupDetail/{configGroupNo}"
+	localVarPath = strings.Replace(localVarPath, "{"+"configGroupNo"+"}", fmt.Sprintf("%v", configGroupNo), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	// body params
+	localVarPostBody = &setKafkaConfigGroupDetail
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+V1ApiService
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param setKafkaConfigGroupMemo
+ * @param configGroupNo configGroupNo
+ * @param xNCPREGIONNO Region No
+
+@return ResponseVoBoolean
+*/
+func (a *V1ApiService) ConfigGroupSetKafkaConfigGroupMemoConfigGroupNoPost(ctx context.Context, setKafkaConfigGroupMemo SetKafkaConfigGroupMemoRequest, configGroupNo string) (ResponseVoBoolean, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoBoolean
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/configGroup/setKafkaConfigGroupMemo/{configGroupNo}"
+	localVarPath = strings.Replace(localVarPath, "{"+"configGroupNo"+"}", fmt.Sprintf("%v", configGroupNo), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	// body params
+	localVarPostBody = &setKafkaConfigGroupMemo
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}

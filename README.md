@@ -78,6 +78,8 @@ If credentials (apiKeys) are not specified, the default credential provider chai
 | _SourceDeploy(VPC)_ | [**SourceDeploy(VPC)**](services/vsourcedeploy/README.md) |
 | _SourcePipeline_ | [**SourcePipeline**](services/sourcepipeline/README.md) |
 | _SourcePipeline(VPC)_ | [**SourcePipeline(VPC)**](services/vsourcepipeline/README.md) |
+| _Cloud Data Streaming Service(VPC)_ | [**Cloud Data Streaming Service(VPC)**](services/vcdss/README.md) |
+| _Search Engine Service(VPC)_        | [**Search Engine Service(VPC)**](services/vses/README.md)         |
 
 ### License
 
