@@ -42,10 +42,7 @@ Class | Method | HTTP request | Description
 
  - [CancelPipelineResponse](docs/CancelPipelineResponse.md)
  - [ChangeProject](docs/ChangeProject.md)
- - [ChangeProjectConfig](docs/ChangeProjectConfig.md)
  - [ChangeProjectReponse](docs/ChangeProjectReponse.md)
- - [ChangeProjectTasks](docs/ChangeProjectTasks.md)
- - [ChangeProjectTrigger](docs/ChangeProjectTrigger.md)
  - [CreateProject](docs/CreateProject.md)
  - [CreateProjectConfig](docs/CreateProjectConfig.md)
  - [CreateProjectConfigTarget](docs/CreateProjectConfigTarget.md)
