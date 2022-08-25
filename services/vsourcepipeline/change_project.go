@@ -13,5 +13,5 @@ type ChangeProject struct {
 
 	Tasks []*CreateProjectTasks `json:"tasks"`
 
-	Trigger *ChangeProjectTrigger `json:"trigger"`
+	Trigger *CreateProjectTrigger `json:"trigger"`
 }
