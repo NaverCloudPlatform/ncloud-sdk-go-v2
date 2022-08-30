@@ -11,68 +11,68 @@ package vmongodb
 type CloudMongoDbServerInstance struct {
 
 	// CloudMongoDb서버인스턴스번호
-CloudMongoDbServerInstanceNo *string `json:"cloudMongoDbServerInstanceNo,omitempty"`
+	CloudMongoDbServerInstanceNo *string `json:"cloudMongoDbServerInstanceNo,omitempty"`
 
 	// CloudMongoDb서버이름
-CloudMongoDbServerName *string `json:"cloudMongoDbServerName,omitempty"`
+	CloudMongoDbServerName *string `json:"cloudMongoDbServerName,omitempty"`
 
 	// CloudMongoDb서버역할
-CloudMongoDbServerRole *CommonCode `json:"cloudMongoDbServerRole,omitempty"`
+	CloudMongoDbServerRole *CommonCode `json:"cloudMongoDbServerRole,omitempty"`
 
 	// CloudMongoDb인스턴스상태이름
-CloudMongoDbServerInstanceStatusName *string `json:"cloudMongoDbServerInstanceStatusName,omitempty"`
+	CloudMongoDbServerInstanceStatusName *string `json:"cloudMongoDbServerInstanceStatusName,omitempty"`
 
 	// CloudMongoDb서버인스턴스상태
-CloudMongoDbServerInstanceStatus *CommonCode `json:"cloudMongoDbServerInstanceStatus,omitempty"`
+	CloudMongoDbServerInstanceStatus *CommonCode `json:"cloudMongoDbServerInstanceStatus,omitempty"`
 
 	// CloudMongoDb서버인스턴스OP
-CloudMongoDbServerInstanceOperation *CommonCode `json:"cloudMongoDbServerInstanceOperation,omitempty"`
+	CloudMongoDbServerInstanceOperation *CommonCode `json:"cloudMongoDbServerInstanceOperation,omitempty"`
 
 	// Cloud DB for MongoDB 클러스터 역할
-ClusterRole *CommonCode `json:"clusterRole,omitempty"`
+	ClusterRole *CommonCode `json:"clusterRole,omitempty"`
 
 	// CloudMongoDb상품코드
-CloudMongoDbProductCode *string `json:"cloudMongoDbProductCode,omitempty"`
+	CloudMongoDbProductCode *string `json:"cloudMongoDbProductCode,omitempty"`
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// ZONE코드
-ZoneCode *string `json:"zoneCode,omitempty"`
+	ZoneCode *string `json:"zoneCode,omitempty"`
 
 	// VPC번호
-VpcNo *string `json:"vpcNo,omitempty"`
+	VpcNo *string `json:"vpcNo,omitempty"`
 
 	// Subnet번호
-SubnetNo *string `json:"subnetNo,omitempty"`
+	SubnetNo *string `json:"subnetNo,omitempty"`
 
 	// 사설도메인명
-PrivateDomain *string `json:"privateDomain,omitempty"`
+	PrivateDomain *string `json:"privateDomain,omitempty"`
 
 	// 공인도메인명
-PublicDomain *string `json:"publicDomain,omitempty"`
+	PublicDomain *string `json:"publicDomain,omitempty"`
 
 	// 메모리사이즈
-MemorySize *int64 `json:"memorySize,omitempty"`
+	MemorySize *int64 `json:"memorySize,omitempty"`
 
 	// virtual CPU 개수
-CpuCount *int64 `json:"cpuCount,omitempty"`
+	CpuCount *int64 `json:"cpuCount,omitempty"`
 
 	// 데이터 스토리지 사이즈
-DataStorageSize *int64 `json:"dataStorageSize,omitempty"`
+	DataStorageSize *int64 `json:"dataStorageSize,omitempty"`
 
 	// 사용한 데이터 스토리지 사이즈
-UsedDataStorageSize *int64 `json:"usedDataStorageSize,omitempty"`
+	UsedDataStorageSize *int64 `json:"usedDataStorageSize,omitempty"`
 
 	// Replica Set 이름
-ReplicaSetName *int64 `json:"replicaSetName,omitempty"`
+	ReplicaSetName *string `json:"replicaSetName,omitempty"`
 
 	// 데이터 스토리지 타입
-DataStorageType *CommonCode `json:"dataStorageType,omitempty"`
+	DataStorageType *CommonCode `json:"dataStorageType,omitempty"`
 
 	// 업시간
-Uptime *string `json:"uptime,omitempty"`
+	Uptime *string `json:"uptime,omitempty"`
 
 	// 생성일자
-CreateDate *string `json:"createDate,omitempty"`
+	CreateDate *string `json:"createDate,omitempty"`
 }
