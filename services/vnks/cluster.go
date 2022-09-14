@@ -16,6 +16,9 @@ type Cluster struct {
 	// 클러스터 acg 이름
 	AcgName *string `json:"acgName"`
 
+	// 클러스터 acg 번호
+	AcgNo *int32 `json:"acgNo"`
+
 	// 클러스터 이름
 	Name *string `json:"name"`
 
