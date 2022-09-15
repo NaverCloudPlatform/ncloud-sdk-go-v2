@@ -11,7 +11,7 @@ package vnks
 type WorkerNode struct {
 
 	// 워커노드 id
-	Id *string `json:"id"`
+	Id *int32 `json:"id"`
 
 	// 워커노드 이름
 	Name *string `json:"name"`
@@ -51,9 +51,8 @@ type WorkerNode struct {
 
 	// cpu 수
 	CpuCount *int32 `json:"cpuCount"`
-
 	// 총 메모리 용량
-	MemorySize *int32 `json:"memorySize"`
+	MemorySize *int64 `json:"memorySize"`
 
 	// 스펙 코드
 	SpecCode *string `json:"specCode"`
