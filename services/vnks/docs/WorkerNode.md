@@ -1,9 +1,9 @@
 # WorkerNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**Id** | ***string** | 워커노드 id | [default to null]
+Name | Type        | Description | Notes
+------------ |-------------| ------------- | -------------
+**Id** | ***int32**  | 워커노드 id | [default to null]
 **Name** | ***string** | 워커노드 이름 | [default to null]
 **ServerName** | ***string** | 워커노드 서버이름 | [default to null]
 **ServerSpec** | ***string** | 워커노드 서버 스펙 | [default to null]
@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **StatusColor** | ***string** | 상태 색깔 | [default to null]
 **StatusName** | ***string** | 상태 이름 | [default to null]
 **ServerImageName** | ***string** | 서버 이미지 이름 | [default to null]
-**CpuCount** | ***int32** | cpu 수 | [default to null]
-**MemorySize** | ***int32** | 총 메모리 용량 | [default to null]
+**CpuCount** | ***int32**  | cpu 수 | [default to null]
+**MemorySize** | ***int64**  | 총 메모리 용량 | [default to null]
 **SpecCode** | ***string** | 스펙 코드 | [default to null]
 **LoginKeyName** | ***string** | 로그인 키 이름 | [default to null]
 **K8sStatus** | ***string** | 쿠버네티스 상태 | [default to null]

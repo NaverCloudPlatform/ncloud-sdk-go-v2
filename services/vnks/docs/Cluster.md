@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Uuid** | ***string** | 클러스터 uuid | [default to null]
 **AcgName** | ***string** | 클러스터 acg 이름 | [default to null]
+**AcgNo** ***int32** | 클러스터 acg 번호 | [default to null]
 **Name** | ***string** | 클러스터 이름 | [default to null]
 **Capacity** | ***string** | 클러스터 용량 | [default to null]
 **ClusterType** | ***string** | 클러스터 타입 | [default to null]
