@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**GetSourcedeployProjects**](V1Api.md#GetSourcedeployProjects) | **Get** /sourcedeploy/project | 
 [**GetSourcedeployProjectStages**](V1Api.md#GetSourcedeployProjectStages) | **Get** /sourcedeploy/project/{projectId}/stage | 
 [**GetSourcedeployProjectScenarios**](V1Api.md#GetSourcedeployProjectScenarios) | **Get** /sourcedeploy/project/{projectId}/stage/{stageId}/scenario | 
+[**GetTimeZone**](V1Api.md#GetTimeZone) | **Get** /timeZone | 
 
 
 # **GetProjects**
@@ -366,3 +367,20 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetTimeZone**
+> GetTimeZone GetTimeZone
+
+### Return type
+
+*[**GetTimeZone**](GetTimeZone.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
