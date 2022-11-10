@@ -9,7 +9,9 @@
 package sourcepipeline
 
 type GetProjectTrigger struct {
-	Setting *bool `json:"setting,omitempty"`
+	Repository []*GetRepositoryTrigger `json:"repository,omitempty"`
 
-	Sourcecommit []*GetScTargetInfo `json:"sourcecommit,omitempty"`
+	Schedule []*GetScheduleTrigger `json:"schedule,omitempty"`
+
+	SourcePipeline []*GetPipelineTrigger `json:"sourcepipeline,omitempty"`
 }
