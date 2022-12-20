@@ -24,4 +24,7 @@ ProductCode *string `json:"productCode,omitempty"`
 
 	// 플랫폼유형코드리스트
 PlatformTypeCodeList []*string `json:"platformTypeCodeList,omitempty"`
+
+	// 인프라자원상세구분코드
+InfraResourceDetailTypeCode *string `json:"infraResourceDetailTypeCode,omitempty"`
 }

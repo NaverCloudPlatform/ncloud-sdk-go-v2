@@ -36,6 +36,7 @@ Class | Method | HTTP request | Description
 *V1Api* | [**GetSourcedeployProjects**](docs/V1Api.md#GetSourcedeployProjects) | **Get** /sourcedeploy/project | 
 *V1Api* | [**GetSourcedeployProjectStages**](docs/V1Api.md#GetSourcedeployProjectStages) | **Get** /sourcedeploy/project/{projectId}/stage | 
 *V1Api* | [**GetSourcedeployProjectScenarios**](docs/V1Api.md#GetSourcedeployProjectScenarios) | **Get** /sourcedeploy/project/{projectId}/stage/{stageId}/scenario | 
+*V1Api* | [**GetTimeZone**](docs/V1Api.md#GetTimeZone) | **Get** /timeZone | 
 
 
 ## Documentation For Models
@@ -80,4 +81,8 @@ Class | Method | HTTP request | Description
  - [GetSdScenarioResponseResultSourceTarget](docs/GetSdScenarioResponseResultSourceTarget.md)
  - [GetSdStageResponse](docs/GetSdStageResponse.md)
  - [StartPipelineResponse](docs/StartPipelineResponse.md)
+ - [GetRepositoryTrigger](docs/GetRepositoryTrigger.md)
+ - [GetScheduleTrigger](docs/GetScheduleTrigger.md)
+ - [GetPipelineTrigger](docs/GetPipelineTrigger.md)
+ - [GetTimeZone](docs/GetTimeZone.md)
 
