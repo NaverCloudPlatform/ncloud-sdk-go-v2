@@ -401,6 +401,112 @@ func (a *v2ApiService) GetClusterInfoUsingGET(ctx context.Context, serviceGroupN
 }
 
 /*
+V2ControllerApiService Get Search Engine Cluster
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param optional nil or *V2ControllerApiGetClusterInfoListUsingGETOpts - Optional Parameters:
+     * @param "PageNo" (optional.Int32) -  page no, default 1
+     * @param "PageSize" (optional.Int32) -  page size, default 10
+     * @param "ServerStatus" (optional.String) -
+     * @param "ClusterStatus" (optional.String) -
+     * @param "SearchField" (optional.String) -
+     * @param "InputText" (optional.String) -
+     * @param "SubAccountNo" (optional.String) -
+     * @param "IsOwner" (optional.Bool) -
+     * @param "ZoneNo" (optional.String) -
+     * @param "SortedBy" (optional.String) -
+     * @param "SortingOrder" (optional.String) -
+     * @param "VpcName" (optional.String) -
+     * @param "MemberNo" (optional.String) -
+
+@return ResponseVoGetSearchEngineClusterInfoListResponse
+*/
+
+type V2ControllerApiGetClusterInfoListUsingGETOpts struct {
+	PageNo    int
+	PageSize  int
+	InputText string
+	VpcName   string
+}
+
+func (a *v2ApiService) GetClusterInfoListUsingGET(ctx context.Context, localVarOptionals *V2ControllerApiGetClusterInfoListUsingGETOpts) (ResponseVoGetSearchEngineClusterInfoListResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Get")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoGetSearchEngineClusterInfoListResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/cluster/getClusterInfoList"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && &localVarOptionals.PageNo != nil {
+		localVarQueryParams.Add("pageNo", parameterToString(localVarOptionals.PageNo, ""))
+	}
+	if localVarOptionals != nil && &localVarOptionals.PageSize != nil {
+		localVarQueryParams.Add("pageSize", parameterToString(localVarOptionals.PageSize, ""))
+	}
+	if localVarOptionals != nil && &localVarOptionals.InputText != nil {
+		localVarQueryParams.Add("inputText", parameterToString(localVarOptionals.InputText, ""))
+	}
+	if localVarOptionals != nil && &localVarOptionals.VpcName != nil {
+		localVarQueryParams.Add("vpcName", parameterToString(localVarOptionals.VpcName, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json", "*/*"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
 v2ApiService Get Search Engine Cluster Node List
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param serviceGroupNo service-group-no
