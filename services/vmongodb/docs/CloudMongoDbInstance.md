@@ -18,7 +18,7 @@ Name | Type                                                                | Des
 **BackupFileRetentionPeriod** | ***int32**                                                          | 백업파일보관기간 | [optional] [default to null]
 **BackupTime** | ***string**                                                         | 백업시간 | [optional] [default to null]
 **CreateDate** | ***string**                                                         | 생성일자 | [optional] [default to null]
-**AccessControlGroupNoList** | **[*AccessControlGroupNoList](AccessControlGroupNoList.md)**        | ACG번호리스트 | [optional] [default to null]
+**AccessControlGroupNoList** | **[]string**                                                        | ACG번호리스트 | [optional] [default to null]
 **ShardCount** | ***int32**                                                          | 샤드수 | [optional] [default to null]
 **Compress** | **[*CommonCode](CommonCode.md)**                                    | Cloud DB for MongoDB 데이터 압축 알고리즘 | [optional] [default to null]
 **ClusterType** | **[*CommonCode](CommonCode.md)**                                    | Cloud DB for MongoDB 클러스터 타입 | [optional] [default to null]
