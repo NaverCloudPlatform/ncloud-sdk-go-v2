@@ -88,12 +88,7 @@ func (a *v2ApiService) AddNodesInClusterUsingPOST(ctx context.Context, serviceGr
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -163,12 +158,7 @@ func (a *v2ApiService) CreateClusterUsingPOST(ctx context.Context, createCluster
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -237,12 +227,7 @@ func (a *v2ApiService) DeleteClusterUsingDELETE(ctx context.Context, serviceGrou
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -311,12 +296,7 @@ func (a *v2ApiService) GetAcgInfoListUsingGET(ctx context.Context, serviceGroupN
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -385,12 +365,7 @@ func (a *v2ApiService) GetClusterInfoUsingGET(ctx context.Context, serviceGroupN
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -491,12 +466,7 @@ func (a *v2ApiService) GetClusterInfoListUsingGET(ctx context.Context, localVarO
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -565,12 +535,7 @@ func (a *v2ApiService) GetClusterNodeListUsingGET(ctx context.Context, serviceGr
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -654,12 +619,7 @@ func (a *v2ApiService) GetNodeProductListWithGetMethodUsingGET(ctx context.Conte
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -726,12 +686,7 @@ func (a *v2ApiService) GetOsProductListUsingGET(ctx context.Context) (ResponseVo
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -798,12 +753,7 @@ func (a *v2ApiService) GetSearchEngineVersionListUsingGET(ctx context.Context) (
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -875,12 +825,7 @@ func (a *v2ApiService) ResetSearchEngineUserPasswordUsingPOST(ctx context.Contex
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -949,12 +894,7 @@ func (a *v2ApiService) RestartClusterUsingGET(ctx context.Context, serviceGroupN
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
