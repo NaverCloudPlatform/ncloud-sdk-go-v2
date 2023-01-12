@@ -903,3 +903,77 @@ func (a *v2ApiService) RestartClusterUsingGET(ctx context.Context, serviceGroupN
 
 	return localVarReturnValue, localVarHttpResponse, nil
 }
+
+/*
+v2ApiService Change Node Spec
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param serviceGroupNo service-group-no
+ * @param request request
+
+@return ResponseVoChangeSpecNodeResponseVo
+*/
+
+func (a *v2ApiService) ChangeSpecNodeUsingPOST1(ctx context.Context, serviceGroupNo string, request *ChangeSpecNodeRequestVo) (ResponseVoChangeSpecNodeResponseVo, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue ResponseVoChangeSpecNodeResponseVo
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/cluster/changeSpecNode/{service-group-no}"
+	localVarPath = strings.Replace(localVarPath, "{"+"service-group-no"+"}", fmt.Sprintf("%v", serviceGroupNo), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json", "application/json;charset=UTF-8"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	// body params
+	localVarPostBody = &request
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	defer localVarHttpResponse.Body.Close()
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
+	}
+
+	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
