@@ -90,12 +90,7 @@ func (a *V1ApiService) ClusterChangeCountOfBrokerNodeServiceGroupInstanceNoPost(
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -167,12 +162,7 @@ func (a *V1ApiService) ClusterCreateCDSSClusterPost(ctx context.Context, createC
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -243,12 +233,7 @@ func (a *V1ApiService) ClusterCreateCDSSClusterReturnServiceGroupInstanceNoPost(
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -318,12 +303,7 @@ func (a *V1ApiService) ClusterDeleteCDSSClusterServiceGroupInstanceNoDelete(ctx 
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -393,12 +373,7 @@ func (a *V1ApiService) ClusterDisableBrokerNodePublicEndpointServiceGroupInstanc
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -468,12 +443,7 @@ func (a *V1ApiService) ClusterDisablePublicDomainServiceGroupInstanceNoGet(ctx c
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -543,12 +513,7 @@ func (a *V1ApiService) ClusterDownloadCertificateServiceGroupInstanceNoGet(ctx c
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -622,12 +587,7 @@ func (a *V1ApiService) ClusterEnableBrokerNodePublicEndpointServiceGroupInstance
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -697,12 +657,7 @@ func (a *V1ApiService) ClusterEnablePublicDomainServiceGroupInstanceNoGet(ctx co
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -772,12 +727,7 @@ func (a *V1ApiService) ClusterGetAcgInfoListServiceGroupInstanceNoGet(ctx contex
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -847,12 +797,7 @@ func (a *V1ApiService) ClusterGetBrokerInfoServiceGroupInstanceNoGet(ctx context
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -920,12 +865,7 @@ func (a *V1ApiService) ClusterGetCDSSVersionListGet(ctx context.Context) (Respon
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -997,12 +937,7 @@ func (a *V1ApiService) ClusterGetClusterInfoListPost(ctx context.Context, cluste
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -1072,12 +1007,7 @@ func (a *V1ApiService) ClusterGetClusterInfoListServiceGroupInstanceNoPost(ctx c
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -1147,12 +1077,7 @@ func (a *V1ApiService) ClusterGetClusterNodeListServiceGroupInstanceNoGet(ctx co
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -1222,12 +1147,7 @@ func (a *V1ApiService) ClusterGetClusterStatusServiceGroupInstanceNoGet(ctx cont
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -1297,12 +1217,7 @@ func (a *V1ApiService) ClusterGetLoadBalancerInstanceListServiceGroupInstanceNoG
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -1374,12 +1289,7 @@ func (a *V1ApiService) ClusterGetNodeProductListPost(ctx context.Context, getNod
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -1447,12 +1357,7 @@ func (a *V1ApiService) ClusterGetOsProductListGet(ctx context.Context) (Response
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -1524,12 +1429,7 @@ func (a *V1ApiService) ClusterGetSubnetListPost(ctx context.Context, getSubnetLi
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -1597,12 +1497,7 @@ func (a *V1ApiService) ClusterGetVpcListGet(ctx context.Context) (ResponseVoGetO
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -1676,12 +1571,7 @@ func (a *V1ApiService) ClusterResetCMAKPasswordServiceGroupInstanceNoPost(ctx co
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -1751,12 +1641,7 @@ func (a *V1ApiService) ClusterRestartAllServicesServiceGroupInstanceNoGet(ctx co
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -1826,12 +1711,7 @@ func (a *V1ApiService) ClusterRestartCMAKServiceServiceGroupInstanceNoGet(ctx co
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -1905,12 +1785,7 @@ func (a *V1ApiService) ClusterRestartKafkaServicePerNodeServiceGroupInstanceNoPo
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -1980,12 +1855,7 @@ func (a *V1ApiService) ClusterRestartKafkaServiceServiceGroupInstanceNoGet(ctx c
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -2059,12 +1929,7 @@ func (a *V1ApiService) MonitoringGetCdssMonitoringDataServiceGroupInstanceNoPost
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -2138,12 +2003,7 @@ func (a *V1ApiService) MonitoringGetOsMonitoringDataServiceGroupInstanceNoPost(c
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -2215,12 +2075,7 @@ func (a *V1ApiService) ConfigGroupCreateConfigGroupPost(ctx context.Context, cre
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -2290,12 +2145,7 @@ func (a *V1ApiService) ConfigGroupDeleteConfigGroupConfigGroupNoDelete(ctx conte
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -2369,12 +2219,7 @@ func (a *V1ApiService) ConfigGroupGetConfigGroupUsingClusterListConfigGroupNoPos
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -2448,12 +2293,7 @@ func (a *V1ApiService) ConfigGroupGetKafkaConfigGroupConfigGroupNoPost(ctx conte
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -2527,12 +2367,7 @@ func (a *V1ApiService) ConfigGroupGetKafkaConfigGroupDetailListConfigGroupNoPost
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -2604,12 +2439,7 @@ func (a *V1ApiService) ConfigGroupGetKafkaConfigGroupListPost(ctx context.Contex
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -2681,12 +2511,7 @@ func (a *V1ApiService) ConfigGroupGetKafkaVersionConfigGroupListPost(ctx context
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -2760,12 +2585,7 @@ func (a *V1ApiService) ConfigGroupSetClusterKafkaConfigGroupConfigGroupNoPost(ct
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -2839,12 +2659,7 @@ func (a *V1ApiService) ConfigGroupSetKafkaConfigGroupDetailConfigGroupNoPost(ctx
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -2918,12 +2733,7 @@ func (a *V1ApiService) ConfigGroupSetKafkaConfigGroupMemoConfigGroupNoPost(ctx c
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -2996,12 +2806,7 @@ func (a *V1ApiService) ClusterChangeSpecNodeServiceGroupInstanceNoPost(ctx conte
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -3074,12 +2879,7 @@ func (a *V1ApiService) ClusterGetNodeProductListForSpecChangeServiceGroupInstanc
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
@@ -3149,12 +2949,7 @@ func (a *V1ApiService) ClusterGetNodeSpecDetailServiceGroupInstanceNoGet(ctx con
 	}
 
 	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body:  localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-
-		return localVarReturnValue, localVarHttpResponse, newErr
+		return localVarReturnValue, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, localVarBody)
 	}
 
 	if err := json.Unmarshal(localVarBody, &localVarReturnValue); err != nil {
