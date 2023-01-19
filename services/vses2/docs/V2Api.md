@@ -15,6 +15,7 @@ Method | HTTP request                                            | Description
 [**GetSearchEngineVersionListUsingGET**](v2Api.md#GetSearchEngineVersionListUsingGET) | **Get** /cluster/getSearchEngineVersionList             | Get Search Engine Version List
 [**ResetSearchEngineUserPasswordUsingPOST**](v2Api.md#resetadminpassworduUsingPost) | **Post** /cluster/resetSearchEngineUserPassword/{service-group-no} | Reset Search Engine User Password
 [**RestartClusterUsingGET**](v2Api.md#RestartClusterUsingGET) | **Get** /cluster/restartCluster/{service-group-no}      | Restart Search Engine Cluster
+[**ChangeSpecNodeUsingPOST1**](v2Api.md#RestartClusterUsingGET) | **Get** /cluster/restartCluster/{service-group-no}      | Restart Search Engine Cluster
 
 
 # **AddNodesInClusterUsingPOST**
@@ -283,3 +284,30 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ChangeSpecNodeUsingPOST1**
+> ResponseVoChangeSpecNodeResponseVo ChangeSpecNodeUsingPOST1(ctx, serviceGroupNo, request)
+Change Node Spec
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceGroupNo** | **string**| service-group-no |
+**request** | [**ChangeSpecNodeRequestVo**](ChangeSpecNodeRequestVo.md)| request |
+
+
+### Return type
+
+[**ResponseVoChangeSpecNodeResponseVo**](ResponseVo«ChangeSpecNodeResponseVo».md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
