@@ -30,6 +30,9 @@ Method | HTTP request | Description
 [**ClusterRestartCMAKServiceServiceGroupInstanceNoGet**](V1Api.md#ClusterRestartCMAKServiceServiceGroupInstanceNoGet) | **Get** /cluster/restartCMAKService/{serviceGroupInstanceNo} |
 [**ClusterRestartKafkaServicePerNodeServiceGroupInstanceNoPost**](V1Api.md#ClusterRestartKafkaServicePerNodeServiceGroupInstanceNoPost) | **Post** /cluster/restartKafkaServicePerNode/{serviceGroupInstanceNo} |
 [**ClusterRestartKafkaServiceServiceGroupInstanceNoGet**](V1Api.md#ClusterRestartKafkaServiceServiceGroupInstanceNoGet) | **Get** /cluster/restartKafkaService/{serviceGroupInstanceNo} |
+[**ClusterChangeSpecNodeServiceGroupInstanceNoPost**](V1Api.md#ClusterChangeSpecNodeServiceGroupInstanceNoPost) | **Post** /cluster/changeSpecNode/{serviceGroupInstanceNo} |
+[**ClusterGetNodeProductListForSpecChangeServiceGroupInstanceNoPost**](V1Api.md#ClusterGetNodeProductListForSpecChangeServiceGroupInstanceNoPost) | **Post** /cluster/getNodeProductListForSpecChange/{serviceGroupInstanceNo} |
+[**ClusterGetNodeSpecDetailServiceGroupInstanceNoGet**](V1Api.md#ClusterGetNodeSpecDetailServiceGroupInstanceNoGet) | **Get** /cluster/getNodeSpecDetail/{serviceGroupInstanceNo} |
 [**ConfigGroupCreateConfigGroupPost**](V1Api.md#ConfigGroupCreateConfigGroupPost) | **Post** /configGroup/createConfigGroup |
 [**ConfigGroupDeleteConfigGroupConfigGroupNoDelete**](V1Api.md#ConfigGroupDeleteConfigGroupConfigGroupNoDelete) | **Delete** /configGroup/deleteConfigGroup/{configGroupNo} |
 [**ConfigGroupGetConfigGroupUsingClusterListConfigGroupNoPost**](V1Api.md#ConfigGroupGetConfigGroupUsingClusterListConfigGroupNoPost) | **Post** /configGroup/getConfigGroupUsingClusterList/{configGroupNo} |
@@ -1155,6 +1158,92 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ResponseVoQueryMultipleDataResponseVo**](ResponseVo_QueryMultipleDataResponseVo.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClusterChangeSpecNodeServiceGroupInstanceNoPost**
+> ResponseVoChangeSpecNodeResponseVo ClusterChangeSpecNodeServiceGroupInstanceNoPost(ctx, changeSpecNodeRequestVo, serviceGroupInstanceNo)
+
+
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**changeSpecNodeRequestVo** | [**ChangeSpecNodeRequestVo**](../../../go/src/github.com/eastgerm/ncloud-sdk-go-v2/services/vcdss/docs/ChangeSpecNodeRequestVo.md)|  |
+**serviceGroupInstanceNo** | **string**| serviceGroupInstanceNo |
+
+### Return type
+
+[**ResponseVoChangeSpecNodeResponseVo**](ResponseVo_ChangeSpecNodeResponseVo.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClusterGetNodeProductListForSpecChangeServiceGroupInstanceNoPost**
+> ResponseVoGetNodeProductListForSpecChangeResponseVo ClusterGetNodeProductListForSpecChangeServiceGroupInstanceNoPost(ctx, getNodeProductListForSpecChangeRequestVo, serviceGroupInstanceNo)
+
+
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**getNodeProductListForSpecChangeRequestVo** | [**GetNodeProductListForSpecChangeRequestVo**](../../../go/src/github.com/eastgerm/ncloud-sdk-go-v2/services/vcdss/docs/GetNodeProductListForSpecChangeRequestVo.md)|  |
+**serviceGroupInstanceNo** | **string**| serviceGroupInstanceNo |
+
+### Return type
+
+[**ResponseVoGetNodeProductListForSpecChangeResponseVo**](ResponseVo_GetNodeProductListForSpecChangeResponseVo.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClusterGetNodeSpecDetailServiceGroupInstanceNoGet**
+> ResponseVoGetNodeSpecDetailResponseVo ClusterGetNodeSpecDetailServiceGroupInstanceNoGet(ctx, serviceGroupInstanceNo)
+
+
+클러스터 노드 현재스펙 조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceGroupInstanceNo** | **string**| serviceGroupInstanceNo |
+
+### Return type
+
+[**ResponseVoGetNodeSpecDetailResponseVo**](ResponseVo_GetNodeSpecDetailResponseVo.md)
 
 ### Authorization
 

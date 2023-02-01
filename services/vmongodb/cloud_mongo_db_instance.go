@@ -56,7 +56,7 @@ type CloudMongoDbInstance struct {
 	CreateDate *string `json:"createDate,omitempty"`
 
 	// ACG번호리스트
-	AccessControlGroupNoList *AccessControlGroupNoList `json:"accessControlGroupNoList,omitempty"`
+	AccessControlGroupNoList []string `json:"accessControlGroupNoList,omitempty"`
 
 	// 샤드수
 	ShardCount *int32 `json:"shardCount,omitempty"`
