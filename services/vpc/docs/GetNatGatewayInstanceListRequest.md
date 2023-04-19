@@ -10,6 +10,10 @@ Name | Type | Description | Notes
 **VpcName** | ***string** | VPC이름 | [optional] [default to null]
 **NatGatewayName** | ***string** | natGatewayName | [optional] [default to null]
 **NatGatewayInstanceStatusCode** | ***string** | NATGateway인스턴스상태코드 | [optional] [default to null]
+**NatGatewayTypeCode** | ***string** | NATGateway유형 (PRVT / PBLIP) | [optional] [default to null]
+**SubnetNo** | ***string** | Subnet번호 | [optional] [default to null]
+**SubnetName** | ***string** | Subnet이름 | [optional] [default to null]
+**PrivateIp** | ***string** | 사설IP주소 | [optional] [default to null]
 **PageNo** | ***int32** | 페이지번호 | [optional] [default to null]
 **PageSize** | ***int32** | 페이지사이즈 | [optional] [default to null]
 

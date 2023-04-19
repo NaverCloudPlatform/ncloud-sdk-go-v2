@@ -24,4 +24,13 @@ VpcNo *string `json:"vpcNo"`
 
 	// ZONE코드
 ZoneCode *string `json:"zoneCode"`
+
+	// Subnet번호
+SubnetNo *string `json:"subnetNo,omitempty"`
+
+	// 공인아이피인스턴스번호
+PublicIpInstanceNo *string `json:"publicIpInstanceNo,omitempty"`
+
+	// 사설IP주소
+PrivateIp *string `json:"privateIp,omitempty"`
 }
