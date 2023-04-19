@@ -40,6 +40,9 @@ InstanceNo *string `json:"instanceNo,omitempty"`
 	// IP주소
 Ip *string `json:"ip,omitempty"`
 
+	// MAC주소
+MacAddress *string `json:"macAddress,omitempty"`
+
 	// ACG번호리스트
 AccessControlGroupNoList []*string `json:"accessControlGroupNoList,omitempty"`
 

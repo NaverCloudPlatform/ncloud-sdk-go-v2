@@ -42,4 +42,10 @@ IsReturnProtection *bool `json:"isReturnProtection,omitempty"`
 
 	// NAS볼륨설명
 NasVolumeDescription *string `json:"nasVolumeDescription,omitempty"`
+
+	// 접근제어Rule리스트
+AccessControlRuleList []*AccessControlRuleParameter `json:"accessControlRuleList,omitempty"`
+
+	// Async여부
+IsAsync *bool `json:"isAsync,omitempty"`
 }

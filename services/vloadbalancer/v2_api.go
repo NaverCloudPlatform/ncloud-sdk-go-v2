@@ -29,6 +29,80 @@ type V2ApiService service
 
 
 /* V2ApiService 
+ 로드밸런서리스너인증서추가
+ @param addLoadBalancerListenerCertificateRequest addLoadBalancerListenerCertificateRequest
+ @return *AddLoadBalancerListenerCertificateResponse*/
+func (a *V2ApiService) AddLoadBalancerListenerCertificate(addLoadBalancerListenerCertificateRequest *AddLoadBalancerListenerCertificateRequest) (*AddLoadBalancerListenerCertificateResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  AddLoadBalancerListenerCertificateResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/addLoadBalancerListenerCertificate"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = addLoadBalancerListenerCertificateRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
  @param addTargetRequest addTargetRequest
  @return *AddTargetResponse*/
 func (a *V2ApiService) AddTarget(addTargetRequest *AddTargetRequest) (*AddTargetResponse, error) {
@@ -978,6 +1052,80 @@ func (a *V2ApiService) GetLoadBalancerInstanceList(getLoadBalancerInstanceListRe
 }
 
 /* V2ApiService 
+ 로드밸런서리스너인증서조회
+ @param getLoadBalancerListenerCertificateListRequest getLoadBalancerListenerCertificateListRequest
+ @return *GetLoadBalancerListenerCertificateListResponse*/
+func (a *V2ApiService) GetLoadBalancerListenerCertificateList(getLoadBalancerListenerCertificateListRequest *GetLoadBalancerListenerCertificateListRequest) (*GetLoadBalancerListenerCertificateListResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetLoadBalancerListenerCertificateListResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/getLoadBalancerListenerCertificateList"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = getLoadBalancerListenerCertificateListRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
  @param getLoadBalancerListenerListRequest getLoadBalancerListenerListRequest
  @return *GetLoadBalancerListenerListResponse*/
 func (a *V2ApiService) GetLoadBalancerListenerList(getLoadBalancerListenerListRequest *GetLoadBalancerListenerListRequest) (*GetLoadBalancerListenerListResponse, error) {
@@ -1309,6 +1457,80 @@ func (a *V2ApiService) GetTargetList(getTargetListRequest *GetTargetListRequest)
 	}
 	// body params
 	localVarPostBody = getTargetListRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
+ 로드밸런서리스너인증서제거
+ @param removeLoadBalancerListenerCertificateRequest removeLoadBalancerListenerCertificateRequest
+ @return *RemoveLoadBalancerListenerCertificateResponse*/
+func (a *V2ApiService) RemoveLoadBalancerListenerCertificate(removeLoadBalancerListenerCertificateRequest *RemoveLoadBalancerListenerCertificateRequest) (*RemoveLoadBalancerListenerCertificateResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  RemoveLoadBalancerListenerCertificateResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/removeLoadBalancerListenerCertificate"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = removeLoadBalancerListenerCertificateRequest
 	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
 	if v.IsValid() && v.CanAddr() {
 		ptr := v.Addr().Interface().(**string)

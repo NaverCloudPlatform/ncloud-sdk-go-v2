@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **IsEncryptedVolume** | ***bool** | 볼륨암호화여부 | [optional] [default to null]
 **IsReturnProtection** | ***bool** | 반납보호여부 | [optional] [default to null]
 **NasVolumeDescription** | ***string** | NAS볼륨설명 | [optional] [default to null]
+**AccessControlRuleList** | **[[]\*AccessControlRuleParameter](AccessControlRuleParameter.md)** | 접근제어Rule리스트 | [optional] [default to null]
+**IsAsync** | ***bool** | Async여부 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Ip** | ***string** | IP주소 | [optional] [default to null]
 **SecondaryIpList** | **[]\*string** | 보조IP리스트 | [optional] [default to null]
 **SecondaryIpCount** | ***int32** | 보조IP자동할당개수 | [optional] [default to null]
+**IsBareMetal** | ***bool** | 베어메탈여부 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

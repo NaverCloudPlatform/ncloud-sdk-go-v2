@@ -27,7 +27,7 @@ func NewConfiguration(apiKeys ...*ncloud.APIKey) *ncloud.Configuration {
 	cfg := &ncloud.Configuration{
 		BasePath:      "https://ncloud.apigw.ntruss.com/server/v2",
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "server/1.1.6/go",
+		UserAgent:     "server/1.1.7/go",
 	}
 	if len(apiKeys) > 0 {
 		cfg.APIKey = apiKeys[0]

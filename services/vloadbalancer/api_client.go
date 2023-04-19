@@ -36,7 +36,7 @@ var (
 	xmlCheck  = regexp.MustCompile("(?i:[application|text]/xml)")
 )
 
-// APIClient manages communication with the vloadbalancer API v2021-12-21T18:44:23Z
+// APIClient manages communication with the vloadbalancer API v2022-12-15T12:50:40Z
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *ncloud.Configuration

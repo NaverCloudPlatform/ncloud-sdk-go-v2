@@ -15,4 +15,7 @@ RegionCode *string `json:"regionCode,omitempty"`
 
 	// NAS볼륨인스턴스번호리스트
 NasVolumeInstanceNoList []*string `json:"nasVolumeInstanceNoList"`
+
+	// Async여부
+IsAsync *bool `json:"isAsync,omitempty"`
 }

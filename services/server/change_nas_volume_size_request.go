@@ -15,4 +15,7 @@ NasVolumeInstanceNo *string `json:"nasVolumeInstanceNo"`
 
 	// NAS볼륨사이즈
 VolumeSize *int32 `json:"volumeSize"`
+
+	// Async여부
+IsAsync *bool `json:"isAsync,omitempty"`
 }

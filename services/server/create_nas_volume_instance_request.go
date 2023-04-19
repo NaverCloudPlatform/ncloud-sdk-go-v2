@@ -19,11 +19,8 @@ VolumeSize *int32 `json:"volumeSize"`
 	// 볼륨할당프로토콜유형코드
 VolumeAllotmentProtocolTypeCode *string `json:"volumeAllotmentProtocolTypeCode"`
 
-	// 서버인스턴스번호리스트
-ServerInstanceNoList []*string `json:"serverInstanceNoList,omitempty"`
-
-	// 커스텀IP리스트
-CustomIpList []*string `json:"customIpList,omitempty"`
+	// 접근제어Rule리스트
+AccessControlRuleList []*AccessControlRuleParameter `json:"accessControlRuleList,omitempty"`
 
 	// CIFS유저이름
 CifsUserName *string `json:"cifsUserName,omitempty"`
@@ -42,4 +39,7 @@ ZoneNo *string `json:"zoneNo,omitempty"`
 
 	// 반납보호여부
 IsReturnProtection *bool `json:"isReturnProtection,omitempty"`
+
+	// Async여부
+IsAsync *bool `json:"isAsync,omitempty"`
 }

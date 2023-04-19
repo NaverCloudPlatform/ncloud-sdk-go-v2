@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ExclusionProductCode** | ***string** | 제외할상품코드 | [optional] [default to null]
 **ProductCode** | ***string** | 상품코드 | [optional] [default to null]
 **PlatformTypeCodeList** | **[]\*string** | 플랫폼유형코드리스트 | [optional] [default to null]
+**InfraResourceDetailTypeCode** | ***string** | 인프라자원상세유형코드 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -10,6 +10,9 @@ package vserver
 
 type SetMemberServerImageSharingPermissionRequest struct {
 
+	// REGION코드
+RegionCode *string `json:"regionCode,omitempty"`
+
 	// 회원서버이미지인스턴스번호
 MemberServerImageInstanceNo *string `json:"memberServerImageInstanceNo"`
 

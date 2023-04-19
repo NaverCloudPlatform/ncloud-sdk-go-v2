@@ -4,6 +4,7 @@ All URIs are relative to *https://ncloud.apigw.ntruss.com/vloadbalancer/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AddLoadBalancerListenerCertificate**](V2Api.md#AddLoadBalancerListenerCertificate) | **Post** /addLoadBalancerListenerCertificate | 
 [**AddTarget**](V2Api.md#AddTarget) | **Post** /addTarget | 
 [**ChangeLoadBalancerInstanceConfiguration**](V2Api.md#ChangeLoadBalancerInstanceConfiguration) | **Post** /changeLoadBalancerInstanceConfiguration | 
 [**ChangeLoadBalancerListenerConfiguration**](V2Api.md#ChangeLoadBalancerListenerConfiguration) | **Post** /changeLoadBalancerListenerConfiguration | 
@@ -17,17 +18,46 @@ Method | HTTP request | Description
 [**DeleteTargetGroups**](V2Api.md#DeleteTargetGroups) | **Post** /deleteTargetGroups | 
 [**GetLoadBalancerInstanceDetail**](V2Api.md#GetLoadBalancerInstanceDetail) | **Post** /getLoadBalancerInstanceDetail | 
 [**GetLoadBalancerInstanceList**](V2Api.md#GetLoadBalancerInstanceList) | **Post** /getLoadBalancerInstanceList | 
+[**GetLoadBalancerListenerCertificateList**](V2Api.md#GetLoadBalancerListenerCertificateList) | **Post** /getLoadBalancerListenerCertificateList | 
 [**GetLoadBalancerListenerList**](V2Api.md#GetLoadBalancerListenerList) | **Post** /getLoadBalancerListenerList | 
 [**GetLoadBalancerRuleList**](V2Api.md#GetLoadBalancerRuleList) | **Post** /getLoadBalancerRuleList | 
 [**GetTargetGroupDetail**](V2Api.md#GetTargetGroupDetail) | **Post** /getTargetGroupDetail | 
 [**GetTargetGroupList**](V2Api.md#GetTargetGroupList) | **Post** /getTargetGroupList | 
 [**GetTargetList**](V2Api.md#GetTargetList) | **Post** /getTargetList | 
+[**RemoveLoadBalancerListenerCertificate**](V2Api.md#RemoveLoadBalancerListenerCertificate) | **Post** /removeLoadBalancerListenerCertificate | 
 [**RemoveTarget**](V2Api.md#RemoveTarget) | **Post** /removeTarget | 
 [**SetLoadBalancerDescription**](V2Api.md#SetLoadBalancerDescription) | **Post** /setLoadBalancerDescription | 
 [**SetLoadBalancerInstanceSubnet**](V2Api.md#SetLoadBalancerInstanceSubnet) | **Post** /setLoadBalancerInstanceSubnet | 
 [**SetTarget**](V2Api.md#SetTarget) | **Post** /setTarget | 
 [**SetTargetGroupDescription**](V2Api.md#SetTargetGroupDescription) | **Post** /setTargetGroupDescription | 
 
+
+# **AddLoadBalancerListenerCertificate**
+> AddLoadBalancerListenerCertificateResponse AddLoadBalancerListenerCertificate(addLoadBalancerListenerCertificateRequest)
+
+
+로드밸런서리스너인증서추가
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**addLoadBalancerListenerCertificateRequest** | **[\*AddLoadBalancerListenerCertificateRequest](AddLoadBalancerListenerCertificateRequest.md)** | addLoadBalancerListenerCertificateRequest | 
+
+### Return type
+
+*[**AddLoadBalancerListenerCertificateResponse**](AddLoadBalancerListenerCertificateResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **AddTarget**
 > AddTargetResponse AddTarget(addTargetRequest)
@@ -354,6 +384,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetLoadBalancerListenerCertificateList**
+> GetLoadBalancerListenerCertificateListResponse GetLoadBalancerListenerCertificateList(getLoadBalancerListenerCertificateListRequest)
+
+
+로드밸런서리스너인증서조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getLoadBalancerListenerCertificateListRequest** | **[\*GetLoadBalancerListenerCertificateListRequest](GetLoadBalancerListenerCertificateListRequest.md)** | getLoadBalancerListenerCertificateListRequest | 
+
+### Return type
+
+*[**GetLoadBalancerListenerCertificateListResponse**](GetLoadBalancerListenerCertificateListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetLoadBalancerListenerList**
 > GetLoadBalancerListenerListResponse GetLoadBalancerListenerList(getLoadBalancerListenerListRequest)
 
@@ -467,6 +524,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**GetTargetListResponse**](GetTargetListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **RemoveLoadBalancerListenerCertificate**
+> RemoveLoadBalancerListenerCertificateResponse RemoveLoadBalancerListenerCertificate(removeLoadBalancerListenerCertificateRequest)
+
+
+로드밸런서리스너인증서제거
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**removeLoadBalancerListenerCertificateRequest** | **[\*RemoveLoadBalancerListenerCertificateRequest](RemoveLoadBalancerListenerCertificateRequest.md)** | removeLoadBalancerListenerCertificateRequest | 
+
+### Return type
+
+*[**RemoveLoadBalancerListenerCertificateResponse**](RemoveLoadBalancerListenerCertificateResponse.md)
 
 ### Authorization
 

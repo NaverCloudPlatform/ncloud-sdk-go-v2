@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**CreateNasVolumeSnapshot**](V2Api.md#CreateNasVolumeSnapshot) | **Post** /createNasVolumeSnapshot | 
 [**DeleteNasVolumeInstances**](V2Api.md#DeleteNasVolumeInstances) | **Post** /deleteNasVolumeInstances | 
 [**DeleteNasVolumeSnapshot**](V2Api.md#DeleteNasVolumeSnapshot) | **Post** /deleteNasVolumeSnapshot | 
+[**GetNasVolumeAccessControlRuleList**](V2Api.md#GetNasVolumeAccessControlRuleList) | **Post** /getNasVolumeAccessControlRuleList | 
 [**GetNasVolumeInstanceDetail**](V2Api.md#GetNasVolumeInstanceDetail) | **Post** /getNasVolumeInstanceDetail | 
 [**GetNasVolumeInstanceList**](V2Api.md#GetNasVolumeInstanceList) | **Post** /getNasVolumeInstanceList | 
 [**GetNasVolumeInstanceRatingList**](V2Api.md#GetNasVolumeInstanceRatingList) | **Post** /getNasVolumeInstanceRatingList | 
@@ -185,6 +186,31 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**DeleteNasVolumeSnapshotResponse**](DeleteNasVolumeSnapshotResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetNasVolumeAccessControlRuleList**
+> GetNasVolumeAccessControlRuleListResponse GetNasVolumeAccessControlRuleList(getNasVolumeAccessControlRuleListRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getNasVolumeAccessControlRuleListRequest** | **[\*GetNasVolumeAccessControlRuleListRequest](GetNasVolumeAccessControlRuleListRequest.md)** | getNasVolumeAccessControlRuleListRequest | 
+
+### Return type
+
+*[**GetNasVolumeAccessControlRuleListResponse**](GetNasVolumeAccessControlRuleListResponse.md)
 
 ### Authorization
 

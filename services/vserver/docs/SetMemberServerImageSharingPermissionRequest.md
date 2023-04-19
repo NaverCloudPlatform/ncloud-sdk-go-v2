@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**RegionCode** | ***string** | REGION코드 | [optional] [default to null]
 **MemberServerImageInstanceNo** | ***string** | 회원서버이미지인스턴스번호 | [default to null]
 **TargetLoginIdList** | **[]\*string** | 대상로그인ID리스트 | [optional] [default to null]
 

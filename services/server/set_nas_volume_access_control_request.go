@@ -13,9 +13,6 @@ type SetNasVolumeAccessControlRequest struct {
 	// NAS볼륨인스턴스번호
 NasVolumeInstanceNo *string `json:"nasVolumeInstanceNo"`
 
-	// 서버인스턴스번호리스트
-ServerInstanceNoList []*string `json:"serverInstanceNoList,omitempty"`
-
-	// 커스텀IP리스트
-CustomIpList []*string `json:"customIpList,omitempty"`
+	// 접근제어Rule리스트
+AccessControlRuleList []*AccessControlRuleParameter `json:"accessControlRuleList,omitempty"`
 }
