@@ -39,4 +39,7 @@ SecondaryIpList []*string `json:"secondaryIpList,omitempty"`
 
 	// 보조IP자동할당개수
 SecondaryIpCount *int32 `json:"secondaryIpCount,omitempty"`
+
+	// 베어메탈여부
+IsBareMetal *bool `json:"isBareMetal,omitempty"`
 }

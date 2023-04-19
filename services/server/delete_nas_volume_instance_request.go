@@ -12,4 +12,7 @@ type DeleteNasVolumeInstanceRequest struct {
 
 	// NAS볼륨인스턴스번호
 NasVolumeInstanceNo *string `json:"nasVolumeInstanceNo"`
+
+	// Async여부
+IsAsync *bool `json:"isAsync,omitempty"`
 }

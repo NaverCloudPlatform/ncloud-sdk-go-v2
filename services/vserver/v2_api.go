@@ -29,6 +29,7 @@ type V2ApiService service
 
 
 /* V2ApiService 
+ ACGInboundRule추가
  @param addAccessControlGroupInboundRuleRequest addAccessControlGroupInboundRuleRequest
  @return *AddAccessControlGroupInboundRuleResponse*/
 func (a *V2ApiService) AddAccessControlGroupInboundRule(addAccessControlGroupInboundRuleRequest *AddAccessControlGroupInboundRuleRequest) (*AddAccessControlGroupInboundRuleResponse, error) {
@@ -102,6 +103,7 @@ func (a *V2ApiService) AddAccessControlGroupInboundRule(addAccessControlGroupInb
 }
 
 /* V2ApiService 
+ ACGOutboundRule추가
  @param addAccessControlGroupOutboundRuleRequest addAccessControlGroupOutboundRuleRequest
  @return *AddAccessControlGroupOutboundRuleResponse*/
 func (a *V2ApiService) AddAccessControlGroupOutboundRule(addAccessControlGroupOutboundRuleRequest *AddAccessControlGroupOutboundRuleRequest) (*AddAccessControlGroupOutboundRuleResponse, error) {
@@ -175,6 +177,81 @@ func (a *V2ApiService) AddAccessControlGroupOutboundRule(addAccessControlGroupOu
 }
 
 /* V2ApiService 
+ 회원서버이미지공유권한추가
+ @param addMemberServerImageSharingPermissionRequest addMemberServerImageSharingPermissionRequest
+ @return *AddMemberServerImageSharingPermissionResponse*/
+func (a *V2ApiService) AddMemberServerImageSharingPermission(addMemberServerImageSharingPermissionRequest *AddMemberServerImageSharingPermissionRequest) (*AddMemberServerImageSharingPermissionResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  AddMemberServerImageSharingPermissionResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/addMemberServerImageSharingPermission"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = addMemberServerImageSharingPermissionRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
+ 네트워크인터페이스의ACG추가
  @param addNetworkInterfaceAccessControlGroupRequest addNetworkInterfaceAccessControlGroupRequest
  @return *AddNetworkInterfaceAccessControlGroupResponse*/
 func (a *V2ApiService) AddNetworkInterfaceAccessControlGroup(addNetworkInterfaceAccessControlGroupRequest *AddNetworkInterfaceAccessControlGroupRequest) (*AddNetworkInterfaceAccessControlGroupResponse, error) {
@@ -248,6 +325,7 @@ func (a *V2ApiService) AddNetworkInterfaceAccessControlGroup(addNetworkInterface
 }
 
 /* V2ApiService 
+ 물리배치그룹에서버인스턴스추가
  @param addPlacementGroupServerInstanceRequest addPlacementGroupServerInstanceRequest
  @return *AddPlacementGroupServerInstanceResponse*/
 func (a *V2ApiService) AddPlacementGroupServerInstance(addPlacementGroupServerInstanceRequest *AddPlacementGroupServerInstanceRequest) (*AddPlacementGroupServerInstanceResponse, error) {
@@ -321,6 +399,7 @@ func (a *V2ApiService) AddPlacementGroupServerInstance(addPlacementGroupServerIn
 }
 
 /* V2ApiService 
+ 보조IP할당
  @param assignSecondaryIpsRequest assignSecondaryIpsRequest
  @return *AssignSecondaryIpsResponse*/
 func (a *V2ApiService) AssignSecondaryIps(assignSecondaryIpsRequest *AssignSecondaryIpsRequest) (*AssignSecondaryIpsResponse, error) {
@@ -394,6 +473,7 @@ func (a *V2ApiService) AssignSecondaryIps(assignSecondaryIpsRequest *AssignSecon
 }
 
 /* V2ApiService 
+ 공인IP를서버인스턴스에할당
  @param associatePublicIpWithServerInstanceRequest associatePublicIpWithServerInstanceRequest
  @return *AssociatePublicIpWithServerInstanceResponse*/
 func (a *V2ApiService) AssociatePublicIpWithServerInstance(associatePublicIpWithServerInstanceRequest *AssociatePublicIpWithServerInstanceRequest) (*AssociatePublicIpWithServerInstanceResponse, error) {
@@ -467,6 +547,7 @@ func (a *V2ApiService) AssociatePublicIpWithServerInstance(associatePublicIpWith
 }
 
 /* V2ApiService 
+ 블록스토리지인스턴스할당
  @param attachBlockStorageInstanceRequest attachBlockStorageInstanceRequest
  @return *AttachBlockStorageInstanceResponse*/
 func (a *V2ApiService) AttachBlockStorageInstance(attachBlockStorageInstanceRequest *AttachBlockStorageInstanceRequest) (*AttachBlockStorageInstanceResponse, error) {
@@ -540,6 +621,7 @@ func (a *V2ApiService) AttachBlockStorageInstance(attachBlockStorageInstanceRequ
 }
 
 /* V2ApiService 
+ 네트워크인터페이스할당
  @param attachNetworkInterfaceRequest attachNetworkInterfaceRequest
  @return *AttachNetworkInterfaceResponse*/
 func (a *V2ApiService) AttachNetworkInterface(attachNetworkInterfaceRequest *AttachNetworkInterfaceRequest) (*AttachNetworkInterfaceResponse, error) {
@@ -613,6 +695,7 @@ func (a *V2ApiService) AttachNetworkInterface(attachNetworkInterfaceRequest *Att
 }
 
 /* V2ApiService 
+ 블록스토리지볼륨사이즈변경
  @param changeBlockStorageVolumeSizeRequest changeBlockStorageVolumeSizeRequest
  @return *ChangeBlockStorageVolumeSizeResponse*/
 func (a *V2ApiService) ChangeBlockStorageVolumeSize(changeBlockStorageVolumeSizeRequest *ChangeBlockStorageVolumeSizeRequest) (*ChangeBlockStorageVolumeSizeResponse, error) {
@@ -686,6 +769,7 @@ func (a *V2ApiService) ChangeBlockStorageVolumeSize(changeBlockStorageVolumeSize
 }
 
 /* V2ApiService 
+ 서버인스턴스스펙변경
  @param changeServerInstanceSpecRequest changeServerInstanceSpecRequest
  @return *ChangeServerInstanceSpecResponse*/
 func (a *V2ApiService) ChangeServerInstanceSpec(changeServerInstanceSpecRequest *ChangeServerInstanceSpecRequest) (*ChangeServerInstanceSpecResponse, error) {
@@ -759,6 +843,7 @@ func (a *V2ApiService) ChangeServerInstanceSpec(changeServerInstanceSpecRequest 
 }
 
 /* V2ApiService 
+ ACG생성
  @param createAccessControlGroupRequest createAccessControlGroupRequest
  @return *CreateAccessControlGroupResponse*/
 func (a *V2ApiService) CreateAccessControlGroup(createAccessControlGroupRequest *CreateAccessControlGroupRequest) (*CreateAccessControlGroupResponse, error) {
@@ -832,6 +917,7 @@ func (a *V2ApiService) CreateAccessControlGroup(createAccessControlGroupRequest 
 }
 
 /* V2ApiService 
+ 블록스토리지인스턴스생성
  @param createBlockStorageInstanceRequest createBlockStorageInstanceRequest
  @return *CreateBlockStorageInstanceResponse*/
 func (a *V2ApiService) CreateBlockStorageInstance(createBlockStorageInstanceRequest *CreateBlockStorageInstanceRequest) (*CreateBlockStorageInstanceResponse, error) {
@@ -905,6 +991,7 @@ func (a *V2ApiService) CreateBlockStorageInstance(createBlockStorageInstanceRequ
 }
 
 /* V2ApiService 
+ 블록스토리지스냅샷인스턴스생성
  @param createBlockStorageSnapshotInstanceRequest createBlockStorageSnapshotInstanceRequest
  @return *CreateBlockStorageSnapshotInstanceResponse*/
 func (a *V2ApiService) CreateBlockStorageSnapshotInstance(createBlockStorageSnapshotInstanceRequest *CreateBlockStorageSnapshotInstanceRequest) (*CreateBlockStorageSnapshotInstanceResponse, error) {
@@ -978,6 +1065,7 @@ func (a *V2ApiService) CreateBlockStorageSnapshotInstance(createBlockStorageSnap
 }
 
 /* V2ApiService 
+ 초기화스크립트생성
  @param createInitScriptRequest createInitScriptRequest
  @return *CreateInitScriptResponse*/
 func (a *V2ApiService) CreateInitScript(createInitScriptRequest *CreateInitScriptRequest) (*CreateInitScriptResponse, error) {
@@ -1051,6 +1139,7 @@ func (a *V2ApiService) CreateInitScript(createInitScriptRequest *CreateInitScrip
 }
 
 /* V2ApiService 
+ 로그인키생성
  @param createLoginKeyRequest createLoginKeyRequest
  @return *CreateLoginKeyResponse*/
 func (a *V2ApiService) CreateLoginKey(createLoginKeyRequest *CreateLoginKeyRequest) (*CreateLoginKeyResponse, error) {
@@ -1124,6 +1213,7 @@ func (a *V2ApiService) CreateLoginKey(createLoginKeyRequest *CreateLoginKeyReque
 }
 
 /* V2ApiService 
+ 회원서버이미지인스턴스생성
  @param createMemberServerImageInstanceRequest createMemberServerImageInstanceRequest
  @return *CreateMemberServerImageInstanceResponse*/
 func (a *V2ApiService) CreateMemberServerImageInstance(createMemberServerImageInstanceRequest *CreateMemberServerImageInstanceRequest) (*CreateMemberServerImageInstanceResponse, error) {
@@ -1197,6 +1287,7 @@ func (a *V2ApiService) CreateMemberServerImageInstance(createMemberServerImageIn
 }
 
 /* V2ApiService 
+ 네트워크인터페이스생성
  @param createNetworkInterfaceRequest createNetworkInterfaceRequest
  @return *CreateNetworkInterfaceResponse*/
 func (a *V2ApiService) CreateNetworkInterface(createNetworkInterfaceRequest *CreateNetworkInterfaceRequest) (*CreateNetworkInterfaceResponse, error) {
@@ -1270,6 +1361,7 @@ func (a *V2ApiService) CreateNetworkInterface(createNetworkInterfaceRequest *Cre
 }
 
 /* V2ApiService 
+ 물리배치그룹생성
  @param createPlacementGroupRequest createPlacementGroupRequest
  @return *CreatePlacementGroupResponse*/
 func (a *V2ApiService) CreatePlacementGroup(createPlacementGroupRequest *CreatePlacementGroupRequest) (*CreatePlacementGroupResponse, error) {
@@ -1343,6 +1435,7 @@ func (a *V2ApiService) CreatePlacementGroup(createPlacementGroupRequest *CreateP
 }
 
 /* V2ApiService 
+ 공인IP인스턴스생성
  @param createPublicIpInstanceRequest createPublicIpInstanceRequest
  @return *CreatePublicIpInstanceResponse*/
 func (a *V2ApiService) CreatePublicIpInstance(createPublicIpInstanceRequest *CreatePublicIpInstanceRequest) (*CreatePublicIpInstanceResponse, error) {
@@ -1416,6 +1509,7 @@ func (a *V2ApiService) CreatePublicIpInstance(createPublicIpInstanceRequest *Cre
 }
 
 /* V2ApiService 
+ 서버인스턴스생성
  @param createServerInstancesRequest createServerInstancesRequest
  @return *CreateServerInstancesResponse*/
 func (a *V2ApiService) CreateServerInstances(createServerInstancesRequest *CreateServerInstancesRequest) (*CreateServerInstancesResponse, error) {
@@ -1489,6 +1583,7 @@ func (a *V2ApiService) CreateServerInstances(createServerInstancesRequest *Creat
 }
 
 /* V2ApiService 
+ ACG삭제
  @param deleteAccessControlGroupRequest deleteAccessControlGroupRequest
  @return *DeleteAccessControlGroupResponse*/
 func (a *V2ApiService) DeleteAccessControlGroup(deleteAccessControlGroupRequest *DeleteAccessControlGroupRequest) (*DeleteAccessControlGroupResponse, error) {
@@ -1562,6 +1657,7 @@ func (a *V2ApiService) DeleteAccessControlGroup(deleteAccessControlGroupRequest 
 }
 
 /* V2ApiService 
+ 블록스토리지인스턴스삭제
  @param deleteBlockStorageInstancesRequest deleteBlockStorageInstancesRequest
  @return *DeleteBlockStorageInstancesResponse*/
 func (a *V2ApiService) DeleteBlockStorageInstances(deleteBlockStorageInstancesRequest *DeleteBlockStorageInstancesRequest) (*DeleteBlockStorageInstancesResponse, error) {
@@ -1635,6 +1731,7 @@ func (a *V2ApiService) DeleteBlockStorageInstances(deleteBlockStorageInstancesRe
 }
 
 /* V2ApiService 
+ 블록스토리지스냅샷인스턴스삭제
  @param deleteBlockStorageSnapshotInstancesRequest deleteBlockStorageSnapshotInstancesRequest
  @return *DeleteBlockStorageSnapshotInstancesResponse*/
 func (a *V2ApiService) DeleteBlockStorageSnapshotInstances(deleteBlockStorageSnapshotInstancesRequest *DeleteBlockStorageSnapshotInstancesRequest) (*DeleteBlockStorageSnapshotInstancesResponse, error) {
@@ -1708,6 +1805,7 @@ func (a *V2ApiService) DeleteBlockStorageSnapshotInstances(deleteBlockStorageSna
 }
 
 /* V2ApiService 
+ 초기화스크립트삭제
  @param deleteInitScriptsRequest deleteInitScriptsRequest
  @return *DeleteInitScriptsResponse*/
 func (a *V2ApiService) DeleteInitScripts(deleteInitScriptsRequest *DeleteInitScriptsRequest) (*DeleteInitScriptsResponse, error) {
@@ -1781,6 +1879,7 @@ func (a *V2ApiService) DeleteInitScripts(deleteInitScriptsRequest *DeleteInitScr
 }
 
 /* V2ApiService 
+ 로그인키삭제
  @param deleteLoginKeysRequest deleteLoginKeysRequest
  @return *DeleteLoginKeysResponse*/
 func (a *V2ApiService) DeleteLoginKeys(deleteLoginKeysRequest *DeleteLoginKeysRequest) (*DeleteLoginKeysResponse, error) {
@@ -1854,6 +1953,7 @@ func (a *V2ApiService) DeleteLoginKeys(deleteLoginKeysRequest *DeleteLoginKeysRe
 }
 
 /* V2ApiService 
+ 회원서버이미지인스턴스삭제
  @param deleteMemberServerImageInstancesRequest deleteMemberServerImageInstancesRequest
  @return *DeleteMemberServerImageInstancesResponse*/
 func (a *V2ApiService) DeleteMemberServerImageInstances(deleteMemberServerImageInstancesRequest *DeleteMemberServerImageInstancesRequest) (*DeleteMemberServerImageInstancesResponse, error) {
@@ -1927,6 +2027,7 @@ func (a *V2ApiService) DeleteMemberServerImageInstances(deleteMemberServerImageI
 }
 
 /* V2ApiService 
+ 네트워크인터페이스삭제
  @param deleteNetworkInterfaceRequest deleteNetworkInterfaceRequest
  @return *DeleteNetworkInterfaceResponse*/
 func (a *V2ApiService) DeleteNetworkInterface(deleteNetworkInterfaceRequest *DeleteNetworkInterfaceRequest) (*DeleteNetworkInterfaceResponse, error) {
@@ -2000,6 +2101,7 @@ func (a *V2ApiService) DeleteNetworkInterface(deleteNetworkInterfaceRequest *Del
 }
 
 /* V2ApiService 
+ 물리배치그룹삭제
  @param deletePlacementGroupRequest deletePlacementGroupRequest
  @return *DeletePlacementGroupResponse*/
 func (a *V2ApiService) DeletePlacementGroup(deletePlacementGroupRequest *DeletePlacementGroupRequest) (*DeletePlacementGroupResponse, error) {
@@ -2073,6 +2175,7 @@ func (a *V2ApiService) DeletePlacementGroup(deletePlacementGroupRequest *DeleteP
 }
 
 /* V2ApiService 
+ 공인IP인스턴스삭제
  @param deletePublicIpInstanceRequest deletePublicIpInstanceRequest
  @return *DeletePublicIpInstanceResponse*/
 func (a *V2ApiService) DeletePublicIpInstance(deletePublicIpInstanceRequest *DeletePublicIpInstanceRequest) (*DeletePublicIpInstanceResponse, error) {
@@ -2146,6 +2249,7 @@ func (a *V2ApiService) DeletePublicIpInstance(deletePublicIpInstanceRequest *Del
 }
 
 /* V2ApiService 
+ 블록스토리지인스턴스할당해제
  @param detachBlockStorageInstancesRequest detachBlockStorageInstancesRequest
  @return *DetachBlockStorageInstancesResponse*/
 func (a *V2ApiService) DetachBlockStorageInstances(detachBlockStorageInstancesRequest *DetachBlockStorageInstancesRequest) (*DetachBlockStorageInstancesResponse, error) {
@@ -2219,6 +2323,7 @@ func (a *V2ApiService) DetachBlockStorageInstances(detachBlockStorageInstancesRe
 }
 
 /* V2ApiService 
+ 네트워크인터페이스할당해제
  @param detachNetworkInterfaceRequest detachNetworkInterfaceRequest
  @return *DetachNetworkInterfaceResponse*/
 func (a *V2ApiService) DetachNetworkInterface(detachNetworkInterfaceRequest *DetachNetworkInterfaceRequest) (*DetachNetworkInterfaceResponse, error) {
@@ -2292,6 +2397,7 @@ func (a *V2ApiService) DetachNetworkInterface(detachNetworkInterfaceRequest *Det
 }
 
 /* V2ApiService 
+ 공인IP를서버인스턴스에서할당해제
  @param disassociatePublicIpFromServerInstanceRequest disassociatePublicIpFromServerInstanceRequest
  @return *DisassociatePublicIpFromServerInstanceResponse*/
 func (a *V2ApiService) DisassociatePublicIpFromServerInstance(disassociatePublicIpFromServerInstanceRequest *DisassociatePublicIpFromServerInstanceRequest) (*DisassociatePublicIpFromServerInstanceResponse, error) {
@@ -2365,6 +2471,7 @@ func (a *V2ApiService) DisassociatePublicIpFromServerInstance(disassociatePublic
 }
 
 /* V2ApiService 
+ ACG상세조회
  @param getAccessControlGroupDetailRequest getAccessControlGroupDetailRequest
  @return *GetAccessControlGroupDetailResponse*/
 func (a *V2ApiService) GetAccessControlGroupDetail(getAccessControlGroupDetailRequest *GetAccessControlGroupDetailRequest) (*GetAccessControlGroupDetailResponse, error) {
@@ -2438,6 +2545,7 @@ func (a *V2ApiService) GetAccessControlGroupDetail(getAccessControlGroupDetailRe
 }
 
 /* V2ApiService 
+ ACG리스트조회
  @param getAccessControlGroupListRequest getAccessControlGroupListRequest
  @return *GetAccessControlGroupListResponse*/
 func (a *V2ApiService) GetAccessControlGroupList(getAccessControlGroupListRequest *GetAccessControlGroupListRequest) (*GetAccessControlGroupListResponse, error) {
@@ -2511,6 +2619,7 @@ func (a *V2ApiService) GetAccessControlGroupList(getAccessControlGroupListReques
 }
 
 /* V2ApiService 
+ ACGRule리스트조회
  @param getAccessControlGroupRuleListRequest getAccessControlGroupRuleListRequest
  @return *GetAccessControlGroupRuleListResponse*/
 func (a *V2ApiService) GetAccessControlGroupRuleList(getAccessControlGroupRuleListRequest *GetAccessControlGroupRuleListRequest) (*GetAccessControlGroupRuleListResponse, error) {
@@ -2584,6 +2693,7 @@ func (a *V2ApiService) GetAccessControlGroupRuleList(getAccessControlGroupRuleLi
 }
 
 /* V2ApiService 
+ 블록스토리지인스턴스상세조회
  @param getBlockStorageInstanceDetailRequest getBlockStorageInstanceDetailRequest
  @return *GetBlockStorageInstanceDetailResponse*/
 func (a *V2ApiService) GetBlockStorageInstanceDetail(getBlockStorageInstanceDetailRequest *GetBlockStorageInstanceDetailRequest) (*GetBlockStorageInstanceDetailResponse, error) {
@@ -2657,6 +2767,7 @@ func (a *V2ApiService) GetBlockStorageInstanceDetail(getBlockStorageInstanceDeta
 }
 
 /* V2ApiService 
+ 블록스토리지인스턴스리스트조회
  @param getBlockStorageInstanceListRequest getBlockStorageInstanceListRequest
  @return *GetBlockStorageInstanceListResponse*/
 func (a *V2ApiService) GetBlockStorageInstanceList(getBlockStorageInstanceListRequest *GetBlockStorageInstanceListRequest) (*GetBlockStorageInstanceListResponse, error) {
@@ -2730,6 +2841,7 @@ func (a *V2ApiService) GetBlockStorageInstanceList(getBlockStorageInstanceListRe
 }
 
 /* V2ApiService 
+ 블록스토리지스냅샷인스턴스상세조회
  @param getBlockStorageSnapshotInstanceDetailRequest getBlockStorageSnapshotInstanceDetailRequest
  @return *GetBlockStorageSnapshotInstanceDetailResponse*/
 func (a *V2ApiService) GetBlockStorageSnapshotInstanceDetail(getBlockStorageSnapshotInstanceDetailRequest *GetBlockStorageSnapshotInstanceDetailRequest) (*GetBlockStorageSnapshotInstanceDetailResponse, error) {
@@ -2803,6 +2915,7 @@ func (a *V2ApiService) GetBlockStorageSnapshotInstanceDetail(getBlockStorageSnap
 }
 
 /* V2ApiService 
+ 블록스토리지스냅샷인스턴스리스트조회
  @param getBlockStorageSnapshotInstanceListRequest getBlockStorageSnapshotInstanceListRequest
  @return *GetBlockStorageSnapshotInstanceListResponse*/
 func (a *V2ApiService) GetBlockStorageSnapshotInstanceList(getBlockStorageSnapshotInstanceListRequest *GetBlockStorageSnapshotInstanceListRequest) (*GetBlockStorageSnapshotInstanceListResponse, error) {
@@ -2876,6 +2989,7 @@ func (a *V2ApiService) GetBlockStorageSnapshotInstanceList(getBlockStorageSnapsh
 }
 
 /* V2ApiService 
+ 초기화스크립트상세조회
  @param getInitScriptDetailRequest getInitScriptDetailRequest
  @return *GetInitScriptDetailResponse*/
 func (a *V2ApiService) GetInitScriptDetail(getInitScriptDetailRequest *GetInitScriptDetailRequest) (*GetInitScriptDetailResponse, error) {
@@ -2949,6 +3063,7 @@ func (a *V2ApiService) GetInitScriptDetail(getInitScriptDetailRequest *GetInitSc
 }
 
 /* V2ApiService 
+ 초기화스크립트리스트조회
  @param getInitScriptListRequest getInitScriptListRequest
  @return *GetInitScriptListResponse*/
 func (a *V2ApiService) GetInitScriptList(getInitScriptListRequest *GetInitScriptListRequest) (*GetInitScriptListResponse, error) {
@@ -3022,6 +3137,7 @@ func (a *V2ApiService) GetInitScriptList(getInitScriptListRequest *GetInitScript
 }
 
 /* V2ApiService 
+ 로그인키리스트조회
  @param getLoginKeyListRequest getLoginKeyListRequest
  @return *GetLoginKeyListResponse*/
 func (a *V2ApiService) GetLoginKeyList(getLoginKeyListRequest *GetLoginKeyListRequest) (*GetLoginKeyListResponse, error) {
@@ -3095,6 +3211,7 @@ func (a *V2ApiService) GetLoginKeyList(getLoginKeyListRequest *GetLoginKeyListRe
 }
 
 /* V2ApiService 
+ 회원서버이미지인스턴스상세조회
  @param getMemberServerImageInstanceDetailRequest getMemberServerImageInstanceDetailRequest
  @return *GetMemberServerImageInstanceDetailResponse*/
 func (a *V2ApiService) GetMemberServerImageInstanceDetail(getMemberServerImageInstanceDetailRequest *GetMemberServerImageInstanceDetailRequest) (*GetMemberServerImageInstanceDetailResponse, error) {
@@ -3168,6 +3285,7 @@ func (a *V2ApiService) GetMemberServerImageInstanceDetail(getMemberServerImageIn
 }
 
 /* V2ApiService 
+ 회원서버이미지인스턴스리스트조회
  @param getMemberServerImageInstanceListRequest getMemberServerImageInstanceListRequest
  @return *GetMemberServerImageInstanceListResponse*/
 func (a *V2ApiService) GetMemberServerImageInstanceList(getMemberServerImageInstanceListRequest *GetMemberServerImageInstanceListRequest) (*GetMemberServerImageInstanceListResponse, error) {
@@ -3241,6 +3359,7 @@ func (a *V2ApiService) GetMemberServerImageInstanceList(getMemberServerImageInst
 }
 
 /* V2ApiService 
+ 네트워크인터페이스상세조회
  @param getNetworkInterfaceDetailRequest getNetworkInterfaceDetailRequest
  @return *GetNetworkInterfaceDetailResponse*/
 func (a *V2ApiService) GetNetworkInterfaceDetail(getNetworkInterfaceDetailRequest *GetNetworkInterfaceDetailRequest) (*GetNetworkInterfaceDetailResponse, error) {
@@ -3314,6 +3433,7 @@ func (a *V2ApiService) GetNetworkInterfaceDetail(getNetworkInterfaceDetailReques
 }
 
 /* V2ApiService 
+ 네트워크인터페이스리스트조회
  @param getNetworkInterfaceListRequest getNetworkInterfaceListRequest
  @return *GetNetworkInterfaceListResponse*/
 func (a *V2ApiService) GetNetworkInterfaceList(getNetworkInterfaceListRequest *GetNetworkInterfaceListRequest) (*GetNetworkInterfaceListResponse, error) {
@@ -3387,6 +3507,7 @@ func (a *V2ApiService) GetNetworkInterfaceList(getNetworkInterfaceListRequest *G
 }
 
 /* V2ApiService 
+ 물리배치그룹상세조회
  @param getPlacementGroupDetailRequest getPlacementGroupDetailRequest
  @return *GetPlacementGroupDetailResponse*/
 func (a *V2ApiService) GetPlacementGroupDetail(getPlacementGroupDetailRequest *GetPlacementGroupDetailRequest) (*GetPlacementGroupDetailResponse, error) {
@@ -3460,6 +3581,7 @@ func (a *V2ApiService) GetPlacementGroupDetail(getPlacementGroupDetailRequest *G
 }
 
 /* V2ApiService 
+ 물리배치그룹리스트조회
  @param getPlacementGroupListRequest getPlacementGroupListRequest
  @return *GetPlacementGroupListResponse*/
 func (a *V2ApiService) GetPlacementGroupList(getPlacementGroupListRequest *GetPlacementGroupListRequest) (*GetPlacementGroupListResponse, error) {
@@ -3533,6 +3655,7 @@ func (a *V2ApiService) GetPlacementGroupList(getPlacementGroupListRequest *GetPl
 }
 
 /* V2ApiService 
+ 공인IP인스턴스상세조회
  @param getPublicIpInstanceDetailRequest getPublicIpInstanceDetailRequest
  @return *GetPublicIpInstanceDetailResponse*/
 func (a *V2ApiService) GetPublicIpInstanceDetail(getPublicIpInstanceDetailRequest *GetPublicIpInstanceDetailRequest) (*GetPublicIpInstanceDetailResponse, error) {
@@ -3606,6 +3729,7 @@ func (a *V2ApiService) GetPublicIpInstanceDetail(getPublicIpInstanceDetailReques
 }
 
 /* V2ApiService 
+ 공인IP인스턴스리스트조회
  @param getPublicIpInstanceListRequest getPublicIpInstanceListRequest
  @return *GetPublicIpInstanceListResponse*/
 func (a *V2ApiService) GetPublicIpInstanceList(getPublicIpInstanceListRequest *GetPublicIpInstanceListRequest) (*GetPublicIpInstanceListResponse, error) {
@@ -3679,6 +3803,7 @@ func (a *V2ApiService) GetPublicIpInstanceList(getPublicIpInstanceListRequest *G
 }
 
 /* V2ApiService 
+ 공인IP할당가능서버인스턴스리스트조회
  @param getPublicIpTargetServerInstanceListRequest getPublicIpTargetServerInstanceListRequest
  @return *GetPublicIpTargetServerInstanceListResponse*/
 func (a *V2ApiService) GetPublicIpTargetServerInstanceList(getPublicIpTargetServerInstanceListRequest *GetPublicIpTargetServerInstanceListRequest) (*GetPublicIpTargetServerInstanceListResponse, error) {
@@ -3752,6 +3877,81 @@ func (a *V2ApiService) GetPublicIpTargetServerInstanceList(getPublicIpTargetServ
 }
 
 /* V2ApiService 
+ RAID리스트조회
+ @param getRaidListRequest getRaidListRequest
+ @return *GetRaidListResponse*/
+func (a *V2ApiService) GetRaidList(getRaidListRequest *GetRaidListRequest) (*GetRaidListResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetRaidListResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/getRaidList"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = getRaidListRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
+ REGION리스트조회
  @param getRegionListRequest getRegionListRequest
  @return *GetRegionListResponse*/
 func (a *V2ApiService) GetRegionList(getRegionListRequest *GetRegionListRequest) (*GetRegionListResponse, error) {
@@ -3825,6 +4025,7 @@ func (a *V2ApiService) GetRegionList(getRegionListRequest *GetRegionListRequest)
 }
 
 /* V2ApiService 
+ 서버인스턴스의루트패스워드조회
  @param getRootPasswordRequest getRootPasswordRequest
  @return *GetRootPasswordResponse*/
 func (a *V2ApiService) GetRootPassword(getRootPasswordRequest *GetRootPasswordRequest) (*GetRootPasswordResponse, error) {
@@ -3898,6 +4099,7 @@ func (a *V2ApiService) GetRootPassword(getRootPasswordRequest *GetRootPasswordRe
 }
 
 /* V2ApiService 
+ 서버인스턴스리스트의루트패스워드조회
  @param getRootPasswordServerInstanceListRequest getRootPasswordServerInstanceListRequest
  @return *GetRootPasswordServerInstanceListResponse*/
 func (a *V2ApiService) GetRootPasswordServerInstanceList(getRootPasswordServerInstanceListRequest *GetRootPasswordServerInstanceListRequest) (*GetRootPasswordServerInstanceListResponse, error) {
@@ -3971,6 +4173,7 @@ func (a *V2ApiService) GetRootPasswordServerInstanceList(getRootPasswordServerIn
 }
 
 /* V2ApiService 
+ 서버이미지상품리스트조회
  @param getServerImageProductListRequest getServerImageProductListRequest
  @return *GetServerImageProductListResponse*/
 func (a *V2ApiService) GetServerImageProductList(getServerImageProductListRequest *GetServerImageProductListRequest) (*GetServerImageProductListResponse, error) {
@@ -4044,6 +4247,7 @@ func (a *V2ApiService) GetServerImageProductList(getServerImageProductListReques
 }
 
 /* V2ApiService 
+ 서버인스턴스상세조회
  @param getServerInstanceDetailRequest getServerInstanceDetailRequest
  @return *GetServerInstanceDetailResponse*/
 func (a *V2ApiService) GetServerInstanceDetail(getServerInstanceDetailRequest *GetServerInstanceDetailRequest) (*GetServerInstanceDetailResponse, error) {
@@ -4117,6 +4321,7 @@ func (a *V2ApiService) GetServerInstanceDetail(getServerInstanceDetailRequest *G
 }
 
 /* V2ApiService 
+ 서버인스턴스리스트조회
  @param getServerInstanceListRequest getServerInstanceListRequest
  @return *GetServerInstanceListResponse*/
 func (a *V2ApiService) GetServerInstanceList(getServerInstanceListRequest *GetServerInstanceListRequest) (*GetServerInstanceListResponse, error) {
@@ -4190,6 +4395,7 @@ func (a *V2ApiService) GetServerInstanceList(getServerInstanceListRequest *GetSe
 }
 
 /* V2ApiService 
+ 서버상품리스트조회
  @param getServerProductListRequest getServerProductListRequest
  @return *GetServerProductListResponse*/
 func (a *V2ApiService) GetServerProductList(getServerProductListRequest *GetServerProductListRequest) (*GetServerProductListResponse, error) {
@@ -4263,6 +4469,7 @@ func (a *V2ApiService) GetServerProductList(getServerProductListRequest *GetServ
 }
 
 /* V2ApiService 
+ ZONE리스트조회
  @param getZoneListRequest getZoneListRequest
  @return *GetZoneListResponse*/
 func (a *V2ApiService) GetZoneList(getZoneListRequest *GetZoneListRequest) (*GetZoneListResponse, error) {
@@ -4336,6 +4543,7 @@ func (a *V2ApiService) GetZoneList(getZoneListRequest *GetZoneListRequest) (*Get
 }
 
 /* V2ApiService 
+ 사용자가생성한로그인키import
  @param importLoginKeyRequest importLoginKeyRequest
  @return *ImportLoginKeyResponse*/
 func (a *V2ApiService) ImportLoginKey(importLoginKeyRequest *ImportLoginKeyRequest) (*ImportLoginKeyResponse, error) {
@@ -4409,6 +4617,81 @@ func (a *V2ApiService) ImportLoginKey(importLoginKeyRequest *ImportLoginKeyReque
 }
 
 /* V2ApiService 
+ 
+ @param interruptServerInstanceRequest 
+ @return *InterruptServerInstanceResponse*/
+func (a *V2ApiService) InterruptServerInstance(interruptServerInstanceRequest *InterruptServerInstanceRequest) (*InterruptServerInstanceResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  InterruptServerInstanceResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/interruptServerInstance"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = interruptServerInstanceRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
+ 서버인스턴스재시작
  @param rebootServerInstancesRequest rebootServerInstancesRequest
  @return *RebootServerInstancesResponse*/
 func (a *V2ApiService) RebootServerInstances(rebootServerInstancesRequest *RebootServerInstancesRequest) (*RebootServerInstancesResponse, error) {
@@ -4482,6 +4765,7 @@ func (a *V2ApiService) RebootServerInstances(rebootServerInstancesRequest *Reboo
 }
 
 /* V2ApiService 
+ ACGInboundRule삭제
  @param removeAccessControlGroupInboundRuleRequest removeAccessControlGroupInboundRuleRequest
  @return *RemoveAccessControlGroupInboundRuleResponse*/
 func (a *V2ApiService) RemoveAccessControlGroupInboundRule(removeAccessControlGroupInboundRuleRequest *RemoveAccessControlGroupInboundRuleRequest) (*RemoveAccessControlGroupInboundRuleResponse, error) {
@@ -4555,6 +4839,7 @@ func (a *V2ApiService) RemoveAccessControlGroupInboundRule(removeAccessControlGr
 }
 
 /* V2ApiService 
+ ACGOutboundRule삭제
  @param removeAccessControlGroupOutboundRuleRequest removeAccessControlGroupOutboundRuleRequest
  @return *RemoveAccessControlGroupOutboundRuleResponse*/
 func (a *V2ApiService) RemoveAccessControlGroupOutboundRule(removeAccessControlGroupOutboundRuleRequest *RemoveAccessControlGroupOutboundRuleRequest) (*RemoveAccessControlGroupOutboundRuleResponse, error) {
@@ -4628,6 +4913,81 @@ func (a *V2ApiService) RemoveAccessControlGroupOutboundRule(removeAccessControlG
 }
 
 /* V2ApiService 
+ 회원서버이미지공유권한제거
+ @param removeMemberServerImageSharingPermissionRequest removeMemberServerImageSharingPermissionRequest
+ @return *RemoveMemberServerImageSharingPermissionResponse*/
+func (a *V2ApiService) RemoveMemberServerImageSharingPermission(removeMemberServerImageSharingPermissionRequest *RemoveMemberServerImageSharingPermissionRequest) (*RemoveMemberServerImageSharingPermissionResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  RemoveMemberServerImageSharingPermissionResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/removeMemberServerImageSharingPermission"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = removeMemberServerImageSharingPermissionRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
+ 네트워크인터페이스의ACG제거
  @param removeNetworkInterfaceAccessControlGroupRequest removeNetworkInterfaceAccessControlGroupRequest
  @return *RemoveNetworkInterfaceAccessControlGroupResponse*/
 func (a *V2ApiService) RemoveNetworkInterfaceAccessControlGroup(removeNetworkInterfaceAccessControlGroupRequest *RemoveNetworkInterfaceAccessControlGroupRequest) (*RemoveNetworkInterfaceAccessControlGroupResponse, error) {
@@ -4701,6 +5061,7 @@ func (a *V2ApiService) RemoveNetworkInterfaceAccessControlGroup(removeNetworkInt
 }
 
 /* V2ApiService 
+ 물리배치그룹에서서버인스턴스제거
  @param removePlacementGroupServerInstanceRequest removePlacementGroupServerInstanceRequest
  @return *RemovePlacementGroupServerInstanceResponse*/
 func (a *V2ApiService) RemovePlacementGroupServerInstance(removePlacementGroupServerInstanceRequest *RemovePlacementGroupServerInstanceRequest) (*RemovePlacementGroupServerInstanceResponse, error) {
@@ -4774,6 +5135,7 @@ func (a *V2ApiService) RemovePlacementGroupServerInstance(removePlacementGroupSe
 }
 
 /* V2ApiService 
+ 블록스토리지반납보호설정
  @param setBlockStorageReturnProtectionRequest setBlockStorageReturnProtectionRequest
  @return *SetBlockStorageReturnProtectionResponse*/
 func (a *V2ApiService) SetBlockStorageReturnProtection(setBlockStorageReturnProtectionRequest *SetBlockStorageReturnProtectionRequest) (*SetBlockStorageReturnProtectionResponse, error) {
@@ -4847,6 +5209,7 @@ func (a *V2ApiService) SetBlockStorageReturnProtection(setBlockStorageReturnProt
 }
 
 /* V2ApiService 
+ 회원서버이미지공유권한설정
  @param setMemberServerImageSharingPermissionRequest setMemberServerImageSharingPermissionRequest
  @return *SetMemberServerImageSharingPermissionResponse*/
 func (a *V2ApiService) SetMemberServerImageSharingPermission(setMemberServerImageSharingPermissionRequest *SetMemberServerImageSharingPermissionRequest) (*SetMemberServerImageSharingPermissionResponse, error) {
@@ -4920,6 +5283,7 @@ func (a *V2ApiService) SetMemberServerImageSharingPermission(setMemberServerImag
 }
 
 /* V2ApiService 
+ 서버반납보호설정
  @param setProtectServerTerminationRequest setProtectServerTerminationRequest
  @return *SetProtectServerTerminationResponse*/
 func (a *V2ApiService) SetProtectServerTermination(setProtectServerTerminationRequest *SetProtectServerTerminationRequest) (*SetProtectServerTerminationResponse, error) {
@@ -4993,6 +5357,7 @@ func (a *V2ApiService) SetProtectServerTermination(setProtectServerTerminationRe
 }
 
 /* V2ApiService 
+ 서버인스턴스시작
  @param startServerInstancesRequest startServerInstancesRequest
  @return *StartServerInstancesResponse*/
 func (a *V2ApiService) StartServerInstances(startServerInstancesRequest *StartServerInstancesRequest) (*StartServerInstancesResponse, error) {
@@ -5066,6 +5431,7 @@ func (a *V2ApiService) StartServerInstances(startServerInstancesRequest *StartSe
 }
 
 /* V2ApiService 
+ 서버인스턴스정지
  @param stopServerInstancesRequest stopServerInstancesRequest
  @return *StopServerInstancesResponse*/
 func (a *V2ApiService) StopServerInstances(stopServerInstancesRequest *StopServerInstancesRequest) (*StopServerInstancesResponse, error) {
@@ -5139,6 +5505,7 @@ func (a *V2ApiService) StopServerInstances(stopServerInstancesRequest *StopServe
 }
 
 /* V2ApiService 
+ 서버인스턴스반납
  @param terminateServerInstancesRequest terminateServerInstancesRequest
  @return *TerminateServerInstancesResponse*/
 func (a *V2ApiService) TerminateServerInstances(terminateServerInstancesRequest *TerminateServerInstancesRequest) (*TerminateServerInstancesResponse, error) {
@@ -5212,6 +5579,7 @@ func (a *V2ApiService) TerminateServerInstances(terminateServerInstancesRequest 
 }
 
 /* V2ApiService 
+ 보조IP할당해제
  @param unassignSecondaryIpsRequest unassignSecondaryIpsRequest
  @return *UnassignSecondaryIpsResponse*/
 func (a *V2ApiService) UnassignSecondaryIps(unassignSecondaryIpsRequest *UnassignSecondaryIpsRequest) (*UnassignSecondaryIpsResponse, error) {

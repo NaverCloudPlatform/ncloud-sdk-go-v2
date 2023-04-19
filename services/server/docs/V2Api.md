@@ -4,6 +4,7 @@ All URIs are relative to *https://ncloud.apigw.ntruss.com/server/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AddMemberServerImageSharingPermission**](V2Api.md#AddMemberServerImageSharingPermission) | **Post** /addMemberServerImageSharingPermission | 
 [**AddNasVolumeAccessControl**](V2Api.md#AddNasVolumeAccessControl) | **Post** /addNasVolumeAccessControl | 
 [**AddPortForwardingRules**](V2Api.md#AddPortForwardingRules) | **Post** /addPortForwardingRules | 
 [**AssociatePublicIpWithServerInstance**](V2Api.md#AssociatePublicIpWithServerInstance) | **Post** /associatePublicIpWithServerInstance | 
@@ -45,6 +46,7 @@ Method | HTTP request | Description
 [**GetInstanceTagList**](V2Api.md#GetInstanceTagList) | **Post** /getInstanceTagList | 
 [**GetLoginKeyList**](V2Api.md#GetLoginKeyList) | **Post** /getLoginKeyList | 
 [**GetMemberServerImageList**](V2Api.md#GetMemberServerImageList) | **Post** /getMemberServerImageList | 
+[**GetNasVolumeAccessControlRuleList**](V2Api.md#GetNasVolumeAccessControlRuleList) | **Post** /getNasVolumeAccessControlRuleList | 
 [**GetNasVolumeInstanceList**](V2Api.md#GetNasVolumeInstanceList) | **Post** /getNasVolumeInstanceList | 
 [**GetNasVolumeInstanceRatingList**](V2Api.md#GetNasVolumeInstanceRatingList) | **Post** /getNasVolumeInstanceRatingList | 
 [**GetNasVolumeSnapshotConfigurationHistoryList**](V2Api.md#GetNasVolumeSnapshotConfigurationHistoryList) | **Post** /getNasVolumeSnapshotConfigurationHistoryList | 
@@ -64,8 +66,10 @@ Method | HTTP request | Description
 [**GetServerProductList**](V2Api.md#GetServerProductList) | **Post** /getServerProductList | 
 [**GetZoneList**](V2Api.md#GetZoneList) | **Post** /getZoneList | 
 [**ImportLoginKey**](V2Api.md#ImportLoginKey) | **Post** /importLoginKey | 
+[**InterruptServerInstance**](V2Api.md#InterruptServerInstance) | **Post** /interruptServerInstance | 
 [**RebootServerInstances**](V2Api.md#RebootServerInstances) | **Post** /rebootServerInstances | 
 [**RecreateServerInstance**](V2Api.md#RecreateServerInstance) | **Post** /recreateServerInstance | 
+[**RemoveMemberServerImageSharingPermission**](V2Api.md#RemoveMemberServerImageSharingPermission) | **Post** /removeMemberServerImageSharingPermission | 
 [**RemoveNasVolumeAccessControl**](V2Api.md#RemoveNasVolumeAccessControl) | **Post** /removeNasVolumeAccessControl | 
 [**ReplaceServerInstanceAssociatedWithPublicIp**](V2Api.md#ReplaceServerInstanceAssociatedWithPublicIp) | **Post** /replaceServerInstanceAssociatedWithPublicIp | 
 [**RestoreNasVolumeWithSnapshot**](V2Api.md#RestoreNasVolumeWithSnapshot) | **Post** /restoreNasVolumeWithSnapshot | 
@@ -77,6 +81,31 @@ Method | HTTP request | Description
 [**StopServerInstances**](V2Api.md#StopServerInstances) | **Post** /stopServerInstances | 
 [**TerminateServerInstances**](V2Api.md#TerminateServerInstances) | **Post** /terminateServerInstances | 
 
+
+# **AddMemberServerImageSharingPermission**
+> AddMemberServerImageSharingPermissionResponse AddMemberServerImageSharingPermission(addMemberServerImageSharingPermissionRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**addMemberServerImageSharingPermissionRequest** | **[\*AddMemberServerImageSharingPermissionRequest](AddMemberServerImageSharingPermissionRequest.md)** | addMemberServerImageSharingPermissionRequest | 
+
+### Return type
+
+*[**AddMemberServerImageSharingPermissionResponse**](AddMemberServerImageSharingPermissionResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **AddNasVolumeAccessControl**
 > AddNasVolumeAccessControlResponse AddNasVolumeAccessControl(addNasVolumeAccessControlRequest)
@@ -1103,6 +1132,31 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetNasVolumeAccessControlRuleList**
+> GetNasVolumeAccessControlRuleListResponse GetNasVolumeAccessControlRuleList(getNasVolumeAccessControlRuleListRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getNasVolumeAccessControlRuleListRequest** | **[\*GetNasVolumeAccessControlRuleListRequest](GetNasVolumeAccessControlRuleListRequest.md)** | getNasVolumeAccessControlRuleListRequest | 
+
+### Return type
+
+*[**GetNasVolumeAccessControlRuleListResponse**](GetNasVolumeAccessControlRuleListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetNasVolumeInstanceList**
 > GetNasVolumeInstanceListResponse GetNasVolumeInstanceList(getNasVolumeInstanceListRequest)
 
@@ -1578,6 +1632,31 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **InterruptServerInstance**
+> InterruptServerInstanceResponse InterruptServerInstance(interruptServerInstanceRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**interruptServerInstanceRequest** | **[\*InterruptServerInstanceRequest](InterruptServerInstanceRequest.md)** |  | 
+
+### Return type
+
+*[**InterruptServerInstanceResponse**](InterruptServerInstanceResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **RebootServerInstances**
 > RebootServerInstancesResponse RebootServerInstances(rebootServerInstancesRequest)
 
@@ -1616,6 +1695,31 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**RecreateServerInstanceResponse**](RecreateServerInstanceResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **RemoveMemberServerImageSharingPermission**
+> RemoveMemberServerImageSharingPermissionResponse RemoveMemberServerImageSharingPermission(removeMemberServerImageSharingPermissionRequest)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**removeMemberServerImageSharingPermissionRequest** | **[\*RemoveMemberServerImageSharingPermissionRequest](RemoveMemberServerImageSharingPermissionRequest.md)** | removeMemberServerImageSharingPermissionRequest | 
+
+### Return type
+
+*[**RemoveMemberServerImageSharingPermissionResponse**](RemoveMemberServerImageSharingPermissionResponse.md)
 
 ### Authorization
 
