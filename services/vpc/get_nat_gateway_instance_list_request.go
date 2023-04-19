@@ -31,6 +31,18 @@ NatGatewayName *string `json:"natGatewayName,omitempty"`
 	// NATGateway인스턴스상태코드
 NatGatewayInstanceStatusCode *string `json:"natGatewayInstanceStatusCode,omitempty"`
 
+	// NATGateway유형 (PRVT / PBLIP)
+NatGatewayTypeCode *string `json:"natGatewayTypeCode,omitempty"`
+
+	// Subnet번호
+SubnetNo *string `json:"subnetNo,omitempty"`
+
+	// Subnet이름
+SubnetName *string `json:"subnetName,omitempty"`
+
+	// 사설IP주소
+PrivateIp *string `json:"privateIp,omitempty"`
+
 	// 페이지번호
 PageNo *int32 `json:"pageNo,omitempty"`
 
