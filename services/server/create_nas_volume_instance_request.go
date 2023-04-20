@@ -19,6 +19,9 @@ VolumeSize *int32 `json:"volumeSize"`
 	// 볼륨할당프로토콜유형코드
 VolumeAllotmentProtocolTypeCode *string `json:"volumeAllotmentProtocolTypeCode"`
 
+  // 서버인스턴스번호리스트
+ServerInstanceNoList []*string `json:"serverInstanceNoList,omitempty"`
+
 	// 접근제어Rule리스트
 AccessControlRuleList []*AccessControlRuleParameter `json:"accessControlRuleList,omitempty"`
 
