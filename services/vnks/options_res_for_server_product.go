@@ -8,8 +8,4 @@
 
 package vnks
 
-type NodePoolsRes struct {
-
-	// 노드풀 목록
-	NodePool []*NodePoolRes `json:"nodePool"`
-}
+type OptionsResForServerProduct []*OptionResForServerProduct

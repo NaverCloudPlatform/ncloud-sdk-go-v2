@@ -10,15 +10,36 @@ package vnks
 
 type NodePool struct {
 
+	// 인스턴스 번호
+	InstanceNo *int32 `json:"instanceNo"`
+
+	// default pool 여부
+	IsDefault *bool `json:"isDefault"`
+
 	// 노드풀 이름
 	Name *string `json:"name"`
 
 	// 노드 개수
 	NodeCount *int32 `json:"nodeCount"`
 
-	// Subnet 번호
-	SubnetNo *int32 `json:"subnetNo,omitempty"`
+	// Subnet 번호 목록
+	SubnetNoList []*int32 `json:"subnetNoList"`
+
+	// Subnet 이름 목록
+	SubnetNameList []*string `json:"subnetNameList"`
 
 	// 상품 코드
 	ProductCode *string `json:"productCode"`
+
+	// 노드풀 상태
+	Status *string `json:"status"`
+
+	//
+	Autoscale *AutoscaleOption `json:"autoscale"`
+
+	// Software Code(OS)
+	SoftwareCode *string `json:"softwareCode"`
+
+	// 쿠버네티스 버전
+	K8sVersion *string `json:"k8sVersion"`
 }

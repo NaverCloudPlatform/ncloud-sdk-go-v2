@@ -1,9 +1,12 @@
-# ClusterLogInput
+# OptionResForServerProduct
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Audit** | ***bool** | Audit Log 설정 | [optional] [default to null]
+**Label** | ***string** |  | [default to null]
+**Value** | ***string** |  | [default to null]
+**Disabled** | ***bool** |  | [default to null]
+**Detail** | **[*ServerProduct](ServerProduct.md)** |  | [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

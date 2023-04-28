@@ -51,11 +51,18 @@ type WorkerNode struct {
 
 	// cpu 수
 	CpuCount *int32 `json:"cpuCount"`
+
 	// 총 메모리 용량
 	MemorySize *int64 `json:"memorySize"`
 
+	// 서버 이미지 코드
+	SoftwareCode *string `json:"softwareCode"`
+
 	// 스펙 코드
 	SpecCode *string `json:"specCode"`
+
+	// 스펙 코드
+	ProductCode *string `json:"productCode"`
 
 	// 로그인 키 이름
 	LoginKeyName *string `json:"loginKeyName"`
@@ -68,6 +75,12 @@ type WorkerNode struct {
 
 	// 커널 버전
 	KernelVersion *string `json:"kernelVersion"`
+
+	// providerID
+	ProviderID *string `json:"providerID"`
+
+	// 노드풀 ID
+	NodePoolId *int32 `json:"nodePoolId"`
 
 	// 노드풀 이름
 	NodePoolName *string `json:"nodePoolName"`

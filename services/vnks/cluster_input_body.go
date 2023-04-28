@@ -16,16 +16,16 @@ type ClusterInputBody struct {
 	// 클러스터 타입
 	ClusterType *string `json:"clusterType"`
 
+	// 쿠버네티스 버전 [Version 조회 API](/docs/compute-vpckubernetesservice-nksv2#k8sSupportedVersion)
+	K8sVersion *string `json:"k8sVersion,omitempty"`
+
 	// 로그인 키 이름
 	LoginKeyName *string `json:"loginKeyName"`
-
-	// 쿠버네티스 버전
-	K8sVersion *string `json:"k8sVersion,omitempty"`
 
 	// Region의 코드
 	RegionCode *string `json:"regionCode"`
 
-	// zone 코드
+	// Zone 코드
 	ZoneCode *string `json:"zoneCode,omitempty"`
 
 	// Zone 번호
@@ -37,30 +37,33 @@ type ClusterInputBody struct {
 	// CNI Plugin Code (ncloud-vpc-cni or cilium)
 	KubeNetworkPlugin *string `json:"kubeNetworkPlugin,omitempty"`
 
-	// vpc의 No
+	// [VPC 번호](/docs/networking-vpc-vpcmanagement-getvpclist)
 	VpcNo *int32 `json:"vpcNo"`
 
-	// 서브넷 No 목록
+	// [서브넷 번호 목록](/docs/networking-vpc-subnetmanagement-getsubnetlist)
 	SubnetNoList []*int32 `json:"subnetNoList"`
 
-	// 로드밸런서 전용 서브넷 No
-	SubnetLbNo *int32 `json:"subnetLbNo"`
+	// [로드밸런서 전용 Private Subnet 번호](/docs/networking-vpc-subnetmanagement-getsubnetlist)
+	SubnetLbNo *int32 `json:"subnetLbNo,omitempty"`
 
-	// 로드밸런서 전용 Public Subnet No
+	// [로드밸런서 전용 Private Subnet 번호](/docs/networking-vpc-subnetmanagement-getsubnetlist)
+	LbPrivateSubnetNo *int32 `json:"lbPrivateSubnetNo,omitempty"`
+
+	// [로드밸런서 전용 Public Subnet 번호(Singapore 리전만 지원)](/docs/networking-vpc-subnetmanagement-getsubnetlist)
 	LbPublicSubnetNo *int32 `json:"lbPublicSubnetNo,omitempty"`
-
-	// log
-	Log *ClusterLogInput `json:"log,omitempty"`
-
-	// 기본 노드풀
-	DefaultNodePool *DefaultNodePoolParam `json:"defaultNodePool,omitempty"`
-
-	// 추가 노드풀
-	NodePool []*NodePool `json:"nodePool,omitempty"`
 
 	// InitScript 번호
 	InitScriptNo *int32 `json:"initScriptNo,omitempty"`
 
 	// Pod Security Policy 설정 여부
 	PodSecurityPolicyEnabled *bool `json:"podSecurityPolicyEnabled,omitempty"`
+
+	//
+	Log *ClusterLogInput `json:"log,omitempty"`
+
+	//
+	DefaultNodePool *DefaultNodePoolParam `json:"defaultNodePool,omitempty"`
+
+	// 추가 노드풀
+	NodePool []*NodePoolDto `json:"nodePool,omitempty"`
 }

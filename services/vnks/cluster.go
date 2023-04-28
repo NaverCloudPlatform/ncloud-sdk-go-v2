@@ -16,7 +16,7 @@ type Cluster struct {
 	// 클러스터 acg 이름
 	AcgName *string `json:"acgName"`
 
-	// 클러스터 acg 번호
+	// 클러스터 acg no
 	AcgNo *int32 `json:"acgNo"`
 
 	// 클러스터 이름
@@ -38,7 +38,7 @@ type Cluster struct {
 	CpuCount *int32 `json:"cpuCount"`
 
 	// 메모리 용량
-	MemorySize *int32 `json:"memorySize"`
+	MemorySize *int64 `json:"memorySize"`
 
 	// 생성 일자
 	CreatedAt *string `json:"createdAt"`
@@ -52,7 +52,7 @@ type Cluster struct {
 	// region의 코드
 	RegionCode *string `json:"regionCode"`
 
-	// 클러스터의 상태
+	// 클러스터 상태
 	Status *string `json:"status"`
 
 	// CNI Plugin Code
@@ -61,8 +61,11 @@ type Cluster struct {
 	// 로드밸런서 전용 서브넷 이름
 	SubnetLbName *string `json:"subnetLbName"`
 
-	// 로드밸런서 전용 서브넷 No
+	// 로드밸런서 전용 Private Subnet No
 	SubnetLbNo *int32 `json:"subnetLbNo"`
+
+	// 로드밸런서 전용 Private Subnet No
+	LbPrivateSubnetNo *int32 `json:"lbPrivateSubnetNo"`
 
 	// 로드밸런서 전용 Public Subnet No
 	LbPublicSubnetNo *int32 `json:"lbPublicSubnetNo,omitempty"`
@@ -83,20 +86,28 @@ type Cluster struct {
 	VpcNo *int32 `json:"vpcNo"`
 
 	// zone 코드
-	ZoneCode *string `json:"zoneCode,omitempty"`
+	ZoneCode *string `json:"zoneCode"`
 
 	// zone 번호
-	ZoneNo *int32 `json:"zoneNo,omitempty"`
+	ZoneNo *int32 `json:"zoneNo"`
+
+	// InitScript 번호
+	InitScriptNo *int32 `json:"initScriptNo"`
+
+	// InitScript 이름
+	InitScriptName *string `json:"initScriptName"`
+
+	// Pod Security Policy 설정 여부
+	PodSecurityPolicyEnabled *bool `json:"podSecurityPolicyEnabled"`
 
 	// 로그인 키 이름
 	LoginKeyName *string `json:"loginKeyName"`
 
-	// log
+	// 노드풀
+	NodePool []*NodePool `json:"nodePool"`
+
 	Log *ClusterLogInput `json:"log"`
 
 	// Public Network
 	PublicNetwork *bool `json:"publicNetwork"`
-
-	// 노드풀
-	NodePool []*NodePoolRes `json:"nodePool"`
 }

@@ -10,6 +10,6 @@ package vnks
 
 type ClusterRes struct {
 
-	// 클러스터
+	//
 	Cluster *Cluster `json:"cluster"`
 }

@@ -8,5 +8,4 @@
 
 package vnks
 
-// 옵션 목록
 type OptionsRes []*OptionRes

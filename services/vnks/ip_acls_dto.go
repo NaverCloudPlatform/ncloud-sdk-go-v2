@@ -8,11 +8,8 @@
 
 package vnks
 
-type NodePoolUpdateBody struct {
+type IpAclsDto struct {
+	DefaultAction *string `json:"defaultAction"`
 
-	// 노드 개수
-	NodeCount *int32 `json:"nodeCount"`
-
-	//
-	Autoscale *AutoscalerUpdate `json:"autoscale,omitempty"`
+	Entries []*IpAclsEntriesDto `json:"entries,omitempty"`
 }
