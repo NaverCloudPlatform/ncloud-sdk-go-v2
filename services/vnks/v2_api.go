@@ -75,11 +75,11 @@ func (a *V2ApiService) ClustersGet(ctx context.Context) (*ClustersRes, error) {
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) && localVarHttpResponse.StatusCode != 204 {
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
 		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
 			return &successPayload, err
 		}
@@ -89,9 +89,9 @@ func (a *V2ApiService) ClustersGet(ctx context.Context) (*ClustersRes, error) {
 }
 
 /* V2ApiService
-@param clusterInputBody
+@param body
 @return *CreateClusterRes*/
-func (a *V2ApiService) ClustersPost(ctx context.Context, clusterInputBody *ClusterInputBody) (*CreateClusterRes, error) {
+func (a *V2ApiService) ClustersPost(ctx context.Context, body *ClusterInputBody) (*CreateClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
@@ -127,7 +127,7 @@ func (a *V2ApiService) ClustersPost(ctx context.Context, clusterInputBody *Clust
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = clusterInputBody
+	localVarPostBody = body
 	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
 	if v.IsValid() && v.CanAddr() {
 		ptr := v.Addr().Interface().(**string)
@@ -147,11 +147,85 @@ func (a *V2ApiService) ClustersPost(ctx context.Context, clusterInputBody *Clust
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) && localVarHttpResponse.StatusCode != 204 {
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/* V2ApiService
+@param body
+@param uuid uuid
+@return *UpdateClusterRes*/
+func (a *V2ApiService) ClustersUuidAddSubnetPatch(ctx context.Context, body *AddSubnetDto, uuid *string) (*UpdateClusterRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Patch")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     UpdateClusterRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/clusters/{uuid}/add-subnet"
+	localVarPath = strings.Replace(localVarPath, "{"+"uuid"+"}", fmt.Sprintf("%v", *uuid), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = body
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
 		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
 			return &successPayload, err
 		}
@@ -210,7 +284,7 @@ func (a *V2ApiService) ClustersUuidDelete(ctx context.Context, uuid *string) err
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) && localVarHttpResponse.StatusCode != 204 {
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
 		return reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
@@ -268,11 +342,149 @@ func (a *V2ApiService) ClustersUuidGet(ctx context.Context, uuid *string) (*Clus
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) && localVarHttpResponse.StatusCode != 204 {
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/* V2ApiService
+@param uuid uuid
+@return *IpAclsRes*/
+func (a *V2ApiService) ClustersUuidIpAclGet(ctx context.Context, uuid *string) (*IpAclsRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     IpAclsRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/clusters/{uuid}/ip-acl"
+	localVarPath = strings.Replace(localVarPath, "{"+"uuid"+"}", fmt.Sprintf("%v", *uuid), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/* V2ApiService
+@param body
+@param uuid uuid
+@return *UpdateClusterRes*/
+func (a *V2ApiService) ClustersUuidIpAclPatch(ctx context.Context, body *IpAclsDto, uuid *string) (*UpdateClusterRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Patch")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     UpdateClusterRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/clusters/{uuid}/ip-acl"
+	localVarPath = strings.Replace(localVarPath, "{"+"uuid"+"}", fmt.Sprintf("%v", *uuid), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = body
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
 		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
 			return &successPayload, err
 		}
@@ -332,11 +544,11 @@ func (a *V2ApiService) ClustersUuidKubeconfigGet(ctx context.Context, uuid *stri
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) && localVarHttpResponse.StatusCode != 204 {
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
 		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
 			return &successPayload, err
 		}
@@ -347,13 +559,14 @@ func (a *V2ApiService) ClustersUuidKubeconfigGet(ctx context.Context, uuid *stri
 
 /* V2ApiService
 @param uuid uuid
-@return */
-func (a *V2ApiService) ClustersUuidKubeconfigResetPatch(ctx context.Context, uuid *string) error {
+@return *UpdateClusterRes*/
+func (a *V2ApiService) ClustersUuidKubeconfigResetPatch(ctx context.Context, uuid *string) (*UpdateClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
+		successPayload     UpdateClusterRes
 	)
 
 	// create path and map variables
@@ -385,33 +598,113 @@ func (a *V2ApiService) ClustersUuidKubeconfigResetPatch(ctx context.Context, uui
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) && localVarHttpResponse.StatusCode != 204 {
-		return reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	return err
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/* V2ApiService
+@param body
+@param uuid uuid
+@return *UpdateClusterRes*/
+func (a *V2ApiService) ClustersUuidLogPatch(ctx context.Context, body *AuditLogDto, uuid *string) (*UpdateClusterRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Patch")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     UpdateClusterRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/clusters/{uuid}/log"
+	localVarPath = strings.Replace(localVarPath, "{"+"uuid"+"}", fmt.Sprintf("%v", *uuid), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = body
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
 }
 
 /* V2ApiService
 @param uuid uuid
-@return *NodePoolsRes*/
-func (a *V2ApiService) ClustersUuidNodePoolGet(ctx context.Context, uuid *string) (*NodePoolsRes, error) {
+@return *NodePoolRes*/
+func (a *V2ApiService) ClustersUuidNodePoolGet(ctx context.Context, uuid *string) (*NodePoolRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     NodePoolsRes
+		successPayload     NodePoolRes
 	)
 
 	// create path and map variables
@@ -453,11 +746,11 @@ func (a *V2ApiService) ClustersUuidNodePoolGet(ctx context.Context, uuid *string
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) && localVarHttpResponse.StatusCode != 204 {
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
 		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
 			return &successPayload, err
 		}
@@ -518,7 +811,7 @@ func (a *V2ApiService) ClustersUuidNodePoolInstanceNoDelete(ctx context.Context,
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) && localVarHttpResponse.StatusCode != 204 {
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
 		return reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
@@ -526,11 +819,11 @@ func (a *V2ApiService) ClustersUuidNodePoolInstanceNoDelete(ctx context.Context,
 }
 
 /* V2ApiService
-@param nodePoolUpdateBody
+@param body
 @param uuid uuid
 @param instanceNo instanceNo
 @return */
-func (a *V2ApiService) ClustersUuidNodePoolInstanceNoPatch(ctx context.Context, nodePoolUpdateBody *NodePoolUpdateBody, uuid *string, instanceNo *string) error {
+func (a *V2ApiService) ClustersUuidNodePoolInstanceNoPatch(ctx context.Context, body *NodePoolUpdateBody, uuid *string, instanceNo *string) error {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
 		localVarPostBody   interface{}
@@ -567,7 +860,7 @@ func (a *V2ApiService) ClustersUuidNodePoolInstanceNoPatch(ctx context.Context, 
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = nodePoolUpdateBody
+	localVarPostBody = body
 	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
 	if v.IsValid() && v.CanAddr() {
 		ptr := v.Addr().Interface().(**string)
@@ -587,7 +880,7 @@ func (a *V2ApiService) ClustersUuidNodePoolInstanceNoPatch(ctx context.Context, 
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) && localVarHttpResponse.StatusCode != 204 {
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
 		return reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
@@ -595,15 +888,99 @@ func (a *V2ApiService) ClustersUuidNodePoolInstanceNoPatch(ctx context.Context, 
 }
 
 /* V2ApiService
-@param nodePoolCreationBody
 @param uuid uuid
-@return */
-func (a *V2ApiService) ClustersUuidNodePoolPost(ctx context.Context, nodePoolCreationBody *NodePoolCreationBody, uuid *string) error {
+@param instanceNo instanceNo
+@param k8sVersion
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "maxSurge" (int32)
+    @param "maxUnavailable" (int32)
+@return *UpdateNodePoolRes*/
+func (a *V2ApiService) ClustersUuidNodePoolInstanceNoUpgradePatch(ctx context.Context, uuid *string, instanceNo *string, k8sVersion *string, localVarOptionals map[string]interface{}) (*UpdateNodePoolRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Patch")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     UpdateNodePoolRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/clusters/{uuid}/node-pool/{instanceNo}/upgrade"
+	localVarPath = strings.Replace(localVarPath, "{"+"uuid"+"}", fmt.Sprintf("%v", *uuid), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"instanceNo"+"}", fmt.Sprintf("%v", *instanceNo), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if err := typeCheckParameter(localVarOptionals["maxSurge"], "*int32", "maxSurge"); err != nil {
+		return &successPayload, err
+	}
+	if err := typeCheckParameter(localVarOptionals["maxUnavailable"], "*int32", "maxUnavailable"); err != nil {
+		return &successPayload, err
+	}
+
+	localVarQueryParams.Add("k8sVersion", parameterToString(*k8sVersion, ""))
+	if localVarTempParam, localVarOk := localVarOptionals["maxSurge"].(*int32); localVarOk {
+		localVarQueryParams.Add("maxSurge", parameterToString(*localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["maxUnavailable"].(*int32); localVarOk {
+		localVarQueryParams.Add("maxUnavailable", parameterToString(*localVarTempParam, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/* V2ApiService
+@param body
+@param uuid uuid
+@return *UpdateClusterRes*/
+func (a *V2ApiService) ClustersUuidNodePoolPost(ctx context.Context, body *NodePoolCreationBody, uuid *string) (*UpdateClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
+		successPayload     UpdateClusterRes
 	)
 
 	// create path and map variables
@@ -634,7 +1011,7 @@ func (a *V2ApiService) ClustersUuidNodePoolPost(ctx context.Context, nodePoolCre
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
 	}
 	// body params
-	localVarPostBody = nodePoolCreationBody
+	localVarPostBody = body
 	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
 	if v.IsValid() && v.CanAddr() {
 		ptr := v.Addr().Interface().(**string)
@@ -644,21 +1021,27 @@ func (a *V2ApiService) ClustersUuidNodePoolPost(ctx context.Context, nodePoolCre
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
-		return err
+		return &successPayload, err
 	}
 
 	localVarHttpResponse, err := a.client.callAPI(r)
 	if err != nil || localVarHttpResponse == nil {
-		return err
+		return &successPayload, err
 	}
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) && localVarHttpResponse.StatusCode != 204 {
-		return reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	return err
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
 }
 
 /* V2ApiService
@@ -712,11 +1095,11 @@ func (a *V2ApiService) ClustersUuidNodesGet(ctx context.Context, uuid *string) (
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) && localVarHttpResponse.StatusCode != 204 {
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
 		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
 			return &successPayload, err
 		}
@@ -728,9 +1111,10 @@ func (a *V2ApiService) ClustersUuidNodesGet(ctx context.Context, uuid *string) (
 /* V2ApiService
 @param uuid uuid
 @param instanceNo instanceNo
-@param nodePoolId nodePoolId
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "nodePoolId" (string) 노드풀 인스턴스 번호
 @return */
-func (a *V2ApiService) ClustersUuidNodesInstanceNoDelete(ctx context.Context, uuid *string, instanceNo *string, nodePoolId *string) error {
+func (a *V2ApiService) ClustersUuidNodesInstanceNoDelete(ctx context.Context, uuid *string, instanceNo *string, localVarOptionals map[string]interface{}) error {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
 		localVarPostBody   interface{}
@@ -746,8 +1130,13 @@ func (a *V2ApiService) ClustersUuidNodesInstanceNoDelete(ctx context.Context, uu
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if err := typeCheckParameter(localVarOptionals["nodePoolId"], "*string", "nodePoolId"); err != nil {
+		return err
+	}
 
-	localVarQueryParams.Add("nodePoolId", parameterToString(nodePoolId, ""))
+	if localVarTempParam, localVarOk := localVarOptionals["nodePoolId"].(*string); localVarOk {
+		localVarQueryParams.Add("nodePoolId", parameterToString(*localVarTempParam, ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -779,7 +1168,7 @@ func (a *V2ApiService) ClustersUuidNodesInstanceNoDelete(ctx context.Context, uu
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) && localVarHttpResponse.StatusCode != 204 {
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
 		return reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
@@ -787,18 +1176,20 @@ func (a *V2ApiService) ClustersUuidNodesInstanceNoDelete(ctx context.Context, uu
 }
 
 /* V2ApiService
-@return *OptionsRes*/
-func (a *V2ApiService) OptionVersionGet(ctx context.Context) (*OptionsRes, error) {
+@param uuid uuid
+@return *OidcRes*/
+func (a *V2ApiService) ClustersUuidOidcGet(ctx context.Context, uuid *string) (*OidcRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     OptionsRes
+		successPayload     OidcRes
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/option/version"
+	localVarPath := a.client.cfg.BasePath + "/clusters/{uuid}/oidc"
+	localVarPath = strings.Replace(localVarPath, "{"+"uuid"+"}", fmt.Sprintf("%v", *uuid), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -835,11 +1226,384 @@ func (a *V2ApiService) OptionVersionGet(ctx context.Context) (*OptionsRes, error
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-	if localVarHttpResponse.StatusCode >= 300 && localVarHttpResponse.StatusCode != 204 {
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
 		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 
-	if !strings.Contains(string(bodyBytes), `{"error"`) {
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/* V2ApiService
+@param body
+@param uuid uuid
+@return *UpdateClusterRes*/
+func (a *V2ApiService) ClustersUuidOidcPatch(ctx context.Context, body *UpdateOidcDto, uuid *string) (*UpdateClusterRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Patch")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     UpdateClusterRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/clusters/{uuid}/oidc"
+	localVarPath = strings.Replace(localVarPath, "{"+"uuid"+"}", fmt.Sprintf("%v", *uuid), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = body
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/* V2ApiService
+@param uuid uuid
+@param k8sVersion
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "maxSurge" (int32)
+    @param "maxUnavailable" (int32)
+@return *UpdateClusterRes*/
+func (a *V2ApiService) ClustersUuidUpgradePatch(ctx context.Context, uuid *string, k8sVersion *string, localVarOptionals map[string]interface{}) (*UpdateClusterRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Patch")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     UpdateClusterRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/clusters/{uuid}/upgrade"
+	localVarPath = strings.Replace(localVarPath, "{"+"uuid"+"}", fmt.Sprintf("%v", *uuid), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if err := typeCheckParameter(localVarOptionals["maxSurge"], "*int32", "maxSurge"); err != nil {
+		return &successPayload, err
+	}
+	if err := typeCheckParameter(localVarOptionals["maxUnavailable"], "*int32", "maxUnavailable"); err != nil {
+		return &successPayload, err
+	}
+
+	localVarQueryParams.Add("k8sVersion", parameterToString(*k8sVersion, ""))
+	if localVarTempParam, localVarOk := localVarOptionals["maxSurge"].(*int32); localVarOk {
+		localVarQueryParams.Add("maxSurge", parameterToString(*localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["maxUnavailable"].(*int32); localVarOk {
+		localVarQueryParams.Add("maxUnavailable", parameterToString(*localVarTempParam, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/* V2ApiService
+@return *OptionsRes*/
+func (a *V2ApiService) OptionServerImageGet(ctx context.Context) (*OptionsRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     OptionsRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/option/server-image"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/* V2ApiService
+@param softwareCode
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "zoneCode" (string)
+    @param "zoneNo" (string)
+@return *OptionsResForServerProduct*/
+func (a *V2ApiService) OptionServerProductCodeGet(ctx context.Context, softwareCode *string, localVarOptionals map[string]interface{}) (*OptionsResForServerProduct, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     OptionsResForServerProduct
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/option/server-product-code"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if err := typeCheckParameter(localVarOptionals["zoneCode"], "*string", "zoneCode"); err != nil {
+		return &successPayload, err
+	}
+	if err := typeCheckParameter(localVarOptionals["zoneNo"], "*string", "zoneNo"); err != nil {
+		return &successPayload, err
+	}
+
+	localVarQueryParams.Add("softwareCode", parameterToString(*softwareCode, ""))
+	if localVarTempParam, localVarOk := localVarOptionals["zoneCode"].(*string); localVarOk {
+		localVarQueryParams.Add("zoneCode", parameterToString(*localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["zoneNo"].(*string); localVarOk {
+		localVarQueryParams.Add("zoneNo", parameterToString(*localVarTempParam, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/* V2ApiService
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "from" (string)
+    @param "to" (string)
+@return *OptionsRes*/
+func (a *V2ApiService) OptionVersionGet(ctx context.Context, localVarOptionals map[string]interface{}) (*OptionsRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     OptionsRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/option/version"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if err := typeCheckParameter(localVarOptionals["from"], "*string", "from"); err != nil {
+		return &successPayload, err
+	}
+	if err := typeCheckParameter(localVarOptionals["to"], "*string", "to"); err != nil {
+		return &successPayload, err
+	}
+
+	if localVarTempParam, localVarOk := localVarOptionals["from"].(*string); localVarOk {
+		localVarQueryParams.Add("from", parameterToString(*localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["to"].(*string); localVarOk {
+		localVarQueryParams.Add("to", parameterToString(*localVarTempParam, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
 		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
 			return &successPayload, err
 		}
@@ -896,7 +1660,7 @@ func (a *V2ApiService) RootGet(ctx context.Context) error {
 	defer localVarHttpResponse.Body.Close()
 	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
 
-	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) && localVarHttpResponse.StatusCode != 204 {
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
 		return reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
 	}
 

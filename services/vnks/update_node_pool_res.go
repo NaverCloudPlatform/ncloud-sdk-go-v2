@@ -8,11 +8,8 @@
 
 package vnks
 
-type NodePoolUpdateBody struct {
+type UpdateNodePoolRes struct {
+	Uuid *string `json:"uuid"`
 
-	// 노드 개수
-	NodeCount *int32 `json:"nodeCount"`
-
-	//
-	Autoscale *AutoscalerUpdate `json:"autoscale,omitempty"`
+	InstanceNo *int32 `json:"instanceNo"`
 }

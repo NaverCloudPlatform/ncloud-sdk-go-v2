@@ -39,7 +39,7 @@ var (
 	xmlCheck  = regexp.MustCompile("(?i:[application|text]/xml)")
 )
 
-// APIClient manages communication with the vnks API v2021-11-25T15:22:25Z
+// APIClient manages communication with the vnks API v2023-03-23T09:23:10Z
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *ncloud.Configuration
@@ -271,6 +271,9 @@ func (c *APIClient) prepareRequest(
 	if auth := c.cfg.GetCredentials(); auth != nil {
 		timestamp := strconv.FormatInt(time.Now().UnixNano()/int64(time.Millisecond), 10)
 		signer := hmac.NewSigner(auth.SecretKey(), crypto.SHA256)
+		if len(query) > 0 {
+			path += fmt.Sprintf("?%s", url.RawQuery)
+		}
 		signature, _ := signer.Sign(method, path, auth.AccessKey(), timestamp)
 
 		localVarRequest.Header.Add("x-ncp-apigw-timestamp", timestamp)

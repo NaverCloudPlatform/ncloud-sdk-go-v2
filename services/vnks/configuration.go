@@ -29,7 +29,7 @@ func NewConfiguration(region string, apiKeys ...*ncloud.APIKey) *ncloud.Configur
 	cfg := &ncloud.Configuration{
 		BasePath:      "https://nks.apigw.ntruss.com/vnks/v2",
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "vnks//go",
+		UserAgent:     "vnks/1.0.0/go",
 	}
 	if len(apiKeys) > 0 {
 		cfg.APIKey = apiKeys[0]
@@ -46,14 +46,16 @@ func NewConfiguration(region string, apiKeys ...*ncloud.APIKey) *ncloud.Configur
 	ncloudApiGw = strings.Replace(ncloudApiGw, "https://ncloud.", "https://nks.", 1)
 	ncloudApiGw = strings.Replace(ncloudApiGw, "https://fin-ncloud.", "https://nks.", 1)
 
-	switch region {
-	case "KR":
-		cfg.BasePath = fmt.Sprintf("%s/vnks/v2", ncloudApiGw)
-	case "FKR":
+	switch {
+	case strings.HasPrefix(region, "F"):
 		cfg.BasePath = fmt.Sprintf("%s/nks/v2", ncloudApiGw)
+	case region == "KR", strings.Contains(region, "CS"):
+		cfg.BasePath = fmt.Sprintf("%s/vnks/v2", ncloudApiGw)
 	default:
 		cfg.BasePath = fmt.Sprintf("%s/vnks/%s-v2", ncloudApiGw, strings.ToLower(region))
 	}
+
+	cfg.DefaultHeader["x-ncp-region_code"] = region
 
 	return cfg
 }

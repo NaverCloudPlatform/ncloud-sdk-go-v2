@@ -19,9 +19,15 @@ type NodePoolCreationBody struct {
 	// Subnet 번호
 	SubnetNo *int32 `json:"subnetNo,omitempty"`
 
-	// 상품 코드
+	// Subnet 번호
+	SubnetNoList []*int32 `json:"subnetNoList,omitempty"`
+
+	// 상품 코드 [서버 스펙 목록](/docs/compute-vserver-server-common-getserverproductlist)
 	ProductCode *string `json:"productCode"`
 
-	// 오토스케일
+	// Server image code
+	SoftwareCode *string `json:"softwareCode,omitempty"`
+
+	//
 	Autoscale *AutoscalerUpdate `json:"autoscale,omitempty"`
 }

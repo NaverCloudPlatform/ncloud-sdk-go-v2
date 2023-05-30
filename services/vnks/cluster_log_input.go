@@ -10,6 +10,6 @@ package vnks
 
 type ClusterLogInput struct {
 
-	// audit log 설정
+	// Audit Log 설정
 	Audit *bool `json:"audit,omitempty"`
 }
