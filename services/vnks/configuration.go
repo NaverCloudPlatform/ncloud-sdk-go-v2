@@ -59,3 +59,10 @@ func NewConfiguration(region string, apiKeys ...*ncloud.APIKey) *ncloud.Configur
 
 	return cfg
 }
+
+func NewConfigurationWithUserAgent(region string, userAgent string, apiKeys ...*ncloud.APIKey) *ncloud.Configuration {
+	cfg := NewConfiguration(region, apiKeys...)
+	cfg.UserAgent = userAgent
+
+	return cfg
+}
