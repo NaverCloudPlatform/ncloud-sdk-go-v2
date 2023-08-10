@@ -9,11 +9,11 @@
 package sourcebuild
 
 type ProjectCmd struct {
-	Pre []*string `json:"pre,omitempty"`
+	Pre []*string `json:"pre"`
 
-	Build []*string `json:"build,omitempty"`
+	Build []*string `json:"build"`
 
-	Post []*string `json:"post,omitempty"`
+	Post []*string `json:"post"`
 
 	Dockerbuild *ProjectCmdDockerbuild `json:"dockerbuild,omitempty"`
 }
