@@ -10,7 +10,7 @@ package vnks
 
 type DefaultNodePoolParam struct {
 
-	// 기본 노드풀 이름
+	// 노드풀 이름
 	Name *string `json:"name"`
 
 	// 노드 개수
@@ -22,9 +22,15 @@ type DefaultNodePoolParam struct {
 	// Subnet 번호
 	SubnetNoList []*int32 `json:"subnetNoList,omitempty"`
 
-	// 상품 코드 [서버 스펙 목록](/docs/compute-vserver-server-common-getserverproductlist)
-	ProductCode *string `json:"productCode"`
-
 	// Server image code
 	SoftwareCode *string `json:"softwareCode,omitempty"`
+
+	// 상품 코드
+	ProductCode *string `json:"productCode,omitempty"`
+
+	// Server spec code
+	ServerSpecCode *string `json:"serverSpecCode,omitempty"`
+
+	// Storage size
+	StorageSize *int32 `json:"storageSize,omitempty"`
 }

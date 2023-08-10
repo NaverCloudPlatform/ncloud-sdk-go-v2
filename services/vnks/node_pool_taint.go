@@ -8,8 +8,10 @@
 
 package vnks
 
-type ClusterLogInput struct {
+type NodePoolTaint struct {
+	Key *string `json:"key"`
 
-	// Audit Log 설정
-	Audit *bool `json:"audit"`
+	Value *string `json:"value,omitempty"`
+
+	Effect *string `json:"effect"`
 }

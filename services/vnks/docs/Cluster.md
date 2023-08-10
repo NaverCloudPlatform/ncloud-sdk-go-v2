@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Name** | ***string** | 클러스터 이름 | [default to null]
 **Capacity** | ***string** | 클러스터 용량 | [default to null]
 **ClusterType** | ***string** | 클러스터 타입 | [default to null]
+**HypervisorCode** | ***string** | Hypervisor Code | [default to null]
 **NodeCount** | ***int32** | 등록된 노드 총 개수 | [default to null]
 **NodeMaxCount** | ***int32** | 사용할 수 있는 노드의 최대 개수 | [default to null]
 **CpuCount** | ***int32** | cpu 개수 | [default to null]

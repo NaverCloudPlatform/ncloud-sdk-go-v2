@@ -22,6 +22,9 @@ type ClusterInputBody struct {
 	// 로그인 키 이름
 	LoginKeyName *string `json:"loginKeyName"`
 
+	// Hypervisor Code
+	HypervisorCode *string `json:"hypervisorCode,omitempty"`
+
 	// Region의 코드
 	RegionCode *string `json:"regionCode"`
 

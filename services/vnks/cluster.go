@@ -28,6 +28,9 @@ type Cluster struct {
 	// 클러스터 타입
 	ClusterType *string `json:"clusterType"`
 
+	// Hypervisor Code
+	HypervisorCode *string `json:"hypervisorCode"`
+
 	// 등록된 노드 총 개수
 	NodeCount *int32 `json:"nodeCount"`
 

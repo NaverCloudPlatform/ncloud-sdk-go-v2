@@ -28,9 +28,6 @@ type NodePool struct {
 	// Subnet 이름 목록
 	SubnetNameList []*string `json:"subnetNameList"`
 
-	// 상품 코드
-	ProductCode *string `json:"productCode"`
-
 	// 노드풀 상태
 	Status *string `json:"status"`
 
@@ -40,6 +37,19 @@ type NodePool struct {
 	// Software Code(OS)
 	SoftwareCode *string `json:"softwareCode"`
 
+	// 상품 코드
+	ProductCode *string `json:"productCode,omitempty"`
+
 	// 쿠버네티스 버전
 	K8sVersion *string `json:"k8sVersion"`
+
+	// 서버 스펙 코드
+	ServerSpecCode *string `json:"serverSpecCode,omitempty"`
+
+	// 스토리지 크기
+	StorageSize *int32 `json:"storageSize,omitempty"`
+
+	Labels []*NodePoolLabel `json:"labels"`
+
+	Taints []*NodePoolTaint `json:"taints"`
 }

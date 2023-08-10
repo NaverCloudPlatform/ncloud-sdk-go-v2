@@ -13,10 +13,14 @@ Method | HTTP request | Description
 [**ClustersUuidIpAclPatch**](V2Api.md#ClustersUuidIpAclPatch) | **Patch** /clusters/{uuid}/ip-acl | 
 [**ClustersUuidKubeconfigGet**](V2Api.md#ClustersUuidKubeconfigGet) | **Get** /clusters/{uuid}/kubeconfig | 
 [**ClustersUuidKubeconfigResetPatch**](V2Api.md#ClustersUuidKubeconfigResetPatch) | **Patch** /clusters/{uuid}/kubeconfig/reset | 
+[**ClustersUuidLbSubnetPatch**](V2Api.md#ClustersUuidLbSubnetPatch) | **Patch** /clusters/{uuid}/lb-subnet | 
 [**ClustersUuidLogPatch**](V2Api.md#ClustersUuidLogPatch) | **Patch** /clusters/{uuid}/log | 
 [**ClustersUuidNodePoolGet**](V2Api.md#ClustersUuidNodePoolGet) | **Get** /clusters/{uuid}/node-pool | 
 [**ClustersUuidNodePoolInstanceNoDelete**](V2Api.md#ClustersUuidNodePoolInstanceNoDelete) | **Delete** /clusters/{uuid}/node-pool/{instanceNo} | 
+[**ClustersUuidNodePoolInstanceNoLabelsPut**](V2Api.md#ClustersUuidNodePoolInstanceNoLabelsPut) | **Put** /clusters/{uuid}/node-pool/{instanceNo}/labels | 
 [**ClustersUuidNodePoolInstanceNoPatch**](V2Api.md#ClustersUuidNodePoolInstanceNoPatch) | **Patch** /clusters/{uuid}/node-pool/{instanceNo} | 
+[**ClustersUuidNodePoolInstanceNoSubnetsPatch**](V2Api.md#ClustersUuidNodePoolInstanceNoSubnetsPatch) | **Patch** /clusters/{uuid}/node-pool/{instanceNo}/subnets | 
+[**ClustersUuidNodePoolInstanceNoTaintsPut**](V2Api.md#ClustersUuidNodePoolInstanceNoTaintsPut) | **Put** /clusters/{uuid}/node-pool/{instanceNo}/taints | 
 [**ClustersUuidNodePoolInstanceNoUpgradePatch**](V2Api.md#ClustersUuidNodePoolInstanceNoUpgradePatch) | **Patch** /clusters/{uuid}/node-pool/{instanceNo}/upgrade | 
 [**ClustersUuidNodePoolPost**](V2Api.md#ClustersUuidNodePoolPost) | **Post** /clusters/{uuid}/node-pool | 
 [**ClustersUuidNodesGet**](V2Api.md#ClustersUuidNodesGet) | **Get** /clusters/{uuid}/nodes | 
@@ -252,6 +256,39 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ClustersUuidLbSubnetPatch**
+> UpdateClusterLbSubnetRes ClustersUuidLbSubnetPatch(uuid, lbSubnetNo, optional)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**uuid** | **string** | uuid | **lbSubnetNo** | **int32** |  | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**uuid** | **string** | uuid | **lbSubnetNo** | **int32** |  | **igwYn** | **string** |  | 
+
+### Return type
+
+*[**UpdateClusterLbSubnetRes**](UpdateClusterLbSubnetRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ClustersUuidLogPatch**
 > UpdateClusterRes ClustersUuidLogPatch(body, uuid)
 
@@ -327,6 +364,31 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ClustersUuidNodePoolInstanceNoLabelsPut**
+> UpdateNodePoolRes ClustersUuidNodePoolInstanceNoLabelsPut(body, uuid, instanceNo)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**body** | **[\*UpdateNodepoolLabelDto](UpdateNodepoolLabelDto.md)** |  | **uuid** | **string** | uuid | **instanceNo** | **string** | instanceNo | 
+
+### Return type
+
+*[**UpdateNodePoolRes**](UpdateNodePoolRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ClustersUuidNodePoolInstanceNoPatch**
 > ClustersUuidNodePoolInstanceNoPatch(body, uuid, instanceNo)
 
@@ -349,6 +411,56 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClustersUuidNodePoolInstanceNoSubnetsPatch**
+> UpdateNodePoolRes ClustersUuidNodePoolInstanceNoSubnetsPatch(body, uuid, instanceNo)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**body** | **[\*UpdateNodepoolSubnetDto](UpdateNodepoolSubnetDto.md)** |  | **uuid** | **string** | uuid | **instanceNo** | **string** | instanceNo | 
+
+### Return type
+
+*[**UpdateNodePoolRes**](UpdateNodePoolRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClustersUuidNodePoolInstanceNoTaintsPut**
+> UpdateNodePoolRes ClustersUuidNodePoolInstanceNoTaintsPut(body, uuid, instanceNo)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**body** | **[\*UpdateNodepoolTaintDto](UpdateNodepoolTaintDto.md)** |  | **uuid** | **string** | uuid | **instanceNo** | **string** | instanceNo | 
+
+### Return type
+
+*[**UpdateNodePoolRes**](UpdateNodePoolRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -552,11 +664,22 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **OptionServerImageGet**
-> OptionsRes OptionServerImageGet()
+> OptionsRes OptionServerImageGet(optional)
 
 
 ### Required Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**hypervisorCode** | **string** |  | 
 
 ### Return type
 
@@ -589,7 +712,7 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**softwareCode** | **string** |  | **zoneCode** | **string** |  | **zoneNo** | **string** |  | 
+**softwareCode** | **string** |  | **hypervisorCode** | **string** |  | **zoneCode** | **string** |  | **zoneNo** | **string** |  | 
 
 ### Return type
 

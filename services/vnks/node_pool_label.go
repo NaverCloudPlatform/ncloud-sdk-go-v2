@@ -8,8 +8,8 @@
 
 package vnks
 
-type ClusterLogInput struct {
+type NodePoolLabel struct {
+	Key *string `json:"key"`
 
-	// Audit Log 설정
-	Audit *bool `json:"audit"`
+	Value *string `json:"value"`
 }
