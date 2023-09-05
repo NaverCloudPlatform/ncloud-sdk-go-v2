@@ -14,7 +14,7 @@ Name | Type        | Description | Notes
 **MemberServerCount** | ***int32**  | CloudMongoDb Member 서버 대수 | [optional] [default to null]
 **ArbiterServerCount** | ***int32**  | CloudMongoDb Arbiter 서버 대수 | [optional] [default to null]
 **MongosServerCount** | ***int32**  | CloudMongoDb Mongos 서버 대수 | [optional] [default to null]
-**ConfigServerCount** | ***string** | CloudMongoDb Config 서버 대수 | [optional] [default to null]
+**ConfigServerCount** | ***int32** | CloudMongoDb Config 서버 대수 | [optional] [default to null]
 **BackupFileRetentionPeriod** | ***int32**  | 백업파일보관기간 | [optional] [default to null]
 **BackupTime** | ***string** | 백업시간 | [optional] [default to null]
 **DataStorageTypeCode** | ***string** | 데이터 스토리지 타입 코드 | [optional] [default to null]
