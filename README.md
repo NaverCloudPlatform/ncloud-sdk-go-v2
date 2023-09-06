@@ -57,29 +57,30 @@ If credentials (apiKeys) are not specified, the default credential provider chai
 
 | Services       | Documentation                                       |
 | -------------- | --------------------------------------------------- |
-| _Server_       | [**Server**](services/server/README.md)             |
-| _Loadbalancer_ | [**Loadbalancer**](services/loadbalancer/README.md) |
-| _Autoscaling_  | [**Autoscaling**](services/autoscaling/README.md)   |
-| _Monitoring_   | [**Monitoring**](services/monitoring/README.md)     |
-| _CDN_          | [**CDN**](services/cdn/README.md)                   |
-| _CloudDB_      | [**CloudDB**](services/clouddb/README.md)           |
-| _Server(VPC)_      | [**Server(VPC)**](services/vserver/README.md)           |
-| _VPC_      | [**VPC**](services/vpc/README.md)           |
-| _Nas(VPC)_      | [**Nas(VPC)**](services/vnas/README.md)           |
+| _Autoscaling(Classic)_  | [**Autoscaling**](services/autoscaling/README.md)   |
 | _Autoscaling(VPC)_      | [**Autoscaling(VPC)**](services/vautoscaling/README.md)           |
-| _Loadbalancer(VPC)_      | [**Loadbalancer(VPC)**](services/vloadbalancer/README.md)           |
-| _Kubernetes Service(VPC)_ | [**NKS(VPC)**](services/vnks/README.md) |
+| _CDN(All)_          | [**CDN**](services/cdn/README.md)                   |
+| _Cloud Data Streaming Service(VPC)_ | [**Cloud Data Streaming Service(VPC)**](services/vcdss/README.md) |
+| _CloudDB(Classic)_      | [**CloudDB**](services/clouddb/README.md)           |
 | _Cloud DB For MySQL(VPC)_ | [**Cloud DB For MySQL(VPC)**](services/vmysql/README.md) |
 | _Cloud DB For MSSQL(VPC)_ | [**Cloud DB For MSSQL(VPC)**](services/vmssql/README.md) |
 | _Cloud DB For Redis(VPC)_ | [**Cloud DB For Redis(VPC)**](services/vredis/README.md) |
 | _Cloud DB For MongoDB(VPC)_ | [**Cloud DB For MongoDB(VPC)**](services/vmongodb/README.md) |
-| _SourceCommit_ | [**SourceCommit**](services/sourcecommit/README.md) |
-| _SourceBuild_ | [**SourceBuild**](services/sourcebuild/README.md) |
+| _Cloud Hadoop(VPC)_ | [**Cloud Hadoop(VPC)**](services/vhadoop/README.md) |
+| _Kubernetes Service(VPC)_ | [**NKS(VPC)**](services/vnks/README.md) |
+| _Loadbalancer(Classic)_ | [**Loadbalancer**](services/loadbalancer/README.md) |
+| _Loadbalancer(VPC)_      | [**Loadbalancer(VPC)**](services/vloadbalancer/README.md)           |
+| _Monitoring(Classic)_   | [**Monitoring**](services/monitoring/README.md)     |
+| _Nas(VPC)_      | [**Nas(VPC)**](services/vnas/README.md)           |
+| _Search Engine Service(VPC)_        | [**Search Engine Service(VPC)**](services/vses2/README.md)         |
+| _Server(Classic)_       | [**Server**](services/server/README.md)             |
+| _Server(VPC)_      | [**Server(VPC)**](services/vserver/README.md)           |
+| _SourceBuild(All)_ | [**SourceBuild**](services/sourcebuild/README.md) |
+| _SourceCommit(All)_ | [**SourceCommit**](services/sourcecommit/README.md) |
 | _SourceDeploy(VPC)_ | [**SourceDeploy(VPC)**](services/vsourcedeploy/README.md) |
-| _SourcePipeline_ | [**SourcePipeline**](services/sourcepipeline/README.md) |
+| _SourcePipeline(Classic)_ | [**SourcePipeline**](services/sourcepipeline/README.md) |
 | _SourcePipeline(VPC)_ | [**SourcePipeline(VPC)**](services/vsourcepipeline/README.md) |
-| _Cloud Data Streaming Service(VPC)_ | [**Cloud Data Streaming Service(VPC)**](services/vcdss/README.md) |
-| _Search Engine Service(VPC)_        | [**Search Engine Service(VPC)**](services/vses/README.md)         |
+| _VPC(VPC)_      | [**VPC**](services/vpc/README.md)           |
 
 ### License
 
