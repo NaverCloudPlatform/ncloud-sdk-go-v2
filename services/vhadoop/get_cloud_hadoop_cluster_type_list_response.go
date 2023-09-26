@@ -9,15 +9,14 @@
 package vhadoop
 
 type GetCloudHadoopClusterTypeListResponse struct {
+	RequestId *string `json:"requestId,omitempty"`
 
-RequestId *string `json:"requestId,omitempty"`
+	ReturnCode *string `json:"returnCode,omitempty"`
 
-ReturnCode *string `json:"returnCode,omitempty"`
+	ReturnMessage *string `json:"returnMessage,omitempty"`
 
-ReturnMessage *string `json:"returnMessage,omitempty"`
-
-TotalRows *int32 `json:"totalRows,omitempty"`
+	TotalRows *int32 `json:"totalRows,omitempty"`
 
 	// CloudHadoop 클러스터 유형 리스트
-CloudHadoopClusterTypeList *CloudHadoopClusterTypeList `json:"cloudHadoopClusterTypeList,omitempty"`
+	CloudHadoopClusterTypeList []*CloudHadoopClusterType `json:"cloudHadoopClusterTypeList,omitempty"`
 }
