@@ -18,5 +18,5 @@ type GetCloudMongoDbInstanceListResponse struct {
 	TotalRows *int32 `json:"totalRows,omitempty"`
 
 	// CloudMongoDb인스턴스리스트
-	CloudMongoDbInstanceList []CloudMongoDbInstance `json:"cloudMongoDbInstanceList,omitempty"`
+	CloudMongoDbInstanceList []*CloudMongoDbInstance `json:"cloudMongoDbInstanceList,omitempty"`
 }
