@@ -9,15 +9,14 @@
 package vhadoop
 
 type GetCloudHadoopProductListResponse struct {
+	RequestId *string `json:"requestId,omitempty"`
 
-RequestId *string `json:"requestId,omitempty"`
+	ReturnCode *string `json:"returnCode,omitempty"`
 
-ReturnCode *string `json:"returnCode,omitempty"`
+	ReturnMessage *string `json:"returnMessage,omitempty"`
 
-ReturnMessage *string `json:"returnMessage,omitempty"`
-
-TotalRows *int32 `json:"totalRows,omitempty"`
+	TotalRows *int32 `json:"totalRows,omitempty"`
 
 	// 상품리스트
-ProductList *ProductList `json:"productList,omitempty"`
+	ProductList []*Product `json:"productList,omitempty"`
 }
