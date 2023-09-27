@@ -10,9 +10,9 @@ package vmssql
 
 type CloudMssqlInstanceList struct {
 
-	// 조회된 리스트의 총 개수 
-TotalRows *int32 `json:"totalRows,omitempty"`
+	// 조회된 리스트의 총 개수
+	TotalRows *int32 `json:"totalRows,omitempty"`
 
 	// CloudMssql 인스턴스 리스트
-CloudMssqlInstanceList []*CloudMssqlInstance `json:"cloudMssqlInstanceList,omitempty"`
+	CloudMssqlInstanceList []*CloudMssqlInstance `json:"cloudMssqlInstanceList,omitempty"`
 }

@@ -9,15 +9,14 @@
 package vmssql
 
 type GetDmsObjectStorageBackupListResponse struct {
+	RequestId *string `json:"requestId,omitempty"`
 
-RequestId *string `json:"requestId,omitempty"`
+	ReturnCode *string `json:"returnCode,omitempty"`
 
-ReturnCode *string `json:"returnCode,omitempty"`
+	ReturnMessage *string `json:"returnMessage,omitempty"`
 
-ReturnMessage *string `json:"returnMessage,omitempty"`
-
-TotalRows *int32 `json:"totalRows,omitempty"`
+	TotalRows *int32 `json:"totalRows,omitempty"`
 
 	// DMS파일리스트
-DmsFileList *DmsFileList `json:"dmsFileList,omitempty"`
+	DmsFileList []*DmsFile `json:"dmsFileList,omitempty"`
 }
