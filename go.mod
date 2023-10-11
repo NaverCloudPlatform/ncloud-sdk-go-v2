@@ -4,5 +4,5 @@ go 1.16
 
 require (
 	github.com/antihax/optional v1.0.0
-	golang.org/x/net v0.7.0
+	golang.org/x/net v0.17.0
 )
