@@ -9,15 +9,14 @@
 package vhadoop
 
 type GetCloudHadoopAddOnListResponse struct {
+	RequestId *string `json:"requestId,omitempty"`
 
-RequestId *string `json:"requestId,omitempty"`
+	ReturnCode *string `json:"returnCode,omitempty"`
 
-ReturnCode *string `json:"returnCode,omitempty"`
+	ReturnMessage *string `json:"returnMessage,omitempty"`
 
-ReturnMessage *string `json:"returnMessage,omitempty"`
-
-TotalRows *int32 `json:"totalRows,omitempty"`
+	TotalRows *int32 `json:"totalRows,omitempty"`
 
 	// CloudHadoop Add-On 리스트
-GetCloudHadoopAddOnList *CloudHadoopAddOnList `json:"getCloudHadoopAddOnList,omitempty"`
+	CloudHadoopAddOnList []*CloudHadoopAddOn `json:"cloudHadoopAddOnList,omitempty"`
 }

@@ -9,13 +9,12 @@
 package vmssql
 
 type GetDmsOperationResponse struct {
+	RequestId *string `json:"requestId,omitempty"`
 
-RequestId *string `json:"requestId,omitempty"`
+	ReturnCode *string `json:"returnCode,omitempty"`
 
-ReturnCode *string `json:"returnCode,omitempty"`
-
-ReturnMessage *string `json:"returnMessage,omitempty"`
+	ReturnMessage *string `json:"returnMessage,omitempty"`
 
 	// DMS상태
-Status *CommonCode `json:"status,omitempty"`
+	Status *CommonCode `json:"status,omitempty"`
 }

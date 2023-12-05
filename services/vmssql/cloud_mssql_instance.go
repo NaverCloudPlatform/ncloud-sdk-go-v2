@@ -10,54 +10,54 @@ package vmssql
 
 type CloudMssqlInstance struct {
 
-	// Cloud DB for MSSQL 인스턴스 번호 
-CloudMssqlInstanceNo *string `json:"cloudMssqlInstanceNo,omitempty"`
+	// Cloud DB for MSSQL 인스턴스 번호
+	CloudMssqlInstanceNo *string `json:"cloudMssqlInstanceNo,omitempty"`
 
 	// Cloud DB for MSSQL 서비스 이름
-CloudMssqlServiceName *string `json:"cloudMssqlServiceName,omitempty"`
+	CloudMssqlServiceName *string `json:"cloudMssqlServiceName,omitempty"`
 
 	// Cloud DB for MSSQL 인스턴스 상태 이름
-CloudMssqlInstanceStatusName *string `json:"cloudMssqlInstanceStatusName,omitempty"`
+	CloudMssqlInstanceStatusName *string `json:"cloudMssqlInstanceStatusName,omitempty"`
 
 	// Cloud DB for MSSQL 인스턴스 상태
-CloudMssqlInstanceStatus *CommonCode `json:"cloudMssqlInstanceStatus,omitempty"`
+	CloudMssqlInstanceStatus *CommonCode `json:"cloudMssqlInstanceStatus,omitempty"`
 
 	// Cloud DB for MSSQL 인스턴스 OP
-CloudMssqlInstanceOperation *CommonCode `json:"cloudMssqlInstanceOperation,omitempty"`
+	CloudMssqlInstanceOperation *CommonCode `json:"cloudMssqlInstanceOperation,omitempty"`
 
 	// Cloud DB for MSSQL 상품 코드
-CloudMssqlImageProductCode *string `json:"cloudMssqlImageProductCode,omitempty"`
+	CloudMssqlImageProductCode *string `json:"cloudMssqlImageProductCode,omitempty"`
 
 	// 고가용성 여부
-IsHa *bool `json:"isHa,omitempty"`
+	IsHa *bool `json:"isHa,omitempty"`
 
 	// Cloud DB for MSSQL 라이선스
-LicenseCode *CommonCode `json:"licenseCode,omitempty"`
+	LicenseCode *CommonCode `json:"licenseCode,omitempty"`
 
 	// Cloud DB for MSSQL 포트
-CloudMssqlPort *int32 `json:"cloudMssqlPort,omitempty"`
+	CloudMssqlPort *int32 `json:"cloudMssqlPort,omitempty"`
 
 	// 백업 파일 보관 기간
-BackupFileRetentionPeriod *int32 `json:"backupFileRetentionPeriod,omitempty"`
+	BackupFileRetentionPeriod *int32 `json:"backupFileRetentionPeriod,omitempty"`
 
 	// 백업 시간
-BackupTime *string `json:"backupTime,omitempty"`
+	BackupTime *string `json:"backupTime,omitempty"`
 
 	// Cloud DB for MSSQL Config Group 번호
-ConfigGroupNo *string `json:"configGroupNo,omitempty"`
+	ConfigGroupNo *string `json:"configGroupNo,omitempty"`
 
 	// Cloud DB for MSSQL 엔진 버전
-EngineVersion *string `json:"engineVersion,omitempty"`
+	EngineVersion *string `json:"engineVersion,omitempty"`
 
 	// 생성일자
-CreateDate *string `json:"createDate,omitempty"`
+	CreateDate *string `json:"createDate,omitempty"`
 
 	// Cloud DB for MSSQL 문자셋
-DbCollation *string `json:"dbCollation,omitempty"`
+	DbCollation *string `json:"dbCollation,omitempty"`
 
-	// ACG 번호 리스트 
-AccessControlGroupNoList *AccessControlGroupNoList `json:"accessControlGroupNoList,omitempty"`
+	// ACG 번호 리스트
+	AccessControlGroupNoList []*string `json:"accessControlGroupNoList,omitempty"`
 
 	// Cloud MSSQL 서버 리스트
-CloudMssqlServerInstanceList []*CloudMssqlServerInstance `json:"cloudMssqlServerInstanceList,omitempty"`
+	CloudMssqlServerInstanceList []*CloudMssqlServerInstance `json:"cloudMssqlServerInstanceList,omitempty"`
 }

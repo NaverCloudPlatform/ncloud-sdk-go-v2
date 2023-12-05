@@ -44,7 +44,7 @@ type CreateCloudMongoDbInstanceRequest struct {
 	MongosServerCount *int32 `json:"mongosServerCount,omitempty"`
 
 	// CloudMongoDb Config 서버 대수
-	ConfigServerCount *string `json:"configServerCount,omitempty"`
+	ConfigServerCount *int32 `json:"configServerCount,omitempty"`
 
 	// CloudMongoDb User 이름
 	CloudMongoDbUserName *string `json:"cloudMongoDbUserName,omitempty"`

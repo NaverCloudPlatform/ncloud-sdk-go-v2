@@ -9,13 +9,12 @@
 package vmssql
 
 type UploadDmsFileResponse struct {
+	RequestId *string `json:"requestId,omitempty"`
 
-RequestId *string `json:"requestId,omitempty"`
+	ReturnCode *string `json:"returnCode,omitempty"`
 
-ReturnCode *string `json:"returnCode,omitempty"`
-
-ReturnMessage *string `json:"returnMessage,omitempty"`
+	ReturnMessage *string `json:"returnMessage,omitempty"`
 
 	// 요청번호
-RequestNo *string `json:"requestNo,omitempty"`
+	RequestNo *string `json:"requestNo,omitempty"`
 }
