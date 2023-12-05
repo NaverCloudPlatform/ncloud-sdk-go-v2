@@ -30,10 +30,14 @@ Class | Method | HTTP request | Description
 *V2Api* | [**ClustersUuidIpAclPatch**](docs/V2Api.md#clustersuuidipaclpatch) | **Patch** /clusters/{uuid}/ip-acl | 
 *V2Api* | [**ClustersUuidKubeconfigGet**](docs/V2Api.md#clustersuuidkubeconfigget) | **Get** /clusters/{uuid}/kubeconfig | 
 *V2Api* | [**ClustersUuidKubeconfigResetPatch**](docs/V2Api.md#clustersuuidkubeconfigresetpatch) | **Patch** /clusters/{uuid}/kubeconfig/reset | 
+*V2Api* | [**ClustersUuidLbSubnetPatch**](docs/V2Api.md#clustersuuidlbsubnetpatch) | **Patch** /clusters/{uuid}/lb-subnet | 
 *V2Api* | [**ClustersUuidLogPatch**](docs/V2Api.md#clustersuuidlogpatch) | **Patch** /clusters/{uuid}/log | 
 *V2Api* | [**ClustersUuidNodePoolGet**](docs/V2Api.md#clustersuuidnodepoolget) | **Get** /clusters/{uuid}/node-pool | 
 *V2Api* | [**ClustersUuidNodePoolInstanceNoDelete**](docs/V2Api.md#clustersuuidnodepoolinstancenodelete) | **Delete** /clusters/{uuid}/node-pool/{instanceNo} | 
+*V2Api* | [**ClustersUuidNodePoolInstanceNoLabelsPut**](docs/V2Api.md#clustersuuidnodepoolinstancenolabelsput) | **Put** /clusters/{uuid}/node-pool/{instanceNo}/labels | 
 *V2Api* | [**ClustersUuidNodePoolInstanceNoPatch**](docs/V2Api.md#clustersuuidnodepoolinstancenopatch) | **Patch** /clusters/{uuid}/node-pool/{instanceNo} | 
+*V2Api* | [**ClustersUuidNodePoolInstanceNoSubnetsPatch**](docs/V2Api.md#clustersuuidnodepoolinstancenosubnetspatch) | **Patch** /clusters/{uuid}/node-pool/{instanceNo}/subnets | 
+*V2Api* | [**ClustersUuidNodePoolInstanceNoTaintsPut**](docs/V2Api.md#clustersuuidnodepoolinstancenotaintsput) | **Put** /clusters/{uuid}/node-pool/{instanceNo}/taints | 
 *V2Api* | [**ClustersUuidNodePoolInstanceNoUpgradePatch**](docs/V2Api.md#clustersuuidnodepoolinstancenoupgradepatch) | **Patch** /clusters/{uuid}/node-pool/{instanceNo}/upgrade | 
 *V2Api* | [**ClustersUuidNodePoolPost**](docs/V2Api.md#clustersuuidnodepoolpost) | **Post** /clusters/{uuid}/node-pool | 
 *V2Api* | [**ClustersUuidNodesGet**](docs/V2Api.md#clustersuuidnodesget) | **Get** /clusters/{uuid}/nodes | 
@@ -68,7 +72,9 @@ Class | Method | HTTP request | Description
  - [NodePool](docs/NodePool.md)
  - [NodePoolCreationBody](docs/NodePoolCreationBody.md)
  - [NodePoolDto](docs/NodePoolDto.md)
+ - [NodePoolLabel](docs/NodePoolLabel.md)
  - [NodePoolRes](docs/NodePoolRes.md)
+ - [NodePoolTaint](docs/NodePoolTaint.md)
  - [NodePoolUpdateBody](docs/NodePoolUpdateBody.md)
  - [OidcRes](docs/OidcRes.md)
  - [OptionRes](docs/OptionRes.md)
@@ -77,8 +83,12 @@ Class | Method | HTTP request | Description
  - [OptionsResForServerProduct](docs/OptionsResForServerProduct.md)
  - [ServerProduct](docs/ServerProduct.md)
  - [SubnetDto](docs/SubnetDto.md)
+ - [UpdateClusterLbSubnetRes](docs/UpdateClusterLbSubnetRes.md)
  - [UpdateClusterRes](docs/UpdateClusterRes.md)
  - [UpdateNodePoolRes](docs/UpdateNodePoolRes.md)
+ - [UpdateNodepoolLabelDto](docs/UpdateNodepoolLabelDto.md)
+ - [UpdateNodepoolSubnetDto](docs/UpdateNodepoolSubnetDto.md)
+ - [UpdateNodepoolTaintDto](docs/UpdateNodepoolTaintDto.md)
  - [UpdateOidcDto](docs/UpdateOidcDto.md)
  - [WorkerNode](docs/WorkerNode.md)
  - [WorkerNodeRes](docs/WorkerNodeRes.md)

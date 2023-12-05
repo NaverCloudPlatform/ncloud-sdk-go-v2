@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ClusterType** | ***string** | 클러스터 타입 | [default to null]
 **K8sVersion** | ***string** | 쿠버네티스 버전 [Version 조회 API](/docs/compute-vpckubernetesservice-nksv2#k8sSupportedVersion) | [optional] [default to null]
 **LoginKeyName** | ***string** | 로그인 키 이름 | [default to null]
+**HypervisorCode** | ***string** | Hypervisor Code | [optional] [default to null]
 **RegionCode** | ***string** | Region의 코드 | [default to null]
 **ZoneCode** | ***string** | Zone 코드 | [optional] [default to null]
 **ZoneNo** | ***int32** | Zone 번호 | [optional] [default to null]

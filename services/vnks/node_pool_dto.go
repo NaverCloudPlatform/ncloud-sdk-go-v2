@@ -22,9 +22,15 @@ type NodePoolDto struct {
 	// Subnet 번호
 	SubnetNoList []*int32 `json:"subnetNoList,omitempty"`
 
-	// 상품 코드
-	ProductCode *string `json:"productCode"`
-
 	// Server image code
 	SoftwareCode *string `json:"softwareCode,omitempty"`
+
+	// 상품 코드
+	ProductCode *string `json:"productCode,omitempty"`
+
+	// Server spec code
+	ServerSpecCode *string `json:"serverSpecCode,omitempty"`
+
+	// Storage size
+	StorageSize *int32 `json:"storageSize,omitempty"`
 }
