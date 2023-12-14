@@ -87,4 +87,7 @@ type CreateCloudMongoDbInstanceRequest struct {
 
 	// Subnet번호
 	SubnetNo *string `json:"subnetNo"`
+
+	// CloudMongoDb 서버 이름
+	CloudMongoDbServerNamePrefix *string `json:"cloudMongoDbServerNamePrefix"`
 }
