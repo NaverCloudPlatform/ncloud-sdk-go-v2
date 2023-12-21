@@ -38,7 +38,7 @@ type CloudHadoopInstance struct {
 	CloudHadoopAddOnList []*CloudHadoopAddOn `json:"cloudHadoopAddOnList,omitempty"`
 
 	// 고가용성여부
-	IsHa *string `json:"isHa,omitempty"`
+	IsHa *bool `json:"isHa,omitempty"`
 
 	// Ambari host 이름
 	AmbariServerHost *string `json:"ambariServerHost,omitempty"`
@@ -68,5 +68,5 @@ type CloudHadoopInstance struct {
 	AccessControlGroupNoList []*string `json:"accessControlGroupNoList,omitempty"`
 
 	// CloudHadoop서버인스턴스리스트
-	CloudHadoopServerInstanceList []*CloudHadoopServerInstance `json:"CloudHadoopServerInstanceList,omitempty"`
+	CloudHadoopServerInstanceList []*CloudHadoopServerInstance `json:"cloudHadoopServerInstanceList,omitempty"`
 }
