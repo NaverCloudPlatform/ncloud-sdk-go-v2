@@ -47,8 +47,8 @@ func main() {
 ```
 
 If credentials (apiKeys) are not specified, the default credential provider chain is used. The default credential provider chain looks for credentials in the following order:
- 
-1. Environment Variable: Use the NCLOUD_ACCESS_KEY_ID (or NCLOUD_ACCESS_KEY) and NCLOUD_SECRET_KEY (or NCLOUD_SECRET_ACCESS_KEY) environment variables. 
+
+1. Environment Variable: Use the NCLOUD_ACCESS_KEY_ID (or NCLOUD_ACCESS_KEY) and NCLOUD_SECRET_KEY (or NCLOUD_SECRET_ACCESS_KEY) environment variables.
 2. Config file: Use configuration file. The path to the configuration file is .ncloud/configure in the HOME directory.
 3. Server Role: Used on VPC Server instances, and delivered through the ncloud metadata api. Server Role can be set in the NCP Sub Account console.
 
@@ -70,7 +70,6 @@ If credentials (apiKeys) are not specified, the default credential provider chai
 | _Kubernetes Service(VPC)_ | [**NKS(VPC)**](services/vnks/README.md) |
 | _Loadbalancer(Classic)_ | [**Loadbalancer**](services/loadbalancer/README.md) |
 | _Loadbalancer(VPC)_      | [**Loadbalancer(VPC)**](services/vloadbalancer/README.md)           |
-| _Monitoring(Classic)_   | [**Monitoring**](services/monitoring/README.md)     |
 | _Nas(VPC)_      | [**Nas(VPC)**](services/vnas/README.md)           |
 | _Search Engine Service(VPC)_        | [**Search Engine Service(VPC)**](services/vses2/README.md)         |
 | _Server(Classic)_       | [**Server**](services/server/README.md)             |
