@@ -11,11 +11,11 @@ package vmongodb
 type ChangeCloudMongoDbShardCountRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// CloudMongoDb 인스턴스번호
-CloudMongoDbInstanceNo *string `json:"cloudMongoDbInstanceNo"`
+	CloudMongoDbInstanceNo *string `json:"cloudMongoDbInstanceNo"`
 
 	// Cloud DB for MongoDB 샤드 대수
-ShardCount *string `json:"shardCount"`
+	ShardCount *int32 `json:"shardCount"`
 }

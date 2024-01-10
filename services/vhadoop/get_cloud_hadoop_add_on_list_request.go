@@ -11,8 +11,11 @@ package vhadoop
 type GetCloudHadoopAddOnListRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// Cloud Hadoop 이미지 상품 코드
-CloudHadoopImageProductCode *string `json:"cloudHadoopImageProductCode,omitempty"`
+	CloudHadoopImageProductCode *string `json:"cloudHadoopImageProductCode"`
+
+	// Cloud Hadoop 클러스터 유형 코드
+	CloudHadoopClusterTypeCode *string `json:"cloudHadoopClusterTypeCode"`
 }
