@@ -62,8 +62,11 @@ type CreateCloudRedisInstanceRequest struct {
 	SubnetNo *string `json:"subnetNo"`
 
 	// 공공 Ncloud에만 사용되는 필드
-	CloudRedisUserName *string `json:"cloudRedisUserName"`
+	CloudRedisUserName *string `json:"cloudRedisUserName,omitempty"`
 
 	// 공공 Ncloud에만 사용되는 필드
-	CloudRedisUserPassword *string `json:"cloudRedisUserPassword"`
+	CloudRedisUserPassword *string `json:"cloudRedisUserPassword,omitempty"`
+
+	// Engine Version
+	EngineVersionCode *string `json:"engineVersionCode,omitempty"`
 }
