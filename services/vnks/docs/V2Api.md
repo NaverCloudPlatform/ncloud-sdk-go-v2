@@ -27,6 +27,7 @@ Method | HTTP request | Description
 [**ClustersUuidNodesInstanceNoDelete**](V2Api.md#ClustersUuidNodesInstanceNoDelete) | **Delete** /clusters/{uuid}/nodes/{instanceNo} | 
 [**ClustersUuidOidcGet**](V2Api.md#ClustersUuidOidcGet) | **Get** /clusters/{uuid}/oidc | 
 [**ClustersUuidOidcPatch**](V2Api.md#ClustersUuidOidcPatch) | **Patch** /clusters/{uuid}/oidc | 
+[**ClustersUuidReturnProtectionPatch**](V2Api.md#ClustersUuidReturnProtectionPatch) | **Patch** /clusters/{uuid}/return-protection | 
 [**ClustersUuidUpgradePatch**](V2Api.md#ClustersUuidUpgradePatch) | **Patch** /clusters/{uuid}/upgrade | 
 [**OptionServerImageGet**](V2Api.md#OptionServerImageGet) | **Get** /option/server-image | 
 [**OptionServerProductCodeGet**](V2Api.md#OptionServerProductCodeGet) | **Get** /option/server-product-code | 
@@ -630,6 +631,31 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ClustersUuidReturnProtectionPatch**
+> UpdateClusterRes ClustersUuidReturnProtectionPatch(body, uuid)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**body** | **[\*ReturnProtectionDto](ReturnProtectionDto.md)** |  | **uuid** | **string** | uuid | 
+
+### Return type
+
+*[**UpdateClusterRes**](UpdateClusterRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ClustersUuidUpgradePatch**
 > UpdateClusterRes ClustersUuidUpgradePatch(uuid, k8sVersion, optional)
 
@@ -671,7 +697,6 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -737,7 +762,6 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -745,7 +769,7 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**from** | **string** |  | **to** | **string** |  | 
+**from** | **string** |  | **hypervisorCode** | **string** |  | **to** | **string** |  | 
 
 ### Return type
 

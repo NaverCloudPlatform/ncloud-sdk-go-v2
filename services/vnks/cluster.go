@@ -62,10 +62,10 @@ type Cluster struct {
 	KubeNetworkPlugin *string `json:"kubeNetworkPlugin"`
 
 	// 로드밸런서 전용 서브넷 이름
-	SubnetLbName *string `json:"subnetLbName"`
+	SubnetLbName *string `json:"subnetLbName,omitempty"`
 
 	// 로드밸런서 전용 Private Subnet No
-	SubnetLbNo *int32 `json:"subnetLbNo"`
+	SubnetLbNo *int32 `json:"subnetLbNo,omitempty"`
 
 	// 로드밸런서 전용 Private Subnet No
 	LbPrivateSubnetNo *int32 `json:"lbPrivateSubnetNo"`
@@ -74,7 +74,7 @@ type Cluster struct {
 	LbPublicSubnetNo *int32 `json:"lbPublicSubnetNo,omitempty"`
 
 	// 서브넷 이름
-	SubnetName *string `json:"subnetName"`
+	SubnetName *string `json:"subnetName,omitempty"`
 
 	// 서브넷 No 목록
 	SubnetNoList []*int32 `json:"subnetNoList"`
@@ -95,13 +95,13 @@ type Cluster struct {
 	ZoneNo *int32 `json:"zoneNo"`
 
 	// InitScript 번호
-	InitScriptNo *int32 `json:"initScriptNo"`
+	InitScriptNo *int32 `json:"initScriptNo,omitempty"`
 
 	// InitScript 이름
-	InitScriptName *string `json:"initScriptName"`
+	InitScriptName *string `json:"initScriptName,omitempty"`
 
 	// Pod Security Policy 설정 여부
-	PodSecurityPolicyEnabled *bool `json:"podSecurityPolicyEnabled"`
+	PodSecurityPolicyEnabled *bool `json:"podSecurityPolicyEnabled,omitempty"`
 
 	// 로그인 키 이름
 	LoginKeyName *string `json:"loginKeyName"`
@@ -113,4 +113,6 @@ type Cluster struct {
 
 	// Public Network
 	PublicNetwork *bool `json:"publicNetwork"`
+
+	ReturnProtection *bool `json:"returnProtection"`
 }
