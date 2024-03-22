@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **StorageSize** | ***int32** | 스토리지 크기 | [optional] [default to null]
 **Labels** | **[[]\*NodePoolLabel](NodePoolLabel.md)** |  | [default to null]
 **Taints** | **[[]\*NodePoolTaint](NodePoolTaint.md)** |  | [default to null]
+**ServerRoleId** | ***string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

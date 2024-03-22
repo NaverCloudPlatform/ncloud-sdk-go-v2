@@ -52,4 +52,6 @@ type NodePool struct {
 	Labels []*NodePoolLabel `json:"labels"`
 
 	Taints []*NodePoolTaint `json:"taints"`
+
+	ServerRoleId *string `json:"serverRoleId,omitempty"`
 }

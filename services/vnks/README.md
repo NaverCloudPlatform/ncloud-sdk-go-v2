@@ -44,6 +44,7 @@ Class | Method | HTTP request | Description
 *V2Api* | [**ClustersUuidNodesInstanceNoDelete**](docs/V2Api.md#clustersuuidnodesinstancenodelete) | **Delete** /clusters/{uuid}/nodes/{instanceNo} | 
 *V2Api* | [**ClustersUuidOidcGet**](docs/V2Api.md#clustersuuidoidcget) | **Get** /clusters/{uuid}/oidc | 
 *V2Api* | [**ClustersUuidOidcPatch**](docs/V2Api.md#clustersuuidoidcpatch) | **Patch** /clusters/{uuid}/oidc | 
+*V2Api* | [**ClustersUuidReturnProtectionPatch**](docs/V2Api.md#clustersuuidreturnprotectionpatch) | **Patch** /clusters/{uuid}/return-protection | 
 *V2Api* | [**ClustersUuidUpgradePatch**](docs/V2Api.md#clustersuuidupgradepatch) | **Patch** /clusters/{uuid}/upgrade | 
 *V2Api* | [**OptionServerImageGet**](docs/V2Api.md#optionserverimageget) | **Get** /option/server-image | 
 *V2Api* | [**OptionServerProductCodeGet**](docs/V2Api.md#optionserverproductcodeget) | **Get** /option/server-product-code | 
@@ -81,6 +82,7 @@ Class | Method | HTTP request | Description
  - [OptionResForServerProduct](docs/OptionResForServerProduct.md)
  - [OptionsRes](docs/OptionsRes.md)
  - [OptionsResForServerProduct](docs/OptionsResForServerProduct.md)
+ - [ReturnProtectionDto](docs/ReturnProtectionDto.md)
  - [ServerProduct](docs/ServerProduct.md)
  - [SubnetDto](docs/SubnetDto.md)
  - [UpdateClusterLbSubnetRes](docs/UpdateClusterLbSubnetRes.md)

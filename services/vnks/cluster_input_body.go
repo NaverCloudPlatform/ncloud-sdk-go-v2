@@ -52,14 +52,8 @@ type ClusterInputBody struct {
 	// [로드밸런서 전용 Private Subnet 번호](/docs/networking-vpc-subnetmanagement-getsubnetlist)
 	LbPrivateSubnetNo *int32 `json:"lbPrivateSubnetNo,omitempty"`
 
-	// [로드밸런서 전용 Public Subnet 번호(Singapore 리전만 지원)](/docs/networking-vpc-subnetmanagement-getsubnetlist)
+	// [로드밸런서 전용 Public Subnet 번호](/docs/networking-vpc-subnetmanagement-getsubnetlist)
 	LbPublicSubnetNo *int32 `json:"lbPublicSubnetNo,omitempty"`
-
-	// InitScript 번호
-	InitScriptNo *int32 `json:"initScriptNo,omitempty"`
-
-	// Pod Security Policy 설정 여부
-	PodSecurityPolicyEnabled *bool `json:"podSecurityPolicyEnabled,omitempty"`
 
 	//
 	Log *ClusterLogInput `json:"log,omitempty"`

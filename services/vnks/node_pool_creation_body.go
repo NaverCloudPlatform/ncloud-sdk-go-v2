@@ -36,4 +36,10 @@ type NodePoolCreationBody struct {
 
 	//
 	Autoscale *AutoscalerUpdate `json:"autoscale,omitempty"`
+
+	Labels []*NodePoolLabel `json:"labels,omitempty"`
+
+	Taints []*NodePoolTaint `json:"taints,omitempty"`
+
+	ServerRoleId *string `json:"serverRoleId,omitempty"`
 }
