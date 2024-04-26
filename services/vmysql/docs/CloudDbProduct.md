@@ -1,4 +1,4 @@
-# Product
+# CloudDbProduct
 
 ## Properties
 Name | Type | Description | Notes
@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **DbKindCode** | ***string** | DB유형코드 | [optional] [default to null]
 **AddBlockStorageSize** | ***int64** | 추가블록스토리지사이즈 | [optional] [default to null]
 **GenerationCode** | ***string** | 세대코드 | [optional] [default to null]
+**EngineVersionCode** | ***string** | engineVersionCode | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

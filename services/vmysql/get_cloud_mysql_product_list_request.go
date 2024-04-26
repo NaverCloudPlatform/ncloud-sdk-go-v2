@@ -11,17 +11,17 @@ package vmysql
 type GetCloudMysqlProductListRequest struct {
 
 	// REGION코드
-	RegionCode *string `json:"regionCode,omitempty"`
+RegionCode *string `json:"regionCode,omitempty"`
 
 	// ZONE코드
-	ZoneCode *string `json:"zoneCode,omitempty"`
+ZoneCode *string `json:"zoneCode,omitempty"`
 
 	// CloudMysql이미지상품코드
-	CloudMysqlImageProductCode *string `json:"cloudMysqlImageProductCode"`
+CloudMysqlImageProductCode *string `json:"cloudMysqlImageProductCode"`
 
 	// 조회할상품코드
-	ProductCode *string `json:"productCode,omitempty"`
+ProductCode *string `json:"productCode,omitempty"`
 
 	// 제외할상품코드
-	ExclusionProductCode *string `json:"exclusionProductCode,omitempty"`
+ExclusionProductCode *string `json:"exclusionProductCode,omitempty"`
 }

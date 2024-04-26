@@ -11,8 +11,8 @@ package vmysql
 type RebootCloudMysqlServerInstanceRequest struct {
 
 	// REGION코드
-	RegionCode *string `json:"regionCode,omitempty"`
+RegionCode *string `json:"regionCode,omitempty"`
 
 	// CloudMysql서버인스턴스번호
-	CloudMysqlServerInstanceNo *string `json:"cloudMysqlServerInstanceNo"`
+CloudMysqlServerInstanceNo *string `json:"cloudMysqlServerInstanceNo"`
 }

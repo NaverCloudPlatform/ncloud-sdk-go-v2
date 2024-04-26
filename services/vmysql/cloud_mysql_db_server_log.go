@@ -11,11 +11,11 @@ package vmysql
 type CloudMysqlDbServerLog struct {
 
 	// 데이터베이스서버로그파일이름
-	FileName *string `json:"fileName,omitempty"`
+FileName *string `json:"fileName,omitempty"`
 
 	// 데이터베이스서버로그파일사이즈
-	FileSize *int64 `json:"fileSize,omitempty"`
+FileSize *int64 `json:"fileSize,omitempty"`
 
 	// 데이터베이스서버로그파일수정일시
-	FileDate *string `json:"fileDate,omitempty"`
+FileDate *string `json:"fileDate,omitempty"`
 }

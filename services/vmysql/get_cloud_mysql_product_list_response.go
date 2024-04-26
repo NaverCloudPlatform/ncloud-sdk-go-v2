@@ -9,14 +9,15 @@
 package vmysql
 
 type GetCloudMysqlProductListResponse struct {
-	RequestId *string `json:"requestId,omitempty"`
 
-	ReturnCode *string `json:"returnCode,omitempty"`
+RequestId *string `json:"requestId,omitempty"`
 
-	ReturnMessage *string `json:"returnMessage,omitempty"`
+ReturnCode *string `json:"returnCode,omitempty"`
 
-	TotalRows *int32 `json:"totalRows,omitempty"`
+ReturnMessage *string `json:"returnMessage,omitempty"`
+
+TotalRows *int32 `json:"totalRows,omitempty"`
 
 	// 상품리스트
-	ProductList []*Product `json:"productList,omitempty"`
+ProductList *CloudDbProductList `json:"productList,omitempty"`
 }

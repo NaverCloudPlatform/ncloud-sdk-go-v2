@@ -11,17 +11,17 @@ package vmysql
 type CloudMysqlBackupDetail struct {
 
 	// 백업파일이름
-	FileName *string `json:"fileName,omitempty"`
+FileName *string `json:"fileName,omitempty"`
 
 	// 백업시작시간
-	StartTime *string `json:"startTime,omitempty"`
+StartTime *string `json:"startTime,omitempty"`
 
 	// 백업종료시간
-	EndTime *string `json:"endTime,omitempty"`
+EndTime *string `json:"endTime,omitempty"`
 
 	// 백업사이즈
-	BackupSize *int64 `json:"backupSize,omitempty"`
+BackupSize *int64 `json:"backupSize,omitempty"`
 
 	// 데이터스토리지사이즈
-	DataStorageSize *int64 `json:"dataStorageSize,omitempty"`
+DataStorageSize *int64 `json:"dataStorageSize,omitempty"`
 }

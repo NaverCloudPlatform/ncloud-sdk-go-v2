@@ -11,11 +11,11 @@ package vmysql
 type CloudMysqlUser struct {
 
 	// DBUserID
-	UserName *string `json:"userName,omitempty"`
+UserName *string `json:"userName,omitempty"`
 
 	// 접근IP
-	HostIp *string `json:"hostIp,omitempty"`
+HostIp *string `json:"hostIp,omitempty"`
 
 	// DB권한
-	Authority *string `json:"authority,omitempty"`
+Authority *string `json:"authority,omitempty"`
 }

@@ -11,5 +11,5 @@ package vmysql
 type GetCloudMysqlBackupListRequest struct {
 
 	// REGION코드
-	RegionCode *string `json:"regionCode,omitempty"`
+RegionCode *string `json:"regionCode,omitempty"`
 }

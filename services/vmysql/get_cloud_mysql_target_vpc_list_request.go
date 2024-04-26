@@ -8,8 +8,8 @@
 
 package vmysql
 
-type CloudMysqlDatabaseList struct {
+type GetCloudMysqlTargetVpcListRequest struct {
 
-	// CloudMysqlDatabase리스트
-	CloudMysqlDatabaseList []*CloudMysqlDatabase `json:"cloudMysqlDatabaseList,omitempty"`
+	// REGION코드
+RegionCode *string `json:"regionCode,omitempty"`
 }

@@ -11,11 +11,11 @@ package vmysql
 type AddCloudMysqlDatabaseListRequest struct {
 
 	// REGION코드
-	RegionCode *string `json:"regionCode,omitempty"`
+RegionCode *string `json:"regionCode,omitempty"`
 
 	// CloudMysql인스턴스번호
-	CloudMysqlInstanceNo *string `json:"cloudMysqlInstanceNo"`
+CloudMysqlInstanceNo *string `json:"cloudMysqlInstanceNo"`
 
 	// CloudMysqlDatabase리스트
-	CloudMysqlDatabaseNameList []*string `json:"cloudMysqlDatabaseNameList"`
+CloudMysqlDatabaseNameList []*string `json:"cloudMysqlDatabaseNameList"`
 }
