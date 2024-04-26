@@ -8,7 +8,7 @@
 
 package vmysql
 
-type DeleteCloudMysqlInstanceResponse struct {
+type GetCloudMysqlTargetSubnetListResponse struct {
 
 RequestId *string `json:"requestId,omitempty"`
 
@@ -18,6 +18,6 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 
 TotalRows *int32 `json:"totalRows,omitempty"`
 
-	// CloudMysql인스턴스리스트
-CloudMysqlInstanceList []*CloudMysqlInstance `json:"cloudMysqlInstanceList,omitempty"`
+	// 상품리스트
+TargetSubnetList []*TargetSubnet `json:"targetSubnetList,omitempty"`
 }

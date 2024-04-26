@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **IsPublicSubnet** | ***bool** | PublicSubnet여부 | [optional] [default to null]
 **PublicDomain** | ***string** | 공인도메인명 | [optional] [default to null]
 **PrivateDomain** | ***string** | 사설도메인명 | [optional] [default to null]
+**PrivateIp** | ***string** | 내부IP | [optional] [default to null]
 **DataStorageType** | **[*CommonCode](CommonCode.md)** | 데이터스토리지타입 | [optional] [default to null]
 **IsStorageEncryption** | ***bool** | 데이터스토리지암호화여부 | [optional] [default to null]
 **DataStorageSize** | ***int64** | 데이터스토리지사이즈 | [optional] [default to null]

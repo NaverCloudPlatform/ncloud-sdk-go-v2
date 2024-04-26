@@ -9,14 +9,15 @@
 package vmysql
 
 type GetCloudMysqlUserListResponse struct {
-	RequestId *string `json:"requestId,omitempty"`
 
-	ReturnCode *string `json:"returnCode,omitempty"`
+RequestId *string `json:"requestId,omitempty"`
 
-	ReturnMessage *string `json:"returnMessage,omitempty"`
+ReturnCode *string `json:"returnCode,omitempty"`
 
-	TotalRows *int32 `json:"totalRows,omitempty"`
+ReturnMessage *string `json:"returnMessage,omitempty"`
+
+TotalRows *int32 `json:"totalRows,omitempty"`
 
 	// CloudMysqlUser리스트
-	CloudMysqlUserList []*CloudMysqlUser `json:"cloudMysqlUserList,omitempty"`
+CloudMysqlUserList []*CloudMysqlUser `json:"cloudMysqlUserList,omitempty"`
 }

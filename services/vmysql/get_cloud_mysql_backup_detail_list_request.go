@@ -11,8 +11,14 @@ package vmysql
 type GetCloudMysqlBackupDetailListRequest struct {
 
 	// REGION코드
-	RegionCode *string `json:"regionCode,omitempty"`
+RegionCode *string `json:"regionCode,omitempty"`
 
 	// CloudMysql인스턴스번호
-	CloudMysqlInstanceNo *string `json:"cloudMysqlInstanceNo"`
+CloudMysqlInstanceNo *string `json:"cloudMysqlInstanceNo"`
+
+	// 페이지번호
+PageNo *int32 `json:"pageNo,omitempty"`
+
+	// 페이지사이즈
+PageSize *int32 `json:"pageSize,omitempty"`
 }

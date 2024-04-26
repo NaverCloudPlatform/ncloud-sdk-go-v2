@@ -24,6 +24,8 @@ Method | HTTP request | Description
 [**GetCloudMysqlInstanceList**](V2Api.md#GetCloudMysqlInstanceList) | **Post** /getCloudMysqlInstanceList | 
 [**GetCloudMysqlProductList**](V2Api.md#GetCloudMysqlProductList) | **Post** /getCloudMysqlProductList | 
 [**GetCloudMysqlRecoveryTime**](V2Api.md#GetCloudMysqlRecoveryTime) | **Post** /getCloudMysqlRecoveryTime | 
+[**GetCloudMysqlTargetSubnetList**](V2Api.md#GetCloudMysqlTargetSubnetList) | **Post** /getCloudMysqlTargetSubnetList | 
+[**GetCloudMysqlTargetVpcList**](V2Api.md#GetCloudMysqlTargetVpcList) | **Post** /getCloudMysqlTargetVpcList | 
 [**GetCloudMysqlUserList**](V2Api.md#GetCloudMysqlUserList) | **Post** /getCloudMysqlUserList | 
 [**GetDbServerLogList**](V2Api.md#GetDbServerLogList) | **Post** /getDbServerLogList | 
 [**RebootCloudMysqlServerInstance**](V2Api.md#RebootCloudMysqlServerInstance) | **Post** /rebootCloudMysqlServerInstance | 
@@ -31,6 +33,8 @@ Method | HTTP request | Description
 
 # **AddCloudMysqlDatabaseList**
 > AddCloudMysqlDatabaseListResponse AddCloudMysqlDatabaseList(addCloudMysqlDatabaseListRequest)
+
+
 
 
 ### Required Parameters
@@ -58,6 +62,8 @@ Name | Type | Description  | Notes
 > AddCloudMysqlUserListResponse AddCloudMysqlUserList(addCloudMysqlUserListRequest)
 
 
+
+
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -81,6 +87,8 @@ Name | Type | Description  | Notes
 
 # **ChangeCloudMysqlUserList**
 > ChangeCloudMysqlUserListResponse ChangeCloudMysqlUserList(changeCloudMysqlUserListRequest)
+
+
 
 
 ### Required Parameters
@@ -108,6 +116,8 @@ Name | Type | Description  | Notes
 > CreateCloudMysqlInstanceResponse CreateCloudMysqlInstance(createCloudMysqlInstanceRequest)
 
 
+
+
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -131,6 +141,8 @@ Name | Type | Description  | Notes
 
 # **CreateCloudMysqlRecoveryInstance**
 > CreateCloudMysqlRecoveryInstanceResponse CreateCloudMysqlRecoveryInstance(createCloudMysqlRecoveryInstanceRequest)
+
+
 
 
 ### Required Parameters
@@ -158,6 +170,8 @@ Name | Type | Description  | Notes
 > CreateCloudMysqlSlaveInstanceResponse CreateCloudMysqlSlaveInstance(createCloudMysqlSlaveInstanceRequest)
 
 
+
+
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -181,6 +195,8 @@ Name | Type | Description  | Notes
 
 # **DeleteCloudMysqlDatabaseList**
 > DeleteCloudMysqlDatabaseListResponse DeleteCloudMysqlDatabaseList(deleteCloudMysqlDatabaseListRequest)
+
+
 
 
 ### Required Parameters
@@ -208,6 +224,8 @@ Name | Type | Description  | Notes
 > DeleteCloudMysqlInstanceResponse DeleteCloudMysqlInstance(deleteCloudMysqlInstanceRequest)
 
 
+
+
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -231,6 +249,8 @@ Name | Type | Description  | Notes
 
 # **DeleteCloudMysqlServerInstance**
 > DeleteCloudMysqlServerInstanceResponse DeleteCloudMysqlServerInstance(deleteCloudMysqlServerInstanceRequest)
+
+
 
 
 ### Required Parameters
@@ -258,6 +278,8 @@ Name | Type | Description  | Notes
 > DeleteCloudMysqlUserListResponse DeleteCloudMysqlUserList(deleteCloudMysqlUserListRequest)
 
 
+
+
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -281,6 +303,8 @@ Name | Type | Description  | Notes
 
 # **ExportBackupToObjectStorage**
 > ExportBackupToObjectStorageResponse ExportBackupToObjectStorage(exportBackupToObjectStorageRequest)
+
+
 
 
 ### Required Parameters
@@ -308,6 +332,8 @@ Name | Type | Description  | Notes
 > ExportDbServerLogToObjectStorageResponse ExportDbServerLogToObjectStorage(exportDbServerLogToObjectStorageRequest)
 
 
+
+
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -331,6 +357,8 @@ Name | Type | Description  | Notes
 
 # **GetCloudMysqlBackupDetailList**
 > GetCloudMysqlBackupDetailListResponse GetCloudMysqlBackupDetailList(getCloudMysqlBackupDetailListRequest)
+
+
 
 
 ### Required Parameters
@@ -358,6 +386,8 @@ Name | Type | Description  | Notes
 > GetCloudMysqlBackupListResponse GetCloudMysqlBackupList(getCloudMysqlBackupListRequest)
 
 
+
+
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -381,6 +411,8 @@ Name | Type | Description  | Notes
 
 # **GetCloudMysqlDatabaseList**
 > GetCloudMysqlDatabaseListResponse GetCloudMysqlDatabaseList(getCloudMysqlDatabaseListRequest)
+
+
 
 
 ### Required Parameters
@@ -408,6 +440,8 @@ Name | Type | Description  | Notes
 > GetCloudMysqlImageProductListResponse GetCloudMysqlImageProductList(getCloudMysqlImageProductListRequest)
 
 
+
+
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -431,6 +465,8 @@ Name | Type | Description  | Notes
 
 # **GetCloudMysqlInstanceDetail**
 > GetCloudMysqlInstanceDetailResponse GetCloudMysqlInstanceDetail(getCloudMysqlInstanceDetailRequest)
+
+
 
 
 ### Required Parameters
@@ -458,6 +494,8 @@ Name | Type | Description  | Notes
 > GetCloudMysqlInstanceListResponse GetCloudMysqlInstanceList(getCloudMysqlInstanceListRequest)
 
 
+
+
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -481,6 +519,8 @@ Name | Type | Description  | Notes
 
 # **GetCloudMysqlProductList**
 > GetCloudMysqlProductListResponse GetCloudMysqlProductList(getCloudMysqlProductListRequest)
+
+
 
 
 ### Required Parameters
@@ -508,6 +548,8 @@ Name | Type | Description  | Notes
 > GetCloudMysqlRecoveryTimeResponse GetCloudMysqlRecoveryTime(getCloudMysqlRecoveryTimeRequest)
 
 
+
+
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -529,8 +571,64 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetCloudMysqlTargetSubnetList**
+> GetCloudMysqlTargetSubnetListResponse GetCloudMysqlTargetSubnetList(getCloudMysqlTargetSubnetListRequest)
+
+
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getCloudMysqlTargetSubnetListRequest** | **[\*GetCloudMysqlTargetSubnetListRequest](GetCloudMysqlTargetSubnetListRequest.md)** | getCloudMysqlTargetSubnetListRequest | 
+
+### Return type
+
+*[**GetCloudMysqlTargetSubnetListResponse**](GetCloudMysqlTargetSubnetListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCloudMysqlTargetVpcList**
+> GetCloudMysqlTargetVpcListResponse GetCloudMysqlTargetVpcList(getCloudMysqlTargetVpcListRequest)
+
+
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getCloudMysqlTargetVpcListRequest** | **[\*GetCloudMysqlTargetVpcListRequest](GetCloudMysqlTargetVpcListRequest.md)** | getCloudMysqlTargetVpcListRequest | 
+
+### Return type
+
+*[**GetCloudMysqlTargetVpcListResponse**](GetCloudMysqlTargetVpcListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetCloudMysqlUserList**
 > GetCloudMysqlUserListResponse GetCloudMysqlUserList(getCloudMysqlUserListRequest)
+
+
 
 
 ### Required Parameters
@@ -558,6 +656,8 @@ Name | Type | Description  | Notes
 > GetDbServerLogListResponse GetDbServerLogList(getDbServerLogListRequest)
 
 
+
+
 ### Required Parameters
 
 Name | Type | Description  | Notes
@@ -581,6 +681,8 @@ Name | Type | Description  | Notes
 
 # **RebootCloudMysqlServerInstance**
 > RebootCloudMysqlServerInstanceResponse RebootCloudMysqlServerInstance(rebootCloudMysqlServerInstanceRequest)
+
+
 
 
 ### Required Parameters

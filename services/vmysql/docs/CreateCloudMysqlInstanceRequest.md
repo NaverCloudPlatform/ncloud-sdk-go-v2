@@ -24,6 +24,9 @@ Name | Type | Description | Notes
 **CloudMysqlDatabaseName** | ***string** | CloudMysqlDB명 | [default to null]
 **SubnetNo** | ***string** | Subnet번호 | [default to null]
 **StandbyMasterSubnetNo** | ***string** | StandbyMasterSubnet번호 | [optional] [default to null]
+**IsPrivateSubDomain** | ***bool** | privateSubDomain사용여부 | [optional] [default to null]
+**PrivateSubDomainPrefix** | ***string** | privateSubDomain접두어 | [optional] [default to null]
+**EngineVersionCode** | ***string** | engineVersionCode | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

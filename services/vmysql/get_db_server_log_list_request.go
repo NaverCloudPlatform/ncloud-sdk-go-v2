@@ -11,11 +11,11 @@ package vmysql
 type GetDbServerLogListRequest struct {
 
 	// REGION코드
-	RegionCode *string `json:"regionCode,omitempty"`
+RegionCode *string `json:"regionCode,omitempty"`
 
 	// 데이터베이스서버로그파일타입
-	LogType *string `json:"logType"`
+LogType *string `json:"logType"`
 
 	// CloudMysql서버인스턴스번호
-	CloudMysqlServerInstanceNo *string `json:"cloudMysqlServerInstanceNo"`
+CloudMysqlServerInstanceNo *string `json:"cloudMysqlServerInstanceNo"`
 }

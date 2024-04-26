@@ -8,5 +8,5 @@
 
 package vmysql
 
-type ProductList struct {
+type CloudDbProductList struct {
 }

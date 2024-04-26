@@ -29,3 +29,6 @@ vendor/golang.org
 vendor/gopkg.in
 
 .idea
+
+# vscode
+.DS_Store

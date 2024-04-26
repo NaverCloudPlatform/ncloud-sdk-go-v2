@@ -1,4 +1,4 @@
-# GetCloudMysqlProductListResponse
+# GetCloudMysqlTargetVpcListResponse
 
 ## Properties
 Name | Type | Description | Notes
@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ReturnCode** | ***string** |  | [optional] [default to null]
 **ReturnMessage** | ***string** |  | [optional] [default to null]
 **TotalRows** | ***int32** |  | [optional] [default to null]
-**ProductList** | **[*CloudDbProductList](CloudDbProductList.md)** | 상품리스트 | [optional] [default to null]
+**TargetVpcList** | **[[]\*TargetVpc](TargetVpc.md)** | 상품리스트 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

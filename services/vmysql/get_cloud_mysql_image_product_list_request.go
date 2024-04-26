@@ -11,11 +11,14 @@ package vmysql
 type GetCloudMysqlImageProductListRequest struct {
 
 	// REGION코드
-	RegionCode *string `json:"regionCode,omitempty"`
+RegionCode *string `json:"regionCode,omitempty"`
 
 	// 조회할상품코드
-	ProductCode *string `json:"productCode,omitempty"`
+ProductCode *string `json:"productCode,omitempty"`
 
 	// 제외할상품코드
-	ExclusionProductCode *string `json:"exclusionProductCode,omitempty"`
+ExclusionProductCode *string `json:"exclusionProductCode,omitempty"`
+
+	// 세대코드
+GenerationCode *string `json:"generationCode,omitempty"`
 }
