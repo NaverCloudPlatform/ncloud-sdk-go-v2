@@ -14,7 +14,7 @@ type NodePoolCreationBody struct {
 	Name *string `json:"name"`
 
 	// 등록 될 노드 개수
-	NodeCount *int32 `json:"nodeCount"`
+	NodeCount *int32 `json:"nodeCount,omitempty"`
 
 	// Subnet 번호
 	SubnetNo *int32 `json:"subnetNo,omitempty"`
