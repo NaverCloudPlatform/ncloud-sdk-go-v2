@@ -11,7 +11,7 @@ package vnks
 type NodePoolUpdateBody struct {
 
 	// 노드 개수
-	NodeCount *int32 `json:"nodeCount"`
+	NodeCount *int32 `json:"nodeCount,omitempty"`
 
 	//
 	Autoscale *AutoscalerUpdate `json:"autoscale,omitempty"`
