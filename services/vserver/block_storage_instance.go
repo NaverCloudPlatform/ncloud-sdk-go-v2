@@ -66,4 +66,13 @@ RegionCode *string `json:"regionCode,omitempty"`
 
 	// 반납보호여부
 IsReturnProtection *bool `json:"isReturnProtection,omitempty"`
+
+	// 블록스토리지볼륨타입
+BlockStorageVolumeType *CommonCode `json:"blockStorageVolumeType,omitempty"`
+
+	// 하이퍼바이저타입
+HypervisorType *CommonCode `json:"hypervisorType,omitempty"`
+
+	// 블록스토리지 throughput
+Throughput *int64 `json:"throughput,omitempty"`
 }

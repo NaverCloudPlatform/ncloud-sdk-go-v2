@@ -17,7 +17,7 @@ RegionCode *string `json:"regionCode,omitempty"`
 ZoneCode *string `json:"zoneCode,omitempty"`
 
 	// 서버이미지상품코드
-ServerImageProductCode *string `json:"serverImageProductCode"`
+ServerImageProductCode *string `json:"serverImageProductCode,omitempty"`
 
 	// 제외할상품코드
 ExclusionProductCode *string `json:"exclusionProductCode,omitempty"`
@@ -27,4 +27,7 @@ ProductCode *string `json:"productCode,omitempty"`
 
 	// 세대코드
 GenerationCode *string `json:"generationCode,omitempty"`
+
+	// 회원서버이미지인스턴스번호
+MemberServerImageInstanceNo *string `json:"memberServerImageInstanceNo,omitempty"`
 }

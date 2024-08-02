@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **BlockStorageSnapshotInstanceNo** | ***string** | 블록스토리지스냅샷인스턴스번호 | [optional] [default to null]
 **ZoneCode** | ***string** | ZONE코드 | [optional] [default to null]
 **IsReturnProtection** | ***bool** | 반납보호여부 | [optional] [default to null]
+**BlockStorageVolumeTypeCode** | ***string** | 블록스토리지볼륨타입코드 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

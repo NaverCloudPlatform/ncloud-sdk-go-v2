@@ -19,6 +19,9 @@ BlockStorageSnapshotInstanceNoList []*string `json:"blockStorageSnapshotInstance
 	// 원본블록스토리지인스턴스번호리스트
 OriginalBlockStorageInstanceNoList []*string `json:"originalBlockStorageInstanceNoList,omitempty"`
 
+	// 하이퍼바이저타입코드리스트
+HypervisorTypeCodeList []*string `json:"hypervisorTypeCodeList,omitempty"`
+
 	// 블록스토리지스냅샷인스턴스상태코드
 BlockStorageSnapshotInstanceStatusCode *string `json:"blockStorageSnapshotInstanceStatusCode,omitempty"`
 
@@ -36,6 +39,9 @@ IsEncryptedOriginalBlockStorageVolume *bool `json:"isEncryptedOriginalBlockStora
 
 	// 블록스토리지스냅샷이름
 BlockStorageSnapshotName *string `json:"blockStorageSnapshotName,omitempty"`
+
+	// 부팅가능 여부
+IsBootable *bool `json:"isBootable,omitempty"`
 
 	// 정렬대상
 SortedBy *string `json:"sortedBy,omitempty"`
