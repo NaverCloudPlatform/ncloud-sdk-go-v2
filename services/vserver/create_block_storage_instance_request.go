@@ -36,4 +36,7 @@ ZoneCode *string `json:"zoneCode,omitempty"`
 
 	// 반납보호여부
 IsReturnProtection *bool `json:"isReturnProtection,omitempty"`
+
+	// 블록스토리지볼륨타입코드
+BlockStorageVolumeTypeCode *string `json:"blockStorageVolumeTypeCode,omitempty"`
 }

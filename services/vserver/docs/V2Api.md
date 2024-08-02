@@ -9,10 +9,12 @@ Method | HTTP request | Description
 [**AddMemberServerImageSharingPermission**](V2Api.md#AddMemberServerImageSharingPermission) | **Post** /addMemberServerImageSharingPermission | 
 [**AddNetworkInterfaceAccessControlGroup**](V2Api.md#AddNetworkInterfaceAccessControlGroup) | **Post** /addNetworkInterfaceAccessControlGroup | 
 [**AddPlacementGroupServerInstance**](V2Api.md#AddPlacementGroupServerInstance) | **Post** /addPlacementGroupServerInstance | 
+[**AddServerImageSharingPermission**](V2Api.md#AddServerImageSharingPermission) | **Post** /addServerImageSharingPermission | 
 [**AssignSecondaryIps**](V2Api.md#AssignSecondaryIps) | **Post** /assignSecondaryIps | 
 [**AssociatePublicIpWithServerInstance**](V2Api.md#AssociatePublicIpWithServerInstance) | **Post** /associatePublicIpWithServerInstance | 
 [**AttachBlockStorageInstance**](V2Api.md#AttachBlockStorageInstance) | **Post** /attachBlockStorageInstance | 
 [**AttachNetworkInterface**](V2Api.md#AttachNetworkInterface) | **Post** /attachNetworkInterface | 
+[**ChangeBlockStorageInstance**](V2Api.md#ChangeBlockStorageInstance) | **Post** /changeBlockStorageInstance | 
 [**ChangeBlockStorageVolumeSize**](V2Api.md#ChangeBlockStorageVolumeSize) | **Post** /changeBlockStorageVolumeSize | 
 [**ChangeServerInstanceSpec**](V2Api.md#ChangeServerInstanceSpec) | **Post** /changeServerInstanceSpec | 
 [**CreateAccessControlGroup**](V2Api.md#CreateAccessControlGroup) | **Post** /createAccessControlGroup | 
@@ -24,6 +26,8 @@ Method | HTTP request | Description
 [**CreateNetworkInterface**](V2Api.md#CreateNetworkInterface) | **Post** /createNetworkInterface | 
 [**CreatePlacementGroup**](V2Api.md#CreatePlacementGroup) | **Post** /createPlacementGroup | 
 [**CreatePublicIpInstance**](V2Api.md#CreatePublicIpInstance) | **Post** /createPublicIpInstance | 
+[**CreateServerImage**](V2Api.md#CreateServerImage) | **Post** /createServerImage | 
+[**CreateServerImageFromSnapshot**](V2Api.md#CreateServerImageFromSnapshot) | **Post** /createServerImageFromSnapshot | 
 [**CreateServerInstances**](V2Api.md#CreateServerInstances) | **Post** /createServerInstances | 
 [**DeleteAccessControlGroup**](V2Api.md#DeleteAccessControlGroup) | **Post** /deleteAccessControlGroup | 
 [**DeleteBlockStorageInstances**](V2Api.md#DeleteBlockStorageInstances) | **Post** /deleteBlockStorageInstances | 
@@ -34,9 +38,12 @@ Method | HTTP request | Description
 [**DeleteNetworkInterface**](V2Api.md#DeleteNetworkInterface) | **Post** /deleteNetworkInterface | 
 [**DeletePlacementGroup**](V2Api.md#DeletePlacementGroup) | **Post** /deletePlacementGroup | 
 [**DeletePublicIpInstance**](V2Api.md#DeletePublicIpInstance) | **Post** /deletePublicIpInstance | 
+[**DeleteServerImage**](V2Api.md#DeleteServerImage) | **Post** /deleteServerImage | 
 [**DetachBlockStorageInstances**](V2Api.md#DetachBlockStorageInstances) | **Post** /detachBlockStorageInstances | 
 [**DetachNetworkInterface**](V2Api.md#DetachNetworkInterface) | **Post** /detachNetworkInterface | 
+[**DisableFlowLog**](V2Api.md#DisableFlowLog) | **Post** /disableFlowLog | 
 [**DisassociatePublicIpFromServerInstance**](V2Api.md#DisassociatePublicIpFromServerInstance) | **Post** /disassociatePublicIpFromServerInstance | 
+[**EnableFlowLog**](V2Api.md#EnableFlowLog) | **Post** /enableFlowLog | 
 [**GetAccessControlGroupDetail**](V2Api.md#GetAccessControlGroupDetail) | **Post** /getAccessControlGroupDetail | 
 [**GetAccessControlGroupList**](V2Api.md#GetAccessControlGroupList) | **Post** /getAccessControlGroupList | 
 [**GetAccessControlGroupRuleList**](V2Api.md#GetAccessControlGroupRuleList) | **Post** /getAccessControlGroupRuleList | 
@@ -44,6 +51,9 @@ Method | HTTP request | Description
 [**GetBlockStorageInstanceList**](V2Api.md#GetBlockStorageInstanceList) | **Post** /getBlockStorageInstanceList | 
 [**GetBlockStorageSnapshotInstanceDetail**](V2Api.md#GetBlockStorageSnapshotInstanceDetail) | **Post** /getBlockStorageSnapshotInstanceDetail | 
 [**GetBlockStorageSnapshotInstanceList**](V2Api.md#GetBlockStorageSnapshotInstanceList) | **Post** /getBlockStorageSnapshotInstanceList | 
+[**GetBlockStorageVolumeTypeList**](V2Api.md#GetBlockStorageVolumeTypeList) | **Post** /getBlockStorageVolumeTypeList | 
+[**GetFlowLogConfigurationList**](V2Api.md#GetFlowLogConfigurationList) | **Post** /getFlowLogConfigurationList | 
+[**GetHypervisorTypeList**](V2Api.md#GetHypervisorTypeList) | **Post** /getHypervisorTypeList | 
 [**GetInitScriptDetail**](V2Api.md#GetInitScriptDetail) | **Post** /getInitScriptDetail | 
 [**GetInitScriptList**](V2Api.md#GetInitScriptList) | **Post** /getInitScriptList | 
 [**GetLoginKeyList**](V2Api.md#GetLoginKeyList) | **Post** /getLoginKeyList | 
@@ -60,10 +70,14 @@ Method | HTTP request | Description
 [**GetRegionList**](V2Api.md#GetRegionList) | **Post** /getRegionList | 
 [**GetRootPassword**](V2Api.md#GetRootPassword) | **Post** /getRootPassword | 
 [**GetRootPasswordServerInstanceList**](V2Api.md#GetRootPasswordServerInstanceList) | **Post** /getRootPasswordServerInstanceList | 
+[**GetServerImageDetail**](V2Api.md#GetServerImageDetail) | **Post** /getServerImageDetail | 
+[**GetServerImageList**](V2Api.md#GetServerImageList) | **Post** /getServerImageList | 
 [**GetServerImageProductList**](V2Api.md#GetServerImageProductList) | **Post** /getServerImageProductList | 
 [**GetServerInstanceDetail**](V2Api.md#GetServerInstanceDetail) | **Post** /getServerInstanceDetail | 
 [**GetServerInstanceList**](V2Api.md#GetServerInstanceList) | **Post** /getServerInstanceList | 
 [**GetServerProductList**](V2Api.md#GetServerProductList) | **Post** /getServerProductList | 
+[**GetServerSpecDetail**](V2Api.md#GetServerSpecDetail) | **Post** /getServerSpecDetail | 
+[**GetServerSpecList**](V2Api.md#GetServerSpecList) | **Post** /getServerSpecList | 
 [**GetZoneList**](V2Api.md#GetZoneList) | **Post** /getZoneList | 
 [**ImportLoginKey**](V2Api.md#ImportLoginKey) | **Post** /importLoginKey | 
 [**InterruptServerInstance**](V2Api.md#InterruptServerInstance) | **Post** /interruptServerInstance | 
@@ -73,6 +87,7 @@ Method | HTTP request | Description
 [**RemoveMemberServerImageSharingPermission**](V2Api.md#RemoveMemberServerImageSharingPermission) | **Post** /removeMemberServerImageSharingPermission | 
 [**RemoveNetworkInterfaceAccessControlGroup**](V2Api.md#RemoveNetworkInterfaceAccessControlGroup) | **Post** /removeNetworkInterfaceAccessControlGroup | 
 [**RemovePlacementGroupServerInstance**](V2Api.md#RemovePlacementGroupServerInstance) | **Post** /removePlacementGroupServerInstance | 
+[**RemoveServerImageSharingPermission**](V2Api.md#RemoveServerImageSharingPermission) | **Post** /removeServerImageSharingPermission | 
 [**SetBlockStorageReturnProtection**](V2Api.md#SetBlockStorageReturnProtection) | **Post** /setBlockStorageReturnProtection | 
 [**SetMemberServerImageSharingPermission**](V2Api.md#SetMemberServerImageSharingPermission) | **Post** /setMemberServerImageSharingPermission | 
 [**SetProtectServerTermination**](V2Api.md#SetProtectServerTermination) | **Post** /setProtectServerTermination | 
@@ -217,6 +232,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **AddServerImageSharingPermission**
+> AddServerImageSharingPermission(addServerImageSharingPermissionRequest)
+
+
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**addServerImageSharingPermissionRequest** | **[\*AddServerImageSharingPermissionReqeuset](AddServerImageSharingPermissionReqeuset.md)** |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **AssignSecondaryIps**
 > AssignSecondaryIpsResponse AssignSecondaryIps(assignSecondaryIpsRequest)
 
@@ -313,6 +355,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**AttachNetworkInterfaceResponse**](AttachNetworkInterfaceResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ChangeBlockStorageInstance**
+> ChangeBlockStorageInstanceResponse ChangeBlockStorageInstance(changeBlockStorageInstanceRequest)
+
+
+블록스토리지인스턴스변경
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**changeBlockStorageInstanceRequest** | **[\*ChangeBlockStorageInstanceRequest](ChangeBlockStorageInstanceRequest.md)** | changeBlockStorageInstanceRequest | 
+
+### Return type
+
+*[**ChangeBlockStorageInstanceResponse**](ChangeBlockStorageInstanceResponse.md)
 
 ### Authorization
 
@@ -622,6 +691,60 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **CreateServerImage**
+> CreateServerImage(createServerImageRequest)
+
+
+createServerImage
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**createServerImageRequest** | **[\*CreateServerImageRequest](CreateServerImageRequest.md)** | createServerImageRequest | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CreateServerImageFromSnapshot**
+> CreateServerImageFromSnapshot(createServerImageFromSnapshotRequest)
+
+
+createServerImageFromSnapshot
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**createServerImageFromSnapshotRequest** | **[\*CreateServerImageFromSnapshotRequest](CreateServerImageFromSnapshotRequest.md)** | createServerImageFromSnapshotRequest | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **CreateServerInstances**
 > CreateServerInstancesResponse CreateServerInstances(createServerInstancesRequest)
 
@@ -892,6 +1015,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **DeleteServerImage**
+> DeleteServerImage(deleteServerImageRequest)
+
+
+deleteServerImage
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**deleteServerImageRequest** | **[\*DeleteServerImageRequest](DeleteServerImageRequest.md)** | deleteServerImageRequest | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **DetachBlockStorageInstances**
 > DetachBlockStorageInstancesResponse DetachBlockStorageInstances(detachBlockStorageInstancesRequest)
 
@@ -946,6 +1096,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **DisableFlowLog**
+> FlowLogConfigurationList DisableFlowLog(disableFlowLogRequest)
+
+
+FlowLog비활성화
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**disableFlowLogRequest** | **[\*DisableFlowLogRequest](DisableFlowLogRequest.md)** | disableFlowLogRequest | 
+
+### Return type
+
+*[**FlowLogConfigurationList**](FlowLogConfigurationList.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **DisassociatePublicIpFromServerInstance**
 > DisassociatePublicIpFromServerInstanceResponse DisassociatePublicIpFromServerInstance(disassociatePublicIpFromServerInstanceRequest)
 
@@ -961,6 +1138,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**DisassociatePublicIpFromServerInstanceResponse**](DisassociatePublicIpFromServerInstanceResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **EnableFlowLog**
+> FlowLogConfigurationList EnableFlowLog(enableFlowLogRequest)
+
+
+FlowLog활성화
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**enableFlowLogRequest** | **[\*EnableFlowLogRequest](EnableFlowLogRequest.md)** | enableFlowLogRequest | 
+
+### Return type
+
+*[**FlowLogConfigurationList**](FlowLogConfigurationList.md)
 
 ### Authorization
 
@@ -1150,6 +1354,87 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**GetBlockStorageSnapshotInstanceListResponse**](GetBlockStorageSnapshotInstanceListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetBlockStorageVolumeTypeList**
+> GetBlockStorageVolumeTypeListResponse GetBlockStorageVolumeTypeList(getBlockStorageVolumeTypeListRequest)
+
+
+블록스토리지볼륨타입리스트 조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getBlockStorageVolumeTypeListRequest** | **[\*GetBlockStorageVolumeTypeListRequest](GetBlockStorageVolumeTypeListRequest.md)** |  | 
+
+### Return type
+
+*[**GetBlockStorageVolumeTypeListResponse**](GetBlockStorageVolumeTypeListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetFlowLogConfigurationList**
+> FlowLogConfigurationList GetFlowLogConfigurationList(getflowLogConfigurationListRequest)
+
+
+FlogLog 설정정보 조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getflowLogConfigurationListRequest** | **[\*GetFlowLogConfigurationListRequest](GetFlowLogConfigurationListRequest.md)** | getflowLogConfigurationListRequest | 
+
+### Return type
+
+*[**FlowLogConfigurationList**](FlowLogConfigurationList.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetHypervisorTypeList**
+> GetHypervisorTypeListResponse GetHypervisorTypeList(getHypervisorTypeListRequest)
+
+
+하이퍼바이저타입리스트조회 
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getHypervisorTypeListRequest** | **[\*GetHypervisorTypeListRequest](GetHypervisorTypeListRequest.md)** |  | 
+
+### Return type
+
+*[**GetHypervisorTypeListResponse**](GetHypervisorTypeListResponse.md)
 
 ### Authorization
 
@@ -1594,6 +1879,60 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetServerImageDetail**
+> GetServerImageDetail(getServerImageDetailRequest)
+
+
+서버이미지상세조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getServerImageDetailRequest** | **[\*GetServerImageDetailRequest](GetServerImageDetailRequest.md)** |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetServerImageList**
+> GetServerImageList(getServerImageListRequest)
+
+
+서버이미지리스트조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getServerImageListRequest** | **[\*GetServerImageListRequest](GetServerImageListRequest.md)** |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetServerImageProductList**
 > GetServerImageProductListResponse GetServerImageProductList(getServerImageProductListRequest)
 
@@ -1690,6 +2029,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**GetServerProductListResponse**](GetServerProductListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetServerSpecDetail**
+> GetServerSpecDetail(getServerSpecDetailRequest)
+
+
+서버스펙상세조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getServerSpecDetailRequest** | **[\*GetServerSpecDetailRequest](GetServerSpecDetailRequest.md)** |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetServerSpecList**
+> GetServerSpecList(getServerSpecListRequest)
+
+
+서버스펙리스트조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getServerSpecListRequest** | **[\*GetServerSpecListRequest](GetServerSpecListRequest.md)** |  | 
+
+### Return type
+
+ (empty response body)
 
 ### Authorization
 
@@ -1941,6 +2334,33 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **RemoveServerImageSharingPermission**
+> RemoveServerImageSharingPermission(removeServerImageSharingPermissionRequest)
+
+
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**removeServerImageSharingPermissionRequest** | **[\*RemoveServerImageSharingPermissionRequest](RemoveServerImageSharingPermissionRequest.md)** |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

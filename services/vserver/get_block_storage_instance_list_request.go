@@ -48,4 +48,10 @@ BlockStorageDiskTypeCode *string `json:"blockStorageDiskTypeCode,omitempty"`
 
 	// 블록스토리지디스크상세유형코드
 BlockStorageDiskDetailTypeCode *string `json:"blockStorageDiskDetailTypeCode,omitempty"`
+
+	// 블록스토리지볼륨타입코드리스트
+BlockStorageVolumeTypeCodeList []*string `json:"blockStorageVolumeTypeCodeList,omitempty"`
+
+	// 하이퍼바이저타입코드리스트
+HypervisorTypeCodeList []*string `json:"hypervisorTypeCodeList,omitempty"`
 }

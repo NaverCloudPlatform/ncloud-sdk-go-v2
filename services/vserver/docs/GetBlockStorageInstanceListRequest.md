@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **ConnectionInfo** | ***string** | 연결정보 | [optional] [default to null]
 **BlockStorageDiskTypeCode** | ***string** | 블록스토리지디스크유형코드 | [optional] [default to null]
 **BlockStorageDiskDetailTypeCode** | ***string** | 블록스토리지디스크상세유형코드 | [optional] [default to null]
+**BlockStorageVolumeTypeCodeList** | **[]\*string** | 블록스토리지볼륨타입코드리스트 | [optional] [default to null]
+**HypervisorTypeCodeList** | **[]\*string** | 하이퍼바이저타입코드리스트 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

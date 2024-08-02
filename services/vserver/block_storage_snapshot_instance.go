@@ -48,4 +48,10 @@ BaseSnapshotInstanceNo *string `json:"baseSnapshotInstanceNo,omitempty"`
 
 	// 스냅샷일련Depth
 SnapshotChainDepth *int32 `json:"snapshotChainDepth,omitempty"`
+
+	// 하이퍼바이저타입
+HypervisorType *string `json:"hypervisorType,omitempty"`
+
+	// 부팅가능 여부
+IsBootable *bool `json:"isBootable,omitempty"`
 }

@@ -22,6 +22,9 @@ Name | Type | Description | Notes
 **ZoneCode** | ***string** | ZONE코드 | [optional] [default to null]
 **RegionCode** | ***string** | REGION코드 | [optional] [default to null]
 **IsReturnProtection** | ***bool** | 반납보호여부 | [optional] [default to null]
+**BlockStorageVolumeType** | **[*CommonCode](CommonCode.md)** | 블록스토리지볼륨타입 | [optional] [default to null]
+**HypervisorType** | **[*CommonCode](CommonCode.md)** | 하이퍼바이저타입 | [optional] [default to null]
+**Throughput** | ***int64** | 블록스토리지 throughput | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

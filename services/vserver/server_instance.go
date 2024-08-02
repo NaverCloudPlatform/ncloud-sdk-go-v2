@@ -90,4 +90,16 @@ BaseBlockStorageDiskDetailType *CommonCode `json:"baseBlockStorageDiskDetailType
 
 	// 물리배치그룹번호
 PlacementGroupNo *string `json:"placementGroupNo,omitempty"`
+
+	// 블록디바이스파티션리스트
+BlockDevicePartitionList []*BlockDevicePartition `json:"blockDevicePartitionList,omitempty"`
+
+	// 하이퍼바이저타입
+HypervisorType *CommonCode `json:"hypervisorType,omitempty"`
+
+	// 서버이미지번호
+ServerImageNo *string `json:"serverImageNo,omitempty"`
+
+	// 서버스펙코드
+ServerSpecCode *string `json:"serverSpecCode,omitempty"`
 }

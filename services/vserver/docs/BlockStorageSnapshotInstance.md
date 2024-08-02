@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **SnapshotType** | **[*CommonCode](CommonCode.md)** | 스냅샷유형 | [optional] [default to null]
 **BaseSnapshotInstanceNo** | ***string** | 베이스스냅샷인스턴스번호 | [optional] [default to null]
 **SnapshotChainDepth** | ***int32** | 스냅샷일련Depth | [optional] [default to null]
+**HypervisorType** | ***string** | 하이퍼바이저타입 | [optional] [default to null]
+**IsBootable** | ***bool** | 부팅가능 여부 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

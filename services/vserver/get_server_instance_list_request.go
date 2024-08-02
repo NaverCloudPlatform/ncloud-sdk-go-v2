@@ -48,4 +48,7 @@ SortingOrder *string `json:"sortingOrder,omitempty"`
 
 	// 물리배치그룹번호리스트
 PlacementGroupNoList []*string `json:"placementGroupNoList,omitempty"`
+
+	// 하이퍼바이저타입코드리스트
+HypervisorTypeCodeList []*string `json:"hypervisorTypeCodeList,omitempty"`
 }
