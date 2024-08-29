@@ -236,13 +236,13 @@ Name | Type | Description  | Notes
 > AddServerImageSharingPermission(addServerImageSharingPermissionRequest)
 
 
-
+서버이미지공유권한추가
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**addServerImageSharingPermissionRequest** | **[\*AddServerImageSharingPermissionReqeuset](AddServerImageSharingPermissionReqeuset.md)** |  | 
+**addServerImageSharingPermissionRequest** | **[\*AddServerImageSharingPermissionRequest](AddServerImageSharingPermissionRequest.md)** | addServerImageSharingPermissionRequest | 
 
 ### Return type
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/x-www-form-urlencoded
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1424,7 +1424,7 @@ Name | Type | Description  | Notes
 > GetHypervisorTypeListResponse GetHypervisorTypeList(getHypervisorTypeListRequest)
 
 
-하이퍼바이저타입리스트조회 
+하이퍼바이저타입리스트조회
 
 ### Required Parameters
 
@@ -2342,13 +2342,13 @@ Name | Type | Description  | Notes
 > RemoveServerImageSharingPermission(removeServerImageSharingPermissionRequest)
 
 
-
+서버이미지공유권한제거
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**removeServerImageSharingPermissionRequest** | **[\*RemoveServerImageSharingPermissionRequest](RemoveServerImageSharingPermissionRequest.md)** |  | 
+**removeServerImageSharingPermissionRequest** | **[\*RemoveServerImageSharingPermissionRequest](RemoveServerImageSharingPermissionRequest.md)** | removeServerImageSharingPermissionRequest | 
 
 ### Return type
 

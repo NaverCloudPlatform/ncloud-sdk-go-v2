@@ -69,4 +69,13 @@ RaidTypeName *string `json:"raidTypeName,omitempty"`
 
 	// 블록디바이스파티션리스트
 BlockDevicePartitionList []*BlockDevicePartition `json:"blockDevicePartitionList,omitempty"`
+
+	// 서버이미지번호
+ServerImageNo *string `json:"serverImageNo,omitempty"`
+
+	// 서버스펙코드
+ServerSpecCode *string `json:"serverSpecCode,omitempty"`
+
+	// 블록스토리지맵핑리스트
+BlockStorageMappingList []*BlockStorageMappingParameter `json:"blockStorageMappingList,omitempty"`
 }
