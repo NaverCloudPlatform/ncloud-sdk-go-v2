@@ -34,6 +34,9 @@ CloudMongoDbServerName *string `json:"cloudMongoDbServerName,omitempty"`
 	// CloudMongoDb서버인스턴스번호리스트
 CloudMongoDbServerInstanceNoList []*string `json:"cloudMongoDbServerInstanceNoList,omitempty"`
 
+	// 서버 세대 구분 코드
+GenerationCode *string `json:"generationCode,omitempty"`
+
 	// 페이지번호
 PageNo *int32 `json:"pageNo,omitempty"`
 

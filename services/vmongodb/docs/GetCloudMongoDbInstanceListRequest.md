@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **CloudMongoDbInstanceNoList** | **[]\*string** | CloudMongoDb인스턴스번호리스트 | [optional] [default to null]
 **CloudMongoDbServerName** | ***string** | CloudMongoDb서버이름 | [optional] [default to null]
 **CloudMongoDbServerInstanceNoList** | **[]\*string** | CloudMongoDb서버인스턴스번호리스트 | [optional] [default to null]
+**GenerationCode** | ***string** | 서버 세대 구분 코드 | [optional] [default to null]
 **PageNo** | ***int32** | 페이지번호 | [optional] [default to null]
 **PageSize** | ***int32** | 페이지사이즈 | [optional] [default to null]
 

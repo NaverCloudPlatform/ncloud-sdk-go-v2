@@ -36,7 +36,7 @@ var (
 	xmlCheck  = regexp.MustCompile("(?i:[application|text]/xml)")
 )
 
-// APIClient manages communication with the vmysql API v2024-04-25T10:02:11Z
+// APIClient manages communication with the vmysql API v2024-08-29T16:10:02Z
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *ncloud.Configuration

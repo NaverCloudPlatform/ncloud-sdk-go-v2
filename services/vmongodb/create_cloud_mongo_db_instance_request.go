@@ -11,83 +11,80 @@ package vmongodb
 type CreateCloudMongoDbInstanceRequest struct {
 
 	// REGION코드
-	RegionCode *string `json:"regionCode,omitempty"`
+RegionCode *string `json:"regionCode,omitempty"`
 
 	// VPC번호
-	VpcNo *string `json:"vpcNo"`
+VpcNo *string `json:"vpcNo"`
 
 	// CloudMongoDb이미지상품코드
-	CloudMongoDbImageProductCode *string `json:"cloudMongoDbImageProductCode,omitempty"`
+CloudMongoDbImageProductCode *string `json:"cloudMongoDbImageProductCode,omitempty"`
 
 	// CloudMongoDb Member상품코드
-	MemberProductCode *string `json:"memberProductCode,omitempty"`
+MemberProductCode *string `json:"memberProductCode,omitempty"`
 
 	// CloudMongoDb Arbiter상품코드
-	ArbiterProductCode *string `json:"arbiterProductCode,omitempty"`
+ArbiterProductCode *string `json:"arbiterProductCode,omitempty"`
 
 	// CloudMongoDb Mongos상품코드
-	MongosProductCode *string `json:"mongosProductCode,omitempty"`
+MongosProductCode *string `json:"mongosProductCode,omitempty"`
 
 	// CloudMongoDb Config상품코드
-	ConfigProductCode *string `json:"configProductCode,omitempty"`
+ConfigProductCode *string `json:"configProductCode,omitempty"`
 
 	// 샤드수
-	ShardCount *int32 `json:"shardCount,omitempty"`
+ShardCount *int32 `json:"shardCount,omitempty"`
 
 	// CloudMongoDb Member 서버 대수
-	MemberServerCount *int32 `json:"memberServerCount,omitempty"`
+MemberServerCount *int32 `json:"memberServerCount,omitempty"`
 
 	// CloudMongoDb Arbiter 서버 대수
-	ArbiterServerCount *int32 `json:"arbiterServerCount,omitempty"`
+ArbiterServerCount *int32 `json:"arbiterServerCount,omitempty"`
 
 	// CloudMongoDb Mongos 서버 대수
-	MongosServerCount *int32 `json:"mongosServerCount,omitempty"`
+MongosServerCount *int32 `json:"mongosServerCount,omitempty"`
 
 	// CloudMongoDb Config 서버 대수
-	ConfigServerCount *int32 `json:"configServerCount,omitempty"`
+ConfigServerCount *int32 `json:"configServerCount,omitempty"`
 
-	// CloudMongoDb User 이름
-	CloudMongoDbUserName *string `json:"cloudMongoDbUserName,omitempty"`
+	// 접근 유저명
+CloudMongoDbUserName *string `json:"cloudMongoDbUserName"`
 
-	// CloudMongoDb User 패스워드
-	CloudMongoDbUserPassword *string `json:"cloudMongoDbUserPassword,omitempty"`
+	// 접근 패스워드
+CloudMongoDbUserPassword *string `json:"cloudMongoDbUserPassword"`
 
 	// 백업파일보관기간
-	BackupFileRetentionPeriod *int32 `json:"backupFileRetentionPeriod,omitempty"`
+BackupFileRetentionPeriod *int32 `json:"backupFileRetentionPeriod,omitempty"`
 
 	// 백업시간
-	BackupTime *string `json:"backupTime,omitempty"`
+BackupTime *string `json:"backupTime,omitempty"`
 
 	// 데이터 스토리지 타입 코드
-	DataStorageTypeCode *string `json:"dataStorageTypeCode,omitempty"`
-
-	// CloudMongoDb서비스이름
-	CloudMongoDbServiceName *string `json:"cloudMongoDbServiceName"`
+DataStorageTypeCode *string `json:"dataStorageTypeCode,omitempty"`
 
 	// Cloud MongoDb Member 서버 포트
-	MemberPort *int32 `json:"memberPort,omitempty"`
-
-	// Cloud MongoDb Arbiter 서버 포트
-	ArbiterPort *int32 `json:"arbiterPort,omitempty"`
+MemberPort *int32 `json:"memberPort,omitempty"`
 
 	// Cloud MongoDb Mongos 서버 포트
-	MongosPort *int32 `json:"mongosPort,omitempty"`
+MongosPort *int32 `json:"mongosPort,omitempty"`
 
 	// Cloud MongoDb Config 서버 포트
-	ConfigPort *int32 `json:"configPort,omitempty"`
+ConfigPort *int32 `json:"configPort,omitempty"`
 
-	// Cloud DB for MongoDB Data 압축 알고리즘
-	CompressCode *string `json:"compressCode,omitempty"`
-
-	// Cloud DB for MongoDB Config 설정
-	DbConfig *string `json:"dbConfig,omitempty"`
-
-	// Cloud DB for MongoDB 클러스터 타입
-	ClusterTypeCode *string `json:"clusterTypeCode"`
-
-	// Subnet번호
-	SubnetNo *string `json:"subnetNo"`
+	// CloudMongoDb서비스이름
+CloudMongoDbServiceName *string `json:"cloudMongoDbServiceName"`
 
 	// CloudMongoDb 서버 이름
-	CloudMongoDbServerNamePrefix *string `json:"cloudMongoDbServerNamePrefix"`
+CloudMongoDbServerNamePrefix *string `json:"cloudMongoDbServerNamePrefix"`
+
+	// Subnet번호
+SubnetNo *string `json:"subnetNo"`
+
+	// Cloud DB for MongoDB Data 압축 알고리즘
+CompressCode *string `json:"compressCode,omitempty"`
+
+	// Cloud DB for MongoDB 클러스터 타입
+ClusterTypeCode *string `json:"clusterTypeCode,omitempty"`
+
+	// 엔진 버전 코드
+EngineVersionCode *string `json:"engineVersionCode,omitempty"`
 }

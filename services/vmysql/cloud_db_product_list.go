@@ -9,4 +9,7 @@
 package vmysql
 
 type CloudDbProductList struct {
+
+	// CloudDBProduct리스트
+CloudDbProductList []*CloudDbProduct `json:"CloudDbProductList,omitempty"`
 }

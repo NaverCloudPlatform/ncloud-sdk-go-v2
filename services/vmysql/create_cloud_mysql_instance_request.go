@@ -76,6 +76,9 @@ StandbyMasterSubnetNo *string `json:"standbyMasterSubnetNo,omitempty"`
 	// privateSubDomain사용여부
 IsPrivateSubDomain *bool `json:"isPrivateSubDomain,omitempty"`
 
+	// 클러스터반납보호여부
+IsDeleteProtection *bool `json:"isDeleteProtection,omitempty"`
+
 	// privateSubDomain접두어
 PrivateSubDomainPrefix *string `json:"privateSubDomainPrefix,omitempty"`
 

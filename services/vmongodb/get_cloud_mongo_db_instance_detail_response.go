@@ -9,14 +9,15 @@
 package vmongodb
 
 type GetCloudMongoDbInstanceDetailResponse struct {
-	RequestId *string `json:"requestId,omitempty"`
 
-	ReturnCode *string `json:"returnCode,omitempty"`
+RequestId *string `json:"requestId,omitempty"`
 
-	ReturnMessage *string `json:"returnMessage,omitempty"`
+ReturnCode *string `json:"returnCode,omitempty"`
 
-	TotalRows *int32 `json:"totalRows,omitempty"`
+ReturnMessage *string `json:"returnMessage,omitempty"`
+
+TotalRows *int32 `json:"totalRows,omitempty"`
 
 	// CloudMongoDb인스턴스리스트
-	CloudMongoDbInstanceList []*CloudMongoDbInstance `json:"cloudMongoDbInstanceList,omitempty"`
+CloudMongoDbInstanceList []*CloudMongoDbInstance `json:"cloudMongoDbInstanceList,omitempty"`
 }

@@ -11,11 +11,11 @@ package vmongodb
 type ChangeCloudMongoDbConfigCountRequest struct {
 
 	// REGION코드
-	RegionCode *string `json:"regionCode,omitempty"`
+RegionCode *string `json:"regionCode,omitempty"`
 
 	// CloudMongoDb 인스턴스번호
-	CloudMongoDbInstanceNo *string `json:"cloudMongoDbInstanceNo"`
+CloudMongoDbInstanceNo *string `json:"cloudMongoDbInstanceNo"`
 
 	// Cloud DB for MongoDB config 서버 대수
-	ConfigServerCount *int32 `json:"configServerCount"`
+ConfigServerCount *string `json:"configServerCount"`
 }

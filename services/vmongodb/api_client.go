@@ -36,7 +36,7 @@ var (
 	xmlCheck  = regexp.MustCompile("(?i:[application|text]/xml)")
 )
 
-// APIClient manages communication with the vmongodb API v2021-07-27T10:20:35Z
+// APIClient manages communication with the vmongodb API v2024-06-20T09:27:15Z
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *ncloud.Configuration
