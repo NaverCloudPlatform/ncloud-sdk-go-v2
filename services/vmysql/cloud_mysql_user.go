@@ -18,4 +18,7 @@ HostIp *string `json:"hostIp,omitempty"`
 
 	// DB권한
 Authority *string `json:"authority,omitempty"`
+
+	// 시스템테이블 접근 가능여부
+IsSystemTableAccess *bool `json:"isSystemTableAccess,omitempty"`
 }

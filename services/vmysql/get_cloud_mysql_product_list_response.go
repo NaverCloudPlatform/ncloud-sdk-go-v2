@@ -19,5 +19,5 @@ ReturnMessage *string `json:"returnMessage,omitempty"`
 TotalRows *int32 `json:"totalRows,omitempty"`
 
 	// 상품리스트
-ProductList *CloudDbProductList `json:"productList,omitempty"`
+ProductList []*CloudDbProduct `json:"productList,omitempty"`
 }

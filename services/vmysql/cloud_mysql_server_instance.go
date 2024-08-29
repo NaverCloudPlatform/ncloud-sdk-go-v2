@@ -52,7 +52,7 @@ PublicDomain *string `json:"publicDomain,omitempty"`
 	// 사설도메인명
 PrivateDomain *string `json:"privateDomain,omitempty"`
 
-	// 내부IP
+	// 사설 IP
 PrivateIp *string `json:"privateIp,omitempty"`
 
 	// 데이터스토리지타입

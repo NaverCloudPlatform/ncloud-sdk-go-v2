@@ -21,4 +21,7 @@ Password *string `json:"password"`
 
 	// DB권한
 Authority *string `json:"authority"`
+
+	// 시스템테이블 접근 가능여부
+IsSystemTableAccess *bool `json:"isSystemTableAccess,omitempty"`
 }

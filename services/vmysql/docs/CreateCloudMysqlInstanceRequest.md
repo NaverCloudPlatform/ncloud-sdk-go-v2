@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **SubnetNo** | ***string** | Subnet번호 | [default to null]
 **StandbyMasterSubnetNo** | ***string** | StandbyMasterSubnet번호 | [optional] [default to null]
 **IsPrivateSubDomain** | ***bool** | privateSubDomain사용여부 | [optional] [default to null]
+**IsDeleteProtection** | ***bool** | 클러스터반납보호여부 | [optional] [default to null]
 **PrivateSubDomainPrefix** | ***string** | privateSubDomain접두어 | [optional] [default to null]
 **EngineVersionCode** | ***string** | engineVersionCode | [optional] [default to null]
 
