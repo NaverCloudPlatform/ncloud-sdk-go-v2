@@ -4,20 +4,57 @@ All URIs are relative to *https://ncloud.apigw.ntruss.com/vmongodb/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AddCloudMongoDbUserList**](V2Api.md#AddCloudMongoDbUserList) | **Post** /addCloudMongoDbUserList | 
 [**ChangeCloudMongoDbConfigCount**](V2Api.md#ChangeCloudMongoDbConfigCount) | **Post** /changeCloudMongoDbConfigCount | 
 [**ChangeCloudMongoDbMongosCount**](V2Api.md#ChangeCloudMongoDbMongosCount) | **Post** /changeCloudMongoDbMongosCount | 
 [**ChangeCloudMongoDbSecondaryCount**](V2Api.md#ChangeCloudMongoDbSecondaryCount) | **Post** /changeCloudMongoDbSecondaryCount | 
 [**ChangeCloudMongoDbShardCount**](V2Api.md#ChangeCloudMongoDbShardCount) | **Post** /changeCloudMongoDbShardCount | 
+[**ChangeCloudMongoDbUserList**](V2Api.md#ChangeCloudMongoDbUserList) | **Post** /changeCloudMongoDbUserList | 
 [**CreateCloudMongoDbInstance**](V2Api.md#CreateCloudMongoDbInstance) | **Post** /createCloudMongoDbInstance | 
 [**DeleteCloudMongoDbInstance**](V2Api.md#DeleteCloudMongoDbInstance) | **Post** /deleteCloudMongoDbInstance | 
+[**DeleteCloudMongoDbUserList**](V2Api.md#DeleteCloudMongoDbUserList) | **Post** /deleteCloudMongoDbUserList | 
+[**ExportBackupToObjectStorage**](V2Api.md#ExportBackupToObjectStorage) | **Post** /exportBackupToObjectStorage | 
+[**ExportDbServerLogToObjectStorage**](V2Api.md#ExportDbServerLogToObjectStorage) | **Post** /exportDbServerLogToObjectStorage | 
 [**GetCloudMongoDbBackupDetailList**](V2Api.md#GetCloudMongoDbBackupDetailList) | **Post** /getCloudMongoDbBackupDetailList | 
 [**GetCloudMongoDbBackupList**](V2Api.md#GetCloudMongoDbBackupList) | **Post** /getCloudMongoDbBackupList | 
+[**GetCloudMongoDbBucketList**](V2Api.md#GetCloudMongoDbBucketList) | **Post** /getCloudMongoDbBucketList | 
 [**GetCloudMongoDbImageProductList**](V2Api.md#GetCloudMongoDbImageProductList) | **Post** /getCloudMongoDbImageProductList | 
 [**GetCloudMongoDbInstanceDetail**](V2Api.md#GetCloudMongoDbInstanceDetail) | **Post** /getCloudMongoDbInstanceDetail | 
 [**GetCloudMongoDbInstanceList**](V2Api.md#GetCloudMongoDbInstanceList) | **Post** /getCloudMongoDbInstanceList | 
 [**GetCloudMongoDbProductList**](V2Api.md#GetCloudMongoDbProductList) | **Post** /getCloudMongoDbProductList | 
+[**GetCloudMongoDbTargetSubnetList**](V2Api.md#GetCloudMongoDbTargetSubnetList) | **Post** /getCloudMongoDbTargetSubnetList | 
+[**GetCloudMongoDbTargetVpcList**](V2Api.md#GetCloudMongoDbTargetVpcList) | **Post** /getCloudMongoDbTargetVpcList | 
+[**GetCloudMongoDbUserList**](V2Api.md#GetCloudMongoDbUserList) | **Post** /getCloudMongoDbUserList | 
+[**GetDbServerLogList**](V2Api.md#GetDbServerLogList) | **Post** /getDbServerLogList | 
 [**RebootCloudMongoDbServerInstance**](V2Api.md#RebootCloudMongoDbServerInstance) | **Post** /rebootCloudMongoDbServerInstance | 
 
+
+# **AddCloudMongoDbUserList**
+> AddCloudMongoDbUserListResponse AddCloudMongoDbUserList(addCloudMongoDbUserListRequest)
+
+
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**addCloudMongoDbUserListRequest** | **[\*AddCloudMongoDbUserListRequest](AddCloudMongoDbUserListRequest.md)** | addCloudMongoDbUserListRequest | 
+
+### Return type
+
+*[**AddCloudMongoDbUserListResponse**](AddCloudMongoDbUserListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ChangeCloudMongoDbConfigCount**
 > ChangeCloudMongoDbConfigCountResponse ChangeCloudMongoDbConfigCount(changeCloudMongoDbConfigCountRequest)
@@ -127,6 +164,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ChangeCloudMongoDbUserList**
+> ChangeCloudMongoDbUserListResponse ChangeCloudMongoDbUserList(changeCloudMongoDbUserListRequest)
+
+
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**changeCloudMongoDbUserListRequest** | **[\*ChangeCloudMongoDbUserListRequest](ChangeCloudMongoDbUserListRequest.md)** | changeCloudMongoDbUserListRequest | 
+
+### Return type
+
+*[**ChangeCloudMongoDbUserListResponse**](ChangeCloudMongoDbUserListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **CreateCloudMongoDbInstance**
 > CreateCloudMongoDbInstanceResponse CreateCloudMongoDbInstance(createCloudMongoDbInstanceRequest)
 
@@ -181,6 +245,87 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **DeleteCloudMongoDbUserList**
+> DeleteCloudMongoDbUserListResponse DeleteCloudMongoDbUserList(deleteCloudMongoDbUserListRequest)
+
+
+Cloud DB for MongoDB User를 삭제합니다.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**deleteCloudMongoDbUserListRequest** | **[\*DeleteCloudMongoDbUserListRequest](DeleteCloudMongoDbUserListRequest.md)** | deleteCloudMongoDbUserListRequest | 
+
+### Return type
+
+*[**DeleteCloudMongoDbUserListResponse**](DeleteCloudMongoDbUserListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ExportBackupToObjectStorage**
+> ExportBackupToObjectStorageResponse ExportBackupToObjectStorage(exportBackupToObjectStorageRequest)
+
+
+Cloud DB for MongoDb 백업 파일을 Object Storage로 전송합니다.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**exportBackupToObjectStorageRequest** | **[\*ExportBackupToObjectStorageRequest](ExportBackupToObjectStorageRequest.md)** | exportBackupToObjectStorageRequest | 
+
+### Return type
+
+*[**ExportBackupToObjectStorageResponse**](ExportBackupToObjectStorageResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ExportDbServerLogToObjectStorage**
+> ExportDbServerLogToObjectStorageResponse ExportDbServerLogToObjectStorage(exportDbServerLogToObjectStorageRequest)
+
+
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**exportDbServerLogToObjectStorageRequest** | **[\*ExportDbServerLogToObjectStorageRequest](ExportDbServerLogToObjectStorageRequest.md)** | exportDbServerLogToObjectStorageRequest | 
+
+### Return type
+
+*[**ExportDbServerLogToObjectStorageResponse**](ExportDbServerLogToObjectStorageResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetCloudMongoDbBackupDetailList**
 > GetCloudMongoDbBackupDetailListResponse GetCloudMongoDbBackupDetailList(getCloudMongoDbBackupDetailListRequest)
 
@@ -223,6 +368,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**GetCloudMongoDbBackupListResponse**](GetCloudMongoDbBackupListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCloudMongoDbBucketList**
+> GetCloudMongoDbBucketListResponse GetCloudMongoDbBucketList(getCloudMongoDbBucketListRequest)
+
+
+Cloud DB for MongoDb 버킷을 조회합니다.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getCloudMongoDbBucketListRequest** | **[\*GetCloudMongoDbBucketListRequest](GetCloudMongoDbBucketListRequest.md)** | getCloudMongoDbBucketListRequest | 
+
+### Return type
+
+*[**GetCloudMongoDbBucketListResponse**](GetCloudMongoDbBucketListResponse.md)
 
 ### Authorization
 
@@ -331,6 +503,114 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**GetCloudMongoDbProductListResponse**](GetCloudMongoDbProductListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCloudMongoDbTargetSubnetList**
+> GetCloudMongoDbTargetSubnetListResponse GetCloudMongoDbTargetSubnetList(getCloudMongoDbTargetSubnetListRequest)
+
+
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getCloudMongoDbTargetSubnetListRequest** | **[\*GetCloudMongoDbTargetSubnetListRequest](GetCloudMongoDbTargetSubnetListRequest.md)** | getCloudMongoDbTargetSubnetListRequest | 
+
+### Return type
+
+*[**GetCloudMongoDbTargetSubnetListResponse**](GetCloudMongoDbTargetSubnetListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCloudMongoDbTargetVpcList**
+> GetCloudMongoDbTargetVpcListResponse GetCloudMongoDbTargetVpcList(getCloudMongoDbTargetVpcListRequest)
+
+
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getCloudMongoDbTargetVpcListRequest** | **[\*GetCloudMongoDbTargetVpcListRequest](GetCloudMongoDbTargetVpcListRequest.md)** | getCloudMongoDbTargetVpcListRequest | 
+
+### Return type
+
+*[**GetCloudMongoDbTargetVpcListResponse**](GetCloudMongoDbTargetVpcListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetCloudMongoDbUserList**
+> GetCloudMongoDbUserListResponse GetCloudMongoDbUserList(getCloudMongoDbUserListRequest)
+
+
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getCloudMongoDbUserListRequest** | **[\*GetCloudMongoDbUserListRequest](GetCloudMongoDbUserListRequest.md)** | getCloudMongoDbUserListRequest | 
+
+### Return type
+
+*[**GetCloudMongoDbUserListResponse**](GetCloudMongoDbUserListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetDbServerLogList**
+> GetDbServerLogListResponse GetDbServerLogList(getDbServerLogListRequest)
+
+
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getDbServerLogListRequest** | **[\*GetDbServerLogListRequest](GetDbServerLogListRequest.md)** | getDbServerLogListRequest | 
+
+### Return type
+
+*[**GetDbServerLogListResponse**](GetDbServerLogListResponse.md)
 
 ### Authorization
 
