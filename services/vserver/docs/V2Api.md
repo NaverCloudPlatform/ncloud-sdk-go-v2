@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **AddServerImageSharingPermission**
-> AddServerImageSharingPermission(addServerImageSharingPermissionRequest)
+> AddServerImageSharingPermissionResponse AddServerImageSharingPermission(addServerImageSharingPermissionRequest)
 
 
 서버이미지공유권한추가
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+*[**AddServerImageSharingPermissionResponse**](AddServerImageSharingPermissionResponse.md)
 
 ### Authorization
 
@@ -692,7 +692,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateServerImage**
-> CreateServerImage(createServerImageRequest)
+> CreateServerImageResponse CreateServerImage(createServerImageRequest)
 
 
 createServerImage
@@ -705,7 +705,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+*[**CreateServerImageResponse**](CreateServerImageResponse.md)
 
 ### Authorization
 
@@ -719,7 +719,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateServerImageFromSnapshot**
-> CreateServerImageFromSnapshot(createServerImageFromSnapshotRequest)
+> CreateServerImageFromSnapshotResponse CreateServerImageFromSnapshot(createServerImageFromSnapshotRequest)
 
 
 createServerImageFromSnapshot
@@ -732,7 +732,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+*[**CreateServerImageFromSnapshotResponse**](CreateServerImageFromSnapshotResponse.md)
 
 ### Authorization
 
@@ -1016,7 +1016,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DeleteServerImage**
-> DeleteServerImage(deleteServerImageRequest)
+> DeleteServerImageResponse DeleteServerImage(deleteServerImageRequest)
 
 
 deleteServerImage
@@ -1029,7 +1029,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+*[**DeleteServerImageResponse**](DeleteServerImageResponse.md)
 
 ### Authorization
 
@@ -1880,7 +1880,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetServerImageDetail**
-> GetServerImageDetail(getServerImageDetailRequest)
+> GetServerImageDetailResponse GetServerImageDetail(getServerImageDetailRequest)
 
 
 서버이미지상세조회
@@ -1893,7 +1893,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+*[**GetServerImageDetailResponse**](GetServerImageDetailResponse.md)
 
 ### Authorization
 
@@ -1907,7 +1907,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetServerImageList**
-> GetServerImageList(getServerImageListRequest)
+> GetServerImageListResponse GetServerImageList(getServerImageListRequest)
 
 
 서버이미지리스트조회
@@ -1920,7 +1920,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+*[**GetServerImageListResponse**](GetServerImageListResponse.md)
 
 ### Authorization
 
@@ -2042,7 +2042,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetServerSpecDetail**
-> GetServerSpecDetail(getServerSpecDetailRequest)
+> GetServerSpecDetailResponse GetServerSpecDetail(getServerSpecDetailRequest)
 
 
 서버스펙상세조회
@@ -2055,7 +2055,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+*[**GetServerSpecDetailResponse**](GetServerSpecDetailResponse.md)
 
 ### Authorization
 
@@ -2069,7 +2069,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetServerSpecList**
-> GetServerSpecList(getServerSpecListRequest)
+> GetServerSpecListResponse GetServerSpecList(getServerSpecListRequest)
 
 
 서버스펙리스트조회
@@ -2082,7 +2082,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+*[**GetServerSpecListResponse**](GetServerSpecListResponse.md)
 
 ### Authorization
 
@@ -2339,7 +2339,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **RemoveServerImageSharingPermission**
-> RemoveServerImageSharingPermission(removeServerImageSharingPermissionRequest)
+> RemoveServerImageSharingPermissionResponse RemoveServerImageSharingPermission(removeServerImageSharingPermissionRequest)
 
 
 서버이미지공유권한제거
@@ -2352,7 +2352,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+*[**RemoveServerImageSharingPermissionResponse**](RemoveServerImageSharingPermissionResponse.md)
 
 ### Authorization
 

@@ -28,7 +28,7 @@ var (
 type V2ApiService service
 
 
-/* V2ApiService
+/* V2ApiService 
  ACGInboundRule추가
  @param addAccessControlGroupInboundRuleRequest addAccessControlGroupInboundRuleRequest
  @return *AddAccessControlGroupInboundRuleResponse*/
@@ -102,7 +102,7 @@ func (a *V2ApiService) AddAccessControlGroupInboundRule(addAccessControlGroupInb
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  ACGOutboundRule추가
  @param addAccessControlGroupOutboundRuleRequest addAccessControlGroupOutboundRuleRequest
  @return *AddAccessControlGroupOutboundRuleResponse*/
@@ -176,7 +176,7 @@ func (a *V2ApiService) AddAccessControlGroupOutboundRule(addAccessControlGroupOu
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  회원서버이미지공유권한추가
  @param addMemberServerImageSharingPermissionRequest addMemberServerImageSharingPermissionRequest
  @return *AddMemberServerImageSharingPermissionResponse*/
@@ -250,7 +250,7 @@ func (a *V2ApiService) AddMemberServerImageSharingPermission(addMemberServerImag
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  네트워크인터페이스의ACG추가
  @param addNetworkInterfaceAccessControlGroupRequest addNetworkInterfaceAccessControlGroupRequest
  @return *AddNetworkInterfaceAccessControlGroupResponse*/
@@ -324,7 +324,7 @@ func (a *V2ApiService) AddNetworkInterfaceAccessControlGroup(addNetworkInterface
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  물리배치그룹에서버인스턴스추가
  @param addPlacementGroupServerInstanceRequest addPlacementGroupServerInstanceRequest
  @return *AddPlacementGroupServerInstanceResponse*/
@@ -398,7 +398,81 @@ func (a *V2ApiService) AddPlacementGroupServerInstance(addPlacementGroupServerIn
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
+ 서버이미지공유권한추가
+ @param addServerImageSharingPermissionRequest addServerImageSharingPermissionRequest
+ @return *AddServerImageSharingPermissionResponse*/
+func (a *V2ApiService) AddServerImageSharingPermission(addServerImageSharingPermissionRequest *AddServerImageSharingPermissionRequest) (*AddServerImageSharingPermissionResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  AddServerImageSharingPermissionResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/addServerImageSharingPermission"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = addServerImageSharingPermissionRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
  보조IP할당
  @param assignSecondaryIpsRequest assignSecondaryIpsRequest
  @return *AssignSecondaryIpsResponse*/
@@ -472,7 +546,7 @@ func (a *V2ApiService) AssignSecondaryIps(assignSecondaryIpsRequest *AssignSecon
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  공인IP를서버인스턴스에할당
  @param associatePublicIpWithServerInstanceRequest associatePublicIpWithServerInstanceRequest
  @return *AssociatePublicIpWithServerInstanceResponse*/
@@ -546,7 +620,7 @@ func (a *V2ApiService) AssociatePublicIpWithServerInstance(associatePublicIpWith
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  블록스토리지인스턴스할당
  @param attachBlockStorageInstanceRequest attachBlockStorageInstanceRequest
  @return *AttachBlockStorageInstanceResponse*/
@@ -620,7 +694,7 @@ func (a *V2ApiService) AttachBlockStorageInstance(attachBlockStorageInstanceRequ
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  네트워크인터페이스할당
  @param attachNetworkInterfaceRequest attachNetworkInterfaceRequest
  @return *AttachNetworkInterfaceResponse*/
@@ -694,7 +768,7 @@ func (a *V2ApiService) AttachNetworkInterface(attachNetworkInterfaceRequest *Att
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  블록스토리지인스턴스변경
  @param changeBlockStorageInstanceRequest changeBlockStorageInstanceRequest
  @return *ChangeBlockStorageInstanceResponse*/
@@ -768,7 +842,7 @@ func (a *V2ApiService) ChangeBlockStorageInstance(changeBlockStorageInstanceRequ
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  블록스토리지볼륨사이즈변경
  @param changeBlockStorageVolumeSizeRequest changeBlockStorageVolumeSizeRequest
  @return *ChangeBlockStorageVolumeSizeResponse*/
@@ -842,7 +916,7 @@ func (a *V2ApiService) ChangeBlockStorageVolumeSize(changeBlockStorageVolumeSize
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  서버인스턴스스펙변경
  @param changeServerInstanceSpecRequest changeServerInstanceSpecRequest
  @return *ChangeServerInstanceSpecResponse*/
@@ -916,7 +990,7 @@ func (a *V2ApiService) ChangeServerInstanceSpec(changeServerInstanceSpecRequest 
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  ACG생성
  @param createAccessControlGroupRequest createAccessControlGroupRequest
  @return *CreateAccessControlGroupResponse*/
@@ -990,7 +1064,7 @@ func (a *V2ApiService) CreateAccessControlGroup(createAccessControlGroupRequest 
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  블록스토리지인스턴스생성
  @param createBlockStorageInstanceRequest createBlockStorageInstanceRequest
  @return *CreateBlockStorageInstanceResponse*/
@@ -1064,7 +1138,7 @@ func (a *V2ApiService) CreateBlockStorageInstance(createBlockStorageInstanceRequ
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  블록스토리지스냅샷인스턴스생성
  @param createBlockStorageSnapshotInstanceRequest createBlockStorageSnapshotInstanceRequest
  @return *CreateBlockStorageSnapshotInstanceResponse*/
@@ -1138,7 +1212,7 @@ func (a *V2ApiService) CreateBlockStorageSnapshotInstance(createBlockStorageSnap
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  초기화스크립트생성
  @param createInitScriptRequest createInitScriptRequest
  @return *CreateInitScriptResponse*/
@@ -1212,7 +1286,7 @@ func (a *V2ApiService) CreateInitScript(createInitScriptRequest *CreateInitScrip
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  로그인키생성
  @param createLoginKeyRequest createLoginKeyRequest
  @return *CreateLoginKeyResponse*/
@@ -1286,7 +1360,7 @@ func (a *V2ApiService) CreateLoginKey(createLoginKeyRequest *CreateLoginKeyReque
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  회원서버이미지인스턴스생성
  @param createMemberServerImageInstanceRequest createMemberServerImageInstanceRequest
  @return *CreateMemberServerImageInstanceResponse*/
@@ -1360,7 +1434,7 @@ func (a *V2ApiService) CreateMemberServerImageInstance(createMemberServerImageIn
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  네트워크인터페이스생성
  @param createNetworkInterfaceRequest createNetworkInterfaceRequest
  @return *CreateNetworkInterfaceResponse*/
@@ -1434,7 +1508,7 @@ func (a *V2ApiService) CreateNetworkInterface(createNetworkInterfaceRequest *Cre
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  물리배치그룹생성
  @param createPlacementGroupRequest createPlacementGroupRequest
  @return *CreatePlacementGroupResponse*/
@@ -1508,7 +1582,7 @@ func (a *V2ApiService) CreatePlacementGroup(createPlacementGroupRequest *CreateP
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  공인IP인스턴스생성
  @param createPublicIpInstanceRequest createPublicIpInstanceRequest
  @return *CreatePublicIpInstanceResponse*/
@@ -1582,7 +1656,155 @@ func (a *V2ApiService) CreatePublicIpInstance(createPublicIpInstanceRequest *Cre
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
+ createServerImage
+ @param createServerImageRequest createServerImageRequest
+ @return *CreateServerImageResponse*/
+func (a *V2ApiService) CreateServerImage(createServerImageRequest *CreateServerImageRequest) (*CreateServerImageResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  CreateServerImageResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/createServerImage"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = createServerImageRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
+ createServerImageFromSnapshot
+ @param createServerImageFromSnapshotRequest createServerImageFromSnapshotRequest
+ @return *CreateServerImageFromSnapshotResponse*/
+func (a *V2ApiService) CreateServerImageFromSnapshot(createServerImageFromSnapshotRequest *CreateServerImageFromSnapshotRequest) (*CreateServerImageFromSnapshotResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  CreateServerImageFromSnapshotResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/createServerImageFromSnapshot"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = createServerImageFromSnapshotRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
  서버인스턴스생성
  @param createServerInstancesRequest createServerInstancesRequest
  @return *CreateServerInstancesResponse*/
@@ -1656,7 +1878,7 @@ func (a *V2ApiService) CreateServerInstances(createServerInstancesRequest *Creat
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  ACG삭제
  @param deleteAccessControlGroupRequest deleteAccessControlGroupRequest
  @return *DeleteAccessControlGroupResponse*/
@@ -1730,7 +1952,7 @@ func (a *V2ApiService) DeleteAccessControlGroup(deleteAccessControlGroupRequest 
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  블록스토리지인스턴스삭제
  @param deleteBlockStorageInstancesRequest deleteBlockStorageInstancesRequest
  @return *DeleteBlockStorageInstancesResponse*/
@@ -1804,7 +2026,7 @@ func (a *V2ApiService) DeleteBlockStorageInstances(deleteBlockStorageInstancesRe
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  블록스토리지스냅샷인스턴스삭제
  @param deleteBlockStorageSnapshotInstancesRequest deleteBlockStorageSnapshotInstancesRequest
  @return *DeleteBlockStorageSnapshotInstancesResponse*/
@@ -1878,7 +2100,7 @@ func (a *V2ApiService) DeleteBlockStorageSnapshotInstances(deleteBlockStorageSna
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  초기화스크립트삭제
  @param deleteInitScriptsRequest deleteInitScriptsRequest
  @return *DeleteInitScriptsResponse*/
@@ -1952,7 +2174,7 @@ func (a *V2ApiService) DeleteInitScripts(deleteInitScriptsRequest *DeleteInitScr
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  로그인키삭제
  @param deleteLoginKeysRequest deleteLoginKeysRequest
  @return *DeleteLoginKeysResponse*/
@@ -2026,7 +2248,7 @@ func (a *V2ApiService) DeleteLoginKeys(deleteLoginKeysRequest *DeleteLoginKeysRe
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  회원서버이미지인스턴스삭제
  @param deleteMemberServerImageInstancesRequest deleteMemberServerImageInstancesRequest
  @return *DeleteMemberServerImageInstancesResponse*/
@@ -2100,7 +2322,7 @@ func (a *V2ApiService) DeleteMemberServerImageInstances(deleteMemberServerImageI
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  네트워크인터페이스삭제
  @param deleteNetworkInterfaceRequest deleteNetworkInterfaceRequest
  @return *DeleteNetworkInterfaceResponse*/
@@ -2174,7 +2396,7 @@ func (a *V2ApiService) DeleteNetworkInterface(deleteNetworkInterfaceRequest *Del
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  물리배치그룹삭제
  @param deletePlacementGroupRequest deletePlacementGroupRequest
  @return *DeletePlacementGroupResponse*/
@@ -2248,7 +2470,7 @@ func (a *V2ApiService) DeletePlacementGroup(deletePlacementGroupRequest *DeleteP
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  공인IP인스턴스삭제
  @param deletePublicIpInstanceRequest deletePublicIpInstanceRequest
  @return *DeletePublicIpInstanceResponse*/
@@ -2322,7 +2544,81 @@ func (a *V2ApiService) DeletePublicIpInstance(deletePublicIpInstanceRequest *Del
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
+ deleteServerImage
+ @param deleteServerImageRequest deleteServerImageRequest
+ @return *DeleteServerImageResponse*/
+func (a *V2ApiService) DeleteServerImage(deleteServerImageRequest *DeleteServerImageRequest) (*DeleteServerImageResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  DeleteServerImageResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/deleteServerImage"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = deleteServerImageRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
  블록스토리지인스턴스할당해제
  @param detachBlockStorageInstancesRequest detachBlockStorageInstancesRequest
  @return *DetachBlockStorageInstancesResponse*/
@@ -2396,7 +2692,7 @@ func (a *V2ApiService) DetachBlockStorageInstances(detachBlockStorageInstancesRe
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  네트워크인터페이스할당해제
  @param detachNetworkInterfaceRequest detachNetworkInterfaceRequest
  @return *DetachNetworkInterfaceResponse*/
@@ -2470,7 +2766,7 @@ func (a *V2ApiService) DetachNetworkInterface(detachNetworkInterfaceRequest *Det
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  FlowLog비활성화
  @param disableFlowLogRequest disableFlowLogRequest
  @return *FlowLogConfigurationList*/
@@ -2544,7 +2840,7 @@ func (a *V2ApiService) DisableFlowLog(disableFlowLogRequest *DisableFlowLogReque
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  공인IP를서버인스턴스에서할당해제
  @param disassociatePublicIpFromServerInstanceRequest disassociatePublicIpFromServerInstanceRequest
  @return *DisassociatePublicIpFromServerInstanceResponse*/
@@ -2618,7 +2914,7 @@ func (a *V2ApiService) DisassociatePublicIpFromServerInstance(disassociatePublic
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  FlowLog활성화
  @param enableFlowLogRequest enableFlowLogRequest
  @return *FlowLogConfigurationList*/
@@ -2692,7 +2988,7 @@ func (a *V2ApiService) EnableFlowLog(enableFlowLogRequest *EnableFlowLogRequest)
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  ACG상세조회
  @param getAccessControlGroupDetailRequest getAccessControlGroupDetailRequest
  @return *GetAccessControlGroupDetailResponse*/
@@ -2766,7 +3062,7 @@ func (a *V2ApiService) GetAccessControlGroupDetail(getAccessControlGroupDetailRe
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  ACG리스트조회
  @param getAccessControlGroupListRequest getAccessControlGroupListRequest
  @return *GetAccessControlGroupListResponse*/
@@ -2840,7 +3136,7 @@ func (a *V2ApiService) GetAccessControlGroupList(getAccessControlGroupListReques
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  ACGRule리스트조회
  @param getAccessControlGroupRuleListRequest getAccessControlGroupRuleListRequest
  @return *GetAccessControlGroupRuleListResponse*/
@@ -2914,7 +3210,7 @@ func (a *V2ApiService) GetAccessControlGroupRuleList(getAccessControlGroupRuleLi
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  블록스토리지인스턴스상세조회
  @param getBlockStorageInstanceDetailRequest getBlockStorageInstanceDetailRequest
  @return *GetBlockStorageInstanceDetailResponse*/
@@ -2988,7 +3284,7 @@ func (a *V2ApiService) GetBlockStorageInstanceDetail(getBlockStorageInstanceDeta
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  블록스토리지인스턴스리스트조회
  @param getBlockStorageInstanceListRequest getBlockStorageInstanceListRequest
  @return *GetBlockStorageInstanceListResponse*/
@@ -3062,7 +3358,7 @@ func (a *V2ApiService) GetBlockStorageInstanceList(getBlockStorageInstanceListRe
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  블록스토리지스냅샷인스턴스상세조회
  @param getBlockStorageSnapshotInstanceDetailRequest getBlockStorageSnapshotInstanceDetailRequest
  @return *GetBlockStorageSnapshotInstanceDetailResponse*/
@@ -3136,7 +3432,7 @@ func (a *V2ApiService) GetBlockStorageSnapshotInstanceDetail(getBlockStorageSnap
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  블록스토리지스냅샷인스턴스리스트조회
  @param getBlockStorageSnapshotInstanceListRequest getBlockStorageSnapshotInstanceListRequest
  @return *GetBlockStorageSnapshotInstanceListResponse*/
@@ -3210,9 +3506,9 @@ func (a *V2ApiService) GetBlockStorageSnapshotInstanceList(getBlockStorageSnapsh
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  블록스토리지볼륨타입리스트 조회
- @param getBlockStorageVolumeTypeListRequest
+ @param getBlockStorageVolumeTypeListRequest 
  @return *GetBlockStorageVolumeTypeListResponse*/
 func (a *V2ApiService) GetBlockStorageVolumeTypeList(getBlockStorageVolumeTypeListRequest *GetBlockStorageVolumeTypeListRequest) (*GetBlockStorageVolumeTypeListResponse, error) {
 	var (
@@ -3284,7 +3580,7 @@ func (a *V2ApiService) GetBlockStorageVolumeTypeList(getBlockStorageVolumeTypeLi
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  FlogLog 설정정보 조회
  @param getflowLogConfigurationListRequest getflowLogConfigurationListRequest
  @return *FlowLogConfigurationList*/
@@ -3358,9 +3654,9 @@ func (a *V2ApiService) GetFlowLogConfigurationList(getflowLogConfigurationListRe
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  하이퍼바이저타입리스트조회
- @param getHypervisorTypeListRequest
+ @param getHypervisorTypeListRequest 
  @return *GetHypervisorTypeListResponse*/
 func (a *V2ApiService) GetHypervisorTypeList(getHypervisorTypeListRequest *GetHypervisorTypeListRequest) (*GetHypervisorTypeListResponse, error) {
 	var (
@@ -3432,7 +3728,7 @@ func (a *V2ApiService) GetHypervisorTypeList(getHypervisorTypeListRequest *GetHy
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  초기화스크립트상세조회
  @param getInitScriptDetailRequest getInitScriptDetailRequest
  @return *GetInitScriptDetailResponse*/
@@ -3506,7 +3802,7 @@ func (a *V2ApiService) GetInitScriptDetail(getInitScriptDetailRequest *GetInitSc
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  초기화스크립트리스트조회
  @param getInitScriptListRequest getInitScriptListRequest
  @return *GetInitScriptListResponse*/
@@ -3580,7 +3876,7 @@ func (a *V2ApiService) GetInitScriptList(getInitScriptListRequest *GetInitScript
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  로그인키리스트조회
  @param getLoginKeyListRequest getLoginKeyListRequest
  @return *GetLoginKeyListResponse*/
@@ -3654,7 +3950,7 @@ func (a *V2ApiService) GetLoginKeyList(getLoginKeyListRequest *GetLoginKeyListRe
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  회원서버이미지인스턴스상세조회
  @param getMemberServerImageInstanceDetailRequest getMemberServerImageInstanceDetailRequest
  @return *GetMemberServerImageInstanceDetailResponse*/
@@ -3728,7 +4024,7 @@ func (a *V2ApiService) GetMemberServerImageInstanceDetail(getMemberServerImageIn
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  회원서버이미지인스턴스리스트조회
  @param getMemberServerImageInstanceListRequest getMemberServerImageInstanceListRequest
  @return *GetMemberServerImageInstanceListResponse*/
@@ -3802,7 +4098,7 @@ func (a *V2ApiService) GetMemberServerImageInstanceList(getMemberServerImageInst
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  네트워크인터페이스상세조회
  @param getNetworkInterfaceDetailRequest getNetworkInterfaceDetailRequest
  @return *GetNetworkInterfaceDetailResponse*/
@@ -3876,7 +4172,7 @@ func (a *V2ApiService) GetNetworkInterfaceDetail(getNetworkInterfaceDetailReques
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  네트워크인터페이스리스트조회
  @param getNetworkInterfaceListRequest getNetworkInterfaceListRequest
  @return *GetNetworkInterfaceListResponse*/
@@ -3950,7 +4246,7 @@ func (a *V2ApiService) GetNetworkInterfaceList(getNetworkInterfaceListRequest *G
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  물리배치그룹상세조회
  @param getPlacementGroupDetailRequest getPlacementGroupDetailRequest
  @return *GetPlacementGroupDetailResponse*/
@@ -4024,7 +4320,7 @@ func (a *V2ApiService) GetPlacementGroupDetail(getPlacementGroupDetailRequest *G
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  물리배치그룹리스트조회
  @param getPlacementGroupListRequest getPlacementGroupListRequest
  @return *GetPlacementGroupListResponse*/
@@ -4098,7 +4394,7 @@ func (a *V2ApiService) GetPlacementGroupList(getPlacementGroupListRequest *GetPl
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  공인IP인스턴스상세조회
  @param getPublicIpInstanceDetailRequest getPublicIpInstanceDetailRequest
  @return *GetPublicIpInstanceDetailResponse*/
@@ -4172,7 +4468,7 @@ func (a *V2ApiService) GetPublicIpInstanceDetail(getPublicIpInstanceDetailReques
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  공인IP인스턴스리스트조회
  @param getPublicIpInstanceListRequest getPublicIpInstanceListRequest
  @return *GetPublicIpInstanceListResponse*/
@@ -4246,7 +4542,7 @@ func (a *V2ApiService) GetPublicIpInstanceList(getPublicIpInstanceListRequest *G
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  공인IP할당가능서버인스턴스리스트조회
  @param getPublicIpTargetServerInstanceListRequest getPublicIpTargetServerInstanceListRequest
  @return *GetPublicIpTargetServerInstanceListResponse*/
@@ -4320,7 +4616,7 @@ func (a *V2ApiService) GetPublicIpTargetServerInstanceList(getPublicIpTargetServ
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  RAID리스트조회
  @param getRaidListRequest getRaidListRequest
  @return *GetRaidListResponse*/
@@ -4394,7 +4690,7 @@ func (a *V2ApiService) GetRaidList(getRaidListRequest *GetRaidListRequest) (*Get
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  REGION리스트조회
  @param getRegionListRequest getRegionListRequest
  @return *GetRegionListResponse*/
@@ -4468,7 +4764,7 @@ func (a *V2ApiService) GetRegionList(getRegionListRequest *GetRegionListRequest)
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  서버인스턴스의루트패스워드조회
  @param getRootPasswordRequest getRootPasswordRequest
  @return *GetRootPasswordResponse*/
@@ -4542,7 +4838,7 @@ func (a *V2ApiService) GetRootPassword(getRootPasswordRequest *GetRootPasswordRe
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  서버인스턴스리스트의루트패스워드조회
  @param getRootPasswordServerInstanceListRequest getRootPasswordServerInstanceListRequest
  @return *GetRootPasswordServerInstanceListResponse*/
@@ -4616,7 +4912,155 @@ func (a *V2ApiService) GetRootPasswordServerInstanceList(getRootPasswordServerIn
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
+ 서버이미지상세조회
+ @param getServerImageDetailRequest 
+ @return *GetServerImageDetailResponse*/
+func (a *V2ApiService) GetServerImageDetail(getServerImageDetailRequest *GetServerImageDetailRequest) (*GetServerImageDetailResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetServerImageDetailResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/getServerImageDetail"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = getServerImageDetailRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
+ 서버이미지리스트조회
+ @param getServerImageListRequest 
+ @return *GetServerImageListResponse*/
+func (a *V2ApiService) GetServerImageList(getServerImageListRequest *GetServerImageListRequest) (*GetServerImageListResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetServerImageListResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/getServerImageList"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = getServerImageListRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
  서버이미지상품리스트조회
  @param getServerImageProductListRequest getServerImageProductListRequest
  @return *GetServerImageProductListResponse*/
@@ -4690,7 +5134,7 @@ func (a *V2ApiService) GetServerImageProductList(getServerImageProductListReques
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  서버인스턴스상세조회
  @param getServerInstanceDetailRequest getServerInstanceDetailRequest
  @return *GetServerInstanceDetailResponse*/
@@ -4764,7 +5208,7 @@ func (a *V2ApiService) GetServerInstanceDetail(getServerInstanceDetailRequest *G
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  서버인스턴스리스트조회
  @param getServerInstanceListRequest getServerInstanceListRequest
  @return *GetServerInstanceListResponse*/
@@ -4838,7 +5282,7 @@ func (a *V2ApiService) GetServerInstanceList(getServerInstanceListRequest *GetSe
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  서버상품리스트조회
  @param getServerProductListRequest getServerProductListRequest
  @return *GetServerProductListResponse*/
@@ -4912,7 +5356,155 @@ func (a *V2ApiService) GetServerProductList(getServerProductListRequest *GetServ
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
+ 서버스펙상세조회
+ @param getServerSpecDetailRequest 
+ @return *GetServerSpecDetailResponse*/
+func (a *V2ApiService) GetServerSpecDetail(getServerSpecDetailRequest *GetServerSpecDetailRequest) (*GetServerSpecDetailResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetServerSpecDetailResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/getServerSpecDetail"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = getServerSpecDetailRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
+ 서버스펙리스트조회
+ @param getServerSpecListRequest 
+ @return *GetServerSpecListResponse*/
+func (a *V2ApiService) GetServerSpecList(getServerSpecListRequest *GetServerSpecListRequest) (*GetServerSpecListResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  GetServerSpecListResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/getServerSpecList"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = getServerSpecListRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
  ZONE리스트조회
  @param getZoneListRequest getZoneListRequest
  @return *GetZoneListResponse*/
@@ -4986,7 +5578,7 @@ func (a *V2ApiService) GetZoneList(getZoneListRequest *GetZoneListRequest) (*Get
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  사용자가생성한로그인키import
  @param importLoginKeyRequest importLoginKeyRequest
  @return *ImportLoginKeyResponse*/
@@ -5060,9 +5652,9 @@ func (a *V2ApiService) ImportLoginKey(importLoginKeyRequest *ImportLoginKeyReque
 	return &successPayload, err
 }
 
-/* V2ApiService
-
- @param interruptServerInstanceRequest
+/* V2ApiService 
+ 
+ @param interruptServerInstanceRequest 
  @return *InterruptServerInstanceResponse*/
 func (a *V2ApiService) InterruptServerInstance(interruptServerInstanceRequest *InterruptServerInstanceRequest) (*InterruptServerInstanceResponse, error) {
 	var (
@@ -5134,7 +5726,7 @@ func (a *V2ApiService) InterruptServerInstance(interruptServerInstanceRequest *I
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  서버인스턴스재시작
  @param rebootServerInstancesRequest rebootServerInstancesRequest
  @return *RebootServerInstancesResponse*/
@@ -5208,7 +5800,7 @@ func (a *V2ApiService) RebootServerInstances(rebootServerInstancesRequest *Reboo
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  ACGInboundRule삭제
  @param removeAccessControlGroupInboundRuleRequest removeAccessControlGroupInboundRuleRequest
  @return *RemoveAccessControlGroupInboundRuleResponse*/
@@ -5282,7 +5874,7 @@ func (a *V2ApiService) RemoveAccessControlGroupInboundRule(removeAccessControlGr
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  ACGOutboundRule삭제
  @param removeAccessControlGroupOutboundRuleRequest removeAccessControlGroupOutboundRuleRequest
  @return *RemoveAccessControlGroupOutboundRuleResponse*/
@@ -5356,7 +5948,7 @@ func (a *V2ApiService) RemoveAccessControlGroupOutboundRule(removeAccessControlG
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  회원서버이미지공유권한제거
  @param removeMemberServerImageSharingPermissionRequest removeMemberServerImageSharingPermissionRequest
  @return *RemoveMemberServerImageSharingPermissionResponse*/
@@ -5430,7 +6022,7 @@ func (a *V2ApiService) RemoveMemberServerImageSharingPermission(removeMemberServ
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  네트워크인터페이스의ACG제거
  @param removeNetworkInterfaceAccessControlGroupRequest removeNetworkInterfaceAccessControlGroupRequest
  @return *RemoveNetworkInterfaceAccessControlGroupResponse*/
@@ -5504,7 +6096,7 @@ func (a *V2ApiService) RemoveNetworkInterfaceAccessControlGroup(removeNetworkInt
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  물리배치그룹에서서버인스턴스제거
  @param removePlacementGroupServerInstanceRequest removePlacementGroupServerInstanceRequest
  @return *RemovePlacementGroupServerInstanceResponse*/
@@ -5578,7 +6170,81 @@ func (a *V2ApiService) RemovePlacementGroupServerInstance(removePlacementGroupSe
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
+ 서버이미지공유권한제거
+ @param removeServerImageSharingPermissionRequest removeServerImageSharingPermissionRequest
+ @return *RemoveServerImageSharingPermissionResponse*/
+func (a *V2ApiService) RemoveServerImageSharingPermission(removeServerImageSharingPermissionRequest *RemoveServerImageSharingPermissionRequest) (*RemoveServerImageSharingPermissionResponse, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  RemoveServerImageSharingPermissionResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/removeServerImageSharingPermission"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = removeServerImageSharingPermissionRequest
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !strings.HasPrefix(string(bodyBytes), `{`)) {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && strings.HasPrefix(string(bodyBytes), `{`) {
+		if err = json.Unmarshal(bodyBytes[bytes.IndexAny(bytes.Trim(bodyBytes, "{"), "{"):len(bodyBytes)-1], &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+
+	return &successPayload, err
+}
+
+/* V2ApiService 
  블록스토리지반납보호설정
  @param setBlockStorageReturnProtectionRequest setBlockStorageReturnProtectionRequest
  @return *SetBlockStorageReturnProtectionResponse*/
@@ -5652,7 +6318,7 @@ func (a *V2ApiService) SetBlockStorageReturnProtection(setBlockStorageReturnProt
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  회원서버이미지공유권한설정
  @param setMemberServerImageSharingPermissionRequest setMemberServerImageSharingPermissionRequest
  @return *SetMemberServerImageSharingPermissionResponse*/
@@ -5726,7 +6392,7 @@ func (a *V2ApiService) SetMemberServerImageSharingPermission(setMemberServerImag
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  서버반납보호설정
  @param setProtectServerTerminationRequest setProtectServerTerminationRequest
  @return *SetProtectServerTerminationResponse*/
@@ -5800,7 +6466,7 @@ func (a *V2ApiService) SetProtectServerTermination(setProtectServerTerminationRe
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  서버인스턴스시작
  @param startServerInstancesRequest startServerInstancesRequest
  @return *StartServerInstancesResponse*/
@@ -5874,7 +6540,7 @@ func (a *V2ApiService) StartServerInstances(startServerInstancesRequest *StartSe
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  서버인스턴스정지
  @param stopServerInstancesRequest stopServerInstancesRequest
  @return *StopServerInstancesResponse*/
@@ -5948,7 +6614,7 @@ func (a *V2ApiService) StopServerInstances(stopServerInstancesRequest *StopServe
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  서버인스턴스반납
  @param terminateServerInstancesRequest terminateServerInstancesRequest
  @return *TerminateServerInstancesResponse*/
@@ -6022,7 +6688,7 @@ func (a *V2ApiService) TerminateServerInstances(terminateServerInstancesRequest 
 	return &successPayload, err
 }
 
-/* V2ApiService
+/* V2ApiService 
  보조IP할당해제
  @param unassignSecondaryIpsRequest unassignSecondaryIpsRequest
  @return *UnassignSecondaryIpsResponse*/
