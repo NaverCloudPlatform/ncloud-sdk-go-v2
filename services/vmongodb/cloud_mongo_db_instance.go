@@ -50,7 +50,7 @@ type CloudMongoDbInstance struct {
 	ArbiterPort *int32 `json:"arbiterPort,omitempty"`
 
 	// 백업파일보관기간
-	BackupFileRetentionPeriod *string `json:"backupFileRetentionPeriod,omitempty"`
+	BackupFileRetentionPeriod *int32 `json:"backupFileRetentionPeriod,omitempty"`
 
 	// 백업시간
 	BackupTime *string `json:"backupTime,omitempty"`
