@@ -11,17 +11,17 @@ package vmongodb
 type ChangeCloudMongoDbSecondaryCountRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// CloudMongoDb 인스턴스번호
-CloudMongoDbInstanceNo *string `json:"cloudMongoDbInstanceNo"`
+	CloudMongoDbInstanceNo *string `json:"cloudMongoDbInstanceNo"`
 
 	// Cloud DB for MongoDB config 서버 대수
-MemberServerCount *string `json:"memberServerCount"`
+	MemberServerCount *int32 `json:"memberServerCount"`
 
 	// Cloud DB for MongoDB arbiter 서버 대수
-ArbiterServerCount *string `json:"arbiterServerCount"`
+	ArbiterServerCount *int32 `json:"arbiterServerCount"`
 
 	// CloudMongoDb Arbiter상품코드
-ArbiterProductCode *string `json:"arbiterProductCode,omitempty"`
+	ArbiterProductCode *string `json:"arbiterProductCode,omitempty"`
 }
