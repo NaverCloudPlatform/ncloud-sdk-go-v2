@@ -11,71 +11,74 @@ package vpostgresql
 type CreateCloudPostgresqlInstanceRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// VPC번호
-VpcNo *string `json:"vpcNo"`
+	VpcNo *string `json:"vpcNo"`
 
 	// CloudPostgresql이미지상품코드
-CloudPostgresqlImageProductCode *string `json:"cloudPostgresqlImageProductCode,omitempty"`
+	CloudPostgresqlImageProductCode *string `json:"cloudPostgresqlImageProductCode,omitempty"`
 
 	// CloudPostgresql상품코드
-CloudPostgresqlProductCode *string `json:"cloudPostgresqlProductCode,omitempty"`
+	CloudPostgresqlProductCode *string `json:"cloudPostgresqlProductCode,omitempty"`
 
 	// 데이터스토리지유형코드
-DataStorageTypeCode *string `json:"dataStorageTypeCode,omitempty"`
+	DataStorageTypeCode *string `json:"dataStorageTypeCode,omitempty"`
 
 	// 고가용성여부
-IsHa *bool `json:"isHa,omitempty"`
+	IsHa *bool `json:"isHa,omitempty"`
 
 	// 멀티존여부
-IsMultiZone *bool `json:"isMultiZone,omitempty"`
+	IsMultiZone *bool `json:"isMultiZone,omitempty"`
 
 	// 데이터스토리지암호화여부
-IsStorageEncryption *bool `json:"isStorageEncryption,omitempty"`
+	IsStorageEncryption *bool `json:"isStorageEncryption,omitempty"`
 
 	// 백업여부
-IsBackup *bool `json:"isBackup,omitempty"`
+	IsBackup *bool `json:"isBackup,omitempty"`
 
 	// 백업파일보관기간
-BackupFileRetentionPeriod *int32 `json:"backupFileRetentionPeriod,omitempty"`
+	BackupFileRetentionPeriod *int32 `json:"backupFileRetentionPeriod,omitempty"`
 
 	// 백업시간
-BackupTime *string `json:"backupTime,omitempty"`
+	BackupTime *string `json:"backupTime,omitempty"`
 
 	// 백업파일보관개수
-BackupFileStorageCount *int32 `json:"backupFileStorageCount,omitempty"`
+	BackupFileStorageCount *int32 `json:"backupFileStorageCount,omitempty"`
 
 	// 백업파일압축여부
-IsBackupFileCompression *bool `json:"isBackupFileCompression,omitempty"`
+	IsBackupFileCompression *bool `json:"isBackupFileCompression,omitempty"`
 
 	// 백업시간자동여부
-IsAutomaticBackup *bool `json:"isAutomaticBackup,omitempty"`
+	IsAutomaticBackup *bool `json:"isAutomaticBackup,omitempty"`
 
 	// CloudPostgresql서비스이름
-CloudPostgresqlServiceName *string `json:"cloudPostgresqlServiceName"`
+	CloudPostgresqlServiceName *string `json:"cloudPostgresqlServiceName"`
 
 	// CloudPostgresql서버이름
-CloudPostgresqlServerNamePrefix *string `json:"cloudPostgresqlServerNamePrefix"`
+	CloudPostgresqlServerNamePrefix *string `json:"cloudPostgresqlServerNamePrefix"`
 
 	// CloudPostgresql유저명
-CloudPostgresqlUserName *string `json:"cloudPostgresqlUserName"`
+	CloudPostgresqlUserName *string `json:"cloudPostgresqlUserName"`
 
 	// CloudPostgresql유저패스워드
-CloudPostgresqlUserPassword *string `json:"cloudPostgresqlUserPassword"`
+	CloudPostgresqlUserPassword *string `json:"cloudPostgresqlUserPassword"`
 
 	// 접근ClientCIDR
-ClientCidr *string `json:"clientCidr"`
+	ClientCidr *string `json:"clientCidr"`
 
 	// CloudPostgresql포트
-CloudPostgresqlPort *int32 `json:"cloudPostgresqlPort,omitempty"`
+	CloudPostgresqlPort *int32 `json:"cloudPostgresqlPort,omitempty"`
 
 	// CloudPostgresqlDB명
-CloudPostgresqlDatabaseName *string `json:"cloudPostgresqlDatabaseName"`
+	CloudPostgresqlDatabaseName *string `json:"cloudPostgresqlDatabaseName"`
 
 	// Subnet번호
-SubnetNo *string `json:"subnetNo"`
+	SubnetNo *string `json:"subnetNo"`
 
 	// SecondarySubnet번호
-SecondarySubnetNo *string `json:"secondarySubnetNo,omitempty"`
+	SecondarySubnetNo *string `json:"secondarySubnetNo,omitempty"`
+
+	// engineVersionCode
+	EngineVersionCode *string `json:"engineVersionCode,omitempty"`
 }
