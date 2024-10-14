@@ -90,4 +90,7 @@ type CreateCloudHadoopInstanceRequest struct {
 
 	// Cloud Hadoop Data Catalog 사용 여부
 	UseDataCatalog *bool `json:"useDataCatalog,omitempty"`
+
+	// engineVersionCode
+	EngineVersionCode *string `json:"engineVersionCode,omitempty"`
 }
