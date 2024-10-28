@@ -39,6 +39,7 @@ Name | Type | Description | Notes
 **Log** | **[*ClusterLogInput](ClusterLogInput.md)** |  | [default to null]
 **PublicNetwork** | ***bool** | Public Network | [default to null]
 **ReturnProtection** | ***bool** |  | [default to null]
+**KmsKeyTag** | ***string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

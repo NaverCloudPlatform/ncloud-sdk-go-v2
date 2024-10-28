@@ -28,12 +28,12 @@ type DefaultNodePoolParam struct {
 	// 상품 코드
 	ProductCode *string `json:"productCode,omitempty"`
 
+	// Server spec code
+	ServerSpecCode *string `json:"serverSpecCode,omitempty"`
+
 	Labels []*NodePoolLabel `json:"labels,omitempty"`
 
 	Taints []*NodePoolTaint `json:"taints,omitempty"`
-
-	// Server spec code
-	ServerSpecCode *string `json:"serverSpecCode,omitempty"`
 
 	// Storage size
 	StorageSize *int32 `json:"storageSize,omitempty"`

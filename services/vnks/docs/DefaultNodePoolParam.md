@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **SubnetNoList** | **[]\*int32** | Subnet 번호 | [optional] [default to null]
 **SoftwareCode** | ***string** | Server image code | [optional] [default to null]
 **ProductCode** | ***string** | 상품 코드 | [optional] [default to null]
+**ServerSpecCode** | ***string** | Server spec code | [optional] [default to null]
 **Labels** | **[[]\*NodePoolLabel](NodePoolLabel.md)** |  | [optional] [default to null]
 **Taints** | **[[]\*NodePoolTaint](NodePoolTaint.md)** |  | [optional] [default to null]
-**ServerSpecCode** | ***string** | Server spec code | [optional] [default to null]
 **StorageSize** | ***int32** | Storage size | [optional] [default to null]
 **ServerRoleId** | ***string** |  | [optional] [default to null]
 
