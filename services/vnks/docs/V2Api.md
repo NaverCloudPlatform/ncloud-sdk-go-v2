@@ -6,7 +6,13 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ClustersGet**](V2Api.md#ClustersGet) | **Get** /clusters | 
 [**ClustersPost**](V2Api.md#ClustersPost) | **Post** /clusters | 
+[**ClustersUuidAccessEntriesEntryUuidDelete**](V2Api.md#ClustersUuidAccessEntriesEntryUuidDelete) | **Delete** /clusters/{uuid}/access-entries/{entryUuid} | 
+[**ClustersUuidAccessEntriesEntryUuidGet**](V2Api.md#ClustersUuidAccessEntriesEntryUuidGet) | **Get** /clusters/{uuid}/access-entries/{entryUuid} | 
+[**ClustersUuidAccessEntriesEntryUuidPut**](V2Api.md#ClustersUuidAccessEntriesEntryUuidPut) | **Put** /clusters/{uuid}/access-entries/{entryUuid} | 
+[**ClustersUuidAccessEntriesGet**](V2Api.md#ClustersUuidAccessEntriesGet) | **Get** /clusters/{uuid}/access-entries | 
+[**ClustersUuidAccessEntriesPost**](V2Api.md#ClustersUuidAccessEntriesPost) | **Post** /clusters/{uuid}/access-entries | 
 [**ClustersUuidAddSubnetPatch**](V2Api.md#ClustersUuidAddSubnetPatch) | **Patch** /clusters/{uuid}/add-subnet | 
+[**ClustersUuidAuthTypePatch**](V2Api.md#ClustersUuidAuthTypePatch) | **Patch** /clusters/{uuid}/auth-type | 
 [**ClustersUuidDelete**](V2Api.md#ClustersUuidDelete) | **Delete** /clusters/{uuid} | 
 [**ClustersUuidGet**](V2Api.md#ClustersUuidGet) | **Get** /clusters/{uuid} | 
 [**ClustersUuidIpAclGet**](V2Api.md#ClustersUuidIpAclGet) | **Get** /clusters/{uuid}/ip-acl | 
@@ -28,6 +34,7 @@ Method | HTTP request | Description
 [**ClustersUuidOidcGet**](V2Api.md#ClustersUuidOidcGet) | **Get** /clusters/{uuid}/oidc | 
 [**ClustersUuidOidcPatch**](V2Api.md#ClustersUuidOidcPatch) | **Patch** /clusters/{uuid}/oidc | 
 [**ClustersUuidReturnProtectionPatch**](V2Api.md#ClustersUuidReturnProtectionPatch) | **Patch** /clusters/{uuid}/return-protection | 
+[**ClustersUuidSecretEncryptionPatch**](V2Api.md#ClustersUuidSecretEncryptionPatch) | **Patch** /clusters/{uuid}/secret-encryption | 
 [**ClustersUuidUpgradePatch**](V2Api.md#ClustersUuidUpgradePatch) | **Patch** /clusters/{uuid}/upgrade | 
 [**OptionServerImageGet**](V2Api.md#OptionServerImageGet) | **Get** /option/server-image | 
 [**OptionServerProductCodeGet**](V2Api.md#OptionServerProductCodeGet) | **Get** /option/server-product-code | 
@@ -82,6 +89,131 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ClustersUuidAccessEntriesEntryUuidDelete**
+> DeleteAccessEntryRes ClustersUuidAccessEntriesEntryUuidDelete(uuid, entryUuid)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**uuid** | **string** | uuid | **entryUuid** | **string** | entryUuid | 
+
+### Return type
+
+*[**DeleteAccessEntryRes**](DeleteAccessEntryRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClustersUuidAccessEntriesEntryUuidGet**
+> ClusterAccessEntryRes ClustersUuidAccessEntriesEntryUuidGet(uuid, entryUuid)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**uuid** | **string** | uuid | **entryUuid** | **string** | entryUuid | 
+
+### Return type
+
+*[**ClusterAccessEntryRes**](ClusterAccessEntryRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClustersUuidAccessEntriesEntryUuidPut**
+> UpdateAccessEntryRes ClustersUuidAccessEntriesEntryUuidPut(body, uuid, entryUuid)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**body** | **[\*UpdateAccessEntryDto](UpdateAccessEntryDto.md)** |  | **uuid** | **string** | uuid | **entryUuid** | **string** | entryUuid | 
+
+### Return type
+
+*[**UpdateAccessEntryRes**](UpdateAccessEntryRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClustersUuidAccessEntriesGet**
+> ClusterAccessEntriesRes ClustersUuidAccessEntriesGet(uuid)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**uuid** | **string** | uuid | 
+
+### Return type
+
+*[**ClusterAccessEntriesRes**](ClusterAccessEntriesRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClustersUuidAccessEntriesPost**
+> CreateAccessEntryRes ClustersUuidAccessEntriesPost(body, uuid)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**body** | **[\*CreateAccessEntryDto](CreateAccessEntryDto.md)** |  | **uuid** | **string** | uuid | 
+
+### Return type
+
+*[**CreateAccessEntryRes**](CreateAccessEntryRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ClustersUuidAddSubnetPatch**
 > UpdateClusterRes ClustersUuidAddSubnetPatch(body, uuid)
 
@@ -91,6 +223,31 @@ Name | Type | Description  | Notes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **body** | **[\*AddSubnetDto](AddSubnetDto.md)** |  | **uuid** | **string** | uuid | 
+
+### Return type
+
+*[**UpdateClusterRes**](UpdateClusterRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClustersUuidAuthTypePatch**
+> UpdateClusterRes ClustersUuidAuthTypePatch(body, uuid)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**body** | **[\*UpdateAuthTypeDto](UpdateAuthTypeDto.md)** |  | **uuid** | **string** | uuid | 
 
 ### Return type
 
@@ -656,6 +813,31 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ClustersUuidSecretEncryptionPatch**
+> UpdateClusterRes ClustersUuidSecretEncryptionPatch(body, uuid)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**body** | **[\*UpdateSecretEncryptionDto](UpdateSecretEncryptionDto.md)** |  | **uuid** | **string** | uuid | 
+
+### Return type
+
+*[**UpdateClusterRes**](UpdateClusterRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ClustersUuidUpgradePatch**
 > UpdateClusterRes ClustersUuidUpgradePatch(uuid, k8sVersion, optional)
 
@@ -697,6 +879,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -762,6 +945,7 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
  **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
 
 ### Optional Parameters

@@ -8,8 +8,8 @@
 
 package vnks
 
-type AddSubnetDto struct {
+type UpdateAccessEntryDto struct {
+	Groups []*string `json:"groups,omitempty"`
 
-	// 추가할 서브넷 목록
-	Subnets []*SubnetDto `json:"subnets"`
+	Policies []*CreateAccessEntryPolicyDto `json:"policies,omitempty"`
 }

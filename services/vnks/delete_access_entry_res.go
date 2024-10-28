@@ -8,8 +8,6 @@
 
 package vnks
 
-type AddSubnetDto struct {
-
-	// 추가할 서브넷 목록
-	Subnets []*SubnetDto `json:"subnets"`
+type DeleteAccessEntryRes struct {
+	Uuid *string `json:"uuid"`
 }

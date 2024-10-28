@@ -22,17 +22,17 @@ type ClusterInputBody struct {
 	// 로그인 키 이름
 	LoginKeyName *string `json:"loginKeyName"`
 
-	// Hypervisor Code
-	HypervisorCode *string `json:"hypervisorCode,omitempty"`
-
-	// Region의 코드
-	RegionCode *string `json:"regionCode"`
-
 	// Zone 코드
 	ZoneCode *string `json:"zoneCode,omitempty"`
 
 	// Zone 번호
 	ZoneNo *int32 `json:"zoneNo,omitempty"`
+
+	// Hypervisor Code
+	HypervisorCode *string `json:"hypervisorCode,omitempty"`
+
+	// Region의 코드
+	RegionCode *string `json:"regionCode"`
 
 	// Public network
 	PublicNetwork *bool `json:"publicNetwork,omitempty"`
@@ -57,6 +57,8 @@ type ClusterInputBody struct {
 
 	//
 	Log *ClusterLogInput `json:"log,omitempty"`
+
+	KmsKeyTag *string `json:"kmsKeyTag,omitempty"`
 
 	//
 	DefaultNodePool *DefaultNodePoolParam `json:"defaultNodePool,omitempty"`

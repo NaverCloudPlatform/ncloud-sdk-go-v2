@@ -115,4 +115,6 @@ type Cluster struct {
 	PublicNetwork *bool `json:"publicNetwork"`
 
 	ReturnProtection *bool `json:"returnProtection"`
+
+	KmsKeyTag *string `json:"kmsKeyTag,omitempty"`
 }
