@@ -117,4 +117,6 @@ type Cluster struct {
 	ReturnProtection *bool `json:"returnProtection"`
 
 	KmsKeyTag *string `json:"kmsKeyTag,omitempty"`
+
+	AuthType *string `json:"authType"`
 }
