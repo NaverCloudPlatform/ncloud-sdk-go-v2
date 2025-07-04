@@ -43,5 +43,5 @@ type ServerProduct struct {
 
 	IsFabricClusterType *bool `json:"isFabricClusterType,omitempty"`
 
-	FabricClusterPoolList []*FabricClusterInfo `json:"fabricClusterPoolList,omitempty"`
+	FabricClusterPoolList []*FabricClusterPool `json:"fabricClusterPoolList,omitempty"`
 }

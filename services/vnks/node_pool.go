@@ -54,4 +54,6 @@ type NodePool struct {
 	Taints []*NodePoolTaint `json:"taints"`
 
 	ServerRoleId *string `json:"serverRoleId,omitempty"`
+
+	FabricCluster *FabricClusterPool `json:"fabricCluster,omitempty"`
 }

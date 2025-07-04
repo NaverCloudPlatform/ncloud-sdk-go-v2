@@ -43,5 +43,5 @@ type NodePoolCreationBody struct {
 
 	ServerRoleId *string `json:"serverRoleId,omitempty"`
 
-	FabricCluster *FabricClusterInfo `json:"fabricCluster,omitempty"`
+	FabricCluster *FabricClusterPool `json:"fabricCluster,omitempty"`
 }
