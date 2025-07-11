@@ -9,7 +9,7 @@
 package vnks
 
 type FabricClusterPool struct {
-	PoolName *string `json:"poolName,omitempty"`
+	PoolName *string `json:"poolName"`
 
 	PoolNo *int32 `json:"poolNo"`
 } 

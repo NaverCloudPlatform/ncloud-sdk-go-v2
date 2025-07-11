@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **MemorySizeGb** | ***int32** |  | [default to null]
 **GpuCount** | ***int32** |  | [default to null]
 **GpuMemorySizeGb** | ***int32** |  | [default to null]
+**IsFabricClusterType** | ***bool** |  | [optional] [default to null]
+**FabricClusterPoolList** | **[[]\*FabricClusterPool](FabricClusterPool.md)** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

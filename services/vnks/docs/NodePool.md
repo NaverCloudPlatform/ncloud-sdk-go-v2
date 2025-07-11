@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Labels** | **[[]\*NodePoolLabel](NodePoolLabel.md)** |  | [default to null]
 **Taints** | **[[]\*NodePoolTaint](NodePoolTaint.md)** |  | [default to null]
 **ServerRoleId** | ***string** |  | [optional] [default to null]
+**FabricCluster** | **[*FabricClusterPool](FabricClusterPool.md)** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
