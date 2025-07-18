@@ -40,6 +40,7 @@ Name | Type | Description | Notes
 **PublicNetwork** | ***bool** | Public Network | [default to null]
 **ReturnProtection** | ***bool** |  | [default to null]
 **KmsKeyTag** | ***string** |  | [optional] [default to null]
+**AuthType** | ***string** | 클러스터 인증 타입 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

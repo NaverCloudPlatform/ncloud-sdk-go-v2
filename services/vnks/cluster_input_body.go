@@ -60,6 +60,12 @@ type ClusterInputBody struct {
 
 	KmsKeyTag *string `json:"kmsKeyTag,omitempty"`
 
+	// 클러스터 인증 타입
+	AuthType *string `json:"authType,omitempty"`
+
+	// 클러스터 생성 시 bootstrap access entry 자동 생성 여부
+	BootstrapAccessEntry *bool `json:"bootstrapAccessEntry,omitempty"`
+
 	//
 	DefaultNodePool *DefaultNodePoolParam `json:"defaultNodePool,omitempty"`
 

@@ -39,4 +39,6 @@ type DefaultNodePoolParam struct {
 	StorageSize *int32 `json:"storageSize,omitempty"`
 
 	ServerRoleId *string `json:"serverRoleId,omitempty"`
+
+	FabricCluster *FabricClusterPool `json:"fabricCluster,omitempty"`
 }

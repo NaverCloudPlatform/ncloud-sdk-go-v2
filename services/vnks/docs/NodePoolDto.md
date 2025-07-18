@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Taints** | **[[]\*NodePoolTaint](NodePoolTaint.md)** |  | [optional] [default to null]
 **StorageSize** | ***int32** | Storage size | [optional] [default to null]
 **ServerRoleId** | ***string** |  | [optional] [default to null]
+**FabricCluster** | **[*FabricClusterPool](FabricClusterPool.md)** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

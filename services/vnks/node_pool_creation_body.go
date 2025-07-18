@@ -42,4 +42,6 @@ type NodePoolCreationBody struct {
 	Taints []*NodePoolTaint `json:"taints,omitempty"`
 
 	ServerRoleId *string `json:"serverRoleId,omitempty"`
+
+	FabricCluster *FabricClusterPool `json:"fabricCluster,omitempty"`
 }

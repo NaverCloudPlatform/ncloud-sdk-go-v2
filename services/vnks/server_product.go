@@ -40,4 +40,8 @@ type ServerProduct struct {
 	GpuCount *int32 `json:"gpuCount"`
 
 	GpuMemorySizeGb *int32 `json:"gpuMemorySizeGb"`
+
+	IsFabricClusterType *bool `json:"isFabricClusterType,omitempty"`
+
+	FabricClusterPoolList []*FabricClusterPool `json:"fabricClusterPoolList,omitempty"`
 }
