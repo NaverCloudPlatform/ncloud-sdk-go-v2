@@ -40,9 +40,7 @@ func NewConfiguration(region string, apiKeys ...*ncloud.APIKey) *ncloud.Configur
 		cfg.BasePath = strings.Replace(cfg.BasePath, "fin-ncloud", "vpcsourcepipeline", 1)
 		cfg.BasePath = strings.Replace(cfg.BasePath, "ncloud", "vpcsourcepipeline", 1)
 	}
-	switch region {
-	case "SGN":
-		cfg.BasePath = strings.Replace(cfg.BasePath, "/v1", "/sg-v1", 1)
-	}
+	cfg.DefaultHeader["x-ncp-region_code"] = region
+
 	return cfg
 }
