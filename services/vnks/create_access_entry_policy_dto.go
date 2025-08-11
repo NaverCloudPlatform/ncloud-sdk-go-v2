@@ -9,7 +9,7 @@
 package vnks
 
 type CreateAccessEntryPolicyDto struct {
-	Type_ *string `json:"type"`
+	Type *string `json:"type"`
 
 	Scope *string `json:"scope"`
 

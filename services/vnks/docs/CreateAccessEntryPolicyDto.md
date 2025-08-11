@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type_** | ***string** |  | [default to null]
+**Type** | ***string** |  | [default to null]
 **Scope** | ***string** |  | [default to null]
 **Namespaces** | **[]\*string** |  | [optional] [default to null]
 
