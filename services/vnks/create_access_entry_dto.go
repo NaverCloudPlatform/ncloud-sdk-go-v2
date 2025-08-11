@@ -9,7 +9,7 @@
 package vnks
 
 type CreateAccessEntryDto struct {
-	Type_ *string `json:"type"`
+	Type *string `json:"type"`
 
 	Entry *string `json:"entry"`
 

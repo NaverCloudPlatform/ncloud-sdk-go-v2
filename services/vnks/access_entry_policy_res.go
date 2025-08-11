@@ -13,5 +13,5 @@ type AccessEntryPolicyRes struct {
 
 	Scope *string `json:"scope,omitempty"`
 
-	Type_ *string `json:"type,omitempty"`
+	Type *string `json:"type,omitempty"`
 }

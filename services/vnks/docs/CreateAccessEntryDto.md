@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type_** | ***string** |  | [default to null]
+**Type** | ***string** |  | [default to null]
 **Entry** | ***string** |  | [default to null]
 **Groups** | **[]\*string** |  | [optional] [default to null]
 **Policies** | **[[]\*CreateAccessEntryPolicyDto](CreateAccessEntryPolicyDto.md)** |  | [optional] [default to null]
