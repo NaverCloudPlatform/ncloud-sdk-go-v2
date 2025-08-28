@@ -9,7 +9,10 @@
 package vserver
 
 type CreateLoginKeyRequest struct {
-
-	// 키이름
-KeyName *string `json:"keyName,omitempty"`
+	// Region Code : Ex) KR, JPN, SGN
+	RegionCode 	*string `json:"regionCode,omitempty"`
+	
+	// 키 이름
+	KeyName 	*string `json:"keyName,omitempty"`
 }
+// createLoginKey API Ref) https://api.ncloud-docs.com/docs/compute-vserver-server-loginkey-createloginkey

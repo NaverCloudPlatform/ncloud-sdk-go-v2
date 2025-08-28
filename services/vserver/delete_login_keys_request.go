@@ -9,7 +9,10 @@
 package vserver
 
 type DeleteLoginKeysRequest struct {
+	// Region Code : Ex) KR, JPN, SGN
+	RegionCode 	*string `json:"regionCode,omitempty"`
 
 	// 키이름리스트
-KeyNameList []*string `json:"keyNameList"`
+	KeyNameList []*string `json:"keyNameList"`
 }
+// deleteLoginKeys API Ref) https://api.ncloud-docs.com/docs/compute-vserver-server-loginkey-deleteloginkeys
