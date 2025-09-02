@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**RegionCode** | ***string** | REGION코드 | [optional] [default to null]
 **KeyName** | ***string** | 키이름 | [optional] [default to null]
 **PageNo** | ***int32** | 페이지번호 | [optional] [default to null]
 **PageSize** | ***int32** | 페이지사이즈 | [optional] [default to null]

@@ -10,6 +10,9 @@ package vserver
 
 type DeleteLoginKeysRequest struct {
 
+	// REGION코드
+RegionCode *string `json:"regionCode,omitempty"`
+
 	// 키이름리스트
 KeyNameList []*string `json:"keyNameList"`
 }

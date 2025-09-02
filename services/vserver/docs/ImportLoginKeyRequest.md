@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**RegionCode** | ***string** | REGION코드 | [optional] [default to null]
 **KeyName** | ***string** | 키이름 | [optional] [default to null]
 **PublicKey** | ***string** | 공개키 | [default to null]
 
