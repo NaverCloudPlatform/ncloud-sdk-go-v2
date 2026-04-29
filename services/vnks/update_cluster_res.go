@@ -9,5 +9,7 @@
 package vnks
 
 type UpdateClusterRes struct {
+
+	// 클러스터의 UUID
 	Uuid *string `json:"uuid"`
 }

@@ -9,5 +9,7 @@
 package vnks
 
 type SubnetDto struct {
+
+	// 추가할 서브넷 ID<ul><li>[getSubnetList](/docs/networking-vpc-subnetmanagement-getsubnetlist) 액션을 통해 확인</li></ul>
 	Number *int32 `json:"number"`
 }

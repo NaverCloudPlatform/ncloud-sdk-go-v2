@@ -34,7 +34,6 @@ type NodePoolCreationBody struct {
 	// Storage size
 	StorageSize *int32 `json:"storageSize,omitempty"`
 
-	//
 	Autoscale *AutoscalerUpdate `json:"autoscale,omitempty"`
 
 	Labels []*NodePoolLabel `json:"labels,omitempty"`
@@ -44,4 +43,10 @@ type NodePoolCreationBody struct {
 	ServerRoleId *string `json:"serverRoleId,omitempty"`
 
 	FabricCluster *FabricClusterPool `json:"fabricCluster,omitempty"`
+
+	// Zone 코드 (Regional 클러스터에서 노드풀별 zone 지정)
+	ZoneCode *string `json:"zoneCode,omitempty"`
+
+	// Zone 번호 (Regional 클러스터에서 노드풀별 zone 지정)
+	ZoneNo *int32 `json:"zoneNo,omitempty"`
 }

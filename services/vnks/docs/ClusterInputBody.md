@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **LbPublicSubnetNo** | ***int32** | [로드밸런서 전용 Public Subnet 번호](/docs/networking-vpc-subnetmanagement-getsubnetlist) | [optional] [default to null]
 **Log** | **[*ClusterLogInput](ClusterLogInput.md)** |  | [optional] [default to null]
 **KmsKeyTag** | ***string** |  | [optional] [default to null]
+**IsRegional** | ***bool** | 멀티존(Regional) 클러스터 여부 | [optional] [default to null]
 **AuthType** | ***string** | 클러스터 인증 타입 | [optional] [default to null]
 **BootstrapAccessEntry** | ***bool** | 클러스터 생성 시 bootstrap access entry 자동 생성 여부 | [optional] [default to null]
 **DefaultNodePool** | **[*DefaultNodePoolParam](DefaultNodePoolParam.md)** |  | [optional] [default to null]

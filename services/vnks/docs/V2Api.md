@@ -953,7 +953,7 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**from** | **string** |  | **hypervisorCode** | **string** |  | **to** | **string** |  | 
+**from** | **string** |  | **hypervisorCode** | **string** |  | **isRegionalSupport** | **bool** | Regional 클러스터 지원 여부로 필터링 | **to** | **string** |  | 
 
 ### Return type
 

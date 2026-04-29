@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **StorageSize** | ***int32** | Storage size | [optional] [default to null]
 **ServerRoleId** | ***string** |  | [optional] [default to null]
 **FabricCluster** | **[*FabricClusterPool](FabricClusterPool.md)** |  | [optional] [default to null]
+**ZoneCode** | ***string** | Zone 코드 (Regional 클러스터에서 노드풀별 zone 지정) | [optional] [default to null]
+**ZoneNo** | ***int32** | Zone 번호 (Regional 클러스터에서 노드풀별 zone 지정) | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
