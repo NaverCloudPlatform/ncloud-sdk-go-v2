@@ -11,20 +11,20 @@ package vserver
 type GetServerImageProductListRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// REGION코드
-BlockStorageSize *int32 `json:"blockStorageSize,omitempty"`
+	BlockStorageSize *int32 `json:"blockStorageSize,omitempty"`
 
 	// 제외할상품코드
-ExclusionProductCode *string `json:"exclusionProductCode,omitempty"`
+	ExclusionProductCode *string `json:"exclusionProductCode,omitempty"`
 
 	// 상품코드
-ProductCode *string `json:"productCode,omitempty"`
+	ProductCode *string `json:"productCode,omitempty"`
 
 	// 플랫폼유형코드리스트
-PlatformTypeCodeList []*string `json:"platformTypeCodeList,omitempty"`
+	PlatformTypeCodeList []*string `json:"platformTypeCodeList,omitempty"`
 
 	// 인프라자원상세유형코드
-InfraResourceDetailTypeCode *string `json:"infraResourceDetailTypeCode,omitempty"`
+	InfraResourceDetailTypeCode *string `json:"infraResourceDetailTypeCode,omitempty"`
 }

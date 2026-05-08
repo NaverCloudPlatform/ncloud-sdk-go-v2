@@ -11,11 +11,11 @@ package vserver
 type DisassociatePublicIpFromServerInstanceRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 공인IP인스턴스번호
-PublicIpInstanceNo *string `json:"publicIpInstanceNo,omitempty"`
+	PublicIpInstanceNo *string `json:"publicIpInstanceNo,omitempty"`
 
 	// 서버인스턴스번호
-ServerInstanceNo *string `json:"serverInstanceNo,omitempty"`
+	ServerInstanceNo *string `json:"serverInstanceNo,omitempty"`
 }

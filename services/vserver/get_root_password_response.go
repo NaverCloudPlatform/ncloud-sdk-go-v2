@@ -9,15 +9,14 @@
 package vserver
 
 type GetRootPasswordResponse struct {
+	RequestId *string `json:"requestId,omitempty"`
 
-RequestId *string `json:"requestId,omitempty"`
+	ReturnCode *string `json:"returnCode,omitempty"`
 
-ReturnCode *string `json:"returnCode,omitempty"`
+	ReturnMessage *string `json:"returnMessage,omitempty"`
 
-ReturnMessage *string `json:"returnMessage,omitempty"`
-
-TotalRows *int32 `json:"totalRows,omitempty"`
+	TotalRows *int32 `json:"totalRows,omitempty"`
 
 	// 루트패스워드
-RootPassword *string `json:"rootPassword,omitempty"`
+	RootPassword *string `json:"rootPassword,omitempty"`
 }

@@ -11,11 +11,11 @@ package vserver
 type CreatePublicIpInstanceRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 공인IP설명
-PublicIpDescription *string `json:"publicIpDescription,omitempty"`
+	PublicIpDescription *string `json:"publicIpDescription,omitempty"`
 
 	// 서버인스턴스번호
-ServerInstanceNo *string `json:"serverInstanceNo,omitempty"`
+	ServerInstanceNo *string `json:"serverInstanceNo,omitempty"`
 }

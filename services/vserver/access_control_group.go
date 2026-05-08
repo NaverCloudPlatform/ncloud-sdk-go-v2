@@ -11,20 +11,20 @@ package vserver
 type AccessControlGroup struct {
 
 	// ACG번호
-AccessControlGroupNo *string `json:"accessControlGroupNo,omitempty"`
+	AccessControlGroupNo *string `json:"accessControlGroupNo,omitempty"`
 
 	// ACG이름
-AccessControlGroupName *string `json:"accessControlGroupName,omitempty"`
+	AccessControlGroupName *string `json:"accessControlGroupName,omitempty"`
 
 	// Default여부
-IsDefault *bool `json:"isDefault,omitempty"`
+	IsDefault *bool `json:"isDefault,omitempty"`
 
 	// VPC번호
-VpcNo *string `json:"vpcNo,omitempty"`
+	VpcNo *string `json:"vpcNo,omitempty"`
 
 	// ACG상태
-AccessControlGroupStatus *CommonCode `json:"accessControlGroupStatus,omitempty"`
+	AccessControlGroupStatus *CommonCode `json:"accessControlGroupStatus,omitempty"`
 
 	// ACG설명
-AccessControlGroupDescription *string `json:"accessControlGroupDescription,omitempty"`
+	AccessControlGroupDescription *string `json:"accessControlGroupDescription,omitempty"`
 }

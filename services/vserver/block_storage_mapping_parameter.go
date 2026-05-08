@@ -11,20 +11,23 @@ package vserver
 type BlockStorageMappingParameter struct {
 
 	// 생성스토리지순서
-Order *int32 `json:"order,omitempty"`
+	Order *int32 `json:"order,omitempty"`
 
 	// 생성스토리지스냅샷번호
-SnapshotInstanceNo *string `json:"snapshotInstanceNo,omitempty"`
+	SnapshotInstanceNo *string `json:"snapshotInstanceNo,omitempty"`
 
 	// 생성스토리지사이즈
-BlockStorageSize *string `json:"blockStorageSize,omitempty"`
+	BlockStorageSize *string `json:"blockStorageSize,omitempty"`
 
 	// 생성스토리지이름
-BlockStorageName *string `json:"blockStorageName,omitempty"`
+	BlockStorageName *string `json:"blockStorageName,omitempty"`
 
 	// 생성스토리지볼륨타입코드
-BlockStorageVolumeTypeCode *string `json:"blockStorageVolumeTypeCode,omitempty"`
+	BlockStorageVolumeTypeCode *string `json:"blockStorageVolumeTypeCode,omitempty"`
 
-	// 생성스토리지암호화여부
-Encrypted *string `json:"encrypted,omitempty"`
+	// 스토리지제외여부
+	NoBlockStorage *bool `json:"noBlockStorage,omitempty"`
+
+	// 신규스토리지생성여부
+	EmptyBlockStorage *bool `json:"emptyBlockStorage,omitempty"`
 }

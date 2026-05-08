@@ -11,17 +11,17 @@ package vserver
 type NetworkInterfaceParameter struct {
 
 	// 네트워크인터페이스순서
-NetworkInterfaceOrder *int32 `json:"networkInterfaceOrder"`
+	NetworkInterfaceOrder *int32 `json:"networkInterfaceOrder"`
 
 	// 네트워크인터페이스번호
-NetworkInterfaceNo *string `json:"networkInterfaceNo,omitempty"`
+	NetworkInterfaceNo *string `json:"networkInterfaceNo,omitempty"`
 
 	// 서브넷번호
-SubnetNo *string `json:"subnetNo,omitempty"`
+	SubnetNo *string `json:"subnetNo,omitempty"`
 
 	// IP주소
-Ip *string `json:"ip,omitempty"`
+	Ip *string `json:"ip,omitempty"`
 
 	// ACG번호리스트
-AccessControlGroupNoList []*string `json:"accessControlGroupNoList"`
+	AccessControlGroupNoList []*string `json:"accessControlGroupNoList"`
 }

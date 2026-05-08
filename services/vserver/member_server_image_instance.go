@@ -11,41 +11,41 @@ package vserver
 type MemberServerImageInstance struct {
 
 	// 회원서버이미지인스턴스번호
-MemberServerImageInstanceNo *string `json:"memberServerImageInstanceNo,omitempty"`
+	MemberServerImageInstanceNo *string `json:"memberServerImageInstanceNo,omitempty"`
 
 	// 회원서버이미지이름
-MemberServerImageName *string `json:"memberServerImageName,omitempty"`
+	MemberServerImageName *string `json:"memberServerImageName,omitempty"`
 
 	// 회원서버이미지설명
-MemberServerImageDescription *string `json:"memberServerImageDescription,omitempty"`
+	MemberServerImageDescription *string `json:"memberServerImageDescription,omitempty"`
 
 	// 원본서버인스턴스번호
-OriginalServerInstanceNo *string `json:"originalServerInstanceNo,omitempty"`
+	OriginalServerInstanceNo *string `json:"originalServerInstanceNo,omitempty"`
 
 	// 원본서버이미지상품코드
-OriginalServerImageProductCode *string `json:"originalServerImageProductCode,omitempty"`
+	OriginalServerImageProductCode *string `json:"originalServerImageProductCode,omitempty"`
 
 	// 회원서버이미지인스턴스상태
-MemberServerImageInstanceStatus *CommonCode `json:"memberServerImageInstanceStatus,omitempty"`
+	MemberServerImageInstanceStatus *CommonCode `json:"memberServerImageInstanceStatus,omitempty"`
 
 	// 회원서버이미지인스턴스OP
-MemberServerImageInstanceOperation *CommonCode `json:"memberServerImageInstanceOperation,omitempty"`
+	MemberServerImageInstanceOperation *CommonCode `json:"memberServerImageInstanceOperation,omitempty"`
 
 	// 회원서버이미지인스턴스상태이름
-MemberServerImageInstanceStatusName *string `json:"memberServerImageInstanceStatusName,omitempty"`
+	MemberServerImageInstanceStatusName *string `json:"memberServerImageInstanceStatusName,omitempty"`
 
 	// 생성일시
-CreateDate *string `json:"createDate,omitempty"`
+	CreateDate *string `json:"createDate,omitempty"`
 
 	// 회원서버이미지블록스토리지총개수
-MemberServerImageBlockStorageTotalRows *int32 `json:"memberServerImageBlockStorageTotalRows,omitempty"`
+	MemberServerImageBlockStorageTotalRows *int32 `json:"memberServerImageBlockStorageTotalRows,omitempty"`
 
 	// 회원서버이미지블록스토리지총사이즈
-MemberServerImageBlockStorageTotalSize *int64 `json:"memberServerImageBlockStorageTotalSize,omitempty"`
+	MemberServerImageBlockStorageTotalSize *int64 `json:"memberServerImageBlockStorageTotalSize,omitempty"`
 
 	// 공유상태
-ShareStatus *CommonCode `json:"shareStatus,omitempty"`
+	ShareStatus *CommonCode `json:"shareStatus,omitempty"`
 
 	// 공유받는로그인ID리스트
-SharedLoginIdList []*string `json:"sharedLoginIdList,omitempty"`
+	SharedLoginIdList []*string `json:"sharedLoginIdList,omitempty"`
 }

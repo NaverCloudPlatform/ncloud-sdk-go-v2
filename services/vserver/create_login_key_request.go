@@ -11,8 +11,8 @@ package vserver
 type CreateLoginKeyRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 키이름
-KeyName *string `json:"keyName,omitempty"`
+	KeyName *string `json:"keyName,omitempty"`
 }

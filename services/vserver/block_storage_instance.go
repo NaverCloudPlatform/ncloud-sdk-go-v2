@@ -11,68 +11,74 @@ package vserver
 type BlockStorageInstance struct {
 
 	// 블록스토리지인스턴스번호
-BlockStorageInstanceNo *string `json:"blockStorageInstanceNo,omitempty"`
+	BlockStorageInstanceNo *string `json:"blockStorageInstanceNo,omitempty"`
 
 	// 서버인스턴스번호
-ServerInstanceNo *string `json:"serverInstanceNo,omitempty"`
+	ServerInstanceNo *string `json:"serverInstanceNo,omitempty"`
 
 	// 블록스토리지이름
-BlockStorageName *string `json:"blockStorageName,omitempty"`
+	BlockStorageName *string `json:"blockStorageName,omitempty"`
 
 	// 블록스토리지유형
-BlockStorageType *CommonCode `json:"blockStorageType,omitempty"`
+	BlockStorageType *CommonCode `json:"blockStorageType,omitempty"`
 
 	// 블록스토리지사이즈
-BlockStorageSize *int64 `json:"blockStorageSize,omitempty"`
+	BlockStorageSize *int64 `json:"blockStorageSize,omitempty"`
 
 	// 디바이스이름
-DeviceName *string `json:"deviceName,omitempty"`
+	DeviceName *string `json:"deviceName,omitempty"`
 
 	// 블록스토리지상품코드
-BlockStorageProductCode *string `json:"blockStorageProductCode,omitempty"`
+	BlockStorageProductCode *string `json:"blockStorageProductCode,omitempty"`
 
 	// 블록스토리지인스턴스상태
-BlockStorageInstanceStatus *CommonCode `json:"blockStorageInstanceStatus,omitempty"`
+	BlockStorageInstanceStatus *CommonCode `json:"blockStorageInstanceStatus,omitempty"`
 
 	// 블록스토리지인스턴스OP
-BlockStorageInstanceOperation *CommonCode `json:"blockStorageInstanceOperation,omitempty"`
+	BlockStorageInstanceOperation *CommonCode `json:"blockStorageInstanceOperation,omitempty"`
 
 	// 블록스토리지인스턴스상태이름
-BlockStorageInstanceStatusName *string `json:"blockStorageInstanceStatusName,omitempty"`
+	BlockStorageInstanceStatusName *string `json:"blockStorageInstanceStatusName,omitempty"`
 
 	// 생성일시
-CreateDate *string `json:"createDate,omitempty"`
+	CreateDate *string `json:"createDate,omitempty"`
 
 	// 블록스토리지설명
-BlockStorageDescription *string `json:"blockStorageDescription,omitempty"`
+	BlockStorageDescription *string `json:"blockStorageDescription,omitempty"`
 
 	// 블록스토리지디스크유형
-BlockStorageDiskType *CommonCode `json:"blockStorageDiskType,omitempty"`
+	BlockStorageDiskType *CommonCode `json:"blockStorageDiskType,omitempty"`
 
 	// 블록스토리지디스크상세유형
-BlockStorageDiskDetailType *CommonCode `json:"blockStorageDiskDetailType,omitempty"`
+	BlockStorageDiskDetailType *CommonCode `json:"blockStorageDiskDetailType,omitempty"`
 
 	// 최대IOPS
-MaxIopsThroughput *int32 `json:"maxIopsThroughput,omitempty"`
+	MaxIopsThroughput *int32 `json:"maxIopsThroughput,omitempty"`
 
 	// 볼륨암호화여부
-IsEncryptedVolume *bool `json:"isEncryptedVolume,omitempty"`
+	IsEncryptedVolume *bool `json:"isEncryptedVolume,omitempty"`
 
 	// ZONE코드
-ZoneCode *string `json:"zoneCode,omitempty"`
+	ZoneCode *string `json:"zoneCode,omitempty"`
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 반납보호여부
-IsReturnProtection *bool `json:"isReturnProtection,omitempty"`
+	IsReturnProtection *bool `json:"isReturnProtection,omitempty"`
 
 	// 블록스토리지볼륨타입
-BlockStorageVolumeType *CommonCode `json:"blockStorageVolumeType,omitempty"`
+	BlockStorageVolumeType *CommonCode `json:"blockStorageVolumeType,omitempty"`
 
 	// 하이퍼바이저타입
-HypervisorType *CommonCode `json:"hypervisorType,omitempty"`
+	HypervisorType *CommonCode `json:"hypervisorType,omitempty"`
 
 	// 블록스토리지 throughput
-Throughput *int64 `json:"throughput,omitempty"`
+	Throughput *int64 `json:"throughput,omitempty"`
+
+	// 블록스토리지 IOPS
+	Iops *int64 `json:"iops,omitempty"`
+
+	// 블록스토리지스냅샷인스턴스번호
+	BlockStorageSnapshotInstanceNo *int64 `json:"blockStorageSnapshotInstanceNo,omitempty"`
 }

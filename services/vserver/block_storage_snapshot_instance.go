@@ -54,4 +54,7 @@ type BlockStorageSnapshotInstance struct {
 
 	// 부팅가능 여부
 	IsBootable *bool `json:"isBootable,omitempty"`
+
+	// 원본블록스토리지볼륨타입
+	BlockStorageVolumeType *CommonCode `json:"blockStorageVolumeType,omitempty"`
 }

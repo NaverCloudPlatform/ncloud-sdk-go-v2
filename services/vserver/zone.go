@@ -11,14 +11,14 @@ package vserver
 type Zone struct {
 
 	// ZONE이름
-ZoneName *string `json:"zoneName,omitempty"`
+	ZoneName *string `json:"zoneName,omitempty"`
 
 	// ZONE코드
-ZoneCode *string `json:"zoneCode,omitempty"`
+	ZoneCode *string `json:"zoneCode,omitempty"`
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// ZONE설명
-ZoneDescription *string `json:"zoneDescription,omitempty"`
+	ZoneDescription *string `json:"zoneDescription,omitempty"`
 }

@@ -11,11 +11,11 @@ package vserver
 type GetPlacementGroupListRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 물리배치그룹이름
-PlacementGroupName *string `json:"placementGroupName,omitempty"`
+	PlacementGroupName *string `json:"placementGroupName,omitempty"`
 
 	// 물리배치그룹번호리스트
-PlacementGroupNoList []*string `json:"placementGroupNoList,omitempty"`
+	PlacementGroupNoList []*string `json:"placementGroupNoList,omitempty"`
 }

@@ -11,17 +11,17 @@ package vserver
 type CreateInitScriptRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 초기화스크립트내용
-InitScriptContent *string `json:"initScriptContent"`
+	InitScriptContent *string `json:"initScriptContent"`
 
 	// 초기화스크립트이름
-InitScriptName *string `json:"initScriptName,omitempty"`
+	InitScriptName *string `json:"initScriptName,omitempty"`
 
 	// 초기화스크립트설명
-InitScriptDescription *string `json:"initScriptDescription,omitempty"`
+	InitScriptDescription *string `json:"initScriptDescription,omitempty"`
 
 	// OS유형코드
-OsTypeCode *string `json:"osTypeCode"`
+	OsTypeCode *string `json:"osTypeCode"`
 }

@@ -11,26 +11,26 @@ package vserver
 type GetInitScriptListRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// OS유형코드
-OsTypeCode *string `json:"osTypeCode,omitempty"`
+	OsTypeCode *string `json:"osTypeCode,omitempty"`
 
 	// 페이지번호
-PageNo *int32 `json:"pageNo,omitempty"`
+	PageNo *int32 `json:"pageNo,omitempty"`
 
 	// 페이지사이즈
-PageSize *int32 `json:"pageSize,omitempty"`
+	PageSize *int32 `json:"pageSize,omitempty"`
 
 	// 정렬대상
-SortedBy *string `json:"sortedBy,omitempty"`
+	SortedBy *string `json:"sortedBy,omitempty"`
 
 	// 정렬순서
-SortingOrder *string `json:"sortingOrder,omitempty"`
+	SortingOrder *string `json:"sortingOrder,omitempty"`
 
 	// 초기화스크립트이름
-InitScriptName *string `json:"initScriptName,omitempty"`
+	InitScriptName *string `json:"initScriptName,omitempty"`
 
 	// 초기화스크립트번호리스트
-InitScriptNoList []*string `json:"initScriptNoList,omitempty"`
+	InitScriptNoList []*string `json:"initScriptNoList,omitempty"`
 }

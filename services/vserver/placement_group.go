@@ -11,11 +11,11 @@ package vserver
 type PlacementGroup struct {
 
 	// 물리배치그룹번호
-PlacementGroupNo *string `json:"placementGroupNo,omitempty"`
+	PlacementGroupNo *string `json:"placementGroupNo,omitempty"`
 
 	// 물리배치그룹이름
-PlacementGroupName *string `json:"placementGroupName,omitempty"`
+	PlacementGroupName *string `json:"placementGroupName,omitempty"`
 
 	// 물리배치그룹유형
-PlacementGroupType *CommonCode `json:"placementGroupType,omitempty"`
+	PlacementGroupType *CommonCode `json:"placementGroupType,omitempty"`
 }

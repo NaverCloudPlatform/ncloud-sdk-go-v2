@@ -11,8 +11,8 @@ package vserver
 type GetServerSpecDetailRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 서버스펙코드
-ServerSpecCode *string `json:"serverSpecCode,omitempty"`
+	ServerSpecCode *string `json:"serverSpecCode,omitempty"`
 }

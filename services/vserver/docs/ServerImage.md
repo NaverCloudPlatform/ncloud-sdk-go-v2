@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **ShareStatus** | **[*CommonCode](CommonCode.md)** | 공유상태 | [optional] [default to null]
 **SharedLoginIdList** | **[]\*string** | 공유받는로그인ID리스트 | [optional] [default to null]
 **BlockStorageMappingList** | **[[]\*BlockStorageMapping](BlockStorageMapping.md)** | 블록스토리지맵핑리스트 | [optional] [default to null]
+**ServerImageLifeCyclePhase** | **[*CommonCode](CommonCode.md)** | 서버이미지라이프사이클단계 | [optional] [default to null]
+**PlatformCategoryCode** | ***string** | 플랫폼카테고리코드 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -30,10 +30,19 @@ Name | Type | Description | Notes
 **BaseBlockStorageDiskType** | **[*CommonCode](CommonCode.md)** | 기본블록스토리지디스크유형 | [optional] [default to null]
 **BaseBlockStorageDiskDetailType** | **[*CommonCode](CommonCode.md)** | 기본블록스토리지디스크상세유형 | [optional] [default to null]
 **PlacementGroupNo** | ***string** | 물리배치그룹번호 | [optional] [default to null]
+**PlacementGroupName** | ***string** | 물리배치그룹이름 | [optional] [default to null]
+**MemberServerImageInstanceNo** | ***string** | 회원서버이미지인스턴스번호 | [optional] [default to null]
 **BlockDevicePartitionList** | **[[]\*BlockDevicePartition](BlockDevicePartition.md)** | 블록디바이스파티션리스트 | [optional] [default to null]
 **HypervisorType** | **[*CommonCode](CommonCode.md)** | 하이퍼바이저타입 | [optional] [default to null]
 **ServerImageNo** | ***string** | 서버이미지번호 | [optional] [default to null]
 **ServerSpecCode** | ***string** | 서버스펙코드 | [optional] [default to null]
+**FabricClusterPoolNo** | ***string** | FabricClusterPool번호 | [optional] [default to null]
+**FabricClusterPoolName** | ***string** | FabricClusterPool이름 | [optional] [default to null]
+**FabricClusterMode** | ***string** | FabricCluster모드 | [optional] [default to null]
+**FabricClusterNo** | ***string** | FabricCluster번호 | [optional] [default to null]
+**FabricClusterName** | ***string** | FabricCluster이름 | [optional] [default to null]
+**IsPreInstallGpuDriver** | ***bool** | GPUDriver사전설치여부 | [optional] [default to null]
+**EventList** | **[]\*string** | 이벤트리스트 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

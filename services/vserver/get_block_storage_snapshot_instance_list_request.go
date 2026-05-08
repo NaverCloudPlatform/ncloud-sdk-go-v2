@@ -11,41 +11,41 @@ package vserver
 type GetBlockStorageSnapshotInstanceListRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 블록스토리지스냅샷인스턴스번호리스트
-BlockStorageSnapshotInstanceNoList []*string `json:"blockStorageSnapshotInstanceNoList,omitempty"`
+	BlockStorageSnapshotInstanceNoList []*string `json:"blockStorageSnapshotInstanceNoList,omitempty"`
 
 	// 원본블록스토리지인스턴스번호리스트
-OriginalBlockStorageInstanceNoList []*string `json:"originalBlockStorageInstanceNoList,omitempty"`
+	OriginalBlockStorageInstanceNoList []*string `json:"originalBlockStorageInstanceNoList,omitempty"`
 
 	// 하이퍼바이저타입코드리스트
-HypervisorTypeCodeList []*string `json:"hypervisorTypeCodeList,omitempty"`
+	HypervisorTypeCodeList []*string `json:"hypervisorTypeCodeList,omitempty"`
 
 	// 블록스토리지스냅샷인스턴스상태코드
-BlockStorageSnapshotInstanceStatusCode *string `json:"blockStorageSnapshotInstanceStatusCode,omitempty"`
+	BlockStorageSnapshotInstanceStatusCode *string `json:"blockStorageSnapshotInstanceStatusCode,omitempty"`
 
 	// 페이지번호
-PageNo *int32 `json:"pageNo,omitempty"`
+	PageNo *int32 `json:"pageNo,omitempty"`
 
 	// 페이지사이즈
-PageSize *int32 `json:"pageSize,omitempty"`
+	PageSize *int32 `json:"pageSize,omitempty"`
 
 	// 블록스토리지스냅샷볼륨사이즈
-BlockStorageSnapshotVolumeSize *int64 `json:"blockStorageSnapshotVolumeSize,omitempty"`
+	BlockStorageSnapshotVolumeSize *int64 `json:"blockStorageSnapshotVolumeSize,omitempty"`
 
 	// 원본블록스토리지볼륨암호화여부
-IsEncryptedOriginalBlockStorageVolume *bool `json:"isEncryptedOriginalBlockStorageVolume,omitempty"`
+	IsEncryptedOriginalBlockStorageVolume *bool `json:"isEncryptedOriginalBlockStorageVolume,omitempty"`
 
 	// 블록스토리지스냅샷이름
-BlockStorageSnapshotName *string `json:"blockStorageSnapshotName,omitempty"`
+	BlockStorageSnapshotName *string `json:"blockStorageSnapshotName,omitempty"`
 
 	// 부팅가능 여부
-IsBootable *bool `json:"isBootable,omitempty"`
+	IsBootable *bool `json:"isBootable,omitempty"`
 
 	// 정렬대상
-SortedBy *string `json:"sortedBy,omitempty"`
+	SortedBy *string `json:"sortedBy,omitempty"`
 
 	// 정렬순서
-SortingOrder *string `json:"sortingOrder,omitempty"`
+	SortingOrder *string `json:"sortingOrder,omitempty"`
 }

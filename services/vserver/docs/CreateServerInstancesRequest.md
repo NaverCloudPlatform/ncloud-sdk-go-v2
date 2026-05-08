@@ -26,6 +26,8 @@ Name | Type | Description | Notes
 **ServerImageNo** | ***string** | 서버이미지번호 | [optional] [default to null]
 **ServerSpecCode** | ***string** | 서버스펙코드 | [optional] [default to null]
 **BlockStorageMappingList** | **[[]\*BlockStorageMappingParameter](BlockStorageMappingParameter.md)** | 블록스토리지맵핑리스트 | [optional] [default to null]
+**FabricClusterPoolNo** | ***string** | FabricClusterPool번호 | [optional] [default to null]
+**IsPreInstallGpuDriver** | ***bool** | GPUDriver사전설치여부 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -11,11 +11,11 @@ package vserver
 type RemoveNetworkInterfaceAccessControlGroupRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// ACG번호리스트
-AccessControlGroupNoList []*string `json:"accessControlGroupNoList"`
+	AccessControlGroupNoList []*string `json:"accessControlGroupNoList"`
 
 	// 네트워크인터페이스번호
-NetworkInterfaceNo *string `json:"networkInterfaceNo"`
+	NetworkInterfaceNo *string `json:"networkInterfaceNo"`
 }

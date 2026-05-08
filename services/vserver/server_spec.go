@@ -20,7 +20,7 @@ type ServerSpec struct {
 	CpuCount *int32 `json:"cpuCount,omitempty"`
 
 	// 메모리사이즈
-	MemorySize *int64 `json:"memorySize,omitempty"`
+	MemorySize *float32 `json:"memorySize,omitempty"`
 
 	// 하이퍼바이저유형
 	HypervisorType *CommonCode `json:"hypervisorType,omitempty"`
@@ -38,7 +38,7 @@ type ServerSpec struct {
 	BlockStorageMaxThroughput *int32 `json:"blockStorageMaxThroughput,omitempty"`
 
 	// 네트워크성능
-	NetworkPerformance *int64 `json:"networkPerformance,omitempty"`
+	NetworkPerformance *int32 `json:"networkPerformance,omitempty"`
 
 	// 할당가능한네트워크인터페이스최대개수
 	NetworkInterfaceMaxCount *int32 `json:"networkInterfaceMaxCount,omitempty"`
@@ -51,4 +51,7 @@ type ServerSpec struct {
 
 	// GPU개수
 	GpuCount *int32 `json:"gpuCount,omitempty"`
+
+	// 서버스펙번호
+	ServerSpecNo *int64 `json:"serverSpecNo,omitempty"`
 }

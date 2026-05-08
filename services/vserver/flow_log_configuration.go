@@ -9,16 +9,15 @@
 package vserver
 
 type FlowLogConfiguration struct {
+	NetworkInterfaceNo *string `json:"networkInterfaceNo"`
 
-NetworkInterfaceNo *string `json:"networkInterfaceNo"`
+	CollectActionType *CommonCode `json:"collectActionType"`
 
-CollectActionType *CommonCode `json:"collectActionType"`
+	CollectIntervalMinute *int32 `json:"collectIntervalMinute,omitempty"`
 
-CollectIntervalMinute *int32 `json:"collectIntervalMinute,omitempty"`
+	StorageType *CommonCode `json:"storageType,omitempty"`
 
-StorageType *CommonCode `json:"storageType,omitempty"`
+	StorageBucketName *string `json:"storageBucketName"`
 
-StorageBucketName *string `json:"storageBucketName"`
-
-StorageBucketDirectoryName *string `json:"storageBucketDirectoryName,omitempty"`
+	StorageBucketDirectoryName *string `json:"storageBucketDirectoryName,omitempty"`
 }

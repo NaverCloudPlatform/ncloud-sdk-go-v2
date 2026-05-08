@@ -11,17 +11,17 @@ package vserver
 type GetServerSpecListRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 서버이미지번호
-ServerImageNo *string `json:"serverImageNo,omitempty"`
+	ServerImageNo *string `json:"serverImageNo,omitempty"`
 
 	// ZONE코드
-ZoneCode *string `json:"zoneCode,omitempty"`
+	ZoneCode *string `json:"zoneCode,omitempty"`
 
 	// 서버스펙코드리스트
-ServerSpecCodeList []*string `json:"serverSpecCodeList,omitempty"`
+	ServerSpecCodeList []*string `json:"serverSpecCodeList,omitempty"`
 
 	// 하이퍼바이저유형코드리스트
-HypervisorCodeList []*string `json:"hypervisorCodeList,omitempty"`
+	HypervisorCodeList []*string `json:"hypervisorCodeList,omitempty"`
 }

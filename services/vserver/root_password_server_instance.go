@@ -11,8 +11,8 @@ package vserver
 type RootPasswordServerInstance struct {
 
 	// 루트패스워드
-RootPassword *string `json:"rootPassword,omitempty"`
+	RootPassword *string `json:"rootPassword,omitempty"`
 
 	// 서버인스턴스번호
-ServerInstanceNo *string `json:"serverInstanceNo,omitempty"`
+	ServerInstanceNo *string `json:"serverInstanceNo,omitempty"`
 }

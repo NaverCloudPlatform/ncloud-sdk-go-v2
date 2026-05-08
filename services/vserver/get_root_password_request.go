@@ -11,11 +11,11 @@ package vserver
 type GetRootPasswordRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 서버인스턴스번호
-ServerInstanceNo *string `json:"serverInstanceNo"`
+	ServerInstanceNo *string `json:"serverInstanceNo"`
 
 	// 개인키
-PrivateKey *string `json:"privateKey,omitempty"`
+	PrivateKey *string `json:"privateKey"`
 }

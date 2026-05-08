@@ -11,11 +11,11 @@ package vserver
 type SetBlockStorageReturnProtectionRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 블록스토리지인스턴스번호
-BlockStorageInstanceNo *string `json:"blockStorageInstanceNo"`
+	BlockStorageInstanceNo *string `json:"blockStorageInstanceNo"`
 
 	// 반납보호여부
-IsReturnProtection *bool `json:"isReturnProtection"`
+	IsReturnProtection *bool `json:"isReturnProtection"`
 }

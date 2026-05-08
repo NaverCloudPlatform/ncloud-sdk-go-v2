@@ -11,8 +11,8 @@ package vserver
 type GetBlockStorageInstanceDetailRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 블록스토리지인스턴스번호
-BlockStorageInstanceNo *string `json:"blockStorageInstanceNo"`
+	BlockStorageInstanceNo *string `json:"blockStorageInstanceNo"`
 }

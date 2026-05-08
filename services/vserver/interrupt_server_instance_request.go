@@ -10,6 +10,9 @@ package vserver
 
 type InterruptServerInstanceRequest struct {
 
+	// REGION코드
+	RegionCode *string `json:"regionCode,omitempty"`
+
 	// 서버인스턴스번호
-ServerInstanceNo *string `json:"serverInstanceNo"`
+	ServerInstanceNo *string `json:"serverInstanceNo"`
 }

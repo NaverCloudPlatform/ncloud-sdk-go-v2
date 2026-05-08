@@ -11,14 +11,14 @@ package vserver
 type RemoveAccessControlGroupInboundRuleRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// ACG번호
-AccessControlGroupNo *string `json:"accessControlGroupNo"`
+	AccessControlGroupNo *string `json:"accessControlGroupNo"`
 
 	// VPC번호
-VpcNo *string `json:"vpcNo"`
+	VpcNo *string `json:"vpcNo"`
 
 	// ACGRule리스트
-AccessControlGroupRuleList []*RemoveAccessControlGroupRuleParameter `json:"accessControlGroupRuleList"`
+	AccessControlGroupRuleList []*RemoveAccessControlGroupRuleParameter `json:"accessControlGroupRuleList"`
 }

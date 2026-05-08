@@ -11,11 +11,11 @@ package vserver
 type Raid struct {
 
 	// RAID유형이름
-RaidTypeName *string `json:"raidTypeName,omitempty"`
+	RaidTypeName *string `json:"raidTypeName,omitempty"`
 
 	// RAID명
-RaidName *string `json:"raidName,omitempty"`
+	RaidName *string `json:"raidName,omitempty"`
 
 	// 상품유형
-ProductType *CommonCode `json:"productType,omitempty"`
+	ProductType *CommonCode `json:"productType,omitempty"`
 }

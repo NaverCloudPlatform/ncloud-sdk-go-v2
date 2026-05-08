@@ -11,8 +11,8 @@ package vserver
 type GetBlockStorageSnapshotInstanceDetailRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 블록스토리지스냅샷인스턴스번호
-BlockStorageSnapshotInstanceNo *string `json:"blockStorageSnapshotInstanceNo"`
+	BlockStorageSnapshotInstanceNo *string `json:"blockStorageSnapshotInstanceNo"`
 }

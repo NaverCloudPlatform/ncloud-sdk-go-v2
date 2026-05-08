@@ -11,14 +11,14 @@ package vserver
 type LoginKey struct {
 
 	// 키이름
-KeyName *string `json:"keyName,omitempty"`
+	KeyName *string `json:"keyName,omitempty"`
 
 	// 핑거프린트
-Fingerprint *string `json:"fingerprint,omitempty"`
+	Fingerprint *string `json:"fingerprint,omitempty"`
 
 	// 공개키
-PublicKey *string `json:"publicKey,omitempty"`
+	PublicKey *string `json:"publicKey,omitempty"`
 
 	// 생성일시
-CreateDate *string `json:"createDate,omitempty"`
+	CreateDate *string `json:"createDate,omitempty"`
 }

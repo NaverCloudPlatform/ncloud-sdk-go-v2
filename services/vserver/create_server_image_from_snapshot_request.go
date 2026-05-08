@@ -11,14 +11,14 @@ package vserver
 type CreateServerImageFromSnapshotRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 서버이미지이름
-ServerImageName *string `json:"serverImageName"`
+	ServerImageName *string `json:"serverImageName"`
 
 	// 서버이미지설명
-ServerImageDescription *string `json:"serverImageDescription,omitempty"`
+	ServerImageDescription *string `json:"serverImageDescription,omitempty"`
 
 	// 스토리지리스트
-BlockStorageList []*BlockStorage `json:"blockStorageList"`
+	BlockStorageList []*BlockStorage `json:"blockStorageList"`
 }

@@ -11,8 +11,8 @@ package vserver
 type GetFlowLogConfigurationListRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 네트워크인터페이스번호리스트
-NetworkInterfaceNoList []*string `json:"networkInterfaceNoList"`
+	NetworkInterfaceNoList []*string `json:"networkInterfaceNoList"`
 }

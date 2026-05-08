@@ -11,11 +11,11 @@ package vserver
 type AddServerImageSharingPermissionRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 서버이미지번호
-ServerImageNo *string `json:"serverImageNo"`
+	ServerImageNo *string `json:"serverImageNo"`
 
 	// 대상로그인ID리스트
-TargetLoginIdList []*string `json:"targetLoginIdList"`
+	TargetLoginIdList []*string `json:"targetLoginIdList"`
 }

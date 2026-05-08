@@ -25,6 +25,8 @@ Name | Type | Description | Notes
 **BlockStorageVolumeType** | **[*CommonCode](CommonCode.md)** | 블록스토리지볼륨타입 | [optional] [default to null]
 **HypervisorType** | **[*CommonCode](CommonCode.md)** | 하이퍼바이저타입 | [optional] [default to null]
 **Throughput** | ***int64** | 블록스토리지 throughput | [optional] [default to null]
+**Iops** | ***int64** | 블록스토리지 IOPS | [optional] [default to null]
+**BlockStorageSnapshotInstanceNo** | ***int64** | 블록스토리지스냅샷인스턴스번호 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

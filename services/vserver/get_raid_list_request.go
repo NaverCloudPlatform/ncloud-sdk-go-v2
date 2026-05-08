@@ -10,6 +10,9 @@ package vserver
 
 type GetRaidListRequest struct {
 
+	// REGION코드
+	RegionCode *string `json:"regionCode,omitempty"`
+
 	// 상품유형코드
-ProductTypeCode *string `json:"productTypeCode"`
+	ProductTypeCode *string `json:"productTypeCode"`
 }

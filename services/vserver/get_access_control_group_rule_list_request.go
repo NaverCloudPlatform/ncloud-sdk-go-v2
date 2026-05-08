@@ -11,11 +11,11 @@ package vserver
 type GetAccessControlGroupRuleListRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// ACG번호
-AccessControlGroupNo *string `json:"accessControlGroupNo"`
+	AccessControlGroupNo *string `json:"accessControlGroupNo"`
 
 	// ACGRule유형코드
-AccessControlGroupRuleTypeCode *string `json:"accessControlGroupRuleTypeCode,omitempty"`
+	AccessControlGroupRuleTypeCode *string `json:"accessControlGroupRuleTypeCode,omitempty"`
 }

@@ -9,18 +9,17 @@
 package vserver
 
 type CreateLoginKeyResponse struct {
+	RequestId *string `json:"requestId,omitempty"`
 
-RequestId *string `json:"requestId,omitempty"`
+	ReturnCode *string `json:"returnCode,omitempty"`
 
-ReturnCode *string `json:"returnCode,omitempty"`
+	ReturnMessage *string `json:"returnMessage,omitempty"`
 
-ReturnMessage *string `json:"returnMessage,omitempty"`
-
-TotalRows *int32 `json:"totalRows,omitempty"`
+	TotalRows *int32 `json:"totalRows,omitempty"`
 
 	// 키이름
-KeyName *string `json:"keyName,omitempty"`
+	KeyName *string `json:"keyName,omitempty"`
 
 	// 개인키
-PrivateKey *string `json:"privateKey,omitempty"`
+	PrivateKey *string `json:"privateKey,omitempty"`
 }

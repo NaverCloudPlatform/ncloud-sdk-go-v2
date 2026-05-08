@@ -11,8 +11,8 @@ package vserver
 type DeleteServerImageRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 서버이미지번호리스트
-ServerImageNoList []*string `json:"serverImageNoList,omitempty"`
+	ServerImageNoList []*string `json:"serverImageNoList"`
 }

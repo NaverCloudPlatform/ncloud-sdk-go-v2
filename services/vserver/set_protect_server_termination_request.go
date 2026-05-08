@@ -11,11 +11,11 @@ package vserver
 type SetProtectServerTerminationRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 서버인스턴스번호
-ServerInstanceNo *string `json:"serverInstanceNo"`
+	ServerInstanceNo *string `json:"serverInstanceNo"`
 
 	// 반납보호여부
-IsProtectServerTermination *bool `json:"isProtectServerTermination"`
+	IsProtectServerTermination *bool `json:"isProtectServerTermination"`
 }

@@ -11,14 +11,14 @@ package vserver
 type AddAccessControlGroupOutboundRuleRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// ACG번호
-AccessControlGroupNo *string `json:"accessControlGroupNo"`
+	AccessControlGroupNo *string `json:"accessControlGroupNo"`
 
 	// VPC번호
-VpcNo *string `json:"vpcNo"`
+	VpcNo *string `json:"vpcNo"`
 
 	// ACGRule리스트
-AccessControlGroupRuleList []*AddAccessControlGroupRuleParameter `json:"accessControlGroupRuleList"`
+	AccessControlGroupRuleList []*AddAccessControlGroupRuleParameter `json:"accessControlGroupRuleList"`
 }

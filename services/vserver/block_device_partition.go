@@ -11,8 +11,8 @@ package vserver
 type BlockDevicePartition struct {
 
 	// 마운트포인트
-MountPoint *string `json:"mountPoint,omitempty"`
+	MountPoint *string `json:"mountPoint,omitempty"`
 
 	// 파티션사이즈
-PartitionSize *string `json:"partitionSize,omitempty"`
+	PartitionSize *string `json:"partitionSize,omitempty"`
 }

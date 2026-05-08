@@ -11,8 +11,8 @@ package vserver
 type GetPlacementGroupDetailRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 물리배치그룹번호리스트
-PlacementGroupNo *string `json:"placementGroupNo"`
+	PlacementGroupNo *string `json:"placementGroupNo"`
 }

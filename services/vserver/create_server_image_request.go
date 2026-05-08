@@ -11,17 +11,17 @@ package vserver
 type CreateServerImageRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 원본서버인스턴스번호
-ServerInstanceNo *string `json:"serverInstanceNo"`
+	ServerInstanceNo *string `json:"serverInstanceNo"`
 
 	// 서버이미지이름
-ServerImageName *string `json:"serverImageName"`
+	ServerImageName *string `json:"serverImageName"`
 
 	// 서버이미지설명
-ServerImageDescription *string `json:"serverImageDescription,omitempty"`
+	ServerImageDescription *string `json:"serverImageDescription,omitempty"`
 
 	// 스토리지리스트
-BlockStorageList []*BlockStorage `json:"blockStorageList"`
+	BlockStorageList []*BlockStorage `json:"blockStorageList"`
 }

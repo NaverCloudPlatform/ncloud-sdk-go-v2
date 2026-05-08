@@ -11,11 +11,11 @@ package vserver
 type ChangeBlockStorageVolumeSizeRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 블록스토리지인스턴스번호
-BlockStorageInstanceNo *string `json:"blockStorageInstanceNo"`
+	BlockStorageInstanceNo *string `json:"blockStorageInstanceNo"`
 
 	// 블록스토리지사이즈
-BlockStorageSize *int32 `json:"blockStorageSize"`
+	BlockStorageSize *int32 `json:"blockStorageSize"`
 }

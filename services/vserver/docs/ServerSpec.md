@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **ServerProductCode** | ***string** | 서버상품코드 | [optional] [default to null]
 **ServerSpecDescription** | ***string** | 서버스펙설명 | [optional] [default to null]
 **GpuCount** | ***int32** | GPU개수 | [optional] [default to null]
+**ServerSpecNo** | ***int64** | 서버스펙번호 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

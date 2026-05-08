@@ -11,8 +11,8 @@ package vserver
 type Region struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// REGION이름
-RegionName *string `json:"regionName,omitempty"`
+	RegionName *string `json:"regionName,omitempty"`
 }

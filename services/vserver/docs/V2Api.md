@@ -1,4 +1,4 @@
-# \V2Api
+# V2Api
 
 All URIs are relative to *https://ncloud.apigw.ntruss.com/vserver/v2*
 
@@ -16,10 +16,15 @@ Method | HTTP request | Description
 [**AttachNetworkInterface**](V2Api.md#AttachNetworkInterface) | **Post** /attachNetworkInterface | 
 [**ChangeBlockStorageInstance**](V2Api.md#ChangeBlockStorageInstance) | **Post** /changeBlockStorageInstance | 
 [**ChangeBlockStorageVolumeSize**](V2Api.md#ChangeBlockStorageVolumeSize) | **Post** /changeBlockStorageVolumeSize | 
+[**ChangeFabricClusterDescription**](V2Api.md#ChangeFabricClusterDescription) | **Post** /changeFabricClusterDescription | 
+[**ChangeFabricClusterName**](V2Api.md#ChangeFabricClusterName) | **Post** /changeFabricClusterName | 
+[**ChangeFabricClusterServerInstancesPost**](V2Api.md#ChangeFabricClusterServerInstancesPost) | **Post** /changeFabricClusterServerInstances | 
+[**ChangeServerInstanceName**](V2Api.md#ChangeServerInstanceName) | **Post** /changeServerInstanceName | 
 [**ChangeServerInstanceSpec**](V2Api.md#ChangeServerInstanceSpec) | **Post** /changeServerInstanceSpec | 
 [**CreateAccessControlGroup**](V2Api.md#CreateAccessControlGroup) | **Post** /createAccessControlGroup | 
 [**CreateBlockStorageInstance**](V2Api.md#CreateBlockStorageInstance) | **Post** /createBlockStorageInstance | 
 [**CreateBlockStorageSnapshotInstance**](V2Api.md#CreateBlockStorageSnapshotInstance) | **Post** /createBlockStorageSnapshotInstance | 
+[**CreateFabricCluster**](V2Api.md#CreateFabricCluster) | **Post** /createFabricCluster | 
 [**CreateInitScript**](V2Api.md#CreateInitScript) | **Post** /createInitScript | 
 [**CreateLoginKey**](V2Api.md#CreateLoginKey) | **Post** /createLoginKey | 
 [**CreateMemberServerImageInstance**](V2Api.md#CreateMemberServerImageInstance) | **Post** /createMemberServerImageInstance | 
@@ -32,6 +37,7 @@ Method | HTTP request | Description
 [**DeleteAccessControlGroup**](V2Api.md#DeleteAccessControlGroup) | **Post** /deleteAccessControlGroup | 
 [**DeleteBlockStorageInstances**](V2Api.md#DeleteBlockStorageInstances) | **Post** /deleteBlockStorageInstances | 
 [**DeleteBlockStorageSnapshotInstances**](V2Api.md#DeleteBlockStorageSnapshotInstances) | **Post** /deleteBlockStorageSnapshotInstances | 
+[**DeleteFabricCluster**](V2Api.md#DeleteFabricCluster) | **Post** /deleteFabricCluster | 
 [**DeleteInitScripts**](V2Api.md#DeleteInitScripts) | **Post** /deleteInitScripts | 
 [**DeleteLoginKeys**](V2Api.md#DeleteLoginKeys) | **Post** /deleteLoginKeys | 
 [**DeleteMemberServerImageInstances**](V2Api.md#DeleteMemberServerImageInstances) | **Post** /deleteMemberServerImageInstances | 
@@ -52,6 +58,9 @@ Method | HTTP request | Description
 [**GetBlockStorageSnapshotInstanceDetail**](V2Api.md#GetBlockStorageSnapshotInstanceDetail) | **Post** /getBlockStorageSnapshotInstanceDetail | 
 [**GetBlockStorageSnapshotInstanceList**](V2Api.md#GetBlockStorageSnapshotInstanceList) | **Post** /getBlockStorageSnapshotInstanceList | 
 [**GetBlockStorageVolumeTypeList**](V2Api.md#GetBlockStorageVolumeTypeList) | **Post** /getBlockStorageVolumeTypeList | 
+[**GetFabricClusterDetail**](V2Api.md#GetFabricClusterDetail) | **Post** /getFabricClusterDetail | 
+[**GetFabricClusterListPost**](V2Api.md#GetFabricClusterListPost) | **Post** /getFabricClusterList | 
+[**GetFabricClusterPoolListPost**](V2Api.md#GetFabricClusterPoolListPost) | **Post** /getFabricClusterPoolList | 
 [**GetFlowLogConfigurationList**](V2Api.md#GetFlowLogConfigurationList) | **Post** /getFlowLogConfigurationList | 
 [**GetHypervisorTypeList**](V2Api.md#GetHypervisorTypeList) | **Post** /getHypervisorTypeList | 
 [**GetInitScriptDetail**](V2Api.md#GetInitScriptDetail) | **Post** /getInitScriptDetail | 
@@ -95,6 +104,8 @@ Method | HTTP request | Description
 [**StopServerInstances**](V2Api.md#StopServerInstances) | **Post** /stopServerInstances | 
 [**TerminateServerInstances**](V2Api.md#TerminateServerInstances) | **Post** /terminateServerInstances | 
 [**UnassignSecondaryIps**](V2Api.md#UnassignSecondaryIps) | **Post** /unassignSecondaryIps | 
+[**UpdateFabricCluster**](V2Api.md#UpdateFabricCluster) | **Post** /updateFabricCluster | 
+[**UpdateFabricClusterServerInstances**](V2Api.md#UpdateFabricClusterServerInstances) | **Post** /updateFabricClusterServerInstances | 
 
 
 # **AddAccessControlGroupInboundRule**
@@ -421,6 +432,114 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ChangeFabricClusterDescription**
+> ChangeFabricClusterDescriptionResponse ChangeFabricClusterDescription(changeFabricClusterDescriptionRequest)
+
+
+Fabric Cluster 설명 변경
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**changeFabricClusterDescriptionRequest** | **[\*ChangeFabricClusterDescriptionRequest](ChangeFabricClusterDescriptionRequest.md)** | changeFabricClusterDescriptionRequest | 
+
+### Return type
+
+*[**ChangeFabricClusterDescriptionResponse**](ChangeFabricClusterDescriptionResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ChangeFabricClusterName**
+> ChangeFabricClusterNameResponse ChangeFabricClusterName(changeFabricClusterNameRequest)
+
+
+Fabric Cluster 이름 변경
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**changeFabricClusterNameRequest** | **[\*ChangeFabricClusterNameRequest](ChangeFabricClusterNameRequest.md)** | changeFabricClusterNameRequest | 
+
+### Return type
+
+*[**ChangeFabricClusterNameResponse**](ChangeFabricClusterNameResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ChangeFabricClusterServerInstancesPost**
+> ChangeFabricClusterServerInstancesResponse ChangeFabricClusterServerInstancesPost(changeFabricClusterServerInstancesRequest)
+
+
+Fabric Cluster 클러스터 모드 서버 인스턴스 목록 변경
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**changeFabricClusterServerInstancesRequest** | **[\*ChangeFabricClusterServerInstancesRequest](ChangeFabricClusterServerInstancesRequest.md)** | changeFabricClusterServerInstancesRequest | 
+
+### Return type
+
+*[**ChangeFabricClusterServerInstancesResponse**](ChangeFabricClusterServerInstancesResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ChangeServerInstanceName**
+> ChangeServerInstanceNameResponse ChangeServerInstanceName(changeServerInstanceNameRequest)
+
+
+서버인스턴스이름변경
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**changeServerInstanceNameRequest** | **[\*ChangeServerInstanceNameRequest](ChangeServerInstanceNameRequest.md)** | changeServerInstanceNameRequest | 
+
+### Return type
+
+*[**ChangeServerInstanceNameResponse**](ChangeServerInstanceNameResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ChangeServerInstanceSpec**
 > ChangeServerInstanceSpecResponse ChangeServerInstanceSpec(changeServerInstanceSpecRequest)
 
@@ -517,6 +636,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**CreateBlockStorageSnapshotInstanceResponse**](CreateBlockStorageSnapshotInstanceResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **CreateFabricCluster**
+> CreateFabricClusterResponse CreateFabricCluster(createFabricClusterRequest)
+
+
+Fabric Cluster 생성
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**createFabricClusterRequest** | **[\*CreateFabricClusterRequest](CreateFabricClusterRequest.md)** | createFabricClusterRequest | 
+
+### Return type
+
+*[**CreateFabricClusterResponse**](CreateFabricClusterResponse.md)
 
 ### Authorization
 
@@ -841,6 +987,33 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**DeleteBlockStorageSnapshotInstancesResponse**](DeleteBlockStorageSnapshotInstancesResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **DeleteFabricCluster**
+> DeleteFabricClusterResponse DeleteFabricCluster(deleteFabricClusterRequest)
+
+
+Fabric Cluster 삭제
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**deleteFabricClusterRequest** | **[\*DeleteFabricClusterRequest](DeleteFabricClusterRequest.md)** | deleteFabricClusterRequest | 
+
+### Return type
+
+*[**DeleteFabricClusterResponse**](DeleteFabricClusterResponse.md)
 
 ### Authorization
 
@@ -1381,6 +1554,87 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**GetBlockStorageVolumeTypeListResponse**](GetBlockStorageVolumeTypeListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetFabricClusterDetail**
+> GetFabricClusterDetailResponse GetFabricClusterDetail(getFabricClusterDetailRequest)
+
+
+Fabric Cluster 상세 조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getFabricClusterDetailRequest** | **[\*GetFabricClusterDetailRequest](GetFabricClusterDetailRequest.md)** | getFabricClusterDetailRequest | 
+
+### Return type
+
+*[**GetFabricClusterDetailResponse**](GetFabricClusterDetailResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetFabricClusterListPost**
+> GetFabricClusterListResponse GetFabricClusterListPost(getFabricClusterListRequest)
+
+
+Fabric Cluster 리스트조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getFabricClusterListRequest** | **[\*GetFabricClusterListRequest](GetFabricClusterListRequest.md)** | getFabricClusterListRequest | 
+
+### Return type
+
+*[**GetFabricClusterListResponse**](GetFabricClusterListResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetFabricClusterPoolListPost**
+> GetFabricClusterPoolListResponse GetFabricClusterPoolListPost(getFabricClusterPoolListRequest)
+
+
+FabricClusterPool 리스트조회
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**getFabricClusterPoolListRequest** | **[\*GetFabricClusterPoolListRequest](GetFabricClusterPoolListRequest.md)** | getFabricClusterPoolListRequest | 
+
+### Return type
+
+*[**GetFabricClusterPoolListResponse**](GetFabricClusterPoolListResponse.md)
 
 ### Authorization
 
@@ -2542,6 +2796,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**UnassignSecondaryIpsResponse**](UnassignSecondaryIpsResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **UpdateFabricCluster**
+> UpdateFabricClusterResponse UpdateFabricCluster(updateFabricClusterRequest)
+
+
+Fabric Cluster 수정
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**updateFabricClusterRequest** | **[\*UpdateFabricClusterRequest](UpdateFabricClusterRequest.md)** | updateFabricClusterRequest | 
+
+### Return type
+
+*[**UpdateFabricClusterResponse**](UpdateFabricClusterResponse.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **UpdateFabricClusterServerInstances**
+> ChangeFabricClusterServerInstancesResponse UpdateFabricClusterServerInstances(changeFabricClusterServerInstancesRequest)
+
+
+Fabric Cluster 클러스터 모드 서버 인스턴스 목록 업데이트
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**changeFabricClusterServerInstancesRequest** | **[\*ChangeFabricClusterServerInstancesRequest](ChangeFabricClusterServerInstancesRequest.md)** | changeFabricClusterServerInstancesRequest | 
+
+### Return type
+
+*[**ChangeFabricClusterServerInstancesResponse**](ChangeFabricClusterServerInstancesResponse.md)
 
 ### Authorization
 

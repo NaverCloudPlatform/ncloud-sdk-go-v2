@@ -11,71 +11,77 @@ package vserver
 type CreateServerInstancesRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 서버상품코드
-ServerProductCode *string `json:"serverProductCode,omitempty"`
+	ServerProductCode *string `json:"serverProductCode,omitempty"`
 
 	// 서버이미지상품코드
-ServerImageProductCode *string `json:"serverImageProductCode,omitempty"`
+	ServerImageProductCode *string `json:"serverImageProductCode,omitempty"`
 
 	// 회원서버이미지인스턴스번호
-MemberServerImageInstanceNo *string `json:"memberServerImageInstanceNo,omitempty"`
+	MemberServerImageInstanceNo *string `json:"memberServerImageInstanceNo,omitempty"`
 
 	// 서버이름
-ServerName *string `json:"serverName,omitempty"`
+	ServerName *string `json:"serverName,omitempty"`
 
 	// 서버설명
-ServerDescription *string `json:"serverDescription,omitempty"`
+	ServerDescription *string `json:"serverDescription,omitempty"`
 
 	// 로그인키이름
-LoginKeyName *string `json:"loginKeyName,omitempty"`
+	LoginKeyName *string `json:"loginKeyName,omitempty"`
 
 	// 반납보호여부
-IsProtectServerTermination *bool `json:"isProtectServerTermination,omitempty"`
+	IsProtectServerTermination *bool `json:"isProtectServerTermination,omitempty"`
 
 	// 서버생성개수
-ServerCreateCount *int32 `json:"serverCreateCount,omitempty"`
+	ServerCreateCount *int32 `json:"serverCreateCount,omitempty"`
 
 	// 서버생성시작번호
-ServerCreateStartNo *int32 `json:"serverCreateStartNo,omitempty"`
+	ServerCreateStartNo *int32 `json:"serverCreateStartNo,omitempty"`
 
 	// 요금제유형코드
-FeeSystemTypeCode *string `json:"feeSystemTypeCode,omitempty"`
+	FeeSystemTypeCode *string `json:"feeSystemTypeCode,omitempty"`
 
 	// 초기화스크립트번호
-InitScriptNo *string `json:"initScriptNo,omitempty"`
+	InitScriptNo *string `json:"initScriptNo,omitempty"`
 
 	// VPC번호
-VpcNo *string `json:"vpcNo"`
+	VpcNo *string `json:"vpcNo"`
 
 	// 서브넷번호
-SubnetNo *string `json:"subnetNo"`
+	SubnetNo *string `json:"subnetNo"`
 
 	// 네트워크인터페이스리스트
-NetworkInterfaceList []*NetworkInterfaceParameter `json:"networkInterfaceList"`
+	NetworkInterfaceList []*NetworkInterfaceParameter `json:"networkInterfaceList"`
 
 	// 물리배치그룹번호
-PlacementGroupNo *string `json:"placementGroupNo,omitempty"`
+	PlacementGroupNo *string `json:"placementGroupNo,omitempty"`
 
 	// 기본블록스토리지볼륨암호화여부
-IsEncryptedBaseBlockStorageVolume *bool `json:"isEncryptedBaseBlockStorageVolume,omitempty"`
+	IsEncryptedBaseBlockStorageVolume *bool `json:"isEncryptedBaseBlockStorageVolume,omitempty"`
 
 	// 서버생성시공인IP할당여부
-AssociateWithPublicIp *bool `json:"associateWithPublicIp,omitempty"`
+	AssociateWithPublicIp *bool `json:"associateWithPublicIp,omitempty"`
 
 	// RAID유형이름
-RaidTypeName *string `json:"raidTypeName,omitempty"`
+	RaidTypeName *string `json:"raidTypeName,omitempty"`
 
 	// 블록디바이스파티션리스트
-BlockDevicePartitionList []*BlockDevicePartition `json:"blockDevicePartitionList,omitempty"`
+	BlockDevicePartitionList []*BlockDevicePartition `json:"blockDevicePartitionList,omitempty"`
 
 	// 서버이미지번호
-ServerImageNo *string `json:"serverImageNo,omitempty"`
+	ServerImageNo *string `json:"serverImageNo,omitempty"`
 
 	// 서버스펙코드
-ServerSpecCode *string `json:"serverSpecCode,omitempty"`
+	ServerSpecCode *string `json:"serverSpecCode,omitempty"`
 
 	// 블록스토리지맵핑리스트
-BlockStorageMappingList []*BlockStorageMappingParameter `json:"blockStorageMappingList,omitempty"`
+	BlockStorageMappingList []*BlockStorageMappingParameter `json:"blockStorageMappingList,omitempty"`
+
+	// FabricClusterPool번호
+	FabricClusterPoolNo *string `json:"fabricClusterPoolNo,omitempty"`
+
+	// GPUDriver사전설치여부
+	IsPreInstallGpuDriver *bool `json:"isPreInstallGpuDriver,omitempty"`
 }

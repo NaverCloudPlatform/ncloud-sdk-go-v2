@@ -11,32 +11,32 @@ package vserver
 type CreateBlockStorageInstanceRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 블록스토리지이름
-BlockStorageName *string `json:"blockStorageName,omitempty"`
+	BlockStorageName *string `json:"blockStorageName,omitempty"`
 
 	// 블록스토리지사이즈
-BlockStorageSize *int32 `json:"blockStorageSize"`
+	BlockStorageSize *int32 `json:"blockStorageSize"`
 
 	// 블록스토리지디스크상세유형코드
-BlockStorageDiskDetailTypeCode *string `json:"blockStorageDiskDetailTypeCode,omitempty"`
+	BlockStorageDiskDetailTypeCode *string `json:"blockStorageDiskDetailTypeCode,omitempty"`
 
 	// 블록스토리지설명
-BlockStorageDescription *string `json:"blockStorageDescription,omitempty"`
+	BlockStorageDescription *string `json:"blockStorageDescription,omitempty"`
 
 	// 서버인스턴스번호
-ServerInstanceNo *string `json:"serverInstanceNo"`
+	ServerInstanceNo *string `json:"serverInstanceNo,omitempty"`
 
 	// 블록스토리지스냅샷인스턴스번호
-BlockStorageSnapshotInstanceNo *string `json:"blockStorageSnapshotInstanceNo,omitempty"`
+	BlockStorageSnapshotInstanceNo *string `json:"blockStorageSnapshotInstanceNo,omitempty"`
 
 	// ZONE코드
-ZoneCode *string `json:"zoneCode,omitempty"`
+	ZoneCode *string `json:"zoneCode,omitempty"`
 
 	// 반납보호여부
-IsReturnProtection *bool `json:"isReturnProtection,omitempty"`
+	IsReturnProtection *bool `json:"isReturnProtection,omitempty"`
 
 	// 블록스토리지볼륨타입코드
-BlockStorageVolumeTypeCode *string `json:"blockStorageVolumeTypeCode,omitempty"`
+	BlockStorageVolumeTypeCode *string `json:"blockStorageVolumeTypeCode,omitempty"`
 }

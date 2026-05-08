@@ -11,17 +11,17 @@ package vserver
 type AssignSecondaryIpsRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 네트워크인터페이스번호
-NetworkInterfaceNo *string `json:"networkInterfaceNo"`
+	NetworkInterfaceNo *string `json:"networkInterfaceNo"`
 
 	// 보조IP리스트
-SecondaryIpList []*string `json:"secondaryIpList,omitempty"`
+	SecondaryIpList []*string `json:"secondaryIpList,omitempty"`
 
 	// 보조IP자동할당개수
-SecondaryIpCount *int32 `json:"secondaryIpCount,omitempty"`
+	SecondaryIpCount *int32 `json:"secondaryIpCount,omitempty"`
 
 	// 명시적재할당허용여부
-AllowReassign *bool `json:"allowReassign,omitempty"`
+	AllowReassign *bool `json:"allowReassign,omitempty"`
 }

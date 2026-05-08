@@ -11,20 +11,20 @@ package vserver
 type GetBlockStorageVolumeTypeListRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 존코드
-ZoneCode *string `json:"zoneCode,omitempty"`
+	ZoneCode *string `json:"zoneCode,omitempty"`
 
 	// 기본스토리지 가능 여부
-IsAvailableBase *bool `json:"isAvailableBase,omitempty"`
+	IsBaseStorageAvailable *bool `json:"isBaseStorageAvailable,omitempty"`
 
 	// 서버스펙코드
-ServerSpecCode *string `json:"serverSpecCode,omitempty"`
+	ServerSpecCode *string `json:"serverSpecCode,omitempty"`
 
 	// 블록스토리지볼륨타입코드리스트
-BlockStorageVolumeTypeCodeList []*string `json:"blockStorageVolumeTypeCodeList,omitempty"`
+	BlockStorageVolumeTypeCodeList []*string `json:"blockStorageVolumeTypeCodeList,omitempty"`
 
 	// 하이퍼바이저타입코드리스트
-HypervisorTypeCodeList []*string `json:"hypervisorTypeCodeList,omitempty"`
+	HypervisorTypeCodeList []*string `json:"hypervisorTypeCodeList,omitempty"`
 }

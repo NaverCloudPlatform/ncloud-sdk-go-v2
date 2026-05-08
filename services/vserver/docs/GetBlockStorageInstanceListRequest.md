@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RegionCode** | ***string** | REGION코드 | [optional] [default to null]
+**ZoneCode** | ***string** | ZONE코드 | [optional] [default to null]
 **ServerInstanceNo** | ***string** | 서버인스턴스번호 | [optional] [default to null]
 **BlockStorageTypeCodeList** | **[]\*string** | 블록스토리지유형코드리스트 | [optional] [default to null]
 **BlockStorageInstanceStatusCode** | ***string** | 블록스토리지인스턴스상태코드 | [optional] [default to null]

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **AccessControlGroupNoList** | **[]\*string** | ACG번호리스트 | [optional] [default to null]
 **NetworkInterfaceDescription** | ***string** | 네트워크인터페이스설명 | [optional] [default to null]
 **SecondaryIpList** | **[]\*string** | 보조IP리스트 | [optional] [default to null]
+**EnableFlowLog** | ***bool** | FlowLog활성화여부 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

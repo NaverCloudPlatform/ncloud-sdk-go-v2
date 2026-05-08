@@ -11,11 +11,11 @@ package vserver
 type AssociatePublicIpWithServerInstanceRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 공인IP인스턴스번호
-PublicIpInstanceNo *string `json:"publicIpInstanceNo"`
+	PublicIpInstanceNo *string `json:"publicIpInstanceNo"`
 
 	// 서버인스턴스번호
-ServerInstanceNo *string `json:"serverInstanceNo"`
+	ServerInstanceNo *string `json:"serverInstanceNo"`
 }

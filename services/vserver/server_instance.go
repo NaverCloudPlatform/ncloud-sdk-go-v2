@@ -11,95 +11,122 @@ package vserver
 type ServerInstance struct {
 
 	// 서버인스턴스번호
-ServerInstanceNo *string `json:"serverInstanceNo,omitempty"`
+	ServerInstanceNo *string `json:"serverInstanceNo,omitempty"`
 
 	// 서버이름
-ServerName *string `json:"serverName,omitempty"`
+	ServerName *string `json:"serverName,omitempty"`
 
 	// 서버설명
-ServerDescription *string `json:"serverDescription,omitempty"`
+	ServerDescription *string `json:"serverDescription,omitempty"`
 
 	// CPU개수
-CpuCount *int32 `json:"cpuCount,omitempty"`
+	CpuCount *int32 `json:"cpuCount,omitempty"`
 
 	// 메모리사이즈
-MemorySize *int64 `json:"memorySize,omitempty"`
+	MemorySize *int64 `json:"memorySize,omitempty"`
 
 	// 플랫폼유형
-PlatformType *CommonCode `json:"platformType,omitempty"`
+	PlatformType *CommonCode `json:"platformType,omitempty"`
 
 	// 로그인키이름
-LoginKeyName *string `json:"loginKeyName,omitempty"`
+	LoginKeyName *string `json:"loginKeyName,omitempty"`
 
 	// 공인IP인스턴스번호
-PublicIpInstanceNo *string `json:"publicIpInstanceNo,omitempty"`
+	PublicIpInstanceNo *string `json:"publicIpInstanceNo,omitempty"`
 
 	// 공인IP주소
-PublicIp *string `json:"publicIp,omitempty"`
+	PublicIp *string `json:"publicIp,omitempty"`
 
 	// 서버인스턴스상태
-ServerInstanceStatus *CommonCode `json:"serverInstanceStatus,omitempty"`
+	ServerInstanceStatus *CommonCode `json:"serverInstanceStatus,omitempty"`
 
 	// 서버인스턴스OP
-ServerInstanceOperation *CommonCode `json:"serverInstanceOperation,omitempty"`
+	ServerInstanceOperation *CommonCode `json:"serverInstanceOperation,omitempty"`
 
 	// 서버인스턴스상태이름
-ServerInstanceStatusName *string `json:"serverInstanceStatusName,omitempty"`
+	ServerInstanceStatusName *string `json:"serverInstanceStatusName,omitempty"`
 
 	// 생성일시
-CreateDate *string `json:"createDate,omitempty"`
+	CreateDate *string `json:"createDate,omitempty"`
 
 	// 업시간
-Uptime *string `json:"uptime,omitempty"`
+	Uptime *string `json:"uptime,omitempty"`
 
 	// 서버이미지상품코드
-ServerImageProductCode *string `json:"serverImageProductCode,omitempty"`
+	ServerImageProductCode *string `json:"serverImageProductCode,omitempty"`
 
 	// 서버상품코드
-ServerProductCode *string `json:"serverProductCode,omitempty"`
+	ServerProductCode *string `json:"serverProductCode,omitempty"`
 
 	// 서버반납보호설정여부
-IsProtectServerTermination *bool `json:"isProtectServerTermination,omitempty"`
+	IsProtectServerTermination *bool `json:"isProtectServerTermination,omitempty"`
 
 	// ZONE코드
-ZoneCode *string `json:"zoneCode,omitempty"`
+	ZoneCode *string `json:"zoneCode,omitempty"`
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// VPC번호
-VpcNo *string `json:"vpcNo,omitempty"`
+	VpcNo *string `json:"vpcNo,omitempty"`
 
 	// 서브넷번호
-SubnetNo *string `json:"subnetNo,omitempty"`
+	SubnetNo *string `json:"subnetNo,omitempty"`
 
 	// 네트워크인터페이스번호리스트
-NetworkInterfaceNoList []*string `json:"networkInterfaceNoList,omitempty"`
+	NetworkInterfaceNoList []*string `json:"networkInterfaceNoList,omitempty"`
 
 	// 초기화스크립트번호
-InitScriptNo *string `json:"initScriptNo,omitempty"`
+	InitScriptNo *string `json:"initScriptNo,omitempty"`
 
 	// 서버인스턴스유형
-ServerInstanceType *CommonCode `json:"serverInstanceType,omitempty"`
+	ServerInstanceType *CommonCode `json:"serverInstanceType,omitempty"`
 
 	// 기본블록스토리지디스크유형
-BaseBlockStorageDiskType *CommonCode `json:"baseBlockStorageDiskType,omitempty"`
+	BaseBlockStorageDiskType *CommonCode `json:"baseBlockStorageDiskType,omitempty"`
 
 	// 기본블록스토리지디스크상세유형
-BaseBlockStorageDiskDetailType *CommonCode `json:"baseBlockStorageDiskDetailType,omitempty"`
+	BaseBlockStorageDiskDetailType *CommonCode `json:"baseBlockStorageDiskDetailType,omitempty"`
 
 	// 물리배치그룹번호
-PlacementGroupNo *string `json:"placementGroupNo,omitempty"`
+	PlacementGroupNo *string `json:"placementGroupNo,omitempty"`
+
+	// 물리배치그룹이름
+	PlacementGroupName *string `json:"placementGroupName,omitempty"`
+
+	// 회원서버이미지인스턴스번호
+	MemberServerImageInstanceNo *string `json:"memberServerImageInstanceNo,omitempty"`
 
 	// 블록디바이스파티션리스트
-BlockDevicePartitionList []*BlockDevicePartition `json:"blockDevicePartitionList,omitempty"`
+	BlockDevicePartitionList []*BlockDevicePartition `json:"blockDevicePartitionList,omitempty"`
 
 	// 하이퍼바이저타입
-HypervisorType *CommonCode `json:"hypervisorType,omitempty"`
+	HypervisorType *CommonCode `json:"hypervisorType,omitempty"`
 
 	// 서버이미지번호
-ServerImageNo *string `json:"serverImageNo,omitempty"`
+	ServerImageNo *string `json:"serverImageNo,omitempty"`
 
 	// 서버스펙코드
-ServerSpecCode *string `json:"serverSpecCode,omitempty"`
+	ServerSpecCode *string `json:"serverSpecCode,omitempty"`
+
+	// FabricClusterPool번호
+	FabricClusterPoolNo *string `json:"fabricClusterPoolNo,omitempty"`
+
+	// FabricClusterPool이름
+	FabricClusterPoolName *string `json:"fabricClusterPoolName,omitempty"`
+
+	// FabricCluster모드
+	FabricClusterMode *string `json:"fabricClusterMode,omitempty"`
+
+	// FabricCluster번호
+	FabricClusterNo *string `json:"fabricClusterNo,omitempty"`
+
+	// FabricCluster이름
+	FabricClusterName *string `json:"fabricClusterName,omitempty"`
+
+	// GPUDriver사전설치여부
+	IsPreInstallGpuDriver *bool `json:"isPreInstallGpuDriver,omitempty"`
+
+	// 이벤트리스트
+	EventList []*string `json:"eventList,omitempty"`
 }

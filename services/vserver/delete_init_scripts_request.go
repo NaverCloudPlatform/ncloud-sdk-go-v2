@@ -11,8 +11,8 @@ package vserver
 type DeleteInitScriptsRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 초기화스크립트번호리스트
-InitScriptNoList []*string `json:"initScriptNoList"`
+	InitScriptNoList []*string `json:"initScriptNoList"`
 }

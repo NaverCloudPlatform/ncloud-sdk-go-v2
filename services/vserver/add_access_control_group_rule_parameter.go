@@ -11,17 +11,17 @@ package vserver
 type AddAccessControlGroupRuleParameter struct {
 
 	// ACGRule설명
-AccessControlGroupRuleDescription *string `json:"accessControlGroupRuleDescription,omitempty"`
+	AccessControlGroupRuleDescription *string `json:"accessControlGroupRuleDescription,omitempty"`
 
 	// IP블록
-IpBlock *string `json:"ipBlock,omitempty"`
+	IpBlock *string `json:"ipBlock,omitempty"`
 
 	// 접근소스ACG
-AccessControlGroupSequence *string `json:"accessControlGroupSequence,omitempty"`
+	AccessControlGroupSequence *string `json:"accessControlGroupSequence,omitempty"`
 
 	// 포트범위
-PortRange *string `json:"portRange,omitempty"`
+	PortRange *string `json:"portRange,omitempty"`
 
 	// 프로토콜유형코드
-ProtocolTypeCode *string `json:"protocolTypeCode"`
+	ProtocolTypeCode *string `json:"protocolTypeCode"`
 }

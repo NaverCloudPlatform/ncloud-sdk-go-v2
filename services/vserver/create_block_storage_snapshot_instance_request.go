@@ -11,17 +11,17 @@ package vserver
 type CreateBlockStorageSnapshotInstanceRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 블록스토리지스냅샷이름
-BlockStorageSnapshotName *string `json:"blockStorageSnapshotName,omitempty"`
+	BlockStorageSnapshotName *string `json:"blockStorageSnapshotName,omitempty"`
 
 	// 블록스토리지스냅샷설명
-BlockStorageSnapshotDescription *string `json:"blockStorageSnapshotDescription,omitempty"`
+	BlockStorageSnapshotDescription *string `json:"blockStorageSnapshotDescription,omitempty"`
 
 	// 원본블록스토리지인스턴스번호
-OriginalBlockStorageInstanceNo *string `json:"originalBlockStorageInstanceNo"`
+	OriginalBlockStorageInstanceNo *string `json:"originalBlockStorageInstanceNo"`
 
 	// 스냅샷유형코드
-SnapshotTypeCode *string `json:"snapshotTypeCode,omitempty"`
+	SnapshotTypeCode *string `json:"snapshotTypeCode,omitempty"`
 }

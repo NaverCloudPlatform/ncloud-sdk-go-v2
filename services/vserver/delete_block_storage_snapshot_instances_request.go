@@ -11,8 +11,8 @@ package vserver
 type DeleteBlockStorageSnapshotInstancesRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 블록스토리지스냅샷인스턴스번호리스트
-BlockStorageSnapshotInstanceNoList []*string `json:"blockStorageSnapshotInstanceNoList"`
+	BlockStorageSnapshotInstanceNoList []*string `json:"blockStorageSnapshotInstanceNoList"`
 }

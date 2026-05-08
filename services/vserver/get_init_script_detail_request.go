@@ -11,8 +11,8 @@ package vserver
 type GetInitScriptDetailRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 초기화스크립트번호
-InitScriptNo *string `json:"initScriptNo"`
+	InitScriptNo *string `json:"initScriptNo"`
 }

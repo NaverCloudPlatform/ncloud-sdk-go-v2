@@ -17,6 +17,9 @@ Name | Type | Description | Notes
 **SortingOrder** | ***string** | 정렬순서 | [optional] [default to null]
 **PlacementGroupNoList** | **[]\*string** | 물리배치그룹번호리스트 | [optional] [default to null]
 **HypervisorTypeCodeList** | **[]\*string** | 하이퍼바이저타입코드리스트 | [optional] [default to null]
+**FabricClusterPoolNo** | ***string** | Fabric Cluster Pool 번호 | [optional] [default to null]
+**FabricClusterNo** | ***string** | Fabric Cluster 번호 | [optional] [default to null]
+**FabricClusterMode** | ***string** | Fabric Cluster 모드 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -11,20 +11,20 @@ package vserver
 type InitScript struct {
 
 	// 초기화스크립트번호
-InitScriptNo *string `json:"initScriptNo,omitempty"`
+	InitScriptNo *string `json:"initScriptNo,omitempty"`
 
 	// 초기화스크립트이름
-InitScriptName *string `json:"initScriptName,omitempty"`
+	InitScriptName *string `json:"initScriptName,omitempty"`
 
 	// 생성일시
-CreateDate *string `json:"createDate,omitempty"`
+	CreateDate *string `json:"createDate,omitempty"`
 
 	// 초기화스크립트설명
-InitScriptDescription *string `json:"initScriptDescription,omitempty"`
+	InitScriptDescription *string `json:"initScriptDescription,omitempty"`
 
 	// 초기화스크립트내용
-InitScriptContent *string `json:"initScriptContent,omitempty"`
+	InitScriptContent *string `json:"initScriptContent,omitempty"`
 
 	// OS유형
-OsType *CommonCode `json:"osType,omitempty"`
+	OsType *CommonCode `json:"osType,omitempty"`
 }

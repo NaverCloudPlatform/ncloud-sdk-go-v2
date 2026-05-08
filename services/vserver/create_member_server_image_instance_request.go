@@ -11,14 +11,14 @@ package vserver
 type CreateMemberServerImageInstanceRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 회원서버이미지이름
-MemberServerImageName *string `json:"memberServerImageName,omitempty"`
+	MemberServerImageName *string `json:"memberServerImageName,omitempty"`
 
 	// 회원서버이미지설명
-MemberServerImageDescription *string `json:"memberServerImageDescription,omitempty"`
+	MemberServerImageDescription *string `json:"memberServerImageDescription,omitempty"`
 
 	// 서버인스턴스번호
-ServerInstanceNo *string `json:"serverInstanceNo"`
+	ServerInstanceNo *string `json:"serverInstanceNo"`
 }

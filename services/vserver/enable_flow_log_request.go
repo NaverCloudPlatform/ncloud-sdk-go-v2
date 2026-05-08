@@ -11,23 +11,23 @@ package vserver
 type EnableFlowLogRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 수집액션유형코드
-CollectActionTypeCode *string `json:"collectActionTypeCode"`
+	CollectActionTypeCode *string `json:"collectActionTypeCode"`
 
 	// 수집주기(분)
-CollectIntervalMinute *int32 `json:"collectIntervalMinute,omitempty"`
+	CollectIntervalMinute *int32 `json:"collectIntervalMinute,omitempty"`
 
 	// 네트워크인터페이스번호
-NetworkInterfaceNo *string `json:"networkInterfaceNo"`
+	NetworkInterfaceNo *string `json:"networkInterfaceNo"`
 
 	// 저장소유형코드
-StorageTypeCode *string `json:"storageTypeCode,omitempty"`
+	StorageTypeCode *string `json:"storageTypeCode,omitempty"`
 
 	// 저장소버킷이름
-StorageBucketName *string `json:"storageBucketName"`
+	StorageBucketName *string `json:"storageBucketName"`
 
 	// 저장소버킷디렉토리이름
-StorageBucketDirectoryName *string `json:"storageBucketDirectoryName,omitempty"`
+	StorageBucketDirectoryName *string `json:"storageBucketDirectoryName,omitempty"`
 }

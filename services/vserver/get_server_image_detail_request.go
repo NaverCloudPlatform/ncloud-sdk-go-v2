@@ -11,8 +11,8 @@ package vserver
 type GetServerImageDetailRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 서버이미지번호
-ServerImageNo *string `json:"serverImageNo,omitempty"`
+	ServerImageNo *string `json:"serverImageNo"`
 }

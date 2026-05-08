@@ -11,8 +11,8 @@ package vserver
 type GetRootPasswordServerInstanceListRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 루트패스워드서버인스턴스리스트
-RootPasswordServerInstanceList []*RootPasswordServerInstanceParameter `json:"rootPasswordServerInstanceList"`
+	RootPasswordServerInstanceList []*RootPasswordServerInstanceParameter `json:"rootPasswordServerInstanceList"`
 }

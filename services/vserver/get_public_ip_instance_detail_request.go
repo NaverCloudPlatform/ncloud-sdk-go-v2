@@ -11,8 +11,8 @@ package vserver
 type GetPublicIpInstanceDetailRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 공인IP인스턴스번호
-PublicIpInstanceNo *string `json:"publicIpInstanceNo"`
+	PublicIpInstanceNo *string `json:"publicIpInstanceNo"`
 }

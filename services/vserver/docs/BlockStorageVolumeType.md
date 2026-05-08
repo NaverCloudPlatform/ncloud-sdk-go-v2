@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **MaxVolumeSize** | ***int32** | 블록스토리지 볼륨타입 최대 volumeSize | [optional] [default to null]
 **MinBaseVolumeSize** | ***int32** | 블록스토리지 볼륨타입 최소 rootVolumeSize | [optional] [default to null]
 **MaxBaseVolumeSize** | ***int32** | 블록스토리지 볼륨타입 최대 rootVolumeSize | [optional] [default to null]
-**IsAvailableBase** | ***bool** | 기본스토리지 가능 여부 | [optional] [default to null]
+**IsBaseStorageAvailable** | ***bool** | 기본스토리지 가능 여부 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

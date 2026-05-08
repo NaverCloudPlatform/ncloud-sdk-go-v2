@@ -11,11 +11,11 @@ package vserver
 type UnassignSecondaryIpsRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 네트워크인터페이스번호
-NetworkInterfaceNo *string `json:"networkInterfaceNo"`
+	NetworkInterfaceNo *string `json:"networkInterfaceNo"`
 
 	// 보조IP리스트
-SecondaryIpList []*string `json:"secondaryIpList"`
+	SecondaryIpList []*string `json:"secondaryIpList"`
 }

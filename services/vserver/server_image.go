@@ -11,50 +11,56 @@ package vserver
 type ServerImage struct {
 
 	// 서버이미지번호
-ServerImageNo *string `json:"serverImageNo,omitempty"`
+	ServerImageNo *string `json:"serverImageNo,omitempty"`
 
 	// 서버이미지이름
-ServerImageName *string `json:"serverImageName,omitempty"`
+	ServerImageName *string `json:"serverImageName,omitempty"`
 
 	// 서버이미지설명
-ServerImageDescription *string `json:"serverImageDescription,omitempty"`
+	ServerImageDescription *string `json:"serverImageDescription,omitempty"`
 
 	// 서버이미지상품코드
-ServerImageProductCode *string `json:"serverImageProductCode,omitempty"`
+	ServerImageProductCode *string `json:"serverImageProductCode,omitempty"`
 
 	// 서버이미지유형
-ServerImageType *CommonCode `json:"serverImageType,omitempty"`
+	ServerImageType *CommonCode `json:"serverImageType,omitempty"`
 
 	// 하이퍼바이저유형
-HypervisorType *CommonCode `json:"hypervisorType,omitempty"`
+	HypervisorType *CommonCode `json:"hypervisorType,omitempty"`
 
 	// CPU아키텍처유형
-CpuArchitectureType *CommonCode `json:"cpuArchitectureType,omitempty"`
+	CpuArchitectureType *CommonCode `json:"cpuArchitectureType,omitempty"`
 
 	// OS카테고리유형
-OsCategoryType *CommonCode `json:"osCategoryType,omitempty"`
+	OsCategoryType *CommonCode `json:"osCategoryType,omitempty"`
 
 	// OS유형
-OsType *CommonCode `json:"osType,omitempty"`
+	OsType *CommonCode `json:"osType,omitempty"`
 
 	// 서버이미지상태
-ServerImageStatus *CommonCode `json:"serverImageStatus,omitempty"`
+	ServerImageStatus *CommonCode `json:"serverImageStatus,omitempty"`
 
 	// 서버이미지OP
-ServerImageOperation *CommonCode `json:"serverImageOperation,omitempty"`
+	ServerImageOperation *CommonCode `json:"serverImageOperation,omitempty"`
 
 	// 서버이미지상태이름
-ServerImageStatusName *string `json:"serverImageStatusName,omitempty"`
+	ServerImageStatusName *string `json:"serverImageStatusName,omitempty"`
 
 	// 생성일시
-CreateDate *string `json:"createDate,omitempty"`
+	CreateDate *string `json:"createDate,omitempty"`
 
 	// 공유상태
-ShareStatus *CommonCode `json:"shareStatus,omitempty"`
+	ShareStatus *CommonCode `json:"shareStatus,omitempty"`
 
 	// 공유받는로그인ID리스트
-SharedLoginIdList []*string `json:"sharedLoginIdList,omitempty"`
+	SharedLoginIdList []*string `json:"sharedLoginIdList,omitempty"`
 
 	// 블록스토리지맵핑리스트
-BlockStorageMappingList []*BlockStorageMapping `json:"blockStorageMappingList,omitempty"`
+	BlockStorageMappingList []*BlockStorageMapping `json:"blockStorageMappingList,omitempty"`
+
+	// 서버이미지라이프사이클단계
+	ServerImageLifeCyclePhase *CommonCode `json:"serverImageLifeCyclePhase,omitempty"`
+
+	// 플랫폼카테고리코드
+	PlatformCategoryCode *string `json:"platformCategoryCode,omitempty"`
 }

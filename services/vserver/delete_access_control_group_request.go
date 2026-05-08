@@ -11,11 +11,11 @@ package vserver
 type DeleteAccessControlGroupRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// VPC번호
-VpcNo *string `json:"vpcNo"`
+	VpcNo *string `json:"vpcNo"`
 
 	// ACG번호
-AccessControlGroupNo *string `json:"accessControlGroupNo"`
+	AccessControlGroupNo *string `json:"accessControlGroupNo"`
 }

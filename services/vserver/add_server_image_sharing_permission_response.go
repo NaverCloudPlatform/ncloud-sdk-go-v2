@@ -9,14 +9,13 @@
 package vserver
 
 type AddServerImageSharingPermissionResponse struct {
+	RequestId *string `json:"requestId,omitempty"`
 
-RequestId *string `json:"requestId,omitempty"`
+	ReturnCode *string `json:"returnCode,omitempty"`
 
-ReturnCode *string `json:"returnCode,omitempty"`
+	ReturnMessage *string `json:"returnMessage,omitempty"`
 
-ReturnMessage *string `json:"returnMessage,omitempty"`
+	TotalRows *int32 `json:"totalRows,omitempty"`
 
-TotalRows *int32 `json:"totalRows,omitempty"`
-
-ServerImageList []*ServerImage `json:"serverImageList,omitempty"`
+	ServerImageList []*ServerImage `json:"serverImageList,omitempty"`
 }

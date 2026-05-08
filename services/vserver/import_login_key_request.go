@@ -11,11 +11,11 @@ package vserver
 type ImportLoginKeyRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 키이름
-KeyName *string `json:"keyName,omitempty"`
+	KeyName *string `json:"keyName,omitempty"`
 
 	// 공개키
-PublicKey *string `json:"publicKey"`
+	PublicKey *string `json:"publicKey"`
 }

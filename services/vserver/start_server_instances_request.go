@@ -11,8 +11,8 @@ package vserver
 type StartServerInstancesRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 
 	// 서버인스턴스번호리스트
-ServerInstanceNoList []*string `json:"serverInstanceNoList"`
+	ServerInstanceNoList []*string `json:"serverInstanceNoList"`
 }

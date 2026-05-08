@@ -11,5 +11,5 @@ package vserver
 type GetZoneListRequest struct {
 
 	// REGION코드
-RegionCode *string `json:"regionCode,omitempty"`
+	RegionCode *string `json:"regionCode,omitempty"`
 }
