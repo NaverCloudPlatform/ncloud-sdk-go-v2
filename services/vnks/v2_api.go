@@ -26,8 +26,10 @@ var (
 
 type V2ApiService service
 
-/* V2ApiService
-@return *ClustersRes*/
+/*
+V2ApiService
+@return *ClustersRes
+*/
 func (a *V2ApiService) ClustersGet(ctx context.Context) (*ClustersRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -88,9 +90,11 @@ func (a *V2ApiService) ClustersGet(ctx context.Context) (*ClustersRes, error) {
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
-@return *CreateClusterRes*/
+@return *CreateClusterRes
+*/
 func (a *V2ApiService) ClustersPost(ctx context.Context, body *ClusterInputBody) (*CreateClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -160,10 +164,12 @@ func (a *V2ApiService) ClustersPost(ctx context.Context, body *ClusterInputBody)
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
 @param entryUuid entryUuid
-@return *DeleteAccessEntryRes*/
+@return *DeleteAccessEntryRes
+*/
 func (a *V2ApiService) ClustersUuidAccessEntriesEntryUuidDelete(ctx context.Context, uuid *string, entryUuid *string) (*DeleteAccessEntryRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -226,10 +232,12 @@ func (a *V2ApiService) ClustersUuidAccessEntriesEntryUuidDelete(ctx context.Cont
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
 @param entryUuid entryUuid
-@return *ClusterAccessEntryRes*/
+@return *ClusterAccessEntryRes
+*/
 func (a *V2ApiService) ClustersUuidAccessEntriesEntryUuidGet(ctx context.Context, uuid *string, entryUuid *string) (*ClusterAccessEntryRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -292,11 +300,13 @@ func (a *V2ApiService) ClustersUuidAccessEntriesEntryUuidGet(ctx context.Context
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
 @param uuid uuid
 @param entryUuid entryUuid
-@return *UpdateAccessEntryRes*/
+@return *UpdateAccessEntryRes
+*/
 func (a *V2ApiService) ClustersUuidAccessEntriesEntryUuidPut(ctx context.Context, body *UpdateAccessEntryDto, uuid *string, entryUuid *string) (*UpdateAccessEntryRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -368,9 +378,11 @@ func (a *V2ApiService) ClustersUuidAccessEntriesEntryUuidPut(ctx context.Context
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
-@return *ClusterAccessEntriesRes*/
+@return *ClusterAccessEntriesRes
+*/
 func (a *V2ApiService) ClustersUuidAccessEntriesGet(ctx context.Context, uuid *string) (*ClusterAccessEntriesRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -432,10 +444,12 @@ func (a *V2ApiService) ClustersUuidAccessEntriesGet(ctx context.Context, uuid *s
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
 @param uuid uuid
-@return *CreateAccessEntryRes*/
+@return *CreateAccessEntryRes
+*/
 func (a *V2ApiService) ClustersUuidAccessEntriesPost(ctx context.Context, body *CreateAccessEntryDto, uuid *string) (*CreateAccessEntryRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -506,10 +520,12 @@ func (a *V2ApiService) ClustersUuidAccessEntriesPost(ctx context.Context, body *
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
 @param uuid uuid
-@return *UpdateClusterRes*/
+@return *UpdateClusterRes
+*/
 func (a *V2ApiService) ClustersUuidAddSubnetPatch(ctx context.Context, body *AddSubnetDto, uuid *string) (*UpdateClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
@@ -580,10 +596,12 @@ func (a *V2ApiService) ClustersUuidAddSubnetPatch(ctx context.Context, body *Add
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
 @param uuid uuid
-@return *UpdateClusterRes*/
+@return *UpdateClusterRes
+*/
 func (a *V2ApiService) ClustersUuidAuthTypePatch(ctx context.Context, body *UpdateAuthTypeDto, uuid *string) (*UpdateClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
@@ -654,9 +672,11 @@ func (a *V2ApiService) ClustersUuidAuthTypePatch(ctx context.Context, body *Upda
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
-@return */
+@return
+*/
 func (a *V2ApiService) ClustersUuidDelete(ctx context.Context, uuid *string) error {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -711,9 +731,11 @@ func (a *V2ApiService) ClustersUuidDelete(ctx context.Context, uuid *string) err
 	return err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
-@return *ClusterRes*/
+@return *ClusterRes
+*/
 func (a *V2ApiService) ClustersUuidGet(ctx context.Context, uuid *string) (*ClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -775,9 +797,11 @@ func (a *V2ApiService) ClustersUuidGet(ctx context.Context, uuid *string) (*Clus
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
-@return *IpAclsRes*/
+@return *IpAclsRes
+*/
 func (a *V2ApiService) ClustersUuidIpAclGet(ctx context.Context, uuid *string) (*IpAclsRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -839,10 +863,12 @@ func (a *V2ApiService) ClustersUuidIpAclGet(ctx context.Context, uuid *string) (
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
 @param uuid uuid
-@return *UpdateClusterRes*/
+@return *UpdateClusterRes
+*/
 func (a *V2ApiService) ClustersUuidIpAclPatch(ctx context.Context, body *IpAclsDto, uuid *string) (*UpdateClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
@@ -913,9 +939,11 @@ func (a *V2ApiService) ClustersUuidIpAclPatch(ctx context.Context, body *IpAclsD
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
-@return *KubeconfigRes*/
+@return *KubeconfigRes
+*/
 func (a *V2ApiService) ClustersUuidKubeconfigGet(ctx context.Context, uuid *string) (*KubeconfigRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -977,9 +1005,11 @@ func (a *V2ApiService) ClustersUuidKubeconfigGet(ctx context.Context, uuid *stri
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
-@return *UpdateClusterRes*/
+@return *UpdateClusterRes
+*/
 func (a *V2ApiService) ClustersUuidKubeconfigResetPatch(ctx context.Context, uuid *string) (*UpdateClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
@@ -1041,12 +1071,16 @@ func (a *V2ApiService) ClustersUuidKubeconfigResetPatch(ctx context.Context, uui
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
 @param lbSubnetNo
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "igwYn" (string)
-@return *UpdateClusterLbSubnetRes*/
+
+	@param "igwYn" (string)
+
+@return *UpdateClusterLbSubnetRes
+*/
 func (a *V2ApiService) ClustersUuidLbSubnetPatch(ctx context.Context, uuid *string, lbSubnetNo *int32, localVarOptionals map[string]interface{}) (*UpdateClusterLbSubnetRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
@@ -1115,10 +1149,12 @@ func (a *V2ApiService) ClustersUuidLbSubnetPatch(ctx context.Context, uuid *stri
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
 @param uuid uuid
-@return *UpdateClusterRes*/
+@return *UpdateClusterRes
+*/
 func (a *V2ApiService) ClustersUuidLogPatch(ctx context.Context, body *AuditLogDto, uuid *string) (*UpdateClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
@@ -1189,9 +1225,11 @@ func (a *V2ApiService) ClustersUuidLogPatch(ctx context.Context, body *AuditLogD
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
-@return *NodePoolRes*/
+@return *NodePoolRes
+*/
 func (a *V2ApiService) ClustersUuidNodePoolGet(ctx context.Context, uuid *string) (*NodePoolRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1253,10 +1291,12 @@ func (a *V2ApiService) ClustersUuidNodePoolGet(ctx context.Context, uuid *string
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
 @param instanceNo instanceNo
-@return */
+@return
+*/
 func (a *V2ApiService) ClustersUuidNodePoolInstanceNoDelete(ctx context.Context, uuid *string, instanceNo *string) error {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -1312,11 +1352,13 @@ func (a *V2ApiService) ClustersUuidNodePoolInstanceNoDelete(ctx context.Context,
 	return err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
 @param uuid uuid
 @param instanceNo instanceNo
-@return *UpdateNodePoolRes*/
+@return *UpdateNodePoolRes
+*/
 func (a *V2ApiService) ClustersUuidNodePoolInstanceNoLabelsPut(ctx context.Context, body *UpdateNodepoolLabelDto, uuid *string, instanceNo *string) (*UpdateNodePoolRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -1388,11 +1430,13 @@ func (a *V2ApiService) ClustersUuidNodePoolInstanceNoLabelsPut(ctx context.Conte
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
 @param uuid uuid
 @param instanceNo instanceNo
-@return */
+@return
+*/
 func (a *V2ApiService) ClustersUuidNodePoolInstanceNoPatch(ctx context.Context, body *NodePoolUpdateBody, uuid *string, instanceNo *string) error {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
@@ -1457,11 +1501,13 @@ func (a *V2ApiService) ClustersUuidNodePoolInstanceNoPatch(ctx context.Context, 
 	return err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
 @param uuid uuid
 @param instanceNo instanceNo
-@return *UpdateNodePoolRes*/
+@return *UpdateNodePoolRes
+*/
 func (a *V2ApiService) ClustersUuidNodePoolInstanceNoSubnetsPatch(ctx context.Context, body *UpdateNodepoolSubnetDto, uuid *string, instanceNo *string) (*UpdateNodePoolRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
@@ -1533,11 +1579,13 @@ func (a *V2ApiService) ClustersUuidNodePoolInstanceNoSubnetsPatch(ctx context.Co
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
 @param uuid uuid
 @param instanceNo instanceNo
-@return *UpdateNodePoolRes*/
+@return *UpdateNodePoolRes
+*/
 func (a *V2ApiService) ClustersUuidNodePoolInstanceNoTaintsPut(ctx context.Context, body *UpdateNodepoolTaintDto, uuid *string, instanceNo *string) (*UpdateNodePoolRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -1609,14 +1657,18 @@ func (a *V2ApiService) ClustersUuidNodePoolInstanceNoTaintsPut(ctx context.Conte
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
 @param instanceNo instanceNo
 @param k8sVersion
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "maxSurge" (int32)
-    @param "maxUnavailable" (int32)
-@return *UpdateNodePoolRes*/
+
+	@param "maxSurge" (int32)
+	@param "maxUnavailable" (int32)
+
+@return *UpdateNodePoolRes
+*/
 func (a *V2ApiService) ClustersUuidNodePoolInstanceNoUpgradePatch(ctx context.Context, uuid *string, instanceNo *string, k8sVersion *string, localVarOptionals map[string]interface{}) (*UpdateNodePoolRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
@@ -1692,10 +1744,12 @@ func (a *V2ApiService) ClustersUuidNodePoolInstanceNoUpgradePatch(ctx context.Co
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
 @param uuid uuid
-@return *UpdateClusterRes*/
+@return *UpdateClusterRes
+*/
 func (a *V2ApiService) ClustersUuidNodePoolPost(ctx context.Context, body *NodePoolCreationBody, uuid *string) (*UpdateClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -1766,9 +1820,11 @@ func (a *V2ApiService) ClustersUuidNodePoolPost(ctx context.Context, body *NodeP
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
-@return *WorkerNodeRes*/
+@return *WorkerNodeRes
+*/
 func (a *V2ApiService) ClustersUuidNodesGet(ctx context.Context, uuid *string) (*WorkerNodeRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1830,12 +1886,16 @@ func (a *V2ApiService) ClustersUuidNodesGet(ctx context.Context, uuid *string) (
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
 @param instanceNo instanceNo
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "nodePoolId" (string) 노드풀 인스턴스 번호
-@return */
+
+	@param "nodePoolId" (string) 노드풀 인스턴스 번호
+
+@return
+*/
 func (a *V2ApiService) ClustersUuidNodesInstanceNoDelete(ctx context.Context, uuid *string, instanceNo *string, localVarOptionals map[string]interface{}) error {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -1897,9 +1957,11 @@ func (a *V2ApiService) ClustersUuidNodesInstanceNoDelete(ctx context.Context, uu
 	return err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
-@return *OidcRes*/
+@return *OidcRes
+*/
 func (a *V2ApiService) ClustersUuidOidcGet(ctx context.Context, uuid *string) (*OidcRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1961,10 +2023,12 @@ func (a *V2ApiService) ClustersUuidOidcGet(ctx context.Context, uuid *string) (*
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
 @param uuid uuid
-@return *UpdateClusterRes*/
+@return *UpdateClusterRes
+*/
 func (a *V2ApiService) ClustersUuidOidcPatch(ctx context.Context, body *UpdateOidcDto, uuid *string) (*UpdateClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
@@ -2035,10 +2099,12 @@ func (a *V2ApiService) ClustersUuidOidcPatch(ctx context.Context, body *UpdateOi
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
 @param uuid uuid
-@return *UpdateClusterRes*/
+@return *UpdateClusterRes
+*/
 func (a *V2ApiService) ClustersUuidReturnProtectionPatch(ctx context.Context, body *ReturnProtectionDto, uuid *string) (*UpdateClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
@@ -2109,10 +2175,12 @@ func (a *V2ApiService) ClustersUuidReturnProtectionPatch(ctx context.Context, bo
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param body
 @param uuid uuid
-@return *UpdateClusterRes*/
+@return *UpdateClusterRes
+*/
 func (a *V2ApiService) ClustersUuidSecretEncryptionPatch(ctx context.Context, body *UpdateSecretEncryptionDto, uuid *string) (*UpdateClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
@@ -2183,13 +2251,17 @@ func (a *V2ApiService) ClustersUuidSecretEncryptionPatch(ctx context.Context, bo
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param uuid uuid
 @param k8sVersion
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "maxSurge" (int32)
-    @param "maxUnavailable" (int32)
-@return *UpdateClusterRes*/
+
+	@param "maxSurge" (int32)
+	@param "maxUnavailable" (int32)
+
+@return *UpdateClusterRes
+*/
 func (a *V2ApiService) ClustersUuidUpgradePatch(ctx context.Context, uuid *string, k8sVersion *string, localVarOptionals map[string]interface{}) (*UpdateClusterRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
@@ -2264,10 +2336,14 @@ func (a *V2ApiService) ClustersUuidUpgradePatch(ctx context.Context, uuid *strin
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "hypervisorCode" (string)
-@return *OptionsRes*/
+
+	@param "hypervisorCode" (string)
+
+@return *OptionsRes
+*/
 func (a *V2ApiService) OptionServerImageGet(ctx context.Context, localVarOptionals map[string]interface{}) (*OptionsRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -2334,13 +2410,17 @@ func (a *V2ApiService) OptionServerImageGet(ctx context.Context, localVarOptiona
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param softwareCode
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "hypervisorCode" (string)
-    @param "zoneCode" (string)
-    @param "zoneNo" (string)
-@return *OptionsResForServerProduct*/
+
+	@param "hypervisorCode" (string)
+	@param "zoneCode" (string)
+	@param "zoneNo" (string)
+
+@return *OptionsResForServerProduct
+*/
 func (a *V2ApiService) OptionServerProductCodeGet(ctx context.Context, softwareCode *string, localVarOptionals map[string]interface{}) (*OptionsResForServerProduct, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -2420,12 +2500,17 @@ func (a *V2ApiService) OptionServerProductCodeGet(ctx context.Context, softwareC
 	return &successPayload, err
 }
 
-/* V2ApiService
+/*
+V2ApiService
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "from" (string)
-    @param "hypervisorCode" (string)
-    @param "to" (string)
-@return *OptionsRes*/
+
+	@param "from" (string)
+	@param "hypervisorCode" (string)
+	@param "isRegionalSupport" (bool) Regional 클러스터 지원 여부로 필터링
+	@param "to" (string)
+
+@return *OptionsRes
+*/
 func (a *V2ApiService) OptionVersionGet(ctx context.Context, localVarOptionals map[string]interface{}) (*OptionsRes, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -2447,6 +2532,9 @@ func (a *V2ApiService) OptionVersionGet(ctx context.Context, localVarOptionals m
 	if err := typeCheckParameter(localVarOptionals["hypervisorCode"], "*string", "hypervisorCode"); err != nil {
 		return &successPayload, err
 	}
+	if err := typeCheckParameter(localVarOptionals["isRegionalSupport"], "*bool", "isRegionalSupport"); err != nil {
+		return &successPayload, err
+	}
 	if err := typeCheckParameter(localVarOptionals["to"], "*string", "to"); err != nil {
 		return &successPayload, err
 	}
@@ -2456,6 +2544,9 @@ func (a *V2ApiService) OptionVersionGet(ctx context.Context, localVarOptionals m
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["hypervisorCode"].(*string); localVarOk {
 		localVarQueryParams.Add("hypervisorCode", parameterToString(*localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["isRegionalSupport"].(*bool); localVarOk {
+		localVarQueryParams.Add("isRegionalSupport", parameterToString(*localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["to"].(*string); localVarOk {
 		localVarQueryParams.Add("to", parameterToString(*localVarTempParam, ""))
@@ -2504,8 +2595,10 @@ func (a *V2ApiService) OptionVersionGet(ctx context.Context, localVarOptionals m
 	return &successPayload, err
 }
 
-/* V2ApiService
-@return */
+/*
+V2ApiService
+@return
+*/
 func (a *V2ApiService) RootGet(ctx context.Context) error {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")

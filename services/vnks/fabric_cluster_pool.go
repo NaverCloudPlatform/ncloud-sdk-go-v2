@@ -12,4 +12,4 @@ type FabricClusterPool struct {
 	PoolName *string `json:"poolName"`
 
 	PoolNo *int32 `json:"poolNo"`
-} 
+}

@@ -31,7 +31,6 @@ type NodePool struct {
 	// 노드풀 상태
 	Status *string `json:"status"`
 
-	//
 	Autoscale *AutoscaleOption `json:"autoscale"`
 
 	// Software Code(OS)

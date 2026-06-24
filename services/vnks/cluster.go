@@ -118,5 +118,9 @@ type Cluster struct {
 
 	KmsKeyTag *string `json:"kmsKeyTag,omitempty"`
 
+	// 클러스터 인증 타입
 	AuthType *string `json:"authType"`
+
+	// 멀티존 클러스터 여부
+	IsRegional *bool `json:"isRegional,omitempty"`
 }

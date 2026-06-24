@@ -55,10 +55,12 @@ type ClusterInputBody struct {
 	// [로드밸런서 전용 Public Subnet 번호](/docs/networking-vpc-subnetmanagement-getsubnetlist)
 	LbPublicSubnetNo *int32 `json:"lbPublicSubnetNo,omitempty"`
 
-	//
 	Log *ClusterLogInput `json:"log,omitempty"`
 
 	KmsKeyTag *string `json:"kmsKeyTag,omitempty"`
+
+	// 멀티존(Regional) 클러스터 여부
+	IsRegional *bool `json:"isRegional,omitempty"`
 
 	// 클러스터 인증 타입
 	AuthType *string `json:"authType,omitempty"`
@@ -66,7 +68,6 @@ type ClusterInputBody struct {
 	// 클러스터 생성 시 bootstrap access entry 자동 생성 여부
 	BootstrapAccessEntry *bool `json:"bootstrapAccessEntry,omitempty"`
 
-	//
 	DefaultNodePool *DefaultNodePoolParam `json:"defaultNodePool,omitempty"`
 
 	// 추가 노드풀
