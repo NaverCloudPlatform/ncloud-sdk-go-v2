@@ -8,13 +8,24 @@
 
 package vserver
 
+type ProtocolType struct {
+	// 프로토콜 코드
+	Code *string `json:"code,omitempty"`
+
+	// 프로토콜 코드명
+	CodeName *string `json:"codeName,omitempty"`
+
+	// 프로토콜 번호
+	Number *int32 `json:"number,omitempty"`
+}
+
 type AccessControlGroupRule struct {
 
 	// ACG번호
 	AccessControlGroupNo *string `json:"accessControlGroupNo,omitempty"`
 
 	// 프로토콜유형
-	ProtocolType *CommonCode `json:"protocolType,omitempty"`
+	ProtocolType *ProtocolType `json:"protocolType,omitempty"`
 
 	// IP블록
 	IpBlock *string `json:"ipBlock,omitempty"`
