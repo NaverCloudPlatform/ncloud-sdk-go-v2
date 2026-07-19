@@ -20,6 +20,8 @@ Name | Type | Description | Notes
 **Taints** | **[[]\*NodePoolTaint](NodePoolTaint.md)** |  | [default to null]
 **ServerRoleId** | ***string** |  | [optional] [default to null]
 **FabricCluster** | **[*FabricClusterPool](FabricClusterPool.md)** |  | [optional] [default to null]
+**ZoneCode** | ***string** | Zone 코드 | [optional] [default to null]
+**ZoneNo** | ***int32** | Zone 번호 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

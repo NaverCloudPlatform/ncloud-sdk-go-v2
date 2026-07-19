@@ -28,6 +28,227 @@ type V2ApiService service
 
 /*
 V2ApiService
+@param addonName addonName
+@param k8sVersion
+@return *AddonConfigRes
+*/
+func (a *V2ApiService) AddonConfigsAddonNameGet(ctx context.Context, addonName *string, k8sVersion *string) (*AddonConfigRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     AddonConfigRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/addon-configs/{addonName}"
+	localVarPath = strings.Replace(localVarPath, "{"+"addonName"+"}", fmt.Sprintf("%v", *addonName), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	localVarQueryParams.Add("k8sVersion", parameterToString(*k8sVersion, ""))
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/*
+V2ApiService
+@param addonName addonName
+@param version version
+@param k8sVersion
+@return *AddonVersionDetailRes
+*/
+func (a *V2ApiService) AddonConfigsAddonNameVersionsVersionGet(ctx context.Context, addonName *string, version *string, k8sVersion *string) (*AddonVersionDetailRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     AddonVersionDetailRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/addon-configs/{addonName}/versions/{version}"
+	localVarPath = strings.Replace(localVarPath, "{"+"addonName"+"}", fmt.Sprintf("%v", *addonName), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", fmt.Sprintf("%v", *version), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	localVarQueryParams.Add("k8sVersion", parameterToString(*k8sVersion, ""))
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/*
+V2ApiService
+@param k8sVersion
+@param optional (nil or map[string]interface{}) with one or more of:
+
+	@param "page" (int32)
+	@param "size" (int32)
+
+@return *AddonConfigsRes
+*/
+func (a *V2ApiService) AddonConfigsGet(ctx context.Context, k8sVersion *string, localVarOptionals map[string]interface{}) (*AddonConfigsRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     AddonConfigsRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/addon-configs"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if err := typeCheckParameter(localVarOptionals["page"], "*int32", "page"); err != nil {
+		return &successPayload, err
+	}
+	if err := typeCheckParameter(localVarOptionals["size"], "*int32", "size"); err != nil {
+		return &successPayload, err
+	}
+
+	localVarQueryParams.Add("k8sVersion", parameterToString(*k8sVersion, ""))
+	if localVarTempParam, localVarOk := localVarOptionals["page"].(*int32); localVarOk {
+		localVarQueryParams.Add("page", parameterToString(*localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["size"].(*int32); localVarOk {
+		localVarQueryParams.Add("size", parameterToString(*localVarTempParam, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/*
+V2ApiService
 @return *ClustersRes
 */
 func (a *V2ApiService) ClustersGet(ctx context.Context) (*ClustersRes, error) {
@@ -598,6 +819,379 @@ func (a *V2ApiService) ClustersUuidAddSubnetPatch(ctx context.Context, body *Add
 
 /*
 V2ApiService
+@param uuid uuid
+@param addonRef addonRef
+@return *ClusterAddonRes
+*/
+func (a *V2ApiService) ClustersUuidAddonsAddonRefDelete(ctx context.Context, uuid *string, addonRef *string) (*ClusterAddonRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Delete")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ClusterAddonRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/clusters/{uuid}/addons/{addonRef}"
+	localVarPath = strings.Replace(localVarPath, "{"+"uuid"+"}", fmt.Sprintf("%v", *uuid), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"addonRef"+"}", fmt.Sprintf("%v", *addonRef), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/*
+V2ApiService
+@param uuid uuid
+@param addonRef addonRef
+@return *ClusterAddonRes
+*/
+func (a *V2ApiService) ClustersUuidAddonsAddonRefGet(ctx context.Context, uuid *string, addonRef *string) (*ClusterAddonRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ClusterAddonRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/clusters/{uuid}/addons/{addonRef}"
+	localVarPath = strings.Replace(localVarPath, "{"+"uuid"+"}", fmt.Sprintf("%v", *uuid), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"addonRef"+"}", fmt.Sprintf("%v", *addonRef), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/*
+V2ApiService
+@param body
+@param uuid uuid
+@param addonRef addonRef
+@return *ClusterAddonRes
+*/
+func (a *V2ApiService) ClustersUuidAddonsAddonRefPatch(ctx context.Context, body *UpdateAddonDto, uuid *string, addonRef *string) (*ClusterAddonRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Patch")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ClusterAddonRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/clusters/{uuid}/addons/{addonRef}"
+	localVarPath = strings.Replace(localVarPath, "{"+"uuid"+"}", fmt.Sprintf("%v", *uuid), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"addonRef"+"}", fmt.Sprintf("%v", *addonRef), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = body
+	v := reflect.ValueOf(localVarPostBody).Elem().FieldByName("UserData")
+	if v.IsValid() && v.CanAddr() {
+		ptr := v.Addr().Interface().(**string)
+		if *ptr != nil {
+			**ptr = base64.StdEncoding.EncodeToString([]byte(**ptr))
+		}
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/*
+V2ApiService
+@param uuid uuid
+@param optional (nil or map[string]interface{}) with one or more of:
+
+	@param "status" (string)
+	@param "page" (int32)
+	@param "size" (int32)
+
+@return *ClusterAddonsRes
+*/
+func (a *V2ApiService) ClustersUuidAddonsGet(ctx context.Context, uuid *string, localVarOptionals map[string]interface{}) (*ClusterAddonsRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ClusterAddonsRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/clusters/{uuid}/addons"
+	localVarPath = strings.Replace(localVarPath, "{"+"uuid"+"}", fmt.Sprintf("%v", *uuid), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if err := typeCheckParameter(localVarOptionals["status"], "*string", "status"); err != nil {
+		return &successPayload, err
+	}
+	if err := typeCheckParameter(localVarOptionals["page"], "*int32", "page"); err != nil {
+		return &successPayload, err
+	}
+	if err := typeCheckParameter(localVarOptionals["size"], "*int32", "size"); err != nil {
+		return &successPayload, err
+	}
+
+	if localVarTempParam, localVarOk := localVarOptionals["status"].(*string); localVarOk {
+		localVarQueryParams.Add("status", parameterToString(*localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["page"].(*int32); localVarOk {
+		localVarQueryParams.Add("page", parameterToString(*localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["size"].(*int32); localVarOk {
+		localVarQueryParams.Add("size", parameterToString(*localVarTempParam, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/*
+V2ApiService
+@param body
+@param uuid uuid
+@return *InstallAddonsRes
+*/
+func (a *V2ApiService) ClustersUuidAddonsPost(ctx context.Context, body []*InstallAddonDto, uuid *string) (*InstallAddonsRes, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     InstallAddonsRes
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/clusters/{uuid}/addons"
+	localVarPath = strings.Replace(localVarPath, "{"+"uuid"+"}", fmt.Sprintf("%v", *uuid), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = body
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return &successPayload, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return &successPayload, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+
+	if localVarHttpResponse.StatusCode >= 300 || (localVarHttpResponse.StatusCode < 300 && !(strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`))) && localVarHttpResponse.StatusCode != 204 {
+		return &successPayload, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if !strings.Contains(string(bodyBytes), `{"error"`) && (strings.HasPrefix(string(bodyBytes), `{`) || strings.HasPrefix(string(bodyBytes), `[`)) {
+		if err = json.Unmarshal(bodyBytes, &successPayload); err != nil {
+			return &successPayload, err
+		}
+	}
+
+	return &successPayload, err
+}
+
+/*
+V2ApiService
 @param body
 @param uuid uuid
 @return *UpdateClusterRes
@@ -1077,6 +1671,7 @@ V2ApiService
 @param lbSubnetNo
 @param optional (nil or map[string]interface{}) with one or more of:
 
+	@param "lbSubnetNoList" ([]int32)
 	@param "igwYn" (string)
 
 @return *UpdateClusterLbSubnetRes
@@ -1097,10 +1692,16 @@ func (a *V2ApiService) ClustersUuidLbSubnetPatch(ctx context.Context, uuid *stri
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if err := typeCheckParameter(localVarOptionals["lbSubnetNoList"], "*[]int32", "lbSubnetNoList"); err != nil {
+		return &successPayload, err
+	}
 	if err := typeCheckParameter(localVarOptionals["igwYn"], "*string", "igwYn"); err != nil {
 		return &successPayload, err
 	}
 
+	if localVarTempParam, localVarOk := localVarOptionals["lbSubnetNoList"].(*[]int32); localVarOk {
+		localVarQueryParams.Add("lbSubnetNoList", parameterToString(*localVarTempParam, "csv"))
+	}
 	if localVarTempParam, localVarOk := localVarOptionals["igwYn"].(*string); localVarOk {
 		localVarQueryParams.Add("igwYn", parameterToString(*localVarTempParam, ""))
 	}

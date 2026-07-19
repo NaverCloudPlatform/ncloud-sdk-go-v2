@@ -21,6 +21,9 @@ All URIs are relative to *https://nks.apigw.ntruss.com/vnks/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*V2Api* | [**AddonConfigsAddonNameGet**](docs/V2Api.md#addonconfigsaddonnameget) | **Get** /addon-configs/{addonName} | 
+*V2Api* | [**AddonConfigsAddonNameVersionsVersionGet**](docs/V2Api.md#addonconfigsaddonnameversionsversionget) | **Get** /addon-configs/{addonName}/versions/{version} | 
+*V2Api* | [**AddonConfigsGet**](docs/V2Api.md#addonconfigsget) | **Get** /addon-configs | 
 *V2Api* | [**ClustersGet**](docs/V2Api.md#clustersget) | **Get** /clusters | 
 *V2Api* | [**ClustersPost**](docs/V2Api.md#clusterspost) | **Post** /clusters | 
 *V2Api* | [**ClustersUuidAccessEntriesEntryUuidDelete**](docs/V2Api.md#clustersuuidaccessentriesentryuuiddelete) | **Delete** /clusters/{uuid}/access-entries/{entryUuid} | 
@@ -29,6 +32,11 @@ Class | Method | HTTP request | Description
 *V2Api* | [**ClustersUuidAccessEntriesGet**](docs/V2Api.md#clustersuuidaccessentriesget) | **Get** /clusters/{uuid}/access-entries | 
 *V2Api* | [**ClustersUuidAccessEntriesPost**](docs/V2Api.md#clustersuuidaccessentriespost) | **Post** /clusters/{uuid}/access-entries | 
 *V2Api* | [**ClustersUuidAddSubnetPatch**](docs/V2Api.md#clustersuuidaddsubnetpatch) | **Patch** /clusters/{uuid}/add-subnet | 
+*V2Api* | [**ClustersUuidAddonsAddonRefDelete**](docs/V2Api.md#clustersuuidaddonsaddonrefdelete) | **Delete** /clusters/{uuid}/addons/{addonRef} | 
+*V2Api* | [**ClustersUuidAddonsAddonRefGet**](docs/V2Api.md#clustersuuidaddonsaddonrefget) | **Get** /clusters/{uuid}/addons/{addonRef} | 
+*V2Api* | [**ClustersUuidAddonsAddonRefPatch**](docs/V2Api.md#clustersuuidaddonsaddonrefpatch) | **Patch** /clusters/{uuid}/addons/{addonRef} | 
+*V2Api* | [**ClustersUuidAddonsGet**](docs/V2Api.md#clustersuuidaddonsget) | **Get** /clusters/{uuid}/addons | 
+*V2Api* | [**ClustersUuidAddonsPost**](docs/V2Api.md#clustersuuidaddonspost) | **Post** /clusters/{uuid}/addons | 
 *V2Api* | [**ClustersUuidAuthTypePatch**](docs/V2Api.md#clustersuuidauthtypepatch) | **Patch** /clusters/{uuid}/auth-type | 
 *V2Api* | [**ClustersUuidDelete**](docs/V2Api.md#clustersuuiddelete) | **Delete** /clusters/{uuid} | 
 *V2Api* | [**ClustersUuidGet**](docs/V2Api.md#clustersuuidget) | **Get** /clusters/{uuid} | 
@@ -64,12 +72,18 @@ Class | Method | HTTP request | Description
  - [AccessEntryPolicyRes](docs/AccessEntryPolicyRes.md)
  - [AccessEntryRes](docs/AccessEntryRes.md)
  - [AddSubnetDto](docs/AddSubnetDto.md)
+ - [AddonConfigRes](docs/AddonConfigRes.md)
+ - [AddonConfigsRes](docs/AddonConfigsRes.md)
+ - [AddonVersionDetailRes](docs/AddonVersionDetailRes.md)
  - [AuditLogDto](docs/AuditLogDto.md)
  - [AutoscaleOption](docs/AutoscaleOption.md)
  - [AutoscalerUpdate](docs/AutoscalerUpdate.md)
  - [Cluster](docs/Cluster.md)
  - [ClusterAccessEntriesRes](docs/ClusterAccessEntriesRes.md)
  - [ClusterAccessEntryRes](docs/ClusterAccessEntryRes.md)
+ - [ClusterAddonCreateInstallParamDto](docs/ClusterAddonCreateInstallParamDto.md)
+ - [ClusterAddonRes](docs/ClusterAddonRes.md)
+ - [ClusterAddonsRes](docs/ClusterAddonsRes.md)
  - [ClusterInputBody](docs/ClusterInputBody.md)
  - [ClusterLogInput](docs/ClusterLogInput.md)
  - [ClusterRes](docs/ClusterRes.md)
@@ -81,6 +95,8 @@ Class | Method | HTTP request | Description
  - [DefaultNodePoolParam](docs/DefaultNodePoolParam.md)
  - [DeleteAccessEntryRes](docs/DeleteAccessEntryRes.md)
  - [FabricClusterPool](docs/FabricClusterPool.md)
+ - [InstallAddonDto](docs/InstallAddonDto.md)
+ - [InstallAddonsRes](docs/InstallAddonsRes.md)
  - [IpAclsDto](docs/IpAclsDto.md)
  - [IpAclsEntriesDto](docs/IpAclsEntriesDto.md)
  - [IpAclsEntriesRes](docs/IpAclsEntriesRes.md)
@@ -103,6 +119,7 @@ Class | Method | HTTP request | Description
  - [SubnetDto](docs/SubnetDto.md)
  - [UpdateAccessEntryDto](docs/UpdateAccessEntryDto.md)
  - [UpdateAccessEntryRes](docs/UpdateAccessEntryRes.md)
+ - [UpdateAddonDto](docs/UpdateAddonDto.md)
  - [UpdateAuthTypeDto](docs/UpdateAuthTypeDto.md)
  - [UpdateClusterLbSubnetRes](docs/UpdateClusterLbSubnetRes.md)
  - [UpdateClusterRes](docs/UpdateClusterRes.md)

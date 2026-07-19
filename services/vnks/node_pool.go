@@ -55,4 +55,10 @@ type NodePool struct {
 	ServerRoleId *string `json:"serverRoleId,omitempty"`
 
 	FabricCluster *FabricClusterPool `json:"fabricCluster,omitempty"`
+
+	// Zone 코드
+	ZoneCode *string `json:"zoneCode,omitempty"`
+
+	// Zone 번호
+	ZoneNo *int32 `json:"zoneNo,omitempty"`
 }

@@ -52,8 +52,14 @@ type ClusterInputBody struct {
 	// [로드밸런서 전용 Private Subnet 번호](/docs/networking-vpc-subnetmanagement-getsubnetlist)
 	LbPrivateSubnetNo *int32 `json:"lbPrivateSubnetNo,omitempty"`
 
+	// [로드밸런서 전용 Private Subnet 번호 목록](/docs/networking-vpc-subnetmanagement-getsubnetlist)(존별 1개). 멀티존 LB 생성 시 사용하며, 미지정 시 lbPrivateSubnetNo를 사용한다. 첫 번째 값이 단일/NLB 대표 서브넷. 서브넷은 서로 다른 존이어야 한다.
+	LbPrivateSubnetNoList []*int32 `json:"lbPrivateSubnetNoList,omitempty"`
+
 	// [로드밸런서 전용 Public Subnet 번호](/docs/networking-vpc-subnetmanagement-getsubnetlist)
 	LbPublicSubnetNo *int32 `json:"lbPublicSubnetNo,omitempty"`
+
+	// [로드밸런서 전용 Public Subnet 번호 목록](/docs/networking-vpc-subnetmanagement-getsubnetlist)(존별 1개). 미지정 시 lbPublicSubnetNo를 사용한다. 서브넷은 서로 다른 존이어야 한다.
+	LbPublicSubnetNoList []*int32 `json:"lbPublicSubnetNoList,omitempty"`
 
 	Log *ClusterLogInput `json:"log,omitempty"`
 
@@ -72,4 +78,7 @@ type ClusterInputBody struct {
 
 	// 추가 노드풀
 	NodePool []*NodePoolDto `json:"nodePool,omitempty"`
+
+	// 클러스터 생성 시 함께 설치할 Addon 목록
+	Addons []*ClusterAddonCreateInstallParamDto `json:"addons,omitempty"`
 }

@@ -17,7 +17,9 @@ Name | Type | Description | Notes
 **SubnetNoList** | **[]\*int32** | [서브넷 번호 목록](/docs/networking-vpc-subnetmanagement-getsubnetlist) | [default to null]
 **SubnetLbNo** | ***int32** | [로드밸런서 전용 Private Subnet 번호](/docs/networking-vpc-subnetmanagement-getsubnetlist) | [optional] [default to null]
 **LbPrivateSubnetNo** | ***int32** | [로드밸런서 전용 Private Subnet 번호](/docs/networking-vpc-subnetmanagement-getsubnetlist) | [optional] [default to null]
+**LbPrivateSubnetNoList** | **[]\*int32** | [로드밸런서 전용 Private Subnet 번호 목록](/docs/networking-vpc-subnetmanagement-getsubnetlist)(존별 1개). 멀티존 LB 생성 시 사용하며, 미지정 시 lbPrivateSubnetNo를 사용한다. 첫 번째 값이 단일/NLB 대표 서브넷. 서브넷은 서로 다른 존이어야 한다. | [optional] [default to null]
 **LbPublicSubnetNo** | ***int32** | [로드밸런서 전용 Public Subnet 번호](/docs/networking-vpc-subnetmanagement-getsubnetlist) | [optional] [default to null]
+**LbPublicSubnetNoList** | **[]\*int32** | [로드밸런서 전용 Public Subnet 번호 목록](/docs/networking-vpc-subnetmanagement-getsubnetlist)(존별 1개). 미지정 시 lbPublicSubnetNo를 사용한다. 서브넷은 서로 다른 존이어야 한다. | [optional] [default to null]
 **Log** | **[*ClusterLogInput](ClusterLogInput.md)** |  | [optional] [default to null]
 **KmsKeyTag** | ***string** |  | [optional] [default to null]
 **IsRegional** | ***bool** | 멀티존(Regional) 클러스터 여부 | [optional] [default to null]
@@ -25,6 +27,7 @@ Name | Type | Description | Notes
 **BootstrapAccessEntry** | ***bool** | 클러스터 생성 시 bootstrap access entry 자동 생성 여부 | [optional] [default to null]
 **DefaultNodePool** | **[*DefaultNodePoolParam](DefaultNodePoolParam.md)** |  | [optional] [default to null]
 **NodePool** | **[[]\*NodePoolDto](NodePoolDto.md)** | 추가 노드풀 | [optional] [default to null]
+**Addons** | **[[]\*ClusterAddonCreateInstallParamDto](ClusterAddonCreateInstallParamDto.md)** | 클러스터 생성 시 함께 설치할 Addon 목록 | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

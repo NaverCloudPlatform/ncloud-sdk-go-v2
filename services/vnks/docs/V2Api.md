@@ -4,6 +4,9 @@ All URIs are relative to *https://nks.apigw.ntruss.com/vnks/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**AddonConfigsAddonNameGet**](V2Api.md#AddonConfigsAddonNameGet) | **Get** /addon-configs/{addonName} | 
+[**AddonConfigsAddonNameVersionsVersionGet**](V2Api.md#AddonConfigsAddonNameVersionsVersionGet) | **Get** /addon-configs/{addonName}/versions/{version} | 
+[**AddonConfigsGet**](V2Api.md#AddonConfigsGet) | **Get** /addon-configs | 
 [**ClustersGet**](V2Api.md#ClustersGet) | **Get** /clusters | 
 [**ClustersPost**](V2Api.md#ClustersPost) | **Post** /clusters | 
 [**ClustersUuidAccessEntriesEntryUuidDelete**](V2Api.md#ClustersUuidAccessEntriesEntryUuidDelete) | **Delete** /clusters/{uuid}/access-entries/{entryUuid} | 
@@ -12,6 +15,11 @@ Method | HTTP request | Description
 [**ClustersUuidAccessEntriesGet**](V2Api.md#ClustersUuidAccessEntriesGet) | **Get** /clusters/{uuid}/access-entries | 
 [**ClustersUuidAccessEntriesPost**](V2Api.md#ClustersUuidAccessEntriesPost) | **Post** /clusters/{uuid}/access-entries | 
 [**ClustersUuidAddSubnetPatch**](V2Api.md#ClustersUuidAddSubnetPatch) | **Patch** /clusters/{uuid}/add-subnet | 
+[**ClustersUuidAddonsAddonRefDelete**](V2Api.md#ClustersUuidAddonsAddonRefDelete) | **Delete** /clusters/{uuid}/addons/{addonRef} | 
+[**ClustersUuidAddonsAddonRefGet**](V2Api.md#ClustersUuidAddonsAddonRefGet) | **Get** /clusters/{uuid}/addons/{addonRef} | 
+[**ClustersUuidAddonsAddonRefPatch**](V2Api.md#ClustersUuidAddonsAddonRefPatch) | **Patch** /clusters/{uuid}/addons/{addonRef} | 
+[**ClustersUuidAddonsGet**](V2Api.md#ClustersUuidAddonsGet) | **Get** /clusters/{uuid}/addons | 
+[**ClustersUuidAddonsPost**](V2Api.md#ClustersUuidAddonsPost) | **Post** /clusters/{uuid}/addons | 
 [**ClustersUuidAuthTypePatch**](V2Api.md#ClustersUuidAuthTypePatch) | **Patch** /clusters/{uuid}/auth-type | 
 [**ClustersUuidDelete**](V2Api.md#ClustersUuidDelete) | **Delete** /clusters/{uuid} | 
 [**ClustersUuidGet**](V2Api.md#ClustersUuidGet) | **Get** /clusters/{uuid} | 
@@ -41,6 +49,89 @@ Method | HTTP request | Description
 [**OptionVersionGet**](V2Api.md#OptionVersionGet) | **Get** /option/version | 
 [**RootGet**](V2Api.md#RootGet) | **Get** / | 
 
+
+# **AddonConfigsAddonNameGet**
+> AddonConfigRes AddonConfigsAddonNameGet(addonName, k8sVersion)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**addonName** | **string** | addonName | **k8sVersion** | **string** |  | 
+
+### Return type
+
+*[**AddonConfigRes**](AddonConfigRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **AddonConfigsAddonNameVersionsVersionGet**
+> AddonVersionDetailRes AddonConfigsAddonNameVersionsVersionGet(addonName, version, k8sVersion)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**addonName** | **string** | addonName | **version** | **string** | version | **k8sVersion** | **string** |  | 
+
+### Return type
+
+*[**AddonVersionDetailRes**](AddonVersionDetailRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **AddonConfigsGet**
+> AddonConfigsRes AddonConfigsGet(k8sVersion, optional)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**k8sVersion** | **string** |  | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**k8sVersion** | **string** |  | **page** | **int32** |  | **size** | **int32** |  | 
+
+### Return type
+
+*[**AddonConfigsRes**](AddonConfigsRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ClustersGet**
 > ClustersRes ClustersGet()
@@ -227,6 +318,139 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**UpdateClusterRes**](UpdateClusterRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClustersUuidAddonsAddonRefDelete**
+> ClusterAddonRes ClustersUuidAddonsAddonRefDelete(uuid, addonRef)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**uuid** | **string** | uuid | **addonRef** | **string** | addonRef | 
+
+### Return type
+
+*[**ClusterAddonRes**](ClusterAddonRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClustersUuidAddonsAddonRefGet**
+> ClusterAddonRes ClustersUuidAddonsAddonRefGet(uuid, addonRef)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**uuid** | **string** | uuid | **addonRef** | **string** | addonRef | 
+
+### Return type
+
+*[**ClusterAddonRes**](ClusterAddonRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClustersUuidAddonsAddonRefPatch**
+> ClusterAddonRes ClustersUuidAddonsAddonRefPatch(body, uuid, addonRef)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**body** | **[\*UpdateAddonDto](UpdateAddonDto.md)** |  | **uuid** | **string** | uuid | **addonRef** | **string** | addonRef | 
+
+### Return type
+
+*[**ClusterAddonRes**](ClusterAddonRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClustersUuidAddonsGet**
+> ClusterAddonsRes ClustersUuidAddonsGet(uuid, optional)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**uuid** | **string** | uuid | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**uuid** | **string** | uuid | **status** | **string** |  | **page** | **int32** |  | **size** | **int32** |  | 
+
+### Return type
+
+*[**ClusterAddonsRes**](ClusterAddonsRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClustersUuidAddonsPost**
+> InstallAddonsRes ClustersUuidAddonsPost(body, uuid)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**body** | **[[]\*InstallAddonDto](InstallAddonDto.md)** |  | **uuid** | **string** | uuid | 
+
+### Return type
+
+*[**InstallAddonsRes**](InstallAddonsRes.md)
 
 ### Authorization
 
@@ -430,7 +654,7 @@ Optional parameters are passed through a map[string]interface{}.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**uuid** | **string** | uuid | **lbSubnetNo** | **int32** |  | **igwYn** | **string** |  | 
+**uuid** | **string** | uuid | **lbSubnetNo** | **int32** |  | **lbSubnetNoList** | **[]int32** |  | **igwYn** | **string** |  | 
 
 ### Return type
 
