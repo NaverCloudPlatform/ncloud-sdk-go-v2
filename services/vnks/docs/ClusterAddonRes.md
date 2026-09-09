@@ -15,6 +15,10 @@ Name | Type | Description | Notes
 **Message** | ***string** |  | [optional] [default to null]
 **K8sVersion** | ***string** |  | [default to null]
 **LatestVersion** | ***string** |  | [optional] [default to null]
+**CanaryUpgrade** | ***bool** |  | [default to null]
+**Revision** | ***string** |  | [optional] [default to null]
+**ChangeableVersions** | **[*ChangeableVersionsRes](ChangeableVersionsRes.md)** |  | [optional] [default to null]
+**Canary** | **[*CanaryRes](CanaryRes.md)** |  | [optional] [default to null]
 **CreatedAt** | ***string** |  | [optional] [default to null]
 **UpdatedAt** | ***string** |  | [optional] [default to null]
 

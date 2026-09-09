@@ -32,6 +32,7 @@ Class | Method | HTTP request | Description
 *V2Api* | [**ClustersUuidAccessEntriesGet**](docs/V2Api.md#clustersuuidaccessentriesget) | **Get** /clusters/{uuid}/access-entries | 
 *V2Api* | [**ClustersUuidAccessEntriesPost**](docs/V2Api.md#clustersuuidaccessentriespost) | **Post** /clusters/{uuid}/access-entries | 
 *V2Api* | [**ClustersUuidAddSubnetPatch**](docs/V2Api.md#clustersuuidaddsubnetpatch) | **Patch** /clusters/{uuid}/add-subnet | 
+*V2Api* | [**ClustersUuidAddonsAddonRefCanaryPost**](docs/V2Api.md#clustersuuidaddonsaddonrefcanarypost) | **Post** /clusters/{uuid}/addons/{addonRef}/canary | 
 *V2Api* | [**ClustersUuidAddonsAddonRefDelete**](docs/V2Api.md#clustersuuidaddonsaddonrefdelete) | **Delete** /clusters/{uuid}/addons/{addonRef} | 
 *V2Api* | [**ClustersUuidAddonsAddonRefGet**](docs/V2Api.md#clustersuuidaddonsaddonrefget) | **Get** /clusters/{uuid}/addons/{addonRef} | 
 *V2Api* | [**ClustersUuidAddonsAddonRefPatch**](docs/V2Api.md#clustersuuidaddonsaddonrefpatch) | **Patch** /clusters/{uuid}/addons/{addonRef} | 
@@ -78,6 +79,9 @@ Class | Method | HTTP request | Description
  - [AuditLogDto](docs/AuditLogDto.md)
  - [AutoscaleOption](docs/AutoscaleOption.md)
  - [AutoscalerUpdate](docs/AutoscalerUpdate.md)
+ - [CanaryActionDto](docs/CanaryActionDto.md)
+ - [CanaryRes](docs/CanaryRes.md)
+ - [ChangeableVersionsRes](docs/ChangeableVersionsRes.md)
  - [Cluster](docs/Cluster.md)
  - [ClusterAccessEntriesRes](docs/ClusterAccessEntriesRes.md)
  - [ClusterAccessEntryRes](docs/ClusterAccessEntryRes.md)
