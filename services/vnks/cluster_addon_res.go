@@ -33,7 +33,7 @@ type ClusterAddonRes struct {
 
 	LatestVersion *string `json:"latestVersion,omitempty"`
 
-	CreateYmdt *string `json:"createYmdt"`
+	CreatedAt *string `json:"createdAt,omitempty"`
 
-	UpdateYmdt *string `json:"updateYmdt"`
+	UpdatedAt *string `json:"updatedAt,omitempty"`
 }

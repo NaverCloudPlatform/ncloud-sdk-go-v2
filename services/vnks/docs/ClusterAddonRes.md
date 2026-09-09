@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **Message** | ***string** |  | [optional] [default to null]
 **K8sVersion** | ***string** |  | [default to null]
 **LatestVersion** | ***string** |  | [optional] [default to null]
-**CreateYmdt** | ***string** |  | [default to null]
-**UpdateYmdt** | ***string** |  | [default to null]
+**CreatedAt** | ***string** |  | [optional] [default to null]
+**UpdatedAt** | ***string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
