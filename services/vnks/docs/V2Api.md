@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**ClustersUuidAccessEntriesGet**](V2Api.md#ClustersUuidAccessEntriesGet) | **Get** /clusters/{uuid}/access-entries | 
 [**ClustersUuidAccessEntriesPost**](V2Api.md#ClustersUuidAccessEntriesPost) | **Post** /clusters/{uuid}/access-entries | 
 [**ClustersUuidAddSubnetPatch**](V2Api.md#ClustersUuidAddSubnetPatch) | **Patch** /clusters/{uuid}/add-subnet | 
+[**ClustersUuidAddonsAddonRefCanaryPost**](V2Api.md#ClustersUuidAddonsAddonRefCanaryPost) | **Post** /clusters/{uuid}/addons/{addonRef}/canary | 
 [**ClustersUuidAddonsAddonRefDelete**](V2Api.md#ClustersUuidAddonsAddonRefDelete) | **Delete** /clusters/{uuid}/addons/{addonRef} | 
 [**ClustersUuidAddonsAddonRefGet**](V2Api.md#ClustersUuidAddonsAddonRefGet) | **Get** /clusters/{uuid}/addons/{addonRef} | 
 [**ClustersUuidAddonsAddonRefPatch**](V2Api.md#ClustersUuidAddonsAddonRefPatch) | **Patch** /clusters/{uuid}/addons/{addonRef} | 
@@ -318,6 +319,31 @@ Name | Type | Description  | Notes
 ### Return type
 
 *[**UpdateClusterRes**](UpdateClusterRes.md)
+
+### Authorization
+
+[x-ncp-iam](../README.md#x-ncp-iam)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ClustersUuidAddonsAddonRefCanaryPost**
+> ClusterAddonRes ClustersUuidAddonsAddonRefCanaryPost(body, uuid, addonRef)
+
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**body** | **[\*CanaryActionDto](CanaryActionDto.md)** |  | **uuid** | **string** | uuid | **addonRef** | **string** | addonRef | 
+
+### Return type
+
+*[**ClusterAddonRes**](ClusterAddonRes.md)
 
 ### Authorization
 
