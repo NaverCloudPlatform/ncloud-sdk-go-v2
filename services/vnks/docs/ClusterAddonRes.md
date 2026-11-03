@@ -15,8 +15,12 @@ Name | Type | Description | Notes
 **Message** | ***string** |  | [optional] [default to null]
 **K8sVersion** | ***string** |  | [default to null]
 **LatestVersion** | ***string** |  | [optional] [default to null]
-**CreateYmdt** | ***string** |  | [default to null]
-**UpdateYmdt** | ***string** |  | [default to null]
+**CanaryUpgrade** | ***bool** |  | [default to null]
+**Revision** | ***string** |  | [optional] [default to null]
+**ChangeableVersions** | **[*ChangeableVersionsRes](ChangeableVersionsRes.md)** |  | [optional] [default to null]
+**Canary** | **[*CanaryRes](CanaryRes.md)** |  | [optional] [default to null]
+**CreatedAt** | ***string** |  | [optional] [default to null]
+**UpdatedAt** | ***string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

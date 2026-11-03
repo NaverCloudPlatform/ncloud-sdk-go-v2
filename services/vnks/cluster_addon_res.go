@@ -33,7 +33,15 @@ type ClusterAddonRes struct {
 
 	LatestVersion *string `json:"latestVersion,omitempty"`
 
-	CreateYmdt *string `json:"createYmdt"`
+	CanaryUpgrade *bool `json:"canaryUpgrade"`
 
-	UpdateYmdt *string `json:"updateYmdt"`
+	Revision *string `json:"revision,omitempty"`
+
+	ChangeableVersions *ChangeableVersionsRes `json:"changeableVersions,omitempty"`
+
+	Canary *CanaryRes `json:"canary,omitempty"`
+
+	CreatedAt *string `json:"createdAt,omitempty"`
+
+	UpdatedAt *string `json:"updatedAt,omitempty"`
 }
