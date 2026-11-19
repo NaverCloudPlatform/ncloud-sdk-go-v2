@@ -34,6 +34,11 @@ func (c *Credentials) Valid() bool {
 	return c.value.AccessKey != "" && c.value.SecretKey != ""
 }
 
+// HasProvider reports whether a provider is set, even if retrieving failed.
+func (c *Credentials) HasProvider() bool {
+	return c.provider != nil
+}
+
 func (c *Credentials) ProviderName() string {
 	if c.provider == nil {
 		return "NoCredentialProvider"
@@ -51,32 +56,37 @@ func (c *Credentials) Retrieve() *Credentials {
 	return c
 }
 
+// configuredProvider reports whether a provider is set up.
+type configuredProvider interface {
+	configured() bool
+}
+
+// LoadCredentials keeps a configured provider that fails, so it does not fall
+// back to another identity.
 func LoadCredentials(providers []Provider) *Credentials {
-	var credentials Credentials
 	for _, p := range providers {
 		credValue, err := p.Retrieve()
 		if err == nil {
-			credentials = Credentials{
-				value: credValue,
-				provider: p,
-			}
-			break
+			return &Credentials{value: credValue, provider: p}
+		}
+		if c, ok := p.(configuredProvider); ok && c.configured() {
+			return &Credentials{provider: p}
 		}
 	}
 
-	return &credentials
+	return &Credentials{}
 }
 
 func DefaultCredentialsChain() []Provider {
 	return []Provider{
 		&EnvProvider{},
 		&ConfigFileProvider{},
+		&PodIdentityProvider{},
 		&ServerRoleProvider{
 			ApiClient: metadata.NewApiClient(),
 		},
 	}
 }
-
 
 type Provider interface {
 	// Retrieve returns nil if it successfully retrieved the value.

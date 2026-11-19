@@ -213,3 +213,42 @@ func TestPodIdentityProviderErrorMessage(t *testing.T) {
 		})
 	}
 }
+
+func TestDefaultCredentialsChainOrder(t *testing.T) {
+	want := []string{"EnvProvider", "ConfigFileProvider", "PodIdentityProvider", "ServerRoleProvider"}
+
+	chain := DefaultCredentialsChain()
+	if len(chain) != len(want) {
+		t.Fatalf("Expected: %d providers, Actual: %d", len(want), len(chain))
+	}
+	for i, name := range want {
+		if chain[i].Name() != name {
+			t.Fatalf("Expected: %s at %d, Actual: %s", name, i, chain[i].Name())
+		}
+	}
+}
+
+func TestPodIdentityProviderConfigured(t *testing.T) {
+	tests := []struct {
+		name      string
+		tokenFile string
+		endpoint  string
+		want      bool
+	}{
+		{"both", "/token", "https://example.com", true},
+		{"token file only", "/token", "", true},
+		{"endpoint only", "", "https://example.com", true},
+		{"neither", "", "", false},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			setenv(t, podIdentityTokenFileEnv, tt.tokenFile)
+			setenv(t, podIdentityAPIEndpointEnv, tt.endpoint)
+
+			if got := (&PodIdentityProvider{}).configured(); got != tt.want {
+				t.Fatalf("Expected: %v, Actual: %v", tt.want, got)
+			}
+		})
+	}
+}

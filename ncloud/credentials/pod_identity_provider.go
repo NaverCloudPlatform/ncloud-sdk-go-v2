@@ -31,16 +31,7 @@ func (p *PodIdentityProvider) Name() string {
 }
 
 func (p *PodIdentityProvider) Retrieve() (Value, error) {
-	tokenFile := p.TokenFile
-	if tokenFile == "" {
-		tokenFile = os.Getenv(podIdentityTokenFileEnv)
-	}
-
-	endpoint := p.APIEndpoint
-	if endpoint == "" {
-		endpoint = os.Getenv(podIdentityAPIEndpointEnv)
-	}
-
+	tokenFile, endpoint := p.settings()
 	if tokenFile == "" {
 		return Value{}, errors.New(podIdentityTokenFileEnv + " not found in environment")
 	}
@@ -55,6 +46,25 @@ func (p *PodIdentityProvider) Retrieve() (Value, error) {
 	}
 
 	return p.exchange(endpoint, token)
+}
+
+func (p *PodIdentityProvider) settings() (tokenFile, endpoint string) {
+	tokenFile = p.TokenFile
+	if tokenFile == "" {
+		tokenFile = os.Getenv(podIdentityTokenFileEnv)
+	}
+
+	endpoint = p.APIEndpoint
+	if endpoint == "" {
+		endpoint = os.Getenv(podIdentityAPIEndpointEnv)
+	}
+	return tokenFile, endpoint
+}
+
+// Either setting means the pod is meant to use pod identity.
+func (p *PodIdentityProvider) configured() bool {
+	tokenFile, endpoint := p.settings()
+	return tokenFile != "" || endpoint != ""
 }
 
 func readPodIdentityToken(tokenFile string) (string, error) {
