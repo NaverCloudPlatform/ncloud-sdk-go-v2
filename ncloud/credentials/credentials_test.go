@@ -32,6 +32,26 @@ func (p *fakeProvider) Retrieve() (Value, error) {
 	return p.value, p.err
 }
 
+func TestRetrieveKeepsValueWhenRefreshFails(t *testing.T) {
+	p := &fakeProvider{err: errors.New("provider unavailable")}
+	creds := &Credentials{
+		value:    Value{AccessKey: "old", SecretKey: "old", Expiration: time.Now().Add(-time.Minute)},
+		provider: p,
+	}
+
+	if got := creds.Retrieve(); got != nil {
+		t.Fatalf("expected nil after a failed refresh, got %v", got)
+	}
+	if !creds.Valid() {
+		t.Fatal("failed refresh must not clear the cached value, or GetCredentials stops retrying")
+	}
+
+	p.value, p.err = Value{AccessKey: "new", SecretKey: "new", Expiration: time.Now().Add(time.Hour)}, nil
+	if got := creds.Retrieve(); got == nil || got.AccessKey() != "new" {
+		t.Fatalf("expected the next call to refresh, got %v", got)
+	}
+}
+
 // blockingProvider holds the first call until release is closed.
 type blockingProvider struct {
 	value   Value
@@ -143,6 +163,88 @@ func TestRetrieveConcurrentCallsWithoutExpiration(t *testing.T) {
 		if got == nil || got.AccessKey() != "AK" {
 			t.Fatalf("Expected: AK, Actual: %v", got)
 		}
+	}
+}
+
+// countingProvider counts its calls.
+type countingProvider struct {
+	fakeProvider
+	retrieves int
+}
+
+func (p *countingProvider) Retrieve() (Value, error) {
+	p.retrieves++
+	return p.fakeProvider.Retrieve()
+}
+
+func assertAbout(t *testing.T, name string, got, want time.Time) {
+	t.Helper()
+	if d := got.Sub(want); d < -time.Second || d > time.Second {
+		t.Fatalf("Expected: %s about %v, Actual: %v", name, want, got)
+	}
+}
+
+func TestLoadCredentialsRefreshesWithinWindow(t *testing.T) {
+	expiration := time.Now().Add(time.Hour)
+	p := &countingProvider{fakeProvider: fakeProvider{value: Value{AccessKey: "AK", SecretKey: "SK", Expiration: expiration}}}
+
+	creds := LoadCredentials([]Provider{p})
+
+	if creds.refreshAt.Before(expiration.Add(-refreshWindowMax)) || creds.refreshAt.After(expiration.Add(-refreshWindowMin)) {
+		t.Fatalf("Expected: refresh %v-%v before %v, Actual: %v", refreshWindowMin, refreshWindowMax, expiration, creds.refreshAt)
+	}
+	if !creds.value.Expiration.Equal(expiration) {
+		t.Fatalf("Expected: real expiration %v kept, Actual: %v", expiration, creds.value.Expiration)
+	}
+}
+
+func TestLoadCredentialsWithoutExpiration(t *testing.T) {
+	p := &fakeProvider{value: Value{AccessKey: "AK", SecretKey: "SK"}}
+
+	if creds := LoadCredentials([]Provider{p}); !creds.refreshAt.IsZero() {
+		t.Fatalf("Expected: no early refresh, Actual: %v", creds.refreshAt)
+	}
+}
+
+func TestRefreshNotSoonerThanRetryInterval(t *testing.T) {
+	p := &countingProvider{fakeProvider: fakeProvider{value: Value{AccessKey: "AK", SecretKey: "SK", Expiration: time.Now().Add(5 * time.Minute)}}}
+
+	creds := LoadCredentials([]Provider{p})
+
+	assertAbout(t, "refresh", creds.refreshAt, time.Now().Add(refreshRetryInterval))
+	creds.Retrieve()
+	if p.retrieves != 1 {
+		t.Fatalf("Expected: 1 provider call, Actual: %d", p.retrieves)
+	}
+}
+
+func TestEarlyRefreshKeepsKeysWhenItFails(t *testing.T) {
+	p := &countingProvider{fakeProvider: fakeProvider{err: errors.New("exchange failed")}}
+	expiration := time.Now().Add(10 * time.Minute)
+	creds := &Credentials{
+		value:     Value{AccessKey: "old", SecretKey: "old", Expiration: expiration},
+		provider:  p,
+		refreshAt: time.Now().Add(-time.Second),
+	}
+
+	if got := creds.Retrieve(); got == nil || got.AccessKey() != "old" {
+		t.Fatalf("Expected: old, Actual: %v", got)
+	}
+	if p.retrieves != 1 {
+		t.Fatalf("Expected: 1 provider call, Actual: %d", p.retrieves)
+	}
+	assertAbout(t, "retry", creds.refreshAt, time.Now().Add(refreshRetryInterval))
+
+	// Within the retry interval the provider is not called again.
+	creds.Retrieve()
+	if p.retrieves != 1 {
+		t.Fatalf("Expected: 1 provider call, Actual: %d", p.retrieves)
+	}
+
+	creds.refreshAt = time.Now().Add(-time.Second)
+	p.value, p.err = Value{AccessKey: "new", SecretKey: "new", Expiration: time.Now().Add(time.Hour)}, nil
+	if got := creds.Retrieve(); got == nil || got.AccessKey() != "new" {
+		t.Fatalf("Expected: new, Actual: %v", got)
 	}
 }
 
