@@ -77,21 +77,28 @@ func (c *Configuration) AddDefaultHeader(key string, value string) {
 	c.DefaultHeader[key] = value
 }
 
+// GetCredentials retries empty credentials so a failed provider can recover.
 func (c *Configuration) GetCredentials() *credentials.Credentials {
-	if c.ValidCredentials() {
-		return c.Credentials.Retrieve()
+	if c.Credentials == nil {
+		return nil
 	}
-	return nil
+	creds := c.Credentials.Retrieve()
+	if creds == nil || !creds.Valid() {
+		return nil
+	}
+	return creds
 }
 
 func (c *Configuration) ValidCredentials() bool {
 	return c.Credentials != nil && c.Credentials.Valid()
 }
 
+// InitCredentials keeps a set provider even when its keys are empty, since
+// GetCredentials retries it. Reloading could fall back to another identity.
 func (c *Configuration) InitCredentials() {
 	if c.APIKey != nil {
 		c.Credentials = credentials.NewValueProviderCreds(c.APIKey.AccessKey, c.APIKey.SecretKey)
-	} else if !c.ValidCredentials() {
+	} else if c.Credentials == nil || !c.Credentials.HasProvider() {
 		c.Credentials = credentials.LoadCredentials(credentials.DefaultCredentialsChain())
 	}
 }
